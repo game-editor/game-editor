@@ -1,0 +1,11 @@
+<Direct>
+
+	<File filename="bemFloorTileTest.pcx" Transparent0="#000000" >
+
+		<ColorKey	sprite="ROOM.FLOOR"
+					color="#ff0000"
+					isotile="140" />
+
+	</File>
+
+</Direct>

@@ -1,0 +1,109 @@
+#################################################################
+## This Makefile Exported by MinGW Developer Studio
+## Copyright (c) 2002-2004 by Parinya Thipchart
+#################################################################
+
+ifneq (,$(findstring Release, $(CFG)))
+  override CFG = Release
+else
+  override CFG = Release
+endif
+
+WXLIBSDIR = /usr/local/lib
+CC = g++
+
+AR = ar
+ifeq ($(CFG),Debug)
+  OBJ_DIR = Debug
+  OUTPUT_DIR = ./lib
+  TARGET = libwx_gtk2_ifm-2.6d.a
+  C_INCLUDE_DIRS = -I"./include" -I"./" 
+  C_PREPROC = 
+  CFLAGS = -pipe `wx-config --cxxflags` -Wall -g2 -O0 -frtti -fexceptions 
+  ARFLAGS =  rcs
+endif
+
+ifeq ($(CFG),Release)
+  OBJ_DIR = Release
+  OUTPUT_DIR = ./lib
+  TARGET = libwx_gtk2_ifm-2.6.a
+  C_INCLUDE_DIRS = -I"./include" -I"./" 
+  C_PREPROC = 
+  CFLAGS = -pipe `wx-config --cxxflags` -Wall -g0 -O2 -frtti -fexceptions 
+  ARFLAGS =  rcs
+endif
+
+SRC_OBJS = \
+  $(OBJ_DIR)/definterface.o	\
+  $(OBJ_DIR)/dragndrop.o	\
+  $(OBJ_DIR)/events.o	\
+  $(OBJ_DIR)/manager.o	\
+  $(OBJ_DIR)/resize.o \
+  $(OBJ_DIR)/plugin.o \
+  $(OBJ_DIR)/defplugin.o
+
+define build_target
+@echo Creating library...
+@$(AR) $(ARFLAGS) "$(OUTPUT_DIR)/$(TARGET)" $(SRC_OBJS)
+endef
+
+define compile_source
+@echo Compiling $<
+@$(CC) $(CFLAGS) $(C_PREPROC) $(C_INCLUDE_DIRS) -c "$<" -o "$@"
+endef
+
+.PHONY: print_header directories
+
+$(TARGET): print_header directories $(SRC_OBJS)
+	$(build_target)
+
+.PHONY: clean cleanall
+
+install:
+	@echo Copying to $(WXLIBSDIR)...
+	@cp -f "$(OUTPUT_DIR)/$(TARGET)" "$(WXLIBSDIR)/$(TARGET)"
+
+cleanall:
+	@echo Deleting intermediate files for 'wxIFM-beta1 - $(CFG)'
+	-@rm -rf "$(OBJ_DIR)"
+	-@rm -rf "$(OUTPUT_DIR)/$(TARGET)"
+	-@rmdir "$(OUTPUT_DIR)"
+
+clean:
+	@echo Deleting intermediate files for 'wxIFM-beta1 - $(CFG)'
+	-@rm -rf $(OBJ_DIR)
+
+print_header:
+	@echo ----------Configuration: wxIFM-beta1 - $(CFG)----------
+
+directories:
+	-@if [ ! -d "$(OUTPUT_DIR)" ]; then mkdir "$(OUTPUT_DIR)"; fi
+	-@if [ ! -d "$(OBJ_DIR)" ]; then mkdir "$(OBJ_DIR)"; fi
+
+$(OBJ_DIR)/definterface.o: src/ifm/definterface.cpp
+
+	$(compile_source)
+
+$(OBJ_DIR)/dragndrop.o: src/ifm/dragndrop.cpp
+
+	$(compile_source)
+
+$(OBJ_DIR)/events.o: src/ifm/events.cpp
+
+	$(compile_source)
+
+$(OBJ_DIR)/manager.o: src/ifm/manager.cpp
+
+	$(compile_source)
+
+$(OBJ_DIR)/resize.o: src/ifm/resize.cpp
+
+	$(compile_source)
+
+$(OBJ_DIR)/plugin.o: src/ifm/plugin.cpp
+
+	$(compile_source)
+
+$(OBJ_DIR)/defplugin.o: src/ifm/defplugin.cpp
+
+	$(compile_source)

@@ -1,0 +1,53 @@
+<Definition filename="bem.pcx" Transparent0="#000000" Transparent1="#e02db8">
+    <Sprite name="BRAIN">
+        <Action name="WALK.DIR3">
+            <Frame x="442" y="6" width="73" height="152" hotspotx="486" hotspoty="146" deltax="6" deltay="3" />
+        </Action>
+        <Action name="WALK.DIR1">
+            <Frame x="522" y="8" width="81" height="151" hotspotx="555" hotspoty="151" deltax="-6" deltay="3" />
+        </Action>
+        <Action name="WALK.DIR7">
+            <Frame x="443" y="162" width="75" height="145" hotspotx="475" hotspoty="292" deltax="-6" deltay="-3" />
+        </Action>
+        <Action name="WALK.DIR9">
+            <Frame x="525" y="163" width="82" height="145" hotspotx="575" hotspoty="292" deltax="6" deltay="-3" />
+        </Action>
+    </Sprite>
+    <Sprite name="DRONE">
+        <Action name="WALK.DIR7">
+            <Frame x="12" y="0" width="65" height="115" hotspotx="45" hotspoty="108" deltax="-6" deltay="-4" />
+            <Frame x="76" y="0" width="58" height="114" hotspotx="108" hotspoty="108" deltax="-6" deltay="-3" />
+            <Frame x="134" y="0" width="62" height="116" hotspotx="172" hotspoty="108" deltax="-7" deltay="-3" />
+            <Frame x="198" y="0" width="63" height="121" hotspotx="234" hotspoty="108" deltax="-6" deltay="-4" />
+            <Frame x="265" y="0" width="73" height="118" hotspotx="307" hotspoty="108" deltax="-6" deltay="-3" />
+            <Frame x="340" y="0" width="66" height="116" hotspotx="381" hotspoty="108" deltax="-5" deltay="-1" />
+        </Action>
+        <Action name="WALK.DIR3">
+            <Frame x="33" y="118" width="60" height="118" hotspotx="61" hotspoty="225" deltax="5" deltay="2" />
+            <Frame x="92" y="119" width="59" height="119" hotspotx="117" hotspoty="225" deltax="5" deltay="4" />
+            <Frame x="152" y="117" width="57" height="123" hotspotx="172" hotspoty="225" deltax="7" deltay="3" />
+            <Frame x="209" y="120" width="61" height="117" hotspotx="232" hotspoty="225" deltax="6" deltay="2" />
+            <Frame x="271" y="119" width="67" height="117" hotspotx="301" hotspoty="225" deltax="6" deltay="4" />
+            <Frame x="336" y="118" width="59" height="120" hotspotx="356" hotspoty="225" deltax="7" deltay="3" />
+        </Action>
+        <Action name="WALK.DIR9">
+            <Frame x="17" y="237" width="65" height="122" hotspotx="46" hotspoty="342" deltax="5" deltay="-3" />
+            <Frame x="81" y="238" width="63" height="119" hotspotx="105" hotspoty="342" deltax="5" deltay="-3" />
+            <Frame x="144" y="239" width="66" height="114" hotspotx="169" hotspoty="341" deltax="7" deltay="-2" />
+            <Frame x="211" y="237" width="62" height="119" hotspotx="235" hotspoty="341" deltax="6" deltay="-4" />
+            <Frame x="274" y="236" width="58" height="121" hotspotx="299" hotspoty="341" deltax="7" deltay="-4" />
+            <Frame x="332" y="237" width="72" height="120" hotspotx="366" hotspoty="341" deltax="6" deltay="-2" />
+        </Action>
+        <Action name="WALK.DIR1">
+            <Frame x="35" y="358" width="69" height="122" hotspotx="75" hotspoty="463" deltax="-4" deltay="0" />
+            <Frame x="104" y="358" width="66" height="122" hotspotx="143" hotspoty="463" deltax="-7" deltay="5" />
+            <Frame x="172" y="355" width="73" height="125" hotspotx="215" hotspoty="463" deltax="-6" deltay="5" />
+            <Frame x="245" y="355" width="67" height="125" hotspotx="285" hotspoty="463" deltax="-9" deltay="1" />
+            <Frame x="312" y="358" width="69" height="122" hotspotx="351" hotspoty="463" deltax="-7" deltay="1" />
+            <Frame x="382" y="358" width="71" height="122" hotspotx="425" hotspoty="463" deltax="-3" deltay="6" />
+        </Action>
+    </Sprite>
+    <Sprite name="TILE">
+        <Action name="TILE" />
+    </Sprite>
+</Definition>

@@ -1,0 +1,31 @@
+/* XPM */
+static char *dock_center_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"20 20 5 1",
+"  c black",
+". c gray10",
+"X c gray20",
+"o c gray30",
+"O c #003399",
+/* pixels */
+"                    ",
+" OOOOOOOOOOOOOOOOOO ",
+" OOOOOOOOOOOOOOOOOO ",
+" OO              OO ",
+" OO O  ......  O OO ",
+" OO  O  XXXX  O  OO ",
+" OO   O  oo  O   OO ",
+" OO .  O    O  . OO ",
+" OO .X  OOOO  X. OO ",
+" OO .Xo OOOO oX. OO ",
+" OO .Xo OOOO oX. OO ",
+" OO .X  OOOO  X. OO ",
+" OO .  O    O  . OO ",
+" OO   O  oo  O   OO ",
+" OO  O  XXXX  O  OO ",
+" OO O  ......  O OO ",
+" OO              OO ",
+" OOOOOOOOOOOOOOOOOO ",
+" OOOOOOOOOOOOOOOOOO ",
+"                    "
+};

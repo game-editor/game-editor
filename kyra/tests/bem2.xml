@@ -1,0 +1,37 @@
+<Direct>
+
+	<File filename="bemParticle.tga" >
+		
+		<ColorKey	sprite="ROOM.PARTICLE"
+					action="ROUND"
+					color="#ffff00"
+					frameCount="1"			/>
+
+		<ColorKey	sprite="ROOM.PARTICLE"
+					action="OBLONG"
+					color="#ffff00"
+					frameCount="1"			/>
+	</File>
+
+	<File filename="bemPlasma.tga" >
+
+		<ColorKey	sprite="ROOM.PLASMA_PLANT"
+					color="#ffff00"			/>
+
+	</File>
+
+	<File filename="bemFloorTile2.pcx" Transparent0="#000000" >
+
+		<ColorKey	sprite="ROOM.FLOOR"
+					color="#ff0000"
+					isotile="144"
+					rotation="d2, 90, 270" />
+
+	</File>
+
+	<File filename="spaceBackground.jpg">
+
+		<Image		tile="SPACE" />
+	</File>
+
+</Direct>

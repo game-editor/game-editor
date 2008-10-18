@@ -1,0 +1,322 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Structures and Unions</TITLE>
+<META NAME="description" CONTENT="Structures and Unions">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node78.html" tppabs="http://eic.sourceforge.net/documentation/node78.html">
+<LINK REL="previous" HREF="node67.html" tppabs="http://eic.sourceforge.net/documentation/node67.html">
+<LINK REL="up" HREF="node57.html" tppabs="http://eic.sourceforge.net/documentation/node57.html">
+<LINK REL="next" HREF="node71.html" tppabs="http://eic.sourceforge.net/documentation/node71.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html1421"
+  HREF="node71.html" tppabs="http://eic.sourceforge.net/documentation/node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html1415"
+  HREF="node57.html" tppabs="http://eic.sourceforge.net/documentation/node57.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html1409"
+  HREF="node69.html" tppabs="http://eic.sourceforge.net/documentation/node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html1417"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html1419"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1422"
+  HREF="node71.html" tppabs="http://eic.sourceforge.net/documentation/node71.html">Structure and Union compatibility</A>
+<B> Up:</B> <A NAME="tex2html1416"
+  HREF="node57.html" tppabs="http://eic.sourceforge.net/documentation/node57.html">Type specifiers</A>
+<B> Previous:</B> <A NAME="tex2html1410"
+  HREF="node69.html" tppabs="http://eic.sourceforge.net/documentation/node69.html">Array Bound Checking</A>
+ &nbsp <B>  <A NAME="tex2html1418"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1420"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION005129000000000000000"></A>
+<A NAME="sec:structures"></A><A NAME="6886"></A> <A NAME="6887"></A>
+<BR>
+Structures and Unions
+</H2>
+
+<P>
+A structure is an instance of a sequence of  named data types
+collected into a template - analogous to a Pascal record. A union is
+a data type that is similar to a structure but at most will contain
+only on member of its aggregation - it is handy for declaring a
+variable that may contain different types at different
+times. Structures and unions provide the way of extending the number
+of data types available.
+
+<P>
+Syntax: <TABLE  WIDTH="317">
+<TR><TD><PRE><TT>
+st-un-spec: 
+<BR>
+st-un [id] <B><TT>{</TT></B> s-decl-list <B><TT>}</TT></B>
+<BR>
+st-un id
+<BR>
+st-un: <B><TT>one of</TT></B>
+<BR><B><TT>struct</TT></B> <B><TT>union</TT></B> 
+<BR>
+s-decl-list: 
+<BR>
+st-decl 
+<BR>
+s-decl-list st-decl 
+<BR>
+st-decl: 
+<BR>
+spec-qual-list spec-declor-list <B><TT>;</TT></B> 
+<BR>
+spec-qual-list: 
+<BR>
+type-spec [spec-qual-list]
+<BR>
+type-qual [spec-qual-list] 
+<BR>
+spec-declor-list: 
+<BR>
+st-declor 
+<BR>
+spec-declor-list <B><TT>,</TT></B> st-declor 
+<BR>
+st-declor: 
+<BR>
+decl 
+<BR><U>[decl] <B><TT>:</TT></B> const-expr </U> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+The underlined section in the above syntax, indicates that EiC does
+not support structure bit fields. The identifier, <I>id</I>, in the
+structure or union specifier <I>st-un-spec</I> is the tag name for the
+structure or union and each tag name must be unique. The scope of the
+tag will extend to the end of the block in which it is defined (see
+&#167;&nbsp;<A HREF="node46.html#sec:ScopeRules" tppabs="http://eic.sourceforge.net/documentation/node46.html#sec:ScopeRules">3.5</A>, pg:&nbsp;<A HREF="node46.html#sec:ScopeRules" tppabs="http://eic.sourceforge.net/documentation/node46.html#sec:ScopeRules"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). Note, tag names exist in a different name space
+from other variables.  In ISO C, identifiers are grouped into at
+least four name spaces: 1) variables names, 2) structure, union and
+enumeration tag names, 3) labels for goto statements and 4)
+structures and unions have their own area for member names. See
+&#167;&nbsp;<A HREF="node47.html#sec:NameSpace" tppabs="http://eic.sourceforge.net/documentation/node47.html#sec:NameSpace">3.6</A>, pg:&nbsp;<A HREF="node47.html#sec:NameSpace" tppabs="http://eic.sourceforge.net/documentation/node47.html#sec:NameSpace"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> for further information.
+
+<P>
+<BLOCKQUOTE>
+<!-- MATH
+ $\overbrace{\tt struct}^{st-un}\ \overbrace{\tt stag}^{id}\
+\{\overbrace{{\bf\tt int\ x;}}^{s-decl-list}\}\
+\overbrace{{\bf\tt s1,s2}}^{variables};$
+ -->
+30#30
+</BLOCKQUOTE>
+
+<P>
+The above definition declares a structure template, which contains
+just one member of type integer named <TT>x</TT>. Members can be any
+object type, including other structures or unions, but they can't be
+functions.  A given member name may appear only once in any given
+structure or union. The above declaration also defines two variables
+<TT>s1</TT> and <TT>s2</TT> and the type specifier <TT>struct stag</TT>.
+
+<P>
+The type specifier <TT>struct stag</TT> can now be used to declare
+further variables:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+struct stag a, b, *c;
+</PRE><BLOCKQUOTE></BLOCKQUOTE> where <TT>a</TT> and <TT>b</TT> are structure variables; and <TT>c</TT> is a
+pointer to a structure of type <TT>struct stag</TT>.
+
+<P>
+If the production <I>st-un id</I> is used without the preceding
+{ <I>st-decl-list</I> }:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+struct node;
+</PRE><BLOCKQUOTE></BLOCKQUOTE> an incomplete type is specified. A structure or union may not contain
+a member of incomplete type; that is an object of unknown size, but
+they can contain pointers to incomplete types; one advantage of this
+is in forward referencing - when for example, creating linked lists:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+struct node {
+    int a;
+    struct node * next;
+};
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+A structure or a union without a tag will form a unique type that
+can only be used in context of its declaration (however, see also the
+discussion below concerning structure and union compatibility):
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+struct {
+    struct node *list;
+    int count;
+} head;
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Although <TT>typedef</TT> names will be discussed in detail in
+&#167;&nbsp;<A HREF="node78.html#sec:TypedefName" tppabs="http://eic.sourceforge.net/documentation/node78.html#sec:TypedefName">3.12.10</A>, pg:&nbsp;<A HREF="node78.html#sec:TypedefName" tppabs="http://eic.sourceforge.net/documentation/node78.html#sec:TypedefName"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> they are of interest here because they 
+provide a handy way to form structure or union type specifiers:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+typedef struct node {
+    int a;
+    struct node * next;
+} node;
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The <I>typedef-name</I> <TT>node</TT> may appear anywhere the type specifier
+<TT>struct node</TT> can.  Note, the first occurrence of the identifier
+node is entered into the tag-name space while the third is entered
+into the common variable name space. As these identifies exist in
+different name spaces they cause no conflicts (because context can be
+used to disambiguate their proper usage):
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+        struct node a;
+        node b;
+</PRE><BLOCKQUOTE></BLOCKQUOTE> The above variables <TT>a</TT> and <TT>b</TT> are of the same type.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1423"
+  HREF="node71.html" tppabs="http://eic.sourceforge.net/documentation/node71.html">Structure and Union compatibility</A>
+<LI><A NAME="tex2html1424"
+  HREF="node72.html" tppabs="http://eic.sourceforge.net/documentation/node72.html">Structure and Union assignment</A>
+<LI><A NAME="tex2html1425"
+  HREF="node73.html" tppabs="http://eic.sourceforge.net/documentation/node73.html">Initialization of Structures</A>
+<LI><A NAME="tex2html1426"
+  HREF="node74.html" tppabs="http://eic.sourceforge.net/documentation/node74.html">Initialization of Unions</A>
+<LI><A NAME="tex2html1427"
+  HREF="node75.html" tppabs="http://eic.sourceforge.net/documentation/node75.html">Structure and Union member access</A>
+<LI><A NAME="tex2html1428"
+  HREF="node76.html" tppabs="http://eic.sourceforge.net/documentation/node76.html">Structures and Unions as parameters</A>
+<LI><A NAME="tex2html1429"
+  HREF="node77.html" tppabs="http://eic.sourceforge.net/documentation/node77.html">Structure and Union layout</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1421"
+  HREF="node71.html" tppabs="http://eic.sourceforge.net/documentation/node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html1415"
+  HREF="node57.html" tppabs="http://eic.sourceforge.net/documentation/node57.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html1409"
+  HREF="node69.html" tppabs="http://eic.sourceforge.net/documentation/node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html1417"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html1419"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1422"
+  HREF="node71.html" tppabs="http://eic.sourceforge.net/documentation/node71.html">Structure and Union compatibility</A>
+<B> Up:</B> <A NAME="tex2html1416"
+  HREF="node57.html" tppabs="http://eic.sourceforge.net/documentation/node57.html">Type specifiers</A>
+<B> Previous:</B> <A NAME="tex2html1410"
+  HREF="node69.html" tppabs="http://eic.sourceforge.net/documentation/node69.html">Array Bound Checking</A>
+ &nbsp <B>  <A NAME="tex2html1418"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1420"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,3504 @@
+# Microsoft Developer Studio Project File - Name="gameEngineSymbian" - Package Owner=<4>
+# Microsoft Developer Studio Generated Build File, Format Version 6.00
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (x86) Static Library" 0x0104
+
+CFG=gameEngineSymbian - Win32 Uni Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "gameEngineSymbian.mak".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "gameEngineSymbian.mak" CFG="gameEngineSymbian - Win32 Uni Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "gameEngineSymbian - Win32 Uni Debug" (based on "Win32 (x86) Static Library")
+!MESSAGE "gameEngineSymbian - Win32 Uni Release" (based on "Win32 (x86) Static Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""$/GameDevelopment/gameEngine", MQDAAAAA"
+# PROP Scc_LocalPath "."
+CPP=cl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "gameEngineSymbian - Win32 Uni Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir ".\Win32_U0"
+# PROP BASE Intermediate_Dir ".\Win32_U0"
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../output"
+# PROP Intermediate_Dir "../output/gameEngine"
+MTL=midl.exe
+# ADD CPP /nologo /MDd /W3 /Zi /Od /I "../SDL/SDL_mixer" /I "../SDL/SDL/include" /I "../SDL/SDL_image" /I "../kyra" /I "EiC/src" /I "\Symbian\6.1\Series60\EPOC32\INCLUDE" /I "\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC" /D "GAME_EDITOR_PROFESSIONAL" /D "_DEBUG" /D "__SYMBIAN32__" /D "__VC32__" /D "__WINS__" /D "__AVKON_ELAF__" /D "__EXE__" /D "_UNICODE" /D "_LIB" /D "NO_LONG_LONG" /D "NO_DIRENT" /D "NO_FCNTL" /D "NO_STAT" /D "NO_UNISTD" /D "NO_TERMIOS" /D "NO_PIPE" /D "NO_POSIX" /D "NO_LONGLONG" /D "NO_HISTORY" /FR /Fd"\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\gameEngineSymbian.PDB" /GF /c
+# ADD BASE RSC /l 0x809
+# ADD RSC /l 0x809 /d "_DEBUG"
+BSC32=bscmake.exe
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /machine:IX86
+# ADD LIB32 /nologo /out:"../output\gameEngine.lib" /subsystem:windows /machine:IX86 /nodefaultlib
+
+!ELSEIF  "$(CFG)" == "gameEngineSymbian - Win32 Uni Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir ".\Win32_Un"
+# PROP BASE Intermediate_Dir ".\Win32_Un"
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "../output"
+# PROP Intermediate_Dir "../output/gameEngine"
+MTL=midl.exe
+# ADD CPP /nologo /MD /W3 /O1 /Op /X /I "../SDL/SDL_mixer" /I "../SDL/SDL/include" /I "../SDL/SDL_image" /I "../kyra" /I "EiC/src" /I "\Symbian\6.1\Series60\EPOC32\INCLUDE" /I "\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC" /D "NDEBUG" /D "__SYMBIAN32__" /D "__VC32__" /D "__WINS__" /D "__AVKON_ELAF__" /D "__EXE__" /D "_DEBUG" /D "_UNICODE" /D "_LIB" /D "NO_LONG_LONG" /D "NO_DIRENT" /D "NO_FCNTL" /D "NO_STAT" /D "NO_UNISTD" /D "NO_TERMIOS" /D "NO_PIPE" /D "NO_POSIX" /D "NO_LONGLONG" /D "NO_HISTORY" /GF /c
+# ADD BASE RSC /l 0x809
+# ADD RSC /l 0x809 /d "NDEBUG"
+BSC32=bscmake.exe
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /machine:IX86
+# ADD LIB32 "\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\euser.lib" "\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\fbscli.lib" "\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\estlib.lib" "\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\ws32.lib" "\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\hal.lib" "\Symbian\6.1\Series60\EPOC32\RELEASE\WINS\UDEB\gdi.lib" /nologo /out:"../output\gameEngine.lib" /subsystem:windows /machine:IX86 /nodefaultlib
+
+!ENDIF 
+
+# Begin Target
+
+# Name "gameEngineSymbian - Win32 Uni Debug"
+# Name "gameEngineSymbian - Win32 Uni Release"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;hpj;bat;for;f90"
+# Begin Source File
+
+SOURCE=.\Action.cpp
+DEP_CPP_ACTIO=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\gameEditor\ActorProperty.h"\
+	"..\gameEditor\ActorText.h"\
+	"..\gameEditor\BaseAction.h"\
+	"..\gameEditor\ChangeAnimation.h"\
+	"..\gameEditor\ChangeAnimationDirection.h"\
+	"..\gameEditor\ChangeCursor.h"\
+	"..\gameEditor\ChangeParent.h"\
+	"..\gameEditor\ChangePath.h"\
+	"..\gameEditor\ConditionalAction.h"\
+	"..\gameEditor\CreateActor.h"\
+	"..\gameEditor\CreateTimer.h"\
+	"..\gameEditor\DestroyActor.h"\
+	"..\gameEditor\DestroyTimer.h"\
+	"..\gameEditor\DlgAnimationFinish.h"\
+	"..\gameEditor\DlgCollision.h"\
+	"..\gameEditor\DlgGeneralEvent.h"\
+	"..\gameEditor\DlgMouseButton.h"\
+	"..\gameEditor\DlgTimer.h"\
+	"..\gameEditor\EnableDisable.h"\
+	"..\gameEditor\EventControl.h"\
+	"..\gameEditor\EventKeyDown.h"\
+	"..\gameEditor\ExpressionEditor.h"\
+	"..\gameEditor\MoveTo.h"\
+	"..\gameEditor\PlaySong.h"\
+	"..\gameEditor\SetZDepth.h"\
+	"..\gameEditor\ToAnteriorPosition.h"\
+	"..\gameEditor\ToMousePosition.h"\
+	"..\gameEditor\Transparency.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Actor.cpp
+DEP_CPP_ACTOR=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\gameEditor\ActorEdit.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Region.h"\
+	".\RegionLoad.h"\
+	".\Script.h"\
+	".\Sequence.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Axis.cpp
+DEP_CPP_AXIS_=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\gameEditor\PathDialog.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\PathPoint.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Button.cpp
+DEP_CPP_BUTTO=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\EditBox.cpp
+DEP_CPP_EDITB=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\EditorDirectory.cpp
+DEP_CPP_EDITO=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Envelope.cpp
+DEP_CPP_ENVEL=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	".\Envelope.h"\
+	".\gedString.h"\
+	".\Path.h"\
+	".\system.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\GameControl.cpp
+DEP_CPP_GAMEC=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\gameEditor\ActorEdit.h"\
+	"..\gameEditor\MainPanel.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\PathPoint.h"\
+	".\Region.h"\
+	".\RegionLoad.h"\
+	".\Script.h"\
+	".\Sequence.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\GameMain.cpp
+DEP_CPP_GAMEM=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\PathPoint.h"\
+	".\Script.h"\
+	".\Sequence.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\gedString.cpp
+DEP_CPP_GEDST=\
+	".\gedString.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListBox.cpp
+DEP_CPP_LISTB=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListDirectory.cpp
+DEP_CPP_LISTD=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListPop.cpp
+DEP_CPP_LISTP=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\ListPopSelect.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListPopSelect.cpp
+DEP_CPP_LISTPO=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Actor.h"\
+	".\Button.h"\
+	".\gedString.h"\
+	".\ListPop.h"\
+	".\ListPopSelect.h"\
+	".\maksKyra.h"\
+	".\Panel.h"\
+	".\system.h"\
+	".\Text.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\loadGifMod.cpp
+DEP_CPP_LOADG=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	".\system.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\maksKyra.cpp
+DEP_CPP_MAKSK=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\EiC\src\datastruct.h"\
+	".\EiC\src\eic.h"\
+	".\EiC\src\eicval.h"\
+	".\EiC\src\global.h"\
+	".\EiC\src\modules.h"\
+	".\EiC\src\preproc.h"\
+	".\EiC\src\stab.h"\
+	".\EiC\src\symbol.h"\
+	".\EiC\src\typemod.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\MuteEx.cpp
+DEP_CPP_MUTEE=\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	".\MuteEx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Panel.cpp
+DEP_CPP_PANEL=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\PanelInfo.cpp
+DEP_CPP_PANELI=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\PanelQuestion.cpp
+DEP_CPP_PANELQ=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Path.cpp
+DEP_CPP_PATH_=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\PathPoint.cpp
+DEP_CPP_PATHP=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\PathPoint.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Region.cpp
+DEP_CPP_REGIO=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Region.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\RegionLoad.cpp
+DEP_CPP_REGION=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Region.h"\
+	".\RegionLoad.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Script.cpp
+DEP_CPP_SCRIP=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\EiC\src\datastruct.h"\
+	".\EiC\src\eic.h"\
+	".\EiC\src\eicval.h"\
+	".\EiC\src\global.h"\
+	".\EiC\src\modules.h"\
+	".\EiC\src\preproc.h"\
+	".\EiC\src\stab.h"\
+	".\EiC\src\symbol.h"\
+	".\EiC\src\typemod.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sequence.cpp
+DEP_CPP_SEQUE=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Sequence.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Slide.cpp
+DEP_CPP_SLIDE=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Actor.h"\
+	".\gedString.h"\
+	".\maksKyra.h"\
+	".\Panel.h"\
+	".\Slide.h"\
+	".\system.h"\
+	".\Text.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SlowCanvas.cpp
+DEP_CPP_SLOWC=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\system.c
+DEP_CPP_SYSTE=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\system.h"\
+	".\system_linux.c"\
+	".\system_pocketpc.c"\
+	".\system_symbian.c"\
+	".\system_windows.c"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Text.cpp
+DEP_CPP_TEXT_=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Tile.cpp
+DEP_CPP_TILE_=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\WaitCursor.cpp
+DEP_CPP_WAITC=\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\_ansi.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\sys\unistd.h"\
+	"..\..\Symbian\6.1\Series60\EPOC32\INCLUDE\LIBC\unistd.h"\
+	"..\kyra\engine\action.h"\
+	"..\kyra\engine\box.h"\
+	"..\kyra\engine\boxresource.h"\
+	"..\kyra\engine\canvas.h"\
+	"..\kyra\engine\canvasresource.h"\
+	"..\kyra\engine\color.h"\
+	"..\kyra\engine\dataresource.h"\
+	"..\kyra\engine\dirtyrectangle.h"\
+	"..\kyra\engine\encoder.h"\
+	"..\kyra\engine\engine.h"\
+	"..\kyra\engine\fontresource.h"\
+	"..\kyra\engine\image.h"\
+	"..\kyra\engine\imagetree.h"\
+	"..\kyra\engine\imnode.h"\
+	"..\kyra\engine\krmath.h"\
+	"..\kyra\engine\kyra.h"\
+	"..\kyra\engine\kyrabuild.h"\
+	"..\kyra\engine\kyraresource.h"\
+	"..\kyra\engine\namefield.h"\
+	"..\kyra\engine\ogltexture.h"\
+	"..\kyra\engine\painter.h"\
+	"..\kyra\engine\pixelblock.h"\
+	"..\kyra\engine\rle.h"\
+	"..\kyra\engine\sdlutil.h"\
+	"..\kyra\engine\sprite.h"\
+	"..\kyra\engine\spriteresource.h"\
+	"..\kyra\engine\textbox.h"\
+	"..\kyra\engine\tile.h"\
+	"..\kyra\engine\tileresource.h"\
+	"..\kyra\engine\vault.h"\
+	"..\kyra\gui\button.h"\
+	"..\kyra\gui\console.h"\
+	"..\kyra\gui\eventmanager.h"\
+	"..\kyra\gui\listbox.h"\
+	"..\kyra\gui\textwidget.h"\
+	"..\kyra\gui\widget.h"\
+	"..\kyra\guiExtended\progress.h"\
+	"..\kyra\tinyxml\tinyxml.h"\
+	"..\kyra\util\glbitstream.h"\
+	"..\kyra\util\glcirclelist.h"\
+	"..\kyra\util\gldebug.h"\
+	"..\kyra\util\gldynarray.h"\
+	"..\kyra\util\glfixed.h"\
+	"..\kyra\util\glgraph.h"\
+	"..\kyra\util\glinsidelist.h"\
+	"..\kyra\util\glisomath.h"\
+	"..\kyra\util\gllist.h"\
+	"..\kyra\util\glmap.h"\
+	"..\kyra\util\glmemorypool.h"\
+	"..\kyra\util\glperformance.h"\
+	"..\kyra\util\glprime.h"\
+	"..\kyra\util\glrandom.h"\
+	"..\kyra\util\glstring.h"\
+	"..\kyra\util\gltypes.h"\
+	"..\kyra\util\glutil.h"\
+	"..\SDL\SDL\include\begin_code.h"\
+	"..\SDL\SDL\include\close_code.h"\
+	"..\SDL\SDL\include\SDL.h"\
+	"..\SDL\SDL\include\SDL_active.h"\
+	"..\SDL\SDL\include\SDL_audio.h"\
+	"..\SDL\SDL\include\SDL_byteorder.h"\
+	"..\SDL\SDL\include\SDL_cdrom.h"\
+	"..\SDL\SDL\include\SDL_endian.h"\
+	"..\SDL\SDL\include\SDL_error.h"\
+	"..\SDL\SDL\include\SDL_events.h"\
+	"..\SDL\SDL\include\SDL_getenv.h"\
+	"..\SDL\SDL\include\SDL_joystick.h"\
+	"..\SDL\SDL\include\SDL_keyboard.h"\
+	"..\SDL\SDL\include\SDL_keysym.h"\
+	"..\SDL\SDL\include\SDL_main.h"\
+	"..\SDL\SDL\include\SDL_mouse.h"\
+	"..\SDL\SDL\include\SDL_mutex.h"\
+	"..\SDL\SDL\include\SDL_opengl.h"\
+	"..\SDL\SDL\include\SDL_quit.h"\
+	"..\SDL\SDL\include\SDL_rwops.h"\
+	"..\SDL\SDL\include\SDL_timer.h"\
+	"..\SDL\SDL\include\SDL_types.h"\
+	"..\SDL\SDL\include\SDL_version.h"\
+	"..\SDL\SDL\include\SDL_video.h"\
+	"..\SDL\SDL_image\SDL_image.h"\
+	"..\SDL\SDL_mixer\SDL_mixer.h"\
+	".\Action.h"\
+	".\Actor.h"\
+	".\Axis.h"\
+	".\Button.h"\
+	".\EditBox.h"\
+	".\EditorDirectory.h"\
+	".\Envelope.h"\
+	".\GameControl.h"\
+	".\gedString.h"\
+	".\gui.h"\
+	".\ListBox.h"\
+	".\ListDirectory.h"\
+	".\ListPop.h"\
+	".\maksKyra.h"\
+	".\MuteEx.h"\
+	".\Panel.h"\
+	".\PanelInfo.h"\
+	".\PanelQuestion.h"\
+	".\Path.h"\
+	".\Script.h"\
+	".\Slide.h"\
+	".\SlowCanvas.h"\
+	".\system.h"\
+	".\Text.h"\
+	".\Tile.h"\
+	".\WaitCursor.h"\
+	
+# End Source File
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe"
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl;fi;fd"
+# Begin Source File
+
+SOURCE=.\Action.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Actor.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Axis.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Button.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\EditBox.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\EditorDirectory.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Envelope.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\GameControl.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\gedString.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\gui.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListBox.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListDirectory.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListPop.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ListPopSelect.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\maksKyra.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\MuteEx.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Panel.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PanelInfo.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PanelQuestion.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Path.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PathPoint.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Region.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\RegionLoad.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Script.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sequence.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Slide.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SlowCanvas.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\system.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Text.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Tile.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\WaitCursor.h
+# End Source File
+# End Group
+# End Target
+# End Project

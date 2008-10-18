@@ -1,0 +1,3 @@
+You need to get a copy of the wxWidgets library here:
+
+http://www.wxwidgets.org/

@@ -1,0 +1,76 @@
+ROOT=../..
+
+include $(ROOT)/Config.mk
+include $(ROOT)/makearch/$(ARCH)
+
+LOC_LIB = $(ROOT)/lib
+LOC_PLUG=$(LOC_LIB)/plugin
+
+INCS =  -I$(LOC_LIB)/gvc -I$(LOC_LIB)/common -I$(ROOT) -I$(LOC_LIB)/cdt \
+        -I$(LOC_LIB)/pathplan -I$(LOC_LIB)/gd -I$(LOC_LIB)/graph
+
+ALLINCS = -I$(LOC_LIB)/dotgen -I$(LOC_LIB)/neatogen -I$(LOC_LIB)/twopigen \
+          -I$(LOC_LIB)/circogen -I$(LOC_LIB)/fdpgen $(INCS)
+
+DEFINES = -DHAVE_CONFIG_H -DBUILTINS
+
+XLIBS = -L$(LOC_LIB)/pathplan -lpathplan \
+        -L$(LOC_LIB)/graph -lgraph \
+        -L$(LOC_LIB)/cdt -lcdt \
+        -L$(LOC_LIB)/gd -lgd \
+        $(EXTLIB_LIB) $(EXPAT_LIB) $(LTDL_LIB) -lm
+
+PLUGS = -L$(LOC_PLUG) -lgvplugin_dot_layout -lgvplugin_neato_layout -lgvplugin_usershape_gd
+
+LIBS = -L$(LOC_LIB)/gvc -lgvc_dot_builtins $(PLUGS) \
+       -L$(LOC_LIB)/common -lcommon \
+       -L$(LOC_LIB)/gvc -lgvc_dot_builtins $(PLUGS) \
+       -L$(LOC_LIB)/neatogen -lneatogen \
+       -L$(LOC_LIB)/dotgen -ldotgen \
+       -L$(LOC_LIB)/circogen -lcircogen \
+       -L$(LOC_LIB)/fdpgen -lfdpgen \
+       -L$(LOC_LIB)/twopigen -ltwopigen \
+       -L$(LOC_LIB)/pack -lpack \
+       -L$(LOC_LIB)/common -lcommon \
+       $(XLIBS)
+
+DOTLIBS = $(LOC_LIB)/common/libcommon.a \
+	  $(LOC_LIB)/dotgen/libdotgen.a \
+          $(LOC_LIB)/neatogen/libneatogen.a \
+	  $(LOC_LIB)/fdpgen/libfdpgen.a \
+          $(LOC_LIB)/plugin/libgvplugin_dot_layout.a \
+          $(LOC_LIB)/plugin/libgvplugin_neato_layout.a \
+          $(LOC_LIB)/plugin/libgvplugin_usershape_gd.a \
+	  $(LOC_LIB)/gvc/libgvc_dot_builtins.a \
+          $(LOC_LIB)/twopigen/libtwopigen.a \
+	  $(LOC_LIB)/circogen/libcircogen.a
+
+OBJS = dot.o
+
+all : dot
+
+dot : $(OBJS) $(DOTLIBS)
+	$(CSLD) $(LDFLAGS) $(OBJS) $(LIBS) -o /tmp/dot
+	mv /tmp/dot dot
+
+dot.o : dot.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(INCS) dot.c
+
+install: all
+	$(MKPATH) $(BINDIR)
+	$(INSTALL) dot $(BINDIR)
+	$(RM) $(BINDIR)/neato; $(LN) -s $(BINDIR)/dot $(BINDIR)/neato
+	$(RM) $(BINDIR)/fdp; $(LN) -s $(BINDIR)/dot $(BINDIR)/fdp
+	$(RM) $(BINDIR)/circo; $(LN) -s $(BINDIR)/dot $(BINDIR)/circo
+	$(RM) $(BINDIR)/twopi; $(LN) -s $(BINDIR)/dot $(BINDIR)/twopi
+	$(MKPATH) $(MANDIR)
+	$(INSTALL) dot.1 $(MANDIR)
+	$(RM) $(MANDIR)/neato.1 $(MANDIR)/fdp.1 $(MANDIR)/circo.1 $(MANDIR)/twopi.1
+	$(LN) -s $(MANDIR)/dot.1 $(MANDIR)/neato.1
+	$(LN) -s $(MANDIR)/dot.1 $(MANDIR)/fdp.1
+	$(LN) -s $(MANDIR)/dot.1 $(MANDIR)/circo.1
+	$(LN) -s $(MANDIR)/dot.1 $(MANDIR)/twopi.1
+
+distclean clean:
+	$(RM) *.o core $(all)
+

@@ -1,0 +1,172 @@
+# Project: gameEngine
+# Makefile created by Dev-C++ 4.9.5.0
+
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../output/Action.o ../output/ActivationEventsCanvas.o ../output/Actor.o ../output/ActorEdit.o ../output/ActorTip.o ../output/Axis.o ../output/bit_byte.o ../output/bit_bytx.o ../output/Button.o ../output/compression.o ../output/EditBox.o ../output/EditorDirectory.o ../output/Envelope.o ../output/GameControl.o ../output/GameMain.o ../output/gedString.o ../output/GenericScript.o ../output/ListBox.o ../output/ListDirectory.o ../output/ListPop.o ../output/ListPopSelect.o ../output/loadGifMod.o ../output/maksKyra.o ../output/minilzo.o ../output/MuteEx.o ../output/Panel.o ../output/PanelInfo.o ../output/PanelQuestion.o ../output/Path.o ../output/PathPoint.o ../output/RegionLoad.o ../output/Script.o ../output/Sequence.o ../output/Slide.o ../output/SlowCanvas.o ../output/system.o ../output/Text.o ../output/Tile.o ../output/WaitCursor.o ../output/alloc.o ../output/n2b_99.o ../output/n2b_d.o ../output/n2b_ds.o ../output/n2d_99.o ../output/n2d_d.o ../output/n2d_ds.o ../output/ucl_init.o ../output/ucl_ptr.o ../output/ucl_str.o ../output/ucl_util.o $(RES)
+LIBS =  -L"E:\Dev-Cpp\lib" 
+INCS =  -I"E:\Dev-Cpp\include"  -I"../SDL/SDL_mixer"  -I"../SDL/SDL/include"  -I"../SDL/SDL_image"  -I"../kyra"  -I"Eic/src"  -I"." 
+BIN  = ../output/gameEngine/gameEngine.exe
+CFLAGS = $(INCS) -D__GNUWIN32__ -DGAME_EDITOR_PROFESSIONAL -DWIN32 -DNDEBUG -D_MBCS -D_LIB -DNO_LONG_LONG -DNO_DIRENT -DNO_FCNTL -DNO_STAT -DNO_UNISTD -DNO_TERMIOS -D__WIN32__ -DNO_PIPE -DNO_POSIX -DNO_LONGLONG -DNO_HISTORY -g3 -mwindows
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../output/gameEngine/gameEngine.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(OBJ) -o "..\output\gameEngine\gameEngine.exe" $(LIBS) $(CFLAGS)
+
+../output/Action.o: Action.cpp
+	$(CC) -c Action.cpp -o ../output/Action.o $(CFLAGS)
+
+../output/ActivationEventsCanvas.o: ActivationEventsCanvas.cpp
+	$(CC) -c ActivationEventsCanvas.cpp -o ../output/ActivationEventsCanvas.o $(CFLAGS)
+
+../output/Actor.o: Actor.cpp
+	$(CC) -c Actor.cpp -o ../output/Actor.o $(CFLAGS)
+
+../output/ActorEdit.o: ActorEdit.cpp
+	$(CC) -c ActorEdit.cpp -o ../output/ActorEdit.o $(CFLAGS)
+
+../output/ActorTip.o: ActorTip.cpp
+	$(CC) -c ActorTip.cpp -o ../output/ActorTip.o $(CFLAGS)
+
+../output/Axis.o: Axis.cpp
+	$(CC) -c Axis.cpp -o ../output/Axis.o $(CFLAGS)
+
+../output/bit_byte.o: bit_byte.cpp
+	$(CC) -c bit_byte.cpp -o ../output/bit_byte.o $(CFLAGS)
+
+../output/bit_bytx.o: bit_bytx.cpp
+	$(CC) -c bit_bytx.cpp -o ../output/bit_bytx.o $(CFLAGS)
+
+../output/Button.o: Button.cpp
+	$(CC) -c Button.cpp -o ../output/Button.o $(CFLAGS)
+
+../output/compression.o: compression.cpp
+	$(CC) -c compression.cpp -o ../output/compression.o $(CFLAGS)
+
+../output/EditBox.o: EditBox.cpp
+	$(CC) -c EditBox.cpp -o ../output/EditBox.o $(CFLAGS)
+
+../output/EditorDirectory.o: EditorDirectory.cpp
+	$(CC) -c EditorDirectory.cpp -o ../output/EditorDirectory.o $(CFLAGS)
+
+../output/Envelope.o: Envelope.cpp
+	$(CC) -c Envelope.cpp -o ../output/Envelope.o $(CFLAGS)
+
+../output/GameControl.o: GameControl.cpp
+	$(CC) -c GameControl.cpp -o ../output/GameControl.o $(CFLAGS)
+
+../output/GameMain.o: GameMain.cpp
+	$(CC) -c GameMain.cpp -o ../output/GameMain.o $(CFLAGS)
+
+../output/gedString.o: gedString.cpp
+	$(CC) -c gedString.cpp -o ../output/gedString.o $(CFLAGS)
+
+../output/GenericScript.o: GenericScript.cpp
+	$(CC) -c GenericScript.cpp -o ../output/GenericScript.o $(CFLAGS)
+
+../output/ListBox.o: ListBox.cpp
+	$(CC) -c ListBox.cpp -o ../output/ListBox.o $(CFLAGS)
+
+../output/ListDirectory.o: ListDirectory.cpp
+	$(CC) -c ListDirectory.cpp -o ../output/ListDirectory.o $(CFLAGS)
+
+../output/ListPop.o: ListPop.cpp
+	$(CC) -c ListPop.cpp -o ../output/ListPop.o $(CFLAGS)
+
+../output/ListPopSelect.o: ListPopSelect.cpp
+	$(CC) -c ListPopSelect.cpp -o ../output/ListPopSelect.o $(CFLAGS)
+
+../output/loadGifMod.o: loadGifMod.cpp
+	$(CC) -c loadGifMod.cpp -o ../output/loadGifMod.o $(CFLAGS)
+
+../output/maksKyra.o: maksKyra.cpp
+	$(CC) -c maksKyra.cpp -o ../output/maksKyra.o $(CFLAGS)
+
+../output/minilzo.o: minilzo.c
+	$(CC) -c minilzo.c -o ../output/minilzo.o $(CFLAGS)
+
+../output/MuteEx.o: MuteEx.cpp
+	$(CC) -c MuteEx.cpp -o ../output/MuteEx.o $(CFLAGS)
+
+../output/Panel.o: Panel.cpp
+	$(CC) -c Panel.cpp -o ../output/Panel.o $(CFLAGS)
+
+../output/PanelInfo.o: PanelInfo.cpp
+	$(CC) -c PanelInfo.cpp -o ../output/PanelInfo.o $(CFLAGS)
+
+../output/PanelQuestion.o: PanelQuestion.cpp
+	$(CC) -c PanelQuestion.cpp -o ../output/PanelQuestion.o $(CFLAGS)
+
+../output/Path.o: Path.cpp
+	$(CC) -c Path.cpp -o ../output/Path.o $(CFLAGS)
+
+../output/PathPoint.o: PathPoint.cpp
+	$(CC) -c PathPoint.cpp -o ../output/PathPoint.o $(CFLAGS)
+
+../output/RegionLoad.o: RegionLoad.cpp
+	$(CC) -c RegionLoad.cpp -o ../output/RegionLoad.o $(CFLAGS)
+
+../output/Script.o: Script.cpp
+	$(CC) -c Script.cpp -o ../output/Script.o $(CFLAGS)
+
+../output/Sequence.o: Sequence.cpp
+	$(CC) -c Sequence.cpp -o ../output/Sequence.o $(CFLAGS)
+
+../output/Slide.o: Slide.cpp
+	$(CC) -c Slide.cpp -o ../output/Slide.o $(CFLAGS)
+
+../output/SlowCanvas.o: SlowCanvas.cpp
+	$(CC) -c SlowCanvas.cpp -o ../output/SlowCanvas.o $(CFLAGS)
+
+../output/system.o: system.c
+	$(CC) -c system.c -o ../output/system.o $(CFLAGS)
+
+../output/Text.o: Text.cpp
+	$(CC) -c Text.cpp -o ../output/Text.o $(CFLAGS)
+
+../output/Tile.o: Tile.cpp
+	$(CC) -c Tile.cpp -o ../output/Tile.o $(CFLAGS)
+
+../output/WaitCursor.o: WaitCursor.cpp
+	$(CC) -c WaitCursor.cpp -o ../output/WaitCursor.o $(CFLAGS)
+
+../output/alloc.o: Compact/alloc.c
+	$(CC) -c Compact/alloc.c -o ../output/alloc.o $(CFLAGS)
+
+../output/n2b_99.o: Compact/n2b_99.c
+	$(CC) -c Compact/n2b_99.c -o ../output/n2b_99.o $(CFLAGS)
+
+../output/n2b_d.o: Compact/n2b_d.c
+	$(CC) -c Compact/n2b_d.c -o ../output/n2b_d.o $(CFLAGS)
+
+../output/n2b_ds.o: Compact/n2b_ds.c
+	$(CC) -c Compact/n2b_ds.c -o ../output/n2b_ds.o $(CFLAGS)
+
+../output/n2d_99.o: Compact/n2d_99.c
+	$(CC) -c Compact/n2d_99.c -o ../output/n2d_99.o $(CFLAGS)
+
+../output/n2d_d.o: Compact/n2d_d.c
+	$(CC) -c Compact/n2d_d.c -o ../output/n2d_d.o $(CFLAGS)
+
+../output/n2d_ds.o: Compact/n2d_ds.c
+	$(CC) -c Compact/n2d_ds.c -o ../output/n2d_ds.o $(CFLAGS)
+
+../output/ucl_init.o: Compact/ucl_init.c
+	$(CC) -c Compact/ucl_init.c -o ../output/ucl_init.o $(CFLAGS)
+
+../output/ucl_ptr.o: Compact/ucl_ptr.c
+	$(CC) -c Compact/ucl_ptr.c -o ../output/ucl_ptr.o $(CFLAGS)
+
+../output/ucl_str.o: Compact/ucl_str.c
+	$(CC) -c Compact/ucl_str.c -o ../output/ucl_str.o $(CFLAGS)
+
+../output/ucl_util.o: Compact/ucl_util.c
+	$(CC) -c Compact/ucl_util.c -o ../output/ucl_util.o $(CFLAGS)

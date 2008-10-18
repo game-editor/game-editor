@@ -1,0 +1,294 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ctype.h</TITLE>
+<META NAME="description" CONTENT="ctype.h">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node125.html" tppabs="http://eic.sourceforge.net/documentation/node125.html">
+<LINK REL="previous" HREF="node123.html" tppabs="http://eic.sourceforge.net/documentation/node123.html">
+<LINK REL="up" HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<LINK REL="next" HREF="node125.html" tppabs="http://eic.sourceforge.net/documentation/node125.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2262"
+  HREF="node125.html" tppabs="http://eic.sourceforge.net/documentation/node125.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2256"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2250"
+  HREF="node123.html" tppabs="http://eic.sourceforge.net/documentation/node123.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2258"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2260"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2263"
+  HREF="node125.html" tppabs="http://eic.sourceforge.net/documentation/node125.html">errno.h</A>
+<B> Up:</B> <A NAME="tex2html2257"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">Standard C libraries</A>
+<B> Previous:</B> <A NAME="tex2html2251"
+  HREF="node123.html" tppabs="http://eic.sourceforge.net/documentation/node123.html">assert.h</A>
+ &nbsp <B>  <A NAME="tex2html2259"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2261"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00612000000000000000"></A>
+<A NAME="15307"></A>
+<A NAME="sec:ctype"></A>
+<BR>
+ctype.h
+</H2>
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>isdigit
+<DD><A NAME="15311"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int isdigit(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns 1 if <B><TT>c</TT></B> is in the set <code>'0' - '9'</code>. 
+Otherwise it returns 0.
+
+<P>
+<DT>isupper
+<DD><A NAME="15318"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int isupper(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns 1 if <B><TT>c</TT></B> is in the set <code>'A' - 'Z'</code>.  Otherwise
+return it returns 0.
+
+<P>
+<DT>islower
+<DD><A NAME="15325"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int islower(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns  1 if <B><TT>c</TT></B> is in the set <code>'a' - 'z'</code>.  Otherwise
+returns 0.
+
+<P>
+<DT>isalpha
+<DD><A NAME="15332"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int isalpha(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns a 1 if <B><TT>c</TT></B> is in the set <code>'A' - 'Z'</code> or in <code>'a' - 'z'</code>. 
+Otherwise returns 0.
+
+<P>
+<DT>isprint
+<DD><A NAME="15339"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int isprint(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns 1 if <B><TT>c</TT></B> is a printable character.  Otherwise returns 0.
+
+<P>
+<DT>isalnum
+<DD><A NAME="15346"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int isalnum(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns 1 if <B><TT>c</TT></B> is in one of the sets <code>'a' - 'z'</code>, 
+<code>'A' - 'Z'</code>, or <code>'0' - '9'</code>.  Otherwise returns 0.
+
+<P>
+<DT>isspace
+<DD><A NAME="15353"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int isspace(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns 1 if <B><TT>c</TT></B> is in the set <code>' ', '\t', '\n', '\v', '\f', or '\r'</code>.  
+Otherwise returns  0.
+
+<P>
+<DT>toupper
+<DD><A NAME="15360"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int toupper(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+If <B><TT>c</TT></B> is a lower case alphabetic character, <B><TT>touppper</TT></B> returns its upper
+case equivalent, otherwise it returns <B><TT>c</TT></B>.
+
+<P>
+<DT>tolower
+<DD><A NAME="15369"></A>
+<B><TT>Synopsis</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;ctype.h&gt;
+int tolower(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+If <B><TT>c</TT></B> is an upper case alphabetic character, <B><TT>tolower</TT></B> returns its
+lower case equivalent, otherwise it returns <B><TT>c</TT></B>.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2262"
+  HREF="node125.html" tppabs="http://eic.sourceforge.net/documentation/node125.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2256"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2250"
+  HREF="node123.html" tppabs="http://eic.sourceforge.net/documentation/node123.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2258"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2260"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2263"
+  HREF="node125.html" tppabs="http://eic.sourceforge.net/documentation/node125.html">errno.h</A>
+<B> Up:</B> <A NAME="tex2html2257"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">Standard C libraries</A>
+<B> Previous:</B> <A NAME="tex2html2251"
+  HREF="node123.html" tppabs="http://eic.sourceforge.net/documentation/node123.html">assert.h</A>
+ &nbsp <B>  <A NAME="tex2html2259"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2261"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

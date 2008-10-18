@@ -1,0 +1,419 @@
+# $Id: graphviz.spec.in,v 1.68 2006/01/30 23:45:06 ellson Exp $ $Revision: 1.68 $
+# graphviz.spec.  Generated from graphviz.spec.in by configure.
+
+# Note: graphviz requires gd with gif support (and other fixes), hence use
+# internal one for now.
+
+# Define a default set incase none of the conditionals apply
+%define SHARP  0
+%define GUILE   0
+%define _IO     0
+%define JAVA    0
+%define LUA     0
+%define OCAML   0
+%define PERL    0
+%define PHP     0
+%define PYTHON  0
+%define RUBY    0
+%define TCL     1
+
+# Select packages according to dist (set in .rpmmacros on each build host)
+
+# These are all single line conditional blocks because older versions
+# of rpm can't handle multiline blocks/
+%{?rh7: %{expand: %%define PERL    1}}
+%{?rh7: %{expand: %%define TCL     1}}
+
+%{?rh8: %{expand: %%define PERL    1}}
+%{?rh8: %{expand: %%define TCL     1}}
+
+%{?rh9: %{expand: %%define PERL    1}}
+%{?rh9: %{expand: %%define TCL     1}}
+
+%{?el2: %{expand: %%define PERL    1}}
+%{?el2: %{expand: %%define TCL     1}}
+
+%{?el3: %{expand: %%define PERL    1}}
+%{?el3: %{expand: %%define TCL     1}}
+
+%{?el4: %{expand: %%define PERL    1}}
+%{?el4: %{expand: %%define PHP     1}}
+%{?el4: %{expand: %%define RUBY    1}}
+%{?el4: %{expand: %%define TCL     1}}
+
+%{?el5: %{expand: %%define PERL    1}}
+%{?el5: %{expand: %%define PHP     1}}
+%{?el5: %{expand: %%define RUBY    1}}
+%{?el5: %{expand: %%define TCL     1}}
+
+%{?fc1: %{expand: %%define PERL    1}}
+%{?fc1: %{expand: %%define TCL     1}}
+
+%{?fc2: %{expand: %%define PERL    1}}
+%{?fc2: %{expand: %%define TCL     1}}
+
+%{?fc3: %{expand: %%define PERL    1}}
+%{?fc3: %{expand: %%define TCL     1}}
+
+%{?fc4: %{expand: %%define GUILE   1}}
+%{?fc4: %{expand: %%define PERL    1}}
+%{?fc4: %{expand: %%define PYTHON  1}}
+%{?fc4: %{expand: %%define RUBY    1}}
+%{?fc4: %{expand: %%define TCL     1}}
+
+%{?fc5: %{expand: %%define SHARP   1}}
+%{?fc5: %{expand: %%define GUILE   1}}
+%{?fc5: %{expand: %%define JAVA    1}}
+%{?fc5: %{expand: %%define LUA     1}}
+%{?fc5: %{expand: %%define OCAML   1}}
+%{?fc5: %{expand: %%define PERL    1}}
+%{?fc5: %{expand: %%define PHP     1}}
+%{?fc5: %{expand: %%define PYTHON  1}}
+%{?fc5: %{expand: %%define RUBY    1}}
+%{?fc5: %{expand: %%define TCL     1}}
+
+Summary:	Graph Visualization Tools
+Name:		graphviz
+Version:	2.8
+Release:	1
+
+Group:		Applications/Multimedia
+License:	CPL
+URL:		http://www.graphviz.org/
+Source:		http://www.graphviz.org/pub/graphviz/ARCHIVE/graphviz-2.8.tar.gz
+%{?fc5:Requires: urw-fonts}
+%{?fc4:Requires: urw-fonts}
+%{?fc3:Requires: urw-fonts}
+%{?fc2:Requires: urw-fonts}
+%{?fc1:Requires: urw-fonts}
+%{?el5:Requires: urw-fonts}
+%{?el4:Requires: urw-fonts}
+%{?el3:Requires: urw-fonts}
+
+# SuSE uses a different mechanism to generate BuildRequires
+# norootforbuild
+# neededforbuild  expat freetype2 freetype2-devel gcc libjpeg libpng-devel-packages tcl tcl-devel tk tk-devel x-devel-packages
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
+BuildRequires:	zlib-devel libpng-devel libjpeg-devel expat-devel freetype-devel >= 2
+BuildRequires:	/bin/ksh bison m4 flex tk tcl >= 8.3 swig
+BuildRequires:	/usr/include/tcl.h /usr/include/tk.h
+%{?fc5:BuildRequires: fontconfig-devel libtool-ltdl-devel}
+%{?fc5:BuildRequires: libXaw-devel libSM-devel libICE-devel libXpm-devel libXt-devel libXmu-devel libXext-devel libX11-devel}
+%{?fc4:BuildRequires: fontconfig-devel xorg-x11-devel libtool-ltdl-devel} 
+%{?fc3:BuildRequires: fontconfig-devel xorg-x11-devel} 
+%{?fc2:BuildRequires: fontconfig-devel XFree86-devel}
+%{?fc1:BuildRequires: fontconfig-devel XFree86-devel}
+%{?el5:BuildRequires: fontconfig-devel xorg-x11-devel libtool-ltdl-devel}
+%{?el4:BuildRequires: fontconfig-devel xorg-x11-devel}
+%{?el3:BuildRequires: fontconfig-devel XFree86-devel}
+%{?el2:BuildRequires: XFree86-devel}
+%{?rh9:BuildRequires: XFree86-devel}
+%{?rh8:BuildRequires: XFree86-devel}
+%{?rh7:BuildRequires: XFree86-devel}
+%{?rh6:BuildRequires: XFree86-devel}
+
+%description
+A collection of tools for the manipulation and layout
+of graphs (as in nodes and edges, not as in barcharts).
+
+%files
+%defattr(-,root,root,-)
+%doc AUTHORS COPYING ChangeLog NEWS README
+%{_bindir}/*
+%dir %{_libdir}/%{name}
+%{_libdir}/%{name}/*.so.*
+%{_mandir}/man1/*.1*
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/lefty
+%exclude %{_libdir}/%{name}/*/*
+
+#------------------------------------------------------------------
+%if %{SHARP}
+%package sharp
+Group:	Applications/Multimedia
+Summary:	C# extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description sharp
+C# extensions for %{name}.
+
+%files sharp
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/sharp
+%{_libdir}/%{name}/sharp/*
+%exclude %{_libdir}/%{name}/sharp/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{GUILE}
+%package guile
+Group:		Applications/Multimedia
+Summary:	Guile extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description guile
+Guile extensions for %{name}.
+
+%files guile
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/guile
+%{_libdir}/%{name}/guile/*
+%exclude %{_libdir}/%{name}/guile/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{_IO}
+%package io
+Group:		Applications/Multimedia
+Summary:	Io extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description io
+Java extensions for %{name}.
+
+%files io
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/io
+%{_libdir}/%{name}/io/*
+%exclude %{_libdir}/%{name}/io/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{JAVA}
+%package java
+Group:		Applications/Multimedia
+Summary:	Java extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description java
+Java extensions for %{name}.
+
+%files java
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/java
+%{_libdir}/%{name}/java/*
+%exclude %{_libdir}/%{name}/java/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{LUA}
+%package lua
+Group:		Applications/Multimedia
+Summary:	Lua extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description lua
+Java extensions for %{name}.
+
+%files lua
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/lua
+%{_libdir}/%{name}/lua/*
+%exclude %{_libdir}/%{name}/lua/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{OCAML}
+%package ocaml
+Group:		Applications/Multimedia
+Summary:	Ocaml extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description ocaml
+Ocaml extensions for %{name}.
+
+%files ocaml
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/ocaml
+%{_libdir}/%{name}/ocaml/*
+%exclude %{_libdir}/%{name}/ocaml/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{PERL}
+%package perl
+Group:		Applications/Multimedia
+Summary:	Perl extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description perl
+Perl extensions for %{name}.
+
+%files perl
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/perl
+%{_libdir}/%{name}/perl/*
+%exclude %{_libdir}/%{name}/perl/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{PHP}
+%package php
+Group:		Applications/Multimedia
+Summary:	PHP extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description php
+PHP extensions for %{name}.
+
+%files php
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/php
+%{_libdir}/%{name}/php/*
+%exclude %{_libdir}/%{name}/php/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{PYTHON}
+%package python
+Group:		Applications/Multimedia
+Summary:	Python extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description python
+Python extensions for %{name}.
+
+%files python
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/python
+%{_libdir}/%{name}/python/*
+%exclude %{_libdir}/%{name}/python/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{RUBY}
+%package ruby
+Group:		Applications/Multimedia
+Summary:	Ruby extension for %{name}
+Requires:	%{name} = %{version}-%{release}
+
+%description ruby
+Ruby extensions for %{name}.
+
+%files ruby
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/ruby
+%{_libdir}/%{name}/ruby/*
+%exclude %{_libdir}/%{name}/ruby/*.la
+%endif
+
+#------------------------------------------------------------------
+%if %{TCL}
+%package tcl
+Group:		Applications/Multimedia
+Summary:	Tcl extension & tools for %{name}
+Requires:	%{name} = %{version}-%{release} tcl >= 8.3 tk
+
+%description tcl
+Various tcl packages (extensions) for the %{name} tools.
+
+%files tcl
+%defattr(-,root,root,-)
+%dir %{_libdir}/%{name}/tcl
+%{_libdir}/%{name}/tcl/*
+%{_libdir}/%{name}/pkgIndex.tcl
+%{_datadir}/%{name}/demo
+%{_mandir}/mann/*.n*
+%exclude %{_libdir}/%{name}/tcl/*.la
+%endif
+
+#------------------------------------------------------------------
+%package devel
+Group:		Development/Libraries
+Summary:	Development package for %{name}
+Requires:	%{name} = %{version}-%{release} pkgconfig
+
+%description devel
+A collection of tools for the manipulation and layout
+of graphs (as in nodes and edges, not as in barcharts).
+This package contains development files for %{name}.
+
+%files devel
+%defattr(-,root,root,-)
+%{_includedir}/%{name}
+%{_libdir}/%{name}/*.la
+%{_libdir}/%{name}/*.so
+%{_libdir}/pkgconfig/*.pc
+%{_mandir}/man3/*.3*
+%exclude %{_libdir}/%{name}/*/*
+
+#------------------------------------------------------------------
+%package graphs
+Group:		Applications/Multimedia
+Summary:	Demo graphs for %{name}
+
+%description graphs
+Some demo graphs for %{name}.
+
+%files graphs
+%defattr(-,root,root,-)
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/graphs
+
+#------------------------------------------------------------------
+%package doc
+Group:		Documentation
+Summary:	PDF and HTML documents for %{name}
+
+%description doc
+Provides some additional PDF and HTML documentation for %{name}.
+
+%files doc
+%defattr(-,root,root,-)
+%doc __doc/*
+
+#------------------------------------------------------------------
+%prep
+%setup -q
+
+%build
+# XXX ix86 only used to have -ffast-math, let's use everywhere
+%{expand: %%define optflags %{optflags} -ffast-math}
+# %%configure is broken in RH7.3 rpmbuild
+# need unreleased changes to gd, so use --with-mylibgd for now.
+CFLAGS="$RPM_OPT_FLAGS" \
+./configure \
+      --prefix=%{_prefix} \
+      --bindir=%{_bindir} \
+      --libdir=%{_libdir} \
+      --includedir=%{_includedir} \
+      --datadir=%{_datadir} \
+      --mandir=%{_mandir} \
+      --with-x \
+      --with-mylibgd \
+      --disable-static \
+      --disable-dependency-tracking
+%__make %{?_smp_mflags}
+
+%install
+rm -rf $RPM_BUILD_ROOT __doc
+%{__make} \
+    DESTDIR=$RPM_BUILD_ROOT \
+    docdir=$RPM_BUILD_ROOT%{_docdir}/%{name} \
+    pkgconfigdir=%{_libdir}/pkgconfig \
+    install
+chmod -x $RPM_BUILD_ROOT%{_datadir}/%{name}/lefty/*
+cp -a $RPM_BUILD_ROOT%{_datadir}/%{name}/doc __doc
+rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/doc
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+# run "dot -c" to generate plugin config in %{_libdir}/%{name}/config
+%post
+%{_bindir}/dot -c
+
+# if there is not dot after everything else is done, the remove config
+%postun
+if ! test -x %{_bindir}/dot; then rm -f %{_libdir}/%{name}/config; fi
+
+%changelog
+* Tue Sep 13 2005 John Ellson <ellson@research.att.com>
+- split out language bindings into their own rpms so that 
+    main rpm doesn't depend on (e.g.) ocaml
+* Sat Aug 13 2005 John Ellson <ellson@research.att.com>
+- imported various fixes from the Fedora-Extras .spec by Oliver Falk <oliver@linux-kernel.at>
+* Wed Jul 20 2005 John Ellson <ellson@research.att.com>
+- release 2.4

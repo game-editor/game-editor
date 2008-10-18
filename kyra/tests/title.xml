@@ -1,0 +1,19 @@
+<Direct>
+
+	<!--
+		No longer in use since there is a splash screen.
+		<File filename="splash.gif">
+			<Image		sprite="SPLASH" />
+		</File>
+	-->
+
+	<!--Okay...it would be more appropriate if this were in
+		text.xml but there is no text.xml, because the text example
+		doesn't have an xml file. I want to test this in the context
+		of another resource, so it goes here.-->
+
+	<TextFile filename="poem.txt" name="POEM"/>
+
+	<BinaryFile filename="title.bin" name="TITLE"/>
+
+</Direct>

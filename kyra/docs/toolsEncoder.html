@@ -1,0 +1,117 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">Tools : Encoder</font></h1>
+      <p><font face="Arial, Helvetica, sans-serif"><a href="tools.html">Overview</a> 
+        | <a href="toolsSpriteEditor.html">Sprite Editor</a> | Encoder | <a href="kyraxml.html">Kyra 
+        XML</a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><i>NOTE: The Encoder will read 
+        relative paths at input, but will output in the current directory.</i></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The encoder is a utility that 
+        takes the image files and xml files, that you've created or that were 
+        created by the Sprite Editor, and writes dat files and header files. (Go 
+        to the <a href="kyraxml.html">Kyra XML</a> link for a description of the 
+        XML file format.)</font></p>
+      <p><img src="tools1.jpg" width="239" height="55"></p>
+      <p><font face="Arial, Helvetica, sans-serif">The encoder can take as input
+        any number of .xml files. The .xml files each reference an image file, 
+        so image files are not specified on the command line. As each file is 
+        processed, a part of it will be displayed on the screen.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Sprites can span multiple XML 
+        or image files. For example, in foo1.xml, you could define the &quot;TANK&quot; 
+        sprite, and load several frames of its &quot;ROLLING&quot; action. Later, 
+        in foo2.xml, you could specify the &quot;SHOOTING&quot; acion of the &quot;TANK&quot; 
+        sprite. All the actions and frames will be compositied together by the 
+        encoder. This works whether using XML created by the Sprite Editor, or 
+        with the &lt;Direct&gt; tag in direct encoding. </font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The syntax is: </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>krencode [options] 
+          outputfile inputfile inputfile ...</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">The option -pPREFIX will append 
+        a prefix before each name. To continue the BEM example, the command line 
+        would be: </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>krencode -pBEM_ bemexample.dat 
+          bem.xml</code></font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif">The option -w will cause the
+        program to wait for the spacebar to be pressed before moving on to the
+        next image.</font></p>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">The option -r will specifies
+	  a text file that the xml filenames will be read from. This is useful if
+	  you are using many xml files. The '#' character will be interpreted as a
+	  comment line.</font></p>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">Note that this is not a complete
+        example, so don't write a bem.dat file. The actual command line for the
+        BEM example is: </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>krencode -pBEM_ bem.dat 
+          bem.xml bem2.xml</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">Whichever you use, a .dat file 
+        and a .h file will be created. This .dat file is loaded by the Vault (see 
+        the <a href="engine.html">Engine</a> section) at run time to access the 
+        SpriteResources and TileResources. The header is a C++ header that can 
+        be included by your source in order to access the SpriteResources by their 
+        Id. Any Resource can be accessed by its name or by an id value.</font></p>
+      <h3>&nbsp;</h3>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

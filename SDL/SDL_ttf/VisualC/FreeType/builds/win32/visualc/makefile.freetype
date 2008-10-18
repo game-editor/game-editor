@@ -1,0 +1,149 @@
+# Project: freetype
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../../../../../output/bdf.o ../../../../../../../output/cff.o ../../../../../../../output/ftbase.o ../../../../../../../output/ftcache.o ../../../../../../../output/ftdebug.o ../../../../../../../output/ftglyph.o ../../../../../../../output/ftgzip.o ../../../../../../../output/ftinit.o ../../../../../../../output/ftmm.o ../../../../../../../output/ftsystem.o ../../../../../../../output/pcf.o ../../../../../../../output/pfr.o ../../../../../../../output/psaux.o ../../../../../../../output/pshinter.o ../../../../../../../output/psmodule.o ../../../../../../../output/raster.o ../../../../../../../output/sfnt.o ../../../../../../../output/smooth.o ../../../../../../../output/truetype.o ../../../../../../../output/type1.o ../../../../../../../output/type1cid.o ../../../../../../../output/type42.o ../../../../../../../output/winfnt.o ../../../../../../../output/ftlzw.o ../../../../../../../output/ftbitmap.o ../../../../../../../output/afmodule.o ../../../../../../../output/afloader.o ../../../../../../../output/afglobal.o ../../../../../../../output/afdummy.o ../../../../../../../output/afhints.o ../../../../../../../output/aflatin.o ../../../../../../../output/afangles.o ../../../../../../../output/otvmod.o ../../../../../../../output/otvgdef.o ../../../../../../../output/otvcommn.o ../../../../../../../output/otvbase.o ../../../../../../../output/otvgpos.o ../../../../../../../output/otvgsub.o ../../../../../../../output/otvjstf.o $(RES)
+INCS =  -I"../../../include" 
+BIN  = ../../../../../../../output/freetype.a
+CFLAGS = $(INCS) -D_LIB $(BUILD_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../../../../output/freetype.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+	
+
+
+
+../../../../../../../output/bdf.o: ../../../src/bdf/bdf.c
+	$(CC) -c ../../../src/bdf/bdf.c -o ../../../../../../../output/bdf.o $(CFLAGS)
+
+../../../../../../../output/cff.o: ../../../src/cff/cff.c
+	$(CC) -c ../../../src/cff/cff.c -o ../../../../../../../output/cff.o $(CFLAGS)
+
+../../../../../../../output/ftbase.o: ../../../src/base/ftbase.c
+	$(CC) -c ../../../src/base/ftbase.c -o ../../../../../../../output/ftbase.o $(CFLAGS)
+
+../../../../../../../output/ftcache.o: ../../../src/cache/ftcache.c
+	$(CC) -c ../../../src/cache/ftcache.c -o ../../../../../../../output/ftcache.o $(CFLAGS)
+
+../../../../../../../output/ftdebug.o: ../ftdebug.c
+	$(CC) -c ../ftdebug.c -o ../../../../../../../output/ftdebug.o $(CFLAGS)
+
+../../../../../../../output/ftglyph.o: ../../../src/base/ftglyph.c
+	$(CC) -c ../../../src/base/ftglyph.c -o ../../../../../../../output/ftglyph.o $(CFLAGS)
+
+../../../../../../../output/ftgzip.o: ../../../src/gzip/ftgzip.c
+	$(CC) -c ../../../src/gzip/ftgzip.c -o ../../../../../../../output/ftgzip.o $(CFLAGS)
+
+../../../../../../../output/ftinit.o: ../../../src/base/ftinit.c
+	$(CC) -c ../../../src/base/ftinit.c -o ../../../../../../../output/ftinit.o $(CFLAGS)
+
+../../../../../../../output/ftmm.o: ../../../src/base/ftmm.c
+	$(CC) -c ../../../src/base/ftmm.c -o ../../../../../../../output/ftmm.o $(CFLAGS)
+
+../../../../../../../output/ftsystem.o: ../../../src/base/ftsystem.c
+	$(CC) -c ../../../src/base/ftsystem.c -o ../../../../../../../output/ftsystem.o $(CFLAGS)
+
+../../../../../../../output/pcf.o: ../../../src/pcf/pcf.c
+	$(CC) -c ../../../src/pcf/pcf.c -o ../../../../../../../output/pcf.o $(CFLAGS)
+
+../../../../../../../output/pfr.o: ../../../src/pfr/pfr.c
+	$(CC) -c ../../../src/pfr/pfr.c -o ../../../../../../../output/pfr.o $(CFLAGS)
+
+../../../../../../../output/psaux.o: ../../../src/psaux/psaux.c
+	$(CC) -c ../../../src/psaux/psaux.c -o ../../../../../../../output/psaux.o $(CFLAGS)
+
+../../../../../../../output/pshinter.o: ../../../src/pshinter/pshinter.c
+	$(CC) -c ../../../src/pshinter/pshinter.c -o ../../../../../../../output/pshinter.o $(CFLAGS)
+
+../../../../../../../output/psmodule.o: ../../../src/psnames/psmodule.c
+	$(CC) -c ../../../src/psnames/psmodule.c -o ../../../../../../../output/psmodule.o $(CFLAGS)
+
+../../../../../../../output/raster.o: ../../../src/raster/raster.c
+	$(CC) -c ../../../src/raster/raster.c -o ../../../../../../../output/raster.o $(CFLAGS)
+
+../../../../../../../output/sfnt.o: ../../../src/sfnt/sfnt.c
+	$(CC) -c ../../../src/sfnt/sfnt.c -o ../../../../../../../output/sfnt.o $(CFLAGS)
+
+../../../../../../../output/smooth.o: ../../../src/smooth/smooth.c
+	$(CC) -c ../../../src/smooth/smooth.c -o ../../../../../../../output/smooth.o $(CFLAGS)
+
+../../../../../../../output/truetype.o: ../../../src/truetype/truetype.c
+	$(CC) -c ../../../src/truetype/truetype.c -o ../../../../../../../output/truetype.o $(CFLAGS)
+
+../../../../../../../output/type1.o: ../../../src/type1/type1.c
+	$(CC) -c ../../../src/type1/type1.c -o ../../../../../../../output/type1.o $(CFLAGS)
+
+../../../../../../../output/type1cid.o: ../../../src/cid/type1cid.c
+	$(CC) -c ../../../src/cid/type1cid.c -o ../../../../../../../output/type1cid.o $(CFLAGS)
+
+../../../../../../../output/type42.o: ../../../src/type42/type42.c
+	$(CC) -c ../../../src/type42/type42.c -o ../../../../../../../output/type42.o $(CFLAGS)
+
+../../../../../../../output/winfnt.o: ../../../src/winfonts/winfnt.c
+	$(CC) -c ../../../src/winfonts/winfnt.c -o ../../../../../../../output/winfnt.o $(CFLAGS)
+
+../../../../../../../output/ftlzw.o: ../../../src/lzw/ftlzw.c
+	$(CC) -c ../../../src/lzw/ftlzw.c -o ../../../../../../../output/ftlzw.o $(CFLAGS)
+
+../../../../../../../output/ftbitmap.o: ../../../src/base/ftbitmap.c
+	$(CC) -c ../../../src/base/ftbitmap.c -o ../../../../../../../output/ftbitmap.o $(CFLAGS)
+
+../../../../../../../output/afmodule.o: ../../../src/autofit/afmodule.c
+	$(CC) -c ../../../src/autofit/afmodule.c -o ../../../../../../../output/afmodule.o $(CFLAGS)
+
+../../../../../../../output/afloader.o: ../../../src/autofit/afloader.c
+	$(CC) -c ../../../src/autofit/afloader.c -o ../../../../../../../output/afloader.o $(CFLAGS)
+
+../../../../../../../output/afglobal.o: ../../../src/autofit/afglobal.c
+	$(CC) -c ../../../src/autofit/afglobal.c -o ../../../../../../../output/afglobal.o $(CFLAGS)
+
+../../../../../../../output/afdummy.o: ../../../src/autofit/afdummy.c
+	$(CC) -c ../../../src/autofit/afdummy.c -o ../../../../../../../output/afdummy.o $(CFLAGS)
+
+../../../../../../../output/afhints.o: ../../../src/autofit/afhints.c
+	$(CC) -c ../../../src/autofit/afhints.c -o ../../../../../../../output/afhints.o $(CFLAGS)
+
+../../../../../../../output/aflatin.o: ../../../src/autofit/aflatin.c
+	$(CC) -c ../../../src/autofit/aflatin.c -o ../../../../../../../output/aflatin.o $(CFLAGS)
+
+../../../../../../../output/afangles.o: ../../../src/autofit/afangles.c
+	$(CC) -c ../../../src/autofit/afangles.c -o ../../../../../../../output/afangles.o $(CFLAGS)
+
+../../../../../../../output/otvmod.o: ../../../src/otvalid/otvmod.c
+	$(CC) -c ../../../src/otvalid/otvmod.c -o ../../../../../../../output/otvmod.o $(CFLAGS)
+
+../../../../../../../output/otvgdef.o: ../../../src/otvalid/otvgdef.c
+	$(CC) -c ../../../src/otvalid/otvgdef.c -o ../../../../../../../output/otvgdef.o $(CFLAGS)
+
+../../../../../../../output/otvcommn.o: ../../../src/otvalid/otvcommn.c
+	$(CC) -c ../../../src/otvalid/otvcommn.c -o ../../../../../../../output/otvcommn.o $(CFLAGS)
+
+../../../../../../../output/otvbase.o: ../../../src/otvalid/otvbase.c
+	$(CC) -c ../../../src/otvalid/otvbase.c -o ../../../../../../../output/otvbase.o $(CFLAGS)
+
+../../../../../../../output/otvgpos.o: ../../../src/otvalid/otvgpos.c
+	$(CC) -c ../../../src/otvalid/otvgpos.c -o ../../../../../../../output/otvgpos.o $(CFLAGS)
+
+../../../../../../../output/otvgsub.o: ../../../src/otvalid/otvgsub.c
+	$(CC) -c ../../../src/otvalid/otvgsub.c -o ../../../../../../../output/otvgsub.o $(CFLAGS)
+
+../../../../../../../output/otvjstf.o: ../../../src/otvalid/otvjstf.c
+	$(CC) -c ../../../src/otvalid/otvjstf.c -o ../../../../../../../output/otvjstf.o $(CFLAGS)

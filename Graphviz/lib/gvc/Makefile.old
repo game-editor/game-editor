@@ -1,0 +1,50 @@
+all:	libgvc.a libgvc_dot_builtins.a
+ROOT=../..
+include $(ROOT)/Config.mk
+include $(ROOT)/makearch/$(ARCH)
+
+INCS =  -I. \
+        -I$(ROOT) \
+        -I../cdt \
+        -I../pathplan \
+	-I../graph \
+	-I../common \
+	$(EXTLIB_INC)
+
+DEFINES = -DHAVE_CONFIG_H -DGVLIBDIR=\"$(LIBDIR)\"
+
+INST_HDRS = gvc.h gvcint.h gvcjob.h gvcext.h gvplugin.h \
+	gvplugin_render.h gvplugin_device.h \
+	gvplugin_layout.h gvplugin_textlayout.h \
+	gvplugin_usershape.h
+
+NOINST_HDRS = gvcproc.h
+
+OBJS = gvrender.o gvlayout.o gvdevice.o gvcontext.o gvjobs.o \
+	gvplugin.o gvconfig.o gvevent.o gvtextlayout.o gvusershape.o gvc.o
+
+EXTRA_OBJS = no_builtins.o dot_builtins.o
+
+libgvc_dot_builtins.a : $(OBJS) dot_builtins.o
+	$(RM) libgvc_dot_builtins.a
+	$(AR) cr libgvc_dot_builtins.a $(OBJS) dot_builtins.o
+	$(RANLIB) libgvc_dot_builtins.a
+
+libgvc.a : $(OBJS) no_builtins.o
+	$(RM) libgvc.a
+	$(AR) cr libgvc.a $(OBJS) no_builtins.o
+	$(RANLIB) libgvc.a
+
+install: libgvc.a libgvc_dot_builtins.a
+	$(MKPATH) $(INCDIR)
+	$(INSTALL) $(INST_HDRS) $(INCDIR)
+	$(MKPATH) $(LIBDIR)
+	$(INSTALL) libgvc.a libgvc_dot_builtins.a $(LIBDIR)
+
+$(OBJS) $(EXTRA_OBJS): $(INST_HDRS) $(NOINST_HDRS)
+
+clean:
+	$(RM) core *.o
+
+distclean: clean
+	$(RM) *.a

@@ -1,0 +1,251 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Default storage class and class conflicts</TITLE>
+<META NAME="description" CONTENT="Default storage class and class conflicts">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node81.html" tppabs="http://eic.sourceforge.net/documentation/node81.html">
+<LINK REL="previous" HREF="node79.html" tppabs="http://eic.sourceforge.net/documentation/node79.html">
+<LINK REL="up" HREF="node40.html" tppabs="http://eic.sourceforge.net/documentation/node40.html">
+<LINK REL="next" HREF="node81.html" tppabs="http://eic.sourceforge.net/documentation/node81.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html1564"
+  HREF="node81.html" tppabs="http://eic.sourceforge.net/documentation/node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html1558"
+  HREF="node40.html" tppabs="http://eic.sourceforge.net/documentation/node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html1552"
+  HREF="node79.html" tppabs="http://eic.sourceforge.net/documentation/node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html1560"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html1562"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1565"
+  HREF="node81.html" tppabs="http://eic.sourceforge.net/documentation/node81.html">Type qualifiers</A>
+<B> Up:</B> <A NAME="tex2html1559"
+  HREF="node40.html" tppabs="http://eic.sourceforge.net/documentation/node40.html">EiC's C Specifications</A>
+<B> Previous:</B> <A NAME="tex2html1553"
+  HREF="node79.html" tppabs="http://eic.sourceforge.net/documentation/node79.html">Storage Class</A>
+ &nbsp <B>  <A NAME="tex2html1561"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1563"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION005140000000000000000"></A>
+<A NAME="7152"></A>
+<A NAME="sec:DefaultStorageClass"></A>
+<BR>
+Default storage class and class conflicts
+</H1>
+
+<P>
+In ISO, if no storage class is specified for an object or function
+then the appropriate storage class will be determined from the current
+scope level. For all variables and functions declared at level file,
+their default storage class is <B><TT>extern</TT></B>. Wthin a block the default
+class for objects is
+<B><TT>auto</TT></B>, for function prototypes it is <B><TT>extern</TT></B> and parameters,
+while having extent within the block belonging to a function, have no
+storage class.
+
+<P>
+Because in EiC the concept of linkage is different than that of a true
+compiler, there are no default storage specifiers. Within blocks,
+objects definition remain private unless specified <B><TT>extern</TT></B>,
+function declarations are exported to the outer most level and
+parameters are treated as specified for ISO C. Otherwise, all storage
+classes must be explicity stated.
+
+<P>
+The following table shows what EiC deems appropriate with respect to
+the storage class of the same object <B><TT>int i</TT></B> declared in two
+different files, and where file <B><TT>f1.c</TT></B> includes <B><TT>f2.c</TT></B> after the
+declaration of object <B><TT>int i</TT></B>:
+
+<P><PRE>
+// file f1.c 
+int i;
+#include f2.c;
+// end f1.c 
+
+// file f2.c
+int i;
+// end f2.c
+</PRE>
+
+<P>
+A conflict between the same object or function difinitions declared in
+different files will generate an error, if it induces a condition
+where (1) a single object or function is owned by two files or (2) a public
+object or function, projects into the scope of a private object or
+function.  Function prototypes (declarations) are handled more loosely
+and can be mutliply defined in different files. The following table is
+used to demonstrate the various conditions that can occur and equally
+applies to object and function definitions:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER"><B><TT>f2.c</TT></B></TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER">int i;</TD>
+<TD ALIGN="CENTER">static int i;</TD>
+<TD ALIGN="CENTER">extern int i;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">f1.c</TD>
+<TD ALIGN="RIGHT">int i;</TD>
+<TD ALIGN="CENTER">error</TD>
+<TD ALIGN="CENTER">okay</TD>
+<TD ALIGN="CENTER">okay</TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="RIGHT">static int i;</TD>
+<TD ALIGN="CENTER">error</TD>
+<TD ALIGN="CENTER">okay</TD>
+<TD ALIGN="CENTER">error</TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="RIGHT">extern int i;</TD>
+<TD ALIGN="CENTER">okay</TD>
+<TD ALIGN="CENTER">okay</TD>
+<TD ALIGN="CENTER">okay</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+In the third row of the above table, the object <B><TT>int i</TT></B> with no
+specified storage class is held constant in file <B><TT>f1.c</TT></B>, while it is
+varied for three different instances of file <B><TT>f2.c</TT></B>. When the object
+has no specified storage class in either file, it is consider an error
+because it is introducing a condition of a single object having two
+owners and this is not allowed.  When it is declared in <B><TT>f2.c</TT></B> as
+<B><TT>static</TT></B>, there are no problems, because EiC sees two distinct
+variables, a private object owned by file <B><TT>f2.c</TT></B>, and a public
+object owned by file <B><TT>f1.c</TT></B>. When the object in file <B><TT>f2.c</TT></B> is
+declared <B><TT>extern</TT></B>, this is also allowed, because file <B><TT>f2.c</TT></B> is
+explicity stating that it does not own the object - so there can be
+no conflict.  The other rows are interpreted in similar ways. Note
+however, that when the object is declared <B><TT>static</TT></B> in file <B><TT>f1.c</TT></B>
+but has no declared storage class in file <B><TT>f2.c</TT></B> is also error. This
+is because the public object in file
+<B><TT>f2.c</TT></B> is visible within file <B><TT>f1.c</TT></B> and hence is inducing
+a situation in that there is two objects of the same type within 
+the same scope, and this in not allowed either.
+
+<P>
+If <B><TT>f2.c</TT></B> had been included into <B><TT>f1.c</TT></B> before the declaration of
+the object <B><TT>int i</TT></B>, the roles of <B><TT>f1.c</TT></B> and
+<B><TT>f2.c</TT></B> in the above table would be have been reversed.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1564"
+  HREF="node81.html" tppabs="http://eic.sourceforge.net/documentation/node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html1558"
+  HREF="node40.html" tppabs="http://eic.sourceforge.net/documentation/node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html1552"
+  HREF="node79.html" tppabs="http://eic.sourceforge.net/documentation/node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html1560"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html1562"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1565"
+  HREF="node81.html" tppabs="http://eic.sourceforge.net/documentation/node81.html">Type qualifiers</A>
+<B> Up:</B> <A NAME="tex2html1559"
+  HREF="node40.html" tppabs="http://eic.sourceforge.net/documentation/node40.html">EiC's C Specifications</A>
+<B> Previous:</B> <A NAME="tex2html1553"
+  HREF="node79.html" tppabs="http://eic.sourceforge.net/documentation/node79.html">Storage Class</A>
+ &nbsp <B>  <A NAME="tex2html1561"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1563"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0036)http://eic.sourceforge.net/overview/ -->
+<HTML><HEAD><TITLE>EiC Overview Page</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY text=#3e3e64 vLink=#8e4e5c aLink=#8e4e5c link=#863644 bgColor=#ffffff><!-- StArT-EiC-top-LiNe -->
+<TABLE cellSpacing=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle bgColor=#3e3e64><FONT color=#999999 size=4>#!/usr/bin/eic 
+      -f </FONT></TD></FONT>
+    <TD align=middle bgColor=#3e3e64><FONT color=#999999 size=3>int main() { 
+      printf("Hello World!\n"); return 0; } </FONT></TD></FONT>
+    <TD align=middle bgColor=#3e3e64><FONT color=#999999 size=3>EiC 1&gt; 
+      Hello World!; </FONT></TD></FONT></TR></TBODY></TABLE><!-- EnD-EiC-top-LiNe -->
+<BLOCKQUOTE><IMG src="EiC Overview Page_arquivos/logo.gif" 
+border=0><BR></BLOCKQUOTE>
+<HR width="93%" SIZE=1>
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<TABLE border=0>
+  <TBODY>
+  <TR><!-- Begin navbar -->
+    <TD vAlign=top><A href="http://eic.sourceforge.net/index.html"><IMG 
+      src="EiC Overview Page_arquivos/navbar_news.gif" border=0></A><BR><A 
+      href="http://eic.sourceforge.net/overview/"><IMG 
+      src="EiC Overview Page_arquivos/navbar_overview.gif" border=0></A><BR><A 
+      href="http://eic.sourceforge.net/documentation/"><IMG 
+      src="EiC Overview Page_arquivos/navbar_documentation.gif" 
+      border=0></A><BR><A href="http://eic.sourceforge.net/download/"><IMG 
+      src="EiC Overview Page_arquivos/navbar_download.gif" border=0></A><BR><A 
+      href="http://eic.sourceforge.net/addons/"><IMG 
+      src="EiC Overview Page_arquivos/navbar_addons.gif" border=0></A><BR><A 
+      href="http://eic.sourceforge.net/links.html"><IMG 
+      src="EiC Overview Page_arquivos/navbar_links.gif" border=0></A><BR><A 
+      href="http://eic.sourceforge.net/support/"><IMG 
+      src="EiC Overview Page_arquivos/navbar_support.gif" 
+      border=0></A><BR><BR><BR><!-- Begin sponsors --><FONT 
+      size=-1>Sponsors:<BR></FONT><A href="http://sourceforge.net/"><IMG 
+      height=38 alt="SourceForge.net Logo" 
+      src="EiC Overview Page_arquivos/sflogo.png" width=125 border=0></A> <BR><!-- End sponsors --></TD><!-- End navbar --><!-- Begin right-side page data -->
+    <TD vAlign=top><FONT face=Helvetica size=3><!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+      <P>
+      <DIV align=center><FONT size=+3><B>EiC Overview</B></FONT></DIV>
+      <P><BR>
+      <H2><A name=SECTION00010000000000000000>Contents</A> </H2><!--Table of Contents-->
+      <UL>
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00020000000000000000" 
+        name=tex2html6>Interactive mode</A> 
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00030000000000000000" 
+        name=tex2html7>EiC is pointer safe</A> 
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00040000000000000000" 
+        name=tex2html8>Running EiC non-interactively</A> 
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00050000000000000000" 
+        name=tex2html9>EiC's scripting language</A> 
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00060000000000000000" 
+        name=tex2html10>Embedding or linking to EiC</A> 
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00070000000000000000" 
+        name=tex2html11>EiC modules</A> 
+        <LI><A 
+        href="http://eic.sourceforge.net/overview/#SECTION00080000000000000000" 
+        name=tex2html12>EiC vs C</A> </LI></UL><!--End of Table of Contents-->
+      <P><BR><BR>
+      <P>EiC is designed to be a production tool, it is not to be viewed as a 
+      toy, and is certainly one of the most complete, freely-available C 
+      interpreters built to-date. It is suitable as: an aid in teaching C, for 
+      fast prototyping of new programs and as a research tool -- as it allows 
+      the user to quickly interface and experiment with user supplied, standard 
+      ISO C and POSIX.1 functions via immediate statements, which are statements 
+      that are executed immediately. 
+      <P>EiC can be run in several different modes: (1) interactively, (2) 
+      non-interactively (3) in scripting mode and (4) it can be embedded in 
+      other systems. 
+      <P>
+      <H1><A name=SECTION00020000000000000000>Interactive mode</A> </H1>
+      <P>In interactive mode, the user enters commands, or immediate commands, 
+      at the EiC prompt. Each immediate instruction produces a type, even if the 
+      type is void; as for example, C statements, declarations etc. All 
+      resulting type values are displayed: 
+      <P>
+      <BLOCKQUOTE><PRE>EiC 1&gt; 3*55.5;
+        166.5
+EiC 2&gt; "hello, world!";
+        hello, world!
+EiC 3&gt; int i;
+        (void)
+EiC 4&gt; for(i=0;i&lt;10;i++);
+        (void)
+EiC 5&gt; i;
+        10
+EiC 6&gt; struct {int a; double b[3];} ab = { 5,{0,1,2}};
+        (void)
+EiC 7&gt; ab;
+        {5,Array}
+EiC 8&gt; ab.a = 3;
+        3
+EiC 9&gt; ab.b[2];
+        2
+EiC 10&gt; #include &lt;stdio.h&gt;
+        (void)
+EiC 11&gt; printf("hello\n");
+hello
+        6
+</PRE></BLOCKQUOTE>
+      <P>
+      <H1><A name=SECTION00030000000000000000>EiC is pointer safe</A> </H1>
+      <P>EiC is also pointer safe. This means EiC catches most types of array 
+      bound violations; for example (for brevity, some output has been deleted):
+      <BLOCKQUOTE><PRE>EiC 1&gt; int a[10], *p, i;
+EiC 2&gt; a[10];
+READ: attempted beyond allowed access area
+
+EiC 3&gt; p = &amp;a[5];
+EiC 4&gt; p[-5];
+EiC 5&gt; p[-6];
+READ: attempted before allowed access area
+
+EiC 6&gt; p[4];
+EiC 7&gt; p[5];
+READ: attempted beyond allowed access area
+
+EiC 8&gt; *(p+100);
+READ: attempted beyond allowed access area
+
+EiC 9&gt; p = malloc(5*sizeof(int));
+EiC 10&gt; *(p+100);
+READ: attempted beyond allowed access area
+
+EiC 11&gt; for(i=0;i&lt;100;i++) *p++ = i;
+WRITE: attempted beyond allowed access area
+</PRE></BLOCKQUOTE>
+      <P>To detect array bound violations as efficiently as possible, EiC does 
+      not concern it self with the values held or produced by pointers, it only 
+      worries about address values when they are either referenced or 
+      dereferenced:
+      <BLOCKQUOTE><PRE>EiC 1&gt; int a, *p;
+EiC 2&gt; p = &amp;a;
+EiC 3&gt; p+10;    // okay, no problems
+EiC 4&gt; *(p+10);   // but just try to read or write to the address
+READ: attempted beyond allowed access area
+</PRE></BLOCKQUOTE>
+      <P>
+      <H1><A name=SECTION00040000000000000000>Running EiC non-interactively</A> 
+      </H1>
+      <P>EiC can also be run non-interactively or in batch mode, where it is 
+      possible to run C programs in a typical interpreter style. It can also 
+      handle programs that accept command line arguments, as seen from the toy 
+      example in main2.c: 
+      <P>
+      <BLOCKQUOTE><PRE>#include &lt;stdio.h&gt;
+int main(int argc, char **argv)
+{
+    while(argc--)
+        printf("%s\n",*argv++);
+    return 0;
+}
+</PRE></BLOCKQUOTE>
+      <P>The first parameter, argc, holds the number of argument strings passed 
+      to the program and is always at least one. The second parameter, argv, is 
+      an array of unspecified size of pointers to the input strings, which the 
+      first one will be the name of the program being executed: 
+      <P>
+      <BLOCKQUOTE><PRE>% eic main2.c 123 hello -Dworld this.and.that
+main2.c
+123
+hello
+-Dworld
+this.and.that
+</PRE></BLOCKQUOTE>
+      <P>
+      <H1><A name=SECTION00050000000000000000>EiC's scripting language</A> </H1>
+      <P>In non-interactive mode, EiC runs generally like a typical interpreter, 
+      accepting input from a complete C program. However, EiC is also a 
+      scripting language. Below is an example of an EiC script, called 
+      <B><TT>hello.eic</TT></B>: 
+      <BLOCKQUOTE><PRE>#!/usr/local/bin/eic -f
+
+#include &lt;stdio.h&gt;
+printf(" ******* Hello from EiC's script mode. ******\n");
+</PRE></BLOCKQUOTE>The <B><TT>-f</TT></B> command-line switch, informs EiC 
+      to run in script mode. In script mode, EiC will treat all lines beginning 
+      with `<B><TT>#</TT></B>' and which cannot be interpreted as a preprocessor 
+      directive as a comment. To run the above script and assuming that it's 
+      executable (chmod&nbsp;+x&nbsp;hello.eic): 
+      <P>
+      <BLOCKQUOTE><PRE>% hello.eic
+ ******* Hello from EiC's script mode. ******
+%
+</PRE></BLOCKQUOTE>
+      <P>Another example of a more extensive EiC script is given in 
+      <B><TT>script1.eic</TT></B>: 
+      <P>
+      <BLOCKQUOTE><PRE> 1     #!/usr/local/bin/eic -f 
+ 2     #include &lt;stdio.h&gt;
+ 3
+ 4     // example of control of flow
+ 5     int i;
+ 6     int isqr(int x) { return x*x; }
+ 7     for(i=0;i&lt;4;i++)
+ 8             printf("%d^2 =  %d\n",i,isqr(i));
+ 9     switch(i) {
+10             case 4: printf(" good\n\n"); break;
+11             default: printf(" bad\n\n");
+12     }
+13     // example of some file stuff;
+14     // read in some tools
+15     #include "tools/nxtString.c"
+16     FILE *fp = fopen(_Argv[0],"r");
+17     char *p;
+18     while((p=nxtString(fp)))
+19             printf("%s ",p);
+20     fclose(fp);
+21     printf("\n\n");
+22     // further example of using command line args
+23     if(_Argc) { // this is always true
+24             int k=0;
+25             printf("Processing command line arguments\n");
+26             for(k=0;k&lt;_Argc;k++) {
+27                    printf("%s\n",_Argv[k]);
+28             }
+29    } else
+30             printf("OOPS, an internal error has occurred\n");
+</PRE></BLOCKQUOTE>
+      <P>An EiC shell script is interpreted from the top to the bottom. First 
+      the code is compiled to bytecode, in its entirety, and then run. After 
+      this, control will be parsed to the <B><TT>main</TT></B> function if it 
+      exists. However, it is not illegal to have a script that does not include 
+      the definition of a <B><TT>main</TT></B> function. If the EiC directive 
+      <B><TT>:exit</TT></B>, which is the directive that terminates an EiC 
+      interactive session, is present, it will cause the interpretation of the 
+      script to halt at the position <B><TT>:exit</TT></B> is encounted, and 
+      nothing will have happened other than having the code up to 
+      <B><TT>:exit</TT></B> operator compiled and parsed - but it will not have 
+      been executed. Generally, the code for a function is not executed until it 
+      is called, see line 8. Command line arguments are passed into to the 
+      global variables <B><TT>_Argc</TT></B> and <B><TT>_Argv</TT></B>, see 
+      lines 16 and 23 to 30. For example: 
+      <BLOCKQUOTE><PRE>% sript1.eic  abc 123 -DHELP
+</PRE></BLOCKQUOTE>Implies that: 
+      <BLOCKQUOTE><PRE>_Argc = 4,                 _Argv[0] = "sript1.eic"    
+_Argv[1] = "abc"           _Argv[2] = "123"
+_Argv[3] = "-DHELP"        _Argv[4] = NULL
+</PRE></BLOCKQUOTE>
+      <P>
+      <H1><A name=SECTION00060000000000000000>Embedding or linking to EiC</A> 
+      </H1>
+      <P>To Link against EiC you first need to build the source distribution. 
+      Then linking to EiC from aother programs is done by linking against the 
+      EiC libraries (<B><TT>libeic</TT></B> and <B><TT>libstdClib</TT></B>) in 
+      <B><TT>EiC/lib</TT></B>. In the directory 
+      <B><TT>EiC/main/examples</TT></B> there is an example program called 
+      <B><TT>embedEiC.c</TT></B> that links to EiC. Build and run it from the 
+      <B><TT>EiC/main/examples</TT></B> directory by entering (assuming EiC has 
+      been installed in <B><TT>/usr/local/EiC</TT></B>): 
+      <P>
+      <BLOCKQUOTE><PRE>% gcc embedEiC.c -L/usr/local/EiC/lib -leic -lstdClib -lm  
+% a.out
+</PRE></BLOCKQUOTE>For communicating commands to EiC from another program 
+      there are two functions supplied:
+      <BLOCKQUOTE><PRE>int EiC_run(int argc, char **argv);
+</PRE></BLOCKQUOTE>and
+      <BLOCKQUOTE><PRE>void EiC_parseString(char *command, ...);
+</PRE></BLOCKQUOTE>
+      <P>The <B><TT>EiC_run</TT></B> function is used to run C source files. The 
+      <B><TT>EiC_parseString</TT></B> function is used to pass C or preprocessor 
+      commands to EiC via a string, such as:
+      <BLOCKQUOTE><PRE>EiC_parseString("#include &lt;stdio.h&gt;");
+EiC_parseString("int a = 10,i;");
+EiC_parseString("for(i=0;i&lt;a;i++)"
+                "	printf(\"%%d\\n\",i);");
+</PRE></BLOCKQUOTE><FONT size=-1>present the main facility for sharing 
+      data between EiC and other applications is via the address operator 
+      <B><TT>@</TT></B>: </FONT>
+      <P>
+      <BLOCKQUOTE><PRE>int a @ dddd;
+</PRE></BLOCKQUOTE>
+      <P><FONT size=-1>The above defines <B><TT>a</TT></B> to be an integer and 
+      is stored at address <B><TT>dddd</TT></B>, which must be an integral 
+      constant. The constant address <B><TT>dddd</TT></B> is not simply an 
+      address conjured up. Its purpose is to enable access to data, or even 
+      functions, defined in compiled code. </FONT>
+      <P><FONT size=-1>When applied to function definitions, the limitation at 
+      this stage is that the function must take void arguments and return void: 
+      </FONT>
+      <P>
+      <BLOCKQUOTE><PRE>     void foo(void) @ dddd;
+</PRE></BLOCKQUOTE>
+      <P>The above defines <B><TT>foo</TT></B> to be a builtin function located 
+      at address <B><TT>dddd</TT></B>. For example: 
+      <P>
+      <BLOCKQUOTE><PRE>int foo[5] = {1,2,3,4,5};
+void fooey(void) {printf("fooey called\n");}
+     ....
+EiC_parseString("int foo[5] @ %ld;", (long)foo);
+EiC_parseString("void fooey(void) @ %ld;", (long)fooey);
+</PRE></BLOCKQUOTE>
+      <P>Further, <CODE>int foo[5] @ 1256;</CODE> defines <B><TT>foo</TT></B> to 
+      be an array of 5 ints mapped at the specified virtual address and the 
+      usual pointer safety rules apply; that is, <CODE>foo[5];</CODE> will be 
+      caught as an illegal operation. 
+      <P>Also, you can pass in data to EiC via setting variables and you can get 
+      EiC to output data to a file. In a future release of EiC, more facilities 
+      are expected to be added for sharing data between EiC and its embedding 
+      system. 
+      <P>With respect to <B><TT>EiC_run</TT></B>, to run the file "myfile.c" and 
+      pass it the command line arguments "hello" and "world", the following 
+      sequence of commands would be used. 
+      <P>
+      <BLOCKQUOTE><PRE>char *argv[] = {"myfile.c", "hello", "world"};
+int  argc = sizeof(argv)/sizeof(char*);
+EiC_run(argc, argv);
+</PRE></BLOCKQUOTE>
+      <P>
+      <H1><A name=SECTION00070000000000000000>EiC modules</A> </H1>
+      <P>In a nutshell, EiC modules are related groups of EiC/C functions, which 
+      get interpreter'd by EiC or builtin to EiC. Therefore, there are basically 
+      two types of EiC modules. Interpreter'd code modules and builtin modules 
+      (compiled code). It is also possible for compiled code to make calls 
+      (callbacks) to interpreter'd code. 
+      <P>One of the nice features of an EiC module, is that once you have a 
+      module built you can add it to another EiC distribution by simply copying 
+      it into the `EiC/module' directory and to remove a module you simply 
+      remove it from the `EiC/module' directory - easy as that. 
+      <P>
+      <H1><A name=SECTION00080000000000000000>EiC vs C</A> </H1>
+      <P>Because EiC can be run interactively, it differs from C in several 
+      ways. In this section I will outline what is currently missing from EiC 
+      and how EiC differs from ISO C. 
+      <P>Although, EiC can parse almost all of the C programming language, right 
+      up front it is best to mention what is currently lacking or different: 
+      <DL compact>
+        <DD>
+        <P></P>
+        <DT>1. 
+        <DD>EiC is pointer safe. It detects many classes of memory read and 
+        write violations. Also, to help in interfacing compiled library code to 
+        EiC, EiC uses the optional pointer-qualifiers <B><TT>safe</TT></B> and 
+        <B><TT>unsafe</TT></B>. 
+        <P></P>
+        <DT>2. 
+        <DD>Structure <A name=680>&nbsp;</A><A name=681>&nbsp;</A> bit fields 
+        are not supported. 
+        <P></P>
+        <DT>3. 
+        <DD>While structures and unions can be returned from and passed by value 
+        to functions, it is illegal in EiC to pass a structure or a union to a 
+        variadic function (that is, a function that takes a variable number of 
+        arguments): 
+        <BLOCKQUOTE><PRE>EiC 1&gt; struct stag {int x; double y[5];} ss; 
+EiC 2&gt; void foo(const char *fmt, ...);  
+EiC 3&gt; foo("",ss);
+Error: passing a struct/union to variadic function \T{foo}
+</PRE></BLOCKQUOTE>
+        <P></P>
+        <DT>4. 
+        <DD>The C concept of linkage<A name=686>&nbsp;</A> is not supported. 
+        This is because, EiC does not export identifiers to a linker - as does a 
+        true C compiler. EiC works from the concept of a single <I>translation 
+        unit</I>. 
+        <P></P>
+        <DT>5. 
+        <DD>EiC does not parse preprocessor numbers<A name=688>&nbsp;</A>, which 
+        aren't valid numeric constants; for example, <TT>155.6.8</TT>, which is 
+        an extended floating point constants, will cause an error. 
+        <DT>6. 
+        <DD>EiC supports both standard C like comments <CODE>/* ... */</CODE> 
+        and C++ style comments. Also, when EiC is run in script mode, it treats 
+        all lines that start with `<B><TT>#</TT></B>' and which can't be 
+        interpreted as a preprocessor directive as a comment. 
+        <P></P>
+        <DT>7. 
+        <DD>There are no default type specifiers for function return values. In 
+        EiC it is illegal to not explicitly state the return type of a function: 
+
+        <P>
+        <BLOCKQUOTE><PRE>foo() { ... }     /*   error: missing return type */
+int foo() { ... } /* correct, return type specified */
+</PRE></BLOCKQUOTE>
+        <P></P>
+        <DT>8. 
+        <DD>In addition to function definitions and declarations with an empty 
+        parameter list, EiC only supports prototype declarations and 
+        definitions: 
+        <P>
+        <BLOCKQUOTE><PRE>int foo(); /* Empty parameter list allowed */ 
+int f(value) int value { ... } /* Illegal: old style C */ 
+int f(int); /* Allowed, prototype declaration */ 
+int f(int value); /*Allowed, full prototype declaration */
+</PRE></BLOCKQUOTE>
+        <P></P>
+        <DT>9. 
+        <DD>EiC does not support trigraph sequences, wide characters or wide 
+        strings: nor does it support the standard header 
+        <CODE>&lt;locale.h&gt;</CODE>. 
+        <P></P>
+        <DT>10. 
+        <DD>EiC's preprocessor lacks the <B><TT>#line</TT></B> directive. 
+        <P></P>
+        <DT>11. 
+        <DD>For convenience, EiC allows the <B><TT>#include</TT></B> directive 
+        to have an extra form, which permits the parsing of a 
+        <I>token-sequence</I> in the form <CODE>#include filename</CODE>; that 
+        is, without enclosing double quotes or angled brackets. 
+        <P></P>
+        <DT>12. 
+        <DD>Besides parsing preprocessor directives or C statements, EiC also 
+        parses its own internal house keeping language. House keeping commands 
+        are communicated to EiC via lines that begin with a colon. 
+        <ADDRESS></ADDRESS></DD></DL></FONT></TD><!-- End right-side page text --></TR></TBODY></TABLE><!-- End master table -->
+<ADDRESS></ADDRESS></BODY></HTML>

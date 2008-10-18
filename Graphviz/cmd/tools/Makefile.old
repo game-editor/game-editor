@@ -1,0 +1,131 @@
+ALL_BIN = gc gvcolor acyclic nop ccomps sccmap tred unflatten gxl2dot \
+          dot2gxl dijkstra gvpack bcomps
+ALL = $(ALL_BIN) dot2gxl.1
+
+all : $(ALL)
+ROOT=../..
+include $(ROOT)/Config.mk
+include $(ROOT)/makearch/$(ARCH)
+
+LOC_LIB=$(ROOT)/lib
+LOC_PLUG=$(LOC_LIB)/plugin
+LOC_INCDIR=$(LOC_LIB)/include
+LOC_LIBDIR=$(LOC_LIB)/lib
+
+DEFINES = -DHAVE_CONFIG_H
+
+INCS =  -I. -I$(ROOT) -I$(LOC_LIB)/agraph -I$(LOC_LIB)/graph \
+        -I$(LOC_LIB)/ingraphs -I$(LOC_LIB)/cdt
+DNINCS = -I$(LOC_LIB)/pack -I$(LOC_LIB)/neatogen  \
+         -I$(LOC_LIB)/gvc \
+         -I$(LOC_LIB)/pathplan \
+         -I$(LOC_LIB)/common -I$(LOC_LIB)
+
+LIBS =  -L$(LOC_LIB)/graph -lgraph -L$(LOC_LIB)/cdt -lcdt
+PLUGS = -L$(LOC_PLUG) -lgvplugin_dot_layout -lgvplugin_neato_layout -lgvplugin_usershape_gd
+
+DNLIBS = -L$(LOC_LIB)/gvc -lgvc $(PLUGS) \
+        -L$(LOC_LIB)/common -lcommon \
+        -L$(LOC_LIB)/gvc -lgvc $(PLUGS) \
+        -L$(LOC_LIB)/neatogen -lneatogen \
+        -L$(LOC_LIB)/dotgen -ldotgen \
+        -L$(LOC_LIB)/circogen -lcircogen \
+        -L$(LOC_LIB)/fdpgen -lfdpgen \
+        -L$(LOC_LIB)/twopigen -ltwopigen \
+        -L$(LOC_LIB)/pack -lpack \
+        -L$(LOC_LIB)/common -lcommon \
+        -L$(LOC_LIB)/pathplan -lpathplan \
+        -L$(LOC_LIB)/gd -lgd \
+         $(LIBS) \
+         $(EXTLIB_LIB) $(EXPAT_LIB) $(LTDL_LIB) -lm
+INGLIB = -L$(LOC_LIB)/ingraphs -lingraphs
+
+ALIBS = -L$(LOC_LIB)/agraph -lagraph -L$(LOC_LIB)/cdt -lcdt
+
+ACYCLICOBJS = acyclic.o
+NOPOBJS = nop.o
+COLOROBJS = gvcolor.o colxlate.o
+UNFLATOBJS = unflatten.o
+GCOBJS = gc.o
+TOBJS = tred.o
+CCOBJS = ccomps.o
+SCCOBJS = sccmap.o
+GXLOBJS = cvtgxl.o   dot2gxl.o  gxl2dot.o
+GVPOBJS = gvpack.o gvpack_builtins.o
+BCCOBJS = bcomps.o
+MANS = acyclic.1 gvcolor.1 nop.1 tred.1 ccomps.1 gc.1 sccmap.1 \
+	unflatten.1 gxl2dot.1 dot2gxl.1 gvpack.1 bcomps.1
+
+gvpack : $(GVPOBJS)
+	$(CSLD) $(LDFLAGS) $(GVPOBJS) $(INGLIB) $(DNLIBS) -o $@
+
+gvpack.o : gvpack.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(DNINCS) $(INCS) gvpack.c
+
+gvpack_builtins.o : gvpack_builtins.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(DNINCS) $(INCS) gvpack_builtins.c
+
+dijkstra : dijkstra.o
+	$(CSLD) $(LDFLAGS) dijkstra.o $(INGLIB) $(ALIBS) -o $@
+
+dijkstra.o : dijkstra.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(DNINCS) $(INCS) dijkstra.c
+
+gxl2dot : $(GXLOBJS)
+	$(CSLD) $(LDFLAGS) $(GXLOBJS) $(INGLIB) $(ALIBS) -L$(LOC_LIB)/graph -lgraph $(EXPAT_LIB) -o $@
+
+dot2gxl : gxl2dot
+	$(RM) -f $@
+	$(LN) -s $? $@
+
+cvtgxl.o : cvtgxl.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(INCS) $(EXPAT_INC) cvtgxl.c
+
+dot2gxl.o : dot2gxl.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(INCS) $(EXPAT_INC) dot2gxl.c
+
+gxl2dot.o : gxl2dot.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(INCS) $(EXPAT_INC) gxl2dot.c
+
+sccmap : $(SCCOBJS)
+	$(CSLD) $(LDFLAGS) $(SCCOBJS) $(INGLIB) $(ALIBS) -o $@
+
+ccomps : $(CCOBJS)
+	$(CSLD) $(LDFLAGS) $(CCOBJS) $(INGLIB) $(LIBS) -o $@
+
+tred : $(TOBJS)
+	$(CSLD) $(LDFLAGS) $(TOBJS) $(INGLIB) $(LIBS) -o $@
+
+unflatten : $(UNFLATOBJS)
+	$(CSLD) $(LDFLAGS) $(UNFLATOBJS) $(INGLIB) $(ALIBS) -o $@
+
+acyclic : $(ACYCLICOBJS)
+	$(CSLD) $(LDFLAGS) $(ACYCLICOBJS) $(LIBS) -o $@
+
+nop : $(NOPOBJS)
+	$(CSLD) $(LDFLAGS) $(NOPOBJS) $(INGLIB) $(ALIBS) -o $@
+
+gvcolor : $(COLOROBJS)
+	$(CSLD) $(LDFLAGS) $(COLOROBJS) $(INGLIB) $(LIBS) -o $@
+
+gc : $(GCOBJS)
+	$(CSLD) $(LDFLAGS) $(GCOBJS) $(INGLIB) $(LIBS) -o $@
+
+bcomps : $(BCCOBJS)
+	$(CSLD) $(LDFLAGS) $(BCCOBJS) $(INGLIB) $(LIBS) -o $@
+
+dot2gxl.1: gxl2dot.1
+	$(RM) -f $@
+	$(LN) -s $? $@
+
+install : $(ALL)
+	$(MKPATH) $(BINDIR)
+	cp $(ALL_BIN) $(BINDIR)
+	$(MKPATH) $(MANDIR)
+	$(INSTALL) $(MANS) $(MANDIR)
+
+clean :
+	$(RM) *.o 
+
+distclean : clean
+	$(RM) $(ALL)

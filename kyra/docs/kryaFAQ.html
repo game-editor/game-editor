@@ -1,0 +1,320 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">FAQ</font></h1>
+      <p><font face="Arial, Helvetica, sans-serif">General FAQ | <a href="kryaIsometricFAQ.html">Isometric 
+        FAQ</a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Send questions! I'll try to 
+        think up answers and add them in. Also, be sure to check the <a href="changes.html">changes</a> 
+        between versions, and the <a href="releasenotes.html">release notes</a>.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif">General </font> </h3>
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#SpriteEngine">What 
+          is a Sprite Engine?</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#whatNeeded">What 
+          do I need to know to use Kyra?</a></font></li>
+      </ul>
+      <p></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Troubleshooting </font> </h3>
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#screenFlash">When 
+          I start the demo, the screen flashes but nothing happens.</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#missingDll">In 
+          Windows, I get a &quot;Can't find MSVCxxx.dll&quot; error message.</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="engine.html#performance">It's 
+          not fast enough.</a></font></li>
+      </ul>
+      <h3><font face="Arial, Helvetica, sans-serif">Using Kyra: The Sprite Engine</font></h3>
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#spriteToCanvas">How 
+          can a Sprite be drawn to a Canvas?</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#multipleVaults">How 
+          can I reduce .dat file size, OR, how can I use multiple Vaults?</a></font></li>
+        <li><a href="#frameBounds"><font face="Arial, Helvetica, sans-serif">How 
+          do I get the size (or bounds) of a Sprite (or Action)?</font></a></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#gui">Is there 
+          a Widget set / GUI for Kyra?</a></font></li>
+        <li><a href="#playWithOthers"><font face="Arial, Helvetica, sans-serif">Can 
+          Kyra work with other drawing packages? Is it possible to use an existent 
+          GUI lib for SDL?</font></a></li>
+      </ul>
+      <p></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Using Kyra: Graphics and Games</font></h3>
+      <p> <font face="Arial, Helvetica, sans-serif"> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#sourceGraphics">What 
+          source graphics files and editors work well with Kyra?</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#imagePrep">How 
+          do I prepare images?</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#topdown">How do 
+          I use Kyra with a top-down or side view?</a> </font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="kryaIsometricFAQ.html">How 
+          do I use Kyra with an isometric view?</a></font></li>
+      </ul>
+      </font> 
+      <p></p>
+      <hr>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="SpriteEngine"></a>What 
+        is a Sprite Engine?</font></p>
+      <p> <font face="Arial, Helvetica, sans-serif"> 
+      <blockquote><font face="Arial, Helvetica, sans-serif"> A Sprite Engine is 
+        the drawing and rendering component of 2D and quasi-3D games. Examples 
+        of this kind of game are Civilization, Donkey Kong (classic arcade), Pharaoh, 
+        Zeus, Warcraft, Diablo, Frogger, and Pirates!, among many others. It is 
+        so called because the &quot;characters&quot; or &quot;little men&quot; 
+        are referred to as &quot;sprites&quot;.</font></blockquote>
+      </font> 
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="whatNeeded"></a>What 
+        do I need to know to use Kyra?</font> 
+      <blockquote><font face="Arial, Helvetica, sans-serif">The computer language 
+        C++, primarily. Some experience with graphics and SDL will help greatly. 
+        It's meant to be as easy as possible, so given that you understand basic 
+        C++ you should be able to use the engine.</font></blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="screenFlash"></a>When 
+        I start the demo, the screen flashes but nothing happens.</font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">The demo -- a somewhat intolerant 
+          test app -- is very sensitve to directory paths. This is almost always 
+          caused by not running the demo in the correct working directory. Switch 
+          to the command line, go to where the demo is installed, and run &quot;krdemos&quot; 
+          or &quot;./krdemo&quot; from that directory.</font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="missingDll"></a>In 
+        Windows, I get a &quot;Can't find MSVCxxx.dll&quot; error message. </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">Kyra does not include the 
+          MSVC dll file that it hopes are in your Windows/System directory. If 
+          it isn't there...error message. I'm still working on what systems are 
+          problematic, so I'd appreciate feedback on this one. Generally speaking, 
+          newer systems (Win 98 and later) should have the files.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">A better solution is to just 
+          ship the required DLL with the binary. A fix for the next version.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">This is a distribution problem; 
+          the source build will work fine. Or the dll could be bundled with the 
+          windows binary.</font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="spriteToCanvas"></a>How 
+        can a Sprite be drawn to a Canvas</font></p>
+      <font face="Arial, Helvetica, sans-serif"> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">It is sometimes useful to 
+          be able to take a Sprite Resource, transfer it to a Canvas, and manipulate 
+          it. The SpriteResource::CreateCanvasResource() will create and return 
+          a CanvasResource() version of the Sprite.</font></p>
+      </blockquote>
+      </font> 
+      <p><font face="Arial, Helvetica, sans-serif"><a name="multipleVaults"></a>How 
+        can I reduce .dat file size, OR, how can I use multiple Vaults? </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">It is often useful to break 
+          down .dat files for size and management. A .dat file for the current 
+          background, with a .dat for generic spaceships, and a .dat file for 
+          the current font may work much better than one big huge .dat for everything.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">There can only be one .dat 
+          file per ResourceVault. But, an Engine can use any number of ResourceVaults. 
+          Every Engine has one default vault -- but you can add more. Just be 
+          sure to delete the engine before any vaults it uses. It also introduces 
+          some management overhead: when you get a resource from a vault, you 
+          need to be sure to use the correct one. </font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="frameBounds"></a>How 
+        do I get the size (or bounds) of a Sprite? (or Action, or Frame?) </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">It is an important point 
+          that Sprites are containers for Actions, and Actions are nothing but 
+          containers for Frames. It is not terribly meaningful to ask what is 
+          the bounds of a Sprite or Action: you could define it as the union of 
+          all the contained Frames...but that's not usually helpful.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">Generally it is more useful 
+          to know the bounds of a Frame. Assuming you have a Sprite*, it can be 
+          done as follows:</font></p>
+        <pre><font face="Arial, Helvetica, sans-serif"><blockquote><p>KrRect bounds;
+KrMatrix2 xForm;
+
+xForm.Set();        // create an identity transform.
+
+KrSpriteResource* spriteResource = sprite-&gt;SpriteResource();
+KrAction* action = spriteResource-&gt;GetAction( &quot;SOMETHING&quot; );    // the action of interest
+action-&gt;Frame( 0 ).CalculateBounds( xForm, &bounds );                // the frame of interes</p></blockquote></font></pre>
+        <p><font face="Arial, Helvetica, sans-serif">The bounds returned are relative 
+          to the hot spot, meaning that negative values for x and y are not uncommon. 
+          The size can be queried from the KrRect.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">In version 1.5.0, the fuction 
+          GetBoundingBox() was added to query the current bounds of the object 
+          in it's current state. (Automating the above cod</font><font face="Arial, Helvetica, sans-serif">e.) 
+          </font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="gui"></a>Is there 
+        a Widget set / GUI for Kyra?</font></p>
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">In version 2 a simple widget 
+          set is provided. See <a href="engine.html#widgets">Widgets</a> for more 
+          info. </font></p>
+        </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="playWithOthers"></a>Can 
+        Kyra work with other drawing packages? Is it possible to use an existent 
+        GUI lib for SDL?</font></p>
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">This is the &quot;does Kyra 
+          play well with others?&quot; question. Yes and no. And depends on whether 
+          the Kyra and GUI ouputs overlap.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">It's can be an advanced use 
+          of Kyra. The easiest solution (although perhas not what you want) is 
+          to put Kyra and the GUI on seperate parts of the screen. The engine 
+          constructor allows Kyra to not use the full screen. To use Kyra and 
+          another GUI on the same screen space is trickier.</font></p>
+        <h4><font face="Arial, Helvetica, sans-serif"><strong>Kyra and the GUI 
+          don't overlap</strong></font></h4>
+        <blockquote> 
+          <p><font face="Arial, Helvetica, sans-serif">The easier case. In this 
+            case, Kyra should be set up to run in a <a href="engine.html#windows">view 
+            window</a>. If the GUI library doesn't draw &quot;out of bounds&quot; 
+            they may be able to exists completely independently, and all is well. 
+            </font></p>
+          <p><font face="Arial, Helvetica, sans-serif">If you need to coordinate 
+            their painting cycles, you'll need to use the extra parameters on 
+            the KrEngine::Draw() method. Calling this with 'updateRect' false 
+            will update the back buffer without calling SDL_UpdateRects(). It 
+            will pass back the rects that need to be updated. Assuming you can 
+            get this information from the GUI library, you can use it to coordinate 
+            the screen updates.</font></p>
+        </blockquote>
+        <p><font face="Arial, Helvetica, sans-serif"><strong>Kyra and the GUI 
+          on the same screen space</strong></font></p>
+        <blockquote> 
+          <p><font face="Arial, Helvetica, sans-serif">To get this to work, you 
+            really need to be somewhat savvy with how Kyra and the other package 
+            repaint. Outlining the Kyra issues:</font></p>
+          <p><font face="Arial, Helvetica, sans-serif">Kyra is a dirtly rectangle 
+            renderer. It keeps track of a framebuffer (the one past in on the 
+            construction of the KrEngine) and only updates the minimal area of 
+            the screen required. If another package paints to the frame buffer 
+            -- before or after Kyra -- Kyra has no way to know that and will not 
+            update the correct areas of the screen. You can manage this with KrEngine::InvalidateRectangle(). 
+            This adds a request to Kyra to update a region.</font></p>
+          <p><font face="Arial, Helvetica, sans-serif">This is the crux if the 
+            biscuit. The 2 packages need to have there invalidation areas coordinated 
+            in order to work correctly.</font></p>
+          <p><font face="Arial, Helvetica, sans-serif">You also may not want Kyra 
+            to transfer the backbuffer to physical video, which is normally done 
+            in the Draw() method. You can pass 'false' to the updateRect parameter 
+            in the draw method to surpress the call to SDL_UpdateRects(). It can 
+            also return to you the rectangles that need to be updated.</font></p>
+        </blockquote>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="sourceGraphics"></a>What 
+        source graphics files and editors work well with Kyra?</font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">I'm not about to take a stand 
+          here: there are many good graphics editors out there. If you want to 
+          work with an alpha channel, including partial transparency, you'll need 
+          something that supports editing semitransparent images. The Gimp is 
+          free and handles the alpha channel well. </font></p>
+        <p><font face="Arial, Helvetica, sans-serif">Kyra still supports transparency 
+          without an alpha channel in the source bitmap by using a color key. 
+          With a color key, it's an all or nothing deal: opaque or transparent, 
+          nothing in between.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">Kyra supports all the image 
+          file formats supported by SDL Image.</font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif"><a name="imagePrep"></a>How 
+        do I prepare images?</font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">Take a look at some of the 
+          images on the <a href="tools.html">Tools</a> page. It's easiest to have 
+          a bunch of related images (all the frames for a give Sprite animation, 
+          for instance) grouped on one page. Then use the sprite editor to mark 
+          Sprites, Actions, and Frames for export to the engine.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">If you are using a color 
+          key (no alpha channel) then certain specific RGB values (specified when 
+          you import the image) will become transparent. If you use images with 
+          an alpha channel, the alpha channel directly specifies the transparency.</font></p>
+      </blockquote>
+      <p></p>
+      <p> <font face="Arial, Helvetica, sans-serif"><a name="topdown"></a>How 
+        do I use Kyra with a top-down or side view?</font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">The space demo:</font></p>
+        <p><font face="Arial, Helvetica, sans-serif"><img src="demo5.jpg" width="320" height="240"></font></p>
+        <p><font face="Arial, Helvetica, sans-serif">is an example of a top down 
+          view, which has the same benefits and limitations of a side view. (Not 
+          used in the demo, but Donkey Kong is the canonical example.) This is 
+          an easy view to work with. </font></p>
+        <p><font face="Arial, Helvetica, sans-serif">The background or floor tiles 
+          are square, and can be tiled. The &quot;space scene&quot; in the background 
+          is one relatively small tiled rotated and flipped in 8 combinations. 
+          </font></p>
+        <p><font face="Arial, Helvetica, sans-serif">The space ships were made 
+          with plastic building blocks and photographed top-down with a digital 
+          camera. The image was brought into Photoshop, where background noise 
+          was removed with the Photoshop tools. Everything not a spaceship (all 
+          the negative space) is made into a single flat color, that is interpreted 
+          as transparent when the image is loaded into the sprite editor.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">If the spaceships had been 
+          rendered, then you would normally try to approximate the same geometry 
+          by setting up a virtual camera with a high zoom, located reasonably 
+          far from the model.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif">Depth sorting is usually 
+          very easy in a top-down or side view. The programmer generally knows 
+          the relative depths of all the objects, and sets the ZDepth method accordingly.</font></p>
+      </blockquote>
+      <p>&nbsp; <!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

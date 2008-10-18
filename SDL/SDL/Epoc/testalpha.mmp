@@ -1,0 +1,20 @@
+// *** EPOC MMP FILE FOR SDLTEST.EXE
+
+// *** Definitions
+
+TARGET          testalpha.exe 
+TARGETTYPE      exe
+
+// *** Test source files
+
+SOURCE          ..\test\testalpha.c
+
+// *** Include paths
+
+SYSTEMINCLUDE   \epoc32\include \epoc32\include\libc
+USERINCLUDE     ..\include
+
+// *** Libraries
+
+STATICLIBRARY	sdlmain.lib sdl.lib
+LIBRARY         euser.lib fbscli.lib estlib.lib ws32.LIB hal.lib gdi.lib apgrfx.lib

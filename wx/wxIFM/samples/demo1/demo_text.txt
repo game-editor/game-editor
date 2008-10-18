@@ -1,0 +1,35 @@
+Welcome to the wxIFM demonstration application. In order to experience the power of the wxIFM docking system first hand, follow these directions:
+
+1	Click and hold the left mouse button on the blue caption for the "Classes" window and begin to drag it.
+1a	Once the window is floating and moving with the mouse, drag the window over this text box and left go of the mouse while hovering over the right arrow in the cross shaped group of arrows.
+
+After you have let go, you will notice that the Classes window is now on the right side of the application.
+
+2	Drag the "Classes" caption again, but this time use the right arrow that is against the right side of the main application window.
+
+
+You will now notice that the "Classes" window is again on the right side of the application, but this time it is much taller. You can use the arrows along the sides of the main application window to put any window directly against that side of the main application window.
+
+3	Drag the "Classes" window again, but this time hover the mouse over the "Build" window in the lower left, and let go of the mouse button over the "tab" arrow, which is located in the center of the cross shape.
+
+What this has done is made the "Classes" window a tab of the "Build" window. You can switch between windows that are tabs by clicking on the tab representing the window you want to see. You can also use these tabs to drag windows. LEts try this now.
+
+4	Click and hold the left mouse button on the now inactive "Build" tab located in the lower left, where you just docked the "Classes" window.
+4a	As soon as you click, the "Build" window is selected. Now when you move the mouse button, you will start to drag the "Build" window, just like if you had used its caption instead.
+4b	Instead of docking the "Build" window anywhere, just let go of the mouse while not hovering over any arrows.
+
+What you have done is "floated" the "Build" window. A floating window functions identicle to a non floating window as far as wxIFM is concerned. You can drag the floating window using either a tab, or a caption, just like any other window. Depending on your platform, you may see two captions for this floating window. Under Windows, the native caption is hidden if there is only one window contained within the floating window. Other ports do not support this however. You can dock windows into existing floating windows. Lets try this now.
+
+5	Drag the "Classes" window in the lower left (Number 4, not number 5, which is in the top left) and hover over the "Build" window which is floating, and let go of the mouse over the left arrow.
+
+The "Classes" window is now docked inside the same floating window as the "Build" window. If you are on Windows, you will notice that there is now a native caption displayed for the floating window. You can use this caption to drag the entire floating window around without the docking system of wxIFM activating. It works like this on every port. You will also notice the vertical bar separating the "Build" and "Classes" window. This is a resize sash. It allows you to change the sizes of windows managed by wxIFM. If you try this now, you will notice that resizing the sash doesn't actually do anything! This is because both the "Build" and "Classes" window are as small as they can possibly be, because they have a minimum size. Neither can get any bigger or smaller, so resizing them does nothing. Try making the frame itself bigger, and then using the resize sash.
+
+Another special feature of wxIFM docking is the fact that you can drag any component around no matter what type of component that is. Unfortunately, there is currently no way to demonstrate this. In previous versions of wxIFM, containers drew a thin (ugly!) gray bar on their left. (Containers are components which contain children, such as Panels, which are the things with tabs.) You could use this gray bar to drag the entire Container, including all of its children, just like you have been dragging around Panels. It allows you to float the entire Container as well as make the Container a tab of a Panel. In the future, when I come up with a replacement for the ugly gray bar, this will again be possible.
+
+Before we continue, I should mention that no matter how many tabs are in a given panel (Panels are things that have tabs in them), you can use the panels caption to drag the entire panel including all of its tabs. You can drag individual tabs out of the panel by dragging that specific tab.
+
+6	Drag the "Console" panel which has a "Build" tab and two "Console" tabs using its caption, and dock this window into the "Classes" window (number 4, it will be at the bottom) using the tab button (the middle of the cross).
+
+Woah, what just happened? You docked a Panel (which has Tabs) as a Tab of a Panel! Switch to the "Classes" tab in the bottom panel, and then switch back to the unnamed tab if you don't believe me. You can drag this embedded panel back out again using either its caption, or the unnamed tab.
+
+This concludes the wxIFM demonstration. Play around with it for yourself, its fun!

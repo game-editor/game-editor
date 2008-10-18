@@ -1,0 +1,95 @@
+# Project: mikmod
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../../output/drv_nos.o ../../../../output/drv_sdl.o ../../../../output/load_it.o ../../../../output/load_mod.o ../../../../output/load_s3m.o ../../../../output/load_xm.o ../../../../output/mdreg.o ../../../../output/mdriver.o ../../../../output/mloader.o ../../../../output/mlreg.o ../../../../output/mlutil.o ../../../../output/mmalloc.o ../../../../output/mmerror.o ../../../../output/mmio.o ../../../../output/mplayer.o ../../../../output/munitrk.o ../../../../output/mwav.o ../../../../output/npertab.o ../../../../output/sloader.o ../../../../output/virtch.o ../../../../output/virtch2.o ../../../../output/virtch_common.o $(RES)
+INCS = -I"../../mikmod"  -I"../../../SDL/include" 
+BIN  = ../../../../output/mikmod.a
+CFLAGS = $(INCS) $(TARGET) -DUSE_RWOPS $(BUILD_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../output/mikmod.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../../../output/drv_nos.o: ../../mikmod/drv_nos.c
+	$(CC) -c ../../mikmod/drv_nos.c -o ../../../../output/drv_nos.o $(CFLAGS)
+
+../../../../output/drv_sdl.o: ../../mikmod/drv_sdl.c
+	$(CC) -c ../../mikmod/drv_sdl.c -o ../../../../output/drv_sdl.o $(CFLAGS)
+
+../../../../output/load_it.o: ../../mikmod/load_it.c
+	$(CC) -c ../../mikmod/load_it.c -o ../../../../output/load_it.o $(CFLAGS)
+
+../../../../output/load_mod.o: ../../mikmod/load_mod.c
+	$(CC) -c ../../mikmod/load_mod.c -o ../../../../output/load_mod.o $(CFLAGS)
+
+../../../../output/load_s3m.o: ../../mikmod/load_s3m.c
+	$(CC) -c ../../mikmod/load_s3m.c -o ../../../../output/load_s3m.o $(CFLAGS)
+
+../../../../output/load_xm.o: ../../mikmod/load_xm.c
+	$(CC) -c ../../mikmod/load_xm.c -o ../../../../output/load_xm.o $(CFLAGS)
+
+../../../../output/mdreg.o: ../../mikmod/mdreg.c
+	$(CC) -c ../../mikmod/mdreg.c -o ../../../../output/mdreg.o $(CFLAGS)
+
+../../../../output/mdriver.o: ../../mikmod/mdriver.c
+	$(CC) -c ../../mikmod/mdriver.c -o ../../../../output/mdriver.o $(CFLAGS)
+
+../../../../output/mloader.o: ../../mikmod/mloader.c
+	$(CC) -c ../../mikmod/mloader.c -o ../../../../output/mloader.o $(CFLAGS)
+
+../../../../output/mlreg.o: ../../mikmod/mlreg.c
+	$(CC) -c ../../mikmod/mlreg.c -o ../../../../output/mlreg.o $(CFLAGS)
+
+../../../../output/mlutil.o: ../../mikmod/mlutil.c
+	$(CC) -c ../../mikmod/mlutil.c -o ../../../../output/mlutil.o $(CFLAGS)
+
+../../../../output/mmalloc.o: ../../mikmod/mmalloc.c
+	$(CC) -c ../../mikmod/mmalloc.c -o ../../../../output/mmalloc.o $(CFLAGS)
+
+../../../../output/mmerror.o: ../../mikmod/mmerror.c
+	$(CC) -c ../../mikmod/mmerror.c -o ../../../../output/mmerror.o $(CFLAGS)
+
+../../../../output/mmio.o: ../../mikmod/mmio.c
+	$(CC) -c ../../mikmod/mmio.c -o ../../../../output/mmio.o $(CFLAGS)
+
+../../../../output/mplayer.o: ../../mikmod/mplayer.c
+	$(CC) -c ../../mikmod/mplayer.c -o ../../../../output/mplayer.o $(CFLAGS)
+
+../../../../output/munitrk.o: ../../mikmod/munitrk.c
+	$(CC) -c ../../mikmod/munitrk.c -o ../../../../output/munitrk.o $(CFLAGS)
+
+../../../../output/mwav.o: ../../mikmod/mwav.c
+	$(CC) -c ../../mikmod/mwav.c -o ../../../../output/mwav.o $(CFLAGS)
+
+../../../../output/npertab.o: ../../mikmod/npertab.c
+	$(CC) -c ../../mikmod/npertab.c -o ../../../../output/npertab.o $(CFLAGS)
+
+../../../../output/sloader.o: ../../mikmod/sloader.c
+	$(CC) -c ../../mikmod/sloader.c -o ../../../../output/sloader.o $(CFLAGS)
+
+../../../../output/virtch.o: ../../mikmod/virtch.c
+	$(CC) -c ../../mikmod/virtch.c -o ../../../../output/virtch.o $(CFLAGS)
+
+../../../../output/virtch2.o: ../../mikmod/virtch2.c
+	$(CC) -c ../../mikmod/virtch2.c -o ../../../../output/virtch2.o $(CFLAGS)
+
+../../../../output/virtch_common.o: ../../mikmod/virtch_common.c
+	$(CC) -c ../../mikmod/virtch_common.c -o ../../../../output/virtch_common.o $(CFLAGS)

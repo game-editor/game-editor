@@ -1,0 +1,4614 @@
+# Microsoft eMbedded Visual Tools Project File - Name="SDL" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE x86) Dynamic-Link Library" 0x8302
+# TARGTYPE "Win32 (WCE ARM) Dynamic-Link Library" 0x8502
+# TARGTYPE "Win32 (WCE emulator) Dynamic-Link Library" 0xa602
+
+CFG=SDL - WIN32 (WCE EMULATOR) DEBUG
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "SDL.VCN".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "SDL.VCN" CFG="SDL - WIN32 (WCE EMULATOR) DEBUG"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "SDL - Win32 (WCE emulator) Release" (based on "Win32 (WCE emulator) Dynamic-Link Library")
+!MESSAGE "SDL - Win32 (WCE emulator) Debug" (based on "Win32 (WCE emulator) Dynamic-Link Library")
+!MESSAGE "SDL - Win32 (WCE x86) Debug" (based on "Win32 (WCE x86) Dynamic-Link Library")
+!MESSAGE "SDL - Win32 (WCE ARM) Debug" (based on "Win32 (WCE ARM) Dynamic-Link Library")
+!MESSAGE "SDL - Win32 (WCE ARM) Release" (based on "Win32 (WCE ARM) Dynamic-Link Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""$/GameDevelopment/SDL/SDL/VisualCE/SDL", IQJAAAAA"
+# PROP Scc_LocalPath "."
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "emulatorRel"
+# PROP BASE Intermediate_Dir "emulatorRel"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "emulatorRel"
+# PROP Intermediate_Dir "emulatorRel"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "SDL_EXPORTS" /YX /Gs8192 /GF /O2 /c
+# ADD CPP /nologo /W3 /I "../../include" /I "../../src" /I "../../src/audio" /I "../../src/cdrom" /I "../../src/endian" /I "../../src/events" /I "../../src/file" /I "../../src/joystick" /I "../../src/thread" /I "../../src/thread/win32" /I "../../src/timer" /I "../../src/video" /I "../../src/video/wincommon" /I "../../src/video/windib" /I "../../src/video/windx5" /D "_i386_" /D "_X86_" /D "x86" /D "NDEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "SDL_EXPORTS" /D "WIN32" /D "ENABLE_WINDIB" /D "NO_SIGNAL_H" /YX /Gs8192 /GF /O2 /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 $(CEx86Corelibc) commctrl.lib coredll.lib /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "emulatorDbg"
+# PROP BASE Intermediate_Dir "emulatorDbg"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "emulatorDbg"
+# PROP Intermediate_Dir "emulatorDbg"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "SDL_EXPORTS" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /I "../../src/thread/win32" /I "../../src/video/wincommon" /I "../../src/video/windib" /I "../../src/video/windx5" /I "../../include" /I "../../src" /I "../../src/audio" /I "../../src/cdrom" /I "../../src/endian" /I "../../src/events" /I "../../src/file" /I "../../src/joystick" /I "../../src/thread" /I "../../src/timer" /I "../../src/video" /D "DEBUG" /D "_i386_" /D "_X86_" /D "x86" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "SDL_EXPORTS" /D "WIN32" /D "ENABLE_WINDIB" /D "NO_SIGNAL_H" /YX /Gs8192 /GF /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 $(CEx86Corelibc) commctrl.lib coredll.lib /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "X86Dbg"
+# PROP BASE Intermediate_Dir "X86Dbg"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../../output/"
+# PROP Intermediate_Dir "../../../../output/SDL"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /I "..\..\src" /I "..\..\src\audio" /I "..\..\src\video" /I "..\..\src\video\wincommon" /I "..\..\src\video\windx5" /I "..\..\src\events" /I "..\..\src\joystick" /I "..\..\src\cdrom" /I "..\..\src\thread" /I "..\..\src\thread\win32" /I "..\..\src\timer" /I "..\..\include" /I "..\..\include\SDL" /D "WIN32" /D "_i386_" /D "_X86_" /D "x86" /D "NO_SIGNAL_H" /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "ENABLE_WINDIB" /YX /Gs8192 /GF /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMDbg"
+# PROP BASE Intermediate_Dir "ARMDbg"
+# PROP BASE CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../../output"
+# PROP Intermediate_Dir "../../../../output/SDL"
+# PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /r
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /YX /M$(CECrtMTDebug) /c
+# ADD CPP /nologo /W3 /Zi /Od /I "..\..\src" /I "..\..\src\audio" /I "..\..\src\video" /I "..\..\src\video\wincommon" /I "..\..\src\video\windx5" /I "..\..\src\events" /I "..\..\src\joystick" /I "..\..\src\cdrom" /I "..\..\src\thread" /I "..\..\src\thread\win32" /I "..\..\src\timer" /I "..\..\include" /I "..\..\include\SDL" /D "ARM" /D "_ARM_" /D "NO_SIGNAL_H" /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "ENABLE_WINDIB" /YX /M$(CECrtMTDebug) /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /MACHINE:ARM
+# ADD LINK32 commctrl.lib coredll.lib /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /MACHINE:ARM
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMDbg"
+# PROP BASE Intermediate_Dir "ARMDbg"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Ignore_Export_Lib 0
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../../output/"
+# PROP Intermediate_Dir "../../../../output/SDL"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /r
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /GX- /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "WIN32" /D "NO_SIGNAL_H" /D "ENABLE_WINDIB" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /GX- /Zi /Od /I "..\..\src" /I "..\..\src\audio" /I "..\..\src\video" /I "..\..\src\video\wincommon" /I "..\..\src\video\windx5" /I "..\..\src\events" /I "..\..\src\joystick" /I "..\..\src\cdrom" /I "..\..\src\thread" /I "..\..\src\thread\win32" /I "..\..\src\timer" /I "..\..\include" /I "..\..\include\SDL" /D "NDEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "WIN32" /D "NO_SIGNAL_H" /D "ENABLE_WINDIB" /YX /Gs8192 /GF /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /MACHINE:IX86
+# SUBTRACT BASE LINK32 /incremental:no
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /MACHINE:ARM
+# SUBTRACT LINK32 /pdb:none
+
+!ENDIF 
+
+# Begin Target
+
+# Name "SDL - Win32 (WCE emulator) Release"
+# Name "SDL - Win32 (WCE emulator) Debug"
+# Name "SDL - Win32 (WCE x86) Debug"
+# Name "SDL - Win32 (WCE ARM) Debug"
+# Name "SDL - Win32 (WCE ARM) Release"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=..\..\src\SDL.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_C=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\SDL_fatal.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_C=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\SDL_fatal.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_C=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\SDL_fatal.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_C=\
+	"..\..\src\SDL_fatal.h"\
+	
+NODEP_CPP_SDL_C=\
+	"..\..\src\SDL.h"\
+	"..\..\src\SDL_endian.h"\
+	"..\..\src\SDL_leaks.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_active.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_A=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_A=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_A=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_A=\
+	"..\..\src\events\SDL_events_c.h"\
+	
+NODEP_CPP_SDL_A=\
+	"..\..\src\events\SDL_events.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audio.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_AU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_audiomem.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_AU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_audiomem.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_AU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_audiomem.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_AU=\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_audiomem.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+NODEP_CPP_SDL_AU=\
+	"..\..\src\audio\SDL.h"\
+	"..\..\src\audio\SDL_audio.h"\
+	"..\..\src\audio\SDL_error.h"\
+	"..\..\src\audio\SDL_mutex.h"\
+	"..\..\src\audio\SDL_thread.h"\
+	"..\..\src\audio\SDL_timer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audiocvt.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_AUD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_AUD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_AUD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_AUD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audiodev.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_AUDI=\
+	"..\..\src\audio\SDL_audiodev_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_AUDI=\
+	"..\..\src\audio\SDL_audiodev_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_AUDI=\
+	"..\..\src\audio\SDL_audiodev_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_AUDI=\
+	"..\..\src\audio\SDL_audiodev_c.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audiomem.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_AUDIO=\
+	"..\..\src\audio\SDL_audiomem.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_AUDIO=\
+	"..\..\src\audio\SDL_audiomem.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_AUDIO=\
+	"..\..\src\audio\SDL_audiomem.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_AUDIO=\
+	"..\..\src\audio\SDL_audiomem.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_blit.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_B=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_B=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_B=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_B=\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_B=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_blit_0.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_BL=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_BL=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_BL=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_BL=\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_BL=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_types.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_blit_1.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_BLI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_BLI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_BLI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_BLI=\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_BLI=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_types.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_blit_A.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_BLIT=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_BLIT=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_BLIT=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_BLIT=\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_BLIT=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_types.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_blit_N.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_BLIT_=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_BLIT_=\
+	"..\..\src\video\HeadMMX.h"\
+	"..\..\src\video\HeadX86.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_BLIT_=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_BLIT_=\
+	"..\..\src\video\HeadMMX.h"\
+	"..\..\src\video\HeadX86.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_BLIT_=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_BLIT_=\
+	"..\..\src\video\HeadMMX.h"\
+	"..\..\src\video\HeadX86.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_BLIT_=\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_BLIT_=\
+	"..\..\src\video\HeadMMX.h"\
+	"..\..\src\video\HeadX86.h"\
+	"..\..\src\video\SDL_byteorder.h"\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_types.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_bmp.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_BM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_BM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_BM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_BM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\cdrom\SDL_cdrom.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_CD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_CD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_CD=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_CD=\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+NODEP_CPP_SDL_CD=\
+	"..\..\src\cdrom\SDL_cdrom.h"\
+	"..\..\src\cdrom\SDL_error.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_cursor.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_CU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\default_cursor.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_CU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\default_cursor.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_CU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\default_cursor.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_CU=\
+	"..\..\src\video\default_cursor.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_CU=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_events_c.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_mutex.h"\
+	"..\..\src\video\SDL_sysevents.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\windib\SDL_dibaudio.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_D=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	"..\..\src\audio\windib\SDL_dibaudio.h"\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_D=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	"..\..\src\audio\windib\SDL_dibaudio.h"\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_D=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_audio_c.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	"..\..\src\audio\windib\SDL_dibaudio.h"\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_D=\
+	"..\..\src\audio\windib\SDL_dibaudio.h"\
+	
+NODEP_CPP_SDL_D=\
+	"..\..\src\audio\windib\SDL_audio.h"\
+	"..\..\src\audio\windib\SDL_audio_c.h"\
+	"..\..\src\audio\windib\SDL_mutex.h"\
+	"..\..\src\audio\windib\SDL_sysaudio.h"\
+	"..\..\src\audio\windib\SDL_timer.h"\
+	"..\..\src\audio\windib\win_ce_semaphore.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\windib\SDL_dibevents.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_DI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	"..\..\src\video\windib\SDL_vkeys.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_DI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	"..\..\src\video\windib\SDL_vkeys.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_DI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	"..\..\src\video\windib\SDL_vkeys.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_DI=\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	"..\..\src\video\windib\SDL_vkeys.h"\
+	
+NODEP_CPP_SDL_DI=\
+	"..\..\src\video\windib\SDL_error.h"\
+	"..\..\src\video\windib\SDL_events.h"\
+	"..\..\src\video\windib\SDL_events_c.h"\
+	"..\..\src\video\windib\SDL_lowvideo.h"\
+	"..\..\src\video\windib\SDL_sysevents.h"\
+	"..\..\src\video\windib\SDL_syswm.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\windib\SDL_dibvideo.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_DIB=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	"..\..\src\video\windib\SDL_dibevents_c.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_DIB=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	"..\..\src\video\windib\SDL_dibevents_c.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	
+NODEP_CPP_SDL_DIB=\
+	".\ipapi.h"\
+	".\ygshell.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_DIB=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	"..\..\src\video\windib\SDL_dibevents_c.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_DIB=\
+	"..\..\src\video\windib\SDL_dibevents_c.h"\
+	"..\..\src\video\windib\SDL_dibvideo.h"\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	
+NODEP_CPP_SDL_DIB=\
+	"..\..\src\video\windib\SDL.h"\
+	"..\..\src\video\windib\SDL_events_c.h"\
+	"..\..\src\video\windib\SDL_lowvideo.h"\
+	"..\..\src\video\windib\SDL_mutex.h"\
+	"..\..\src\video\windib\SDL_pixels_c.h"\
+	"..\..\src\video\windib\SDL_sysevents.h"\
+	"..\..\src\video\windib\SDL_sysmouse_c.h"\
+	"..\..\src\video\windib\SDL_sysvideo.h"\
+	"..\..\src\video\windib\SDL_syswm.h"\
+	"..\..\src\video\windib\SDL_syswm_c.h"\
+	"..\..\src\video\windib\SDL_wingl_c.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\endian\SDL_endian.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_E=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_E=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_E=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_E=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\SDL_error.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_ER=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_ER=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_ER=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_ER=\
+	"..\..\src\SDL_error_c.h"\
+	
+NODEP_CPP_SDL_ER=\
+	"..\..\src\SDL_error.h"\
+	"..\..\src\SDL_getenv.h"\
+	"..\..\src\SDL_thread_c.h"\
+	"..\..\src\SDL_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_events.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_EV=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_EV=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_EV=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_EV=\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	
+NODEP_CPP_SDL_EV=\
+	"..\..\src\events\SDL.h"\
+	"..\..\src\events\SDL_events.h"\
+	"..\..\src\events\SDL_joystick_c.h"\
+	"..\..\src\events\SDL_mutex.h"\
+	"..\..\src\events\SDL_sysvideo.h"\
+	"..\..\src\events\SDL_syswm.h"\
+	"..\..\src\events\SDL_thread.h"\
+	"..\..\src\events\SDL_timer_c.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_expose.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_EX=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_EX=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_EX=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_EX=\
+	"..\..\src\events\SDL_events_c.h"\
+	
+NODEP_CPP_SDL_EX=\
+	"..\..\src\events\SDL_events.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\SDL_fatal.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_F=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\SDL_fatal.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_F=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\SDL_fatal.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_F=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\SDL_fatal.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_F=\
+	"..\..\src\SDL_fatal.h"\
+	
+NODEP_CPP_SDL_F=\
+	"..\..\src\SDL.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_gamma.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_G=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_G=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_G=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_G=\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_G=\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\SDL_getenv.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_GE=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_GE=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	
+# SUBTRACT CPP /D "ENABLE_WINDIB"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_GE=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_GE=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	
+# SUBTRACT BASE CPP /D "ENABLE_WINDIB"
+# SUBTRACT CPP /D "ENABLE_WINDIB"
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\joystick\SDL_joystick.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_J=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_J=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_J=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_J=\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+NODEP_CPP_SDL_J=\
+	"..\..\src\joystick\SDL_error.h"\
+	"..\..\src\joystick\SDL_events.h"\
+	"..\..\src\joystick\SDL_events_c.h"\
+	"..\..\src\joystick\SDL_joystick.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_keyboard.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_K=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_K=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_K=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_K=\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	
+NODEP_CPP_SDL_K=\
+	"..\..\src\events\SDL_error.h"\
+	"..\..\src\events\SDL_events.h"\
+	"..\..\src\events\SDL_sysvideo.h"\
+	"..\..\src\events\SDL_timer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_mixer.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_M=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_M=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_M=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_M=\
+	"..\..\src\audio\SDL_sysaudio.h"\
+	
+NODEP_CPP_SDL_M=\
+	"..\..\src\audio\SDL_audio.h"\
+	"..\..\src\audio\SDL_mutex.h"\
+	"..\..\src\audio\SDL_thread.h"\
+	"..\..\src\audio\SDL_timer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_mouse.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_MO=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_MO=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_MO=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_MO=\
+	"..\..\src\events\SDL_events_c.h"\
+	
+NODEP_CPP_SDL_MO=\
+	"..\..\src\events\SDL_cursor_c.h"\
+	"..\..\src\events\SDL_events.h"\
+	"..\..\src\events\SDL_sysvideo.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_pixels.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_P=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_P=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_P=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_P=\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_P=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_quit.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_Q=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_Q=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_Q=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_Q=\
+	"..\..\src\events\SDL_events_c.h"\
+	
+NODEP_CPP_SDL_Q=\
+	"..\..\src\events\SDL_events.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_resize.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_R=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_R=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_R=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_R=\
+	"..\..\src\events\SDL_events_c.h"\
+	
+NODEP_CPP_SDL_R=\
+	"..\..\src\events\SDL_events.h"\
+	"..\..\src\events\SDL_sysvideo.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_RLEaccel.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_RL=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_RL=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_RL=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_RL=\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_RL=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_types.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\file\SDL_rwops.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_RW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_RW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_RW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_RW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_stretch.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_S=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_S=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_S=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_S=\
+	"..\..\src\video\SDL_blit.h"\
+	
+NODEP_CPP_SDL_S=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_surface.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SU=\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_leaks.h"\
+	"..\..\src\video\SDL_memops.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_RLEaccel_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_SU=\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_mutex.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\cdrom\dummy\SDL_syscdrom.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SY=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SY=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SY=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SY=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\cdrom\SDL_syscdrom.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_sysevents.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYS=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\wmmsg.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYS=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\wmmsg.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYS=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\wmmsg.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYS=\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\wmmsg.h"\
+	
+NODEP_CPP_SDL_SYS=\
+	"..\..\src\video\wincommon\SDL_error.h"\
+	"..\..\src\video\wincommon\SDL_events.h"\
+	"..\..\src\video\wincommon\SDL_events_c.h"\
+	"..\..\src\video\wincommon\SDL_getenv.h"\
+	"..\..\src\video\wincommon\SDL_main.h"\
+	"..\..\src\video\wincommon\SDL_sysevents.h"\
+	"..\..\src\video\wincommon\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm.h"\
+	"..\..\src\video\wincommon\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\joystick\dummy\SDL_sysjoystick.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYSJ=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYSJ=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYSJ=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYSJ=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\joystick\SDL_joystick_c.h"\
+	"..\..\src\joystick\SDL_sysjoystick.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_sysmouse.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYSM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYSM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYSM=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYSM=\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_sysmouse_c.h"\
+	
+NODEP_CPP_SDL_SYSM=\
+	"..\..\src\video\wincommon\SDL_cursor_c.h"\
+	"..\..\src\video\wincommon\SDL_error.h"\
+	"..\..\src\video\wincommon\SDL_events_c.h"\
+	"..\..\src\video\wincommon\SDL_mouse.h"\
+	"..\..\src\video\wincommon\SDL_sysvideo.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\win32\SDL_sysmutex.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYSMU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYSMU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYSMU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYSMU=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\win32\SDL_syssem.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYSS=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYSS=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYSS=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYSS=\
+	"..\..\src\thread\win32\win_ce_semaphore.h"\
+	
+NODEP_CPP_SDL_SYSS=\
+	"..\..\src\thread\win32\SDL_error.h"\
+	"..\..\src\thread\win32\SDL_thread.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\win32\SDL_systhread.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYST=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYST=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYST=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYST=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\timer\win32\SDL_systimer.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYSTI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYSTI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYSTI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYSTI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_syswm.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_SYSW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_SYSW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_SYSW=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_SYSW=\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm_c.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+NODEP_CPP_SDL_SYSW=\
+	"..\..\src\video\wincommon\SDL_cursor_c.h"\
+	"..\..\src\video\wincommon\SDL_error.h"\
+	"..\..\src\video\wincommon\SDL_pixels_c.h"\
+	"..\..\src\video\wincommon\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_syswm.h"\
+	"..\..\src\video\wincommon\SDL_version.h"\
+	"..\..\src\video\wincommon\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\SDL_thread.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_T=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_T=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_T=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_thread.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\SDL_error_c.h"\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	"..\..\src\thread\win32\SDL_systhread_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_T=\
+	"..\..\src\thread\SDL_systhread.h"\
+	"..\..\src\thread\SDL_thread_c.h"\
+	
+NODEP_CPP_SDL_T=\
+	"..\..\src\thread\SDL_error.h"\
+	"..\..\src\thread\SDL_error_c.h"\
+	"..\..\src\thread\SDL_mutex.h"\
+	"..\..\src\thread\SDL_systhread_c.h"\
+	"..\..\src\thread\SDL_thread.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\timer\SDL_timer.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_TI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_systimer.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_TI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_systimer.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_TI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\timer\SDL_systimer.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_TI=\
+	"..\..\src\timer\SDL_systimer.h"\
+	"..\..\src\timer\SDL_timer_c.h"\
+	
+NODEP_CPP_SDL_TI=\
+	"..\..\src\timer\SDL_error.h"\
+	"..\..\src\timer\SDL_mutex.h"\
+	"..\..\src\timer\SDL_timer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_video.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_V=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_V=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_V=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL.h"\
+	"..\..\include\SDL_active.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_cdrom.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_events.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_joystick.h"\
+	"..\..\include\SDL_keyboard.h"\
+	"..\..\include\SDL_keysym.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_quit.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_timer.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\events\SDL_events_c.h"\
+	"..\..\src\events\SDL_sysevents.h"\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_V=\
+	"..\..\src\video\SDL_blit.h"\
+	"..\..\src\video\SDL_cursor_c.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_pixels_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	
+NODEP_CPP_SDL_V=\
+	"..\..\src\video\SDL.h"\
+	"..\..\src\video\SDL_endian.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_events.h"\
+	"..\..\src\video\SDL_events_c.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_mutex.h"\
+	"..\..\src\video\SDL_sysevents.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_wave.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_W=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_wave.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_W=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_wave.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_W=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_audio.h"\
+	"..\..\include\SDL_byteorder.h"\
+	"..\..\include\SDL_endian.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\src\audio\SDL_wave.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_W=\
+	"..\..\src\audio\SDL_wave.h"\
+	
+NODEP_CPP_SDL_W=\
+	"..\..\src\audio\SDL_audio.h"\
+	"..\..\src\audio\SDL_endian.h"\
+	"..\..\src\audio\SDL_error.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_wingl.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_WI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_opengl.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_WI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_opengl.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_WI=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_opengl.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_WI=\
+	"..\..\src\video\wincommon\SDL_lowvideo.h"\
+	"..\..\src\video\wincommon\SDL_wingl_c.h"\
+	
+NODEP_CPP_SDL_WI=\
+	"..\..\src\video\wincommon\SDL_error.h"\
+	"..\..\src\video\wincommon\SDL_opengl.h"\
+	"..\..\src\video\wincommon\SDL_sysvideo.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_yuv.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_Y=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_Y=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_Y=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_getenv.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_Y=\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+NODEP_CPP_SDL_Y=\
+	"..\..\src\video\SDL_getenv.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_yuv_mmx.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_YU=\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_YU=\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_YU=\
+	"..\..\include\SDL_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_YU=\
+	"..\..\include\SDL_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_yuv_sw.c
+
+!IF  "$(CFG)" == "SDL - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDL_YUV=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_stretch_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+NODEP_CPP_SDL_YUV=\
+	"..\..\src\video\HeadX86.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDL_YUV=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_stretch_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+NODEP_CPP_SDL_YUV=\
+	"..\..\src\video\HeadX86.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SDL_YUV=\
+	"..\..\include\begin_code.h"\
+	"..\..\include\close_code.h"\
+	"..\..\include\SDL_error.h"\
+	"..\..\include\SDL_main.h"\
+	"..\..\include\SDL_mouse.h"\
+	"..\..\include\SDL_mutex.h"\
+	"..\..\include\SDL_rwops.h"\
+	"..\..\include\SDL_syswm.h"\
+	"..\..\include\SDL_types.h"\
+	"..\..\include\SDL_version.h"\
+	"..\..\include\SDL_video.h"\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_stretch_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+NODEP_CPP_SDL_YUV=\
+	"..\..\src\video\HeadX86.h"\
+	
+
+!ELSEIF  "$(CFG)" == "SDL - Win32 (WCE ARM) Release"
+
+DEP_CPP_SDL_YUV=\
+	"..\..\src\video\SDL_glfuncs.h"\
+	"..\..\src\video\SDL_stretch_c.h"\
+	"..\..\src\video\SDL_sysvideo.h"\
+	"..\..\src\video\SDL_yuv_sw_c.h"\
+	"..\..\src\video\SDL_yuvfuncs.h"\
+	
+NODEP_CPP_SDL_YUV=\
+	"..\..\src\video\HeadX86.h"\
+	"..\..\src\video\SDL_error.h"\
+	"..\..\src\video\SDL_mouse.h"\
+	"..\..\src\video\SDL_syswm.h"\
+	"..\..\src\video\SDL_video.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=..\..\src\video\blank_cursor.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\default_cursor.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\windx5\directx.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audio_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audiodev_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_audiomem.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_blit.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_cursor_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\windib\SDL_dibaudio.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\windib\SDL_dibevents_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\windib\SDL_dibvideo.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_events_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\SDL_fatal.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_glfuncs.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\joystick\SDL_joystick_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_leaks.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_lowvideo.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_memops.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_pixels_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_RLEaccel_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_stretch_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_sysaudio.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\cdrom\SDL_syscdrom.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\events\SDL_sysevents.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\joystick\SDL_sysjoystick.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_sysmouse_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\SDL_systhread.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\win32\SDL_systhread_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\timer\SDL_systimer.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_sysvideo.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_syswm_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\thread\SDL_thread_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\timer\SDL_timer_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\windib\SDL_vkeys.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\audio\SDL_wave.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\SDL_wingl_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_yuv_sw_c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\SDL_yuvfuncs.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\src\video\wincommon\wmmsg.h
+# End Source File
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# End Group
+# End Target
+# End Project

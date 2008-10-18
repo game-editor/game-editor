@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioToolFile
+	Name="GCC Compiler"
+	Version="8,00"
+	>
+	<Rules>
+		<CustomBuildRule
+			Name="arm-linux-gcc"
+			DisplayName="GCC Compiler"
+			CommandLine="arm-none-linux-gnueabi-gcc.exe -c [AllOptions] [AdditionalOptions] -DANDROID -mlittle-endian -msoft-float -mstructure-size-boundary=32 -fsigned-char -o &quot;$(IntDir)\$(InputName).o&quot; [inputs] 2&gt;&amp;1 | sed -e s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/"
+			Outputs="$(IntDir)\$(InputName).o"
+			FileExtensions="*.c;*.cpp"
+			ExecutionDescription="$(InputFileName)"
+			>
+			<Properties>
+				<StringProperty
+					Name="IncludePaths"
+					DisplayName="Additional Include Paths"
+					Description="Specifies one or more directories to add to the include path; use semi-colon delimited list if more than one."
+					Switch="-I&quot;[value]&quot;"
+					Delimited="true"
+					Inheritable="true"
+				/>
+				<BooleanProperty
+					Name="WarningsAsErrors"
+					DisplayName="Warnings As Errors"
+					Description="Treat warnings as errors"
+					Switch="-Werror"
+				/>
+				<EnumProperty
+					Name="OptimizationLevel"
+					DisplayName="Optimization Level"
+					Description="Set the optimization level"
+					>
+					<Values>
+						<EnumValue
+							Value="0"
+							DisplayName="Default"
+						/>
+						<EnumValue
+							Value="1"
+							Switch="-O0"
+							DisplayName="No Optimization"
+						/>
+						<EnumValue
+							Value="2"
+							Switch="-O1"
+							DisplayName="Simple Optimization"
+						/>
+						<EnumValue
+							Value="3"
+							Switch="-O2"
+							DisplayName="Optimize for Speed"
+						/>
+						<EnumValue
+							Value="4"
+							Switch="-Os"
+							DisplayName="Optimize for Size"
+						/>
+						<EnumValue
+							Value="5"
+							Switch="-O3"
+							DisplayName="Maximum Optimization"
+						/>
+					</Values>
+				</EnumProperty>
+				<StringProperty
+					Name="PreprocessorDefines"
+					DisplayName="Preprocessor Defines"
+					Description="Specifies one or more preprocessor defines.  Separate multiple defines with a semi-colon."
+					Switch="-D[value]"
+					Delimited="true"
+					Inheritable="true"
+				/>
+				<StringProperty
+					Name="PreprocessorUndefines"
+					DisplayName="Preprocessor Undefines"
+					Description="Specifies one or more preprocessor undefs.  Separate multiple undefs with a semi-colon."
+					Switch="-U[value]"
+					Delimited="true"
+					Inheritable="true"
+				/>
+				<EnumProperty
+					Name="WarningLevel"
+					DisplayName="Warning Level"
+					Description="Set the level of warnings that are displayed."
+					>
+					<Values>
+						<EnumValue
+							Value="0"
+							DisplayName="Default"
+						/>
+						<EnumValue
+							Value="2"
+							Switch="-Wall"
+							DisplayName="All"
+						/>
+					</Values>
+				</EnumProperty>
+			</Properties>
+		</CustomBuildRule>
+		<CustomBuildRule
+			Name="arm-linux-link"
+			DisplayName="GCC Linker"
+			CommandLine="arm-none-linux-gnueabi-g++.exe &quot;$(IntDir)&quot;\*.o  -o &quot;$(TargetDir)gameEditorAndroid&quot; [AllOptions] &quot;E:\Sourcery G++ Lite\arm-none-linux-gnueabi\libc\usr\lib\libm.a&quot; &quot;E:\Sourcery G++ Lite\arm-none-linux-gnueabi\libc\usr\lib\libc.a&quot; &quot;E:\Sourcery G++ Lite\arm-none-linux-gnueabi\libc\usr\lib\libpthread.a&quot; &quot;E:\Sourcery G++ Lite\arm-none-linux-gnueabi\lib\libstdc++.a&quot; [AdditionalOptions] 2&gt;&amp;1 | sed -e s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/"
+			Outputs="never-exists"
+			FileExtensions="*.link"
+			ExecutionDescription="Linking $(TargetFileName)..."
+			>
+			<Properties>
+				<StringProperty
+					Name="LibPaths"
+					DisplayName="Additional Library Paths"
+					Description="Specifies one or more directories to add to the lib path; use semi-colon delimited list if more than one."
+					Switch="-L&quot;[value]&quot;"
+					Delimited="true"
+					Inheritable="true"
+				/>
+				<StringProperty
+					Name="Libraries"
+					DisplayName="Additional Dependencies"
+					Description="Specifies one or more libraries to link to; use semi-colon delimited list if more than one."
+					Switch="[value]"
+					DefaultValue="pthread"
+					Delimited="true"
+					Delimiters=";, "
+					Inheritable="true"
+				/>
+				<EnumProperty
+					Name="StaticLink"
+					DisplayName="Static"
+					Description="Select Yes to static linkage"
+					>
+					<Values>
+						<EnumValue
+							Value="1"
+							Switch="-static"
+							DisplayName="Yes"
+						/>
+						<EnumValue
+							Value="0"
+							DisplayName="No"
+						/>
+					</Values>
+				</EnumProperty>
+			</Properties>
+		</CustomBuildRule>
+		<CustomBuildRule
+			Name="arm-linux-ar"
+			DisplayName="GCC Archiver"
+			CommandLine="arm-none-linux-gnueabi-ar rcs [AdditionalOptions] &quot;$(TargetPath)&quot; $(IntDir)\*.o"
+			Outputs="never-exists"
+			FileExtensions="*.ar"
+			ExecutionDescription="Creating library $(TargetFileName)..."
+			>
+			<Properties>
+			</Properties>
+		</CustomBuildRule>
+	</Rules>
+</VisualStudioToolFile>

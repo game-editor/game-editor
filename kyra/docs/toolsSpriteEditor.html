@@ -1,0 +1,222 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">Tools : Sprite Editor</font></h1>
+      <p><font face="Arial, Helvetica, sans-serif"><a href="tools.html">Overview</a> 
+        | Sprite Editor | <a href="toolsEncoder.html">Encoder</a> | <a href="kyraxml.html">Kyra 
+        XML</a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><i>NOTE: Neither the Sprite 
+        Editor or Encoder can handle relative directory paths. So they need to 
+        be run from the directory where the source files are and the output files 
+        will go.</i></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The Sprite Editor allows you 
+        to load an input file, mark the location of Sprites and Tiles in that 
+        file, and save an XML file describing the Sprites and Tiles.</font></p>
+      <h2><img src="tools1.jpg" width="239" height="55"></h2>
+      <p><font face="Arial, Helvetica, sans-serif">Run the Sprite Editor. The 
+        Sprite Editor is one of those command line apps of yore. This is, admittedly, 
+        not the best thing but I didn't want to add even more required libraries 
+        to the package. The interface works fully, but won't get any UI awards.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><i>NOTE: The Sprite Editor 
+        can open any file format that is supported by SDL_Image.</i></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">If you wish to open an image 
+        file to start editing (as opposed to an existing XML) type </font></p>
+      <p> 
+      <code> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">image filename</font></p>
+      </blockquote>
+      </code> 
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">If the file is 32 bit then 
+        the Editor will use the alpha channel as provided. If you use one or more 
+        colors that should be interpreted as transparent, then the command: </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>image filename <i>transparent0 
+          transparent1</i> ...</code></font></p>
+      </blockquote>
+      <font face="Arial, Helvetica, sans-serif">should be used. Transparent# can 
+      refer to either an RGB hex value, or a location of a pixel to interpret 
+      as a transparent color key. (LowerLeft, LowerRight, UpperLeft, UpperRight.) 
+      For example, the file:</font> 
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif"><img src="tool1.jpg" width="320" height="240"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">is one of the sources for the 
+        BEM demo. Both pure black (x0,x0,x0) and the pink (xE0,x2D,xB8) should 
+        be interpreted as transparent. So the command </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>image bem.tga 000000 
+          E02DB8</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">loads the image, which will 
+        look like:</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><img src="tool2.jpg" width="320" height="240"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">in the...</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif">View Mode</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">The black and white checkerboard 
+        pattern in the background, which makes the alpha channel easier to see. 
+        For ease of use, the Console has a command history buffer and the tab 
+        key will complete a command. (The console is an old, modified version 
+        of SDL_Console by Garret Banuk. Check out <a href="http://www.wpi.edu/%7Emongoose/SDL_Console">http://www.wpi.edu/~mongoose/SDL_Console</a>)</font></p>
+      <p> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif">To load an existing .XML 
+          file, you would use: </font> 
+        <blockquote><font face="Arial, Helvetica, sans-serif"><code>load filename.xml</code></font></blockquote>
+        <p></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif"><i>NOTE: If you test out this 
+        example, make sure you 'save </i>filename<i>', instead of just 'save', 
+        so you don't overwrite the existing bem.xml file.</i></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">To switch back to the help 
+        screen, press F1. Press F2 to return to the view screen. Right-click and 
+        drag to move the visible area.</font></p>
+      <h4><font face="Arial, Helvetica, sans-serif">Sprites</font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">Sprites are made up of Actions. 
+        Actions are made up of frames. There is a full discussion of this relationship 
+        on the Engine page. But for now, this illustrates the relationship to 
+        be created:</font></p>
+      <p><img src="engine1.jpg" width="400" height="303"></p>
+      <p><font face="Arial, Helvetica, sans-serif">To set the current sprite to 
+        be created or work on: </font> 
+      <blockquote><font face="Arial, Helvetica, sans-serif"><code>sprite DRONE</code></font></blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">and the first Action to define 
+        </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>action WALK.DIR7</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">The 'WALK.DIR7' syntax is special. 
+        If, in the engine, you reference the Action by a string identifier, then 
+        it will still be 'WALK.DIR7'. On the other hand, if you reference it by 
+        #define id, then it will be WALK | DIR7. (We'll discuss prefixes later, 
+        so with a prefix it would be BEM_WALK | BEM_DIR7 which is a little more 
+        rational.) So the '.' is used to split up the id. Very useful if you want 
+        something like ALLIED | TANK | SMALL. Where each part is part of a set: 
+        ALLIED/AXIS, TANK/APC/BOAT, LARGE/SMALL. Due to a limitation of the Encoder 
+        there can only 3 parts to the name. (2 dots.)</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">At this point, click and drag 
+        to define a frame. And click and drag to define another. You can delete 
+        a frame with the 'delete' key. Click on an existing frame, and information 
+        about it will print in the console window.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Each frame has a 'hotspot', 
+        which is the origin of the Sprite. So when a Sprite is drawn at the screen 
+        at 100,100 the hotspot is the pixel drawn at that particular location. 
+        To define a hotspot, control-click. The hotspot will be shown as a red 
+        cross.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">To edit a different action, 
+        use the 'action <i>name</i>' command.</font></p>
+      <h4><font face="Arial, Helvetica, sans-serif">Tiles</font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">Tiles, to the editor, are very 
+        similar to Sprites, except that they don't have frames (in this version) 
+        and they are always square. Again, the <a href="engine.html">Engine</a> 
+        section more fully explains tiles.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">To create a tile, </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>tile name</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">and then click and drag. Tiles 
+        do not have hotspots.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Saving</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">To save your work, use: </font> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>save</code></font></p>
+        <p><font face="Arial, Helvetica, sans-serif"><code>save filename.xml</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">The first command uses the 
+        current filename and the second form specifies a filename.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The editor saves output as 
+        (human readable) xml files. The <a href="../tinyxml/index.html">TinyXml 
+        C++</a> package is used in Kyra.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Be warned that the editor will 
+        not ask you if you want to save before exiting.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">You can zoom in or out -- in 
+        any mode -- with the keypad plus and minus. In the view mode, you can 
+        right-click to zoom to a point. Zooming is *very* useful to see what is 
+        going on.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Align Screen</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">After you have defined a sprite 
+        on the view screen, you may want to &quot;align&quot; it. Often a sequence 
+        of images of a Sprite walking or running will be offset from one another, 
+        by a non constant amount. For example, suppose you have a &quot;little 
+        man&quot; walking to the right across the screen. He may move 2 pixels 
+        between frame 0 and frame 1, but only one pixel from 1 to 2. Alignment 
+        enters this information into the Sprite itself. In the Engine, you can 
+        then move the Sprite the correct distance by calling DoStep.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><img src="tool3.jpg" width="320" height="240"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Select an Action by clicking 
+        on any Frame in the Action. Press F3.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The text in the upper left 
+        shows the pixel deltas between frames, and the total distance covered 
+        by the sequence of frames. (The 'Stride' of the Action.) You can use the 
+        arrow keys to move the current frame in relation to the others, and page 
+        up and down to move between frames.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Any animation -- even single 
+        frame -- can be aligned.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Movie Screen</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">Pressing F4 will show an animation 
+        of the current Action in action, and it will walk, run, shimmy, sashay, 
+        or swim across the screen. Useful in conjunction with the align screen. 
+        A sprite that has not been aligned will not animate, of course.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">And it's good to enjoy a sense 
+        of accomplishment!</font></p>
+      <h2>&nbsp;</h2>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

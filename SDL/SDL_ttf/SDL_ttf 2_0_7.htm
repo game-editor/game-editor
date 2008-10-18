@@ -1,0 +1,2037 @@
+<HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Created on February, 7  2004 by texi2html 1.64 -->
+<!-- 
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Olaf Bachmann <obachman@mathematik.uni-kl.de>
+Send bugs and suggestions to <texi2html@mathematik.uni-kl.de>
+ 
+-->
+<HEAD>
+<TITLE>SDL_ttf 2.0.7: </TITLE>
+
+<META NAME="description" CONTENT="SDL_ttf 2.0.7: ">
+<META NAME="keywords" CONTENT="SDL_ttf 2.0.7: ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META NAME="Generator" CONTENT="texi2html 1.64">
+
+</HEAD>
+
+<BODY LANG="" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<A NAME="SEC_Top"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>SDL_ttf 2.0.7</H1></P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC1">1. Overview</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">The README from the SDL_ttf distribution</TD></TR>
+</TABLE>
+
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC2">2. Getting Started</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Using SDL_ttf</TD></TR>
+</TABLE>
+
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC5">3. Functions</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Functions supported by the SDL_ttf API</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC29">4. Types</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Types used with the SDL_ttf API</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Defined values/macros in the SDL_ttf API</TD></TR>
+</TABLE>
+
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Terms used in this document</TD></TR>
+</TABLE>
+
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC33">Index</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Index of selected words</TD></TR>
+</TABLE></BLOCKQUOTE>
+<HR SIZE=1>
+<A NAME="SEC1"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[ &lt;&lt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<A NAME="Overview"></A>
+<H1> 1. Overview </H1>
+<!--docid::SEC1::-->
+<P>
+
+<center>
+ <B>A Little Bit About Me</B>
+</center>
+</P><P>
+
+I am currently, as I write this document, a programmer for Raytheon.  There I do all sorts of communications, network, GUI, and other general programming tasks in C/C++ on the Solaris and sometimes Linux Operating Systems.  I've used SDL_ttf as one of the many methods of putting text on my SDL applications, and use it in my own SDL GUI code as well.  While this document doesn't explain how and where to get fonts to use, it will explain how to use them with SDL_ttf.
+</P><P>
+
+Feel free to contact me: <A HREF="mailto:jcatki@jcatki.no-ip.org">jcatki@jcatki.no-ip.org</A><BR>
+</P><P>
+
+The latest version of this library is available from:<BR>
+<A HREF="http://www.libsdl.org/projects/SDL_ttf/">SDL_ttf Homepage</A>
+</P><P>
+
+I am also usually on IRC at irc.freenode.net in the #SDL channel as LIM
+</P><P>
+
+<A NAME="IDX1"></A>
+</P><P>
+
+This is the README in the SDL_ttf source archive.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+This library is a wrapper around the excellent FreeType 1.2 library,
+available at:
+	<A HREF="http://www.freetype.org/">Freetype Homepage</A>
+</P><P>
+
+WARNING: There may be patent issues with using the FreeType library.
+Check the FreeType website for up-to-date details.
+</P><P>
+
+This library allows you to use TrueType fonts to render text in SDL
+applications.
+</P><P>
+
+To make the library, first install the FreeType library, then type
+'make' to build the SDL truetype library and 'make all' to build
+the demo application.
+</P><P>
+
+Be careful when including fonts with your application, as many of them
+are copyrighted.  The Microsoft fonts, for example, are not freely 
+redistributable and even the free "web" fonts they provide are only 
+redistributable in their special executable installer form (May 1998).
+There are plenty of freeware and shareware fonts available on the Internet
+though, and may suit your purposes.
+</P><P>
+
+Please see the file "COPYING" for license information for this library.
+</P><P>
+
+Enjoy!
+	-Sam Lantinga <A HREF="mailto:slouken@devolution.com">slouken@devolution.com</A>		(5/1/98)
+</td></tr></table></P><P>
+
+<A NAME="Getting Started"></A>
+<HR SIZE="6">
+<A NAME="SEC2"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC1"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC3"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 2. Getting Started </H1>
+<!--docid::SEC2::-->
+<P>
+
+This assumes you have gotten SDL_ttf and installed it on your system.
+SDL_ttf has an INSTALL document in the source distribution to help you
+get it compiled and installed.
+</P><P>
+
+Generally, installation consists of:
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>./configure
+make
+make install
+</pre></td></tr></table></td></tr></table></P><P>
+
+SDL_ttf supports loading fonts from TrueType font files, normally ending in .ttf, though some .fon files are also valid for use.  Note that most fonts are copyrighted, check the license on the font before you use and redistribute.
+</P><P>
+
+Some free font sources are:
+<UL>
+<LI>
+<A HREF="http://www.nongnu.org/freefont/">Free UCS Outline Fonts</A>
+<LI>
+<A HREF="http://www.fonthead.com/freeware.html">Fonthead Design</A>
+<LI>
+<A HREF="http://www.google.com/search?hl=en&#38;ie=UTF-8&#38;oe=UTF-8&#38;q=truetype+free+redistribute&#38;btnG=Google+Search">Google!</A>
+</UL>
+<P>
+
+You may also want to look at some demonstration code which may be downloaded from:<BR>
+<A HREF="http://jcatki.no-ip.org/SDL_ttf/">http://jcatki.no-ip.org/SDL_ttf/</A>
+</P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC3">2.1 Includes</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">The include files to use for SDL_ttf</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC4">2.2 Compiling</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Using the SDL_ttf library and header file.</TD></TR>
+</TABLE></BLOCKQUOTE>
+<P>
+
+<A NAME="Includes"></A>
+<HR SIZE="6">
+<A NAME="SEC3"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC4"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 2.1 Includes </H2>
+<!--docid::SEC3::-->
+<P>
+
+To use SDL_ttf functions in a C/C++ source code file, you must use the 
+SDL_ttf.h include file:
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<CODE>  #include "SDL_ttf.h"</CODE>
+</td></tr></table></P><P>
+
+<A NAME="Compiling"></A>
+<HR SIZE="6">
+<A NAME="SEC4"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC3"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC2"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 2.2 Compiling </H2>
+<!--docid::SEC4::-->
+<P>
+
+To link with SDL_ttf you should use sdl-config to get the required SDL
+compilation options.  After that, compiling with SDL_ttf is quite easy.<BR>
+<B>Note</B>: Some systems may not have the SDL_ttf library and include file in the same place as the SDL library and includes are located, in that case you will need to add more -I and -L paths to these command lines.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+Simple Example for compiling an object file:
+</P><P>
+
+<CODE>  cc -c `sdl-config --cflags` mysource.c</CODE>
+</P><P>
+
+Simple Example for compiling an object file:
+</P><P>
+
+<CODE>  cc -o myprogram mysource.o `sdl-config --libs` -lSDL_ttf</CODE>
+</td></tr></table></P><P>
+
+Now <CODE>myprogram</CODE> is ready to run.
+</P><P>
+
+<A NAME="Functions"></A>
+<HR SIZE="6">
+<A NAME="SEC5"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC4"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 3. Functions </H1>
+<!--docid::SEC5::-->
+<P>
+
+These are the functions in the SDL_ttf API.
+</P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC6">3.1 General</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">API activation, info, and error handling</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC13">3.2 Management</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Loading fonts from files or memory</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC19">3.3 Attributes</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Getting and Setting font attributes</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC27">3.4 Render</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Drawing strings and glyphs with a font</TD></TR>
+</TABLE></BLOCKQUOTE>
+<P>
+
+<A NAME="General"></A>
+<HR SIZE="6">
+<A NAME="SEC6"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC7"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 3.1 General </H2>
+<!--docid::SEC6::-->
+<P>
+
+These functions are useful, as they are the only/best ways to work with SDL_ttf.
+</P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+</TABLE>
+<B>Info</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC7">3.1.1 TTF_Linked_Version</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get version number</TD></TR>
+</TABLE>
+<B>Activation</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC8">3.1.2 TTF_Init</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Initialize API</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC9">3.1.3 TTF_WasInit</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Query API initialization status</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC10">3.1.4 TTF_Quit</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Cleanup API</TD></TR>
+</TABLE>
+<B>Errors</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC11">3.1.5 TTF_SetError</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Set the current error string</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC12">3.1.6 TTF_GetError</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get the current error string</TD></TR>
+</TABLE></BLOCKQUOTE>
+<P>
+
+<A NAME="TTF_Linked_Version"></A>
+<HR SIZE="6">
+<A NAME="SEC7"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC8"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.1.1 TTF_Linked_Version </H3>
+<!--docid::SEC7::-->
+<P>
+
+<CODE>const SDL_version *<B>TTF_Linked_Version</B>()</CODE><BR>
+<CODE>void <B>TTF_VERSION</B>(SDL_version *compile_version)</CODE>
+</P><P>
+
+This works similar to <CODE>SDL_Linked_Version</CODE> and <B>SDL_VERSION</B>.<BR>
+Using these you can compare the runtime version to the version that you compiled with.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>SDL_version compile_version, *link_version;
+TTF_VERSION(&#38;compile_version);
+printf("compiled with SDL_ttf version: %d.%d.%d\n", 
+        compile_version.major,
+        compile_version.minor,
+        compile_version.patch);
+link_version=TTF_Linked_Version();
+printf("running with SDL_ttf version: %d.%d.%d\n", 
+        link_version-&#62;major,
+        link_version-&#62;minor,
+        link_version-&#62;patch);
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC8">3.1.2 TTF_Init</A>
+</P><P>
+
+<A NAME="TTF_Init"></A>
+<HR SIZE="6">
+<A NAME="SEC8"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC7"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC9"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC9"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.1.2 TTF_Init </H3>
+<!--docid::SEC8::-->
+<P>
+
+<CODE>int <B>TTF_Init</B>()</CODE>
+</P><P>
+
+Initialize the truetype font API.<BR>
+This must be called before using other functions in this library, excepting <CODE>TTF_WasInit</CODE>.<BR>
+SDL does not have to be initialized before this call.
+</P><P>
+
+<B>Returns</B>: 0 on success, -1 on errors
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>if(TTF_Init()==-1) {
+    printf("TTF_Init: %s\n", TTF_GetError());
+    exit(2);
+}
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC10">3.1.4 TTF_Quit</A>,
+<A HREF="SDL_ttf.html#SEC9">3.1.3 TTF_WasInit</A>
+</P><P>
+
+<A NAME="TTF_WasInit"></A>
+<HR SIZE="6">
+<A NAME="SEC9"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC8"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC10"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC10"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.1.3 TTF_WasInit </H3>
+<!--docid::SEC9::-->
+<P>
+
+<CODE>int <B>TTF_WasInit</B>()</CODE>
+</P><P>
+
+Query the initilization status of the truetype font API.<BR>
+You may, of course, use this before <CODE>TTF_Init</CODE> to avoid initilizing twice in a row.
+Or use this to determine if you need to call <CODE>TTF_Quit</CODE>.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>if(!TTF_WasInit() &#38;&#38; TTF_Init()==-1) {
+    printf("TTF_Init: %s\n", TTF_GetError());
+    exit(1);
+}
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC8">3.1.2 TTF_Init</A>,
+<A HREF="SDL_ttf.html#SEC10">3.1.4 TTF_Quit</A>
+</P><P>
+
+<A NAME="TTF_Quit"></A>
+<HR SIZE="6">
+<A NAME="SEC10"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC9"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC11"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC11"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.1.4 TTF_Quit </H3>
+<!--docid::SEC10::-->
+<P>
+
+<CODE>void <B>TTF_Quit</B>()</CODE>
+</P><P>
+
+Shutdown and cleanup the truetype font API.<BR>
+After calling this the SDL_ttf functions should not be used, excepting <CODE>TTF_WasInit</CODE>.
+You may, of course, use <CODE>TTF_Init</CODE> to use the functionality again.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>TTF_Quit();
+// you could SDL_Quit(); here...or not.
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC8">3.1.2 TTF_Init</A>,
+<A HREF="SDL_ttf.html#SEC9">3.1.3 TTF_WasInit</A>
+</P><P>
+
+<A NAME="TTF_SetError"></A>
+<HR SIZE="6">
+<A NAME="SEC11"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC10"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC12"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC12"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.1.5 TTF_SetError </H3>
+<!--docid::SEC11::-->
+<P>
+
+<CODE>void <B>TTF_SetError</B>(const char *<VAR>fmt</VAR>, ...)</CODE>
+</P><P>
+
+This is the same as <CODE>SDL_SetError</CODE>, which sets the error string which may be fetched with <CODE>TTF_GetError</CODE> (or <CODE>SDL_GetError</CODE>).
+This functions acts like printf, except that it is limited to <B>SDL_ERRBUFIZE</B>(1024) chars in length.  It only accepts the following format types: <CODE>%s, %d, %f, %p</CODE>.  No variations are supported, like <CODE>%.2f</CODE> would not work. For any more specifics read the SDL docs.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>int myfunc(int i) {
+    TTF_SetError("myfunc is not implemented! %d was passed in.",i);
+    return(-1);
+}
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC12">3.1.6 TTF_GetError</A>
+</P><P>
+
+<A NAME="TTF_GetError"></A>
+<HR SIZE="6">
+<A NAME="SEC12"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC11"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC6"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.1.6 TTF_GetError </H3>
+<!--docid::SEC12::-->
+<P>
+
+<CODE>char *<B>TTF_GetError</B>()</CODE>
+</P><P>
+
+This is the same as <CODE>SDL_GetError</CODE>, which returns the last error set as a string
+which you may use to tell the user what happened when an error status has been returned
+from an SDL_ttf function call.
+</P><P>
+
+<B>Returns</B>: a char pointer (string) containing a human readable version or the reason for the last error that occured.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>printf("Oh My Goodness, an error : %s", TTF_GetError());
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC11">3.1.5 TTF_SetError</A>
+</P><P>
+
+<A NAME="Management"></A>
+<HR SIZE="6">
+<A NAME="SEC13"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC12"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC14"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 3.2 Management </H2>
+<!--docid::SEC13::-->
+<P>
+
+These functions deal with loading and freeing a <TT>TTF_Font</TT>.
+</P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+</TABLE>
+<B>Loading</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC14">3.2.1 TTF_OpenFont</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">From a file</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC15">3.2.2 TTF_OpenFontRW</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Using RWops</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC16">3.2.3 TTF_OpenFontIndex</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">From a file, with an index</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC17">3.2.4 TTF_OpenFontIndexRW</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">From memory, with an index</TD></TR>
+</TABLE>
+<B>Freeing</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Free a loaded font</TD></TR>
+</TABLE></BLOCKQUOTE>
+<P>
+
+<A NAME="TTF_OpenFont"></A>
+<HR SIZE="6">
+<A NAME="SEC14"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC15"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.2.1 TTF_OpenFont </H3>
+<!--docid::SEC14::-->
+<P>
+
+<CODE>TTF_Font *<B>TTF_OpenFont</B>(const char *<VAR>file</VAR>, int <VAR>ptsize</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>file</VAR>
+<DD>File name to load font from.
+<DT><VAR>ptsize</VAR>
+<DD>Point size (based on 72DPI) to load font as.
+This basically translates to pixel height.
+</DL>
+<P>
+
+Load <VAR>file</VAR> for use as a font, at <VAR>ptsize</VAR> size.  This is actually <CODE>TTF_OpenFontIndex(<VAR>file</VAR>, <VAR>ptsize</VAR>, 0)</CODE>.  This can load TTF and FON files.
+</P><P>
+
+<B>Returns</B>: a pointer to the font as a <CODE>TTF_Font</CODE>.  <B>NULL</B> is returned on errors.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// load font.ttf at size 16 into font
+TTF_Font *font;
+font=TTF_OpenFont("font.ttf", 16);
+if(!font) {
+    printf("TTF_OpenFont: %s\n", TTF_GetError());
+    // handle error
+}
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC16">3.2.3 TTF_OpenFontIndex</A>,
+<A HREF="SDL_ttf.html#SEC15">3.2.2 TTF_OpenFontRW</A>,
+<A HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A>
+</P><P>
+
+<A NAME="TTF_OpenFontRW"></A>
+<HR SIZE="6">
+<A NAME="SEC15"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC14"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC16"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC16"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.2.2 TTF_OpenFontRW </H3>
+<!--docid::SEC15::-->
+<P>
+
+<CODE>TTF_Font *<B>TTF_OpenFontRW</B>(SDL_RWops *<VAR>src</VAR>, int <VAR>freesrc</VAR>, int <VAR>ptsize</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>src</VAR>
+<DD>The source SDL_RWops as a pointer.  The font is loaded from this.
+<DT><VAR>freesrc</VAR>
+<DD>A non-zero value mean is will automatically close/free the <VAR>src</VAR> for you.
+<DT><VAR>ptsize</VAR>
+<DD>Point size (based on 72DPI) to load font as.
+This basically translates to pixel height.
+</DL>
+<P>
+
+Load <VAR>src</VAR> for use as a font, at <VAR>ptsize</VAR> size.
+This is actually <CODE>TTF_OpenFontIndexRW(<VAR>src</VAR>, <VAR>freesrc</VAR>, <VAR>ptsize</VAR>, 0)</CODE>
+This can load TTF and FON formats.
+Using <CODE>SDL_RWops</CODE> is not covered here, but they enable you to load from almost any source.<BR>
+<BR>
+<B>NOTE</B>: <VAR>src</VAR> is not checked for <B>NULL</B>, so be careful.
+</P><P>
+
+<B>Returns</B>: a pointer to the font as a <CODE>TTF_Font</CODE>.  <B>NULL</B> is returned on errors.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// load font.ttf at size 16 into font
+TTF_Font *font;
+font=TTF_OpenFontRW(SDL_RWFromFile("font.ttf"), 1, 16);
+if(!font) {
+    printf("TTF_OpenFontRW: %s\n", TTF_GetError());
+    // handle error
+}
+</pre></td></tr></table></td></tr></table>Note that this is unsafe because we don't check the validity of the <CODE>SDL_RWFromFile</CODE>'s returned pointer.
+</P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC17">3.2.4 TTF_OpenFontIndexRW</A>,
+<A HREF="SDL_ttf.html#SEC14">3.2.1 TTF_OpenFont</A>,
+<A HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A>
+</P><P>
+
+<A NAME="TTF_OpenFontIndex"></A>
+<HR SIZE="6">
+<A NAME="SEC16"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC15"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC17"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC17"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.2.3 TTF_OpenFontIndex </H3>
+<!--docid::SEC16::-->
+<P>
+
+<CODE>TTF_Font *<B>TTF_OpenFontIndex</B>(const char *<VAR>file</VAR>, int <VAR>ptsize</VAR>, long <VAR>index</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>file</VAR>
+<DD>File name to load font from.
+<DT><VAR>ptsize</VAR>
+<DD>Point size (based on 72DPI) to load font as.
+This basically translates to pixel height.
+<DT><VAR>index</VAR>
+<DD>choose a font face from a multiple font face containing file.
+The first face is always index 0.
+</DL>
+<P>
+
+Load <VAR>file</VAR>, face <VAR>index</VAR>, for use as a font, at <VAR>ptsize</VAR> size.  This is actually <CODE>TTF_OpenFontIndexRW(SDL_RWFromFile(<VAR>file</VAR>), <VAR>ptsize</VAR>, <VAR>index</VAR>)</CODE>, but checks that the RWops it creates is not <B>NULL</B>.  This can load TTF and FON files.
+</P><P>
+
+<B>Returns</B>: a pointer to the font as a <CODE>TTF_Font</CODE>.  <B>NULL</B> is returned on errors.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// load font.ttf, face 0, at size 16 into font
+TTF_Font *font;
+font=TTF_OpenFontIndex("font.ttf", 16, 0);
+if(!font) {
+    printf("TTF_OpenFontIndex: %s\n", TTF_GetError());
+    // handle error
+}
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC17">3.2.4 TTF_OpenFontIndexRW</A>,
+<A HREF="SDL_ttf.html#SEC14">3.2.1 TTF_OpenFont</A>,
+<A HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A>
+</P><P>
+
+<A NAME="TTF_OpenFontIndexRW"></A>
+<HR SIZE="6">
+<A NAME="SEC17"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC16"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC18"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC18"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.2.4 TTF_OpenFontIndexRW </H3>
+<!--docid::SEC17::-->
+<P>
+
+<CODE>TTF_Font *<B>TTF_OpenFontIndexRW</B>(SDL_RWops *<VAR>src</VAR>, int <VAR>freesrc</VAR>, int <VAR>ptsize</VAR>, long <VAR>index</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>src</VAR>
+<DD>The source SDL_RWops as a pointer.  The font is loaded from this.
+<DT><VAR>freesrc</VAR>
+<DD>A non-zero value mean is will automatically close/free the <VAR>src</VAR> for you.
+<DT><VAR>ptsize</VAR>
+<DD>Point size (based on 72DPI) to load font as.
+This basically translates to pixel height.
+<DT><VAR>index</VAR>
+<DD>choose a font face from a multiple font face containing file.
+The first face is always index 0.
+</DL>
+<P>
+
+Load <VAR>src</VAR>, face <VAR>index</VAR>, for use as a font, at <VAR>ptsize</VAR> size.
+This can load TTF and FON formats.<BR>
+Using <CODE>SDL_RWops</CODE> is not covered here, but they enable you to load from almost any source.<BR>
+<BR>
+<B>NOTE</B>: <VAR>src</VAR> is not checked for <B>NULL</B>, so be careful.
+</P><P>
+
+<B>Returns</B>: a pointer to the font as a <CODE>TTF_Font</CODE>.  <B>NULL</B> is returned on errors.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// load font.ttf, face 0, at size 16 into font
+TTF_Font *font;
+font=TTF_OpenFontRW(SDL_RWFromFile("font.ttf"), 1, 16, 0);
+if(!font) {
+    printf("TTF_OpenFontIndexRW: %s\n", TTF_GetError());
+    // handle error
+}
+</pre></td></tr></table></td></tr></table>Note that this is unsafe because we don't check the validity of the <CODE>SDL_RWFromFile</CODE>'s returned pointer.
+</P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC16">3.2.3 TTF_OpenFontIndex</A>,
+<A HREF="SDL_ttf.html#SEC15">3.2.2 TTF_OpenFontRW</A>,
+<A HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A>
+</P><P>
+
+<A NAME="TTF_CloseFont"></A>
+<HR SIZE="6">
+<A NAME="SEC18"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC17"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC13"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.2.5 TTF_CloseFont </H3>
+<!--docid::SEC18::-->
+<P>
+
+<CODE>void <B>TTF_CloseFont</B>(TTF_Font *<VAR>font</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>Pointer to the TTF_Font to free.
+</DL>
+<P>
+
+Free the memory used by <VAR>font</VAR>, and free <VAR>font</VAR> itself as well.
+Do not use <VAR>font</VAR> after this without loading a new font to it.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// free the font
+// TTF_Font *font;
+TTF_CloseFont(font);
+font=NULL; // to be safe...
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC14">3.2.1 TTF_OpenFont</A>,
+<A HREF="SDL_ttf.html#SEC15">3.2.2 TTF_OpenFontRW</A>,
+<A HREF="SDL_ttf.html#SEC16">3.2.3 TTF_OpenFontIndex</A>,
+<A HREF="SDL_ttf.html#SEC17">3.2.4 TTF_OpenFontIndexRW</A>
+</P><P>
+
+<A NAME="Attributes"></A>
+<HR SIZE="6">
+<A NAME="SEC19"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC18"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC20"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 3.3 Attributes </H2>
+<!--docid::SEC19::-->
+<P>
+
+These functions deal with <TT>TTF_Font</TT>, and global, attributes.
+</P><P>
+
+<CENTER><IMG SRC="metrics.png" ALT="metrics"></CENTER>
+</P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+</TABLE>
+<B>Global&nbsp;Attributes</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC20">3.3.1 TTF_ByteSwappedUNICODE</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Set default UNICODE byte swapping mode</TD></TR>
+</TABLE>
+<B>Font&nbsp;Style</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC21">3.3.2 TTF_GetFontStyle</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get font render style</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC22">3.3.3 TTF_SetFontStyle</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Set font render style</TD></TR>
+</TABLE>
+<B>Font&nbsp;Metrics</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC23">3.3.4 TTF_FontHeight</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get font max height</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC24">3.3.5 TTF_FontAscent</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get font max ascent (y above origin)</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC25">3.3.6 TTF_FontDescent</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get font min descent (y below origin)</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC26">3.3.7 TTF_FontLineSkip</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Get font recommended line spacing</TD></TR>
+</TABLE>
+<B>Face&nbsp;Attributes</B>
+<br>
+&nbsp;*&nbsp;TTF_FontFaces::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;the&nbsp;number&nbsp;of&nbsp;faces&nbsp;in&nbsp;a&nbsp;font
+<br>
+&nbsp;*&nbsp;TTF_FontFaceIsFixedWidth::&nbsp;&nbsp;Get&nbsp;whether&nbsp;font&nbsp;is&nbsp;monospaced&nbsp;or&nbsp;not
+<br>
+&nbsp;*&nbsp;TTF_FontFaceFamilyName::&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;current&nbsp;font&nbsp;face&nbsp;family&nbsp;name&nbsp;string
+<br>
+&nbsp;*&nbsp;TTF_FontFaceStyleName::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;current&nbsp;font&nbsp;face&nbsp;style&nbsp;name&nbsp;string
+<br>
+<B>Glyph&nbsp;Metrics</B>
+<br>
+&nbsp;*&nbsp;TTF_GlyphMetrics::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;individual&nbsp;font&nbsp;glyph&nbsp;metrics
+<br>
+<B>Text&nbsp;Metrics</B>
+<br>
+&nbsp;*&nbsp;TTF_SizeText::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;size&nbsp;of&nbsp;LATIN1&nbsp;text&nbsp;string&nbsp;as&nbsp;would&nbsp;be&nbsp;rendered
+<br>
+&nbsp;*&nbsp;TTF_SizeUTF8::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;size&nbsp;of&nbsp;UTF8&nbsp;text&nbsp;string&nbsp;as&nbsp;would&nbsp;be&nbsp;rendered
+<br>
+&nbsp;*&nbsp;TTF_SizeUNICODE::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;size&nbsp;of&nbsp;UNICODE&nbsp;text&nbsp;string&nbsp;as&nbsp;would&nbsp;be&nbsp;rendered
+<br>
+</BLOCKQUOTE>
+<P>
+
+<A NAME="TTF_ByteSwappedUNICODE"></A>
+<HR SIZE="6">
+<A NAME="SEC20"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC21"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.1 TTF_ByteSwappedUNICODE </H3>
+<!--docid::SEC20::-->
+<P>
+
+<CODE>void <B>TTF_ByteSwappedUNICODE</B>(int <VAR>swapped</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>swapped</VAR>
+<DD>if non-zero then UNICODE data is byte swapped relative to the CPU's native endianess.<BR>
+if zero, then do not swap UNICODE data, use the CPU's native endianess.
+</DL>
+<P>
+
+This function tells SDL_ttf whether UNICODE (Uint16 per character) text is generally
+byteswapped.  A <B>UNICODE_BOM_NATIVE</B> or <B>UNICODE_BOM_SWAPPED</B> character in a
+string will temporarily override this setting for the remainder of that string,
+however this setting will be restored for the next one.
+The default mode is non-swapped, native endianess of the CPU.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// Turn on byte swapping for UNICODE text
+TTF_ByteSwappedUNICODE(1);
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC31">5. Defines</A>
+</P><P>
+
+<A NAME="TTF_GetFontStyle"></A>
+<HR SIZE="6">
+<A NAME="SEC21"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC20"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC22"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC22"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.2 TTF_GetFontStyle </H3>
+<!--docid::SEC21::-->
+<P>
+
+<CODE>int <B>TTF_GetFontStyle</B>(TTF_Font *<VAR>font</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>The loaded font to get the style of
+</DL>
+<P>
+
+Get the rendering style of the loaded <VAR>font</VAR>.<BR>
+<BR>
+<B>NOTE</B>: Passing a <B>NULL</B> <VAR>font</VAR> into this function will cause a segfault.
+</P><P>
+
+<B>Returns</B>: The style as a bitmask composed of the following masks:<BR>
+    <B>TTF_STYLE_BOLD</B><BR>
+    <B>TTF_STYLE_ITALIC</B><BR>
+    <B>TTF_STYLE_UNDERLINE</B><BR>
+    If no style is set then <B>TTF_STYLE_NORMAL</B> is returned.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// get the loaded font's style
+//TTF_Font *font;
+int style;
+style=TTF_GetFontStyle(font);
+printf("The font style is:");
+if(style==TTF_STYLE_NORMAL)
+    printf(" normal");
+else {
+    if(style&#38;TTF_STYLE_BOLD)
+        printf(" bold");
+    if(style&#38;TTF_STYLE_ITALIC)
+        printf(" italic");
+    if(style&#38;TTF_STYLE_UNDERLINE)
+        printf(" underline");
+}
+printf("\n");
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC22">3.3.3 TTF_SetFontStyle</A>,<BR>
+<A HREF="SDL_ttf.html#SEC31">5. Defines</A>
+</P><P>
+
+<A NAME="TTF_SetFontStyle"></A>
+<HR SIZE="6">
+<A NAME="SEC22"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC21"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC23"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC23"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.3 TTF_SetFontStyle </H3>
+<!--docid::SEC22::-->
+<P>
+
+<CODE>void <B>TTF_SetFontStyle</B>(TTF_Font *<VAR>font</VAR>, int <VAR>style</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>The loaded font to get the style of
+<DT><VAR>style</VAR>
+<DD>A bitmask of the desired style composed from the <B>TTF_STYLE_*</B> defined values
+</DL>
+<P>
+
+Set the rendering style of the loaded <VAR>font</VAR>.<BR>
+<BR>
+<B>NOTE</B>: Passing a <B>NULL</B> <VAR>font</VAR> into this function will cause a segfault.<BR>
+<BR>
+<B>NOTE</B>: This will flush the internal cache of previously rendered glyphs, even if
+there is no change in style, so it may be best to check the current style using <I>TTF_GetFontStyle</I> first.<BR>
+<BR>
+<B>NOTE</B>: I've seen that combining TTF_STYLE_UNDERLINE with anything can cause a segfault, other combinations may also do this.  Some brave soul may find the cause of this and fix it...
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// set the loaded font's style to bold italics
+//TTF_Font *font;
+TTF_SetFontStyle(font, TTF_STYLE_BOLD|TTF_STYLE_ITALIC);
+
+// render some text in bold italics...
+
+// set the loaded font's style back to normal
+TTF_SetFontStyle(font, TTF_STYLE_NORMAL);
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC21">3.3.2 TTF_GetFontStyle</A>,<BR>
+<A HREF="SDL_ttf.html#SEC31">5. Defines</A>
+</P><P>
+
+<A NAME="TTF_FontHeight"></A>
+<HR SIZE="6">
+<A NAME="SEC23"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC22"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC24"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC24"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.4 TTF_FontHeight </H3>
+<!--docid::SEC23::-->
+<P>
+
+<CODE>int <B>TTF_FontHeight</B>(TTF_Font *<VAR>font</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>The loaded font to get the max height of
+</DL>
+<P>
+
+Get the maximum pixel height of all glyphs of the loaded <VAR>font</VAR>.
+You may use this height for rendering text as close together vertically as possible,
+though adding at least one pixel height to it will space it so they can't touch.
+Remember that SDL_ttf doesn't handle multiline printing, so you are responsible for
+line spacing, see the <I>TTF_FontLineSkip</I> as well.<BR>
+<BR>
+<B>NOTE</B>: Passing a <B>NULL</B> <VAR>font</VAR> into this function will cause a segfault.
+</P><P>
+
+<B>Returns</B>: The maximum pixel height of all glyphs in the font.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// get the loaded font's max height
+//TTF_Font *font;
+printf("The font max height is: %d\n", TTF_FontHeight(font));
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC24">3.3.5 TTF_FontAscent</A>,<BR>
+<A HREF="SDL_ttf.html#SEC25">3.3.6 TTF_FontDescent</A>,<BR>
+<A HREF="SDL_ttf.html#SEC26">3.3.7 TTF_FontLineSkip</A>,<BR>
+</P><P>
+
+<A NAME="TTF_FontAscent"></A>
+<HR SIZE="6">
+<A NAME="SEC24"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC23"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC25"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC25"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.5 TTF_FontAscent </H3>
+<!--docid::SEC24::-->
+<P>
+
+<CODE>int <B>TTF_FontAscent</B>(TTF_Font *<VAR>font</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>The loaded font to get the ascent (height above baseline) of
+</DL>
+<P>
+
+Get the maximum pixel ascent of all glyphs of the loaded <VAR>font</VAR>.
+This can also be interpreted as the distance from the top of the font to the baseline.<BR>
+It could be used when drawing an individual glyph relative to a top point, by combining it with the glyph's maxy metric to resolve the top of the rectangle used when blitting the glyph on the screen.<BR>
+<BR>
+<CODE>rect.y = top + TTF_FontAscent(font) - glyph_metric.maxy;</CODE><BR>
+<BR>
+<B>NOTE</B>: Passing a <B>NULL</B> <VAR>font</VAR> into this function will cause a segfault.
+</P><P>
+
+<B>Returns</B>: The maximum pixel ascent of all glyphs in the font.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// get the loaded font's max ascent
+//TTF_Font *font;
+
+printf("The font ascent is: %d\n", TTF_FontAscent(font));
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC23">3.3.4 TTF_FontHeight</A>,<BR>
+<A HREF="SDL_ttf.html#SEC25">3.3.6 TTF_FontDescent</A>,<BR>
+<A HREF="SDL_ttf.html#SEC26">3.3.7 TTF_FontLineSkip</A>,<BR>
+</P><P>
+
+<A NAME="TTF_FontDescent"></A>
+<HR SIZE="6">
+<A NAME="SEC25"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC24"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC26"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC26"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.6 TTF_FontDescent </H3>
+<!--docid::SEC25::-->
+<P>
+
+<CODE>int <B>TTF_FontDescent</B>(TTF_Font *<VAR>font</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>The loaded font to get the descent (height below baseline) of
+</DL>
+<P>
+
+Get the maximum pixel descent of all glyphs of the loaded <VAR>font</VAR>.
+This can also be interpreted as the distance from the baseline to the bottom of the font.<BR>
+It could be used when drawing an individual glyph relative to a bottom point, by combining it with the glyph's maxy metric to resolve the top of the rectangle used when blitting the glyph on the screen.<BR>
+<BR>
+<CODE>rect.y = bottom - TTF_FontDescent(font) - glyph_metric.maxy;</CODE><BR>
+<BR>
+<B>NOTE</B>: Passing a <B>NULL</B> <VAR>font</VAR> into this function will cause a segfault.
+</P><P>
+
+<B>Returns</B>: The maximum pixel height of all glyphs in the font.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// get the loaded font's max descent
+//TTF_Font *font;
+
+printf("The font descent is: %d\n", TTF_FontDescent(font));
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC23">3.3.4 TTF_FontHeight</A>,<BR>
+<A HREF="SDL_ttf.html#SEC24">3.3.5 TTF_FontAscent</A>,<BR>
+<A HREF="SDL_ttf.html#SEC26">3.3.7 TTF_FontLineSkip</A>,<BR>
+</P><P>
+
+<A NAME="TTF_FontLineSkip"></A>
+<HR SIZE="6">
+<A NAME="SEC26"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC25"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC19"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.3.7 TTF_FontLineSkip </H3>
+<!--docid::SEC26::-->
+<P>
+
+<CODE>int <B>TTF_FontLineSkip</B>(TTF_Font *<VAR>font</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>The loaded font to get the line skip height of
+</DL>
+<P>
+
+Get the reccomended pixel height of a rendered line of text of the loaded <VAR>font</VAR>.
+This is usually larger than the <I>TTF_FontHeight</I> of the <VAR>font</VAR>.<BR>
+<BR>
+<B>NOTE</B>: Passing a <B>NULL</B> <VAR>font</VAR> into this function will cause a segfault.
+</P><P>
+
+<B>Returns</B>: The maximum pixel height of all glyphs in the font.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// get the loaded font's max descent
+//TTF_Font *font;
+
+printf("The font descent is: %d\n", TTF_FontDescent(font));
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC23">3.3.4 TTF_FontHeight</A>,<BR>
+<A HREF="SDL_ttf.html#SEC24">3.3.5 TTF_FontAscent</A>,<BR>
+<A HREF="SDL_ttf.html#SEC25">3.3.6 TTF_FontDescent</A>,<BR>
+</P><P>
+
+<A NAME="Render"></A>
+<HR SIZE="6">
+<A NAME="SEC27"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC26"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC28"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 3.4 Render </H2>
+<!--docid::SEC27::-->
+<P>
+
+These functions render text using a <CODE>TTF_Font</CODE>.<BR>
+There are three modes of rendering:<BR>
+<DL COMPACT>
+<DT><EM>Solid</EM>
+<DD><B>Quick and Dirty</B><BR>
+Create an 8-bit palettized surface and render the given text at
+fast quality with the given font and color.  The 0 pixel value is the
+colorkey, giving a transparent background, and the 1 pixel value is set
+to the text color.
+The colormap is set to have the desired foreground color at index 1,
+this allows you to change the color without having to render the text again.
+Colormap index 0 is of course not drawn, since it is the colorkey, and thus transparent, though it's actual color is 255 minus each RGB component of the foreground.
+This is the fastest rendering speed of all the rendering modes.
+This results in no box around the text, but the text is not as smooth.
+The resulting surface should blit faster than the Blended one.
+Use this mode for FPS and other fast changing updating text displays.
+<DT><EM>Shaded</EM>
+<DD><B>Slow and Nice, but with a Solid Box</B><BR>
+Create an 8-bit palettized surface and render the given text at
+high quality with the given font and colors.  The 0 pixel value is background,
+while other pixels have varying degrees of the foreground color from the
+background color.
+This results in a box of the background color around the text in the foreground color.
+The text is antialiased.
+This will render slower than Solid, but in about the same time as Blended mode.
+The resulting surface should blit as fast as Solid, once it is made.
+Use this when you need nice text, and can live with a box...
+<DT><EM>Blended</EM>
+<DD><B>Slow Slow Slow, but Ultra Nice over another image</B><BR>
+Create a 32-bit ARGB surface and render the given text at high quality,
+using alpha blending to dither the font with the given color.
+This results in a surface with alpha transparency,
+so you don't have a solid colored box around the text.
+The text is antialiased.
+This will render slower than Solid, but in about the same time as Shaded mode.
+The resulting surface will blit slower than if you had used Solid or Shaded.
+Use this when you want high quality, and the text isn't changing too fast.
+</DL>
+<P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+</TABLE>
+<B>Solid</B>
+<br>
+<TABLE BORDER=0 CELLSPACING=0>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC28">3.4.1 TTF_RenderText_Solid</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Draw LATIN1 text in solid mode</TD></TR>
+</TABLE>
+&nbsp;*&nbsp;TTF_RenderUTF8_Solid::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;UTF8&nbsp;text&nbsp;in&nbsp;solid&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderUNICODE_Solid::&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;UNICODE&nbsp;text&nbsp;in&nbsp;solid&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderGlyph_Solid::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;a&nbsp;UNICODE&nbsp;glyph&nbsp;in&nbsp;solid&nbsp;mode
+<br>
+<B>Shaded</B>
+<br>
+&nbsp;*&nbsp;TTF_RenderText_Shaded::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;LATIN1&nbsp;text&nbsp;in&nbsp;shaded&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderUTF8_Shaded::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;UTF8&nbsp;text&nbsp;in&nbsp;shaded&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderUNICODE_Shaded::&nbsp;&nbsp;&nbsp;Draw&nbsp;UNICODE&nbsp;text&nbsp;in&nbsp;shaded&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderGlyph_Shaded::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;a&nbsp;UNICODE&nbsp;glyph&nbsp;in&nbsp;shaded&nbsp;mode
+<br>
+<B>Blended</B>
+<br>
+&nbsp;*&nbsp;TTF_RenderText_Blended::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;LATIN1&nbsp;text&nbsp;in&nbsp;blended&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderUTF8_Blended::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;UTF8&nbsp;text&nbsp;in&nbsp;blended&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderUNICODE_Blended::&nbsp;&nbsp;Draw&nbsp;UNICODE&nbsp;text&nbsp;in&nbsp;blended&nbsp;mode
+<br>
+&nbsp;*&nbsp;TTF_RenderGlyph_Blended::&nbsp;&nbsp;&nbsp;&nbsp;Draw&nbsp;a&nbsp;UNICODE&nbsp;glyph&nbsp;in&nbsp;blended&nbsp;mode
+<br>
+</BLOCKQUOTE>
+<P>
+
+<A NAME="TTF_RenderText_Solid"></A>
+<HR SIZE="6">
+<A NAME="SEC28"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC27"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H3> 3.4.1 TTF_RenderText_Solid </H3>
+<!--docid::SEC28::-->
+<P>
+
+<CODE>SDL_Surface *<B>TTF_RenderText_Solid</B>(TTF_Font *<VAR>font</VAR>,
+				const char *<VAR>text</VAR>, SDL_Color <VAR>fg</VAR>)</CODE>
+</P><P>
+
+<DL COMPACT>
+<DT><VAR>font</VAR>
+<DD>Font to render the text with.  A <B>NULL</B> pointer is not checked.
+<DT><VAR>text</VAR>
+<DD>The LATIN1 null terminated string to render.
+<DT><VAR>fg</VAR>
+<DD>The color to render the text in.  This becomes colormap index 1.
+</DL>
+<P>
+
+Render the LATIN1 encoded <VAR>text</VAR> using <VAR>font</VAR> with <VAR>fg</VAR> color onto a new surface, using the <I>Solid</I> mode (see section <A HREF="SDL_ttf.html#SEC27">Solid</A>).
+</P><P>
+
+<B>Returns</B>: a pointer to a new SDL_Surface. <B>NULL</B> is returned on errors.
+</P><P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>// Turn on byte swapping for UNICODE text
+SDL_Surface *text_surface;
+if(!(text_surface=TTF_RenderText_Solid(font,"Hello World!", &#38;color))) {
+	//handle error here, perhaps print TTF_GetError at least
+}
+</pre></td></tr></table></td></tr></table></P><P>
+
+<B>See Also</B>:<BR>
+TTF_SizeText,
+TTF_RenderUTF8_Solid,
+TTF_RenderUNICODE_Solid,
+TTF_RenderGlyph_Solid,
+TTF_RenderText_Shaded,
+TTF_RenderText_Blended
+</P><P>
+
+<A NAME="Types"></A>
+<HR SIZE="6">
+<A NAME="SEC29"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC28"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC30"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC31"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC31"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 4. Types </H1>
+<!--docid::SEC29::-->
+<P>
+
+These types are defined and used by the SDL_ttf API.
+</P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="SDL_ttf.html#SEC30">4.1 TTF_Font</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">The opaque holder of a loaded font</TD></TR>
+</TABLE></BLOCKQUOTE>
+<P>
+
+<A NAME="TTF_Font"></A>
+<HR SIZE="6">
+<A NAME="SEC30"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC31"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC29"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC31"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H2> 4.1 TTF_Font </H2>
+<!--docid::SEC30::-->
+<P>
+
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<TABLE><tr><td>&nbsp;</td><td class=example><pre>typedef struct _TTF_Font TTF_Font;
+</pre></td></tr></table></td></tr></table></P><P>
+
+The opaque holder of a loaded font.  You should always be using a pointer of this type,
+as in <CODE>TTF_Font*</CODE>, and not just plain <CODE>TTF_Font</CODE>.
+This stores the font data in a struct that is exposed only by using the API functions to
+get information.  You should not try to access the struct data directly, since the struct
+may change in different versions of the API, and thus your program would be unreliable.
+</P><P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC13">3.2 Management</A>
+</P><P>
+
+<A NAME="Defines"></A>
+<HR SIZE="6">
+<A NAME="SEC31"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC30"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC32"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC32"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC32"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 5. Defines </H1>
+<!--docid::SEC31::-->
+<P>
+
+<DL COMPACT>
+<A NAME="IDX2"></A>
+<DT><B>TTF_MAJOR_VERSION</B>
+<DD><CODE>2</CODE><BR>
+SDL_ttf library major number at compilation time
+<A NAME="IDX3"></A>
+<DT><B>TTF_MINOR_VERSION</B>
+<DD><CODE>0</CODE><BR>
+SDL_ttf library minor number at compilation time
+<DT><B>TTF_PATCHLEVEL</B>
+<DD><A NAME="IDX4"></A>
+<CODE>7</CODE><BR>
+SDL_ttf library patch level at compilation time
+<DT><B>UNICODE_BOM_NATIVE</B>
+<DD><A NAME="IDX5"></A>
+<CODE>0xFEFF</CODE><BR>
+This allows you to switch byte-order of UNICODE text data to native order, meaning the mode of your CPU.  This is meant to be used in a UNICODE string that you are using with the SDL_ttf API.
+<DT><B>UNICODE_BOM_SWAPPED</B>
+<DD><A NAME="IDX6"></A>
+<CODE>0xFFFE</CODE><BR>
+This allows you to switch byte-order of UNICODE text data to swapped order, meaning the reversed mode of your CPU.  So if your CPU is LSB, then the data will be interpretted as MSB.  This is meant to be used in a UNICODE string that you are using with the SDL_ttf API.
+<DT><B>TTF_STYLE_NORMAL</B>
+<DD><A NAME="IDX7"></A>
+<CODE>0x00</CODE><BR>
+Used to indicate regular, normal, plain rendering style.
+<DT><B>TTF_STYLE_BOLD</B>
+<DD><A NAME="IDX8"></A>
+<CODE>0x01</CODE><BR>
+Used to indicate bold rendering style.  This is used a bitmask along with other styles.
+<DT><B>TTF_STYLE_ITALIC</B>
+<DD><A NAME="IDX9"></A>
+<CODE>0x02</CODE><BR>
+Used to indicate italicized rendering style.  This is used a bitmask along with other styles.
+<DT><B>TTF_STYLE_UNDERLINE</B>
+<DD><A NAME="IDX10"></A>
+<CODE>0x04</CODE><BR>
+Used to indicate underlined rendering style.  This is used a bitmask along with other styles.
+</DL>
+<P>
+
+<B>See Also</B>:<BR>
+<A HREF="SDL_ttf.html#SEC32">6. Glossary</A>,
+</P><P>
+
+<A NAME="Glossary"></A>
+<HR SIZE="6">
+<A NAME="SEC32"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC31"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[ &lt;&lt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[ &gt;&gt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 6. Glossary </H1>
+<!--docid::SEC32::-->
+<P>
+
+<EM>Byte Order</EM>
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+<A NAME="IDX11"></A>
+<A NAME="IDX12"></A>
+<A NAME="IDX13"></A>
+<A NAME="IDX14"></A>
+<A NAME="IDX15"></A>
+This all has to do with how data larger than a byte is actually stored in memory.  The CPU expects 16bit and 32bit, and larger, data to be ordered in one of the two ways listed below.  SDL has macros which you can use to detemine which endian your program will be using.
+</P><P>
+
+<EM>Big-Endian</EM>(<FONT SIZE="-1">MSB</FONT>) means the most significant byte comes first in storage.  Sparc and Motorola 68k based chips are MSB ordered.<BR>
+(SDL defines this as <B>SDL_BYTEORDER==SDL_BIG_ENDIAN</B>)
+</P><P>
+
+<EM>Little-Endian</EM>(<FONT SIZE="-1">LSB</FONT>) is stored in the opposite order, with the least significant byte first in memory.  Intel and AMD are two LSB machines.<BR>
+(SDL defines this as <B>SDL_BYTEORDER==SDL_LIL_ENDIAN</B>)
+</td></tr></table></P><P>
+
+<EM>LATIN1</EM>
+<A NAME="IDX16"></A>
+<A NAME="IDX17"></A>
+<table border=1 cellspacing=0><tr><td bgcolor=silver>
+Latin-1 is an extension of ASCII, where ASCII only defines characters 0 through 127.
+Latin-1 continues and adds more common international symbols to define through character 255.<BR>
+</P><P>
+
+<A HREF="http://www.unicode.org/charts/PDF/U0080.pdf">ISO 8859-1 (Latin-1) Unicode Table (pdf)</A>
+</td></tr></table><CENTER><IMG SRC="latin-1.png" ALT="latin-1"></CENTER>
+</P><P>
+
+<A NAME="Index"></A>
+<HR SIZE="6">
+<A NAME="SEC33"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC32"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[ &gt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[ &lt;&lt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[ &gt;&gt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> Index </H1>
+<!--docid::SEC33::-->
+<P>
+
+<table><tr><th valign=top>Jump to: &nbsp; </th><td><A HREF="SDL_ttf.html#cp_A" style="text-decoration:none"><b>A</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_B" style="text-decoration:none"><b>B</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_L" style="text-decoration:none"><b>L</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_M" style="text-decoration:none"><b>M</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_R" style="text-decoration:none"><b>R</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_S" style="text-decoration:none"><b>S</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_T" style="text-decoration:none"><b>T</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_U" style="text-decoration:none"><b>U</b></A>
+ &nbsp; 
+</td></tr></table><br><P></P>
+<TABLE border=0>
+<TR><TD></TD><TH ALIGN=LEFT>Index Entry</TH><TH ALIGN=LEFT> Section</TH></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_A"></A>A</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX16">ASCII</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_B"></A>B</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX14">Big-Endian</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">Blended</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">3.4 Render</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX11">Byte Order</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_L"></A>L</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX17">LATIN1</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX15">Little-Endian</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX13">LSB</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_M"></A>M</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX12">MSB</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC32">6. Glossary</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_R"></A>R</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX1">README</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC1">1. Overview</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_S"></A>S</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC4">sdl-config</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC4">2.2 Compiling</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">Shaded</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">3.4 Render</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">Solid</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">3.4 Render</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_T"></A>T</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC20"><CODE>TTF_ByteSwappedUNICODE</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC20">3.3.1 TTF_ByteSwappedUNICODE</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC18"><CODE>TTF_CloseFont</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC13"><CODE>TTF_Font</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC13">3.2 Management</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC19"><CODE>TTF_Font</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC19">3.3 Attributes</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27"><CODE>TTF_Font</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC27">3.4 Render</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC30"><CODE>TTF_Font</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC30">4.1 TTF_Font</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC24"><CODE>TTF_FontAscent</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC24">3.3.5 TTF_FontAscent</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC25"><CODE>TTF_FontDescent</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC25">3.3.6 TTF_FontDescent</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC23"><CODE>TTF_FontHeight</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC23">3.3.4 TTF_FontHeight</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC26"><CODE>TTF_FontLineSkip</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC26">3.3.7 TTF_FontLineSkip</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC12"><CODE>TTF_GetError</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC12">3.1.6 TTF_GetError</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC21"><CODE>TTF_GetFontStyle</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC21">3.3.2 TTF_GetFontStyle</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC8"><CODE>TTF_Init</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC8">3.1.2 TTF_Init</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC7"><CODE>TTF_Linked_Version</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC7">3.1.1 TTF_Linked_Version</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX2">TTF_MAJOR_VERSION</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX3">TTF_MINOR_VERSION</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC14"><CODE>TTF_OpenFont</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC14">3.2.1 TTF_OpenFont</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC16"><CODE>TTF_OpenFontIndex</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC16">3.2.3 TTF_OpenFontIndex</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC17"><CODE>TTF_OpenFontIndexRW</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC17">3.2.4 TTF_OpenFontIndexRW</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC15"><CODE>TTF_OpenFontRW</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC15">3.2.2 TTF_OpenFontRW</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX4">TTF_PATCHLEVEL</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC10"><CODE>TTF_Quit</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC10">3.1.4 TTF_Quit</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC28"><CODE>TTF_RenderText_Solid</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC28">3.4.1 TTF_RenderText_Solid</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC11"><CODE>TTF_SetError</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC11">3.1.5 TTF_SetError</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC22"><CODE>TTF_SetFontStyle</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC22">3.3.3 TTF_SetFontStyle</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX8">TTF_STYLE_BOLD</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX9">TTF_STYLE_ITALIC</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX7">TTF_STYLE_NORMAL</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX10">TTF_STYLE_UNDERLINE</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC7"><CODE>TTF_VERSION</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC7">3.1.1 TTF_Linked_Version</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#SEC9"><CODE>TTF_WasInit</CODE></A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC9">3.1.3 TTF_WasInit</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+<TR><TH><A NAME="cp_U"></A>U</TH><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX5">UNICODE_BOM_NATIVE</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD></TD><TD valign=top><A HREF="SDL_ttf.html#IDX6">UNICODE_BOM_SWAPPED</A></TD><TD valign=top><A HREF="SDL_ttf.html#SEC31">5. Defines</A></TD></TR>
+<TR><TD COLSPAN=3> <HR></TD></TR>
+</TABLE><P></P><table><tr><th valign=top>Jump to: &nbsp; </th><td><A HREF="SDL_ttf.html#cp_A" style="text-decoration:none"><b>A</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_B" style="text-decoration:none"><b>B</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_L" style="text-decoration:none"><b>L</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_M" style="text-decoration:none"><b>M</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_R" style="text-decoration:none"><b>R</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_S" style="text-decoration:none"><b>S</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_T" style="text-decoration:none"><b>T</b></A>
+ &nbsp; 
+<A HREF="SDL_ttf.html#cp_U" style="text-decoration:none"><b>U</b></A>
+ &nbsp; 
+</td></tr></table><br></P><P>
+
+<HR SIZE="6">
+<A NAME="SEC_Contents"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>Table of Contents</H1>
+<UL>
+<A NAME="TOC1" HREF="SDL_ttf.html#SEC1">1. Overview</A>
+<BR>
+<A NAME="TOC2" HREF="SDL_ttf.html#SEC2">2. Getting Started</A>
+<BR>
+<UL>
+<A NAME="TOC3" HREF="SDL_ttf.html#SEC3">2.1 Includes</A>
+<BR>
+<A NAME="TOC4" HREF="SDL_ttf.html#SEC4">2.2 Compiling</A>
+<BR>
+</UL>
+<A NAME="TOC5" HREF="SDL_ttf.html#SEC5">3. Functions</A>
+<BR>
+<UL>
+<A NAME="TOC6" HREF="SDL_ttf.html#SEC6">3.1 General</A>
+<BR>
+<UL>
+<A NAME="TOC7" HREF="SDL_ttf.html#SEC7">3.1.1 TTF_Linked_Version</A>
+<BR>
+<A NAME="TOC8" HREF="SDL_ttf.html#SEC8">3.1.2 TTF_Init</A>
+<BR>
+<A NAME="TOC9" HREF="SDL_ttf.html#SEC9">3.1.3 TTF_WasInit</A>
+<BR>
+<A NAME="TOC10" HREF="SDL_ttf.html#SEC10">3.1.4 TTF_Quit</A>
+<BR>
+<A NAME="TOC11" HREF="SDL_ttf.html#SEC11">3.1.5 TTF_SetError</A>
+<BR>
+<A NAME="TOC12" HREF="SDL_ttf.html#SEC12">3.1.6 TTF_GetError</A>
+<BR>
+</UL>
+<A NAME="TOC13" HREF="SDL_ttf.html#SEC13">3.2 Management</A>
+<BR>
+<UL>
+<A NAME="TOC14" HREF="SDL_ttf.html#SEC14">3.2.1 TTF_OpenFont</A>
+<BR>
+<A NAME="TOC15" HREF="SDL_ttf.html#SEC15">3.2.2 TTF_OpenFontRW</A>
+<BR>
+<A NAME="TOC16" HREF="SDL_ttf.html#SEC16">3.2.3 TTF_OpenFontIndex</A>
+<BR>
+<A NAME="TOC17" HREF="SDL_ttf.html#SEC17">3.2.4 TTF_OpenFontIndexRW</A>
+<BR>
+<A NAME="TOC18" HREF="SDL_ttf.html#SEC18">3.2.5 TTF_CloseFont</A>
+<BR>
+</UL>
+<A NAME="TOC19" HREF="SDL_ttf.html#SEC19">3.3 Attributes</A>
+<BR>
+<UL>
+<A NAME="TOC20" HREF="SDL_ttf.html#SEC20">3.3.1 TTF_ByteSwappedUNICODE</A>
+<BR>
+<A NAME="TOC21" HREF="SDL_ttf.html#SEC21">3.3.2 TTF_GetFontStyle</A>
+<BR>
+<A NAME="TOC22" HREF="SDL_ttf.html#SEC22">3.3.3 TTF_SetFontStyle</A>
+<BR>
+<A NAME="TOC23" HREF="SDL_ttf.html#SEC23">3.3.4 TTF_FontHeight</A>
+<BR>
+<A NAME="TOC24" HREF="SDL_ttf.html#SEC24">3.3.5 TTF_FontAscent</A>
+<BR>
+<A NAME="TOC25" HREF="SDL_ttf.html#SEC25">3.3.6 TTF_FontDescent</A>
+<BR>
+<A NAME="TOC26" HREF="SDL_ttf.html#SEC26">3.3.7 TTF_FontLineSkip</A>
+<BR>
+</UL>
+<A NAME="TOC27" HREF="SDL_ttf.html#SEC27">3.4 Render</A>
+<BR>
+<UL>
+<A NAME="TOC28" HREF="SDL_ttf.html#SEC28">3.4.1 TTF_RenderText_Solid</A>
+<BR>
+</UL>
+</UL>
+<A NAME="TOC29" HREF="SDL_ttf.html#SEC29">4. Types</A>
+<BR>
+<UL>
+<A NAME="TOC30" HREF="SDL_ttf.html#SEC30">4.1 TTF_Font</A>
+<BR>
+</UL>
+<A NAME="TOC31" HREF="SDL_ttf.html#SEC31">5. Defines</A>
+<BR>
+<A NAME="TOC32" HREF="SDL_ttf.html#SEC32">6. Glossary</A>
+<BR>
+<A NAME="TOC33" HREF="SDL_ttf.html#SEC33">Index</A>
+<BR>
+</UL>
+<HR SIZE=1>
+<A NAME="SEC_OVERVIEW"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>Short Table of Contents</H1>
+<BLOCKQUOTE>
+<A NAME="TOC1" HREF="SDL_ttf.html#SEC1">1. Overview</A>
+<BR>
+<A NAME="TOC2" HREF="SDL_ttf.html#SEC2">2. Getting Started</A>
+<BR>
+<A NAME="TOC5" HREF="SDL_ttf.html#SEC5">3. Functions</A>
+<BR>
+<A NAME="TOC29" HREF="SDL_ttf.html#SEC29">4. Types</A>
+<BR>
+<A NAME="TOC31" HREF="SDL_ttf.html#SEC31">5. Defines</A>
+<BR>
+<A NAME="TOC32" HREF="SDL_ttf.html#SEC32">6. Glossary</A>
+<BR>
+<A NAME="TOC33" HREF="SDL_ttf.html#SEC33">Index</A>
+<BR>
+
+</BLOCKQUOTE>
+<HR SIZE=1>
+<A NAME="SEC_About"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC33">Index</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="SDL_ttf.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>About this document</H1>
+This document was generated on <I>February, 7  2004</I>
+using <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html
+"><I>texi2html</I></A>
+<P></P>  
+The buttons in the navigation panels have the following meaning:
+<P></P>
+<table border = "1">
+<TR>
+<TH> Button </TH>
+<TH> Name </TH>
+<TH> Go to </TH>
+<TH> From 1.2.3 go to</TH>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &lt; ] </TD>
+<TD ALIGN="CENTER">
+Back
+</TD>
+<TD>
+previous section in reading order
+</TD>
+<TD>
+1.2.2
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &gt; ] </TD>
+<TD ALIGN="CENTER">
+Forward
+</TD>
+<TD>
+next section in reading order
+</TD>
+<TD>
+1.2.4
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &lt;&lt; ] </TD>
+<TD ALIGN="CENTER">
+FastBack
+</TD>
+<TD>
+previous or up-and-previous section 
+</TD>
+<TD>
+1.1
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ Up ] </TD>
+<TD ALIGN="CENTER">
+Up
+</TD>
+<TD>
+up section
+</TD>
+<TD>
+1.2
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &gt;&gt; ] </TD>
+<TD ALIGN="CENTER">
+FastForward
+</TD>
+<TD>
+next or up-and-next section
+</TD>
+<TD>
+1.3
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [Top] </TD>
+<TD ALIGN="CENTER">
+Top
+</TD>
+<TD>
+cover (top) of document
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [Contents] </TD>
+<TD ALIGN="CENTER">
+Contents
+</TD>
+<TD>
+table of contents
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [Index] </TD>
+<TD ALIGN="CENTER">
+Index
+</TD>
+<TD>
+concept index
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ ? ] </TD>
+<TD ALIGN="CENTER">
+About
+</TD>
+<TD>
+this page
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+</TABLE>
+<P></P>
+where the <STRONG> Example </STRONG> assumes that the current position 
+is at <STRONG> Subsubsection One-Two-Three </STRONG> of a document of 
+the following structure:
+<UL>
+<LI> 1. Section One  </LI>
+<UL>
+<LI>1.1 Subsection One-One</LI>
+<UL>
+<LI> ... </LI>
+</UL>
+<LI>1.2 Subsection One-Two</LI>
+<UL>
+<LI>1.2.1 Subsubsection One-Two-One
+</LI><LI>1.2.2 Subsubsection One-Two-Two
+</LI><LI>1.2.3 Subsubsection One-Two-Three &nbsp; &nbsp; <STRONG>
+&lt;== Current Position </STRONG>
+</LI><LI>1.2.4 Subsubsection One-Two-Four
+</LI></UL>
+<LI>1.3 Subsection One-Three</LI>
+<UL>
+<LI> ... </LI>
+</UL>
+<LI>1.4 Subsection One-Four</LI>
+</UL>
+</UL>
+
+<HR SIZE=1>
+<BR>  
+<FONT SIZE="-1">
+This document was generated
+on <I>February, 7  2004</I>
+using <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html
+"><I>texi2html</I></A>
+
+</BODY>
+</HTML>

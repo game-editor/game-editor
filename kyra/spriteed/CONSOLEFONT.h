@@ -1,0 +1,6 @@
+#ifndef CONSOLEFONT_INCLUDED
+#define CONSOLEFONT_INCLUDED
+const int CONSOLEFONT_SIZE = 59958;
+extern unsigned char CONSOLEFONT_DAT[59958];
+#endif
+

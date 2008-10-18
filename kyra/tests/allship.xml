@@ -1,0 +1,46 @@
+<Definition filename="allship.pcx" Transparent0="#000000">
+    <Sprite name="BULLET">
+        <Action name="SPHERE">
+            <Frame x="249" y="352" width="28" height="36" hotspotx="262" hotspoty="371" deltax="0" deltay="0" />
+        </Action>
+        <Action name="OBLONG">
+            <Frame x="229" y="348" width="18" height="52" hotspotx="237" hotspoty="373" deltax="0" deltay="0" />
+        </Action>
+        <Action name="NONE" />
+    </Sprite>
+    <Sprite name="TRAIN">
+        <Action name="CABOOSE">
+            <Frame x="176" y="352" width="48" height="57" hotspotx="200" hotspoty="384" deltax="0" deltay="0" />
+        </Action>
+        <Action name="CAR">
+            <Frame x="74" y="345" width="95" height="74" hotspotx="122" hotspoty="383" deltax="0" deltay="0" />
+        </Action>
+        <Action name="ENGINE">
+            <Frame x="0" y="329" width="76" height="97" hotspotx="37" hotspoty="398" deltax="0" deltay="0" />
+        </Action>
+        <Action name="NONE" />
+    </Sprite>
+    <Sprite name="LARGE">
+        <Action name="TAIL">
+            <Frame x="296" y="16" width="93" height="395" hotspotx="252" hotspoty="211" deltax="0" deltay="0" />
+        </Action>
+        <Action name="BODY">
+            <Frame x="7" y="109" width="290" height="207" hotspotx="252" hotspoty="211" deltax="0" deltay="0" />
+        </Action>
+        <Action name="NONE" />
+    </Sprite>
+    <Sprite name="MED">
+        <Action name="INSIGNIA">
+            <Frame x="101" y="17" width="23" height="36" hotspotx="112" hotspoty="34" deltax="0" deltay="0" />
+        </Action>
+        <Action name="BODY">
+            <Frame x="131" y="1" width="113" height="76" hotspotx="212" hotspoty="34" deltax="0" deltay="0" />
+        </Action>
+        <Action name="NONE" />
+    </Sprite>
+    <Sprite name="SMALL">
+        <Action name="NONE">
+            <Frame x="0" y="0" width="98" height="77" hotspotx="62" hotspoty="32" deltax="0" deltay="0" />
+        </Action>
+    </Sprite>
+</Definition>

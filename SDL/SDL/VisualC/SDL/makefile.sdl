@@ -1,0 +1,221 @@
+# Project: staticSDL
+# Makefile created by Dev-C++ 4.9.5.0
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+SDL_LINUX = ../../../../output//SDL_x11dga.o ../../../../output//SDL_x11events.o ../../../../output//SDL_x11gamma.o ../../../../output//SDL_x11gl.o ../../../../output//SDL_x11image.o ../../../../output//SDL_x11modes.o ../../../../output//SDL_x11mouse.o ../../../../output//SDL_x11video.o ../../../../output//SDL_x11wm.o ../../../../output//SDL_x11yuv.o ../../../../output//SDL_dmaaudio.o ../../../../output//SDL_dspaudio.o
+endif
+
+RES  = 
+OBJ  = ../../../../output//SDL.o ../../../../output//SDL_active.o ../../../../output//SDL_audio.o ../../../../output//SDL_audiocvt.o ../../../../output//SDL_audiomem.o ../../../../output//SDL_blit.o ../../../../output//SDL_blit_0.o ../../../../output//SDL_blit_1.o ../../../../output//SDL_blit_A.o ../../../../output//SDL_blit_N.o ../../../../output//SDL_bmp.o ../../../../output//SDL_cursor.o ../../../../output//SDL_endian.o ../../../../output//SDL_error.o ../../../../output//SDL_events.o ../../../../output//SDL_expose.o ../../../../output//SDL_fatal.o ../../../../output//SDL_keyboard.o ../../../../output//SDL_mixer.o ../../../../output//SDL_mouse.o ../../../../output//SDL_pixels.o ../../../../output//SDL_quit.o ../../../../output//SDL_resize.o ../../../../output//SDL_RLEaccel.o ../../../../output//SDL_rwops.o ../../../../output//SDL_stretch.o ../../../../output//SDL_surface.o ../../../../output//SDL_thread.o ../../../../output//SDL_timer.o ../../../../output//SDL_video.o ../../../../output//SDL_wave.o ../../../../output//SDL_yuv.o ../../../../output//SDL_yuv_sw.o ../../../../output//SDL_syscond.o ../../../../output//SDL_sysmutex.o ../../../../output//SDL_syssem.o ../../../../output//SDL_systhread.o ../../../../output//SDL_systimer.o ../../../../output//SDL_gamma.o ../../../../output//SDL_audiodev.o ../../../../output//SDL_joystick.o ../../../../output//SDL_sysjoystick.o $(SDL_LINUX) $(RES)
+INCS =  -I"../../src"  -I"../../src/audio"  -I"../../src/video"  -I"../../src/video/x11"  -I"../../src/events"  -I"../../src/joystick"  -I"../../src/cdrom"  -I"../../src/thread"  -I"../../src/thread/linux"  -I"../../src/timer"  -I"../../include"
+BIN  = ../../../../output/sdl.a
+
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+        SDL_SYSTEM=-DENABLE_X11
+else
+		CAR=llvm-link -f -o 
+        CRANL=  
+        SDL_SYSTEM=    	
+endif
+
+CFLAGS = $(INCS) $(TARGET) -DOSS_SUPPORT -D_LIB -DDISABLE_CDROM -DSDL_USE_PTHREADS $(BUILD_TYPE) $(SDL_SYSTEM)
+# -DALSA_SUPPORT -DDMEDIA_SUPPORT
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../output/sdl.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../../../output//SDL.o: ../../src/SDL.c
+	$(CC) -c ../../src/SDL.c -o ../../../../output//SDL.o $(CFLAGS)
+
+../../../../output//SDL_active.o: ../../src/events/SDL_active.c
+	$(CC) -c ../../src/events/SDL_active.c -o ../../../../output//SDL_active.o $(CFLAGS)
+
+../../../../output//SDL_audio.o: ../../src/audio/SDL_audio.c
+	$(CC) -c ../../src/audio/SDL_audio.c -o ../../../../output//SDL_audio.o $(CFLAGS)
+
+../../../../output//SDL_audiodev.o: ../../src/audio/SDL_audiodev.c
+	$(CC) -c ../../src/audio/SDL_audiodev.c -o ../../../../output//SDL_audiodev.o $(CFLAGS)
+
+../../../../output//SDL_audiocvt.o: ../../src/audio/SDL_audiocvt.c
+	$(CC) -c ../../src/audio/SDL_audiocvt.c -o ../../../../output//SDL_audiocvt.o $(CFLAGS)
+
+../../../../output//SDL_audiomem.o: ../../src/audio/SDL_audiomem.c
+	$(CC) -c ../../src/audio/SDL_audiomem.c -o ../../../../output//SDL_audiomem.o $(CFLAGS)
+
+../../../../output//SDL_blit.o: ../../src/video/SDL_blit.c
+	$(CC) -c ../../src/video/SDL_blit.c -o ../../../../output//SDL_blit.o $(CFLAGS)
+
+../../../../output//SDL_gamma.o: ../../src/video/SDL_gamma.c
+	$(CC) -c ../../src/video/SDL_gamma.c -o ../../../../output//SDL_gamma.o $(CFLAGS)
+
+../../../../output//SDL_blit_0.o: ../../src/video/SDL_blit_0.c
+	$(CC) -c ../../src/video/SDL_blit_0.c -o ../../../../output//SDL_blit_0.o $(CFLAGS)
+
+../../../../output//SDL_blit_1.o: ../../src/video/SDL_blit_1.c
+	$(CC) -c ../../src/video/SDL_blit_1.c -o ../../../../output//SDL_blit_1.o $(CFLAGS)
+
+../../../../output//SDL_blit_A.o: ../../src/video/SDL_blit_A.c
+	$(CC) -c ../../src/video/SDL_blit_A.c -o ../../../../output//SDL_blit_A.o $(CFLAGS)
+
+../../../../output//SDL_blit_N.o: ../../src/video/SDL_blit_N.c
+	$(CC) -c ../../src/video/SDL_blit_N.c -o ../../../../output//SDL_blit_N.o $(CFLAGS)
+
+../../../../output//SDL_bmp.o: ../../src/video/SDL_bmp.c
+	$(CC) -c ../../src/video/SDL_bmp.c -o ../../../../output//SDL_bmp.o $(CFLAGS)
+
+../../../../output//SDL_cursor.o: ../../src/video/SDL_cursor.c
+	$(CC) -c ../../src/video/SDL_cursor.c -o ../../../../output//SDL_cursor.o $(CFLAGS)
+
+../../../../output//SDL_endian.o: ../../src/endian/SDL_endian.c
+	$(CC) -c ../../src/endian/SDL_endian.c -o ../../../../output//SDL_endian.o $(CFLAGS)
+
+../../../../output//SDL_error.o: ../../src/SDL_error.c
+	$(CC) -c ../../src/SDL_error.c -o ../../../../output//SDL_error.o $(CFLAGS)
+
+../../../../output//SDL_events.o: ../../src/events/SDL_events.c
+	$(CC) -c ../../src/events/SDL_events.c -o ../../../../output//SDL_events.o $(CFLAGS)
+
+../../../../output//SDL_expose.o: ../../src/events/SDL_expose.c
+	$(CC) -c ../../src/events/SDL_expose.c -o ../../../../output//SDL_expose.o $(CFLAGS)
+
+../../../../output//SDL_fatal.o: ../../src/SDL_fatal.c
+	$(CC) -c ../../src/SDL_fatal.c -o ../../../../output//SDL_fatal.o $(CFLAGS)
+
+../../../../output//SDL_keyboard.o: ../../src/events/SDL_keyboard.c
+	$(CC) -c ../../src/events/SDL_keyboard.c -o ../../../../output//SDL_keyboard.o $(CFLAGS)
+
+../../../../output//SDL_mixer.o: ../../src/audio/SDL_mixer.c
+	$(CC) -c ../../src/audio/SDL_mixer.c -o ../../../../output//SDL_mixer.o $(CFLAGS)
+
+../../../../output//SDL_mouse.o: ../../src/events/SDL_mouse.c
+	$(CC) -c ../../src/events/SDL_mouse.c -o ../../../../output//SDL_mouse.o $(CFLAGS)
+
+../../../../output//SDL_pixels.o: ../../src/video/SDL_pixels.c
+	$(CC) -c ../../src/video/SDL_pixels.c -o ../../../../output//SDL_pixels.o $(CFLAGS)
+
+../../../../output//SDL_quit.o: ../../src/events/SDL_quit.c
+	$(CC) -c ../../src/events/SDL_quit.c -o ../../../../output//SDL_quit.o $(CFLAGS)
+
+../../../../output//SDL_resize.o: ../../src/events/SDL_resize.c
+	$(CC) -c ../../src/events/SDL_resize.c -o ../../../../output//SDL_resize.o $(CFLAGS)
+
+../../../../output//SDL_RLEaccel.o: ../../src/video/SDL_RLEaccel.c
+	$(CC) -c ../../src/video/SDL_RLEaccel.c -o ../../../../output//SDL_RLEaccel.o $(CFLAGS)
+
+../../../../output//SDL_rwops.o: ../../src/file/SDL_rwops.c
+	$(CC) -c ../../src/file/SDL_rwops.c -o ../../../../output//SDL_rwops.o $(CFLAGS)
+
+../../../../output//SDL_stretch.o: ../../src/video/SDL_stretch.c
+	$(CC) -c ../../src/video/SDL_stretch.c -o ../../../../output//SDL_stretch.o $(CFLAGS)
+
+../../../../output//SDL_surface.o: ../../src/video/SDL_surface.c
+	$(CC) -c ../../src/video/SDL_surface.c -o ../../../../output//SDL_surface.o $(CFLAGS)
+
+../../../../output//SDL_thread.o: ../../src/thread/SDL_thread.c
+	$(CC) -c ../../src/thread/SDL_thread.c -o ../../../../output//SDL_thread.o $(CFLAGS)
+
+../../../../output//SDL_timer.o: ../../src/timer/SDL_timer.c
+	$(CC) -c ../../src/timer/SDL_timer.c -o ../../../../output//SDL_timer.o $(CFLAGS)
+
+../../../../output//SDL_video.o: ../../src/video/SDL_video.c
+	$(CC) -c ../../src/video/SDL_video.c -o ../../../../output//SDL_video.o $(CFLAGS)
+
+../../../../output//SDL_wave.o: ../../src/audio/SDL_wave.c
+	$(CC) -c ../../src/audio/SDL_wave.c -o ../../../../output//SDL_wave.o $(CFLAGS)
+
+../../../../output//SDL_yuv.o: ../../src/video/SDL_yuv.c
+	$(CC) -c ../../src/video/SDL_yuv.c -o ../../../../output//SDL_yuv.o $(CFLAGS)
+
+../../../../output//SDL_yuv_sw.o: ../../src/video/SDL_yuv_sw.c
+	$(CC) -c ../../src/video/SDL_yuv_sw.c -o ../../../../output//SDL_yuv_sw.o $(CFLAGS)
+
+# audio
+# ../../../../output//SDL_alsa_audio.o: ../../src/audio/alsa/SDL_alsa_audio.c
+#	$(CC) -c ../../src/audio/alsa/SDL_alsa_audio.c -o ../../../../output//SDL_alsa_audio.o $(CFLAGS)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+    ../../../../output//SDL_dmaaudio.o: ../../src/audio/dma/SDL_dmaaudio.c
+	$(CC) -c ../../src/audio/dma/SDL_dmaaudio.c -o ../../../../output//SDL_dmaaudio.o $(CFLAGS)
+	
+	../../../../output//SDL_dspaudio.o: ../../src/audio/dsp/SDL_dspaudio.c
+	$(CC) -c ../../src/audio/dsp/SDL_dspaudio.c -o ../../../../output//SDL_dspaudio.o $(CFLAGS)
+endif
+
+# ../../../../output//SDL_irixaudio.o: ../../src/audio/dmedia/SDL_irixaudio.c
+#	$(CC) -c ../../src/audio/dmedia/SDL_irixaudio.c -o ../../../../output//SDL_irixaudio.o $(CFLAGS)
+
+
+
+# thread
+
+../../../../output//SDL_syscond.o: ../../src/thread/linux/SDL_syscond.c
+	$(CC) -c ../../src/thread/linux/SDL_syscond.c -o ../../../../output//SDL_syscond.o $(CFLAGS)
+
+../../../../output//SDL_sysmutex.o: ../../src/thread/linux/SDL_sysmutex.c
+	$(CC) -c ../../src/thread/linux/SDL_sysmutex.c -o ../../../../output//SDL_sysmutex.o $(CFLAGS)
+
+../../../../output//SDL_syssem.o: ../../src/thread/linux/SDL_syssem.c
+	$(CC) -c ../../src/thread/linux/SDL_syssem.c -o ../../../../output//SDL_syssem.o $(CFLAGS)
+
+../../../../output//SDL_systhread.o: ../../src/thread/linux/SDL_systhread.c
+	$(CC) -c ../../src/thread/linux/SDL_systhread.c -o ../../../../output//SDL_systhread.o $(CFLAGS)
+
+# timer
+
+../../../../output//SDL_systimer.o: ../../src/timer/linux/SDL_systimer.c
+	$(CC) -c ../../src/timer/linux/SDL_systimer.c -o ../../../../output//SDL_systimer.o $(CFLAGS)
+
+# video
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+../../../../output//SDL_x11dga.o: ../../src/video/x11/SDL_x11dga.c
+	$(CC) -c ../../src/video/x11/SDL_x11dga.c -o ../../../../output//SDL_x11dga.o $(CFLAGS)
+
+../../../../output//SDL_x11events.o: ../../src/video/x11/SDL_x11events.c
+	$(CC) -c ../../src/video/x11/SDL_x11events.c -o ../../../../output//SDL_x11events.o $(CFLAGS)
+
+../../../../output//SDL_x11gamma.o: ../../src/video/x11/SDL_x11gamma.c
+	$(CC) -c ../../src/video/x11/SDL_x11gamma.c -o ../../../../output//SDL_x11gamma.o $(CFLAGS)
+
+../../../../output//SDL_x11gl.o: ../../src/video/x11/SDL_x11gl.c
+	$(CC) -c ../../src/video/x11/SDL_x11gl.c -o ../../../../output//SDL_x11gl.o $(CFLAGS)
+
+../../../../output//SDL_x11image.o: ../../src/video/x11/SDL_x11image.c
+	$(CC) -c ../../src/video/x11/SDL_x11image.c -o ../../../../output//SDL_x11image.o $(CFLAGS)
+
+../../../../output//SDL_x11modes.o: ../../src/video/x11/SDL_x11modes.c
+	$(CC) -c ../../src/video/x11/SDL_x11modes.c -o ../../../../output//SDL_x11modes.o $(CFLAGS)
+
+../../../../output//SDL_x11mouse.o: ../../src/video/x11/SDL_x11mouse.c
+	$(CC) -c ../../src/video/x11/SDL_x11mouse.c -o ../../../../output//SDL_x11mouse.o $(CFLAGS)
+
+../../../../output//SDL_x11video.o: ../../src/video/x11/SDL_x11video.c
+	$(CC) -c ../../src/video/x11/SDL_x11video.c -o ../../../../output//SDL_x11video.o $(CFLAGS)
+
+../../../../output//SDL_x11wm.o: ../../src/video/x11/SDL_x11wm.c
+	$(CC) -c ../../src/video/x11/SDL_x11wm.c -o ../../../../output//SDL_x11wm.o $(CFLAGS)
+
+../../../../output//SDL_x11yuv.o: ../../src/video/x11/SDL_x11yuv.c
+	$(CC) -c ../../src/video/x11/SDL_x11yuv.c -o ../../../../output//SDL_x11yuv.o $(CFLAGS)
+endif
+
+# joystick
+
+../../../../output//SDL_joystick.o: ../../src/joystick/SDL_joystick.c
+	$(CC) -c ../../src/joystick/SDL_joystick.c -o ../../../../output//SDL_joystick.o $(CFLAGS)
+
+../../../../output//SDL_sysjoystick.o: ../../src/joystick/dummy/SDL_sysjoystick.c
+	$(CC) -c ../../src/joystick/dummy/SDL_sysjoystick.c -o ../../../../output//SDL_sysjoystick.o $(CFLAGS)

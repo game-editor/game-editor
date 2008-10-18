@@ -1,0 +1,587 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">Kyra Engine</font></h1>
+      <p><font face="Arial, Helvetica, sans-serif">The engine exists for putting 
+        Sprites, Tiles, and Canvases on the screen. So first the explanation will 
+        start with these three important types. From there, the discussion will 
+        work back to the engine and ways to use it.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif"><a name="sprite"></a>Sprite</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">A sprites is an object that 
+        is drawn on the screen. It can be any size, shape, foreground, or background. 
+        The term &quot;Sprite&quot; is traditionally used to refer to foreground 
+        objects; Kyra does not distinguish between foreground and background. 
+        In the Bug Eyed Monster Demo, each alien is a Sprite as well as the floor 
+        and the object in the center of the room.</font></p>
+      <font face="Arial, Helvetica, sans-serif"> 
+      <blockquote><font face="Arial, Helvetica, sans-serif"><b>Sprites are comprised 
+        of Actions.</b></font><font face="Arial, Helvetica, sans-serif"> </font></blockquote>
+      </font><font face="Arial, Helvetica, sans-serif"> 
+      <blockquote><font face="Arial, Helvetica, sans-serif"><b>Actions are made 
+        of Frames. </b></font></blockquote>
+      </font> 
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">An alien drone is made of the 
+        following components:</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="engine1.jpg" width="400" height="303"></font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">So a sprite is 
+        composed potentially of many images. When using a sprite you can set its 
+        current state like this:</font></p>
+      <p align="left"> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><code>drone-&gt;SetAction( 
+          &quot;WALK.DIR7&quot; );</code></font></p>
+        <p><font face="Arial, Helvetica, sans-serif"><code>drone-&gt;SetFrame( 
+          3 );</code></font></p>
+      </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">and, assuming the sprite has 
+        been added to the tree (more later) it will be drawn on the screen walking 
+        the direction '7' on frame 3. For sprites that have one action and one 
+        frame, like room objects, the actions and frames do not need to be set. 
+        </font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Sprites that uses sequence 
+        of multiple frames can take advantage of the DoStep() method. DoStep() 
+        automatically advances the frame and moves the sprite. When the Sprite 
+        is configured in the Sprite Editor, the alignment mode sets up the steps 
+        between frame. If a sprite has been &quot;aligned&quot; then DoStep() 
+        can be used. Calling DoStep() on the drone, above, would cause to move 
+        up and to the left, and its frame counter will be incremented by one.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Sprites can be transformed 
+        by color, visibility, alpha, position, or scale. For example, you can 
+        tint a sprite green and apply a 20 percent alpha. You can see this in 
+        the demo when the Big Brain is close to the strange object in the center 
+        of the screen.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif"><a name="tile"></a>Tile</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">let's say you had a game with 
+        a top-down perspective You might create an image of a road that bends. 
+        But you'd like to reuse it by rotating it, rather than creating multiple 
+        sprites. </font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="engine2.jpg" width="365" height="70"> 
+        </font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">That is as an 
+        example of a tile. In Kyra, it is a square image that can be rotated and 
+        flipped. Tiles can only have one frame. In version 2 and higher they can 
+        be scaled.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Tiles support 
+        the full range of color and alpha transformations. However they are much 
+        more efficient if used without an alpha channel and without a color or 
+        alpha transformation. This is normally not an issue, since they are almost 
+        always used for the background. </font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">When choosing 
+        a Tile vs. a Sprite, always choose a Sprite unless you want to be able 
+        to rotate it.</font></p>
+      <h3 align="left"><font face="Arial, Helvetica, sans-serif"><a name="canvas"></a>Canvas</font></h3>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Kyra allows user 
+        drawn areas of the screen through Canvases. They are like miniature screens 
+        you can paint to, except that they support the full range of transformations, 
+        and will be correctly placed and transformed by the engine. (Drawing directly 
+        to the framebuffer that Kyra uses can be tricky to do without confusing 
+        the Kyra engine.)</font></p>
+      <h2 align="left"><font face="Arial, Helvetica, sans-serif"><a name="tree"></a>KrImNodes 
+        and the Tree</font></h2>
+      <h2 align="center"><font face="Arial, Helvetica, sans-serif"><img src="engine3.jpg" width="262" height="182"></font></h2>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The Sprite, Tile, 
+        and Canvas are all Images. This simply means that they can be drawn to 
+        the screen. KrImage is an abstract class and can not be instantiated.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The KrImNode (krim 
+        node) is the base class and an entirely different beast. It provides both 
+        basic functionality and is itself a useful container class.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The KrImNode has 
+        an x and y value that positions it on or off the screen. It also has a 
+        color, a name, a scaling factor, and an ID. A KrImNode lives in the Tree 
+        (which lives in the Engine), which is a container for a tree (in the algorithmic 
+        sense of an n-tree) of KrImNodes. The root of the Tree is the Root.</font></p>
+      <p align="left"> <font face="Arial, Helvetica, sans-serif">A KrImNode, and 
+      all its children, can be transformed by: 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Position x,y</b></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Scale x,y</b></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Color transformation: 
+          RGB and Alpha</b></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Visibility</b></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>ZDepth</b></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Quality</b></font></li>
+      </ul>
+      </font> 
+      <p></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Every KrImNode 
+        is transformed by its parents in the tree -- both spatially and by color. 
+        This is one of the odder but more useful features of Kyra. A child node 
+        moves with its parents, is color transformed by its parents, and scales 
+        with its parents. Some ideas about how the tree relationship is useful:</font></p>
+      <p align="left"> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Representing variable 
+          objects.</b> A fighter plane has several insignia that might appear 
+          on its wings. A parent Sprite defines the plane, and then a Sprite can 
+          be created for the correct insignia, and added as a child. The insignia 
+          moves with the plane, and is positioned relative to it.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Coloring objects. </b>A 
+          fantasy warrior can be separated from its armor. If the warrior is the 
+          parent sprite, the armor can be added as a child sprite. The armor can 
+          then be color transformed to reflect its strength, magic, or type.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>Independent animations. 
+          </b>A moon rover with a radar dish. You may want the wheels of the moon 
+          rover to move independently of the motion of the radar dish. You want 
+          the radar to draw over the rover body, which draws over the wheels. 
+          Each piece of the rover would be the child of a (non-drawing) KrImNode, 
+          and each frame can be set separately.</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif">Consider a Tree that looks 
+        like this:</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="engine4.jpg" width="386" height="261"> 
+        </font></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Case A</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The root node 
+        has a KrImNode child with the name &quot;SpaceShip A&quot;. The node itself 
+        does not get drawn, but it does have a position on the screen. So by setting 
+        the X and Y of the KrImNode, the Body and Insignia are moved with it. 
+        (Generally speaking, the body and insignia wouldn't have any offset from 
+        the KrImNode parent.) The Sprite child is given a color transformation.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">If the KrImNode 
+        &quot;Spaceship A&quot; was given an alpha transform, it would transform 
+        the Body and Insignia as well.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">If the Root is 
+        transformed, it effects every object. This is the way scrolling is achieved 
+        in the 2nd space demo.</font></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Case B</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Case B has exactly 
+        the same visual representation as A, but does not have the KrImNode container. 
+        This is in fact how the demo is set up. The way in which you want to be 
+        able to apply transforms determines the organization of the objects. </font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif"><i>Note that child 
+        objects are drawn on top of their parents.</i></font></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Depth</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Both case A and 
+        B have the same depth sort. Background-&gt;Sprite Body-&gt;Sprite Insignia-&gt;Root. 
+        At the same level in the Tree, nodes are sorted left to right, with the 
+        sibling on the right being closer to the viewer. Although in practice 
+        it is easier to give siblings a numerical depth and the engine will sort 
+        them for you. Children are sorted ABOVE their parents.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">A Tree, with depths, 
+        is shown below. Higher depths are closer to the viewer.</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="engine5.jpg" width="350" height="259"></font></p>
+      <h2 align="left"><font face="Arial, Helvetica, sans-serif"><a name="scaling"></a>Scaling</font></h2>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Scaling is a transformation 
+        like position, color, and alpha. But there are some subtleties and special 
+        considerations that make this worth a special section. Scaling refers 
+        to the xScale and yScale components, which can be set separately. Note 
+        that scaling is specified using fixed point math (16.16), via the GlFixed 
+        class.</font></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">The Basics</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Considering Tree 
+        &quot;B&quot; above, again, lets say &quot;Spaceship A&quot; is at screen 
+        location (10,10) and its insignia is located at (4,0) relative, of course, 
+        to &quot;Spaceship A&quot;. In absolute coordinates, the insignia is located 
+        at (14, 10), the composition (addition, in this case) of the parent coordinates. 
+        If we apply a (0.5,0.5) scale to the spaceship, what happens?</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">&quot;Spaceship 
+        A&quot; is still located at (10,10). It is now drawn at half-size. The 
+        insignia is transformed by its parent, so it will also be drawn at half-size. 
+        Its offset is also transform by the parent, so in absolute coordinates 
+        it is now at (12,10). Visually, everything is kept properly positioned.</font></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Real Time vs 
+        Cached</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">On the fly scaling 
+        -- real time scaling -- is relatively expensive to draw, and is of moderate 
+        quality. It works quite well for smaller areas of the screen, on things 
+        moving, or the zoom changing. However, you often want to be able to zoom 
+        in or out on the entire screen at very high quality. This is what cached 
+        scaling is used for.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Cached scaling 
+        pre-scales sprites (under the hood) at very high quality. This consumes 
+        memory, since you are essentially generating new sprites, but gives much 
+        higher quality results. The primary disadvantage, is that you need to 
+        choose a set a zooms to pre-cached ahead of time. If you want to see the 
+        world at a zoom of 0.5 and 2.0, this works very well.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Scaling has 3 
+        quality settings: Fast (lowest quality), Linear, and Adaptive (highest 
+        and slowest.) An image will use the closest match to what it is set to. 
+        If quality is set to None, the Image will try to get a quality from a 
+        parent object.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The only practical 
+        limitation to be aware of is that Tiles do not scale in real time. The 
+        details of how objects scale:</font></p>
+      <table width="100%" border="1">
+        <tr> 
+          <td width="23%">&nbsp;</td>
+          <td width="32%"><font face="Arial, Helvetica, sans-serif"><b>Real Time</b></font></td>
+          <td width="45%"><font face="Arial, Helvetica, sans-serif"><b>Cached</b></font></td>
+        </tr>
+        <tr> 
+          <td width="23%"><font face="Arial, Helvetica, sans-serif"><b>KrSprite 
+            (including text)</b></font></td>
+          <td width="32%"><font face="Arial, Helvetica, sans-serif">Fast quality</font></td>
+          <td width="45%"><font face="Arial, Helvetica, sans-serif">Yes</font></td>
+        </tr>
+        <tr> 
+          <td width="23%"><font face="Arial, Helvetica, sans-serif"><b>KrCanvas</b></font></td>
+          <td width="32%"><font face="Arial, Helvetica, sans-serif">Fast, Linear, 
+            Adaptive</font></td>
+          <td width="45%"><font face="Arial, Helvetica, sans-serif">N/A: doesn't 
+            cached, and will always render real-time.</font></td>
+        </tr>
+        <tr> 
+          <td width="23%"><font face="Arial, Helvetica, sans-serif"><b>KrTile</b></font></td>
+          <td width="32%"><font face="Arial, Helvetica, sans-serif">Yes.</font></td>
+          <td width="45%"><font face="Arial, Helvetica, sans-serif">Yes.</font></td>
+        </tr>
+        <tr> 
+          <td width="23%"><font face="Arial, Helvetica, sans-serif"><b>KrBox</b></font></td>
+          <td width="32%"><font face="Arial, Helvetica, sans-serif">Resizes independent 
+            of quality.</font></td>
+          <td width="45%"><font face="Arial, Helvetica, sans-serif">N/A</font></td>
+        </tr>
+      </table>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Using Cached 
+        Scaling</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Once you choose 
+        a zoom to cache, call the CacheScale() method on the appropriate resource. 
+        This will cache the scaled version. In the future, when the Image is drawn 
+        at the cached scale, the cached version will be used. That's it!</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">You can query 
+        a resource with IsScaleCached(), or if you want to removed the cached 
+        scales, FreeScaleCache(). The cached versions will be deleted when the 
+        resource in deleted, so normally you don't need to call the explicitly.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">You can call CacheScale() 
+        or an entire ResourceVault, as well, to process a bunch at once.</font></p>
+      <h2 align="left"><font face="Arial, Helvetica, sans-serif"><a name="vault"></a>Resources 
+        and the Vault</font></h2>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Every Image (Sprite, 
+        Tile, and Canvas) is an instance of a Resource. You will often have many 
+        instances of a given resource. Resources are created by the tools and 
+        stored in a .dat file. The .dat file is loaded and used to create resources 
+        which live in the Vault. The Vault can be queried for any type of resource 
+        by its name or id.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The CanvasResource 
+        is an exception. It is user created and placed in the Vault.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">For example, SpriteResourece 
+        with the name &quot;DRONE&quot; is pulled out of the Vault in the BEM 
+        demo. All the Drone BEMs on the screen are instances of this one resource. 
+        Each instance of the Resource is a Sprite. The same relationship holds 
+        for Canvases and Tiles.</font></p>
+      <h2 align="left"><font face="Arial, Helvetica, sans-serif">The Engine</font></h2>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">So the Engine 
+        is mostly a container. It contains a Tree and a Vault for you to use. 
+        (It contains a bunch of other stuff as well, but that's for internal use.)</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">It does have the 
+        very important Draw() method, which you'll want to call once per frame. 
+        ;-) </font></p>
+      <h3 align="left"><font face="Arial, Helvetica, sans-serif"><a name="windows"></a>View 
+        Windows</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">A view window is used in BEM 
+        demo 2:</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="demo6.jpg" width="320" height="240"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">A &quot;view window&quot; or 
+        &quot;kyra window&quot; is a subsection of the surface that Kyra is drawing 
+        to. Each window is a rendering of the same KrImageTree. However, each 
+        window can use different transformations and can appear quite different. 
+        </font></p>
+      <p><font face="Arial, Helvetica, sans-serif">In the example above there 
+        are 5 windows.</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif">1 window in the lower left. 
+          This uses a large scale on the Root() object to give a mini-map view.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">1 window in the upper right. 
+          This changes the Root() scale, as well as the x and y position *for 
+          only this window.* This allows a moving camera that zooms in and out.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">3 windows form bands for 
+          the main view. Windows can not overlap...so to create the main view 
+          takes 3 windows aligned to look like one.</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif">All the windows are just different 
+        views of the same KrImageTree, which contains the Sprites and Tiles for 
+        the BEM demo.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">When you create the engine, 
+        you can specify how many veiw windows you want to use, and their locations. 
+        They cannot overlap and you should not use more than you need, as there 
+        is some overhead for each window. You can have any number of windows up 
+        to KR_MAX_WINDOWS. If you need more, increase KR_MAX_WINDOWS and recompile 
+        the engine.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Each window is its own virtual 
+        screen, with coordinate (0,0) in the upper left. You can query the Engine 
+        for the position of any window, or for the real screen bounds.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">When using the windows, it 
+        is important to remember that they are alternate views of the same Tree. 
+        They all contain essentially the same information, but have different 
+        transformations. When you set the scale, visibility, position, or any 
+        other transformation, it can be applied to all the windows or a particular 
+        one. For example, </font></p>
+      <p><font face="Arial, Helvetica, sans-serif">SetVisibilty( false ) or SetVisibility( 
+        false, KR_ALL_WINDOWS) turns a node invisible in all windows, while</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">SetVisibility( false, 2 ) turns 
+        a node in the window index 2 to invisible. Note that window index 0 is 
+        the default window.</font></p>
+      <h3 align="left"><font face="Arial, Helvetica, sans-serif"><a name="opengl"></a>Using 
+        OpenGL [version 1.5]</font></h3>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">To use OpenGL, 
+        simply pass an SDL_OPENGL surface to Kyra when the engine is created. 
+        Kyra will detect the OpenGL surface, and use the OpenGL library. It's 
+        very straightforward.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Run the demo, 
+        krdemo, with the -o option to see it in OpenGL. Note that you *must* have 
+        compiled in support for OpenGL; it is off by default in some configurations. 
+        See <a href="build.html">Build</a>.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">If you have a 
+        hardware accelerated OpenGL implementation, it is very, very, very fast. 
+        I mean really fast. Crazy fast. Scaling looks fantastic. On the other 
+        hand, if you have a software OpenGL implementation, it will be much slower 
+        than using a software surface. The SDL archives contain some discussion 
+        on how to detect one or the other. The &quot;GameFactory&quot; class has 
+        an example of getting the OpenGL provider. Look for the glGetString() 
+        call.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">All Kyra functionality 
+        is supported in OpenGL mode, with one exception: KrBoxResources don't 
+        support multi colored boxes. Only the first color is used.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The case where 
+        you will see quality degradation is if you use Sprites that are larger 
+        than the max texture supported by your OpenGL implementation. Kyra will 
+        compensate and use smaller textures, but quality will suffer. You can 
+        limit how much video memory Kyra will use (at the cost of quality) in 
+        OpenGL mode by using the &quot;SetMaxOglTextureSize&quot; method.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">It is worth noting 
+        that Kyra normally preprocesses all its image data. As soon as you load 
+        a resource, its processed and ready to go. This isn't quite true in OpenGL 
+        mode. Textures are sent to OpenGL &quot;as needed.&quot; You can see a 
+        brief slow down if a bunch of new images are appearing on the screen all 
+        at once. It doesn't seem to be a practical issue in my testing.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Scaling is completely 
+        free in hardware OpenGL mode. Cached scaling is not meaningful, and will 
+        be ignored.</font></p>
+      <h3 align="left"><font face="Arial, Helvetica, sans-serif"><a name="collision"></a>Collision 
+        Detection [version 1.6]</font></h3>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Kyra provides 
+        pixel perfect collision detection. Collision detection applies between 
+        Sprites and Canvases. (Tiles, Boxes, etc. are ignored.)</font></p>
+      <blockquote> 
+        <p align="left"><em>Note: <font face="Arial, Helvetica, sans-serif">Composite 
+          Objects -- TextBox and Widgets -- are built on Sprites. Their components 
+          *will* collide. Something to be aware of.</font></em></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"> Kyra uses pixel perfect (or 
+        near perfect, if scaled) 2D collision detection. 2D collision detection 
+        is a necessary -- but not<br>
+        sufficient -- collision criteria for 3D collision, if you are using an 
+        isometric view. For top down or side views, this is a<br>
+        complete detection scheme.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The basic method is KrImage::CheckCollision() 
+        which checks the collision between two KrImages. KrImageTree provides 
+        more versatile methods including </font><font face="Arial, Helvetica, sans-serif">CheckChildCollision, 
+        CheckSiblingCollision, and CheckAllCollision.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> The ImageTree must be in an 
+        consistent state in order to for collision checking to work. The function 
+        Engine()-&gt;Tree()-&gt;Walk() will bring the tree into a ready state. 
+        The following operations will invalidate the state of the Tree, causing 
+        collision checking to fail:</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"> Setting any X, Y, or Scale 
+          property</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"> Adding anything to the 
+          Tree. (Deleting from the tree is safe,<br>
+          however.)</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif"> Walk can be a somewhat expensive 
+        call. Avoid calling it more than once per frame. A normal sequence of 
+        events would be something like:</font></p>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif"> Move sprites, canvases, 
+          etc. Game &amp; logic actions.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"> Call Walk</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Check collisions. Call deletes 
+          as you go, queue up additional<br>
+          move and scaling actions.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Apply queued move and scaling 
+          actions.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"> Draw()</font></li>
+      </ol>
+      <p><font face="Arial, Helvetica, sans-serif"> Note that if you aren't using 
+        collision detection, you should never need to call Walk() directly. Also, 
+        if you check collisions *after* Draw(), but before any x/y/scale transformations, 
+        you don't need to call Walk().</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> When checking collisions, 
+        a window can be specified. Depending on the transformations applied, collisions 
+        can be different per window.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> Collisions with scaled sprites 
+        and canvases is supported with one caveat:</font><font face="Arial, Helvetica, sans-serif"> 
+        un-cached sprites can not be collision detected. For a full discussion 
+        of scaling, see <a href="#scaling">scaling</a>. In brief, a scaled image 
+        can be cached (pre-calculated at a give x and y scale) or real time scaled. 
+        Real time scaled sprites can not be used in a collision test.</font></p>
+      <h3 align="left"><font face="Arial, Helvetica, sans-serif"><a name="performance"></a>Performance</font></h3>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Designing for 
+        Speed </font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Although Kyra 
+        has been extensively optimized, I have not fully measure performance across 
+        systems. I'll start with general guidelines here, and add information 
+        is it is collected. One very important testing tool is the demo itself. 
+        It can be run in speedtest mode (-s) at a specified depth (-d#) and windowed 
+        or fullscreen (-f). This is an excellent to collect information on a particular 
+        system and configuration.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Kyra is, at its 
+        heart, a 32-bit renderer. It likes to render to 32 bit surfaces. If the 
+        host supports a 32 bit screen mode, that is almost certainly your best 
+        bet.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">It is also a dirty 
+        rectangle renderer. Kyra will minimize the amount of screen that needs 
+        to be re-drawn.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The table above below shows 
+        (my best guess) of the speeds of relative operations. It is a rule of 
+        thumb list, with the fastest operation at the top.</font></p>
+      <blockquote> 
+        <table width="83%" border="1">
+          <tr> 
+            <td width="19%"><font face="Arial, Helvetica, sans-serif">Fastest</font></td>
+            <td width="81%"><font face="Arial, Helvetica, sans-serif">32 bit target 
+              surface, no alpha or color transformation, no alpha in source sprite</font></td>
+          </tr>
+          <tr> 
+            <td><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">Canvas without an alpha 
+              channel. Tiles that are not rotated.</font></td>
+          </tr>
+          <tr> 
+            <td><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">Other targets, no alpha 
+              or color transformation, no alpha in source sprite. Cached scaling.</font></td>
+          </tr>
+          <tr> 
+            <td><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">Tiles that are rotated.</font></td>
+          </tr>
+          <tr> 
+            <td><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">Real time scaling, </font></td>
+          </tr>
+          <tr> 
+            <td><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">Alpha in source sprite 
+              OR color transformation OR alpha transformation</font></td>
+          </tr>
+          <tr> 
+            <td><font face="Arial, Helvetica, sans-serif">Demanding</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">Composite transformations</font></td>
+          </tr>
+        </table>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif">Performance is a combination 
+        of the complexity of the drawing operation, and the amount of screen being 
+        redrawn. A very complex operation limited to small areas of the screen 
+        is not very costly, in terms of total clock cycles. As the screen space 
+        drawn with complex operations increases, the more significant the performance 
+        impact, and the more concerned you will need to be with the nature of 
+        the draw operations versus the power of your target system.</font></p>
+      <h4><font face="Arial, Helvetica, sans-serif">Performance Checklist</font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">&quot;I need Kyra to be faster....&quot;</font></p>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">Try using a 32 bit SDL_Surface, 
+          even if this doesn't match the screen. SDL will convert to the proper 
+          format when the final blit is made to the video surface. (This usually 
+          -- though not always -- speeds things up.)</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Make sure you are linking 
+          to the Kyra release libraries. These are built by default in Linux (-o2 
+          or -o2 on the command line), and are in the ./Release directory in Visual 
+          Studio. (In Windows, the tutorial app links to Debug, by the way.)</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">If you don't need the background 
+          cleared (your graphics cover the entire screen) set FillBackground( 
+          null ). Clearing the background takes a reasonable amount of time, and 
+          it's wasted if you don't need it. If sometimes you need the background 
+          cleared, and sometimes you don't, it's probably worth putting in the 
+          logic to turn that on and off.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Remove unneeded nodes from 
+          the Tree(). If you don't need it in there...it only eats clock cycles. 
+          (This is a small optimization: remove egregious extra nodes, but not 
+          things that you'll be using again.)</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Tiles should generally not 
+          have alpha channels. If you are extensively using transparency in a 
+          Tile, switch to using Sprites.</font></li>
+      </ol>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="widgets"></a>UI Widgets 
+        [version 2.0]</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">Kyra provides a set of simple, 
+        but extensible UI widgets. These include:</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif">Toggle and Push Buttons</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Console window</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">List box</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Editable text widget</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif">The widget system supports:</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif">Color and Font scheme</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Mouse selection and focus</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Keyboard selection and editing</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Accelerator keys (&quot;hot 
+          keys&quot;)</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif">The Widgets are fully integrated 
+        in to Kyra and are created much like you would create a Sprite or Canvas 
+        and put it in the Tree(). &quot;guitest.cpp&quot; in the 'guitest' subdirectory 
+        illustrates and documents an example of how the widgets are used. The 
+        methods for widgets are covered in the API docs. &quot;guitest.cpp&quot; 
+        is the best place to start.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Widgets are build around a 
+        publish/listener model. A widget publishes events (ACTIVATION, SELECTION, 
+        etc.) to whichever classes have registered themselves as listener by calling 
+        the HandleEvent method of the listening class. This decouples the widgets 
+        from the code that processes UI events. You can have one master class 
+        handle events from all widgets, or split it up to any degree you see fit.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Widgets generally are designed 
+        to be easy. You can create and transform them like all Kyra objects. You 
+        only need to remember to send mouse and keyboard events to the KrEventManager 
+        class in order to get them to work.</font></p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

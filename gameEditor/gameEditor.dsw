@@ -1,0 +1,648 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "RakNet"=..\RakNet\Lib\LibStatic\RakNet.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/RakNet/Lib/LibStatic", ZWCBAAAA
+    ..\raknet\lib\libstatic
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SDL"=..\SDL\SDL\VisualC\SDL\SDL.DSP - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL/VisualC/SDL", EOIAAAAA
+    ..\sdl\sdl\visualc\sdl
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SDL_image"=..\SDL\SDL_image\VisualC\SDL_image.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_image", CVIAAAAA
+    ..\sdl\sdl_image\visualc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name SDL
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libpng
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name jpeg
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "SDL_mixer"=..\SDL\SDL_mixer\VisualC\SDL_mixer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name native_midi
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name timidity
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "SDLmain"=..\SDL\SDL\VisualC\SDLmain\SDLmain.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "adv"=..\..\wxWidgets\build\msw\wx_adv.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "base"=..\..\wxWidgets\build\msw\wx_base.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "core"=..\..\wxWidgets\build\msw\wx_core.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "eiclib"=..\gameEngine\EiC\Visual\eiclib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/gameEngine/EiC/Visual", BNFAAAAA
+    ..\gameengine\eic\visual
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "engine"=..\kyra\engine\engine.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/kyra/engine", YAGAAAAA
+    ..\kyra\engine
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name SDLmain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name staticSDL_mixer
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name staticSDL_image
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name staticSDL
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "freetype"=..\SDL\SDL_ttf\VisualC\FreeType\builds\win32\visualc\freetype.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_ttf/VisualC/freetype", ONUAAAAA
+    ..\sdl\sdl_ttf\visualc\freetype
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gameEditor"=.\gameEditor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/gameEditor", TGBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name gameEngine
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name freetype
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "gameEngine"=..\gameEngine\gameEngine.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/gameEngine", MQDAAAAA
+    ..\gameengine
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name eiclib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name engine
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name RakNet
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "html"=..\..\wxWidgets\build\msw\wx_html.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "jpeg"=..\SDL\SDL_image\jpeg\VisualC\jpeg.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_image/jpeg/VisualC", LYLAAAAA
+    ..\sdl\sdl_image\jpeg\visualc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libpng"=..\SDL\SDL_image\png\libpng\projects\msvc\libpng.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_image/png/libpng/projects/msvc", ENLAAAAA
+    ..\sdl\sdl_image\png\libpng\projects\msvc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name zlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mikmod"=..\SDL\SDL_mixer\VisualC\mikmod\mikmod.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_mixer/mikmod", TYIAAAAA
+    ..\sdl\sdl_mixer\mikmod
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "native_midi"=..\SDL\SDL_mixer\VisualC\native_midi\native_midi.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_mixer/VisualC/native_midi", YHJAAAAA
+    ..\sdl\sdl_mixer\visualc\native_midi
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "net"=..\..\wxWidgets\build\msw\wx_net.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ogl"=..\..\wxWidgets\contrib\build\ogl\ogl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/contrib/build/ogl", AGFBAAAA
+    ..\..\WXWIDGETS\contrib\build\ogl
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "qa"=..\..\wxWidgets\build\msw\wx_qa.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "staticSDL"=..\SDL\SDL\VISUALC\SDL\staticSDL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL/VisualC/SDL", EOIAAAAA
+    ..\sdl\sdl\visualc\sdl
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "staticSDL_image"=..\SDL\SDL_image\VisualC\staticSDL_image.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_image/VisualC", NWIAAAAA
+    ..\sdl\sdl_image\visualc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libpng
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name jpeg
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "staticSDL_mixer"=..\SDL\SDL_mixer\VisualC\staticSDL_mixer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_mixer/VisualC", RHJAAAAA
+    ..\sdl\sdl_mixer\visualc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name native_midi
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name timidity
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mikmod
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "stc"=..\..\wxWidgets\contrib\build\stc\stc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/wxGameEditor", BQPBAAAA
+    ..\wxgameeditor
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "stedit"=..\..\wxWidgets\contrib\wxstedit\build\wxstedit_stedit.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/contrib/wxstedit", VARBAAAA
+    ..\..\wxwidgets\contrib\wxstedit
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name stc
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "timidity"=..\SDL\SDL_mixer\VisualC\timidity\timidity.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "wxGameEditor"=..\wxGameEditor\wxGameEditor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/wxGameEditor", BQPBAAAA
+    ..\wxgameeditor
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wxIFM
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wxexpat
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name base
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name net
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name xml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name adv
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name html
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name qa
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name xrc
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name gameEngine
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name freetype
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name stedit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ogl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wxIFM"=..\..\wxWidgets\contrib\wxIFM\wxIFM.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/wxGameEditor", BQPBAAAA
+    ..\wxgameeditor
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name base
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wxexpat"=..\..\wxWidgets\build\msw\wx_wxexpat.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "xml"=..\..\wxWidgets\build\msw\wx_xml.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "xrc"=..\..\wxWidgets\build\msw\wx_xrc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/build/msw", DXEBAAAA
+    ..\..\wxwidgets\build\msw
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "zlib"=..\SDL\SDL_image\png\libpng\projects\msvc\zlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/GameDevelopment/SDL/SDL_image/png/libpng/projects/msvc", ENLAAAAA
+    ..\sdl\sdl_image\png\libpng\projects\msvc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/wxWidgets/contrib/build/ogl", AGFBAAAA
+    ..\..\WXWIDGETS\contrib\build\ogl
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

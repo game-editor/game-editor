@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="_BaseConfiguration"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		PreprocessorDefinitions="oi_GL_OES_VERSION_1_1;$(VersionType)"
+		UndefinePreprocessorDefinitions="GAME_EDITOR_HOME_EDITION"
+	/>
+	<Tool
+		Name="VCResourceCompilerTool"
+		PreprocessorDefinitions="$(VersionType)"
+	/>
+	<UserMacro
+		Name="Professional"
+		Value="GAME_EDITOR_PROFESSIONAL"
+	/>
+	<UserMacro
+		Name="Demo"
+		Value=""
+	/>
+	<UserMacro
+		Name="Standalone_Pro"
+		Value="STAND_ALONE_GAME;GAME_EDITOR_PROFESSIONAL"
+	/>
+	<UserMacro
+		Name="Standalone_Demo"
+		Value="STAND_ALONE_GAME"
+	/>
+	<UserMacro
+		Name="VersionType"
+		Value="$(Professional)"
+	/>
+</VisualStudioPropertySheet>

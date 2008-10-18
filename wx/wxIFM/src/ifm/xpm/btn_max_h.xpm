@@ -1,0 +1,16 @@
+/* XPM */
+static char *btn_max_h_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"8 8 2 1",
+"  c #003399",
+". c none",
+/* pixels */
+"        ",
+" ...... ",
+" ...... ",
+" .    . ",
+" .    . ",
+" .    . ",
+" ...... ",
+"        "
+};

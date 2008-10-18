@@ -1,0 +1,486 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">Kyra XML</font></h1>
+      <p><font face="Arial, Helvetica, sans-serif"><a href="tools.html">Overview</a> 
+        | <a href="toolsSpriteEditor.html">Sprite Editor</a> | <a href="toolsEncoder.html">Encoder</a> 
+        | Kyra XML</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The encoder reads XML files 
+        and creates from them the data file used to display images. You can create 
+        the XML files used by the encoder in 2 ways:</font></p>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">With the Sprite Editor, 
+          which generates XML files for use. Very useful for creating the very 
+          complex XML needed for aligned multi-frame sprites.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">By hand. Can be easier if 
+          you're importing simple graphics. Also, some features are not supported 
+          by the Sprite Editor. If you want to use the following features, you 
+          must create the XML manually. (It's not hard.)</font> </li>
+        <li> 
+          <ol>
+            <li><font face="Arial, Helvetica, sans-serif">Color keyed images. 
+              Sprites that are defined by color information (color keys).</font></li>
+            <li><font face="Arial, Helvetica, sans-serif">Fonts.</font></li>
+            <li><font face="Arial, Helvetica, sans-serif">User data in the '.dat' 
+              file.</font></li>
+            <li><font face="Arial, Helvetica, sans-serif">Generated Isometric 
+              and rotated images. </font></li>
+          </ol>
+        </li>
+      </ol>
+      <p><font face="Arial, Helvetica, sans-serif">Topics in this page:</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#colorkey">Color 
+          Keyed images</a> </font> 
+          <ul>
+            <li><font face="Arial, Helvetica, sans-serif"><a href="#isotile">Isotile 
+              generation</a></font></li>
+          </ul>
+        </li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#font">Fonts</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#userdata">User 
+          data</a></font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><a href="#sprite">Sprites 
+          and Tiles</a></font></li>
+      </ul>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="colorkey"></a>Using 
+        Color Keys (Direct Encoding) [version1.5]</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">The following is an example 
+        of color keyed data:</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="bemParticle.gif" width="78" height="62"></font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The blue sphere 
+        and the green ellipse are contains in yellow boxes. The yellow boxes define 
+        the bonuds of the sprite's frame. If you'll look carefully, you'll notice 
+        the black nocks in the yellow box. These mark the x and y hotspots for 
+        the sprite. The hotspots must be in the top and left of the frame, if 
+        they are used at all.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">Example XML:</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif"><direct> <file filename="bemParticle.tga" > 
+        <colorkey	sprite="PARTICLE"
+					action="ROUND"
+					color="#ffff00"
+					framecount="1"			/> <colorkey	sprite="PARTICLE"
+					action="OBLONG"
+					color="#ffff00"
+					framecount="1"			/> </file>&lt;Direct&gt;</font></p>
+      <pre> <font face="Arial, Helvetica, sans-serif">&lt;File filename=&quot;bemParticle.tga&quot; &gt;
+         
+         &lt;ColorKey sprite=&quot;PARTICLE&quot;
+         action=&quot;ROUND&quot;
+         color=&quot;#ffff00&quot;
+         frameCount=&quot;1&quot; /&gt;</font></pre>
+      <pre>    <font face="Arial, Helvetica, sans-serif">&lt;ColorKey sprite=&quot;PARTICLE&quot;
+         action=&quot;OBLONG&quot;
+         color=&quot;#ffff00&quot;
+         frameCount=&quot;1&quot; /&gt;
+&lt;/File&gt;</font></pre>
+      <pre><font face="Arial, Helvetica, sans-serif">&lt;/Direct&gt;        </font></pre>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The &lt;Direct&gt; 
+        element marks this as a color key and image file, as opposed to the &lt;Definition&gt; 
+        file used by the Sprite Editor and the Font system.</font></p>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The &lt;File&gt; 
+        element loads a file for processing. There can be multiple file tags in 
+        one &lt;Direct&gt; XML file; this is NOT true of &lt;Definition&gt; files, 
+        which can only have one image file. The &lt;File&gt; tag supports &lt;TransparentX&gt; 
+        (see below) allowing you to mark certain colors as transparent. The 'filename' 
+        attribute can be a relative path. The definition of a Sprite, Actions, 
+        or Frames can span multiple image files or XML files.</font></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">ColorKey Element.</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The ColorKey tells 
+        the encoder to look for data to encode in the image file. It supports 
+        the followng attributes:</font></p>
+      <p align="left"> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>sprite=&quot;spritename&quot; 
+          or tile=&quot;tilename&quot;</b>. Must be specified. Tells the encoder 
+          to read a sprite or tile.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>action=&quot;actionname&quot;</b>. 
+          Sprite only, optional, default is &quot;NONE&quot;. Specify the action 
+          name.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>color=&quot;#rrggbb&quot;</b>. 
+          The color of the color key that marks the frame of the data. Default 
+          is &quot;FFFF00&quot;. Any break in the color will interpreted as a 
+          marker for the hotspot. A hotspot should never be put at (0,0), as this 
+          will confuse the encoder. If you don't specify a hotspot with the marker, 
+          0,0 will be assumed.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>frameCount=&quot;integer&quot;</b>. 
+          The number of frames to read in to the current Sprite and Action.. Frame 
+          are read from left to right, top to bottom. If not specifed, all the 
+          marked data in the current file will be read as frames in the current 
+          Sprite and Action.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>hotspotx=&quot;integer&quot; 
+          and hotspoty=&quot;integer&quot;</b>. Specify the hotspot. Generally 
+          not used in a ColorKey file. Will override any marker found. (Normally 
+          the marker is used -- it's easier.)</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>deltax=&quot;integer&quot; 
+          and deltay=&quot;integer&quot;</b>. Specify the frame delta.</font></li>
+      </ul>
+      <p></p>
+      <h4 align="left"><font face="Arial, Helvetica, sans-serif">Image Element</font></h4>
+      <p align="left"><font face="Arial, Helvetica, sans-serif">The Image element 
+        reads the entire image file as one frame of a sprite or tile.<direct> 
+        </font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>sprite=&quot;spritename&quot; 
+          or tile=&quot;tilename&quot;</b>. Must be specified. Tells the encoder 
+          to read a sprite or tile.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>action=&quot;actionname&quot;</b>. 
+          Sprite only, optional, default is &quot;NONE&quot;. Specify the action 
+          name.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>hotspotx=&quot;integer&quot; 
+          and hotspoty=&quot;integer&quot;</b>. Specify the hotspot. Generally 
+          not used in a ColorKey file. Will override any marker found.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>deltax=&quot;integer&quot; 
+          and deltay=&quot;integer&quot;</b>. Specify the frame delta.<file filename="bemParticle.tga" > 
+          </file><file filename="bemParticle.tga" ><colorkey	sprite="PARTICLE"
+					action="ROUND"
+					color="#ffff00"
+					framecount="1"			/> <colorkey	sprite="PARTICLE"
+					action="OBLONG"
+					color="#ffff00"
+					framecount="1"			/> </file></font></li>
+      </ul>
+      <h3><font face="Arial, Helvetica, sans-serif"><a name="isotile"></a>Isotile 
+        generation</font></h3>
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><strong>Isotiles are KrSprites! 
+          </strong>Isometric tiles are traditionally used to create isometric 
+          worlds, so that is what they are called in Kyra. However, they are implemented 
+          as KrSprites in the Kyra engine, not KrTiles.</font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif">Isometric world tiles are somewhat 
+        difficult to create. The encoder can simplify this process by creating 
+        isometric tiles for you, from any rectangular source image. Rotation can 
+        also be applied.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">First, the anatomy of an isometric 
+        tile:</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><img src="tileDeconstruction2.gif" width="301" height="171"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Some geometry: the x axis diagonal, 
+        positive up and to the right. The y axis is diagonal, positve up and to 
+        the left. The z axis is positive up out of the screen. Therefore, apositive 
+        rotation is counter clockwise. From the red tile, East is positve X one 
+        step, to the green tile on the right. North is positve Y one step, to 
+        the green tile on the left.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Of the 4 pixels that could 
+        be the center of the tile, the upper left is chosen. (Marked on diagram.) 
+        This is the &quot;rounded down&quot; choice of the 4 pixels.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Note the red tile. It is 14 
+        pixels wide, and 8 pixels high. (That's crazy small, but will suffice 
+        for example.) But it's isometric width is 16 pixels. Huh?</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">From the center of the red 
+        tile (or any point, for that matter), the next tile East is red.x + width, 
+        red.y + height. For that to be true, the &quot;isometric width&quot; is 
+        always 2 pixels wider than the &quot;pixel width&quot;. Width, unless 
+        specified otherwise, refers to the isometric width, not pixel. Very important 
+        to keep in mind. Kyra uses a particular geometry that results in this 
+        artifact. Other geometries have other problems, so it is as good as any.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Again, all isotiles are Sprites. 
+        Isotiles are only supported at this time when using Direct Encoding. In 
+        your &lt;ColorKey&gt; or &lt;Image&gt; tag, add the 'isotile' attribute:</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><strong>isotile=&quot;width&quot;</strong>. 
+          The width is the isometric width, and must be a multiple of 4. The source 
+          rectangle can be any size, and will be antialiased and scaled as needed. 
+          Note that the source rectangle should be a square.</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif">The BEM demo uses automatic 
+        isotile generation for the Floor. Rotation is also used. For an example 
+        of the XML used, see the &quot;bem2.xml&quot; file in the &quot;tests&quot; 
+        subdirectory.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif"><a name="isotilerotation"></a>Rotation</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">You can generated rotated tiles 
+        from one source image. Also very useful. Rotation is a bit strange, however. 
+        The engine doesn't &quot;know&quot; what rotation is. It's just a special 
+        output setting of the encoder. </font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><strong>Setting a rotation 
+        will change the name of the Action.</strong></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">It's a littly hacky, but I'm 
+        not planning to add rotation directly to the engine.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> Rotations applied by the encoder 
+        change the action name to reflect the rotation. ROTxxx, where xxx is the 
+        rotation, in integer degrees. It as appended as the last segment of the 
+        name. For instance,</font></p>
+      <blockquote> 
+        <p> <font face="Arial, Helvetica, sans-serif">&quot;FLOOR.ROT090&quot; 
+          and FLOOR | ROT090 </font></p>
+      </blockquote>
+      <p><font face="Arial, Helvetica, sans-serif"> would be the string and integer 
+        representations of a rotated tile. (See SetActionRotated() in the API 
+        for a convenience function to generate the rotate name at run time.)</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">In the tag, add the 'rotation' 
+        attribute:</font></p>
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><strong>rotation=&quot;value&quot;</strong>. 
+          The value of rotation can be a common seperate list &quot;0, 90, 180, 
+          270&quot;, or a division of a circle &quot;d4&quot;. &quot;d4&quot; 
+          generates the 0, 90, 180, and 270 variants. Note that only these 4 values 
+          are supported by isotiles. (Generalized rotation in the future may be 
+          different -- but isotiles will always be locked to the cardinal directions.)</font></li>
+      </ul>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="font"></a>Font Support</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">Kyra supports both fixed width 
+        fonts and proportional fonts. XML definition files are created for the 
+        fonts, which reference an image file where the source font images are. 
+        All Kyra fonts are bitmap fonts. Once the XML file is set up for the font 
+        image file, the font can be written to the dat file using the <a href="toolsEncoder.html">Encoder</a>. 
+        </font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Each glyph in the Kyra font 
+        is referenced by a 16 bit unsigned integer. Theoretically, this means 
+        you could have a font with 64K glyphs. Practicially, that's a lot of memory. 
+        But it does means strings, to the Kyra engine, are internationalized and 
+        you can use &quot;wide&quot; font sets.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Kyra does not interpret encodings: 
+        it simply maps a numerical value to a glyph. Encodings that match Kyra's 
+        internal representation nicely are: </font></p>
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif">Latin-1 is a good choice 
+          for the European languages.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">ASCII</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">UTF-16 without surrogates 
+          (UCS-2). A subset, of course, in order to have reasonable memory usage.</font></li>
+      </ul>
+      <p></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Fixed Width Fonts</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">In a fixed width font, every 
+        glyph is the same width. Most console fonts are of this type. The source 
+        image file consists of all the desired characters laid out side by side 
+        in one long row. The height of the source file is the height of the glyphs 
+        in font, and the size of each glyph is the width of the image file divided 
+        by the # of glyphs in the font.</font></p>
+      <pre><font face="Arial, Helvetica, sans-serif">&lt;Definition filename=&quot;ConsoleFont.bmp&quot; Transparent0=&quot;LowerLeft&quot;&gt;
+    &lt;Font name=&quot;CONSOLE&quot; start=&quot;32&quot; length=&quot;95&quot; type=&quot;fixed&quot; /&gt; 
+&lt;/Definition&gt;</font></pre>
+      <h4><font face="Arial, Helvetica, sans-serif">Definition Element. </font></h4>
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>filename attribute</b>. 
+          Specifies the image file to be used. Anything supported by SDL_Image 
+          is acceptable.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>TransparentX attribute</b>. 
+          Specifies color keys to be interpreted as transparent pixels. If the 
+          font has an alpha channel, this should not be specified; alpha will 
+          be interpreted like it is for Sprites. The alpha channel is used to 
+          make some very attractive anti-aliased fonts. If the font does not have 
+          an alpha channel, the color keys can be specified by value (#rrggbb) 
+          or location (LowerLeft, LowerRight, UpperLeft, UpperRight). </font></li>
+      </ul>
+      <p></p>
+      <h4><font face="Arial, Helvetica, sans-serif">Font Element.</font></h4>
+      <p> 
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>name attribute</b>. The 
+          name to the Kyra engine. In this example you would use GetFontResource( 
+          &quot;CONSOLE&quot; ) or GetFontResource( CONSOLE ) depending on whether 
+          you prefer strings or enums.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>start attribute.</b> 
+          The starting index of the first glyph.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>length attribute</b>. 
+          The number of glyphs in the font.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>type attribute</b>. Designates 
+          this is a fixed width font.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>space attribute (optional).</b> 
+          Make the specified glyph number a space. Effectively adds a space to 
+          fonts which don't define a space glyph.</font></li>
+      </ul>
+      <p></p>
+      <p></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Proportional Fonts</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">Kyra supports the <a href="http://www.linux-games.com/sfont/">SFont</a> 
+        and <a href="http://phoenix.lhup.edu/%7Edleimbac/Projects/DFont/">DFont</a> 
+        file formats. An SFont file puts the glyphs and width information for 
+        the glyphs into the same image file. The height of the image file is the 
+        height of each glyph, plus one extra row of spacing information. (Note 
+        that DFont actually can use a height channel, which Kyra ignores.) Looking 
+        at a small excerpt of an SFont font file:</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><img src="sfont.gif" width="176" height="80"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">This is a zoom in on a nicely 
+        anti-aliased font. The top row of pixels is alternating runs of pink pixels 
+        (non-transparent) and transparent pixels (which show white in the image.) 
+        The image below a transparent run is interpreted as a glyph. The non-transparent 
+        runs (they don't have to be pink) are thrown away by the Encoder.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> Using this system, each glyph 
+        can be given a different width, which leads to a much more visually appealing 
+        font for many applications. Take the example of the letter 'i' vs the 
+        letter 'w'. In a fixed width font, the 'i' tends to be surrounded by too 
+        much space, while a 'w' get crowded. On the other hand, for programming 
+        and tabular data, fixed width fonts allow text to be more carefully organized.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Kyra interprets the world through 
+        transparency, and can read any SFont or DFont file. However, if you wish 
+        font files generated for Kyra to work with the SFont and DFont libraries, 
+        you should review other SFont and DFont files for compatibility.</font></p>
+      <pre><font face="Arial, Helvetica, sans-serif">&lt;Definition filename=&quot;Sans_Green_24.png&quot;&gt;
+    &lt;Font name=&quot;COPPER&quot; start=&quot;33&quot; type=&quot;sfont&quot; space=&quot;32&quot; /&gt;
+&lt;/Definition&gt;</font></pre>
+      <h4><font face="Arial, Helvetica, sans-serif">Definition Element. </font></h4>
+      <p> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif"><b>filename attribute</b>. 
+          Specifies the image file to be used. Anything supported by SDL_Image 
+          is acceptable.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>TransparentX attribute</b>. 
+          Specifies color keys to be interpreted as transparent pixels. If the 
+          font has an alpha channel, this should not be specified; alpha will 
+          be interpreted like it is for Sprites. The alpha channel is used to 
+          make some very attractive anti-aliased fonts. If the font does not have 
+          an alpha channel, the color keys can be specified by value (#rrggbb) 
+          or location (LowerLeft, LowerRight, UpperLeft, UpperRight). </font></li>
+      </ul>
+      <h4><font face="Arial, Helvetica, sans-serif">Font Element. </font></h4>
+      <ul>
+        <li> 
+          <p></p>
+          <font face="Arial, Helvetica, sans-serif"><b>name attribute</b>. The 
+          name to the Kyra engine. In this example you would use GetFontResource( 
+          &quot;COPPER&quot; ) or GetFontResource( COPPER ) depending on whether 
+          you prefer strings or enums.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>start attribute</b>. 
+          The starting index of the first glyph.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>type attribute</b>. Designates 
+          this is a proportional font.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>space attribute (optional).</b> 
+          Make the specified glyph number a space. Effectively adds a space to 
+          fonts which don't define a space glyph. </font></li>
+      </ul>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="userdata" id="userdata"></a>User 
+        Data [version 1.6]</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">Any text or binary data can 
+        be written to a .dat file. User data elements -- &quot;BinaryFile&quot; 
+        and &quot;TextFile&quot; -- are contained inside &quot;Direct&quot; elements. 
+        An example:</font></p>
+      <blockquote> 
+        <pre><font face="Arial, Helvetica, sans-serif">&lt;Direct&gt;</font></pre>
+        <pre> <font face="Arial, Helvetica, sans-serif">&lt;TextFile filename=&quot;poem.txt&quot; name=&quot;POEM&quot;/&gt;</font></pre>
+        <pre> <font face="Arial, Helvetica, sans-serif">&lt;BinaryFile filename=&quot;title.bin&quot; name=&quot;TITLE&quot;/&gt;</font></pre>
+        <pre><font face="Arial, Helvetica, sans-serif">&lt;/Direct&gt;</font></pre>
+      </blockquote>
+      <h4><font face="Arial, Helvetica, sans-serif">Binary Data</font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">The BinaryData element encodes 
+        a file, verbatim, into the .dat. The entire file is included. It can later 
+        be accessed from the Vault as a &quot;KrBinaryDataResource&quot; class. 
+        </font></p>
+      <ul>
+        <li> 
+          <p></p>
+          <font face="Arial, Helvetica, sans-serif"><b>filename attribute</b>. 
+          The file to include in the .dat.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>name attribute</b>. The 
+          name of the resource, used to fetch it from the Vault. This will also 
+          be written to the generated header file.</font></li>
+      </ul>
+      <h4><font face="Arial, Helvetica, sans-serif">Text Data</font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">The TextData element encodes 
+        a text file into the .dat. The entire file is included. Lines will be 
+        newline terminated, and the block of text will be null terminated. (It 
+        will be newline terminated regardless of the host or reading OS.) It can 
+        later be accessed from the Vault as a &quot;KrTextDataResource&quot; class. 
+        </font></p>
+      <ul>
+        <li> 
+          <p></p>
+          <font face="Arial, Helvetica, sans-serif"><b>filename attribute</b>. 
+          The file to include in the .dat.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif"><b>name attribute</b>. The 
+          name of the resource, used to fetch it from the Vault. This will also 
+          be written to the generated header file.</font></li>
+      </ul>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="sprite"></a>Sprite 
+        and Tile</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">A typical Kyra Sprite and Tile 
+        definition looks something like:</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">&lt;Definition filename=&quot;bem.bmp&quot; 
+        Transparent0=&quot;#000000&quot; Transparent1=&quot;#E02DB8&quot;&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;Sprite name=&quot;BRAIN&quot;&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Action name=&quot;WALK.DIR3&quot;&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Frame 
+        x=&quot;442&quot; y=&quot;6&quot; width=&quot;73&quot; height=&quot;152&quot; 
+        hotspotx=&quot;486&quot; hotspoty=&quot;146&quot; deltax=&quot;6&quot; 
+        deltay=&quot;3&quot; /&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Action&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Sprite&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tile name=&quot;SPACE&quot; x=&quot;201&quot; 
+        y=&quot;280&quot; size=&quot;172&quot; /&gt; <br>
+        &lt;/Definition&gt;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The first tag, &quot;Definition&quot;, 
+        defines the image file used. The &quot;filename&quot; attribute is the 
+        source name of the image. Any format supported by SDL_Image may be used. 
+        The following tags &quot;TransparentX&quot; are color keys. For source 
+        files which don't have an alpha channel, the RGB colors in the transparency 
+        tags will be interpreted as transparent by the encoder.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Sprites are made of 1 or more 
+        Actions. Each Action is made of 1 or more Frames. A Sprite anly has a 
+        &quot;name&quot; attribute. Likewise, an Action only has a &quot;name&quot;. 
+        A Frame has: </font> 
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif">An x and y location in the 
+          source file.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">A width and height in the 
+          source file.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">A &quot;hotspot&quot;. The 
+          location where the 0,0 coordinate of the image should be. This is in 
+          source file coordinates, NOT an offset from x and y.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">A delta. The deltax and 
+          deltay are the pixels the sprite moves between frames. In a multiframe 
+          sprite, the delta for the first frame is the change in x and y that 
+          should be applied before drawing the second frame. In this example, 
+          their is only one frame, so the delta is the change in x and y per frame, 
+          which is the same as the velocity of the sprite.</font></li>
+      </ul>
+      <p><font face="Arial, Helvetica, sans-serif">A Tile is always square, and 
+        does not have a hotspot or delta. It is defined by a location and size.</font></p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

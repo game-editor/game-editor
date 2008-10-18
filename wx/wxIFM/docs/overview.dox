@@ -1,0 +1,77 @@
+/*!
+\page overview wxIFM Overview
+
+\section overview_basics The Basics
+
+wxIFM consists of three basic concepts\n
+1. \ref basics1\n
+2. \ref basics2\n
+3. \ref basics3\n
+
+\subsection basics1 The wxIntefaceManager Object
+This is the main object of the wxIFM system. It sits atop the window it is managing,
+intercepts some of its events, and passes on the appropriate plugin events to
+the plugin event handling chain for processing.
+\n More info: \ref detail1
+
+\subsection basics2 Plugins
+Plugins are really event handlers that are responsible for handling plugin events
+sent by the wxInterfaceManager object. In wxIFM, all functionality is implemented
+as event handlers, and everything is done via an event. In this case, the events
+are more like commands for plugins. Each plugin is free to process the command (or not).
+\n More info: \ref detail2
+
+\subsection basics3 Components
+Components make up the "stuff" of an interface. In the default implementation
+provided by wxIFM, there are two kinds of components, Containers, and Panels.
+Even though they are two conceptually different objects, they are both the same
+thing inside wxIFM, that thing being the wxIFMComponent class.
+\n More info: \ref detail3
+
+\section overview_detail In Detail
+
+\subsection detail1 wxInterfaceManager Details
+This object is the entry point into wxIFM for your library. It handles some events for you, namely
+EVT_SIZE, allows you to add children to be managed, save and load interface states (soon), and switch
+between loaded interface plugins (soon). There isn't a whole lot to be said about this class, and more
+details can be found in the wxInterfaceManager documentation.
+
+\subsection detail2 Plugin Details
+There are really two kinds of plugins\n
+1. \ref detail2_a\n
+2. \ref detail2_b\n
+
+\subsubsection detail2_a Interface Plugins
+This kind of plugin is responsible for implementing a given type of interface.
+The default interface plugin provided by wxIFM implements an MSVC8 style interface.
+A plugin that implements an MSVC6 style interface, or a Photoshop style interface
+would also be considered an interface plugin.
+
+It is possible to have more than one interface plugin for a given wxInterfaceManager object.
+Only one may be active at a time, active meaning that it is the currently selected plugin.
+Switching between interface plugins is not fully realized at this stage, but it will be soon.
+
+\subsubsection detail2_b Extension Plugins
+Extension plugins are added to an interface plugin to "extend" its functionality.
+Plugins that add captions to components, or invents its own type of component would be
+considered an extension plugin. In the default implementation, the functionality for
+Containers and Panels is implemented by an extension plugin for each component type.
+The interface plugin simply manages these objects in a general fashion and delegates
+the implementation of the objects to extension plugins.
+
+Extension plugins are usually written generally so that they may extend any given interface plugin.
+However, it is possible to write extension plugins that only extend a given interface plugin.
+
+\subsection detail3 Component Details
+Components in wxIFM are all objects of the wxIFMComponent class. The component class by itself
+is nothing special. The only thing it does is provide a mechanism for adding data storage dynamically.
+When plugins need to store certain data on a per component basis, the plugin will derived a data
+storage class from the wxIFMComponentDataBase class. It then adds an instance of this data class to the
+components that it requires data storage for.
+
+All components are given an instance of the wxIFMComponentData data storage object. This class contains
+very basic storage for things every component must have, and it is always present in any component.
+
+The wxIFMComponent::m_type member is what distinguishes one kind of component from another. It is private,
+so accessing it should be done via wxIFMComponent::GetType().
+*/

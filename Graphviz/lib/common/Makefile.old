@@ -1,0 +1,77 @@
+all:	libcommon.a
+ROOT=../..
+include $(ROOT)/Config.mk
+include $(ROOT)/makearch/$(ARCH)
+
+INCS =  -I. \
+        -I$(ROOT) \
+        -I../cdt \
+	-I../pack \
+	-I../fdpgen \
+        -I../pathplan \
+	-I../gd \
+	-I../graph \
+	-I../gvc \
+	$(EXTLIB_INC)
+
+DEFINES = -DHAVE_CONFIG_H
+
+AWKDIR = $(ROOT)/awk
+
+INST_HDRS = logic.h arith.h geom.h color.h types.h globals.h
+NOINST_HDRS = render.h utils.h memory.h \
+	geomprocs.h colorprocs.h const.h macros.h pointset.h
+NOINST_GENERATED_HDRS = colortbl.h ps.h htmltable.h  htmlparse.h htmllex.h 
+
+OBJS = args.o arrows.o gdusershape.o mapgen.o psgen.o svgusershape.o \
+       colxlate.o globals.o mifgen.o psusershape.o timing.o \
+       diagen.o hpglgen.o mpgen.o routespl.o utils.o geom.o \
+       emit.o htmllex.o ns.o shapes.o vrmlgen.o xdgen.o \
+       figgen.o htmlparse.o output.o splines.o vtxgen.o \
+       fontmetrics.o htmltable.o picgen.o strcasecmp.o \
+       gdgen.o input.o pointset.o strncasecmp.o memory.o \
+       gdtextsize.o labels.o postproc.o svggen.o xdgen.o
+
+libcommon.a : $(OBJS)
+	$(RM) libcommon.a
+	$(AR) cr libcommon.a $(OBJS)
+	$(RANLIB) libcommon.a
+
+htmllex.o : htmlparse.c
+
+htmlparse.h htmlparse.c : htmlparse.y
+	$(YACC) -dv htmlparse.y
+	if test $(ARCH) != "netbsd.i386"; then $(SED) 1s/#include.*// < y.tab.c | $(SED) "s/yy/html/g" > htmlparse.c; else $(SED) "s/yy/html/g" < y.tab.c > htmlparse.c; fi
+	$(SED) "s/yy/html/g" < y.tab.h > htmlparse.h
+	$(RM) y.tab.c y.tab.h
+
+htmllex.o : htmllex.c
+	$(CC) -c $(CCFLAGS) $(DEFINES) $(INCS) $(EXPAT_INC) htmllex.c
+
+install: libcommon.a 
+	$(MKPATH) $(INCDIR)
+	$(INSTALL) $(INST_HDRS) $(INCDIR)
+	$(MKPATH) $(LIBDIR)
+	$(INSTALL) libcommon.a $(LIBDIR)
+
+$(OBJS) : $(INST_HDRS) $(NOINST_HDRS)
+colxlate.o : colortbl.h
+psgen.o : ps.h
+emit.o mapgen.o utils.o htmllex.o htmltable.o htmlparse.o : htmltable.h
+htmllex.o : htmlparse.h
+htmlparse.o htmllex.o : htmllex.h
+
+#ps.h : ps.txt
+#	$(AWK) -f $(AWKDIR)/stringize.awk ps.txt > ps.h
+
+colortbl.h : color_names brewer_colors
+	$(AWK) -f $(AWKDIR)/brewer.awk brewer_colors > brewer_lib
+	cat brewer_lib color_names | LC_COLLATE=C $(SORT) > color_lib
+	$(AWK) -f $(AWKDIR)/colortbl.awk color_lib > colortbl.h
+	$(RM) color_lib brewer_lib
+
+clean:
+	$(RM) core *.o htmlparse.c htmlparse.h colortbl.h y.output
+
+distclean: clean
+	$(RM) *.a

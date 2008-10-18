@@ -1,0 +1,4 @@
+SDL: 		1.2.7 (SDL_version.h)
+SDL_image: 	1.2.3 
+SDL_mixer: 	1.2.5 (SDL_mixer.h)
+SMEG:		0.4.4 (smpeg.h)

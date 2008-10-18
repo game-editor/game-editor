@@ -1,0 +1,852 @@
+------------------------------------------------------------------
+Version 1.0.5
+------------------------------------------------------------------
+
+General
+-DLL builds of wxIFM are now possible. wxIFM can also be built properly when you are
+ using a DLL version of wxWidgets. In order to use a DLL build of wxIFM, you must be
+ using a DLL build of wxWidgets.
+-wxInterfaceManager::SetStatusMessagePane now accepts which status bar you should use to display
+ messages instead of assuming it should use the parents status bar if the parent is a frame.
+-All known cases where resize sashes were appearing incorrectly have been corrected
+-Cases where containers were not correctly calculating a minimum size of (0,0) when
+ they had no visible children have been corrected.
+-Panel tabs will no longer be drawn if there is only one tab
+-Panels now generate a name for themselves based on the names of their tabs. This means that
+ docking a panel as the tab of another panel no longer yields an empty tab, but a tab with
+ the name of all of the nested panels tabs.
+-Use wxSYS_DRAG_X and wxSYS_DRAG_Y instead of wxSYS_DRAG_X/2 and wxSYS_DRAG_Y/2 as the drag
+ threshold values, so dragging is less sensitive now.
+-Resize sash positions and visibility states will no longer be recalculated everytime a component
+ is hidden or shown unless the event is supposed to update the interface. This acts as both an
+ optimization and a bug fix. Instead, the resize sash states are flagged as invalid and recalculated
+ for all top level containers when processing the next wxEVT_IFM_UPDATE event.
+-There is now a new compile time flag, IFM_ALLOW_NESTED_PANELS, to control whether or not nested
+ panels are allowed to be created. It defaults to OFF, but wxIFM versions prior to 1.0.5 functioned
+ as if this flag was set to ON. When OFF, docking a panel as a tab of another panel will remove all
+ the tabs of the source panel and dock them as tabs of the destination panel. When ON, if a panel
+ has only one tab, it behaves the same as if it was OFF, but if the panel has two or more tabs, the
+ source panel will be docked as a tab of the destination panel which effectively creates multiple
+ rows of tabs. This flag may be extened to a run time setting in the future.
+-Paint events for the window that wxIFM is managing are no longer skipped. This fixes redraw
+ artifacts on win32 generated on slower computers.
+-The change to docking in version 1.0.3 which would change a containers orientation instead of
+ spawning a new container had the side effect of making users unable to create new top level
+ containers by docking to the left/right of a vertical top level container with only one child
+ or to the top/bottom of a horizontal one. This issue has been corrected.
+-When using the X button on a panel, only the active tab will be hidden, instead of the entire panel
+-A default implementation of wxEVT_IFM_SETCHILD has been added to the default plugin.
+ The implementation present within wxIFMDefaultPanelPlugin has been removed.
+ 
+Floating
+-Floating is now enabled for all WXMAC ports as well as WXMSW and WXGTK
+-Recursively convert from CLIENT to ABSOLUTE sizes while walking up the chain of parent windows
+ when determining the ultimate size for the window of a component being floated.
+
+Configuration
+-It is now possible to configure some look and feel options of wxIFM.
+-The wxEVT_IFM_UPDATECONFIG event has been added to notify plugins that their configuration data has changed
+-wxInterfaceManager::UpdateConfiguration has been added. This function must be called after any configuration
+ data has been modified.
+-wxIFMDefaultPanelPlugin provides access to its wxIFMCaptionConfig and wxIFMTabConfig through
+ wxIFMDefaultPanelPlugin::GetCaptionConfig and GetTabConfig.
+-Members of wxIFMCaptionConfig and wxIFMTabConfig are now private with public accessors and mutators
+-Added the following styles controlling captions
+    IFM_CAPTION_SOLID       // draw a solid background color
+    IFM_CAPTION_GRADIENT    // draw a gradient backround color
+    IFM_CAPTION_LEFT        // left align the caption title
+    IFM_CAPTION_CENTER      // center align the caption title
+    IFM_CAPTION_RIGHT       // right align the caption title
+-For a list of the configurable options, please see the documentation for wxIFMCaptionConfig and wxIFMTabConfig
+
+The sample application now creates a root panel and tells wxIFM to manage that root panel.
+This serves one major purpose: to allow the parent frame to manage a toolbar without
+confusing wxIFM. I suggest you do the same for all of your own applications, not just those
+that use wxIFM.
+
+------------------------------------------------------------------
+Version 1.0.4
+------------------------------------------------------------------
+
+General
+-Captions and tabs now use the default gui font
+-Tabs can now contain an icon along with text. This icon is specified in wxIFMDefaultChildData.
+-The height of captions and tabs is now determined from the height of their font
+ which will respect a users DPI setting.
+-The colors used to draw tabs have changed and no longer make inactive tab text hidden
+ on some themes.
+-Tabs are now drawn prettier than before
+-wxIFMPaintComponentEvents now pass a region that requires updating instead of just a rect
+-Optimized painting to only paint elements (child windows, tabs, captions, ...) contained
+ within the update region.
+-Painting is now done on a wxBufferedPaintDC and looks super smooth
+-Removed the gray bar from the left side of containers because it was ugly and was not
+ serving its full purpose (holding close, min, max, ... buttons for containers)
+-Added wxInterfaceManager::IsChildVisible() which returns true if a child window is
+ visible within the interface.
+ 
+Floating
+-Captions for floating windows will only be displayed if there is more than one visible panel
+ contained within the floating window.
+ 
+------------------------------------------------------------------
+Version 1.0.3
+------------------------------------------------------------------
+
+-Code that was supposed to remove extra container when they were no longer needed
+ was not functioning, causing many superfluous containers to be created and not to be
+ destroyed. This has been corrected.
+-If a container only has one child, and a child is docked in a way that requires an extra
+ container to be created, (Docking to the left of a child contained in a vertical sizer for example)
+ the container will simply change its alignment to suit the action instead of spawning a new
+ container of the necessary alignment. This combined with the above fix reduces the number of
+ containers generated during complex docking situations dramatically.
+ 
+------------------------------------------------------------------
+Version 1.0.2
+------------------------------------------------------------------
+
+-Fixed a crash bug when closing a floating frame via its native caption
+
+------------------------------------------------------------------
+Version 1.0.1
+------------------------------------------------------------------
+
+-Corrected the behavior of tabs when their child is being hidden or shown:
+	Hiding or showing a child of a panel will hide or show that childs tab
+	Panels will hide themselves if no tabs remain visible
+	
+------------------------------------------------------------------
+Version 1.0.0
+------------------------------------------------------------------
+
+-Fixed two uses of dynamic_cast directly instead of the #if #else #endif I normally use
+-Fixed crash when attempting to use the "dock as tab" drop target button while it was
+ being displayed for the content area
+
+------------------------------------------------------------------
+Version 1.0.0 rc1
+------------------------------------------------------------------
+
+!IFM_COMPONENT_PANEL has been renamed to IFM_COMPONENT_PANEL_TAB
+!IFM_COMPONENT_PANEL is now a type of component which maintains tabs
+
+General
+-Tabulated docking is now implemented
+-An interface without a content window will now fill up all available area with managed components
+-Default dock handling provided in wxIFMDefaultPlugin::OnDock
+
+Drag n Drop
+-Dragging a floating window will now offset the drag properly. The window won't jump anymore.
+-Panels and containers only drag if you use special drag enabled sections, which are the captions
+ and the gray bars on the left side respectively.
+ 
+------------------------------------------------------------------
+Version 0.7.0
+------------------------------------------------------------------
+
+Internally incompatible changes
+
+90% of the library has been internally refactored:
+	!Moved some things out of manager.h/cpp into (the new files) plugin.h/cpp and defplugin.h/cpp
+	!wxIFMDefaultComponentPlugin renamed to wxIFMDefaultPlugin
+	!wxIFMComponentData merged with wxIFMComponent
+	!wxIFMFloatingData created to hold floating data that was stored in wxIFMComponentData
+	!wxIFMPluginBase removed
+		!wxIFMInterfacePlugin and wxIFMExtensionPlugin inherit directly from wxEvtHandler
+		!wxIFMDefaultPlugin inherits from wxEvtHandler also
+	!wxIFMExtensionPlugin now only stores a pointer to the wxIFMInterfacePlugin that owns it
+	!Duplicated wxInterfaceManager* storage removed. All plugins / extensions have their own copy
+	 of GetManager() which returns the wxInterfaceManager that (indirectly) owns them
+	!Event handling contained in wxInterfaceManager has been moved into wxIFMInterfacePlugin
+	!Connect()ing event handlers for efficient processing is no longer permissable. The only
+	 thing that was inefficient about default event processing was the wxIFMInterfacePlugin::GetComponentByPos
+	 function, which is now virtual. Simply override this function with an efficient version
+	 instead of connecting your own events.
+	!wxInterfaceManager::ProcessPluginEvent removed, use wxIFMInterfacePlugin::ProcessPluginEvent
+	 instead
+	!wxIFMComponentDataBase renamed to wxIFMExtensionDataBase
+	!Moved child storage into wxIFMComponent
+	!Removed all UnfloatEvent related code and classes
+	!Replaced stl containers with wx ones =(
+	!Moved wxIFMDefaultPanelPlugin::FindChild into wxIFMComponent and renamed it to FindChildWindow
+	!Removed Initialize and Shutdown events
+	!Moved wxIFMComponent::FindChildWindow to wxIFMInterfacePluginBase
+
+!Remade event macro declarations to follow new wx internal format
+!Desired, min, and max sizes now specify a client size, not an asbsolute one. Get(Min|Max|Desired)Size events
+ will return a size in absolute coordinates, and Set(Min|Max|Desired)Size events should be given absolute sizes.
+!Removed wxIFMContainerData::m_scaleDirection in favor of using wxIFMComponent::m_alignment (see below)
+
+General
+-Added wxIFMComponent::IsChildOf, used to determine if a component is a child of another component
+-Added wxInterfaceManager::DisplayStatusMessage, ResetStatusMessage, and SetStatusMessagePanel to
+ allow plugins to be able to give messages to the user through the managed frames status bar
+-Added wxIFMComponentData::m_name member
+-Added a "name" parameter to wxIFMChildDataBase
+-Added the IFM_COORDS_FLOATINGWINDOW coordinate system and implement conversion to and from it inside of DefaultPlugin
+-Margins and Borders are no longer specified by wxIFMDefaultChildData, as doing so was silly
+-wxIFMPanelTabData is now used to store buttons for panels, and also the caption rect
+-Added wxIFMComponentButton to represent buttons on components, and wxIFMComponentButtonManager to manage them
+-The wxEVT_IFM_COMPONENTBUTTONCLICK event is sent in response to the user clicking on a component button
+-Added wxInterfaceManager::GetCapturedWindow to aid in client to screen and back conversions
+-Added wxIFMComponent::GetParentWindow to determine what window a component rests inside of
+-wxIFMComponent::Paint now sets the DC's clipping region to exactly match the absolute rect of the component.
+ You should not manually change this region to be larger than the absolute rect of the component
+-Added wxInterfaceManager::SetChildSize, used to change min, max, and desired sizes for a child window
+ after it has been added to the interface
+-Added wxEVT_IFM_SETCHILDSIZE, wxIFMSetChildSizeEvent, and a default implementation in the DefaultPlugin
+-Added wxIFMInterfacePluginBase::Shutdown and wxIFMExtensionPluginBase::Shutdown
+-Optimized interface painting by a lot
+-Added wxIFMPaintInterfaceEvent::GetUpdateRegion() which specifies the region of the interface requiring updating
+-Added child window storage to wxIFMInterfacePluginBase implemented as a map with int keys (really wxWindow* keys)
+ and wxIFMComponent* data.
+-Added wxIFMComponent::m_alignment member, which describes how the component (and its children) are alligned,
+ either vertically or horizontally.
+-Added IFM_USE_CHILD_MINSIZE to specify that the child window should be queried for its minimum size whenever
+ a components minimum size is requested
+-Added some common accessor methods to wxIFMComponent
+-Added wxIFMCalcRectsEvent used to actually calculate the size and position of children in their parents
+ and moved the sizing and position code from ContainerPlugin into DefaltPlugin
+-Added wxIFMComponentVisibilityChangedEvent, wxIFMShowComponentEvent, wxIFMComponent::Show, wxIFMComponent::VisibilityChanged
+-Fixed hiding and showing of components using the aforementioned events and functions
+
+Drag n Drop
+-Dock buttons are no longer displayed if you drag a component over one of its children
+-You can now hold down alt while dragging to prevent drop targets from moving, and shift to hide them
+-Frame drop buttons will now be displayed at the edges of the interface rect, instead of the edges
+ of the managed window's client rect, because they can be different.
+-Drag'n'Drop is now done in realtime. An option to use the old system may come later.
+	Meaning, drag'd windows are floated instantly, the floating window is moved as you drag, if you
+	dock it somewhere else the floating window goes away.
+-Added bitmaps for the drop buttons
+-Floating windows created during realtime mode appear in a sensible spot relative to the mouse cursor
+-Dragging is not initiated immediately in response to a mouse click, but after a click and some motion
+
+Floating
+-You can now drag the root component of a floating window just like any regular component
+-wxIFMFloatEvent now specifies the client rect of the floating window, instead of the client size and
+ position of the window in screen coordinates
+-Floating windows are now properly positioned and their children properly sized when created
+-Fixed a crash if you docked the only child of a floating window into another floating window
+ and then called wxInterfaceManager::Update() and floating was true
+-Generalize DefaulPlugin::OnFloat handling
+-Moved some of the old non general DefaulPlugin::OnFloat handling into wxIFMCreateFloatingWindowEvent
+-Double clicking on a components background now floats the component at the components last floating location,
+ or at the mouse position if it has no previous location
+-Floating windows are initially sized more appropriately
+-Resizing a floating window will persistantly resize its components.
+-Floating windows now (slightly innacurately) respect minimum sizes (the innacuracy makes windows larger than their
+ minimum, never smaller).
+-If docking a component into a floating window results in the floating window being too small to accomodate
+ for the size of all of its children, the floating window will expand to meet the new minimum size requirements.
+
+Resizing
+-Resize sash position calculation has been re-written and should be 99% accurate
+-The resizing algorithms have also been re-written and are much more correct than before
+-Added an event to update resize sashes for a given component.
+
+------------------------------------------------------------------
+Version 0.6.0
+------------------------------------------------------------------
+
+Internally incompatible changes:
+
+!Use of wx RTTI is now turned off by default in favor of using dynamic_cast directly.
+ Can be controled with the IFM_USE_WX_RTTI define in ifmdefs.h
+!Reversed the meanings of IFM_SCALE_VERTICAL and IFM_SCALE_HORIZONTAL
+	Old meaning: IFM_SCALE_(VERTICAL|HORIZONTAL) meant the container positioned its children (horizontally|vertically)
+	New meaning: IFM_SCALE_(VERTICAL|HORIZONTAL) means the container positions its children (vertically|horizontally)
+!Removed all component type arguments from every event. The component type value is queried from the component itself
+ instead of provided directly.
+!Removed the parent argument from UndockEvent, as the parent can be determined from the component being undocked
+!Renamed wxIFMShowChildEvent::GetVisibility to GetShow
+!Renamed wxIFMFloatEvent::GetFloating to GetFloat
+!Added EndPaintEvent instead of using BeginPaintEvent for both beginning and ending painting
+!Removed wxCalcSizeEvent, wxEVT_IFM_CALCSIZE, and EVT_IFM_CALCSIZE.
+	Use wxEVT_IFM_GETDESIREDSIZE, EVT_IFM_GETDESIREDSIZE and wxIFMRectEvents instead
+!Moved FindChild from wxIFMPanelTabData to wxIFMDefaultPanelPlugin
+!Removed child type paramter from wxIFMDefaultPanelPlugin::FindChild, wxInterfaceManager::ShowChild,
+ wxInterfaceManager::HideChild, and wxIFMShowChildEvent.
+!The type of a component is now specified in the wxIFMComponent constructor.
+!wxIFMComponentData::m_type has been moved to wxIFMComponent, and is a private data member.
+ Use wxIFMComponent::GetType() to access it.
+!Removed the key parameter from wxIFMComponent::AddComponentData
+!Added a pure virtual GetDataKey() method to wxIFMComponentDataBase. All component data derivatives
+ must implement this function to return the data key to be used.
+
+General:
+
+-Unicode build now supported
+-Added Set____ methods for some events:
+	wxIFMUndockEvent::SetDelete
+	wxIFMShowChildEvent::SetUpdate
+
+	These methods should be used to control the processing of these optional commands.
+	For example, if two plugins process UndockEvent, but the plugin that goes first
+	needs the second plugin to process the event first but not delete the component,
+	the first plugin would call SetDelete(false) and then pass on the event, and handle
+	the deletion of the component itself.
+-Removed (most) all instances of accessing wxIFMComponentData::m_rect directly and use
+ the wxEVT_IFM_GETRECT event for it instead. Accessing it directly bypasses any special
+ processing a component may have and is not a good idea.
+-Added wxEVT_IFM_SETDESIREDSIZE used for setting the desired size and provided
+ a default implementation. You should use a wxIFMRectEvent for this event.
+-Added wxEVT_IFM_GETDESIREDSIZE and EVT_IFM_GETDESIREDSIZE to replace CALCSIZE events.
+-wxIFMConvertRectEVent now derives from wxIFMRectEvent
+-Explicitly return (0,0,0,0) for GetRect events if the component is hidden instead of assuming
+ that the rect was still in an initialized state and equal to (0,0,0,0).
+-Gave wxIFMDefaultChildData a virtual dtor to try to fix segfaulting with gcc
+-Containers now properly report their size to be (0,0) if they have no visible child
+ components that are not containers as children.
+-Added wxInterfaceManager::AddPendingUpdate which posts an update event instead of immediately processing one
+-Added a static method inside wxIFMDefaultComponentPlugin to paint components properly so plugins
+ dont have to implement it on their own. Note that plugins still have to implement EVT_IFM_PAINTINTERFACE handlers.
+-wxInterfaceManager::CaptureInput no longer requires a component type argument
+-Floating components will now properly capture the input of their floating window
+-wxIFMActivateEvents are now sent
+-Added a default implemented for wxIFMDeleteComponentEvent which deletes the component and its children.
+ This default implementation will actually delete the wxIFMComponent instance. It must not be done by other
+ handlers
+-Added default implementations for wxIFMBeginPaintEvent and wxIFMEndPaintEvent
+
+Drag n Drop:
+
+-"cross" drop target buttons now display in the center of the content rect when
+ hovering over the content window instead of in the center of the parent frame
+-Added wxEVT_IFM_GETCONTENTRECT to retrieve the content rect. It should be handled
+ by interface plugins as it isn't handled anywhere by default.
+-Fixed 100% cpu use if cross dock buttons overlapped frame dock buttons.
+ Also fixed frame dock buttons from jumping around when overlapped by cross dock buttons
+-Some instances of creating unneeded containers while docking have been corrected
+-Fixed (most) all redraw bugs related to XOR hint rect drawing
+	Aparently they still linger for wxGTK
+-Removed borders from drop target windows and manually draw 1px whide black borders
+-Drag'n'Droping components into and out of existing floating windows is now fully supported
+-In circumstances where docking would cause errors, dock buttons that would cause these errors
+ are no longer displayed, preventing docking in those erronous cases
+
+Resizing:
+
+-Resize sashes are now displayed on the proper side when a top level container's position changes
+-Resizing functions again for containers and panels
+-Resizing can now be canceled by hitting escape
+-Resizing panels within a container is now more accurate than before
+
+Floating:
+
+-Default FLOATNOTIFY event handling forwards the event to the components children
+-Floating windows will always be properly sized upon creation instead of occasionally
+ being very small
+-Floating windows will now be hidden properly when all of their children are hidden
+-Floating windows properly paint their child components now
+-Floating windows will now properly generate EVT_IFM_SETCURSOR, and all mouse events
+-Created a DESTROYFLOATINGWINDOW event
+-Floating windows are destroyed when they have no children left docked in them
+-Floating windows will not longer be created off of the screen
+
+------------------------------------------------------------------
+Beta 1 (Version 0.5.0) - 1/21/05
+------------------------------------------------------------------
+
+First public beta release of wxIFM
+
+-Disabled "tabulate" docking button by doing nothing instead of crashing
+-Docking to the left or right of a horizontal container now adds the component to the
+ beginning or end of that containers children. Docking above or below a horizontal container
+ creates a new container above or below it. The inverse applies for vertical containers.
+	Note that there is a slight quirkiness if you dock above or below a non top level horizontal container.
+	The inverse applies for vertical docked containers.
+-Removed options.h and options.cpp as they were useless
+
+1/20/05
+
+-Moved component deletion handling in response to undock events into wxIFMDefaultComponentPlugin
+-Added wxIFMUndockEvent::m_delete to specify whether a component should be deleted if
+ it has no children left
+-Implemented the remaining funcionality of the "cross" dock buttons (not tabbed docking)
+-Added wxIFM(Add|Remove)TopContainerEvent and removed non const access to the top level container list
+-Created an event used to display drop target buttons for a given mouse position
+
+1/19/05
+
+-Fixed compile errors if IFM_CANFLOAT == 0
+-moved wxIFMDefaultComponentPlugin::OnCreateFloatingWindow into wxIFMDefaultInterfacePlugin
+-You can now dock into the middle of the frame, or if you prefer the outside of the content window,
+ using the 4 "cross" dock buttons
+-You can also use the "cross" dock buttons to dock within containers now (50% implemented)
+-Edge drop target buttons now move over if they are overlapped
+
+1/18/05
+
+-Drop target buttons look different when hovered over to signify that you will
+ be dropping onto that button.
+-If floating is not supported, a NO_ENTRY cursor is displayed when not dragging
+ over a drop target button. If you attempt to drop while not over a button,
+ nothing happens.
+-Implemented component dock target buttons that follow what component the mouse is
+ under while dragging.
+-Changed dock buttons into frames to avoid some redraw issues
+
+1/16/05
+
+-Drag and drop implementation
+	4 dock target buttons are displayed to dock onto a given side of the frame
+-Added wxEVT_IFM_DELETECOMPONENT event and event class. Component deletion handled
+ within wxIFMInterfacePluginBase
+-wxIFMDefaultComponentPlugin now handles EVT_UNDOCK
+-wxIFMDefaultContainerPlugin will delete itself if there are no children left in
+ response to EVT_UNDOCK using DELETECOMPONENT.
+-Changed wxIFMComponentDataArray from a vector to a map
+-Removed wxIFMComponentDataBase::m_key and GetKey();
+-Resize sashes are now updated properly every time they should be updated
+-Added wxInterfaceManager::GetInterfaceRect to allow plugins to determine the rect
+ that their interface has in which to update
+-Added wxInterfaceManager::SetIeterfaceRect and ResetInterfaceRect
+-Dragging can now be canceled with escape
+
+1/15/05
+
+-Added wxIFMDefaultDockingPlugin, some events, and an event class for drag and drop
+ docking implementation
+
+1/12/05
+
+-Changed return type of wxIFMPluginBase::Initialize to bool
+-Removed wxIFMExtensionPluginBase::SetInterfacePlugin and added
+ wxIFMExtensionPluginBase::Initialize which functions the same as SetInterfacePlugin did
+
+1/10/05
+
+-Removed all wxWidgets specific arrays and lists and replaced them with STL
+
+1/2/05
+
+-Moved resize plugin into its own .h and .cpp file
+-Created events like RESIZE_BEGIN, RESIZE_END, other resize events
+-Implemented a new sizing algorithm (Contributied by Keith of irc.freenode.net#wxwidgets)
+-Added max sizes to components. wxSize(-1,-1) means no max width or height.
+
+1/1/05
+
+-Added classes to hold border / margin data members
+-Resize grippers work
+	They only work "properly" for containers, due to the following sentance
+-Much experimentation have been done to achieve a proper sizing algorithm for containers
+ but to no avail. I am closer now, but it still needs work to function with resizing.
+
+12/30/04
+
+-Added GetNewDataKey(), DECLARE_IFM_DATA_KEY, and DEFINE_IFM_DATA_KEY to create
+ unconflicting data key values at run time
+-Also added GetNewComponentType(), GetNewChildType, and supporting macros to generate
+ unique values at run time
+-Added wxIFMHitTestEvent and default implementation
+-Moved default implementation specific stuff into definterface.(h|cpp)
+
+12/28/04
+
+-Default interface plugin Connect()'s the following events for efficient processing
+	wxEVT_SETCURSOR
+	wxEVT_RIGHT_UP
+	wxEVT_RIGHT_DOWN
+	wxEVT_LEFT_UP
+	wxEVT_LEFT_DOWN
+	wxEVT_MIDDLE_UP
+	wxEVT_MIDDLE_DOWN
+	wxEVT_LEFTDCLICK
+	wxEVT_RIGHTDCLICK
+	wxEVT_MIDDLEDCLICK
+	wxEVT_MOTION
+	wxEVT_MOUSEWHEEL
+
+12/26/04
+
+-Default mouse event processing now (inefficiently) determines which component the
+ mouse is inside, instead of leaving it NULL.
+-Default interface plugin can now find components by position efficiently
+-Default interface plugin Connect()'s the following events for efficient processing
+	wxEVT_SETCURSOR
+-Mouse events (including SetCursor) will now always specify what component they happened
+ over. If there was no component under the mouse, event::GetComponent() will return NULL,
+ and event::GetComponentType() will return IFM_COMPONENT_UNDEFINED.
+
+12/23/04
+
+-Optimized wxIFMDefaultResziePlugin::OnSetCursor handling
+
+12/22/04
+
+-Added wxInterfaceManager::Initialize flags to control how the manager functions
+-Added the IFM_NO_RESIZE_UPDATE flag
+
+I made a signifigant change to the plugin structure today.
+	There are now "Interface plugins" and "Extension plugins".
+
+	Interface plugins provide an implementation of the framework. A plugin
+	that clones Adobe Photoshops interface and one that clones MSVC6's interface
+	are interface plugins.
+
+	Extension plugins are plugins that sit "ontop" of an interface plugin and
+	alter the look, feel, or functionality of that interface plugin. They may also
+	add additional functionality to the interface plugin.
+
+	The wxInterfaceManager object only allows for one "active" interface plugin at any
+	given time. There may be more than one interface plugin per wxInterfacemanager instance,
+	and a different interface plugin may be selected at run time. Extension plugins can exist
+	for multiple interface plugins, but there will be a seperate object per interface plugin.
+
+	wxIFMInterfacePluginBase will store an interfaces extension plugins.
+
+-Added wxIFMPluginBase::Enable and Disable
+-wxInterfaceManager no longer stores components or floating containers
+	This is done exclusively by interface plugins.
+	PluginBase no longer contains a read only pointer to a components array.
+-wxIFMInterfacePluginBase stores the basic component array
+
+12/19/04
+
+-Cursors now change to the appropriate resize cursor over resize sashes
+
+12/18/04
+
+-Resize sashes are now drawn
+-DefaultComponentPlugin now draws borders
+-Default painting has been reimplemented
+	Default paint handler iterates over the top level container list
+	and paints the container first, then its children recursively
+-Resize sashes are properly shown or hidden
+-Added wxEVT_IFM_GETRESIZESASHRECT event
+
+12/16/04
+
+-Docked componends store a pointer to their parents
+-Child redraw bugs should be fixed, Freeze and Thaw now utilized
+
+12/15/04
+
+-Added a slight hack to container update algorithm to deal with rounding errors
+
+12/14/04
+
+-Added a flag for the update event to specify that floating windows should be updated as well
+-Floating windows are now updated (althoiugh slightly inefficiently) in response to this flag
+-Children windows are now proportionally resized.
+	Note that proportional resizing does not yet take into account minimum child dimensions,
+	and rounding errors occasionally make things a pixel or two too small.
+-The default implementation of EVT_IFM_CALCSIZE returns the desired size of the window,
+ and not the actual size of the window. (0,0) if hidden.
+
+12/13/04
+
+-NULL content window is now permissable
+-Adding floating children to an interface now positions the floating window properly
+-Fixed a few redraw bugs. Child redraw bugs still remain.
+-Floating frames now hide when you close them
+-Components will be notified in all cases where they become floating (or not).
+-wxIFMComponentData::m_window type changed to wxIFMFloatingWindowBase
+-wxIFMShowChildEvent now specifies if the interface should be udpated or not
+ and plugins are expected to handle this
+-The main containers of floating windows will now be updated in response to a ShowChild
+ event for a child docked into that container. The floating window will be hidden if no children
+ are visible, and it will be shown (if it is already hidden) if there are visible children.
+
+12/11/04
+
+-Containers now update properly with only panels as children, containers as chidren
+ remains untested.
+
+12/10/04
+
+Today marks the start of the basic reimplmentation of the default interface.
+I am cloning MSVC8's docking capabilities. The immediate effect of this
+change is the removal of panel rows, and the addition of a "top level container list"
+which is implemented as forward and backward pointers within wxIFMContainerData.
+
+-Rewrote default interface update code
+-Added linked list to store top level containers used for sizing
+-Removed panel rows from existance
+-wxIFMContainerData stores a pointer to its node within the container list
+-Containers now dock any component into themselves
+
+11/28/04
+
+-Added wxIFMComponentArray m_children to wxIFMComponentData
+
+11/26/04
+
+-Added wxIFMFloatingWindowBase which acts as a floating window to contain floating
+ components. It also does some event processing.
+-Added wxIFMFloatingFrame which inherits from wxIFMFloatingWindowBase and creates
+ a frame to float components in
+-Added events for floating windows
+-Added wxIFMFloatNotifyEvent
+
+11/22/04
+
+-Added an event to create a frame in which to float
+-wxIFMComponentData::m_frame renamed to m_window, and type changed to wxWindow*.
+
+11/17/04
+
+-Added wxIFMFloatEvent
+-wxIFMComponent destructor is now virtual
+-Moved floating and docked state variables from wxIFMPanelTabData to wxIFMComponentData
+-Begun Implementing floating in a component specific way. 
+
+11/08/04
+
+-Slight changes to dock event. It is still not finalized, but it is cleaner than before.
+-Added minimum size values to wxIFMComponentData
+-If a components size is set smaller than its minimum size, the component will take
+ on its minimum size and not the size specified.
+
+11/06/04
+
+-Moved wxIFMDefaultInterface related things to seperate files
+-Removed container storage from wxIFMDefaultInterfacePlugin because
+ all plugins now have a read only pointer to the components array
+-Added wxIFMShowChildEvent, wxEVT_IFM_(SHOW|HIDE_CHILD) and EVT_IFM_(SHOW|HIDE).
+ Used to hide and show children windows managed by the interface.
+-Added wxInterfaceManager::ShowChild and HideChild
+-Panel rows now properly update themselves and behave when their child panels
+ are hidden.
+-Added wxIFMComponent::GetNextVisibleComponent to aid components dealing with
+ hidden components during OnUpdate handling.
+
+11/02/04
+
+-wxClassInfo system utilized for wxIFMChildDataBase and inherited classes
+-AddChild events are now type safe, when properly checked by the plugin recieving
+ the event, utilizing wxStaticCast.
+-Moved m_hidden to wxIFMComponentData from wxIFMPanelTabData
+-Corrected default GETBACKGROUNDRECT handling. It used to return something bigger than
+ the actual size of the component.
+-Default GET[CLIENT|BACKGROUND]RECT handling now returns wxRect(0,0,0,0) if the component
+ is hidden
+-Default SET[CLIENT|BACKGROUND]RECT handling now uses CONVERTRECT instead of calculating
+ values itself.
+-IFM_DEFAULT_VALUE renamed to IFM_USE_CURRENT_VALUE
+-wxIFMCalcSizeEvent::SetScaledSize renamed to SetSize, and its argument changed from
+ int to wxSize.
+	 CalcSize events now work with wxSize and not ints. Using ints was an implementation
+	 specific to the default interface plugin, because it doesn't need more than an int,
+	 but somebody might want to use a wxSize and not an int.
+-wxIFMDefaultComponentPlugin now processes CALCSIZE and returns the absolute size of the
+ component, using GETSIZE instead of directly returning its value. It didn't process this
+ event at all before.
+-Added wxEVT_IFM_(GET|SET)ABSOLUTERECT which has the same value as wxEVT_IFM_(GET|SET)RECT
+-wxIFMDefaultComponentPlugin is now pushed unconditionaly by wxInterfaceManager::Initialize
+	It provides functionality common to any plugin, so it should always be present.
+
+11/01/04
+
+-wxIFMDefaultInterfacePlugin now overrides wxIFMPluginBase::Initialize in order
+ to push the required plugins for it to function.
+
+ As a result of this change, wxInterfaceManager::Initialize only pushes
+ wxIFMDefaultInterfacePlugin if defaultPlugin = true.
+
+ If an interface plugin requires certain functionality plugins to exist,
+ it must push those plugins itself when Initialize is called. This is a general
+ convention change for the IFM system.
+
+ Note that initialize is called BEFORE the plugin is pushed, so any
+ plugins that the interface plugin adds will appear before the interface plugin
+ on the stack.
+
+-Added wxInterfaceManager::Update to force an immediate interface update
+-Added wxIFMChildDataBase to serve as a data storage class for use with AddChild
+ events and functions. Plugins that require specific arguments to AddChild derive
+ a new data storage class, and the application uses that class to add children.
+-wxInterfaceManager::AddChild now only takes two arguments.
+-wxIFMAddChildEvent now only contains one data member which is a pointer to a
+ wxIFMChildDataBase object.
+
+10/31/04
+
+-Many changes to wxIFMDockEvent
+	There is now two ways to dock a component. By Index, or By Position.
+		-By Position means that you provide an X and Y position and the component
+		 finds the location that the object should be placed.
+		-By Index means that you specify the exact location of the object and the
+		 component will place it there.
+
+	The m_pos member now has different meanings based on whether By Index or
+	By Position is used. The vairable is still of type wxPoint, but if By Index
+	is specified, m_pos.x and m_pos.y specify index data for the destination.
+	In the case of my default implementation, when a container recieves
+	a dock event for a panel component with by index mode specified, m_pos.x
+	specifies the destination row index, and m_pos.y specifies the destination
+	index of the panel within that row. So (0,0) means first row first position,
+	(1,2) means second row 3rd position, etc..
+
+	I am still evaluating the docking event. This implementation does not seem practical
+	as it came about as a workaround...
+
+	Note that by position is not implemented and the above explanation is a bit unclear.
+
+-Panel Rows now add panels to the requested position (by index mode)
+-Containers will create a new panel row if needed in response to the dock event if
+ it determines that the panel should be given its own row.
+-Begun implementation of "smart" panel arranging for panel rows
+	Panel rows now behave when there is more than one panel.
+-Plugins are now dynamically creatable using wxClassInfo pointers
+-Doxygenified ifmdefs.h
+
+10/26/04
+
+-Added wxIFMKeyEvent, wxIFMMouseEvent, wxIFMSetCursorEvent, wxIFMFocusEvent,
+ wxIFMActivateEvent
+-All input events are now generated
+-EVT_SETFOCUS, EVT_KILLFOCUS, EVT_ACTIVATE, EVT_SETCURSOR events generated
+-Added wxInterfaceManager:: CaptureInput and ReleaseInput to allow for components
+ to capture mouse and key events
+-Doxygen-ified events.h
+
+10/24/05
+
+-Begun to DoxyGen-ify commnets
+-I now use wxWidgets RTTI in order to provide run time access to plugins of an interface
+-Added wxInterfaceManager::GetPluginByName to access plugins by their class name
+-All plugins now contain a read only reference to their interface's components array.
+ This will all plugins to do any global per component config if they provide run time
+ configurable settings.
+-Modified plugins to be dynamically createable using their wxClassInfo object
+-Added wxIFMPluginBase::Initialize to setup internal pointers
+
+10/23/04
+
+-Implemented wxIFMDefaultComponentPlugin, wxIFMDefaultPanelPlugin,
+ and wxIFMDefaultPanelRowPlugin::OnUpdate
+-wxIFMUpdateComponentEvent now specifies a position as well as a size
+-Added EVT_IFM_(SET|GET)[CLIENT|BACKGROUND]RECT events and removed the old
+ size and position based ones.
+-Replaced wxIFMComponentData:: m_size and m_pos with m_rect
+-Reimplemented wxIFMDefaultComponentPlugin to perform size and pos operations
+ using rects.
+-Added IFM_DEFAULT_VALUE to allow for SETRECT events to only change position or
+ size values.
+-wxIFMDefaultPanelPlugin::GetSize is now GetRect and returns wxRect(0,0,0,0) if
+ the panel is hidden.
+-wxIFMUpdateEvent now specifies a rect instead of a size allowing the application
+ to displace the interface if they wish
+-Added wxEVT_IFM_CONVERTRECT, wxIFMConvertRectEvent to convert between rect coord
+ systems (client, background, absolute)
+-wxIFMDefaultComponentPlugin now sets and gets rects in terms of CONVERTRECT.
+ Getting and settings absolute sizes does not use CONVERTRECT however.
+-All PAINT events are now generated. Painting is handled (in an unoptimized way) by
+ wxIFMDefaultInterfacePlugin
+-Added EVT_IFM_PAINTINTERFACE to indicate that part or all of the interface needs
+ to be repainted instead of just sending paint events from within wxInterfaceManager
+
+10/22/04
+
+-Implemented wxIFMDefaultPanelPlugin::GetSize to return (0,0) if the panel is hidden
+-Added wxIFMDefaultComponentPlugin to handle basic (Set|Get)([Client|Background]Size|Position) events
+-Added border dimension values to wxIFMComponentData
+-Renamed wxIFMSizeEvent to wxIFMRectEvent
+	This allows one event type to process Get|Set Size, Position, and Rectangle events
+-Implemented wxIFMDefaultInterfacePlugin::OnUpdate
+
+10/21/04
+
+-Implemented wxInterfaceManager::AddChild
+-wxIFMAddChildEvents are now generated by AddChild
+-Implemented (miminum functionality of) wxIFMDefaultInterfacePlugin::OnAddChild
+-Added wxIFMDockEvent
+-Containers are now given an orientation when created by wxIFMDefaultInterfacePlugin
+-wxIFMDefaultInterfacePlugin now stores pointers to its containers
+-Added wxIFMDefaultInterfacePlugin::GetContainer
+-wxIFMPluginEvent now stores a component
+-Added GetComponent to wxIFMPluginEvent
+-Added wxEVT_IFM_SETCHILD and wxIFMSetChildEvent
+-Implemented wxIFMDefaultPanelEvent::OnSetChild
+-Added wxIFMSizeEvent for (Get|Set)(Absolute|Client|Background)(Size)
+-Implemented wxIFMDefaultPanelPlugin::OnSet[Client|Background]Size
+-Added wxIFMUpdateEvent
+-Added wxIFMCalcSizeEvent
+-Implemented wxIFMDefaultContainerPlugin::OnDock to dock panel rows into containers
+-I now add the default container row by first creating a new one and then docking it
+ from within OnInitialize function instead of within the Container plugin. This allows
+ me to create the container, give it a scale direction, and then dock the default
+ panel row into the container, thereby inheriting the scale direction.
+-ScaleDirection is now specified for containers/panelrows during creation/docking
+-Changed all event handling functions to be private, no reason to be public
+-Implemented wxIFMDefaultPanelRowPlugin::CalcSize
+
+10/20/04
+
+-Added wxEVT_IFM_INITIALIZE and wxEVT_IFM_SHUTDOWN
+-Created event classes for the above events
+-Added wxInterfaceManager::Initialize and Shutdown
+-If a plugin specified that a wxEVT_IFM_INITIALIZE event did not
+ complete succesfully, InitializeInterface will return false.
+-Added wxIFMDefaultInterfacePlugin, wxIFMDefaultPanelRowPlugin,
+ wxIFMDefaultContainerPlugin, wxIFMDefaultPanelPlugin classes.
+-wxIFMDefaultInterfacePlugin creates 4 containers in response to
+ wxEVT_IFM_INITIALIZE.
+-wxIFMDefault(Container|Panel|PanelRow)Plugin creates their components
+ in response to wxEVT_IFM_NEWCOMPONENT. Containers also create 1 row by
+ default, as all containers must have 1 row.
+-wxInterfaceManager tracks wxEVT_IFM_NEWCOMPONENT events and stores the
+ components they create for deletion later.
+
+10/18/04
+
+-Default component data stores a pointer to the interface manager
+ which owns the component
+-Added wxIFMPanelTabData, wxIFMPanelRowData, wxIFMContainerData
+-Replaced m_owner with m_key in wxIFMComponentDataBase
+-Created a datatype for component data key values
+	Currently defined to be an int
+-Plugins can access any data stored with a component if they know its key
+-The default component data is accessed with key IFM_DEFAULT_DATA_KEY
+-Additional event system implementation
+-New event: wxEVT_IFM_ADDCHILD used to add children to an interface
+-Created wxIFMAddChildEvent and wxIFMNewComponentEvent classes
+-Created event table macros for wxEVT_IFM_ADDCHILD and wxEVT_IFM_NEWCOMPONENT
+
+10/16/04
+
+-Came to a decision about how I will implement the plugin system
+
+	There are no longer individual classes for containers or panels. I instead
+	use one base component class. This class has no actual way of knowing
+	it is a certain type of component. What this class does is provide a method
+	for plugins to associate data with that component. This allows for plugins
+	adding functionailty to add per component storage without needing to modify
+	the base plugin class to support their data storage.
+
+	All components create the default data structure when they initialize.
+	This data contains the components type (panel, container, ...) and its
+	size and position in frame coordinates.
+
+	Plugins retrieve the data they stored by passing a pointer to themselves
+	to the component which returns a pointer to the data that plugin stored,
+	or NULL if the plugin hasn't stored any data. All plugins can access the
+	default data by passing NULL instead of a pointer to themself.
+
+	I may change the way data is stored in the future to allow plugins to share
+	data instead of limiting access to the plugin that stored it.
+
+-Created plugin data base and default classes
+-Implemeted component plugin data storage and retrieval
+
+10/15/04
+
+Beginning of changelog for the Interface Management System
+
+-Begun event declarations
+-Started class prototyping
+-Begun plugin architecture
+
+-Had a test run at proposed event system
+	It will work in theory, it just depends on how much functionality
+	I need to implement into the classes to make things work. Storage
+	for if resize sashes should be displayed for panels for instance,
+	as it can vary from panel to panel based on position and is determined
+	during interface updates. I don't want to have to add
+	storage for a plugin specific thing into the class definitions.
+
+	Maybe if I make a way to associate data with each panel via plugins...

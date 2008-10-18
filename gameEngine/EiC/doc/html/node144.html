@@ -1,0 +1,398 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sys/stat.h</TITLE>
+<META NAME="description" CONTENT="sys/stat.h">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+<LINK REL="previous" HREF="node143.html" tppabs="http://eic.sourceforge.net/documentation/node143.html">
+<LINK REL="up" HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<LINK REL="next" HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2548"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2542"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2536"
+  HREF="node143.html" tppabs="http://eic.sourceforge.net/documentation/node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2544"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2546"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2549"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">sys/types.h</A>
+<B> Up:</B> <A NAME="tex2html2543"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">POSIX.1 library support</A>
+<B> Previous:</B> <A NAME="tex2html2537"
+  HREF="node143.html" tppabs="http://eic.sourceforge.net/documentation/node143.html">signal.h</A>
+ &nbsp <B>  <A NAME="tex2html2545"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2547"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00626000000000000000"></A>
+<A NAME="17317"></A>
+<A NAME="sec:systath"></A>
+<BR>
+sys/stat.h
+</H2>
+
+<P>
+The EiC header file <code>&lt;sys/stats.h&gt;</code> defines symbolic constants
+that are used when specifying the <B><TT>mode_t</TT></B> access of files.  It
+defines the following macros and one structure specifier:
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>S_IRGRP
+<DD><A NAME="item:SIRGRP"></A><A NAME="17323"></A>
+Group read permission.
+
+<P>
+<DT>S_IROTH
+<DD><A NAME="item:SIROTH"></A><A NAME="17325"></A>
+Other read permission.
+
+<P>
+<DT>S_IRUSR
+<DD><A NAME="item:SIRUSR"></A><A NAME="17327"></A>
+
+<P>
+Owner read permission. This is identical to the
+<B><TT>S_IREAD</TT></B><A NAME="17329"></A> used by DOS.
+
+<P>
+<DT>S_IRWXG
+<DD><A NAME="item:SIRWXG"></A><A NAME="17331"></A>
+Group read, write and execute permission.
+<BR><code>S_IRWXG = S_IRGRP | S_IWGRP | SI_XGRP</code>
+
+<P>
+<DT>S_IRWXO
+<DD><A NAME="item:SIRWXO"></A><A NAME="17333"></A>
+Other read, write and  execute permission.
+<BR><code>S_IRWXO = S_IROTH | S_IWOTH | S_IXOTH</code>
+
+<P>
+<DT>S_IRWXU
+<DD><A NAME="item:SIRWXU"></A><A NAME="17335"></A>
+Owner read, write and execute permission.
+<BR><code>S_IRWXU = S_IRUSR | S_IWUSR | S_IXUSR</code>
+
+<P>
+<DT>S_ISBLK
+<DD><A NAME="item:SISBLK"></A><A NAME="17337"></A>
+
+<P>
+Is block special file.
+
+<P>
+<DT>S_ISCHR
+<DD><A NAME="item:SISCHR"></A><A NAME="17339"></A>
+
+<P>
+Is character special file.
+
+<P>
+<DT>S_ISDIR
+<DD><A NAME="item:SISDIR"></A><A NAME="17341"></A>
+
+<P>
+Is directory.
+
+<P>
+<DT>S_ISFIFO
+<DD><A NAME="item:SISFIFO"></A><A NAME="17343"></A>
+Is pipe or FIFO.
+
+<P>
+<DT>S_ISGID
+<DD><A NAME="item:SISGID"></A><A NAME="17345"></A>
+set group id on execution 
+
+<P>
+<DT>S_ISREG
+<DD><A NAME="item:SISREG"></A><A NAME="17347"></A>
+set user id on execution 
+
+<P>
+<DT>S_IWGRP
+<DD><A NAME="item:SIWGRP"></A><A NAME="17349"></A>
+Group write permission.
+
+<P>
+<DT>S_IWOTH
+<DD><A NAME="item:SIWOTH"></A><A NAME="17351"></A>
+Other write permission.
+
+<P>
+<DT>S_IWUSR
+<DD><A NAME="item:SIWUSR"></A><A NAME="17353"></A>
+
+<P>
+Owner write permission. This is identical to
+<B><TT>S_IWRITE</TT></B><A NAME="17355"></A> used by DOS.
+
+<P>
+<DT>S_IXGRP
+<DD><A NAME="item:SIXGRP"></A><A NAME="17357"></A>
+Group execute permission.
+
+<P>
+<DT>S_IXOTH
+<DD><A NAME="item:SIXOTH"></A><A NAME="17359"></A>
+Other execute permission.
+
+<P>
+<DT>S_IXUSR
+<DD><A NAME="item:SIXUSR"></A><A NAME="17361"></A>
+Owner execute permission.
+
+<P>
+<DT>struct stat
+<DD><A NAME="item:structstat"></A><A NAME="17363"></A>
+
+<P>
+A file status attributes are easily collected into a structure as
+specified by <B><TT>struct stat</TT></B>, which has at least the following members:
+
+<P>
+<PRE>
+mode_t  st_mode;    /* File mode */
+ino_t   st_ino;     /* File serial number */
+dev_t   st_dev;     /* File system device number */
+nlink_t st_nlink;   /* Number of links */
+uid_t   st_uid;     /* User ID of the file's owner */
+gid_t   st_gid;     /* Group ID of the file's group */
+off_t   st_size;    /* File size in bytes */
+time_t  st_atime;   /* Time of last access */
+time_t  st_mtime;   /* Time of last data modification */
+time_t  st_ctime;   /* Time of last file status change */
+
+/* ... */           /* other possible members */
+</PRE>
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+The following functions are defined in <code>&lt;sys/stat.h&gt;</code>:
+ 
+
+<DL COMPACT>
+<DT>chmod
+<DD><A NAME="item:chmod"></A><A NAME="17371"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+int chmod(const char * path, mode_t mode);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Change access permission of the file specified by <B><TT>path</TT></B> to 
+<B><TT>mode</TT></B>, which maybe one or a bitwise combination of
+<B><TT>S_IS[UG]ID</TT></B>, <B><TT>S_ISVTX</TT></B>, <B><TT>S_I[RWX](GRP|USR|OTH)</TT></B>. 
+Returns zero on success or -1 on error and sets
+<B><TT>errno</TT></B> to one of: <B><TT>EACCESS</TT></B>, <B><TT>ENAMETOOLONG</TT></B>,
+<B><TT>ENOTDIR</TT></B>, <B><TT>ENOENT</TT></B>, <B><TT>EPERM</TT></B> OR <B><TT>EROFS</TT></B>.
+
+<P>
+<DT>fstat
+<DD><A NAME="item:fstat"></A><A NAME="17390"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/stat.h&gt; 
+int fstat(int filedes, struct stat *buf)
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Gets the open file or directory information associate with
+<B><TT>filedes</TT></B>. It stores the information in the <B><TT>stat</TT></B> structure,
+pointed to by <B><TT>buf</TT></B>. It returns zero on success,  else -1 on error and
+sets <B><TT>errno</TT></B> to <B><TT>EBADF</TT></B>.
+
+<P>
+<DT>mkdir
+<DD><A NAME="item:mkdir"></A><A NAME="17402"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+int mkdir(const char *path, mode_t mode)
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates a directory from the given path with access specified by
+<B><TT>mode</TT></B>, which maybe one or a bitwise combination of
+<B><TT>S_IS[UG]ID</TT></B>, <B><TT>S_ISVTX</TT></B>, <B><TT>S_I[RWX](GRP|USR|OTH)</TT></B>.  
+Returns 0 on success, else -1 on error and then sets <B><TT>errno</TT></B> to one of:
+<B><TT>EACCESS</TT></B>, <B><TT>ENAMETOOLONG</TT></B>,
+<B><TT>ENOENT</TT></B> or <B><TT>ENOTDIR</TT></B>.
+
+<P>
+<DT>mkfifo
+<DD><A NAME="item:mkfifo"></A><A NAME="17418"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/stat.h&gt; 
+int mkfifo(const char * path, mode_t mode)
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates a FIFO name pipe with access specified by <B><TT>mode</TT></B>,
+which maybe one or a bitwise combination of
+<B><TT>S_IS[UG]ID</TT></B>, <B><TT>S_ISVTX</TT></B>, <B><TT>S_I[RWX](GRP|USR|OTH)</TT></B>. 
+Returns 0 on success, else -1 on error and sets
+<B><TT>errno</TT></B> to one of: <B><TT>EACCESS</TT></B>, <B><TT>EEXIST</TT></B>, <B><TT>ENAMETOOLONG</TT></B>,
+<B><TT>ENOENT</TT></B>, <B><TT>ENOSPC</TT></B>, <B><TT>ENOTDIR</TT></B> or <B><TT>EROFS</TT></B>. 
+
+<P>
+<DT>stat
+<DD><A NAME="item:stat"></A><A NAME="17437"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/stat.h&gt; 
+int stat(const char *file_name, struct stat *buf)
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The same as <B><TT>fstat</TT></B> above, but is applied to a file name rather than
+an already opened file. Returns 0 on success, else -1 on error and sets
+<B><TT>errno</TT></B> to one of: <B><TT>EACCESS</TT></B>, 
+<B><TT>ENAMETOOLONG</TT></B>, <B><TT>ENOENT</TT></B> or <B><TT>ENOTDIR</TT></B>.
+
+<P>
+<DT>umask
+<DD><A NAME="item:umask"></A><A NAME="17450"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/stat.h&gt; 
+mode_t umask(mode_t cmask)
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Sets the file mode creation mask for the calling process to <B><TT>cmask</TT></B>.
+Returns the previous creation mask. No error codes used.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2548"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2542"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2536"
+  HREF="node143.html" tppabs="http://eic.sourceforge.net/documentation/node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2544"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2546"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2549"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">sys/types.h</A>
+<B> Up:</B> <A NAME="tex2html2543"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">POSIX.1 library support</A>
+<B> Previous:</B> <A NAME="tex2html2537"
+  HREF="node143.html" tppabs="http://eic.sourceforge.net/documentation/node143.html">signal.h</A>
+ &nbsp <B>  <A NAME="tex2html2545"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2547"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

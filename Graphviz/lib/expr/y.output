@@ -1,0 +1,5927 @@
+Terminals which are not used
+
+   MINTOKEN
+   INT
+   CHAR
+   VOID
+   ADDRESS
+   CALL
+   ITERATE
+   MEMBER
+   POS
+   PRAGMA
+   PRE
+   F2I
+   F2S
+   I2F
+   I2S
+   S2B
+   S2F
+   S2I
+   F2X
+   I2X
+   S2X
+   X2F
+   X2I
+   X2S
+   X2X
+   XPRINT
+   MAXTOKEN
+
+
+State 206 conflicts: 1 shift/reduce
+State 236 conflicts: 2 shift/reduce
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: statement_list action_list
+
+    2 action_list: /* empty */
+    3            | action_list action
+
+    4 @1: /* empty */
+
+    5 action: LABEL ':' @1 statement_list
+
+    6 statement_list: /* empty */
+    7               | statement_list statement
+
+    8 statement: '{' statement_list '}'
+    9          | expr_opt ';'
+
+   10 @2: /* empty */
+
+   11 statement: DECLARE @2 dcl_list ';'
+   12          | IF '(' expr ')' statement else_opt
+   13          | FOR '(' variable ')' statement
+   14          | FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' statement
+   15          | WHILE '(' expr ')' statement
+
+   16 @3: /* empty */
+
+   17 statement: SWITCH '(' expr @3 ')' '{' switch_list '}'
+   18          | BREAK expr_opt ';'
+   19          | CONTINUE expr_opt ';'
+   20          | RETURN expr_opt ';'
+
+   21 switch_list: /* empty */
+   22            | switch_list switch_item
+
+   23 switch_item: case_list statement_list
+
+   24 case_list: case_item
+   25          | case_list case_item
+
+   26 case_item: CASE constant ':'
+   27          | DEFAULT ':'
+
+   28 dcl_list: dcl_item
+   29         | dcl_list ',' dcl_item
+
+   30 @4: /* empty */
+
+   31 dcl_item: dcl_name @4 array initialize
+
+   32 dcl_name: NAME
+   33         | DYNAMIC
+   34         | ID
+   35         | FUNCTION
+
+   36 name: NAME
+   37     | DYNAMIC
+
+   38 else_opt: /* empty */
+   39         | ELSE statement
+
+   40 expr_opt: /* empty */
+   41         | expr
+
+   42 expr: '(' expr ')'
+   43     | '(' DECLARE ')' expr
+   44     | expr '<' expr
+   45     | expr '-' expr
+   46     | expr '*' expr
+   47     | expr '/' expr
+   48     | expr '%' expr
+   49     | expr LS expr
+   50     | expr RS expr
+   51     | expr '>' expr
+   52     | expr LE expr
+   53     | expr GE expr
+   54     | expr EQ expr
+   55     | expr NE expr
+   56     | expr '&' expr
+   57     | expr '|' expr
+   58     | expr '^' expr
+   59     | expr '+' expr
+   60     | expr AND expr
+   61     | expr OR expr
+   62     | expr ',' expr
+
+   63 @5: /* empty */
+
+   64 @6: /* empty */
+
+   65 expr: expr '?' @5 expr ':' @6 expr
+   66     | '!' expr
+   67     | '~' expr
+   68     | '-' expr
+   69     | '+' expr
+   70     | '&' variable
+   71     | ARRAY '[' args ']'
+   72     | FUNCTION '(' args ')'
+   73     | GSUB '(' args ')'
+   74     | SUB '(' args ')'
+   75     | SUBSTR '(' args ')'
+   76     | EXIT '(' expr ')'
+   77     | RAND '(' ')'
+   78     | SRAND '(' ')'
+   79     | SRAND '(' expr ')'
+   80     | PROCEDURE '(' args ')'
+   81     | PRINT '(' args ')'
+   82     | print '(' args ')'
+   83     | scan '(' args ')'
+   84     | variable assign
+   85     | INC variable
+   86     | variable INC
+   87     | DEC variable
+   88     | variable DEC
+   89     | constant
+
+   90 constant: CONSTANT
+   91         | FLOATING
+   92         | INTEGER
+   93         | STRING
+   94         | UNSIGNED
+
+   95 print: PRINTF
+   96      | QUERY
+   97      | SPRINTF
+
+   98 scan: SCANF
+   99     | SSCANF
+
+  100 variable: ID members
+  101         | DYNAMIC index members
+  102         | NAME
+
+  103 array: /* empty */
+  104      | '[' ']'
+  105      | '[' DECLARE ']'
+
+  106 index: /* empty */
+  107      | '[' expr ']'
+
+  108 args: /* empty */
+  109     | arg_list
+
+  110 arg_list: expr
+  111         | arg_list ',' expr
+
+  112 formals: /* empty */
+  113        | DECLARE
+  114        | formal_list
+
+  115 formal_list: formal_item
+  116            | formal_list ',' formal_item
+
+  117 @7: /* empty */
+
+  118 formal_item: DECLARE @7 name
+
+  119 members: /* empty */
+  120        | member
+  121        | '.' ID member
+
+  122 member: '.' ID
+  123       | '.' NAME
+
+  124 assign: /* empty */
+  125       | '=' expr
+
+  126 initialize: assign
+
+  127 @8: /* empty */
+
+  128 @9: /* empty */
+
+  129 initialize: '(' @8 formals @9 ')' '{' statement_list '}'
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'!' (33) 66
+'%' (37) 48
+'&' (38) 56 70
+'(' (40) 12 13 14 15 17 42 43 72 73 74 75 76 77 78 79 80 81 82 83 129
+')' (41) 12 13 14 15 17 42 43 72 73 74 75 76 77 78 79 80 81 82 83 129
+'*' (42) 46
+'+' (43) 59 69
+',' (44) 29 62 111 116
+'-' (45) 45 68
+'.' (46) 121 122 123
+'/' (47) 47
+':' (58) 5 26 27 65
+';' (59) 9 11 14 18 19 20
+'<' (60) 44
+'=' (61) 125
+'>' (62) 51
+'?' (63) 65
+'[' (91) 71 104 105 107
+']' (93) 71 104 105 107
+'^' (94) 58
+'{' (123) 8 17 129
+'|' (124) 57
+'}' (125) 8 17 129
+'~' (126) 67
+error (256)
+MINTOKEN (258)
+INT (259)
+INTEGER (260) 92
+UNSIGNED (261) 94
+CHAR (262)
+FLOATING (263) 91
+STRING (264) 93
+VOID (265)
+ADDRESS (266)
+ARRAY (267) 71
+BREAK (268) 18
+CALL (269)
+CASE (270) 26
+CONSTANT (271) 90
+CONTINUE (272) 19
+DECLARE (273) 11 43 105 113 118
+DEFAULT (274) 27
+DYNAMIC (275) 33 37 101
+ELSE (276) 39
+EXIT (277) 76
+FOR (278) 13 14
+FUNCTION (279) 35 72
+GSUB (280) 73
+ITERATE (281)
+ID (282) 34 100 121 122
+IF (283) 12
+LABEL (284) 5
+MEMBER (285)
+NAME (286) 32 36 102 123
+POS (287)
+PRAGMA (288)
+PRE (289)
+PRINT (290) 81
+PRINTF (291) 95
+PROCEDURE (292) 80
+QUERY (293) 96
+RAND (294) 77
+RETURN (295) 20
+SCANF (296) 98
+SPRINTF (297) 97
+SRAND (298) 78 79
+SSCANF (299) 99
+SUB (300) 74
+SUBSTR (301) 75
+SWITCH (302) 17
+WHILE (303) 15
+F2I (304)
+F2S (305)
+I2F (306)
+I2S (307)
+S2B (308)
+S2F (309)
+S2I (310)
+F2X (311)
+I2X (312)
+S2X (313)
+X2F (314)
+X2I (315)
+X2S (316)
+X2X (317)
+XPRINT (318)
+OR (319) 61
+AND (320) 60
+NE (321) 55
+EQ (322) 54
+GE (323) 53
+LE (324) 52
+RS (325) 50
+LS (326) 49
+UNARY (327)
+DEC (328) 87 88
+INC (329) 85 86
+CAST (330)
+MAXTOKEN (331)
+
+
+Nonterminals, with rules where they appear
+
+$accept (101)
+    on left: 0
+program (102)
+    on left: 1, on right: 0
+action_list (103)
+    on left: 2 3, on right: 1 3
+action (104)
+    on left: 5, on right: 3
+@1 (105)
+    on left: 4, on right: 5
+statement_list (106)
+    on left: 6 7, on right: 1 5 7 8 23 129
+statement (107)
+    on left: 8 9 11 12 13 14 15 17 18 19 20, on right: 7 12 13 14 15
+    39
+@2 (108)
+    on left: 10, on right: 11
+@3 (109)
+    on left: 16, on right: 17
+switch_list (110)
+    on left: 21 22, on right: 17 22
+switch_item (111)
+    on left: 23, on right: 22
+case_list (112)
+    on left: 24 25, on right: 23 25
+case_item (113)
+    on left: 26 27, on right: 24 25
+dcl_list (114)
+    on left: 28 29, on right: 11 29
+dcl_item (115)
+    on left: 31, on right: 28 29
+@4 (116)
+    on left: 30, on right: 31
+dcl_name (117)
+    on left: 32 33 34 35, on right: 31
+name (118)
+    on left: 36 37, on right: 118
+else_opt (119)
+    on left: 38 39, on right: 12
+expr_opt (120)
+    on left: 40 41, on right: 9 14 18 19 20
+expr (121)
+    on left: 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59
+    60 61 62 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82
+    83 84 85 86 87 88 89, on right: 12 15 17 41 42 43 44 45 46 47 48
+    49 50 51 52 53 54 55 56 57 58 59 60 61 62 65 66 67 68 69 76 79
+    107 110 111 125
+@5 (122)
+    on left: 63, on right: 65
+@6 (123)
+    on left: 64, on right: 65
+constant (124)
+    on left: 90 91 92 93 94, on right: 26 89
+print (125)
+    on left: 95 96 97, on right: 82
+scan (126)
+    on left: 98 99, on right: 83
+variable (127)
+    on left: 100 101 102, on right: 13 70 84 85 86 87 88
+array (128)
+    on left: 103 104 105, on right: 31
+index (129)
+    on left: 106 107, on right: 101
+args (130)
+    on left: 108 109, on right: 71 72 73 74 75 80 81 82 83
+arg_list (131)
+    on left: 110 111, on right: 109 111
+formals (132)
+    on left: 112 113 114, on right: 129
+formal_list (133)
+    on left: 115 116, on right: 114 116
+formal_item (134)
+    on left: 118, on right: 115 116
+@7 (135)
+    on left: 117, on right: 118
+members (136)
+    on left: 119 120 121, on right: 100 101
+member (137)
+    on left: 122 123, on right: 120 121
+assign (138)
+    on left: 124 125, on right: 84 126
+initialize (139)
+    on left: 126 129, on right: 31
+@8 (140)
+    on left: 127, on right: 129
+@9 (141)
+    on left: 128, on right: 129
+
+
+state 0
+
+    0 $accept: . program $end
+
+    $default  reduce using rule 6 (statement_list)
+
+    program         go to state 1
+    statement_list  go to state 2
+
+
+state 1
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 3
+
+
+state 2
+
+    1 program: statement_list . action_list
+    7 statement_list: statement_list . statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    ';'       reduce using rule 40 (expr_opt)
+    $default  reduce using rule 2 (action_list)
+
+    action_list  go to state 44
+    statement    go to state 45
+    expr_opt     go to state 46
+    expr         go to state 47
+    constant     go to state 48
+    print        go to state 49
+    scan         go to state 50
+    variable     go to state 51
+
+
+state 3
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+state 4
+
+   92 constant: INTEGER .
+
+    $default  reduce using rule 92 (constant)
+
+
+state 5
+
+   94 constant: UNSIGNED .
+
+    $default  reduce using rule 94 (constant)
+
+
+state 6
+
+   91 constant: FLOATING .
+
+    $default  reduce using rule 91 (constant)
+
+
+state 7
+
+   93 constant: STRING .
+
+    $default  reduce using rule 93 (constant)
+
+
+state 8
+
+   71 expr: ARRAY . '[' args ']'
+
+    '['  shift, and go to state 52
+
+
+state 9
+
+   18 statement: BREAK . expr_opt ';'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 40 (expr_opt)
+
+    expr_opt  go to state 53
+    expr      go to state 47
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 10
+
+   90 constant: CONSTANT .
+
+    $default  reduce using rule 90 (constant)
+
+
+state 11
+
+   19 statement: CONTINUE . expr_opt ';'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 40 (expr_opt)
+
+    expr_opt  go to state 54
+    expr      go to state 47
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 12
+
+   11 statement: DECLARE . @2 dcl_list ';'
+
+    $default  reduce using rule 10 (@2)
+
+    @2  go to state 55
+
+
+state 13
+
+  101 variable: DYNAMIC . index members
+
+    '['  shift, and go to state 56
+
+    $default  reduce using rule 106 (index)
+
+    index  go to state 57
+
+
+state 14
+
+   76 expr: EXIT . '(' expr ')'
+
+    '('  shift, and go to state 58
+
+
+state 15
+
+   13 statement: FOR . '(' variable ')' statement
+   14          | FOR . '(' expr_opt ';' expr_opt ';' expr_opt ')' statement
+
+    '('  shift, and go to state 59
+
+
+state 16
+
+   72 expr: FUNCTION . '(' args ')'
+
+    '('  shift, and go to state 60
+
+
+state 17
+
+   73 expr: GSUB . '(' args ')'
+
+    '('  shift, and go to state 61
+
+
+state 18
+
+  100 variable: ID . members
+
+    '.'  shift, and go to state 62
+
+    $default  reduce using rule 119 (members)
+
+    members  go to state 63
+    member   go to state 64
+
+
+state 19
+
+   12 statement: IF . '(' expr ')' statement else_opt
+
+    '('  shift, and go to state 65
+
+
+state 20
+
+  102 variable: NAME .
+
+    $default  reduce using rule 102 (variable)
+
+
+state 21
+
+   81 expr: PRINT . '(' args ')'
+
+    '('  shift, and go to state 66
+
+
+state 22
+
+   95 print: PRINTF .
+
+    $default  reduce using rule 95 (print)
+
+
+state 23
+
+   80 expr: PROCEDURE . '(' args ')'
+
+    '('  shift, and go to state 67
+
+
+state 24
+
+   96 print: QUERY .
+
+    $default  reduce using rule 96 (print)
+
+
+state 25
+
+   77 expr: RAND . '(' ')'
+
+    '('  shift, and go to state 68
+
+
+state 26
+
+   20 statement: RETURN . expr_opt ';'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 40 (expr_opt)
+
+    expr_opt  go to state 69
+    expr      go to state 47
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 27
+
+   98 scan: SCANF .
+
+    $default  reduce using rule 98 (scan)
+
+
+state 28
+
+   97 print: SPRINTF .
+
+    $default  reduce using rule 97 (print)
+
+
+state 29
+
+   78 expr: SRAND . '(' ')'
+   79     | SRAND . '(' expr ')'
+
+    '('  shift, and go to state 70
+
+
+state 30
+
+   99 scan: SSCANF .
+
+    $default  reduce using rule 99 (scan)
+
+
+state 31
+
+   74 expr: SUB . '(' args ')'
+
+    '('  shift, and go to state 71
+
+
+state 32
+
+   75 expr: SUBSTR . '(' args ')'
+
+    '('  shift, and go to state 72
+
+
+state 33
+
+   17 statement: SWITCH . '(' expr @3 ')' '{' switch_list '}'
+
+    '('  shift, and go to state 73
+
+
+state 34
+
+   15 statement: WHILE . '(' expr ')' statement
+
+    '('  shift, and go to state 74
+
+
+state 35
+
+   70 expr: '&' . variable
+
+    DYNAMIC  shift, and go to state 13
+    ID       shift, and go to state 18
+    NAME     shift, and go to state 20
+
+    variable  go to state 75
+
+
+state 36
+
+   69 expr: '+' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 76
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 37
+
+   68 expr: '-' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 77
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 38
+
+   66 expr: '!' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 78
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 39
+
+   67 expr: '~' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 79
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 40
+
+   87 expr: DEC . variable
+
+    DYNAMIC  shift, and go to state 13
+    ID       shift, and go to state 18
+    NAME     shift, and go to state 20
+
+    variable  go to state 80
+
+
+state 41
+
+   85 expr: INC . variable
+
+    DYNAMIC  shift, and go to state 13
+    ID       shift, and go to state 18
+    NAME     shift, and go to state 20
+
+    variable  go to state 81
+
+
+state 42
+
+   42 expr: '(' . expr ')'
+   43     | '(' . DECLARE ')' expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DECLARE    shift, and go to state 82
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 83
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 43
+
+    8 statement: '{' . statement_list '}'
+
+    $default  reduce using rule 6 (statement_list)
+
+    statement_list  go to state 84
+
+
+state 44
+
+    1 program: statement_list action_list .
+    3 action_list: action_list . action
+
+    LABEL  shift, and go to state 85
+
+    $default  reduce using rule 1 (program)
+
+    action  go to state 86
+
+
+state 45
+
+    7 statement_list: statement_list statement .
+
+    $default  reduce using rule 7 (statement_list)
+
+
+state 46
+
+    9 statement: expr_opt . ';'
+
+    ';'  shift, and go to state 87
+
+
+state 47
+
+   41 expr_opt: expr .
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 41 (expr_opt)
+
+
+state 48
+
+   89 expr: constant .
+
+    $default  reduce using rule 89 (expr)
+
+
+state 49
+
+   82 expr: print . '(' args ')'
+
+    '('  shift, and go to state 108
+
+
+state 50
+
+   83 expr: scan . '(' args ')'
+
+    '('  shift, and go to state 109
+
+
+state 51
+
+   84 expr: variable . assign
+   86     | variable . INC
+   88     | variable . DEC
+
+    '='  shift, and go to state 110
+    DEC  shift, and go to state 111
+    INC  shift, and go to state 112
+
+    $default  reduce using rule 124 (assign)
+
+    assign  go to state 113
+
+
+state 52
+
+   71 expr: ARRAY '[' . args ']'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 115
+    arg_list  go to state 116
+
+
+state 53
+
+   18 statement: BREAK expr_opt . ';'
+
+    ';'  shift, and go to state 117
+
+
+state 54
+
+   19 statement: CONTINUE expr_opt . ';'
+
+    ';'  shift, and go to state 118
+
+
+state 55
+
+   11 statement: DECLARE @2 . dcl_list ';'
+
+    DYNAMIC   shift, and go to state 119
+    FUNCTION  shift, and go to state 120
+    ID        shift, and go to state 121
+    NAME      shift, and go to state 122
+
+    dcl_list  go to state 123
+    dcl_item  go to state 124
+    dcl_name  go to state 125
+
+
+state 56
+
+  107 index: '[' . expr ']'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 126
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 57
+
+  101 variable: DYNAMIC index . members
+
+    '.'  shift, and go to state 62
+
+    $default  reduce using rule 119 (members)
+
+    members  go to state 127
+    member   go to state 64
+
+
+state 58
+
+   76 expr: EXIT '(' . expr ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 128
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 59
+
+   13 statement: FOR '(' . variable ')' statement
+   14          | FOR '(' . expr_opt ';' expr_opt ';' expr_opt ')' statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 40 (expr_opt)
+
+    expr_opt  go to state 129
+    expr      go to state 47
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 130
+
+
+state 60
+
+   72 expr: FUNCTION '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 131
+    arg_list  go to state 116
+
+
+state 61
+
+   73 expr: GSUB '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 132
+    arg_list  go to state 116
+
+
+state 62
+
+  121 members: '.' . ID member
+  122 member: '.' . ID
+  123       | '.' . NAME
+
+    ID    shift, and go to state 133
+    NAME  shift, and go to state 134
+
+
+state 63
+
+  100 variable: ID members .
+
+    $default  reduce using rule 100 (variable)
+
+
+state 64
+
+  120 members: member .
+
+    $default  reduce using rule 120 (members)
+
+
+state 65
+
+   12 statement: IF '(' . expr ')' statement else_opt
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 135
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 66
+
+   81 expr: PRINT '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 136
+    arg_list  go to state 116
+
+
+state 67
+
+   80 expr: PROCEDURE '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 137
+    arg_list  go to state 116
+
+
+state 68
+
+   77 expr: RAND '(' . ')'
+
+    ')'  shift, and go to state 138
+
+
+state 69
+
+   20 statement: RETURN expr_opt . ';'
+
+    ';'  shift, and go to state 139
+
+
+state 70
+
+   78 expr: SRAND '(' . ')'
+   79     | SRAND '(' . expr ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    ')'        shift, and go to state 140
+
+    expr      go to state 141
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 71
+
+   74 expr: SUB '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 142
+    arg_list  go to state 116
+
+
+state 72
+
+   75 expr: SUBSTR '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 143
+    arg_list  go to state 116
+
+
+state 73
+
+   17 statement: SWITCH '(' . expr @3 ')' '{' switch_list '}'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 144
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 74
+
+   15 statement: WHILE '(' . expr ')' statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 145
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 75
+
+   70 expr: '&' variable .
+
+    $default  reduce using rule 70 (expr)
+
+
+state 76
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   69     | '+' expr .
+
+    $default  reduce using rule 69 (expr)
+
+
+state 77
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   68     | '-' expr .
+
+    $default  reduce using rule 68 (expr)
+
+
+state 78
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   66     | '!' expr .
+
+    $default  reduce using rule 66 (expr)
+
+
+state 79
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   67     | '~' expr .
+
+    $default  reduce using rule 67 (expr)
+
+
+state 80
+
+   87 expr: DEC variable .
+
+    $default  reduce using rule 87 (expr)
+
+
+state 81
+
+   85 expr: INC variable .
+
+    $default  reduce using rule 85 (expr)
+
+
+state 82
+
+   43 expr: '(' DECLARE . ')' expr
+
+    ')'  shift, and go to state 146
+
+
+state 83
+
+   42 expr: '(' expr . ')'
+   44     | expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+    ')'  shift, and go to state 147
+
+
+state 84
+
+    7 statement_list: statement_list . statement
+    8 statement: '{' statement_list . '}'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+    '}'        shift, and go to state 148
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 45
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 85
+
+    5 action: LABEL . ':' @1 statement_list
+
+    ':'  shift, and go to state 149
+
+
+state 86
+
+    3 action_list: action_list action .
+
+    $default  reduce using rule 3 (action_list)
+
+
+state 87
+
+    9 statement: expr_opt ';' .
+
+    $default  reduce using rule 9 (statement)
+
+
+state 88
+
+   62 expr: expr ',' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 150
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 89
+
+   65 expr: expr '?' . @5 expr ':' @6 expr
+
+    $default  reduce using rule 63 (@5)
+
+    @5  go to state 151
+
+
+state 90
+
+   61 expr: expr OR . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 152
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 91
+
+   60 expr: expr AND . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 153
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 92
+
+   57 expr: expr '|' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 154
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 93
+
+   58 expr: expr '^' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 155
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 94
+
+   56 expr: expr '&' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 156
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 95
+
+   55 expr: expr NE . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 157
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 96
+
+   54 expr: expr EQ . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 158
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 97
+
+   44 expr: expr '<' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 159
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 98
+
+   51 expr: expr '>' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 160
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 99
+
+   53 expr: expr GE . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 161
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 100
+
+   52 expr: expr LE . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 162
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 101
+
+   50 expr: expr RS . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 163
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 102
+
+   49 expr: expr LS . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 164
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 103
+
+   59 expr: expr '+' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 165
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 104
+
+   45 expr: expr '-' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 166
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 105
+
+   46 expr: expr '*' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 167
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 106
+
+   47 expr: expr '/' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 168
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 107
+
+   48 expr: expr '%' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 169
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 108
+
+   82 expr: print '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 170
+    arg_list  go to state 116
+
+
+state 109
+
+   83 expr: scan '(' . args ')'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 108 (args)
+
+    expr      go to state 114
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+    args      go to state 171
+    arg_list  go to state 116
+
+
+state 110
+
+  125 assign: '=' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 172
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 111
+
+   88 expr: variable DEC .
+
+    $default  reduce using rule 88 (expr)
+
+
+state 112
+
+   86 expr: variable INC .
+
+    $default  reduce using rule 86 (expr)
+
+
+state 113
+
+   84 expr: variable assign .
+
+    $default  reduce using rule 84 (expr)
+
+
+state 114
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+  110 arg_list: expr .
+
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 110 (arg_list)
+
+
+state 115
+
+   71 expr: ARRAY '[' args . ']'
+
+    ']'  shift, and go to state 173
+
+
+state 116
+
+  109 args: arg_list .
+  111 arg_list: arg_list . ',' expr
+
+    ','  shift, and go to state 174
+
+    $default  reduce using rule 109 (args)
+
+
+state 117
+
+   18 statement: BREAK expr_opt ';' .
+
+    $default  reduce using rule 18 (statement)
+
+
+state 118
+
+   19 statement: CONTINUE expr_opt ';' .
+
+    $default  reduce using rule 19 (statement)
+
+
+state 119
+
+   33 dcl_name: DYNAMIC .
+
+    $default  reduce using rule 33 (dcl_name)
+
+
+state 120
+
+   35 dcl_name: FUNCTION .
+
+    $default  reduce using rule 35 (dcl_name)
+
+
+state 121
+
+   34 dcl_name: ID .
+
+    $default  reduce using rule 34 (dcl_name)
+
+
+state 122
+
+   32 dcl_name: NAME .
+
+    $default  reduce using rule 32 (dcl_name)
+
+
+state 123
+
+   11 statement: DECLARE @2 dcl_list . ';'
+   29 dcl_list: dcl_list . ',' dcl_item
+
+    ','  shift, and go to state 175
+    ';'  shift, and go to state 176
+
+
+state 124
+
+   28 dcl_list: dcl_item .
+
+    $default  reduce using rule 28 (dcl_list)
+
+
+state 125
+
+   31 dcl_item: dcl_name . @4 array initialize
+
+    $default  reduce using rule 30 (@4)
+
+    @4  go to state 177
+
+
+state 126
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+  107 index: '[' expr . ']'
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+    ']'  shift, and go to state 178
+
+
+state 127
+
+  101 variable: DYNAMIC index members .
+
+    $default  reduce using rule 101 (variable)
+
+
+state 128
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   76     | EXIT '(' expr . ')'
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+    ')'  shift, and go to state 179
+
+
+state 129
+
+   14 statement: FOR '(' expr_opt . ';' expr_opt ';' expr_opt ')' statement
+
+    ';'  shift, and go to state 180
+
+
+state 130
+
+   13 statement: FOR '(' variable . ')' statement
+   84 expr: variable . assign
+   86     | variable . INC
+   88     | variable . DEC
+
+    '='  shift, and go to state 110
+    DEC  shift, and go to state 111
+    INC  shift, and go to state 112
+    ')'  shift, and go to state 181
+
+    $default  reduce using rule 124 (assign)
+
+    assign  go to state 113
+
+
+state 131
+
+   72 expr: FUNCTION '(' args . ')'
+
+    ')'  shift, and go to state 182
+
+
+state 132
+
+   73 expr: GSUB '(' args . ')'
+
+    ')'  shift, and go to state 183
+
+
+state 133
+
+  121 members: '.' ID . member
+  122 member: '.' ID .
+
+    '.'  shift, and go to state 184
+
+    $default  reduce using rule 122 (member)
+
+    member  go to state 185
+
+
+state 134
+
+  123 member: '.' NAME .
+
+    $default  reduce using rule 123 (member)
+
+
+state 135
+
+   12 statement: IF '(' expr . ')' statement else_opt
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+    ')'  shift, and go to state 186
+
+
+state 136
+
+   81 expr: PRINT '(' args . ')'
+
+    ')'  shift, and go to state 187
+
+
+state 137
+
+   80 expr: PROCEDURE '(' args . ')'
+
+    ')'  shift, and go to state 188
+
+
+state 138
+
+   77 expr: RAND '(' ')' .
+
+    $default  reduce using rule 77 (expr)
+
+
+state 139
+
+   20 statement: RETURN expr_opt ';' .
+
+    $default  reduce using rule 20 (statement)
+
+
+state 140
+
+   78 expr: SRAND '(' ')' .
+
+    $default  reduce using rule 78 (expr)
+
+
+state 141
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   79     | SRAND '(' expr . ')'
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+    ')'  shift, and go to state 189
+
+
+state 142
+
+   74 expr: SUB '(' args . ')'
+
+    ')'  shift, and go to state 190
+
+
+state 143
+
+   75 expr: SUBSTR '(' args . ')'
+
+    ')'  shift, and go to state 191
+
+
+state 144
+
+   17 statement: SWITCH '(' expr . @3 ')' '{' switch_list '}'
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 16 (@3)
+
+    @3  go to state 192
+
+
+state 145
+
+   15 statement: WHILE '(' expr . ')' statement
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+    ')'  shift, and go to state 193
+
+
+state 146
+
+   43 expr: '(' DECLARE ')' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 194
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 147
+
+   42 expr: '(' expr ')' .
+
+    $default  reduce using rule 42 (expr)
+
+
+state 148
+
+    8 statement: '{' statement_list '}' .
+
+    $default  reduce using rule 8 (statement)
+
+
+state 149
+
+    5 action: LABEL ':' . @1 statement_list
+
+    $default  reduce using rule 4 (@1)
+
+    @1  go to state 195
+
+
+state 150
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   62     | expr ',' expr .
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 62 (expr)
+
+
+state 151
+
+   65 expr: expr '?' @5 . expr ':' @6 expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 196
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 152
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   61     | expr OR expr .
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 61 (expr)
+
+
+state 153
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   60     | expr AND expr .
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 60 (expr)
+
+
+state 154
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   57     | expr '|' expr .
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 57 (expr)
+
+
+state 155
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   58     | expr '^' expr .
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 58 (expr)
+
+
+state 156
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   56     | expr '&' expr .
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 56 (expr)
+
+
+state 157
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   55     | expr NE expr .
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    NE  error (nonassociative)
+    EQ  error (nonassociative)
+
+    $default  reduce using rule 55 (expr)
+
+
+state 158
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   54     | expr EQ expr .
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    NE  error (nonassociative)
+    EQ  error (nonassociative)
+
+    $default  reduce using rule 54 (expr)
+
+
+state 159
+
+   44 expr: expr . '<' expr
+   44     | expr '<' expr .
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    '<'  error (nonassociative)
+    '>'  error (nonassociative)
+    GE   error (nonassociative)
+    LE   error (nonassociative)
+
+    $default  reduce using rule 44 (expr)
+
+
+state 160
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   51     | expr '>' expr .
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    '<'  error (nonassociative)
+    '>'  error (nonassociative)
+    GE   error (nonassociative)
+    LE   error (nonassociative)
+
+    $default  reduce using rule 51 (expr)
+
+
+state 161
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   53     | expr GE expr .
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    '<'  error (nonassociative)
+    '>'  error (nonassociative)
+    GE   error (nonassociative)
+    LE   error (nonassociative)
+
+    $default  reduce using rule 53 (expr)
+
+
+state 162
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   52     | expr LE expr .
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    '<'  error (nonassociative)
+    '>'  error (nonassociative)
+    GE   error (nonassociative)
+    LE   error (nonassociative)
+
+    $default  reduce using rule 52 (expr)
+
+
+state 163
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   50     | expr RS expr .
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 50 (expr)
+
+
+state 164
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   49     | expr LS expr .
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 49 (expr)
+
+
+state 165
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   59     | expr '+' expr .
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 59 (expr)
+
+
+state 166
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   45     | expr '-' expr .
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 45 (expr)
+
+
+state 167
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   46     | expr '*' expr .
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    $default  reduce using rule 46 (expr)
+
+
+state 168
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   47     | expr '/' expr .
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    $default  reduce using rule 47 (expr)
+
+
+state 169
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   48     | expr '%' expr .
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    $default  reduce using rule 48 (expr)
+
+
+state 170
+
+   82 expr: print '(' args . ')'
+
+    ')'  shift, and go to state 197
+
+
+state 171
+
+   83 expr: scan '(' args . ')'
+
+    ')'  shift, and go to state 198
+
+
+state 172
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+  125 assign: '=' expr .
+
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 125 (assign)
+
+
+state 173
+
+   71 expr: ARRAY '[' args ']' .
+
+    $default  reduce using rule 71 (expr)
+
+
+state 174
+
+  111 arg_list: arg_list ',' . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 199
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 175
+
+   29 dcl_list: dcl_list ',' . dcl_item
+
+    DYNAMIC   shift, and go to state 119
+    FUNCTION  shift, and go to state 120
+    ID        shift, and go to state 121
+    NAME      shift, and go to state 122
+
+    dcl_item  go to state 200
+    dcl_name  go to state 125
+
+
+state 176
+
+   11 statement: DECLARE @2 dcl_list ';' .
+
+    $default  reduce using rule 11 (statement)
+
+
+state 177
+
+   31 dcl_item: dcl_name @4 . array initialize
+
+    '['  shift, and go to state 201
+
+    $default  reduce using rule 103 (array)
+
+    array  go to state 202
+
+
+state 178
+
+  107 index: '[' expr ']' .
+
+    $default  reduce using rule 107 (index)
+
+
+state 179
+
+   76 expr: EXIT '(' expr ')' .
+
+    $default  reduce using rule 76 (expr)
+
+
+state 180
+
+   14 statement: FOR '(' expr_opt ';' . expr_opt ';' expr_opt ')' statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 40 (expr_opt)
+
+    expr_opt  go to state 203
+    expr      go to state 47
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 181
+
+   13 statement: FOR '(' variable ')' . statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 204
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 182
+
+   72 expr: FUNCTION '(' args ')' .
+
+    $default  reduce using rule 72 (expr)
+
+
+state 183
+
+   73 expr: GSUB '(' args ')' .
+
+    $default  reduce using rule 73 (expr)
+
+
+state 184
+
+  122 member: '.' . ID
+  123       | '.' . NAME
+
+    ID    shift, and go to state 205
+    NAME  shift, and go to state 134
+
+
+state 185
+
+  121 members: '.' ID member .
+
+    $default  reduce using rule 121 (members)
+
+
+state 186
+
+   12 statement: IF '(' expr ')' . statement else_opt
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 206
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 187
+
+   81 expr: PRINT '(' args ')' .
+
+    $default  reduce using rule 81 (expr)
+
+
+state 188
+
+   80 expr: PROCEDURE '(' args ')' .
+
+    $default  reduce using rule 80 (expr)
+
+
+state 189
+
+   79 expr: SRAND '(' expr ')' .
+
+    $default  reduce using rule 79 (expr)
+
+
+state 190
+
+   74 expr: SUB '(' args ')' .
+
+    $default  reduce using rule 74 (expr)
+
+
+state 191
+
+   75 expr: SUBSTR '(' args ')' .
+
+    $default  reduce using rule 75 (expr)
+
+
+state 192
+
+   17 statement: SWITCH '(' expr @3 . ')' '{' switch_list '}'
+
+    ')'  shift, and go to state 207
+
+
+state 193
+
+   15 statement: WHILE '(' expr ')' . statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 208
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 194
+
+   43 expr: '(' DECLARE ')' expr .
+   44     | expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+
+    $default  reduce using rule 43 (expr)
+
+
+state 195
+
+    5 action: LABEL ':' @1 . statement_list
+
+    $default  reduce using rule 6 (statement_list)
+
+    statement_list  go to state 209
+
+
+state 196
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   65     | expr '?' @5 expr . ':' @6 expr
+
+    ','  shift, and go to state 88
+    '?'  shift, and go to state 89
+    ':'  shift, and go to state 210
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+
+state 197
+
+   82 expr: print '(' args ')' .
+
+    $default  reduce using rule 82 (expr)
+
+
+state 198
+
+   83 expr: scan '(' args ')' .
+
+    $default  reduce using rule 83 (expr)
+
+
+state 199
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+  111 arg_list: arg_list ',' expr .
+
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 111 (arg_list)
+
+
+state 200
+
+   29 dcl_list: dcl_list ',' dcl_item .
+
+    $default  reduce using rule 29 (dcl_list)
+
+
+state 201
+
+  104 array: '[' . ']'
+  105      | '[' . DECLARE ']'
+
+    DECLARE  shift, and go to state 211
+    ']'      shift, and go to state 212
+
+
+state 202
+
+   31 dcl_item: dcl_name @4 array . initialize
+
+    '='  shift, and go to state 110
+    '('  shift, and go to state 213
+
+    $default  reduce using rule 124 (assign)
+
+    assign      go to state 214
+    initialize  go to state 215
+
+
+state 203
+
+   14 statement: FOR '(' expr_opt ';' expr_opt . ';' expr_opt ')' statement
+
+    ';'  shift, and go to state 216
+
+
+state 204
+
+   13 statement: FOR '(' variable ')' statement .
+
+    $default  reduce using rule 13 (statement)
+
+
+state 205
+
+  122 member: '.' ID .
+
+    $default  reduce using rule 122 (member)
+
+
+state 206
+
+   12 statement: IF '(' expr ')' statement . else_opt
+
+    ELSE  shift, and go to state 217
+
+    ELSE      [reduce using rule 38 (else_opt)]
+    $default  reduce using rule 38 (else_opt)
+
+    else_opt  go to state 218
+
+
+state 207
+
+   17 statement: SWITCH '(' expr @3 ')' . '{' switch_list '}'
+
+    '{'  shift, and go to state 219
+
+
+state 208
+
+   15 statement: WHILE '(' expr ')' statement .
+
+    $default  reduce using rule 15 (statement)
+
+
+state 209
+
+    5 action: LABEL ':' @1 statement_list .
+    7 statement_list: statement_list . statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    ';'       reduce using rule 40 (expr_opt)
+    $default  reduce using rule 5 (action)
+
+    statement  go to state 45
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 210
+
+   65 expr: expr '?' @5 expr ':' . @6 expr
+
+    $default  reduce using rule 64 (@6)
+
+    @6  go to state 220
+
+
+state 211
+
+  105 array: '[' DECLARE . ']'
+
+    ']'  shift, and go to state 221
+
+
+state 212
+
+  104 array: '[' ']' .
+
+    $default  reduce using rule 104 (array)
+
+
+state 213
+
+  129 initialize: '(' . @8 formals @9 ')' '{' statement_list '}'
+
+    $default  reduce using rule 127 (@8)
+
+    @8  go to state 222
+
+
+state 214
+
+  126 initialize: assign .
+
+    $default  reduce using rule 126 (initialize)
+
+
+state 215
+
+   31 dcl_item: dcl_name @4 array initialize .
+
+    $default  reduce using rule 31 (dcl_item)
+
+
+state 216
+
+   14 statement: FOR '(' expr_opt ';' expr_opt ';' . expr_opt ')' statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    $default  reduce using rule 40 (expr_opt)
+
+    expr_opt  go to state 223
+    expr      go to state 47
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 217
+
+   39 else_opt: ELSE . statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 224
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 218
+
+   12 statement: IF '(' expr ')' statement else_opt .
+
+    $default  reduce using rule 12 (statement)
+
+
+state 219
+
+   17 statement: SWITCH '(' expr @3 ')' '{' . switch_list '}'
+
+    $default  reduce using rule 21 (switch_list)
+
+    switch_list  go to state 225
+
+
+state 220
+
+   65 expr: expr '?' @5 expr ':' @6 . expr
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    CONSTANT   shift, and go to state 10
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+
+    expr      go to state 226
+    constant  go to state 48
+    print     go to state 49
+    scan      go to state 50
+    variable  go to state 51
+
+
+state 221
+
+  105 array: '[' DECLARE ']' .
+
+    $default  reduce using rule 105 (array)
+
+
+state 222
+
+  129 initialize: '(' @8 . formals @9 ')' '{' statement_list '}'
+
+    DECLARE  shift, and go to state 227
+
+    $default  reduce using rule 112 (formals)
+
+    formals      go to state 228
+    formal_list  go to state 229
+    formal_item  go to state 230
+
+
+state 223
+
+   14 statement: FOR '(' expr_opt ';' expr_opt ';' expr_opt . ')' statement
+
+    ')'  shift, and go to state 231
+
+
+state 224
+
+   39 else_opt: ELSE statement .
+
+    $default  reduce using rule 39 (else_opt)
+
+
+state 225
+
+   17 statement: SWITCH '(' expr @3 ')' '{' switch_list . '}'
+   22 switch_list: switch_list . switch_item
+
+    CASE     shift, and go to state 232
+    DEFAULT  shift, and go to state 233
+    '}'      shift, and go to state 234
+
+    switch_item  go to state 235
+    case_list    go to state 236
+    case_item    go to state 237
+
+
+state 226
+
+   44 expr: expr . '<' expr
+   45     | expr . '-' expr
+   46     | expr . '*' expr
+   47     | expr . '/' expr
+   48     | expr . '%' expr
+   49     | expr . LS expr
+   50     | expr . RS expr
+   51     | expr . '>' expr
+   52     | expr . LE expr
+   53     | expr . GE expr
+   54     | expr . EQ expr
+   55     | expr . NE expr
+   56     | expr . '&' expr
+   57     | expr . '|' expr
+   58     | expr . '^' expr
+   59     | expr . '+' expr
+   60     | expr . AND expr
+   61     | expr . OR expr
+   62     | expr . ',' expr
+   65     | expr . '?' @5 expr ':' @6 expr
+   65     | expr '?' @5 expr ':' @6 expr .
+
+    '?'  shift, and go to state 89
+    OR   shift, and go to state 90
+    AND  shift, and go to state 91
+    '|'  shift, and go to state 92
+    '^'  shift, and go to state 93
+    '&'  shift, and go to state 94
+    NE   shift, and go to state 95
+    EQ   shift, and go to state 96
+    '<'  shift, and go to state 97
+    '>'  shift, and go to state 98
+    GE   shift, and go to state 99
+    LE   shift, and go to state 100
+    RS   shift, and go to state 101
+    LS   shift, and go to state 102
+    '+'  shift, and go to state 103
+    '-'  shift, and go to state 104
+    '*'  shift, and go to state 105
+    '/'  shift, and go to state 106
+    '%'  shift, and go to state 107
+
+    $default  reduce using rule 65 (expr)
+
+
+state 227
+
+  113 formals: DECLARE .
+  118 formal_item: DECLARE . @7 name
+
+    ')'       reduce using rule 113 (formals)
+    $default  reduce using rule 117 (@7)
+
+    @7  go to state 238
+
+
+state 228
+
+  129 initialize: '(' @8 formals . @9 ')' '{' statement_list '}'
+
+    $default  reduce using rule 128 (@9)
+
+    @9  go to state 239
+
+
+state 229
+
+  114 formals: formal_list .
+  116 formal_list: formal_list . ',' formal_item
+
+    ','  shift, and go to state 240
+
+    $default  reduce using rule 114 (formals)
+
+
+state 230
+
+  115 formal_list: formal_item .
+
+    $default  reduce using rule 115 (formal_list)
+
+
+state 231
+
+   14 statement: FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' . statement
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 241
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 232
+
+   26 case_item: CASE . constant ':'
+
+    INTEGER   shift, and go to state 4
+    UNSIGNED  shift, and go to state 5
+    FLOATING  shift, and go to state 6
+    STRING    shift, and go to state 7
+    CONSTANT  shift, and go to state 10
+
+    constant  go to state 242
+
+
+state 233
+
+   27 case_item: DEFAULT . ':'
+
+    ':'  shift, and go to state 243
+
+
+state 234
+
+   17 statement: SWITCH '(' expr @3 ')' '{' switch_list '}' .
+
+    $default  reduce using rule 17 (statement)
+
+
+state 235
+
+   22 switch_list: switch_list switch_item .
+
+    $default  reduce using rule 22 (switch_list)
+
+
+state 236
+
+   23 switch_item: case_list . statement_list
+   25 case_list: case_list . case_item
+
+    CASE     shift, and go to state 232
+    DEFAULT  shift, and go to state 233
+
+    CASE      [reduce using rule 6 (statement_list)]
+    DEFAULT   [reduce using rule 6 (statement_list)]
+    $default  reduce using rule 6 (statement_list)
+
+    statement_list  go to state 244
+    case_item       go to state 245
+
+
+state 237
+
+   24 case_list: case_item .
+
+    $default  reduce using rule 24 (case_list)
+
+
+state 238
+
+  118 formal_item: DECLARE @7 . name
+
+    DYNAMIC  shift, and go to state 246
+    NAME     shift, and go to state 247
+
+    name  go to state 248
+
+
+state 239
+
+  129 initialize: '(' @8 formals @9 . ')' '{' statement_list '}'
+
+    ')'  shift, and go to state 249
+
+
+state 240
+
+  116 formal_list: formal_list ',' . formal_item
+
+    DECLARE  shift, and go to state 250
+
+    formal_item  go to state 251
+
+
+state 241
+
+   14 statement: FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' statement .
+
+    $default  reduce using rule 14 (statement)
+
+
+state 242
+
+   26 case_item: CASE constant . ':'
+
+    ':'  shift, and go to state 252
+
+
+state 243
+
+   27 case_item: DEFAULT ':' .
+
+    $default  reduce using rule 27 (case_item)
+
+
+state 244
+
+    7 statement_list: statement_list . statement
+   23 switch_item: case_list statement_list .
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+
+    ';'       reduce using rule 40 (expr_opt)
+    $default  reduce using rule 23 (switch_item)
+
+    statement  go to state 45
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 245
+
+   25 case_list: case_list case_item .
+
+    $default  reduce using rule 25 (case_list)
+
+
+state 246
+
+   37 name: DYNAMIC .
+
+    $default  reduce using rule 37 (name)
+
+
+state 247
+
+   36 name: NAME .
+
+    $default  reduce using rule 36 (name)
+
+
+state 248
+
+  118 formal_item: DECLARE @7 name .
+
+    $default  reduce using rule 118 (formal_item)
+
+
+state 249
+
+  129 initialize: '(' @8 formals @9 ')' . '{' statement_list '}'
+
+    '{'  shift, and go to state 253
+
+
+state 250
+
+  118 formal_item: DECLARE . @7 name
+
+    $default  reduce using rule 117 (@7)
+
+    @7  go to state 238
+
+
+state 251
+
+  116 formal_list: formal_list ',' formal_item .
+
+    $default  reduce using rule 116 (formal_list)
+
+
+state 252
+
+   26 case_item: CASE constant ':' .
+
+    $default  reduce using rule 26 (case_item)
+
+
+state 253
+
+  129 initialize: '(' @8 formals @9 ')' '{' . statement_list '}'
+
+    $default  reduce using rule 6 (statement_list)
+
+    statement_list  go to state 254
+
+
+state 254
+
+    7 statement_list: statement_list . statement
+  129 initialize: '(' @8 formals @9 ')' '{' statement_list . '}'
+
+    INTEGER    shift, and go to state 4
+    UNSIGNED   shift, and go to state 5
+    FLOATING   shift, and go to state 6
+    STRING     shift, and go to state 7
+    ARRAY      shift, and go to state 8
+    BREAK      shift, and go to state 9
+    CONSTANT   shift, and go to state 10
+    CONTINUE   shift, and go to state 11
+    DECLARE    shift, and go to state 12
+    DYNAMIC    shift, and go to state 13
+    EXIT       shift, and go to state 14
+    FOR        shift, and go to state 15
+    FUNCTION   shift, and go to state 16
+    GSUB       shift, and go to state 17
+    ID         shift, and go to state 18
+    IF         shift, and go to state 19
+    NAME       shift, and go to state 20
+    PRINT      shift, and go to state 21
+    PRINTF     shift, and go to state 22
+    PROCEDURE  shift, and go to state 23
+    QUERY      shift, and go to state 24
+    RAND       shift, and go to state 25
+    RETURN     shift, and go to state 26
+    SCANF      shift, and go to state 27
+    SPRINTF    shift, and go to state 28
+    SRAND      shift, and go to state 29
+    SSCANF     shift, and go to state 30
+    SUB        shift, and go to state 31
+    SUBSTR     shift, and go to state 32
+    SWITCH     shift, and go to state 33
+    WHILE      shift, and go to state 34
+    '&'        shift, and go to state 35
+    '+'        shift, and go to state 36
+    '-'        shift, and go to state 37
+    '!'        shift, and go to state 38
+    '~'        shift, and go to state 39
+    DEC        shift, and go to state 40
+    INC        shift, and go to state 41
+    '('        shift, and go to state 42
+    '{'        shift, and go to state 43
+    '}'        shift, and go to state 255
+
+    $default  reduce using rule 40 (expr_opt)
+
+    statement  go to state 45
+    expr_opt   go to state 46
+    expr       go to state 47
+    constant   go to state 48
+    print      go to state 49
+    scan       go to state 50
+    variable   go to state 51
+
+
+state 255
+
+  129 initialize: '(' @8 formals @9 ')' '{' statement_list '}' .
+
+    $default  reduce using rule 129 (initialize)

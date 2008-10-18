@@ -1,0 +1,146 @@
+# Project: eiclib
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../output/assert.o ../../../output/callback.o ../../../output/cdecl.o ../../../output/ctype.o ../../../output/dirent.o ../../../output/eicfftoa.o ../../../output/eicmod.o ../../../output/emitter.o ../../../output/errno.o ../../../output/error.o ../../../output/fcntl.o ../../../output/func.o ../../../output/interpre.o ../../../output/itoa.o ../../../output/lexer.o ../../../output/math.o ../../../output/optomizer.o ../../../output/parser.o ../../../output/preexpr.o ../../../output/preproc.o ../../../output/readline.o ../../../output/reset.o ../../../output/signal.o ../../../output/stab.o ../../../output/starteic.o ../../../output/stat.o ../../../output/stdarg.o ../../../output/stdClib.o ../../../output/stdio.o ../../../output/stdlib.o ../../../output/string.o ../../../output/strrev.o ../../../output/strround.o ../../../output/symbol.o ../../../output/time.o ../../../output/typemod.o ../../../output/typesets.o ../../../output/unistd.o ../../../output/ymem.o $(RES)
+INCS =  -I"../src" 
+BIN  = ../../../output/eic/eiclib.a
+CFLAGS = $(INCS) $(TARGET) -D_LIB -DNO_LONG_LONG -DNO_DIRENT -DNO_FCNTL -DNO_STAT -DNO_UNISTD -DNO_TERMIOS -DNO_PIPE -DNO_POSIX -DNO_LONGLONG -DNO_HISTORY $(BUILD_TYPE) $(GAMEEDITOR_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../output/eic/eiclib.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../../output/assert.o: ../module/stdClib/src/assert.c
+	$(CC) -c ../module/stdClib/src/assert.c -o ../../../output/assert.o $(CFLAGS)
+
+../../../output/callback.o: ../src/callback.c
+	$(CC) -c ../src/callback.c -o ../../../output/callback.o $(CFLAGS)
+
+../../../output/cdecl.o: ../src/cdecl.c
+	$(CC) -c ../src/cdecl.c -o ../../../output/cdecl.o $(CFLAGS)
+
+../../../output/ctype.o: ../module/stdClib/src/ctype.c
+	$(CC) -c ../module/stdClib/src/ctype.c -o ../../../output/ctype.o $(CFLAGS)
+
+../../../output/dirent.o: ../module/stdClib/src/dirent.c
+	$(CC) -c ../module/stdClib/src/dirent.c -o ../../../output/dirent.o $(CFLAGS)
+
+../../../output/eicfftoa.o: ../module/stdClib/src/eicfftoa.c
+	$(CC) -c ../module/stdClib/src/eicfftoa.c -o ../../../output/eicfftoa.o $(CFLAGS)
+
+../../../output/eicmod.o: ../src/eicmod.c
+	$(CC) -c ../src/eicmod.c -o ../../../output/eicmod.o $(CFLAGS)
+
+../../../output/emitter.o: ../src/emitter.c
+	$(CC) -c ../src/emitter.c -o ../../../output/emitter.o $(CFLAGS)
+
+../../../output/errno.o: ../module/stdClib/src/errno.c
+	$(CC) -c ../module/stdClib/src/errno.c -o ../../../output/errno.o $(CFLAGS)
+
+../../../output/error.o: ../src/error.c
+	$(CC) -c ../src/error.c -o ../../../output/error.o $(CFLAGS)
+
+../../../output/fcntl.o: ../module/stdClib/src/fcntl.c
+	$(CC) -c ../module/stdClib/src/fcntl.c -o ../../../output/fcntl.o $(CFLAGS)
+
+../../../output/func.o: ../src/func.c
+	$(CC) -c ../src/func.c -o ../../../output/func.o $(CFLAGS)
+
+../../../output/interpre.o: ../src/interpre.c
+	$(CC) -c ../src/interpre.c -o ../../../output/interpre.o $(CFLAGS)
+
+../../../output/itoa.o: ../module/stdClib/src/itoa.c
+	$(CC) -c ../module/stdClib/src/itoa.c -o ../../../output/itoa.o $(CFLAGS)
+
+../../../output/lexer.o: ../src/lexer.c
+	$(CC) -c ../src/lexer.c -o ../../../output/lexer.o $(CFLAGS)
+
+../../../output/math.o: ../module/stdClib/src/math.c
+	$(CC) -c ../module/stdClib/src/math.c -o ../../../output/math.o $(CFLAGS)
+
+../../../output/optomizer.o: ../src/optomizer.c
+	$(CC) -c ../src/optomizer.c -o ../../../output/optomizer.o $(CFLAGS)
+
+../../../output/parser.o: ../src/parser.c
+	$(CC) -c ../src/parser.c -o ../../../output/parser.o $(CFLAGS)
+
+../../../output/preexpr.o: ../src/preexpr.c
+	$(CC) -c ../src/preexpr.c -o ../../../output/preexpr.o $(CFLAGS)
+
+../../../output/preproc.o: ../src/preproc.c
+	$(CC) -c ../src/preproc.c -o ../../../output/preproc.o $(CFLAGS)
+
+../../../output/readline.o: ../src/readline.c
+	$(CC) -c ../src/readline.c -o ../../../output/readline.o $(CFLAGS)
+
+../../../output/reset.o: ../src/reset.c
+	$(CC) -c ../src/reset.c -o ../../../output/reset.o $(CFLAGS)
+
+../../../output/signal.o: ../module/stdClib/src/signal.c
+	$(CC) -c ../module/stdClib/src/signal.c -o ../../../output/signal.o $(CFLAGS)
+
+../../../output/stab.o: ../src/stab.c
+	$(CC) -c ../src/stab.c -o ../../../output/stab.o $(CFLAGS)
+
+../../../output/starteic.o: ../src/starteic.c
+	$(CC) -c ../src/starteic.c -o ../../../output/starteic.o $(CFLAGS)
+
+../../../output/stat.o: ../module/stdClib/src/stat.c
+	$(CC) -c ../module/stdClib/src/stat.c -o ../../../output/stat.o $(CFLAGS)
+
+../../../output/stdarg.o: ../module/stdClib/src/stdarg.c
+	$(CC) -c ../module/stdClib/src/stdarg.c -o ../../../output/stdarg.o $(CFLAGS)
+
+../../../output/stdClib.o: ../module/stdClib/src/stdClib.c
+	$(CC) -c ../module/stdClib/src/stdClib.c -o ../../../output/stdClib.o $(CFLAGS)
+
+../../../output/stdio.o: ../module/stdClib/src/stdio.c
+	$(CC) -c ../module/stdClib/src/stdio.c -o ../../../output/stdio.o $(CFLAGS)
+
+../../../output/stdlib.o: ../module/stdClib/src/stdlib.c
+	$(CC) -c ../module/stdClib/src/stdlib.c -o ../../../output/stdlib.o $(CFLAGS)
+
+../../../output/string.o: ../module/stdClib/src/string.c
+	$(CC) -c ../module/stdClib/src/string.c -o ../../../output/string.o $(CFLAGS)
+
+../../../output/strrev.o: ../module/stdClib/src/strrev.c
+	$(CC) -c ../module/stdClib/src/strrev.c -o ../../../output/strrev.o $(CFLAGS)
+
+../../../output/strround.o: ../module/stdClib/src/strround.c
+	$(CC) -c ../module/stdClib/src/strround.c -o ../../../output/strround.o $(CFLAGS)
+
+../../../output/symbol.o: ../src/symbol.c
+	$(CC) -c ../src/symbol.c -o ../../../output/symbol.o $(CFLAGS)
+
+../../../output/time.o: ../module/stdClib/src/time.c
+	$(CC) -c ../module/stdClib/src/time.c -o ../../../output/time.o $(CFLAGS)
+
+../../../output/typemod.o: ../src/typemod.c
+	$(CC) -c ../src/typemod.c -o ../../../output/typemod.o $(CFLAGS)
+
+../../../output/typesets.o: ../src/typesets.c
+	$(CC) -c ../src/typesets.c -o ../../../output/typesets.o $(CFLAGS)
+
+../../../output/unistd.o: ../module/stdClib/src/unistd.c
+	$(CC) -c ../module/stdClib/src/unistd.c -o ../../../output/unistd.o $(CFLAGS)
+
+../../../output/ymem.o: ../src/ymem.c
+	$(CC) -c ../src/ymem.c -o ../../../output/ymem.o $(CFLAGS)

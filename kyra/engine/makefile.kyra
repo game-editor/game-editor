@@ -1,0 +1,193 @@
+# Project: engine
+# Makefile created by Dev-C++ 4.9.5.0
+
+CC   = gcc
+RES  = 
+OBJ  = ../../output/engine/action.o ../../output/engine/box.o ../../output/engine/boxresource.o ../../output/engine/canvas.o ../../output/engine/canvasresource.o ../../output/engine/color.o ../../output/engine/dataresource.o ../../output/engine/dirtyrectangle.o ../../output/engine/encoder.o ../../output/engine/engine.o ../../output/engine/FastSprite.o ../../output/engine/fontresource.o ../../output/engine/image.o ../../output/engine/imagetree.o ../../output/engine/imnode.o ../../output/engine/krmath.o ../../output/engine/kyraresource.o ../../output/engine/namefield.o ../../output/engine/ogltexture.o ../../output/engine/painter.o ../../output/engine/parser.o ../../output/engine/pixelblock.o ../../output/engine/rle.o ../../output/engine/sdlutil.o ../../output/engine/splash.o ../../output/engine/sprite.o ../../output/engine/spriteresource.o ../../output/engine/textbox.o ../../output/engine/scrap.o ../../output/engine/tile.o ../../output/engine/tileresource.o ../../output/engine/vault.o ../../output/engine/button.o ../../output/engine/console.o ../../output/engine/eventmanager.o ../../output/engine/listbox.o ../../output/engine/textwidget.o ../../output/engine/widget.o ../../output/engine/UndoFrame.o ../../output/engine/glbitstream.o ../../output/engine/gldebug.o ../../output/engine/glgraph.o ../../output/engine/glisomath.o ../../output/engine/glmap.o ../../output/engine/glmemorypool.o ../../output/engine/glperformance.o ../../output/engine/glprime.o ../../output/engine/glrandom.o ../../output/engine/glstring.o ../../output/engine/tinyxml.o ../../output/engine/tinyxmlerror.o ../../output/engine/tinyxmlparser.o ../../output/engine/KrImageListBox.o ../../output/engine/progress.o $(RES)
+INCS =  -I"../../SDL/SDL/include" -I"../../SDL/SDL_image" 
+BIN  = ../../output/engine/engine.a
+CFLAGS = $(INCS) $(TARGET) -D_LIB $(BUILD_TYPE) $(GAMEEDITOR_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../output/engine/engine.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../output/engine/action.o: action.cpp
+	$(CC) -c action.cpp -o ../../output/engine/action.o $(CFLAGS)
+
+../../output/engine/box.o: box.cpp
+	$(CC) -c box.cpp -o ../../output/engine/box.o $(CFLAGS)
+
+../../output/engine/boxresource.o: boxresource.cpp
+	$(CC) -c boxresource.cpp -o ../../output/engine/boxresource.o $(CFLAGS)
+
+../../output/engine/canvas.o: canvas.cpp
+	$(CC) -c canvas.cpp -o ../../output/engine/canvas.o $(CFLAGS)
+
+../../output/engine/canvasresource.o: canvasresource.cpp
+	$(CC) -c canvasresource.cpp -o ../../output/engine/canvasresource.o $(CFLAGS)
+
+../../output/engine/color.o: color.cpp
+	$(CC) -c color.cpp -o ../../output/engine/color.o $(CFLAGS)
+
+../../output/engine/dataresource.o: dataresource.cpp
+	$(CC) -c dataresource.cpp -o ../../output/engine/dataresource.o $(CFLAGS)
+
+../../output/engine/dirtyrectangle.o: dirtyrectangle.cpp
+	$(CC) -c dirtyrectangle.cpp -o ../../output/engine/dirtyrectangle.o $(CFLAGS)
+
+../../output/engine/encoder.o: encoder.cpp
+	$(CC) -c encoder.cpp -o ../../output/engine/encoder.o $(CFLAGS)
+
+../../output/engine/engine.o: engine.cpp
+	$(CC) -c engine.cpp -o ../../output/engine/engine.o $(CFLAGS)
+
+../../output/engine/FastSprite.o: FastSprite.cpp
+	$(CC) -c FastSprite.cpp -o ../../output/engine/FastSprite.o $(CFLAGS)
+
+../../output/engine/fontresource.o: fontresource.cpp
+	$(CC) -c fontresource.cpp -o ../../output/engine/fontresource.o $(CFLAGS)
+
+../../output/engine/image.o: image.cpp
+	$(CC) -c image.cpp -o ../../output/engine/image.o $(CFLAGS)
+
+../../output/engine/imagetree.o: imagetree.cpp
+	$(CC) -c imagetree.cpp -o ../../output/engine/imagetree.o $(CFLAGS)
+
+../../output/engine/imnode.o: imnode.cpp
+	$(CC) -c imnode.cpp -o ../../output/engine/imnode.o $(CFLAGS)
+
+../../output/engine/krmath.o: krmath.cpp
+	$(CC) -c krmath.cpp -o ../../output/engine/krmath.o $(CFLAGS)
+
+../../output/engine/kyraresource.o: kyraresource.cpp
+	$(CC) -c kyraresource.cpp -o ../../output/engine/kyraresource.o $(CFLAGS)
+
+../../output/engine/namefield.o: namefield.cpp
+	$(CC) -c namefield.cpp -o ../../output/engine/namefield.o $(CFLAGS)
+
+../../output/engine/ogltexture.o: ogltexture.cpp
+	$(CC) -c ogltexture.cpp -o ../../output/engine/ogltexture.o $(CFLAGS)
+
+../../output/engine/painter.o: painter.cpp
+	$(CC) -c painter.cpp -o ../../output/engine/painter.o $(CFLAGS)
+
+../../output/engine/parser.o: parser.cpp
+	$(CC) -c parser.cpp -o ../../output/engine/parser.o $(CFLAGS)
+
+../../output/engine/pixelblock.o: pixelblock.cpp
+	$(CC) -c pixelblock.cpp -o ../../output/engine/pixelblock.o $(CFLAGS)
+
+../../output/engine/rle.o: rle.cpp
+	$(CC) -c rle.cpp -o ../../output/engine/rle.o $(CFLAGS)
+
+../../output/engine/sdlutil.o: sdlutil.cpp
+	$(CC) -c sdlutil.cpp -o ../../output/engine/sdlutil.o $(CFLAGS)
+
+../../output/engine/splash.o: splash.cpp
+	$(CC) -c splash.cpp -o ../../output/engine/splash.o $(CFLAGS)
+
+../../output/engine/sprite.o: sprite.cpp
+	$(CC) -c sprite.cpp -o ../../output/engine/sprite.o $(CFLAGS)
+
+../../output/engine/spriteresource.o: spriteresource.cpp
+	$(CC) -c spriteresource.cpp -o ../../output/engine/spriteresource.o $(CFLAGS)
+
+../../output/engine/textbox.o: textbox.cpp
+	$(CC) -c textbox.cpp -o ../../output/engine/textbox.o $(CFLAGS)
+
+../../output/engine/scrap.o: scrap.c
+	$(CC) -c scrap.c -o ../../output/engine/scrap.o $(CFLAGS)
+
+
+../../output/engine/tile.o: tile.cpp
+	$(CC) -c tile.cpp -o ../../output/engine/tile.o $(CFLAGS)
+
+../../output/engine/tileresource.o: tileresource.cpp
+	$(CC) -c tileresource.cpp -o ../../output/engine/tileresource.o $(CFLAGS)
+
+../../output/engine/vault.o: vault.cpp
+	$(CC) -c vault.cpp -o ../../output/engine/vault.o $(CFLAGS)
+
+../../output/engine/button.o: ../gui/button.cpp
+	$(CC) -c ../gui/button.cpp -o ../../output/engine/button.o $(CFLAGS)
+
+../../output/engine/console.o: ../gui/console.cpp
+	$(CC) -c ../gui/console.cpp -o ../../output/engine/console.o $(CFLAGS)
+
+../../output/engine/eventmanager.o: ../gui/eventmanager.cpp
+	$(CC) -c ../gui/eventmanager.cpp -o ../../output/engine/eventmanager.o $(CFLAGS)
+
+../../output/engine/listbox.o: ../gui/listbox.cpp
+	$(CC) -c ../gui/listbox.cpp -o ../../output/engine/listbox.o $(CFLAGS)
+
+../../output/engine/textwidget.o: ../gui/textwidget.cpp
+	$(CC) -c ../gui/textwidget.cpp -o ../../output/engine/textwidget.o $(CFLAGS)
+
+../../output/engine/widget.o: ../gui/widget.cpp
+	$(CC) -c ../gui/widget.cpp -o ../../output/engine/widget.o $(CFLAGS)
+
+../../output/engine/UndoFrame.o: ../gui/UndoFrame.cpp
+	$(CC) -c ../gui/UndoFrame.cpp -o ../../output/engine/UndoFrame.o $(CFLAGS)
+
+../../output/engine/glbitstream.o: ../util/glbitstream.cpp
+	$(CC) -c ../util/glbitstream.cpp -o ../../output/engine/glbitstream.o $(CFLAGS)
+
+../../output/engine/gldebug.o: ../util/gldebug.cpp
+	$(CC) -c ../util/gldebug.cpp -o ../../output/engine/gldebug.o $(CFLAGS)
+
+../../output/engine/glgraph.o: ../util/glgraph.cpp
+	$(CC) -c ../util/glgraph.cpp -o ../../output/engine/glgraph.o $(CFLAGS)
+
+../../output/engine/glisomath.o: ../util/glisomath.cpp
+	$(CC) -c ../util/glisomath.cpp -o ../../output/engine/glisomath.o $(CFLAGS)
+
+../../output/engine/glmap.o: ../util/glmap.cpp
+	$(CC) -c ../util/glmap.cpp -o ../../output/engine/glmap.o $(CFLAGS)
+
+../../output/engine/glmemorypool.o: ../util/glmemorypool.cpp
+	$(CC) -c ../util/glmemorypool.cpp -o ../../output/engine/glmemorypool.o $(CFLAGS)
+
+../../output/engine/glperformance.o: ../util/glperformance.cpp
+	$(CC) -c ../util/glperformance.cpp -o ../../output/engine/glperformance.o $(CFLAGS)
+
+../../output/engine/glprime.o: ../util/glprime.cpp
+	$(CC) -c ../util/glprime.cpp -o ../../output/engine/glprime.o $(CFLAGS)
+
+../../output/engine/glrandom.o: ../util/glrandom.cpp
+	$(CC) -c ../util/glrandom.cpp -o ../../output/engine/glrandom.o $(CFLAGS)
+
+../../output/engine/glstring.o: ../util/glstring.cpp
+	$(CC) -c ../util/glstring.cpp -o ../../output/engine/glstring.o $(CFLAGS)
+
+../../output/engine/tinyxml.o: ../tinyxml/tinyxml.cpp
+	$(CC) -c ../tinyxml/tinyxml.cpp -o ../../output/engine/tinyxml.o $(CFLAGS)
+
+../../output/engine/tinyxmlerror.o: ../tinyxml/tinyxmlerror.cpp
+	$(CC) -c ../tinyxml/tinyxmlerror.cpp -o ../../output/engine/tinyxmlerror.o $(CFLAGS)
+
+../../output/engine/tinyxmlparser.o: ../tinyxml/tinyxmlparser.cpp
+	$(CC) -c ../tinyxml/tinyxmlparser.cpp -o ../../output/engine/tinyxmlparser.o $(CFLAGS)
+
+../../output/engine/KrImageListBox.o: ../guiExtended/KrImageListBox.cpp
+	$(CC) -c ../guiExtended/KrImageListBox.cpp -o ../../output/engine/KrImageListBox.o $(CFLAGS)
+
+../../output/engine/progress.o: ../guiExtended/progress.cpp
+	$(CC) -c ../guiExtended/progress.cpp -o ../../output/engine/progress.o $(CFLAGS)

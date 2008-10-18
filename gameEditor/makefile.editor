@@ -1,0 +1,227 @@
+# Project: gameEditor
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../output//AboutDlg.o ../output//ActorProperty.o ../output//ActorText.o ../output//AddActionDialog.o ../output//AddActor.o ../output//AddPathDialog.o ../output//AddSequenceDialog.o ../output//BaseAction.o ../output//CDataFile.o ../output//ChangeAnimation.o ../output//ChangeAnimationDirection.o ../output//ChangeCursor.o ../output//ChangeParent.o ../output//ChangePath.o ../output//ColorPicker.o ../output//ConditionalAction.o ../output//Config.o ../output//CreateActor.o ../output//CreateTimer.o ../output//CreateVar.o ../output//DestroyActor.o ../output//DestroyTimer.o ../output//DlgActivationEvent.o ../output//DlgAnimationFinish.o ../output//DlgCollision.o ../output//DlgGeneralEvent.o ../output//DlgMouseButton.o ../output//DlgPocketPCKey.o ../output//DlgTimer.o ../output//EditSequenceDialog.o ../output//EnableDisable.o ../output//EventControl.o ../output//EventKeyDown.o ../output//ExportGame.o ../output//ExpressionEditor.o ../output//GameSettings.o ../output//GridSettings.o ../output//FunctionPanel.o ../output//jdiff.o ../output//LoadSave.o ../output//LoadSaveGame.o ../output//LoadSaveScript.o ../output//main.o ../output//MainPanel.o ../output//MoveTo.o ../output//NewTimer.o ../output//PathDialog.o ../output//PhysicalBounce.o ../output//PlaySong.o ../output//ScriptGlobals.o ../output//SDL_ttf.o ../output//SetTile.o ../output//SetTileSingle.o ../output//SetZDepth.o ../output//ToAnteriorPosition.o ../output//ToMousePosition.o ../output//Transparency.o ../output//Tutorial.o ../output//TutorialControlPanel.o ../output//TutorialPaint.o ../output//TutorialTextEditor.o ../output//TutorialTextPanel.o ../output//UndoControl.o ../output//VariableEditor.o ../output//WaitForFrame.o $(RES)
+LIBS = ../output/gameEngine/gameEngine.a ../output/SDL_mixer.a ../output/eic/eiclib.a ../output/engine/engine.a ../output/mikmod.a ../output/native_midi.a ../output/SDL_image.a ../output/jpeg.a ../output/libpng.a ../output/zlib.a ../output/freetype.a ../output/RakNet/RakNet.a
+# ../output/sdl.a
+
+INCS = -I"../SDL/SDL_ttf/VisualC/FreeType/include" -I"../SDL/SDL_mixer" -I"../SDL/SDL/include" -I"../SDL/SDL_image" -I"../gameEngine"  -I"../kyra"  -I"../gameEngine/EiC/src"
+BIN  = "../output/editor/gameEditor"
+CFLAGS = $(INCS) $(TARGET) -DNO_STDIO_REDIRECT -DNO_LONG_LONG -DNO_DIRENT -DNO_FCNTL -DNO_STAT -DNO_UNISTD -DNO_TERMIOS -DNO_PIPE -DNO_POSIX -DNO_LONGLONG -DNO_HISTORY $(BUILD_TYPE) $(GAMEEDITOR_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        LIBSYSTEM = -lstdc++ -lpthread /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libXext.so.6
+        CL=$(CC)
+        CLFLAGS=$(CFLAGS)
+else
+		CL=llvm-link -f	
+		BIN  = "../output/gameEditor.bc"	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+	
+
+$(BIN): $(OBJ)
+	$(CL) $(OBJ) -o $(BIN) $(LIBS) $(LIBSYSTEM) $(CLFLAGS)
+
+../output//AboutDlg.o: AboutDlg.cpp
+	$(CC) -c AboutDlg.cpp -o ../output//AboutDlg.o $(CFLAGS)
+
+../output//ActorProperty.o: ActorProperty.cpp
+	$(CC) -c ActorProperty.cpp -o ../output//ActorProperty.o $(CFLAGS)
+
+../output//ActorText.o: ActorText.cpp
+	$(CC) -c ActorText.cpp -o ../output//ActorText.o $(CFLAGS)
+
+../output//AddActionDialog.o: AddActionDialog.cpp
+	$(CC) -c AddActionDialog.cpp -o ../output//AddActionDialog.o $(CFLAGS)
+
+../output//AddActor.o: AddActor.cpp
+	$(CC) -c AddActor.cpp -o ../output//AddActor.o $(CFLAGS)
+
+../output//AddPathDialog.o: AddPathDialog.cpp
+	$(CC) -c AddPathDialog.cpp -o ../output//AddPathDialog.o $(CFLAGS)
+
+../output//AddSequenceDialog.o: AddSequenceDialog.cpp
+	$(CC) -c AddSequenceDialog.cpp -o ../output//AddSequenceDialog.o $(CFLAGS)
+
+../output//BaseAction.o: BaseAction.cpp
+	$(CC) -c BaseAction.cpp -o ../output//BaseAction.o $(CFLAGS)
+
+../output//CDataFile.o: CDataFile.cpp
+	$(CC) -c CDataFile.cpp -o ../output//CDataFile.o $(CFLAGS)
+
+../output//ChangeAnimation.o: ChangeAnimation.cpp
+	$(CC) -c ChangeAnimation.cpp -o ../output//ChangeAnimation.o $(CFLAGS)
+
+../output//ChangeAnimationDirection.o: ChangeAnimationDirection.cpp
+	$(CC) -c ChangeAnimationDirection.cpp -o ../output//ChangeAnimationDirection.o $(CFLAGS)
+
+../output//ChangeCursor.o: ChangeCursor.cpp
+	$(CC) -c ChangeCursor.cpp -o ../output//ChangeCursor.o $(CFLAGS)
+
+../output//ChangeParent.o: ChangeParent.cpp
+	$(CC) -c ChangeParent.cpp -o ../output//ChangeParent.o $(CFLAGS)
+
+../output//ChangePath.o: ChangePath.cpp
+	$(CC) -c ChangePath.cpp -o ../output//ChangePath.o $(CFLAGS)
+
+../output//ColorPicker.o: ColorPicker.cpp
+	$(CC) -c ColorPicker.cpp -o ../output//ColorPicker.o $(CFLAGS)
+
+../output//ConditionalAction.o: ConditionalAction.cpp
+	$(CC) -c ConditionalAction.cpp -o ../output//ConditionalAction.o $(CFLAGS)
+
+../output//Config.o: Config.cpp
+	$(CC) -c Config.cpp -o ../output//Config.o $(CFLAGS)
+
+../output//CreateActor.o: CreateActor.cpp
+	$(CC) -c CreateActor.cpp -o ../output//CreateActor.o $(CFLAGS)
+
+../output//CreateTimer.o: CreateTimer.cpp
+	$(CC) -c CreateTimer.cpp -o ../output//CreateTimer.o $(CFLAGS)
+
+../output//CreateVar.o: CreateVar.cpp
+	$(CC) -c CreateVar.cpp -o ../output//CreateVar.o $(CFLAGS)
+
+../output//DestroyActor.o: DestroyActor.cpp
+	$(CC) -c DestroyActor.cpp -o ../output//DestroyActor.o $(CFLAGS)
+
+../output//DestroyTimer.o: DestroyTimer.cpp
+	$(CC) -c DestroyTimer.cpp -o ../output//DestroyTimer.o $(CFLAGS)
+
+../output//DlgActivationEvent.o: DlgActivationEvent.cpp
+	$(CC) -c DlgActivationEvent.cpp -o ../output//DlgActivationEvent.o $(CFLAGS)
+
+../output//DlgAnimationFinish.o: DlgAnimationFinish.cpp
+	$(CC) -c DlgAnimationFinish.cpp -o ../output//DlgAnimationFinish.o $(CFLAGS)
+
+../output//DlgCollision.o: DlgCollision.cpp
+	$(CC) -c DlgCollision.cpp -o ../output//DlgCollision.o $(CFLAGS)
+
+../output//DlgGeneralEvent.o: DlgGeneralEvent.cpp
+	$(CC) -c DlgGeneralEvent.cpp -o ../output//DlgGeneralEvent.o $(CFLAGS)
+
+../output//DlgMouseButton.o: DlgMouseButton.cpp
+	$(CC) -c DlgMouseButton.cpp -o ../output//DlgMouseButton.o $(CFLAGS)
+
+../output//DlgPocketPCKey.o: DlgPocketPCKey.cpp
+	$(CC) -c DlgPocketPCKey.cpp -o ../output//DlgPocketPCKey.o $(CFLAGS)
+
+../output//DlgTimer.o: DlgTimer.cpp
+	$(CC) -c DlgTimer.cpp -o ../output//DlgTimer.o $(CFLAGS)
+
+../output//EditSequenceDialog.o: EditSequenceDialog.cpp
+	$(CC) -c EditSequenceDialog.cpp -o ../output//EditSequenceDialog.o $(CFLAGS)
+
+../output//EnableDisable.o: EnableDisable.cpp
+	$(CC) -c EnableDisable.cpp -o ../output//EnableDisable.o $(CFLAGS)
+
+../output//EventControl.o: EventControl.cpp
+	$(CC) -c EventControl.cpp -o ../output//EventControl.o $(CFLAGS)
+
+../output//EventKeyDown.o: EventKeyDown.cpp
+	$(CC) -c EventKeyDown.cpp -o ../output//EventKeyDown.o $(CFLAGS)
+
+../output//ExportGame.o: ExportGame.cpp
+	$(CC) -c ExportGame.cpp -o ../output//ExportGame.o $(CFLAGS)
+
+../output//ExpressionEditor.o: ExpressionEditor.cpp
+	$(CC) -c ExpressionEditor.cpp -o ../output//ExpressionEditor.o $(CFLAGS)
+
+../output//FunctionPanel.o: FunctionPanel.cpp
+	$(CC) -c FunctionPanel.cpp -o ../output//FunctionPanel.o $(CFLAGS)
+
+../output//GameSettings.o: GameSettings.cpp
+	$(CC) -c GameSettings.cpp -o ../output//GameSettings.o $(CFLAGS)
+
+../output//GridSettings.o: GridSettings.cpp
+	$(CC) -c GridSettings.cpp -o ../output//GridSettings.o $(CFLAGS)
+
+../output//jdiff.o: jdiff.cpp
+	$(CC) -c jdiff.cpp -o ../output//jdiff.o $(CFLAGS)
+
+../output//LoadSave.o: LoadSave.cpp
+	$(CC) -c LoadSave.cpp -o ../output//LoadSave.o $(CFLAGS)
+
+../output//LoadSaveGame.o: LoadSaveGame.cpp
+	$(CC) -c LoadSaveGame.cpp -o ../output//LoadSaveGame.o $(CFLAGS)
+
+../output//LoadSaveScript.o: LoadSaveScript.cpp
+	$(CC) -c LoadSaveScript.cpp -o ../output//LoadSaveScript.o $(CFLAGS)
+
+../output//main.o: main.cpp
+	$(CC) -c main.cpp -o ../output//main.o $(CFLAGS)
+
+../output//MainPanel.o: MainPanel.cpp
+	$(CC) -c MainPanel.cpp -o ../output//MainPanel.o $(CFLAGS)
+
+../output//MoveTo.o: MoveTo.cpp
+	$(CC) -c MoveTo.cpp -o ../output//MoveTo.o $(CFLAGS)
+
+../output//NewTimer.o: NewTimer.cpp
+	$(CC) -c NewTimer.cpp -o ../output//NewTimer.o $(CFLAGS)
+
+../output//PathDialog.o: PathDialog.cpp
+	$(CC) -c PathDialog.cpp -o ../output//PathDialog.o $(CFLAGS)
+
+../output//PhysicalBounce.o: PhysicalBounce.cpp
+	$(CC) -c PhysicalBounce.cpp -o ../output//PhysicalBounce.o $(CFLAGS)
+
+../output//PlaySong.o: PlaySong.cpp
+	$(CC) -c PlaySong.cpp -o ../output//PlaySong.o $(CFLAGS)
+
+../output//ScriptGlobals.o: ScriptGlobals.cpp
+	$(CC) -c ScriptGlobals.cpp -o ../output//ScriptGlobals.o $(CFLAGS)
+
+../output//SDL_ttf.o: ../SDL/SDL_ttf//SDL_ttf.c
+	$(CC) -c ../SDL/SDL_ttf//SDL_ttf.c -o ../output//SDL_ttf.o $(CFLAGS)
+
+../output//SetTile.o: SetTile.cpp
+	$(CC) -c SetTile.cpp -o ../output//SetTile.o $(CFLAGS)
+
+../output//SetTileSingle.o: SetTileSingle.cpp
+	$(CC) -c SetTileSingle.cpp -o ../output//SetTileSingle.o $(CFLAGS)
+
+../output//SetZDepth.o: SetZDepth.cpp
+	$(CC) -c SetZDepth.cpp -o ../output//SetZDepth.o $(CFLAGS)
+
+../output//ToAnteriorPosition.o: ToAnteriorPosition.cpp
+	$(CC) -c ToAnteriorPosition.cpp -o ../output//ToAnteriorPosition.o $(CFLAGS)
+
+../output//ToMousePosition.o: ToMousePosition.cpp
+	$(CC) -c ToMousePosition.cpp -o ../output//ToMousePosition.o $(CFLAGS)
+
+../output//Transparency.o: Transparency.cpp
+	$(CC) -c Transparency.cpp -o ../output//Transparency.o $(CFLAGS)
+
+../output//Tutorial.o: Tutorial.cpp
+	$(CC) -c Tutorial.cpp -o ../output//Tutorial.o $(CFLAGS)
+
+../output//TutorialControlPanel.o: TutorialControlPanel.cpp
+	$(CC) -c TutorialControlPanel.cpp -o ../output//TutorialControlPanel.o $(CFLAGS)
+
+../output//TutorialPaint.o: TutorialPaint.cpp
+	$(CC) -c TutorialPaint.cpp -o ../output//TutorialPaint.o $(CFLAGS)
+
+../output//TutorialTextEditor.o: TutorialTextEditor.cpp
+	$(CC) -c TutorialTextEditor.cpp -o ../output//TutorialTextEditor.o $(CFLAGS)
+
+../output//TutorialTextPanel.o: TutorialTextPanel.cpp
+	$(CC) -c TutorialTextPanel.cpp -o ../output//TutorialTextPanel.o $(CFLAGS)
+
+../output//UndoControl.o: UndoControl.cpp
+	$(CC) -c UndoControl.cpp -o ../output//UndoControl.o $(CFLAGS)
+
+../output//VariableEditor.o: VariableEditor.cpp
+	$(CC) -c VariableEditor.cpp -o ../output//VariableEditor.o $(CFLAGS)
+
+../output//WaitForFrame.o: WaitForFrame.cpp
+	$(CC) -c WaitForFrame.cpp -o ../output//WaitForFrame.o $(CFLAGS)

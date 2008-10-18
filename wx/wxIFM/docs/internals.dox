@@ -1,0 +1,14 @@
+// not including in doxygen docs for now
+/*
+\page internals wxIFM Internals
+
+\section internals_overview A general overview of the internal structure wxIFM
+
+Here is a brief overview of the internal structure and relation ship between classes\n
+
+wxInterfaceManager contains one or more interface plugins (wxIFMInterfacePlugin). Interface plugins
+store a all components for their interface into the components array, and they also contain zero or
+more extension plugins (wxIFMExtensionPlugin).
+
+
+*/

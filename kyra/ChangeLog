@@ -1,0 +1,39 @@
+Changes between versions:
+
+http://www.grinninglizard.com/kyra/changes.html
+
+
+Release notes are current at:
+
+http://www.grinninglizard.com/kyra/releasenotes.html
+
+
+For 1.6 --> 2.0 Conversion:
+
+- KrWidget interface changed.
+- KrConsole --> KrConsoleWidget
+- Compression has been implemented in .dat files.
+- The rendering loop for sprites is improved.
+- Tiles can be real time scaled.
+- GUI toolkit.
+- New widget implementation.
+- Rle, RleLine, RleSegment memory management
+- Tile caching
+- KrBox changes. (KrBoxResource optional.)
+
+For 2.0.2
+- Button decals
+- Better gui example.
+- fixed crash in Event Manager that could happen if the widget with mouse focus
+  got deleted.
+- Syntax error causing compilation issues.
+
+For 2.0.3
+- Added KrImageListBox
+- Added new (LGPL) license.
+- Fixed bug where changing actions would allow frames to be out of range.
+
+For 2.0.4
+- Added API support for right and middle mouse buttons in widgets. Only code
+  for left mouse button written.
+

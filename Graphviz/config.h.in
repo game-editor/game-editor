@@ -1,0 +1,382 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Date (usually date of extraction from CVS). */
+#undef BUILDDATE
+
+/* Define to one of `_getb67', `GETB67', `getb67' for Cray-2 and Cray-YMP
+   systems. This function is required for `alloca.c' support on those systems.
+   */
+#undef CRAY_STACKSEG_END
+
+/* Define to 1 if using `alloca.c'. */
+#undef C_ALLOCA
+
+/* Define for Darwin-style shared library names. */
+#undef DARWIN_DYLIB
+
+/* Default DPI. */
+#undef DEFAULT_DPI
+
+/* Path to TrueType fonts. */
+#undef DEFAULT_FONTPATH
+
+/* Define if you don't want the old codegens */
+#undef DISABLE_CODEGENS
+
+/* Define if you don't want on-demand plugin loading */
+#undef DISABLE_LTDL
+
+/* Define if you want statically linked executables */
+#undef ENABLE_STATIC
+
+/* Compatibility version number for plugins. */
+#undef GVPLUGIN_VERSION
+
+/* Define to 1 if you have `alloca', as a function or macro. */
+#undef HAVE_ALLOCA
+
+/* Define to 1 if you have <alloca.h> and it should be used (not on Ultrix).
+   */
+#undef HAVE_ALLOCA_H
+
+/* Define to 1 if compiler supports bool */
+#undef HAVE_BOOL
+
+/* Define to 1 if you have the `cbrt' function. */
+#undef HAVE_CBRT
+
+/* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_DIRENT_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the `drand48' function. */
+#undef HAVE_DRAND48
+
+/* Define if errno externs are declared */
+#undef HAVE_ERRNO_DECL
+
+/* Define to 1 if you have the <errno.h> header file. */
+#undef HAVE_ERRNO_H
+
+/* Define to 1 if you have the `feenableexcept' function. */
+#undef HAVE_FEENABLEEXCEPT
+
+/* Define to 1 if you have the <fenv.h> header file. */
+#undef HAVE_FENV_H
+
+/* Define to 1 if you have the `fesetenv' function. */
+#undef HAVE_FESETENV
+
+/* Define if FILE structure provides _cnt */
+#undef HAVE_FILE_CNT
+
+/* Define if FILE structure provides _IO_read_end */
+#undef HAVE_FILE_IO_READ_END
+
+/* Define if FILE structure provides _next */
+#undef HAVE_FILE_NEXT
+
+/* Define if FILE structure provides _r */
+#undef HAVE_FILE_R
+
+/* Define to 1 if you have the <float.h> header file. */
+#undef HAVE_FLOAT_H
+
+/* Define if you have the fontconfig library */
+#undef HAVE_FONTCONFIG
+
+/* Define to 1 if you have the <fontconfig/fontconfig.h> header file. */
+#undef HAVE_FONTCONFIG_FONTCONFIG_H
+
+/* Define to 1 if you have the <fpu_control.h> header file. */
+#undef HAVE_FPU_CONTROL_H
+
+/* Define to 1 if you have the <ft2build.h> header file. */
+#undef HAVE_FT2BUILD_H
+
+/* Define if the GD library has the GD_FONTCONFIG feature */
+#undef HAVE_GD_FONTCONFIG
+
+/* Define if the GD library has the GD_FREETYPE feature */
+#undef HAVE_GD_FREETYPE
+
+/* Define if the GD library has the GD_GIF feature */
+#undef HAVE_GD_GIF
+
+/* Define if the GD library has the GD_JPEG feature */
+#undef HAVE_GD_JPEG
+
+/* Define if the GD library has the GD_PNG feature */
+#undef HAVE_GD_PNG
+
+/* Define to 1 if you have the `getenv' function. */
+#undef HAVE_GETENV
+
+/* Define if getopt externs are declared */
+#undef HAVE_GETOPT_DECL
+
+/* Define to 1 if you have the <getopt.h> header file. */
+#undef HAVE_GETOPT_H
+
+/* Define to 1 if you have the `getrusage' function. */
+#undef HAVE_GETRUSAGE
+
+/* Define if you have the iconv() function. */
+#undef HAVE_ICONV
+
+/* Define to 1 if you have the <iconv.h> header file. */
+#undef HAVE_ICONV_H
+
+/* Define if <iconv.h> defines iconv_t. */
+#undef HAVE_ICONV_T_DEF
+
+/* Define if intptr_t is declared */
+#undef HAVE_INTPTR_T
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define if you have the EXPAT library */
+#undef HAVE_LIBEXPAT
+
+/* Define if you have the FONTCONFIG library */
+#undef HAVE_LIBFONTCONFIG
+
+/* Define if you have the FREETYPE2 library */
+#undef HAVE_LIBFREETYPE
+
+/* Define if you have the GD library */
+#undef HAVE_LIBGD
+
+/* Define if the LIBGEN library has the basename feature */
+#undef HAVE_LIBGEN
+
+/* Define if you have the JPEG library */
+#undef HAVE_LIBJPEG
+
+/* Define if you have the PNG library */
+#undef HAVE_LIBPNG
+
+/* Define if you have the XAW library */
+#undef HAVE_LIBXAW
+
+/* Define if you have the XPM library */
+#undef HAVE_LIBXPMFORLEFTY
+
+/* Define if you have the Z library */
+#undef HAVE_LIBZ
+
+/* Define to 1 if you have the <limits.h> header file. */
+#undef HAVE_LIMITS_H
+
+/* Define to 1 if you have the `lrand48' function. */
+#undef HAVE_LRAND48
+
+/* Define to 1 if you have the `lsqrt' function. */
+#undef HAVE_LSQRT
+
+/* Define to 1 if you have the <malloc.h> header file. */
+#undef HAVE_MALLOC_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
+#undef HAVE_NDIR_H
+
+/* Define to 1 if you have the <pthread.h> header file. */
+#undef HAVE_PTHREAD_H
+
+/* Define to 1 if you have the <search.h> header file. */
+#undef HAVE_SEARCH_H
+
+/* Define to 1 if you have the `setenv' function. */
+#undef HAVE_SETENV
+
+/* Define to 1 if you have the `setmode' function. */
+#undef HAVE_SETMODE
+
+/* Define if libm provides a *working* sincos function */
+#undef HAVE_SINCOS
+
+/* Define to 1 if you have the `srand48' function. */
+#undef HAVE_SRAND48
+
+/* Define to 1 if you have the <stdarg.h> header file. */
+#undef HAVE_STDARG_H
+
+/* Define to 1 if stdbool.h conforms to C99. */
+#undef HAVE_STDBOOL_H
+
+/* Define to 1 if you have the <stddef.h> header file. */
+#undef HAVE_STDDEF_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the `strcasecmp' function. */
+#undef HAVE_STRCASECMP
+
+/* Define to 1 if you have the `strerror' function. */
+#undef HAVE_STRERROR
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the `strncasecmp' function. */
+#undef HAVE_STRNCASECMP
+
+/* Define to 1 if you have the `strtoll' function. */
+#undef HAVE_STRTOLL
+
+/* Define to 1 if you have the `strtoul' function. */
+#undef HAVE_STRTOUL
+
+/* Define to 1 if you have the `strtoull' function. */
+#undef HAVE_STRTOULL
+
+/* Define to 1 if you have struct dioattr */
+#undef HAVE_STRUCT_DIOATTR
+
+/* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_DIR_H
+
+/* Define to 1 if you have the <sys/fpu.h> header file. */
+#undef HAVE_SYS_FPU_H
+
+/* Define to 1 if you have the <sys/ndir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_NDIR_H
+
+/* Define to 1 if you have the <sys/select.h> header file. */
+#undef HAVE_SYS_SELECT_H
+
+/* Define to 1 if you have the <sys/socket.h> header file. */
+#undef HAVE_SYS_SOCKET_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/times.h> header file. */
+#undef HAVE_SYS_TIMES_H
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#undef HAVE_SYS_TIME_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <termios.h> header file. */
+#undef HAVE_TERMIOS_H
+
+/* Define to 1 if you have the <time.h> header file. */
+#undef HAVE_TIME_H
+
+/* Define to 1 if you have the `uname' function. */
+#undef HAVE_UNAME
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to 1 if you have the <values.h> header file. */
+#undef HAVE_VALUES_H
+
+/* Define to 1 if you have the `vsnprintf' function. */
+#undef HAVE_VSNPRINTF
+
+/* Define to 1 if you have the <X11/Intrinsic.h> header file. */
+#undef HAVE_X11_INTRINSIC_H
+
+/* Define to 1 if you have the <X11/Xaw/Text.h> header file. */
+#undef HAVE_X11_XAW_TEXT_H
+
+/* Define to 1 if the system has the type `_Bool'. */
+#undef HAVE__BOOL
+
+/* Define to 1 if you have the `_sysconf' function. */
+#undef HAVE__SYSCONF
+
+/* Define to 1 if you have the `__freadable' function. */
+#undef HAVE___FREADABLE
+
+/* Define as const if the declaration of iconv() needs const. */
+#undef ICONV_CONST
+
+/* Define if no fpu error exception handling is required. */
+#undef NO_FPERR
+
+/* Alias PostScript font names to URW type 1 fonts */
+#undef NO_POSTSCRIPT_ALIAS
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Path separator character. */
+#undef PATHSEPARATOR
+
+/* If using the C implementation of alloca, define if you know the
+   direction of stack growth for your system; otherwise it will be
+   automatically deduced at run-time.
+	STACK_DIRECTION > 0 => grows toward higher addresses
+	STACK_DIRECTION < 0 => grows toward lower addresses
+	STACK_DIRECTION = 0 => direction of growth unknown */
+#undef STACK_DIRECTION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
+#undef TIME_WITH_SYS_TIME
+
+/* Version number of package */
+#undef VERSION
+
+/* Define to 1 if the X Window System is missing or not being used. */
+#undef X_DISPLAY_MISSING
+
+/* Define to 1 if `lex' declares `yytext' as a `char *' by default, not a
+   `char[]'. */
+#undef YYTEXT_POINTER
+
+/* Define to `int' if <sys/types.h> doesn't define. */
+#undef gid_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef mode_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef pid_t
+
+/* Define to `unsigned' if <sys/types.h> does not define. */
+#undef size_t
+
+/* Define to unsigned if socklet_t is missing */
+#undef socklen_t
+
+/* Define to `int' if <sys/types.h> doesn't define. */
+#undef uid_t

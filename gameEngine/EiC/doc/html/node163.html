@@ -1,0 +1,1642 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Syntax Notation</TITLE>
+<META NAME="description" CONTENT="Syntax Notation">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="previous" HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">
+<LINK REL="up" HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">
+<LINK REL="next" HREF="node164.html" tppabs="http://eic.sourceforge.net/documentation/node164.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2826"
+  HREF="node164.html" tppabs="http://eic.sourceforge.net/documentation/node164.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2820"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2816"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2822"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2824"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2827"
+  HREF="node164.html" tppabs="http://eic.sourceforge.net/documentation/node164.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html2821"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">Syntax of the EiC</A>
+<B> Previous:</B> <A NAME="tex2html2817"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">Syntax of the EiC</A>
+ &nbsp <B>  <A NAME="tex2html2823"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2825"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00810000000000000000"></A>
+<A NAME="25826"></A>
+<A NAME="sec:SyntaxNotation"></A>
+<BR>
+Syntax Notation
+</H1>
+
+<P>
+The following notation is used:
+
+<P>
+
+<OL>
+<LI>Non terminals are given in <I>italics</I>.
+</LI>
+<LI>Terminals are given in <TT>typewriter</TT> font.
+</LI>
+<LI><P>
+An item surrounded by upright square brackets [ ] denotes that
+	the item is optional. If more than one item is present within
+	a pair of upright square brackets and the items are separated
+	by commas then the square brackets are used for grouping
+	purposes. However, if the first token in a set of tokens is a
+	circumflex (^), then the expression will match any
+	token except those in the set. For example
+	[<B><TT>int</TT></B>,&nbsp;<B><TT>char</TT></B>], specifies that the input token can be an
+	<B><TT>int</TT></B> or <B><TT>char</TT></B>, while [^&nbsp;<B><TT>(</TT></B> ] specifies the input
+	token can be anything but the left parenthesis.  Note however,
+	that square brackets in <TT>typewriter</TT> font, <TT>[&nbsp;]</TT>, are
+	terminals.
+
+<P>
+</LI>
+<LI>The left side of a production is on a line by itself
+	followed by a colon.
+</LI>
+<LI>The right side, or the definition, of a production, 
+	and each definition for each production rule, will be placed
+	on a line by itself and below the left side. For example:
+	<BLOCKQUOTE>
+<I>left-side:</I>
+<BR>		<I>  definition32#32</I> 
+<BR>		<I>  definition33#33</I> 
+<BR>		<I>  51#51</I> 
+<BR>		<I>  definition52#52</I>
+</BLOCKQUOTE>
+<P>
+
+<P>
+</LI>
+<LI>The <TT>one of</TT> terminology is also used to specify a list of
+	alternatives:
+
+<P><TABLE  WIDTH="317">
+<TR><TD><PRE><TT>
+ store-class: <B><TT>one of</TT></B> 
+<BR><B><TT>auto</TT></B> <B><TT>register</TT></B> <B><TT>static</TT></B> 
+<BR><B><TT>extern</TT></B> <B><TT>typedef</TT></B> 
+<BR>
+</TT></PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+</LI>
+<LI><I>a</I>10#10 is used to denote a sequence of one or more <I>a</I>'s,
+	where <I>a</I> can be anything, including [ ]; in which case the 
+	square brackets are used for grouping purposes. 
+</LI>
+<LI><I>a</I>1#1 is used to denote a sequence of zero or more <I>a</I>'s
+	where <I>a</I> can be anything, including [ ]; in which case the 
+	square brackets are used for grouping purposes.
+
+<P>
+</LI>
+<LI>To restate, ISO C productions, or parts thereof, that have been 
+underlined, are not included in EiC's C grammar. EiC C productions, or parts thereof, that
+have been underlined, are not included in ISO's C grammar. 
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<P>
+
+<DIV ALIGN="CENTER"></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+<B><TT>EiC LL(2) GRAMMAR</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+<B><TT>ISO C LR GRAMMAR</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+ext-decl:
+<BR>
+decl-spec f-ext-decl 
+<BR>
+f-ext-decl: 
+<BR>
+decl ff-ext-decl 
+<BR><B><TT>;</TT></B> 
+<BR>
+ff-ext-decl: 
+<BR>
+comp-stmt 
+<BR><B><TT>=</TT></B> initialiser fff-ext-decl 
+<BR>
+fff-ext-decl 
+<BR>
+fff-ext-decl: 
+<BR><B><TT>;</TT></B> 
+<BR><B><TT>,</TT></B> init-decl-list <B><TT>;</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+ext-decl:
+<BR>
+func-def 
+<BR>
+declaration 
+<BR>
+func-def: 
+<BR>
+decl-spec decl <U>[decl-list]</U> comp-stmt 
+<BR><U>decl [decl-list] comp-stmt</U>  
+<BR>
+declaration: 
+<BR>
+decl-spec [init-decl-list] <B><TT>;</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>  	
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+decl-spec:
+<BR>
+store-class [decl-spec] 
+<BR>
+type-spec  [decl-spec] 
+<BR>
+type-qual  [decl-spec]  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+decl-spec:
+<BR>
+store-class [decl-spec] 
+<BR>
+type-spec [decl-spec] 
+<BR>
+type-qual [decl-spec] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+store-class:  <B><TT>one of</TT></B> 
+<BR><B><TT>auto</TT></B> <B><TT>register</TT></B> <B><TT>static</TT></B> 
+<BR><B><TT>extern</TT></B> <B><TT>typedef</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+store-class:  <B><TT>one of</TT></B> 
+<BR><B><TT>auto</TT></B> <B><TT>register</TT></B> <B><TT>static</TT></B> 
+<BR><B><TT>extern</TT></B> <B><TT>typedef</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+type-qual: <B><TT>one of</TT></B> 
+<BR><B><TT>const</TT></B> <B><TT>volatile</TT></B>
+<BR>
+type-spec: <B><TT>one of</TT></B> 
+<BR><B><TT>void</TT></B> <B><TT>char</TT></B> <B><TT>short</TT></B> <B><TT>int</TT></B> 
+<BR><B><TT>long</TT></B> <B><TT>float</TT></B> <B><TT>double</TT></B>  
+<BR><B><TT>signed</TT></B>  <B><TT>unsigned</TT></B> struct-or-union 
+<BR>
+typedef-name enum-spec
+<BR>
+type-name: 
+<BR>
+spec-qual-list [abs-decl]
+<BR>
+typedef-name: 
+<BR>
+id 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+type-qual: <TT>one of</TT> 
+<BR><B><TT>const</TT></B> <B><TT>volatile</TT></B> 
+<BR>
+type-spec: <B><TT>one of</TT></B> 
+<BR><B><TT>void</TT></B> <B><TT>char</TT></B> <B><TT>short</TT></B> <B><TT>int</TT></B> 
+<BR><B><TT>long</TT></B> <B><TT>float</TT></B> <B><TT>double</TT></B>  
+<BR><B><TT>signed</TT></B>  <B><TT>unsigned</TT></B> struct-or-union 
+<BR>
+typedef-name enum-spec 
+<BR>
+type-name: 
+<BR>
+spec-qual-list [abs-decl]
+<BR>
+typedef-name: 
+<BR>
+id 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+enum-spec:
+<BR><B><TT>enum</TT></B> f-enum-spec
+<BR>
+f-enum-spec:
+<BR><B><TT>{</TT></B> enum-list <B><TT>}</TT></B>
+<BR>
+id [<B><TT>{</TT></B> enum-list <B><TT>}</TT></B>]
+<BR>
+enum-list:
+<BR>
+enumerator [<B><TT>,</TT></B> enumerator]*
+<BR>
+enumerator:
+<BR>
+id [<B><TT>=</TT></B> const-expr] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+enum-spec:
+<BR><B><TT>enum</TT></B> [id] <B><TT>{</TT></B>enum-list<B><TT>}</TT></B>
+<BR><B><TT>enum</TT></B> id
+<BR>
+enum-list:
+<BR>
+enumerator
+<BR>
+enum-list <B><TT>,</TT></B> enumerator
+<BR>
+enumerator:
+<BR>
+id
+<BR>
+id <B><TT>=</TT></B> const-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+init-decl-list: 
+<BR>
+init-decl[<B><TT>,</TT></B> init-decl-list]*
+<BR>
+init-decl: 
+<BR>
+decl [<B><TT>=</TT></B> initialiser] 
+<BR>
+decl: 
+<BR>[pointer] dir-decl 
+<BR>
+pointer: 
+<BR>[<B><TT>*</TT></B> [pointer-qual-list]* ] +
+<BR>
+pointer-qual-list:
+<BR>
+type-qual-list  <U>[ pointer-qual ]</U> 
+<BR><U>pointer-qual [ type-qual-list ]</U>
+<BR><U>pointer-qual</U>: <B><TT>one of</TT></B> 
+<BR><B><TT>safe</TT></B> <B><TT>unsafe</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+init-decl-list: 
+<BR>
+init-decl 
+<BR>
+init-decl-list <B><TT>,</TT></B> init-decl 
+<BR>
+init-decl: 
+<BR>
+decl 
+<BR>
+decl <B><TT>=</TT></B> initialiser 
+<BR>
+decl: 
+<BR>[pointer] dir-decl 
+<BR>
+pointer: 
+<BR><B><TT>*</TT></B> [ type-qual-list ] 
+<BR><B><TT>*</TT></B> [ type-qual-list ] pointer 
+<BR>
+type-qual-list:
+<BR>
+type-qual
+<BR>
+type-qual-list type-qual  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+ abs-decl:
+<BR>
+pointer f-abs-decl
+<BR>
+dir-abs-decl
+<BR>
+f-abs-decl: 
+<BR>
+dir-abs-decl
+<BR>
+null  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+abs-decl:
+<BR>
+pointer
+<BR>[pointer] dir-abs-decl 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+dir-abs-decl:
+<BR><B><TT>(</TT></B> f1-dir-ab f2-dir-abs
+<BR>
+array-decl  f2-dir-abs
+<BR>
+f1-dir-abs:
+<BR>
+abs-decl <B><TT>)</TT></B>
+<BR>
+ff-dir-decl
+<BR>
+f2-dir-abs:
+<BR>
+array-decl f2-dir-abs
+<BR><B><TT>(</TT></B> ff-dir-decl f2-dir-abs 
+<BR>
+null 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+dir-abs-decl:
+<BR><B><TT>(</TT></B> abs-decl <B><TT>)</TT></B>
+<BR>[dir-abs-decl]<B><TT>[</TT></B> [const-expr] <B><TT>]</TT></B>
+<BR>[dir-abs-decl] <B><TT>(</TT></B> [par-type-list] <B><TT>)</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+dir-decl: 
+<BR>
+id f-dir-decl  
+<BR><B><TT>(</TT></B> decl <B><TT>)</TT></B> f-dir-decl 
+<BR>
+f-dir-decl: 
+<BR>
+array-decl f-dir-decl 
+<BR><B><TT>(</TT></B> ff-dir-decl f-dir-decl 
+<BR><B><TT>null</TT></B> 
+<BR>
+ff-dir-decl: 
+<BR>[parm-type-list] <B><TT>)</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+dir-decl: 
+<BR>
+id 
+<BR><B><TT>(</TT></B> decl <B><TT>)</TT></B> 
+<BR>
+dir-decl <B><TT>[</TT></B> [const-expr] <B><TT>]</TT></B> 
+<BR>
+dir-decl <B><TT>(</TT></B> parm-type-list <B><TT>)</TT></B> 
+<BR>
+dir-decl <B><TT>(</TT></B> <U>[ident-list]</U> <B><TT>)</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+parm-type-list: 
+<BR>
+parm-decl f-parm-type-list 
+<BR>
+f-parm-type-list: 
+<BR><B><TT>,</TT></B> ff-parm-type-list  
+<BR><B><TT>null</TT></B> 
+<BR>
+ff-parm-type-list: 
+<BR><B><TT>...</TT></B> 
+<BR>
+parm-type-list  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+parm-type-list: 
+<BR>
+parm-list 
+<BR>
+parm-list <B><TT>,</TT></B> <B><TT>...</TT></B> 
+<BR>
+parm-list: 
+<BR>
+parm-decl 
+<BR>
+parm-list <B><TT>,</TT></B> parm-decl  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+parm-decl: 
+<BR>
+decl-spec f-parm-decl 
+<BR>
+f-parm-decl:
+<BR>
+pointer ff-parm-decl 
+<BR>
+ff-parm-decl 
+<BR>
+ff-parm-decl:
+<BR><B><TT>(</TT></B> f-parm-decl <B><TT>)</TT></B> 
+<BR>
+id  f-dir-decl
+<BR>
+array-decl f-dir-decl 
+<BR>
+null 
+<BR>
+array-decl: 
+<BR><B><TT>[</TT></B> [const-expr] <B><TT>]</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+parm-decl: 
+<BR>
+decl-spec decl 
+<BR>
+decl-spec [abs-decl]  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+st-un-spec: 
+<BR>
+st-un f-st-un-spec 
+<BR>
+f-st-un-spec: 
+<BR>
+id [<B><TT>{</TT></B> s-decl-list <B><TT>}</TT></B>]  
+<BR><B><TT>{</TT></B> s-decl-list <B><TT>}</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+st-un-spec: 
+<BR>
+st-un [id] <B><TT>{</TT></B> s-decl-list <B><TT>}</TT></B>
+<BR>
+st-un id 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+st-un: <B><TT>one of</TT></B>
+<BR><B><TT>struct</TT></B>  <B><TT>union</TT></B> 
+<BR>
+s-decl-list: 
+<BR>[st-decl]+ 
+<BR>
+st-decl: 
+<BR>
+spec-qual-list spec-declor-list <B><TT>;</TT></B> 
+<BR>
+spec-qual-list: 
+<BR>[type-spec]+
+<BR>[type-qual]+ 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+st-un: <B><TT>one of</TT></B>
+<BR><B><TT>struct</TT></B> <B><TT>union</TT></B> 
+<BR>
+s-decl-list: 
+<BR>
+st-decl 
+<BR>
+s-decl-list st-decl 
+<BR>
+st-decl: 
+<BR>
+spec-qual-list spec-declor-list <B><TT>;</TT></B> 
+<BR>
+spec-qual-list: 
+<BR>
+type-spec [spec-qual-list]
+<BR>
+type-qual [spec-qual-list] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+spec-declor-list: 
+<BR>
+st-declor [<B><TT>,</TT></B>spec-declor-list]*  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+spec-declor-list: 
+<BR>
+st-declor 
+<BR>
+spec-declor-list <B><TT>,</TT></B> st-declor  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+st-declor: 
+<BR>
+decl f-st-declor 
+<BR><B><TT>:</TT></B> const-expr 
+<BR>
+f-st-declor: 
+<BR><B><TT>:</TT></B> const-expr 
+<BR><B><TT>null</TT></B>  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+st-declor: 
+<BR>
+decl 
+<BR><U>[decl] <B><TT>:</TT></B> const-expr </U> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+stmt:
+<BR>
+label-stmt
+<BR>
+expr-stmt
+<BR>
+comp-stmt
+<BR>
+select-stmt
+<BR>
+iter-stmt
+<BR>
+jump-stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+stmt:
+<BR>
+label-stmt
+<BR>
+expr-stmt
+<BR>
+comp-stmt
+<BR>
+select-stmt
+<BR>
+iter-stmt
+<BR>
+jump-stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+label-stmt:
+<BR>
+label <B><TT>:</TT></B> stmt
+<BR><B><TT>case</TT></B> const-expr <B><TT>:</TT></B> stmt
+<BR><B><TT>default</TT></B> <B><TT>:</TT></B> stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+label-stmt:
+<BR>
+label <B><TT>:</TT></B> stmt
+<BR><B><TT>case</TT></B> const-expr <B><TT>:</TT></B> stmt
+<BR><B><TT>default</TT></B> <B><TT>:</TT></B> stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+expr-stmt:
+<BR>
+expr <B><TT>;</TT></B>
+<BR>
+comp-stmt:
+<BR><B><TT>{</TT></B> [decl-list] [ stmt-list ] <B><TT>}</TT></B>
+<BR>
+stmt-list:
+<BR>[stmt]+  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+expr-stmt:
+<BR>
+expr <B><TT>;</TT></B>
+<BR>
+comp-stmt:
+<BR><B><TT>{</TT></B> [decl-list] [ stmt-list ] <B><TT>}</TT></B>
+<BR>
+stmt-list:
+<BR>[stmt]+  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+select-stmt:
+<BR><B><TT>if</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt [<B><TT>else</TT></B> stmt]
+<BR><B><TT>switch</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+select-stmt:
+<BR><B><TT>if</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt
+<BR><B><TT>if</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt <B><TT>else</TT></B> stmt
+<BR><B><TT>switch</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+iter-statement:
+<BR><B><TT>while</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt
+<BR><B><TT>do</TT></B>  stmt <B><TT>while</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> <B><TT>;</TT></B>
+<BR><B><TT>for</TT></B>  <B><TT>(</TT></B> [expr] <B><TT>;</TT></B> [expr] <B><TT>;</TT></B> [expr]<B><TT>)</TT></B> stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+iter-statement:
+<BR><B><TT>while</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> stmt
+<BR><B><TT>do</TT></B>  stmt <B><TT>while</TT></B> <B><TT>(</TT></B> expr <B><TT>)</TT></B> <B><TT>;</TT></B>
+<BR><B><TT>for</TT></B>  <B><TT>(</TT></B> [expr] <B><TT>;</TT></B> [expr] <B><TT>;</TT></B> [expr]<B><TT>)</TT></B>stmt 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+jump-stmt:
+<BR><B><TT>goto</TT></B> id <B><TT>;</TT></B>
+<BR><B><TT>continue</TT></B> <B><TT>;</TT></B>
+<BR><B><TT>break</TT></B> <B><TT>;</TT></B>
+<BR><B><TT>return</TT></B> [expr] <B><TT>;</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+jump-stmt:
+<BR><B><TT>goto</TT></B> id <B><TT>;</TT></B>
+<BR><B><TT>continue</TT></B> <B><TT>;</TT></B>
+<BR><B><TT>break</TT></B> <B><TT>;</TT></B>
+<BR><B><TT>return</TT></B> [expr] <B><TT>;</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+expr:
+<BR>
+assign-expr [<B><TT>,</TT></B> assign-expr] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+expr:
+<BR>
+assign-expr
+<BR>
+expr <B><TT>,</TT></B> assign-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+assign-expr:
+<BR>
+cond-expr[assignment-op assign-expr] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+assign-expr:
+<BR>
+cond-expr
+<BR>
+unary-expr assignment-op assign-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+assignment-op: 
+<BR><B><TT>=</TT></B>
+<BR>[<B><TT>*</TT></B>, <B><TT>/</TT></B>,<B><TT>%</TT></B>, <B><TT>+</TT></B>, <B><TT>-</TT></B>, <B><TT>36#36 </TT></B>, <B><TT>35#35 </TT></B>, <B><TT>&amp;</TT></B>,<B><TT>^ </TT></B>,<B><TT>|</TT></B>]  <B><TT>=</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+assignment-op: 
+<BR><B><TT>=</TT></B>
+<BR>[<B><TT>*</TT></B>, <B><TT>/</TT></B>,<B><TT>%</TT></B>, <B><TT>+</TT></B>, <B><TT>-</TT></B>, <B><TT>36#36 </TT></B>, <B><TT>35#35 </TT></B>, <B><TT>&amp;</TT></B>,<B><TT>^ </TT></B>,<B><TT>|</TT></B>]  <B><TT>=</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+cond-expr:
+<BR>
+log-or-expr [<B><TT>?</TT></B> expr <B><TT>:</TT></B> cond-expr] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+cond-expr:
+<BR>
+log-or-expr
+<BR>
+log-or-expr <B><TT>?</TT></B> expr <B><TT>:</TT></B> cond-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+log-or-expr:
+<BR>
+log-and-expr [<B><TT>||</TT></B> log-and-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+log-or-expr:
+<BR>
+log-and-expr
+<BR>
+log-or-expr <B><TT>||</TT></B> log-and-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+log-and-expr:
+<BR>
+inc-or-expr [<B><TT>&amp;&amp;</TT></B> inc-or-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+log-and-expr:
+<BR>
+inc-or-expr
+<BR>
+log-and-expr <B><TT>&amp;&amp;</TT></B> inc-or-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+inc-or-expr:
+<BR>
+xor-expr [<B><TT>|</TT></B> xor-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+inc-or-expr:
+<BR>
+xor-expr
+<BR>
+inc-or-expr <B><TT>|</TT></B> xor-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+xor-expr:
+<BR>
+and-expr [<B><TT>^ </TT></B> and-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+xor-expr:
+<BR>
+and-expr
+<BR>
+xor-expr <B><TT>^ </TT></B> and-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+and-expr:
+<BR>
+equal-expr [<B><TT>&amp;</TT></B> equal-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+and-expr:
+<BR>
+equal-expr
+<BR>
+and-expr <B><TT>&amp;</TT></B> equal-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+equal-expr:
+<BR>
+rel-expr [[<B><TT>==</TT></B> , <B><TT>!=</TT></B>] rel-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+equal-expr:
+<BR>
+rel-expr
+<BR>
+equal-expr <B><TT>==</TT></B> rel-expr
+<BR>
+equal-expr <B><TT>!=</TT></B> rel-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+rel-expr:
+<BR>
+shift-expr [[<B><TT>&gt;</TT></B>,<B><TT>&lt;</TT></B>,<B><TT>&lt;=</TT></B>,<B><TT>&gt;=</TT></B>] shift-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+rel-expr:
+<BR>
+shift-expr
+<BR>
+rel-expr <B><TT>&lt;</TT></B> shift-expr
+<BR>
+rel-expr <B><TT>&gt;</TT></B> shift-expr
+<BR>
+rel-expr <B><TT>&lt;=</TT></B> shift-expr
+<BR>
+rel-expr <B><TT>&gt;=</TT></B> shift-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+shift-expr: 
+<BR>
+add-expr [[<B><TT>&#171;</TT></B>,<B><TT>&#187;</TT></B>] add-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+shift-expr: 
+<BR>
+add-expr
+<BR>
+shift-expr <B><TT>&#171;</TT></B> add-expr
+<BR>
+shift-expr <B><TT>&#187;</TT></B> add-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+add-expr: 
+<BR>
+mult-expr [[<B><TT>+</TT></B>,<B><TT>-</TT></B>] mult-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+add-expr: 
+<BR>
+mult-expr
+<BR>
+add-expr <B><TT>+</TT></B> mult-expr
+<BR>
+add-expr <B><TT>-</TT></B> mult-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+mult-expr:
+<BR>
+cast-expr [[<B><TT>*</TT></B>,<B><TT>/</TT></B>,<B><TT>%</TT></B>] cast-expr]* 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+mult-expr:
+<BR>
+cast-expr
+<BR>
+mult-expr <B><TT>*</TT></B> cast-expr
+<BR>
+mult-expr <B><TT>/</TT></B> cast-expr
+<BR>
+mult-expr <B><TT>%</TT></B> cast-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+cast-expr:
+<BR>[^  <B><TT>(</TT></B>]  unary-expr
+<BR><B><TT>(</TT></B> f-cast-expr 
+<BR>
+f-cast-expr:
+<BR>
+type-name <B><TT>)</TT></B> cast-expr
+<BR>
+expr <B><TT>)</TT></B> r-postfix-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+cast-expr:
+<BR>
+unary-expr
+<BR><B><TT>(</TT></B> type-name <B><TT>)</TT></B> cast-expr  
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+unary-expr:
+<BR>
+postfix-expr
+<BR>[<B><TT>++</TT></B>,<B><TT>-</TT></B>]  unary-expr
+<BR>[<B><TT>&amp;</TT></B>, <B><TT>*</TT></B>, <B><TT>+</TT></B>, <B><TT>-</TT></B>, <B><TT>~</TT></B>, <B><TT>!</TT></B>]  cast-expr
+<BR><B><TT>sizeof</TT></B> sizeof-ext
+<BR>
+sizeof-ext:
+<BR>[^  <B><TT>(</TT></B>]  unary-expr
+<BR><B><TT>(</TT></B> [ type-name, unary-expr] <B><TT>)</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+unary-expr:
+<BR>
+postfix-expr
+<BR>[<B><TT>++</TT></B>,<B><TT>-</TT></B>]  unary-expr
+<BR>[<B><TT>&amp;</TT></B>, <B><TT>*</TT></B>, <B><TT>+</TT></B>, <B><TT>-</TT></B>, <B><TT>~</TT></B>, <B><TT>!</TT></B>] cast-expr
+<BR><B><TT>sizeof</TT></B> [<B><TT>(</TT></B> type-name <B><TT>)</TT></B>, unary-expr] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+postfix-expr:
+<BR>
+primary-expr r-postfix-expr
+<BR>
+r-postfix-expr:
+<BR><B><TT>[</TT></B> expr <B><TT>]</TT></B>  r-postfix-expr
+<BR><B><TT>(</TT></B> [arg-expr-list] <B><TT>)</TT></B>  r-postfix-expr
+<BR><B><TT>.</TT></B> id  r-postfix-expr
+<BR><B><TT>-5#5</TT></B> id r-postfix-expr
+<BR><B><TT>++</TT></B>  r-postfix-expr
+<BR><B><TT>-</TT></B>  r-postfix-expr
+<BR>
+null 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+postfix-expr:
+<BR>
+primary-expr
+<BR>
+postfix-expr <B><TT>[</TT></B> expr <B><TT>]</TT></B>
+<BR>
+postfix-expr <B><TT>(</TT></B> [arg-expr-list] <B><TT>)</TT></B>
+<BR>
+postfix-expr <B><TT>.</TT></B> id
+<BR>
+postfix-expr <B><TT>-5#5</TT></B> id
+<BR>
+postfix-expr <B><TT>++</TT></B>
+<BR>
+postfix-expr <B><TT>-</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+arg-expr-list:
+<BR>
+assign-expr [<B><TT>,</TT></B> assign-expr] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+arg-expr-list:
+<BR>
+assign-expr
+<BR>
+arg-expr-list <B><TT>,</TT></B> assign-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+primary-expr:
+<BR>
+id
+<BR>
+constant
+<BR>
+string
+<BR><B><TT>(</TT></B> expr <B><TT>)</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+primary-expr:
+<BR>
+id
+<BR>
+constant
+<BR>
+string
+<BR><B><TT>(</TT></B>expr <B><TT>)</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+const-expr:
+<BR>
+cond-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+const-expr:
+<BR>
+cond-expr 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+constant:
+<BR>
+int-const
+<BR>
+float-const
+<BR>
+char-const
+<BR>
+enum-const
+<BR>
+typename 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1">   
+
+</FONT></DIV><TABLE  WIDTH="317">
+<TR><TD>
+<PRE><TT>
+constant:
+<BR>
+int-const
+<BR>
+float-const
+<BR>
+char-const
+<BR>
+enum-const 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+<DIV ALIGN="CENTER"><FONT SIZE="-1"> 
+<BR>
+</FONT></DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV>
+<P>
+<FONT SIZE="-1"></FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2826"
+  HREF="node164.html" tppabs="http://eic.sourceforge.net/documentation/node164.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2820"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2816"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2822"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2824"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2827"
+  HREF="node164.html" tppabs="http://eic.sourceforge.net/documentation/node164.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html2821"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">Syntax of the EiC</A>
+<B> Previous:</B> <A NAME="tex2html2817"
+  HREF="node162.html" tppabs="http://eic.sourceforge.net/documentation/node162.html">Syntax of the EiC</A>
+ &nbsp <B>  <A NAME="tex2html2823"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2825"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

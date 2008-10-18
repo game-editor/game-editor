@@ -1,0 +1,287 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Function Like Macros</TITLE>
+<META NAME="description" CONTENT="Function Like Macros">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="previous" HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">
+<LINK REL="up" HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">
+<LINK REL="next" HREF="node26.html" tppabs="http://eic.sourceforge.net/documentation/node26.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html689"
+  HREF="node26.html" tppabs="http://eic.sourceforge.net/documentation/node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html683"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html679"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html685"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html687"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html690"
+  HREF="node26.html" tppabs="http://eic.sourceforge.net/documentation/node26.html">The Undef Directive</A>
+<B> Up:</B> <A NAME="tex2html684"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">The Define Directive</A>
+<B> Previous:</B> <A NAME="tex2html680"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">The Define Directive</A>
+ &nbsp <B>  <A NAME="tex2html686"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html688"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00421000000000000000"></A>
+<A NAME="sec:FunctionMacros"></A>
+<BR>
+Function Like Macros
+</H2>
+
+<P>
+A preprocessor directive of the form
+	<BLOCKQUOTE>
+<TT>#define</TT> <I>identifier(arg-list) token-sequence </I>
+	
+</BLOCKQUOTE>
+	is a macro with arguments; that is:
+	<BLOCKQUOTE>
+<TT>#define max(a,b)	  ((a) &gt; (b) ? (a) : (b))</TT> 
+	
+</BLOCKQUOTE> 
+
+<P>
+N.B. There can be no space between the <I>identifier</I> and
+	the '('. Text inside quotes and or character constants are not
+	expanded.  Also note, that the above macro definition for
+	<B><TT>max</TT></B> is <B>unsafe</B> since it addresses each argument more
+	than once.
+
+<P>
+It is advisable that arguments in the definition be protected 
+	by parentheses:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#define prod(x,y)    ((x)*(y))
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+to help avoid certain ambiguities:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+   #include &lt;assert.h&gt;
+   ...
+   x = prod(2+4,5);    // expands to x = ((2+4)*(5));
+   assert(x == 30);
+   ...
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+While the macro <B><TT>assert</TT></B> is explained in section
+&#167;&nbsp;<A HREF="node123.html#sec:assert" tppabs="http://eic.sourceforge.net/documentation/node123.html#sec:assert">4.1.1</A>, pg:&nbsp;<A HREF="node123.html#sec:assert" tppabs="http://eic.sourceforge.net/documentation/node123.html#sec:assert"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> its intention should be clear; that is, it reports an error if
+its argument resolves to zero.
+
+<P>
+In a macro call, the number of arguments must match the number of
+parameters in its definition. However, a parameter lists can actually be empty:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#define N() 5
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+A macro can also take an arbitrary statement as an argument:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#define insert(stmt) stmt
+#define seq10  insert({int i;for(i=0;i&lt;10;i++); A = i;})
+    ...   
+    int A;
+    seq10;
+    assert(A==10);
+    ...
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+When a macro with parameters is invoked there can be
+ whitespace between its name and the left parenthesis. 
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#define BIG    max    ( 0       ,  100 )
+assert(BIG == 100);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Therefore, a macro call is defined by an <I>identifier</I> followed by
+optional white space followed by <code>(</code>, then the parameters, which
+are followed by <code>)</code>.  A macro call can also extend across
+multiple lines without the use of the backslash character:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+...
+assert(7==max(5,
+              max(6,
+                  7)
+              )
+       );
+...
+</PRE><BLOCKQUOTE></BLOCKQUOTE>While this feature is all well and good if input is coming from a
+file, since it allows laying out the code such that visibility is
+increased - especially if long identifier names are used.  However,
+EiC will refuse to extend a macro call across multiple lines without
+the presence of the backslash character while running interactively:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+...
+EiC &gt;  max(5,         // Illegal line continuation during macro expansion
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The reason for this is that with a complex statement the carriage
+return may be pressed without the user realising that he/she has
+entered an incomplete macro call; the interpreter won't flag any
+warnings because it is just expecting more input. Hence, this means
+that the user can lose synchronisation with the interpreter - and
+without realising it. Therefore, this feature is made illegal during
+interactive mode (see also &#167;&nbsp;<A HREF="node10.html#sec:EditMultipleLines" tppabs="http://eic.sourceforge.net/documentation/node10.html#sec:EditMultipleLines">1.2.3</A>, pg:&nbsp;<A HREF="node10.html#sec:EditMultipleLines" tppabs="http://eic.sourceforge.net/documentation/node10.html#sec:EditMultipleLines"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>).
+
+<P>
+A macro definition can be used to mask a real function by redefining its
+identifier:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+int f(int x) { return x*x;}
+#define f(x) ((x)+5)
+    ...
+    assert(f(5) == 10); 
+    ...
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+However, it is possible to suppress the effect of the macro by
+enclosing the name of the function in parenthesis. This works because
+the name of the function/macro is then not followed by a left
+parenthesis:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+    ...
+    assert((f)(5) == 25); 
+    ...
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html689"
+  HREF="node26.html" tppabs="http://eic.sourceforge.net/documentation/node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html683"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html679"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html685"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html687"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html690"
+  HREF="node26.html" tppabs="http://eic.sourceforge.net/documentation/node26.html">The Undef Directive</A>
+<B> Up:</B> <A NAME="tex2html684"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">The Define Directive</A>
+<B> Previous:</B> <A NAME="tex2html680"
+  HREF="node24.html" tppabs="http://eic.sourceforge.net/documentation/node24.html">The Define Directive</A>
+ &nbsp <B>  <A NAME="tex2html686"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html688"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

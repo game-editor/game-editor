@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Main Page"><param name="Local" value="main.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="File List"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/definterface.h"><param name="Local" value="definterface_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/defplugin.h"><param name="Local" value="defplugin_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/dragndrop.h"><param name="Local" value="dragndrop_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/events.h"><param name="Local" value="events_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/ifm.h"><param name="Local" value="ifm_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/ifmdefs.h"><param name="Local" value="ifmdefs_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/manager.h"><param name="Local" value="manager_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/plugin.h"><param name="Local" value="plugin_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/include/wx/ifm/resize.h"><param name="Local" value="resize_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/definterface.cpp"><param name="Local" value="definterface_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/defplugin.cpp"><param name="Local" value="defplugin_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/dragndrop.cpp"><param name="Local" value="dragndrop_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/events.cpp"><param name="Local" value="events_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/manager.cpp"><param name="Local" value="manager_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/plugin.cpp"><param name="Local" value="plugin_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="C:/C++/wxIFM/src/ifm/resize.cpp"><param name="Local" value="resize_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMActivateEvent"><param name="Local" value="classwx_i_f_m_activate_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMAddChildEvent"><param name="Local" value="classwx_i_f_m_add_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMAddTopContainerEvent"><param name="Local" value="classwx_i_f_m_add_top_container_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMBeginPaintEvent"><param name="Local" value="classwx_i_f_m_begin_paint_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMCalcRectsEvent"><param name="Local" value="classwx_i_f_m_calc_rects_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMCaptionConfig"><param name="Local" value="classwx_i_f_m_caption_config.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMChildDataBase"><param name="Local" value="classwx_i_f_m_child_data_base.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMChildEvent"><param name="Local" value="classwx_i_f_m_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponent"><param name="Local" value="classwx_i_f_m_component.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponentButtonEvent"><param name="Local" value="classwx_i_f_m_component_button_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponentButtonManager"><param name="Local" value="classwx_i_f_m_component_button_manager.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponentVisibilityChangedEvent"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMContainerData"><param name="Local" value="classwx_i_f_m_container_data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMConvertRectEvent"><param name="Local" value="classwx_i_f_m_convert_rect_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMCreateFloatingWindowEvent"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultChildData"><param name="Local" value="classwx_i_f_m_default_child_data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultContainerPlugin"><param name="Local" value="classwx_i_f_m_default_container_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultDockingPlugin"><param name="Local" value="classwx_i_f_m_default_docking_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultInterfacePlugin"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultPanelPlugin"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultPlugin"><param name="Local" value="classwx_i_f_m_default_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultResizePlugin"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDeleteComponentEvent"><param name="Local" value="classwx_i_f_m_delete_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDestroyFloatingWindowEvent"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDimensions"><param name="Local" value="classwx_i_f_m_dimensions.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDockEvent"><param name="Local" value="classwx_i_f_m_dock_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDockEventEx"><param name="Local" value="classwx_i_f_m_dock_event_ex.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDragEvent"><param name="Local" value="classwx_i_f_m_drag_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMEndPaintEvent"><param name="Local" value="classwx_i_f_m_end_paint_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMExtensionDataBase"><param name="Local" value="classwx_i_f_m_extension_data_base.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMExtensionPluginBase"><param name="Local" value="classwx_i_f_m_extension_plugin_base.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatEvent"><param name="Local" value="classwx_i_f_m_float_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingData"><param name="Local" value="classwx_i_f_m_floating_data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingFrame"><param name="Local" value="classwx_i_f_m_floating_frame.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingMoveEvent"><param name="Local" value="classwx_i_f_m_floating_move_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingSizeEvent"><param name="Local" value="classwx_i_f_m_floating_size_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingWindowBase"><param name="Local" value="classwx_i_f_m_floating_window_base.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatNotifyEvent"><param name="Local" value="classwx_i_f_m_float_notify_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFocusEvent"><param name="Local" value="classwx_i_f_m_focus_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMHitTestEvent"><param name="Local" value="classwx_i_f_m_hit_test_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMInitDragEvent"><param name="Local" value="classwx_i_f_m_init_drag_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMInterfacePluginBase"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMKeyEvent"><param name="Local" value="classwx_i_f_m_key_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMMouseEvent"><param name="Local" value="classwx_i_f_m_mouse_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMNewComponentEvent"><param name="Local" value="classwx_i_f_m_new_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPaintEvent"><param name="Local" value="classwx_i_f_m_paint_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPaintInterfaceEvent"><param name="Local" value="classwx_i_f_m_paint_interface_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPanelData"><param name="Local" value="classwx_i_f_m_panel_data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPanelTabData"><param name="Local" value="classwx_i_f_m_panel_tab_data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPluginEvent"><param name="Local" value="classwx_i_f_m_plugin_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMQueryChildEvent"><param name="Local" value="classwx_i_f_m_query_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMRectEvent"><param name="Local" value="classwx_i_f_m_rect_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMRemoveTopContainerEvent"><param name="Local" value="classwx_i_f_m_remove_top_container_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMResizeData"><param name="Local" value="classwx_i_f_m_resize_data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMResizeEvent"><param name="Local" value="classwx_i_f_m_resize_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSelectTabEvent"><param name="Local" value="classwx_i_f_m_select_tab_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSetChildEvent"><param name="Local" value="classwx_i_f_m_set_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSetChildSizeEvent"><param name="Local" value="classwx_i_f_m_set_child_size_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSetCursorEvent"><param name="Local" value="classwx_i_f_m_set_cursor_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMShowChildEvent"><param name="Local" value="classwx_i_f_m_show_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMShowComponentEvent"><param name="Local" value="classwx_i_f_m_show_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMShowDropTargetsEvent"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMTab"><param name="Local" value="classwx_i_f_m_tab.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMTabConfig"><param name="Local" value="classwx_i_f_m_tab_config.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUndockEvent"><param name="Local" value="classwx_i_f_m_undock_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateComponentEvent"><param name="Local" value="classwx_i_f_m_update_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateConfigEvent"><param name="Local" value="classwx_i_f_m_update_config_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateEvent"><param name="Local" value="classwx_i_f_m_update_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateResizeSashEvent"><param name="Local" value="classwx_i_f_m_update_resize_sash_event.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMVersionInfo"><param name="Local" value="classwx_i_f_m_version_info.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxInterfaceManager"><param name="Local" value="classwx_interface_manager.html"><param name="ImageNumber" value="11"></OBJECT>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class Hierarchy"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxEvent"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPluginEvent"><param name="Local" value="classwx_i_f_m_plugin_event.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMActivateEvent"><param name="Local" value="classwx_i_f_m_activate_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMAddChildEvent"><param name="Local" value="classwx_i_f_m_add_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMAddTopContainerEvent"><param name="Local" value="classwx_i_f_m_add_top_container_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMBeginPaintEvent"><param name="Local" value="classwx_i_f_m_begin_paint_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMCalcRectsEvent"><param name="Local" value="classwx_i_f_m_calc_rects_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMChildEvent"><param name="Local" value="classwx_i_f_m_child_event.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMQueryChildEvent"><param name="Local" value="classwx_i_f_m_query_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSetChildSizeEvent"><param name="Local" value="classwx_i_f_m_set_child_size_event.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMShowChildEvent"><param name="Local" value="classwx_i_f_m_show_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponentButtonEvent"><param name="Local" value="classwx_i_f_m_component_button_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponentVisibilityChangedEvent"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMCreateFloatingWindowEvent"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDeleteComponentEvent"><param name="Local" value="classwx_i_f_m_delete_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDestroyFloatingWindowEvent"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDockEvent"><param name="Local" value="classwx_i_f_m_dock_event.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDockEventEx"><param name="Local" value="classwx_i_f_m_dock_event_ex.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDragEvent"><param name="Local" value="classwx_i_f_m_drag_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMEndPaintEvent"><param name="Local" value="classwx_i_f_m_end_paint_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatEvent"><param name="Local" value="classwx_i_f_m_float_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingMoveEvent"><param name="Local" value="classwx_i_f_m_floating_move_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingSizeEvent"><param name="Local" value="classwx_i_f_m_floating_size_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatNotifyEvent"><param name="Local" value="classwx_i_f_m_float_notify_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFocusEvent"><param name="Local" value="classwx_i_f_m_focus_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMHitTestEvent"><param name="Local" value="classwx_i_f_m_hit_test_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMInitDragEvent"><param name="Local" value="classwx_i_f_m_init_drag_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMKeyEvent"><param name="Local" value="classwx_i_f_m_key_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMMouseEvent"><param name="Local" value="classwx_i_f_m_mouse_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMNewComponentEvent"><param name="Local" value="classwx_i_f_m_new_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPaintEvent"><param name="Local" value="classwx_i_f_m_paint_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPaintInterfaceEvent"><param name="Local" value="classwx_i_f_m_paint_interface_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMRectEvent"><param name="Local" value="classwx_i_f_m_rect_event.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMConvertRectEvent"><param name="Local" value="classwx_i_f_m_convert_rect_event.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMRemoveTopContainerEvent"><param name="Local" value="classwx_i_f_m_remove_top_container_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMResizeEvent"><param name="Local" value="classwx_i_f_m_resize_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSelectTabEvent"><param name="Local" value="classwx_i_f_m_select_tab_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSetChildEvent"><param name="Local" value="classwx_i_f_m_set_child_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMSetCursorEvent"><param name="Local" value="classwx_i_f_m_set_cursor_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMShowComponentEvent"><param name="Local" value="classwx_i_f_m_show_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMShowDropTargetsEvent"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUndockEvent"><param name="Local" value="classwx_i_f_m_undock_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateComponentEvent"><param name="Local" value="classwx_i_f_m_update_component_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateConfigEvent"><param name="Local" value="classwx_i_f_m_update_config_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateEvent"><param name="Local" value="classwx_i_f_m_update_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMUpdateResizeSashEvent"><param name="Local" value="classwx_i_f_m_update_resize_sash_event.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxEvtHandler"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultPlugin"><param name="Local" value="classwx_i_f_m_default_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMExtensionPluginBase"><param name="Local" value="classwx_i_f_m_extension_plugin_base.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultContainerPlugin"><param name="Local" value="classwx_i_f_m_default_container_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultDockingPlugin"><param name="Local" value="classwx_i_f_m_default_docking_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultPanelPlugin"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultResizePlugin"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingWindowBase"><param name="Local" value="classwx_i_f_m_floating_window_base.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingFrame"><param name="Local" value="classwx_i_f_m_floating_frame.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMInterfacePluginBase"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultInterfacePlugin"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxInterfaceManager"><param name="Local" value="classwx_interface_manager.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMCaptionConfig"><param name="Local" value="classwx_i_f_m_caption_config.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponent"><param name="Local" value="classwx_i_f_m_component.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMComponentButtonManager"><param name="Local" value="classwx_i_f_m_component_button_manager.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDimensions"><param name="Local" value="classwx_i_f_m_dimensions.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMTab"><param name="Local" value="classwx_i_f_m_tab.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMTabConfig"><param name="Local" value="classwx_i_f_m_tab_config.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMVersionInfo"><param name="Local" value="classwx_i_f_m_version_info.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxObject"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMChildDataBase"><param name="Local" value="classwx_i_f_m_child_data_base.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMDefaultChildData"><param name="Local" value="classwx_i_f_m_default_child_data.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMExtensionDataBase"><param name="Local" value="classwx_i_f_m_extension_data_base.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMContainerData"><param name="Local" value="classwx_i_f_m_container_data.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMFloatingData"><param name="Local" value="classwx_i_f_m_floating_data.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPanelData"><param name="Local" value="classwx_i_f_m_panel_data.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMPanelTabData"><param name="Local" value="classwx_i_f_m_panel_tab_data.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFMResizeData"><param name="Local" value="classwx_i_f_m_resize_data.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class Members"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="File Members"><param name="Local" value="globals.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Related Pages"><param name="Local" value="pages.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Notes for building wxIFM"><param name="Local" value="building.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Coordinate Systems"><param name="Local" value="coordsystems.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Getting Started"><param name="Local" value="gettingstarted.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="wxIFM Overview"><param name="Local" value="overview.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Todo List"><param name="Local" value="todo.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  </UL>
+</UL>

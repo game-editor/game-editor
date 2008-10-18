@@ -1,0 +1,175 @@
+# Project: engine
+# Makefile created by Dev-C++ 4.9.5.0
+
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../../output/action.o ../../output/box.o ../../output/boxresource.o ../../output/canvas.o ../../output/canvasresource.o ../../output/color.o ../../output/dataresource.o ../../output/dirtyrectangle.o ../../output/encoder.o ../../output/engine.o ../../output/fontresource.o ../../output/image.o ../../output/imagetree.o ../../output/imnode.o ../../output/krmath.o ../../output/kyraresource.o ../../output/namefield.o ../../output/ogltexture.o ../../output/painter.o ../../output/parser.o ../../output/pixelblock.o ../../output/rle.o ../../output/sdlutil.o ../../output/splash.o ../../output/sprite.o ../../output/spriteresource.o ../../output/textbox.o ../../output/tile.o ../../output/tileresource.o ../../output/vault.o ../../output/button.o ../../output/console.o ../../output/eventmanager.o ../../output/listbox.o ../../output/textwidget.o ../../output/widget.o ../../output/glbitstream.o ../../output/gldebug.o ../../output/glgraph.o ../../output/glisomath.o ../../output/glmap.o ../../output/glmemorypool.o ../../output/glperformance.o ../../output/glprime.o ../../output/glrandom.o ../../output/glstring.o ../../output/tinyxml.o ../../output/tinyxmlerror.o ../../output/tinyxmlparser.o ../../output/KrImageListBox.o ../../output/progress.o $(RES)
+LIBS =  -L"E:\Dev-Cpp\lib" 
+INCS =  -I"E:\Dev-Cpp\include"  -I"../../SDL/SDL//include"  -I"../../SDL/SDL_image" 
+BIN  = ../../output/engine/engine.exe
+CFLAGS = $(INCS) -D__GNUWIN32__ -DGAME_EDITOR_PROFESSIONAL -DNDEBUG -D_LIB -DWIN32 -D_MBCS -g3 -mwindows
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../output/engine/engine.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(OBJ) -o "..\..\output\engine\engine.exe" $(LIBS) $(CFLAGS)
+
+../../output/action.o: action.cpp
+	$(CC) -c action.cpp -o ../../output/action.o $(CFLAGS)
+
+../../output/box.o: box.cpp
+	$(CC) -c box.cpp -o ../../output/box.o $(CFLAGS)
+
+../../output/boxresource.o: boxresource.cpp
+	$(CC) -c boxresource.cpp -o ../../output/boxresource.o $(CFLAGS)
+
+../../output/canvas.o: canvas.cpp
+	$(CC) -c canvas.cpp -o ../../output/canvas.o $(CFLAGS)
+
+../../output/canvasresource.o: canvasresource.cpp
+	$(CC) -c canvasresource.cpp -o ../../output/canvasresource.o $(CFLAGS)
+
+../../output/color.o: color.cpp
+	$(CC) -c color.cpp -o ../../output/color.o $(CFLAGS)
+
+../../output/dataresource.o: dataresource.cpp
+	$(CC) -c dataresource.cpp -o ../../output/dataresource.o $(CFLAGS)
+
+../../output/dirtyrectangle.o: dirtyrectangle.cpp
+	$(CC) -c dirtyrectangle.cpp -o ../../output/dirtyrectangle.o $(CFLAGS)
+
+../../output/encoder.o: encoder.cpp
+	$(CC) -c encoder.cpp -o ../../output/encoder.o $(CFLAGS)
+
+../../output/engine.o: engine.cpp
+	$(CC) -c engine.cpp -o ../../output/engine.o $(CFLAGS)
+
+../../output/fontresource.o: fontresource.cpp
+	$(CC) -c fontresource.cpp -o ../../output/fontresource.o $(CFLAGS)
+
+../../output/image.o: image.cpp
+	$(CC) -c image.cpp -o ../../output/image.o $(CFLAGS)
+
+../../output/imagetree.o: imagetree.cpp
+	$(CC) -c imagetree.cpp -o ../../output/imagetree.o $(CFLAGS)
+
+../../output/imnode.o: imnode.cpp
+	$(CC) -c imnode.cpp -o ../../output/imnode.o $(CFLAGS)
+
+../../output/krmath.o: krmath.cpp
+	$(CC) -c krmath.cpp -o ../../output/krmath.o $(CFLAGS)
+
+../../output/kyraresource.o: kyraresource.cpp
+	$(CC) -c kyraresource.cpp -o ../../output/kyraresource.o $(CFLAGS)
+
+../../output/namefield.o: namefield.cpp
+	$(CC) -c namefield.cpp -o ../../output/namefield.o $(CFLAGS)
+
+../../output/ogltexture.o: ogltexture.cpp
+	$(CC) -c ogltexture.cpp -o ../../output/ogltexture.o $(CFLAGS)
+
+../../output/painter.o: painter.cpp
+	$(CC) -c painter.cpp -o ../../output/painter.o $(CFLAGS)
+
+../../output/parser.o: parser.cpp
+	$(CC) -c parser.cpp -o ../../output/parser.o $(CFLAGS)
+
+../../output/pixelblock.o: pixelblock.cpp
+	$(CC) -c pixelblock.cpp -o ../../output/pixelblock.o $(CFLAGS)
+
+../../output/rle.o: rle.cpp
+	$(CC) -c rle.cpp -o ../../output/rle.o $(CFLAGS)
+
+../../output/sdlutil.o: sdlutil.cpp
+	$(CC) -c sdlutil.cpp -o ../../output/sdlutil.o $(CFLAGS)
+
+../../output/splash.o: splash.cpp
+	$(CC) -c splash.cpp -o ../../output/splash.o $(CFLAGS)
+
+../../output/sprite.o: sprite.cpp
+	$(CC) -c sprite.cpp -o ../../output/sprite.o $(CFLAGS)
+
+../../output/spriteresource.o: spriteresource.cpp
+	$(CC) -c spriteresource.cpp -o ../../output/spriteresource.o $(CFLAGS)
+
+../../output/textbox.o: textbox.cpp
+	$(CC) -c textbox.cpp -o ../../output/textbox.o $(CFLAGS)
+
+../../output/tile.o: tile.cpp
+	$(CC) -c tile.cpp -o ../../output/tile.o $(CFLAGS)
+
+../../output/tileresource.o: tileresource.cpp
+	$(CC) -c tileresource.cpp -o ../../output/tileresource.o $(CFLAGS)
+
+../../output/vault.o: vault.cpp
+	$(CC) -c vault.cpp -o ../../output/vault.o $(CFLAGS)
+
+../../output/button.o: ../gui/button.cpp
+	$(CC) -c ../gui/button.cpp -o ../../output/button.o $(CFLAGS)
+
+../../output/console.o: ../gui/console.cpp
+	$(CC) -c ../gui/console.cpp -o ../../output/console.o $(CFLAGS)
+
+../../output/eventmanager.o: ../gui/eventmanager.cpp
+	$(CC) -c ../gui/eventmanager.cpp -o ../../output/eventmanager.o $(CFLAGS)
+
+../../output/listbox.o: ../gui/listbox.cpp
+	$(CC) -c ../gui/listbox.cpp -o ../../output/listbox.o $(CFLAGS)
+
+../../output/textwidget.o: ../gui/textwidget.cpp
+	$(CC) -c ../gui/textwidget.cpp -o ../../output/textwidget.o $(CFLAGS)
+
+../../output/widget.o: ../gui/widget.cpp
+	$(CC) -c ../gui/widget.cpp -o ../../output/widget.o $(CFLAGS)
+
+../../output/glbitstream.o: ../util/glbitstream.cpp
+	$(CC) -c ../util/glbitstream.cpp -o ../../output/glbitstream.o $(CFLAGS)
+
+../../output/gldebug.o: ../util/gldebug.cpp
+	$(CC) -c ../util/gldebug.cpp -o ../../output/gldebug.o $(CFLAGS)
+
+../../output/glgraph.o: ../util/glgraph.cpp
+	$(CC) -c ../util/glgraph.cpp -o ../../output/glgraph.o $(CFLAGS)
+
+../../output/glisomath.o: ../util/glisomath.cpp
+	$(CC) -c ../util/glisomath.cpp -o ../../output/glisomath.o $(CFLAGS)
+
+../../output/glmap.o: ../util/glmap.cpp
+	$(CC) -c ../util/glmap.cpp -o ../../output/glmap.o $(CFLAGS)
+
+../../output/glmemorypool.o: ../util/glmemorypool.cpp
+	$(CC) -c ../util/glmemorypool.cpp -o ../../output/glmemorypool.o $(CFLAGS)
+
+../../output/glperformance.o: ../util/glperformance.cpp
+	$(CC) -c ../util/glperformance.cpp -o ../../output/glperformance.o $(CFLAGS)
+
+../../output/glprime.o: ../util/glprime.cpp
+	$(CC) -c ../util/glprime.cpp -o ../../output/glprime.o $(CFLAGS)
+
+../../output/glrandom.o: ../util/glrandom.cpp
+	$(CC) -c ../util/glrandom.cpp -o ../../output/glrandom.o $(CFLAGS)
+
+../../output/glstring.o: ../util/glstring.cpp
+	$(CC) -c ../util/glstring.cpp -o ../../output/glstring.o $(CFLAGS)
+
+../../output/tinyxml.o: ../tinyxml/tinyxml.cpp
+	$(CC) -c ../tinyxml/tinyxml.cpp -o ../../output/tinyxml.o $(CFLAGS)
+
+../../output/tinyxmlerror.o: ../tinyxml/tinyxmlerror.cpp
+	$(CC) -c ../tinyxml/tinyxmlerror.cpp -o ../../output/tinyxmlerror.o $(CFLAGS)
+
+../../output/tinyxmlparser.o: ../tinyxml/tinyxmlparser.cpp
+	$(CC) -c ../tinyxml/tinyxmlparser.cpp -o ../../output/tinyxmlparser.o $(CFLAGS)
+
+../../output/KrImageListBox.o: ../guiExtended/KrImageListBox.cpp
+	$(CC) -c ../guiExtended/KrImageListBox.cpp -o ../../output/KrImageListBox.o $(CFLAGS)
+
+../../output/progress.o: ../guiExtended/progress.cpp
+	$(CC) -c ../guiExtended/progress.cpp -o ../../output/progress.o $(CFLAGS)

@@ -1,0 +1,24 @@
+<Definition filename="tutorial1.tga" Transparent0="#000000">
+    <Sprite name="CARPET">
+        <Action name="NONE">
+            <Frame x="0" y="0" width="145" height="80" hotspotx="72" hotspoty="41" deltax="-3" deltay="0" />
+            <Frame x="0" y="78" width="142" height="82" hotspotx="71" hotspoty="121" deltax="-3" deltay="0" />
+            <Frame x="0" y="160" width="142" height="83" hotspotx="70" hotspoty="201" deltax="-3" deltay="0" />
+            <Frame x="0" y="241" width="141" height="82" hotspotx="70" hotspoty="282" deltax="-3" deltay="0" />
+            <Frame x="142" y="0" width="149" height="80" hotspotx="221" hotspoty="40" deltax="-3" deltay="0" />
+            <Frame x="143" y="79" width="151" height="84" hotspotx="222" hotspoty="121" deltax="-3" deltay="0" />
+            <Frame x="146" y="165" width="147" height="94" hotspotx="221" hotspoty="211" deltax="-3" deltay="0" />
+            <Frame x="149" y="258" width="148" height="90" hotspotx="221" hotspoty="302" deltax="-3" deltay="0" />
+        </Action>
+    </Sprite>
+    <Sprite name="MAGE">
+        <Action name="NONE">
+            <Frame x="0" y="324" width="82" height="74" hotspotx="56" hotspoty="365" deltax="0" deltay="0" />
+        </Action>
+    </Sprite>
+    <Sprite name="PARTICLE">
+        <Action name="NONE">
+            <Frame x="99" y="353" width="20" height="28" hotspotx="108" hotspoty="363" deltax="0" deltay="0" />
+        </Action>
+    </Sprite>
+</Definition>

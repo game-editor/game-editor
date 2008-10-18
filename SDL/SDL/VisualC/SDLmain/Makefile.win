@@ -1,0 +1,26 @@
+# Project: SDLmain
+# Makefile created by Dev-C++ 4.9.5.0
+
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../../../../output/SDL_main.o $(RES)
+LIBS =  -L"E:\Dev-Cpp\lib" 
+INCS =  -I"E:\Dev-Cpp\include"  -I"..\..\include" 
+BIN  = ../../../../output/SDLmain.a
+CFLAGS = $(INCS) -D__GNUWIN32__ -DWIN32 -DNDEBUG -D_WINDOWS -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../output/SDLmain.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	ar r $(BIN) $(OBJ)
+	ranlib $(BIN)
+
+../../../../output/SDL_main.o: ../../Src/Main/Win32/SDL_main.c
+	$(CC) -c ../../Src/Main/Win32/SDL_main.c -o ../../../../output/SDL_main.o $(CFLAGS)

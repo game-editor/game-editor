@@ -1,0 +1,173 @@
+# Project: SDL
+# Makefile created by Dev-C++ 4.9.5.0
+
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../../../../output/SDL.o ../../../../output/SDL_active.o ../../../../output/SDL_audio.o ../../../../output/SDL_audiocvt.o ../../../../output/SDL_audiomem.o ../../../../output/SDL_blit.o ../../../../output/SDL_blit_0.o ../../../../output/SDL_blit_1.o ../../../../output/SDL_blit_A.o ../../../../output/SDL_blit_N.o ../../../../output/SDL_bmp.o ../../../../output/SDL_cdrom.o ../../../../output/SDL_cursor.o ../../../../output/SDL_dibaudio.o ../../../../output/SDL_dibevents.o ../../../../output/SDL_dibvideo.o ../../../../output/SDL_endian.o ../../../../output/SDL_error.o ../../../../output/SDL_events.o ../../../../output/SDL_expose.o ../../../../output/SDL_fatal.o ../../../../output/SDL_gamma.o ../../../../output/SDL_joystick.o ../../../../output/SDL_keyboard.o ../../../../output/SDL_mixer.o ../../../../output/SDL_mmjoystick.o ../../../../output/SDL_mouse.o ../../../../output/SDL_pixels.o ../../../../output/SDL_quit.o ../../../../output/SDL_resize.o ../../../../output/SDL_RLEaccel.o ../../../../output/SDL_rwops.o ../../../../output/SDL_stretch.o ../../../../output/SDL_surface.o ../../../../output/SDL_syscdrom.o ../../../../output/SDL_syscond.o ../../../../output/SDL_sysevents.o ../../../../output/SDL_sysmouse.o ../../../../output/SDL_sysmutex.o ../../../../output/SDL_syssem.o ../../../../output/SDL_systhread.o ../../../../output/SDL_systimer.o ../../../../output/SDL_syswm.o ../../../../output/SDL_thread.o ../../../../output/SDL_timer.o ../../../../output/SDL_video.o ../../../../output/SDL_wave.o ../../../../output/SDL_wingl.o ../../../../output/SDL_yuv.o ../../../../output/SDL_yuv_sw.o $(RES)
+LIBS =  -L"E:\Dev-Cpp\lib" -lwinmm -ldxguid -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid
+INCS =  -I"E:\Dev-Cpp\include"  -I"..\..\src"  -I"..\..\src\audio"  -I"..\..\src\video"  -I"..\..\src\video\wincommon"  -I"..\..\src\video\windx5"  -I"..\..\src\events"  -I"..\..\src\joystick"  -I"..\..\src\cdrom"  -I"..\..\src\thread"  -I"..\..\src\thread\win32"  -I"..\..\src\timer"  -I"..\..\include" 
+BIN  = ../../../../output/SDL.a
+CFLAGS = $(INCS) -D__GNUWIN32__ -DNDEBUG -DWIN32 -D_WINDOWS -DENABLE_WINDIB -D_WIN32_WINNT=0x0400 -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../output/SDL.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	ar r $(BIN) $(OBJ)
+	ranlib $(BIN)
+
+../../../../output/SDL.o: ../../Src/SDL.c
+	$(CC) -c ../../Src/SDL.c -o ../../../../output/SDL.o $(CFLAGS)
+
+../../../../output/SDL_active.o: ../../Src/Events/SDL_active.c
+	$(CC) -c ../../Src/Events/SDL_active.c -o ../../../../output/SDL_active.o $(CFLAGS)
+
+../../../../output/SDL_audio.o: ../../Src/Audio/SDL_audio.c
+	$(CC) -c ../../Src/Audio/SDL_audio.c -o ../../../../output/SDL_audio.o $(CFLAGS)
+
+../../../../output/SDL_audiocvt.o: ../../Src/Audio/SDL_audiocvt.c
+	$(CC) -c ../../Src/Audio/SDL_audiocvt.c -o ../../../../output/SDL_audiocvt.o $(CFLAGS)
+
+../../../../output/SDL_audiomem.o: ../../Src/Audio/SDL_audiomem.c
+	$(CC) -c ../../Src/Audio/SDL_audiomem.c -o ../../../../output/SDL_audiomem.o $(CFLAGS)
+
+../../../../output/SDL_blit.o: ../../Src/Video/SDL_blit.c
+	$(CC) -c ../../Src/Video/SDL_blit.c -o ../../../../output/SDL_blit.o $(CFLAGS)
+
+../../../../output/SDL_blit_0.o: ../../Src/Video/SDL_blit_0.c
+	$(CC) -c ../../Src/Video/SDL_blit_0.c -o ../../../../output/SDL_blit_0.o $(CFLAGS)
+
+../../../../output/SDL_blit_1.o: ../../Src/Video/SDL_blit_1.c
+	$(CC) -c ../../Src/Video/SDL_blit_1.c -o ../../../../output/SDL_blit_1.o $(CFLAGS)
+
+../../../../output/SDL_blit_A.o: ../../Src/Video/SDL_blit_A.c
+	$(CC) -c ../../Src/Video/SDL_blit_A.c -o ../../../../output/SDL_blit_A.o $(CFLAGS)
+
+../../../../output/SDL_blit_N.o: ../../Src/Video/SDL_blit_N.c
+	$(CC) -c ../../Src/Video/SDL_blit_N.c -o ../../../../output/SDL_blit_N.o $(CFLAGS)
+
+../../../../output/SDL_bmp.o: ../../Src/Video/SDL_bmp.c
+	$(CC) -c ../../Src/Video/SDL_bmp.c -o ../../../../output/SDL_bmp.o $(CFLAGS)
+
+../../../../output/SDL_cdrom.o: ../../Src/Cdrom/SDL_cdrom.c
+	$(CC) -c ../../Src/Cdrom/SDL_cdrom.c -o ../../../../output/SDL_cdrom.o $(CFLAGS)
+
+../../../../output/SDL_cursor.o: ../../Src/Video/SDL_cursor.c
+	$(CC) -c ../../Src/Video/SDL_cursor.c -o ../../../../output/SDL_cursor.o $(CFLAGS)
+
+../../../../output/SDL_dibaudio.o: ../../src/audio/windib/SDL_dibaudio.c
+	$(CC) -c ../../src/audio/windib/SDL_dibaudio.c -o ../../../../output/SDL_dibaudio.o $(CFLAGS)
+
+../../../../output/SDL_dibevents.o: ../../Src/Video/Windib/SDL_dibevents.c
+	$(CC) -c ../../Src/Video/Windib/SDL_dibevents.c -o ../../../../output/SDL_dibevents.o $(CFLAGS)
+
+../../../../output/SDL_dibvideo.o: ../../Src/Video/Windib/SDL_dibvideo.c
+	$(CC) -c ../../Src/Video/Windib/SDL_dibvideo.c -o ../../../../output/SDL_dibvideo.o $(CFLAGS)
+
+../../../../output/SDL_endian.o: ../../Src/Endian/SDL_endian.c
+	$(CC) -c ../../Src/Endian/SDL_endian.c -o ../../../../output/SDL_endian.o $(CFLAGS)
+
+../../../../output/SDL_error.o: ../../Src/SDL_error.c
+	$(CC) -c ../../Src/SDL_error.c -o ../../../../output/SDL_error.o $(CFLAGS)
+
+../../../../output/SDL_events.o: ../../Src/Events/SDL_events.c
+	$(CC) -c ../../Src/Events/SDL_events.c -o ../../../../output/SDL_events.o $(CFLAGS)
+
+../../../../output/SDL_expose.o: ../../Src/Events/SDL_expose.c
+	$(CC) -c ../../Src/Events/SDL_expose.c -o ../../../../output/SDL_expose.o $(CFLAGS)
+
+../../../../output/SDL_fatal.o: ../../Src/SDL_fatal.c
+	$(CC) -c ../../Src/SDL_fatal.c -o ../../../../output/SDL_fatal.o $(CFLAGS)
+
+../../../../output/SDL_gamma.o: ../../src/video/SDL_gamma.c
+	$(CC) -c ../../src/video/SDL_gamma.c -o ../../../../output/SDL_gamma.o $(CFLAGS)
+
+../../../../output/SDL_joystick.o: ../../src/joystick/SDL_joystick.c
+	$(CC) -c ../../src/joystick/SDL_joystick.c -o ../../../../output/SDL_joystick.o $(CFLAGS)
+
+../../../../output/SDL_keyboard.o: ../../Src/Events/SDL_keyboard.c
+	$(CC) -c ../../Src/Events/SDL_keyboard.c -o ../../../../output/SDL_keyboard.o $(CFLAGS)
+
+../../../../output/SDL_mixer.o: ../../Src/Audio/SDL_mixer.c
+	$(CC) -c ../../Src/Audio/SDL_mixer.c -o ../../../../output/SDL_mixer.o $(CFLAGS)
+
+../../../../output/SDL_mmjoystick.o: ../../src/joystick/win32/SDL_mmjoystick.c
+	$(CC) -c ../../src/joystick/win32/SDL_mmjoystick.c -o ../../../../output/SDL_mmjoystick.o $(CFLAGS)
+
+../../../../output/SDL_mouse.o: ../../Src/Events/SDL_mouse.c
+	$(CC) -c ../../Src/Events/SDL_mouse.c -o ../../../../output/SDL_mouse.o $(CFLAGS)
+
+../../../../output/SDL_pixels.o: ../../Src/Video/SDL_pixels.c
+	$(CC) -c ../../Src/Video/SDL_pixels.c -o ../../../../output/SDL_pixels.o $(CFLAGS)
+
+../../../../output/SDL_quit.o: ../../Src/Events/SDL_quit.c
+	$(CC) -c ../../Src/Events/SDL_quit.c -o ../../../../output/SDL_quit.o $(CFLAGS)
+
+../../../../output/SDL_resize.o: ../../src/events/SDL_resize.c
+	$(CC) -c ../../src/events/SDL_resize.c -o ../../../../output/SDL_resize.o $(CFLAGS)
+
+../../../../output/SDL_RLEaccel.o: ../../Src/Video/SDL_RLEaccel.c
+	$(CC) -c ../../Src/Video/SDL_RLEaccel.c -o ../../../../output/SDL_RLEaccel.o $(CFLAGS)
+
+../../../../output/SDL_rwops.o: ../../Src/File/SDL_rwops.c
+	$(CC) -c ../../Src/File/SDL_rwops.c -o ../../../../output/SDL_rwops.o $(CFLAGS)
+
+../../../../output/SDL_stretch.o: ../../src/video/SDL_stretch.c
+	$(CC) -c ../../src/video/SDL_stretch.c -o ../../../../output/SDL_stretch.o $(CFLAGS)
+
+../../../../output/SDL_surface.o: ../../Src/Video/SDL_surface.c
+	$(CC) -c ../../Src/Video/SDL_surface.c -o ../../../../output/SDL_surface.o $(CFLAGS)
+
+../../../../output/SDL_syscdrom.o: ../../Src/Cdrom/Win32/SDL_syscdrom.c
+	$(CC) -c ../../Src/Cdrom/Win32/SDL_syscdrom.c -o ../../../../output/SDL_syscdrom.o $(CFLAGS)
+
+../../../../output/SDL_syscond.o: ../../src/thread/generic/SDL_syscond.c
+	$(CC) -c ../../src/thread/generic/SDL_syscond.c -o ../../../../output/SDL_syscond.o $(CFLAGS)
+
+../../../../output/SDL_sysevents.o: ../../Src/Video/wincommon/SDL_sysevents.c
+	$(CC) -c ../../Src/Video/wincommon/SDL_sysevents.c -o ../../../../output/SDL_sysevents.o $(CFLAGS)
+
+../../../../output/SDL_sysmouse.o: ../../Src/Video/wincommon/SDL_sysmouse.c
+	$(CC) -c ../../Src/Video/wincommon/SDL_sysmouse.c -o ../../../../output/SDL_sysmouse.o $(CFLAGS)
+
+../../../../output/SDL_sysmutex.o: ../../src/thread/win32/SDL_sysmutex.c
+	$(CC) -c ../../src/thread/win32/SDL_sysmutex.c -o ../../../../output/SDL_sysmutex.o $(CFLAGS)
+
+../../../../output/SDL_syssem.o: ../../src/thread/win32/SDL_syssem.c
+	$(CC) -c ../../src/thread/win32/SDL_syssem.c -o ../../../../output/SDL_syssem.o $(CFLAGS)
+
+../../../../output/SDL_systhread.o: ../../Src/Thread/Win32/SDL_systhread.c
+	$(CC) -c ../../Src/Thread/Win32/SDL_systhread.c -o ../../../../output/SDL_systhread.o $(CFLAGS)
+
+../../../../output/SDL_systimer.o: ../../src/timer/win32/SDL_systimer.c
+	$(CC) -c ../../src/timer/win32/SDL_systimer.c -o ../../../../output/SDL_systimer.o $(CFLAGS)
+
+../../../../output/SDL_syswm.o: ../../Src/Video/wincommon/SDL_syswm.c
+	$(CC) -c ../../Src/Video/wincommon/SDL_syswm.c -o ../../../../output/SDL_syswm.o $(CFLAGS)
+
+../../../../output/SDL_thread.o: ../../Src/Thread/SDL_thread.c
+	$(CC) -c ../../Src/Thread/SDL_thread.c -o ../../../../output/SDL_thread.o $(CFLAGS)
+
+../../../../output/SDL_timer.o: ../../src/timer/SDL_timer.c
+	$(CC) -c ../../src/timer/SDL_timer.c -o ../../../../output/SDL_timer.o $(CFLAGS)
+
+../../../../output/SDL_video.o: ../../Src/Video/SDL_video.c
+	$(CC) -c ../../Src/Video/SDL_video.c -o ../../../../output/SDL_video.o $(CFLAGS)
+
+../../../../output/SDL_wave.o: ../../Src/Audio/SDL_wave.c
+	$(CC) -c ../../Src/Audio/SDL_wave.c -o ../../../../output/SDL_wave.o $(CFLAGS)
+
+../../../../output/SDL_wingl.o: ../../src/video/wincommon/SDL_wingl.c
+	$(CC) -c ../../src/video/wincommon/SDL_wingl.c -o ../../../../output/SDL_wingl.o $(CFLAGS)
+
+../../../../output/SDL_yuv.o: ../../src/video/SDL_yuv.c
+	$(CC) -c ../../src/video/SDL_yuv.c -o ../../../../output/SDL_yuv.o $(CFLAGS)
+
+../../../../output/SDL_yuv_sw.o: ../../src/video/SDL_yuv_sw.c
+	$(CC) -c ../../src/video/SDL_yuv_sw.c -o ../../../../output/SDL_yuv_sw.o $(CFLAGS)

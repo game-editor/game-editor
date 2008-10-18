@@ -1,0 +1,963 @@
+<FunctionsDescription>
+	<function name="ActorCount" title="Actor Count" tip="Get the total number of actors currently active" return_type="int">
+		<argument title="Actor" tip="Select the actor to be counted" errorMsg="Please, select an actor" c_type="char *">
+			<input type="list" size="128" populate="PopulateActors, false"/>
+		</argument>
+	</function>
+	<function name="GetKeyState"/>
+	<function name="ExitGame"/>
+	<function name="SuspendGame"/>
+	<function name="PauseGameOn"/>
+	<function name="PauseGameOff"/>
+	<function name="restorecanvas"/>
+	<function name="savecanvas"/>
+	<function name="SendActivationEvent" title="Send Activation Event" tip="Send an Activation Event to selected actor" return_type="int">
+		<argument title="Actor" tip="Select the actor to receive the activation event" errorMsg="Please, select an actor" c_type="char *">
+			<input type="list" size="128" populate="PopulateActors, true"/>
+		</argument>
+	</function>
+	<function name="abs" title="Absolute Value" tip="Returns the absolute (positive) value of its argument" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="acos" title="Arc Cosine Function" tip="Calculates the arc cosine of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="actor_to_screen" title="Actor to Screen" tip="Convert from current actor coordinates to screen coordinates">
+		<argument title="x" errorMsg="Please, enter a value" c_type="int *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter a value" c_type="int *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="asin" title="Arc Sine Function" tip="Calculates the arc sine of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="atan" title="Arc Tangent Function" tip="Calculates the arc tangent of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="atan2" title="Arc Tangent Function 2" tip="Calculates the arc tangent of Value1/Value2.
+If Value2 is 0, atan2 returns 0.
+If both parameters of atan2 are 0, the function returns 0." return_type="double">
+		<argument title="Value 1" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Value 2" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="atof" title="Strings to Double" tip="Convert a string to real number" return_type="double">
+		<argument title="String" errorMsg="Please, select a string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="atoi" title="String to Integer" tip="Convert a string to integer number" return_type="int">
+		<argument title="String" errorMsg="Please, select a string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="atol" title="String to Long Integer" tip="Convert a string to long integer number" return_type="long">
+		<argument title="String" errorMsg="Please, select a string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="ceil" title="Ceiling of a Value" tip="The ceil function returns a value representing the smallest
+integer that is greater than or equal to given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="cos" title="Cosine Function" tip="Calculates the cosine of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="cosh" title="Hyperbolic Cosine Function" tip="Calculates the hyperbolic cosine of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="degtorad" title="Degrees to Radians" tip="Convert an angle from degrees to radians" return_type="double">
+		<argument title="Angle" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="direction" title="Direction Between Points" tip="Calculates the direction between points (x1, y1) and (x2, y2)
+(in degrees, 0 to 360, from positive x axis, counterclockwise, in degrees)." return_type="double">
+		<argument title="Point 1 x" errorMsg="Please, enter the x value for first point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y value for first point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Point 2 x" errorMsg="Please, enter the x value for second point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y value for second point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="distance" title="Distance Between Points" tip="Returns the distance between points (x1, y1) and (x2, y2)." return_type="double">
+		<argument title="Point 1 x" errorMsg="Please, enter the x value for first point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y value for first point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Point 2 x" errorMsg="Please, enter the x value for second point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y value for second point" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+
+  <function name="draw_from" title="Draw From" tip="Draw the current image of an actor into a canvas actor.">
+
+    <argument title="Actor" tip="Select the actor to get the image" errorMsg="Please, select an actor" c_type="char *">
+      <input type="list" size="128" populate="PopulateActors, true"/>
+    </argument>
+    
+    <argument title="x" errorMsg="Please, enter the x coordinate" c_type="int">
+      <input type="edit" size="128" variable_list="true"/>
+    </argument>
+    
+    <argument title="y" errorMsg="Please, enter the y coordinate" c_type="int">
+      <input type="edit" size="128" variable_list="true"/>
+    </argument>
+
+    <argument title="scale" errorMsg="Please, enter the scale of the image" c_type="double">
+      <input type="edit" size="128" min="0" max="100" step=".01" variable_list="true"/>
+    </argument>
+    
+  </function>
+
+  <function name="erase" title="Erase Canvas" tip="Erase the canvas actor with specified color and transparency">
+    <argument title="Color" c_type="int">
+      <input type="color" variable_list="true"/>
+    </argument>
+    <argument title="Transparency" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" min="0" max="1" step=".01" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fclose" title="Close File" tip="Close the selected file.
+The file must be opened with Open File." return_type="int">
+		<argument title="File" tip="Select the file to be closed" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="feof" title="End of File" tip="Tests for end-of-file.
+Returns 0 if the current position is not end of file." return_type="int">
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fgetc" title="Read Character" tip="Get a character from a file" return_type="int">
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fgets" title="Read String" tip="Reads a string from the selected file.
+Reads from current file position until Maximum-1 character are read, 
+or a newline character is read, or the end-of-file is encountered, 
+whichever comes first. 
+The newline character, if read, is included in the string.">
+		<argument title="Store string" errorMsg="Please, select a variable to store the read string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Maximum" errorMsg="Please, enter the maximum number of characters to read" c_type="int">
+			<input type="edit" size="128" min="1" max="1048576" step="1" variable_list="true"/>
+		</argument>
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="floor" title="Floor  of a Value" tip="The floor function returns a value representing the largest
+integer that is less than or equal to given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fmod" title="Division Remainder Value" tip="Calculates the remider value of Value1/Value2 division" return_type="double">
+		<argument title="Value 1" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Value 2" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fopen" title="Open File" tip="Open or create a file" return_type="FILE *">
+		<argument title="File name" errorMsg="Please, enter a file" c_type="char *">
+			<input type="edit" size="128"/>
+		</argument>
+		<argument title="Mode" tip="Creation mode.
+Use binary modes to handle files that store data other than plain text" errorMsg="Please, select a mode" c_type="char *">
+			<input type="list" size="256">
+				<option value="w+" name="Create a new text file for reading and writing"/>
+				<option value="r+" name="Opens a existing text file for reading and writing"/>
+				<option name="separator"/>
+				<option value="w+b" name="Create a new binary file for reading and writing"/>
+				<option value="r+b" name="Opens a existing binary file for reading and writing"/>
+				<option name="separator"/>
+				<option value="a+" name="Opens or create for writing at the end of the text file"/>
+				<option value="a+b" name="Opens or create for writing at the end of the binary file"/>
+			</input>
+		</argument>
+	</function>
+	<function name="fprintf1" title="Write Formatted String" tip="Write a formatted string in the selected file" return_type="int">
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Format" errorMsg="Please, enter the format string" c_type="const char *">
+			<input type="edit" size="128"/>
+		</argument>
+		<argument title="Arguments" errorMsg="Please, enter a value" c_type="char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fputc" title="Write Character" tip="Write a character to a file" return_type="int">
+		<argument title="Character" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fputs" title="Write String" tip="Write a string to a file" return_type="int">
+		<argument title="String" errorMsg="Please, enter a value" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="fseek" title="Set File Position" tip="Moves the file position to a specified location.">
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Position" errorMsg="Please, enter a value" c_type="long">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Relative to" tip="Select the relative position to set the new position" c_type="int">
+			<input type="list" size="256">
+				<option value="SEEK_CUR" name="Current position of file pointer"/>
+				<option value="SEEK_END" name="End of file"/>
+				<option value="SEEK_SET" name="Beginning of file"/>
+			</input>
+		</argument>
+	</function>
+	<function name="ftell" title="Get Current File Position" tip="Returns the current file position relative to beginning of file" return_type="long">
+		<argument title="File" errorMsg="Please, select a file" c_type="FILE *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="getAnimIndex" title="Get Animation Index" tip="Returns the index of an animation in the current Event Actor.
+Returns -1 on error." return_type="int">
+		<argument title="Animation" tip="Select the animation to get the index" errorMsg="Please, select an animation" c_type="char *">
+			<input type="list" size="128" populate="PopulateAnimations"/>
+		</argument>
+	</function>
+	<function name="getAnimName" title="Get Animation Name" tip="Returns the name of an animation in the current Event Actor.
+Returns an empty string on error." return_type="char *">
+		<argument title="Animation index" errorMsg="Please, enter the animation index" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="getKeyText" title="Get Key Description" tip="Returns the key description for a given key code" return_type="char *">
+		<argument title="Key code" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="getLastKey" title="Get Last Pressed Key" tip="Returns the key code for the last pressed key" return_type="int"/>
+	<function name="getactor" title="Get Actor at Position" tip="Returns Actor at position (x,y) (in game coordinates) if success, 
+invalid Actor (with cloneindex = -1 and name = invalid Actor) on error." return_type="Actor *">
+		<argument title="x" errorMsg="Please, enter the x value for the actor coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y value for the actor coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="getclone" title="Get Clone Actor" tip="Returns the Actor with given clone name or invalid Actor 
+(with cloneindex = -1 and name = invalid Actor) on error" return_type="Actor *">
+		<argument title="Actor" tip="Select the actor to be counted" errorMsg="Please, select an actor" c_type="char *">
+			<input type="list" size="128" populate="PopulateActors, true"/>
+		</argument>
+	</function>
+	<function name="lineto" title="Draw Line To" tip="Draw a line on current Event Actor from last point
+to the given point using current pen.
+The current Event Actor must be a canvas actor.">
+		<argument title="x" errorMsg="Please, enter the x coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="loadVars" title="Load Variables" tip="Load all variables in the group from a specified file">
+		<argument title="File name" errorMsg="Please, enter a file name" c_type="char *">
+			<input type="edit" size="128"/>
+		</argument>
+		<argument title="Group" errorMsg="Please, select a group" tip="Select a group previously created in the User Variable panel" c_type="char *">
+			<input type="list" size="128" populate="PopulateSaveGroups"/>
+		</argument>
+	</function>
+	<function name="log" title="Natural Logarithm" tip="Calculates the natural logarithm of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="log10" title="Base 10 Logarithm" tip="Calculates the base 10 logarithm of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="LoadGame" title="Load Game" tip="Load a new game from the current game directory.
+
+Game file: Enter the game ged file.
+
+Load game will load the given ged file or .exe or .dat file
+in the exported executable (stand alone) game.">
+		<argument title="Game file" errorMsg="Please, enter the game file name" c_type="char *">
+			<input type="edit" size="128"/>
+		</argument>
+	</function>
+	<function name="max" title="Get Max Value" tip="Returns the larger of two values" return_type="double">
+		<argument title="Value 1" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Value 2" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="min" title="Get Min Value" tip="Returns the smaller of two values" return_type="double">
+		<argument title="Value 1" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Value 2" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="moveto" title="Move Pen To" tip="Move Event Actor pen to given coordinates">
+		<argument title="x" errorMsg="Please, enter the x coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="openUrl" title="Open Internet Page" tip="Open the given url in the system browser">
+		<argument title="Url" errorMsg="Please, enter a internet link" c_type="char *">
+			<input type="edit" size="128"/>
+		</argument>
+	</function>
+	<function name="pow" title="Power Function " tip="Calculates the value of Value 1 raised to the power Value 2" return_type="double">
+		<argument title="Value 1" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Value 2" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+  
+	<function name="putpixel" title="Draw Pixel" tip="Draw a single pixel on Event Actor in (x, y) coordinates using current pen. 
+The current Event Actor must be a canvas actor.">
+		<argument title="x" errorMsg="Please, enter the x coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter the y coordinate" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+  
+	<function name="radtodeg" title="Radians to Degrees" tip="Convert an angle from radians to degrees" return_type="double">
+		<argument title="Angle" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="rand" title="Random" tip="Returns a value between 0 and the given max number." return_type="double">
+		<argument title="Max number" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="remapKey" title="Redirect Key" tip="Redirect one key to other.
+
+For Example:
+  A game actor shoots with Right Ctrl key. 
+  If you want your user to be able to change this control
+  key in the game configuration screen, you use a Key Down event, 
+  and use this function with options:
+
+    From key: Last Pressed Key
+    To Key: right ctrl
+
+Now, the key pressed by user, will be redirected to Right Ctrl key. 
+Use the redirect key function allows you to keep your original default game key.
+
+The redirected keys will be reseted after using Load Game.">
+		<argument title="From key" errorMsg="Please, select a key" c_type="int">
+			<input type="list" size="200">
+				<option value="getLastKey()" name="Last Pressed Key"/>
+				<option name="separator"/>
+				<option value="KEY_BACKSPACE" name="backspace"/>
+				<option value="KEY_TAB" name="tab"/>
+				<option value="KEY_CLEAR" name="clear"/>
+				<option value="KEY_RETURN" name="return"/>
+				<option value="KEY_PAUSE" name="pause"/>
+				<option value="KEY_ESCAPE" name="escape"/>
+				<option value="KEY_SPACE" name="space"/>
+				<option value="KEY_EXCLAIM" name="!"/>
+				<option value="KEY_QUOTEDBL" name="&quot;"/>
+				<option value="KEY_HASH" name="#"/>
+				<option value="KEY_DOLLAR" name="$"/>
+				<option value="KEY_AMPERSAND" name="&amp;"/>
+				<option value="KEY_QUOTE" name="'"/>
+				<option value="KEY_LEFTPAREN" name="("/>
+				<option value="KEY_RIGHTPAREN" name=")"/>
+				<option value="KEY_ASTERISK" name="*"/>
+				<option value="KEY_PLUS" name="+"/>
+				<option value="KEY_COMMA" name=","/>
+				<option value="KEY_MINUS" name="-"/>
+				<option value="KEY_PERIOD" name="."/>
+				<option value="KEY_SLASH" name="/"/>
+				<option value="KEY_0" name="0"/>
+				<option value="KEY_1" name="1"/>
+				<option value="KEY_2" name="2"/>
+				<option value="KEY_3" name="3"/>
+				<option value="KEY_4" name="4"/>
+				<option value="KEY_5" name="5"/>
+				<option value="KEY_6" name="6"/>
+				<option value="KEY_7" name="7"/>
+				<option value="KEY_8" name="8"/>
+				<option value="KEY_9" name="9"/>
+				<option value="KEY_COLON" name=":"/>
+				<option value="KEY_SEMICOLON" name=";"/>
+				<option value="KEY_LESS" name="&lt;"/>
+				<option value="KEY_EQUALS" name="="/>
+				<option value="KEY_GREATER" name="&gt;"/>
+				<option value="KEY_QUESTION" name="?"/>
+				<option value="KEY_AT" name="@"/>
+				<option value="KEY_LEFTBRACKET" name="["/>
+				<option value="KEY_BACKSLASH" name="\"/>
+				<option value="KEY_RIGHTBRACKET" name="]"/>
+				<option value="KEY_CARET" name="^"/>
+				<option value="KEY_UNDERSCORE" name="_"/>
+				<option value="KEY_BACKQUOTE" name="`"/>
+				<option value="KEY_a" name="a"/>
+				<option value="KEY_b" name="b"/>
+				<option value="KEY_c" name="c"/>
+				<option value="KEY_d" name="d"/>
+				<option value="KEY_e" name="e"/>
+				<option value="KEY_f" name="f"/>
+				<option value="KEY_g" name="g"/>
+				<option value="KEY_h" name="h"/>
+				<option value="KEY_i" name="i"/>
+				<option value="KEY_j" name="j"/>
+				<option value="KEY_k" name="k"/>
+				<option value="KEY_l" name="l"/>
+				<option value="KEY_m" name="m"/>
+				<option value="KEY_n" name="n"/>
+				<option value="KEY_o" name="o"/>
+				<option value="KEY_p" name="p"/>
+				<option value="KEY_q" name="q"/>
+				<option value="KEY_r" name="r"/>
+				<option value="KEY_s" name="s"/>
+				<option value="KEY_t" name="t"/>
+				<option value="KEY_u" name="u"/>
+				<option value="KEY_v" name="v"/>
+				<option value="KEY_w" name="w"/>
+				<option value="KEY_x" name="x"/>
+				<option value="KEY_y" name="y"/>
+				<option value="KEY_z" name="z"/>
+				<option value="KEY_PAD_0" name="[0]"/>
+				<option value="KEY_PAD_1" name="[1]"/>
+				<option value="KEY_PAD_2" name="[2]"/>
+				<option value="KEY_PAD_3" name="[3]"/>
+				<option value="KEY_PAD_4" name="[4]"/>
+				<option value="KEY_PAD_5" name="[5]"/>
+				<option value="KEY_PAD_6" name="[6]"/>
+				<option value="KEY_PAD_7" name="[7]"/>
+				<option value="KEY_PAD_8" name="[8]"/>
+				<option value="KEY_PAD_9" name="[9]"/>
+				<option value="KEY_PAD_PERIOD" name="[.]"/>
+				<option value="KEY_PAD_DIVIDE" name="[/]"/>
+				<option value="KEY_PAD_MULTIPLY" name="[*]"/>
+				<option value="KEY_PAD_MINUS" name="[-]"/>
+				<option value="KEY_PAD_PLUS" name="[+]"/>
+				<option value="KEY_PAD_ENTER" name="enter"/>
+				<option value="KEY_PAD_EQUALS" name="equals"/>
+				<option value="KEY_UP" name="up"/>
+				<option value="KEY_DOWN" name="down"/>
+				<option value="KEY_RIGHT" name="right"/>
+				<option value="KEY_LEFT" name="left"/>
+				<option value="KEY_INSERT" name="insert"/>
+				<option value="KEY_HOME" name="home"/>
+				<option value="KEY_END" name="end"/>
+				<option value="KEY_PAGEUP" name="page up"/>
+				<option value="KEY_PAGEDOWN" name="page down"/>
+				<option value="KEY_F1" name="f1"/>
+				<option value="KEY_F2" name="f2"/>
+				<option value="KEY_F3" name="f3"/>
+				<option value="KEY_F4" name="f4"/>
+				<option value="KEY_F5" name="f5"/>
+				<option value="KEY_F6" name="f6"/>
+				<option value="KEY_F7" name="f7"/>
+				<option value="KEY_F8" name="f8"/>
+				<option value="KEY_F9" name="f9"/>
+				<option value="KEY_F10" name="f10"/>
+				<option value="KEY_F11" name="f11"/>
+				<option value="KEY_F12" name="f12"/>
+				<option value="KEY_F13" name="f13"/>
+				<option value="KEY_F14" name="f14"/>
+				<option value="KEY_F15" name="f15"/>
+				<option value="KEY_NUMLOCK" name="numlock"/>
+				<option value="KEY_CAPSLOCK" name="caps lock"/>
+				<option value="KEY_SCROLLOCK" name="scroll lock"/>
+				<option value="KEY_RSHIFT" name="right shift"/>
+				<option value="KEY_LSHIFT" name="left shift"/>
+				<option value="KEY_RCTRL" name="right ctrl"/>
+				<option value="KEY_LCTRL" name="left ctrl"/>
+				<option value="KEY_RALT" name="right alt"/>
+				<option value="KEY_LALT" name="left alt"/>
+				<option value="KEY_RMETA" name="right meta"/>
+				<option value="KEY_LMETA" name="left meta"/>
+				<option value="KEY_LWINDOWS" name="left super"/>
+				<option value="KEY_RWINDOWS" name="right super"/>
+				<option value="KEY_ALT_GR" name="alt gr"/>
+				<option value="KEY_HELP" name="help"/>
+				<option value="KEY_PRINT" name="print screen"/>
+				<option value="KEY_SYSREQ" name="sys req"/>
+				<option value="KEY_BREAK" name="break"/>
+				<option value="KEY_MENU" name="menu"/>
+				<option value="KEY_MAC_POWER" name="power"/>
+				<option value="KEY_EURO" name="euro"/>
+				<option value="KEY_POCKET_UP" name="Pocket Up   "/>
+				<option value="KEY_POCKET_DOWN" name="Pocket Down "/>
+				<option value="KEY_POCKET_LEFT" name="Pocket Left "/>
+				<option value="KEY_POCKET_RIGHT" name="Pocket Right"/>
+				<option value="KEY_POCKET_A" name="Pocket A    "/>
+				<option value="KEY_POCKET_B" name="Pocket B    "/>
+				<option value="KEY_POCKET_C" name="Pocket C    "/>
+				<option value="KEY_POCKET_START" name="Pocket Start"/>
+				<option value="KEY_POCKET_AUX1" name="Pocket Auxiliary Key 1"/>
+				<option value="KEY_POCKET_AUX2" name="Pocket Auxiliary Key 2"/>
+				<option value="KEY_POCKET_AUX3" name="Pocket Auxiliary Key 3"/>
+				<option value="KEY_POCKET_AUX4" name="Pocket Auxiliary Key 4"/>
+				<option value="KEY_POCKET_AUX5" name="Pocket Auxiliary Key 5"/>
+				<option value="KEY_POCKET_AUX6" name="Pocket Auxiliary Key 6"/>
+				<option value="KEY_POCKET_AUX7" name="Pocket Auxiliary Key 7"/>
+				<option value="KEY_POCKET_AUX8" name="Pocket Auxiliary Key 8"/>
+			</input>
+		</argument>
+		<argument title="To key" errorMsg="Please, select a key" c_type="int">
+			<input type="list" size="200">
+				<option value="getLastKey()" name="Last Pressed Key"/>
+				<option name="separator"/>
+				<option value="KEY_BACKSPACE" name="backspace"/>
+				<option value="KEY_TAB" name="tab"/>
+				<option value="KEY_CLEAR" name="clear"/>
+				<option value="KEY_RETURN" name="return"/>
+				<option value="KEY_PAUSE" name="pause"/>
+				<option value="KEY_ESCAPE" name="escape"/>
+				<option value="KEY_SPACE" name="space"/>
+				<option value="KEY_EXCLAIM" name="!"/>
+				<option value="KEY_QUOTEDBL" name="&quot;"/>
+				<option value="KEY_HASH" name="#"/>
+				<option value="KEY_DOLLAR" name="$"/>
+				<option value="KEY_AMPERSAND" name="&amp;"/>
+				<option value="KEY_QUOTE" name="'"/>
+				<option value="KEY_LEFTPAREN" name="("/>
+				<option value="KEY_RIGHTPAREN" name=")"/>
+				<option value="KEY_ASTERISK" name="*"/>
+				<option value="KEY_PLUS" name="+"/>
+				<option value="KEY_COMMA" name=","/>
+				<option value="KEY_MINUS" name="-"/>
+				<option value="KEY_PERIOD" name="."/>
+				<option value="KEY_SLASH" name="/"/>
+				<option value="KEY_0" name="0"/>
+				<option value="KEY_1" name="1"/>
+				<option value="KEY_2" name="2"/>
+				<option value="KEY_3" name="3"/>
+				<option value="KEY_4" name="4"/>
+				<option value="KEY_5" name="5"/>
+				<option value="KEY_6" name="6"/>
+				<option value="KEY_7" name="7"/>
+				<option value="KEY_8" name="8"/>
+				<option value="KEY_9" name="9"/>
+				<option value="KEY_COLON" name=":"/>
+				<option value="KEY_SEMICOLON" name=";"/>
+				<option value="KEY_LESS" name="&lt;"/>
+				<option value="KEY_EQUALS" name="="/>
+				<option value="KEY_GREATER" name="&gt;"/>
+				<option value="KEY_QUESTION" name="?"/>
+				<option value="KEY_AT" name="@"/>
+				<option value="KEY_LEFTBRACKET" name="["/>
+				<option value="KEY_BACKSLASH" name="\"/>
+				<option value="KEY_RIGHTBRACKET" name="]"/>
+				<option value="KEY_CARET" name="^"/>
+				<option value="KEY_UNDERSCORE" name="_"/>
+				<option value="KEY_BACKQUOTE" name="`"/>
+				<option value="KEY_a" name="a"/>
+				<option value="KEY_b" name="b"/>
+				<option value="KEY_c" name="c"/>
+				<option value="KEY_d" name="d"/>
+				<option value="KEY_e" name="e"/>
+				<option value="KEY_f" name="f"/>
+				<option value="KEY_g" name="g"/>
+				<option value="KEY_h" name="h"/>
+				<option value="KEY_i" name="i"/>
+				<option value="KEY_j" name="j"/>
+				<option value="KEY_k" name="k"/>
+				<option value="KEY_l" name="l"/>
+				<option value="KEY_m" name="m"/>
+				<option value="KEY_n" name="n"/>
+				<option value="KEY_o" name="o"/>
+				<option value="KEY_p" name="p"/>
+				<option value="KEY_q" name="q"/>
+				<option value="KEY_r" name="r"/>
+				<option value="KEY_s" name="s"/>
+				<option value="KEY_t" name="t"/>
+				<option value="KEY_u" name="u"/>
+				<option value="KEY_v" name="v"/>
+				<option value="KEY_w" name="w"/>
+				<option value="KEY_x" name="x"/>
+				<option value="KEY_y" name="y"/>
+				<option value="KEY_z" name="z"/>
+				<option value="KEY_PAD_0" name="[0]"/>
+				<option value="KEY_PAD_1" name="[1]"/>
+				<option value="KEY_PAD_2" name="[2]"/>
+				<option value="KEY_PAD_3" name="[3]"/>
+				<option value="KEY_PAD_4" name="[4]"/>
+				<option value="KEY_PAD_5" name="[5]"/>
+				<option value="KEY_PAD_6" name="[6]"/>
+				<option value="KEY_PAD_7" name="[7]"/>
+				<option value="KEY_PAD_8" name="[8]"/>
+				<option value="KEY_PAD_9" name="[9]"/>
+				<option value="KEY_PAD_PERIOD" name="[.]"/>
+				<option value="KEY_PAD_DIVIDE" name="[/]"/>
+				<option value="KEY_PAD_MULTIPLY" name="[*]"/>
+				<option value="KEY_PAD_MINUS" name="[-]"/>
+				<option value="KEY_PAD_PLUS" name="[+]"/>
+				<option value="KEY_PAD_ENTER" name="enter"/>
+				<option value="KEY_PAD_EQUALS" name="equals"/>
+				<option value="KEY_UP" name="up"/>
+				<option value="KEY_DOWN" name="down"/>
+				<option value="KEY_RIGHT" name="right"/>
+				<option value="KEY_LEFT" name="left"/>
+				<option value="KEY_INSERT" name="insert"/>
+				<option value="KEY_HOME" name="home"/>
+				<option value="KEY_END" name="end"/>
+				<option value="KEY_PAGEUP" name="page up"/>
+				<option value="KEY_PAGEDOWN" name="page down"/>
+				<option value="KEY_F1" name="f1"/>
+				<option value="KEY_F2" name="f2"/>
+				<option value="KEY_F3" name="f3"/>
+				<option value="KEY_F4" name="f4"/>
+				<option value="KEY_F5" name="f5"/>
+				<option value="KEY_F6" name="f6"/>
+				<option value="KEY_F7" name="f7"/>
+				<option value="KEY_F8" name="f8"/>
+				<option value="KEY_F9" name="f9"/>
+				<option value="KEY_F10" name="f10"/>
+				<option value="KEY_F11" name="f11"/>
+				<option value="KEY_F12" name="f12"/>
+				<option value="KEY_F13" name="f13"/>
+				<option value="KEY_F14" name="f14"/>
+				<option value="KEY_F15" name="f15"/>
+				<option value="KEY_NUMLOCK" name="numlock"/>
+				<option value="KEY_CAPSLOCK" name="caps lock"/>
+				<option value="KEY_SCROLLOCK" name="scroll lock"/>
+				<option value="KEY_RSHIFT" name="right shift"/>
+				<option value="KEY_LSHIFT" name="left shift"/>
+				<option value="KEY_RCTRL" name="right ctrl"/>
+				<option value="KEY_LCTRL" name="left ctrl"/>
+				<option value="KEY_RALT" name="right alt"/>
+				<option value="KEY_LALT" name="left alt"/>
+				<option value="KEY_RMETA" name="right meta"/>
+				<option value="KEY_LMETA" name="left meta"/>
+				<option value="KEY_LWINDOWS" name="left super"/>
+				<option value="KEY_RWINDOWS" name="right super"/>
+				<option value="KEY_ALT_GR" name="alt gr"/>
+				<option value="KEY_HELP" name="help"/>
+				<option value="KEY_PRINT" name="print screen"/>
+				<option value="KEY_SYSREQ" name="sys req"/>
+				<option value="KEY_BREAK" name="break"/>
+				<option value="KEY_MENU" name="menu"/>
+				<option value="KEY_MAC_POWER" name="power"/>
+				<option value="KEY_EURO" name="euro"/>
+				<option value="KEY_POCKET_UP" name="Pocket Up   "/>
+				<option value="KEY_POCKET_DOWN" name="Pocket Down "/>
+				<option value="KEY_POCKET_LEFT" name="Pocket Left "/>
+				<option value="KEY_POCKET_RIGHT" name="Pocket Right"/>
+				<option value="KEY_POCKET_A" name="Pocket A    "/>
+				<option value="KEY_POCKET_B" name="Pocket B    "/>
+				<option value="KEY_POCKET_C" name="Pocket C    "/>
+				<option value="KEY_POCKET_START" name="Pocket Start"/>
+				<option value="KEY_POCKET_AUX1" name="Pocket Auxiliary Key 1"/>
+				<option value="KEY_POCKET_AUX2" name="Pocket Auxiliary Key 2"/>
+				<option value="KEY_POCKET_AUX3" name="Pocket Auxiliary Key 3"/>
+				<option value="KEY_POCKET_AUX4" name="Pocket Auxiliary Key 4"/>
+				<option value="KEY_POCKET_AUX5" name="Pocket Auxiliary Key 5"/>
+				<option value="KEY_POCKET_AUX6" name="Pocket Auxiliary Key 6"/>
+				<option value="KEY_POCKET_AUX7" name="Pocket Auxiliary Key 7"/>
+				<option value="KEY_POCKET_AUX8" name="Pocket Auxiliary Key 8"/>
+			</input>
+		</argument>
+	</function>
+	<function name="round" title="Round" tip="Round a number to nearest integers" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="saveVars" title="Save Variables" tip="Save all variables in the group to the specified file.
+The file will be saved in the game directory.">
+		<argument title="File name" errorMsg="Please, enter a file name" c_type="char *">
+			<input type="edit" size="128"/>
+		</argument>
+		<argument title="Group" errorMsg="Please, select a group" tip="Select a group previously created in the User Variable panel" c_type="char *">
+			<input type="list" size="128" populate="PopulateSaveGroups"/>
+		</argument>
+	</function>
+	<function name="screen_to_actor" title="Screen to Actor" tip="Convert from current screen coordinates to actor coordinates.
+
+For Example:
+  Use x = xmouse and y = ymouse to convert the mouse coordinates to the current actor coordinates. 
+  So, you will can draw at the correct spot on a canvas actor.">
+		<argument title="x" errorMsg="Please, enter a value" c_type="int *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="y" errorMsg="Please, enter a value" c_type="int *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="setPan" title="Set Sound Pan" tip="Set the pan of sounds (Doesn't work with music).
+Pan: -1.0 (full left) to 1.0 (full right)">
+		<argument title="Channel" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="0" max="512" variable_list="true"/>
+		</argument>
+		<argument title="Pan" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" min="-1.0" max="1.0" step=".01" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="setVolume" title="Set Volume" tip="Set the sound or the music volume.
+Volume: 0.0 (mute) to 1.0 (max volume) ">
+		<argument title="Channel" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="0" max="512" variable_list="true"/>
+		</argument>
+		<argument title="Volume" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" min="0.0" max="1.0" step=".01" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="stopSound" title="Stop Sound" tip="Stop the sound or music played on the specified channel">
+		<argument title="Channel" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="0" max="512" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="setpen" title="Set Pen Color" tip="Define the actual pen for the Event Actor">
+		<argument title="Color" c_type="int">
+			<input type="color" variable_list="true"/>
+		</argument>
+		<argument title="Transparency" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" min="0" max="1" step=".01" variable_list="true"/>
+		</argument>
+		<argument title="Size" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="1" max="15" step="1" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="sign" title="Number Signal" tip="Returns number signal.
+
+-1 = negative
+ 1 = positive" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="sin" title="Sine Function" tip="Calculates the sine of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="sinh" title="Hyperbolic Sine Function" tip="Calculates the hyperbolic sine of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="sqrt" title="Square Root Function" tip="Calculates the square root of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strcat" title="Append Strings" tip="Appends the source string to destination string">
+		<argument title="Destination" errorMsg="Please, select the destination string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Source" errorMsg="Please, enter the source string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strncat" title="Append Part of Strings" tip="Appends the source string to destination string, but not more than n characters">
+		<argument title="Destination" errorMsg="Please, select the destination string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Source" errorMsg="Please, enter the source string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Max characters" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="0" max="1024" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strchr" title="Find Character" tip="Finds the first occurrence of character in string, 
+or it returns 0 if not found." return_type="char *">
+		<argument title="String" errorMsg="Please, select a string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Character" errorMsg="Please, enter character" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strcmp" title="Compare Strings" tip="Compares string 1 and string 2 and returns:  
+  
+  - A negative value if string 1 less than string 2   
+  - Zero if string 1 identical to string 2   
+  - A positive value if string 1 greater than string 2" return_type="int">
+		<argument title="String 1" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="String 2" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strncmp" title="Compare Part of Strings" tip="Compares string 1 and string 2, but not more than n characters, and returns:  
+  
+  - A negative value if string 1 less than string 2   
+  - Zero if string 1 identical to string 2   
+  - A positive value if string 1 greater than string 2" return_type="int">
+		<argument title="String 1" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="String 2" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Max characters" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="0" max="1024" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strcpy" title="Copy String" tip="Copies the source string to destination string.">
+		<argument title="Destination" errorMsg="Please, select the destination string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Source" errorMsg="Please, enter the source string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strncpy" title="Copy Part of String" tip="Copies the source string to destination string, but not more than n characters.">
+		<argument title="Destination" errorMsg="Please, select the destination string" c_type="char *">
+			<input type="list" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Source" errorMsg="Please, enter the source string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Max characters" errorMsg="Please, enter a value" c_type="int">
+			<input type="edit" size="128" min="0" max="1024" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strcspn1" title="Find String" tip="..." return_type="int">
+		<argument title="String 1" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="String 2" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="strlen" title="Get String Length" tip="Get the length of a string." return_type="int">
+		<argument title="String" errorMsg="Please, enter a string" c_type="const char *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="tan" title="Tangent Function" tip="Calculates the tangent of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="tanh" title="Hyperbolic Tangent Function" tip="Calculates the hyperbolic tangent of given value" return_type="double">
+		<argument title="Value" errorMsg="Please, enter a value" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	<function name="vectoradd" title="Vector Addition" tip="Add vector2 (angle2, magnitude2) to vector1 (angle1, magnitude1)
+and returns result in vector1 (angles in degrees).">
+		<argument title="Vector 1 angle" errorMsg="Please, enter the angle for first vector" c_type="double *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="magnitude" errorMsg="Please, enter the magnitude for first vector" c_type="double *">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="Vector 2 angle" errorMsg="Please, enter the angle for second vector" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+		<argument title="magnitude" errorMsg="Please, enter the magnitude for second vector" c_type="double">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
+	
+	<function name="getOwner" title="Get Owner Name" tip="Returns the device owner name.
+Use this function to get the owner name of Pocket PC or Smartphone device.
+Returns an empty string on desktop or if any error happens." return_type="char *">
+		
+	</function>
+	
+	<function name="getHardwareID" title="Get Hardware Identification" tip="Returns a string that can uniquely identify the device.
+Use this function to get a string  that can uniquely identify a Pocket PC or Smartphone device.
+This string can be used in some registration service to protect your game against illegal copies.
+Some protected smartphones requires you digitally sign your game to execute and use this function.
+
+Returns an empty string on desktop or if any error happens." return_type="char *">
+		
+	</function>
+
+  <function name="ReleaseActorOwnership" title="Release Actor Ownership" tip="Release the current owner of the network actor, so other machine can request the ownership.
+If the local machine is not the owner, the function will be ignored." return_type="int">
+    <argument title="Actor" tip="Select the actor to release the ownership" errorMsg="Please, select an actor" c_type="char *">
+      <input type="list" size="128" populate="PopulateActors, true"/>
+    </argument>
+  </function>
+
+  <function name="RequestActorOwnership" title="Request Actor Ownership" tip="Request ownership for the specified network actor.   
+The oldest ownership request will get the ownership.  
+If the network actor already has a owner, the request will fail." return_type="int">
+    <argument title="Actor" tip="Select the actor to request the ownership" errorMsg="Please, select an actor" c_type="char *">
+      <input type="list" size="128" populate="PopulateActors, true"/>
+    </argument>
+  </function>
+
+  <function name="Connect" title="Connect" tip="Try connect to the other machine. Fail, if the currnet game aren't running in the remote machine.
+You don't need this function, if you use the Game Editor server.
+In a local area network, the other machines will be automatically discovered without need this function.
+Always after connect to the remote machine the local game will be synchronized with the remote game. 
+Global pointers and dynamic allocated memory in the scripts aren't synchronized.">
+    <argument title="IP" errorMsg="Please, enter a IP address" c_type="char *">
+      <input type="edit" size="128" variable_list="true"/>
+    </argument>
+    <argument title="Port" errorMsg="Please, enter a port number" c_type="int">
+      <input type="edit" size="64" min="1024" max="65535" step="1" variable_list="true"/>
+    </argument>
+  </function>
+
+  <function name="NetworkStart" title="Network Start" tip="Tell the game to use the network at specified port.
+You don't need this function, if you set the Auto Start Network option in the Game Properties panel." return_type="int">
+    <argument title="Port" errorMsg="Please, enter a port number" c_type="int">
+      <input type="edit" size="64" min="1024" max="65535" step="1" variable_list="true"/>
+    </argument>
+  </function>
+
+  <function name="NetworkShutdown"/>
+	
+</FunctionsDescription>

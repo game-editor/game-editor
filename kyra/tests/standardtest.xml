@@ -1,0 +1,19 @@
+<Definition filename="standardtest.tga">
+    <Sprite name="BACKGROUND">
+        <Action name="NONE">
+            <Frame x="3" y="13" width="127" height="49" hotspotx="3" hotspoty="13" deltax="0" deltay="0" />
+        </Action>
+    </Sprite>
+    <Sprite name="ALPHA">
+        <Action name="NONE">
+            <Frame x="194" y="0" width="189" height="67" hotspotx="194" hotspoty="0" deltax="0" deltay="0" />
+        </Action>
+    </Sprite>
+    <Sprite name="NOALPHA">
+        <Action name="NONE">
+            <Frame x="130" y="80" width="249" height="64" hotspotx="130" hotspoty="80" deltax="0" deltay="0" />
+        </Action>
+    </Sprite>
+    <Tile name="NOALPHA" x="5" y="66" size="50" />
+    <Tile name="ALPHA" x="60" y="66" size="50" />
+</Definition>

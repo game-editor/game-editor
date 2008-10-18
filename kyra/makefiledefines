@@ -1,0 +1,61 @@
+################################################################################
+#
+#  File lists for kyra, so we don't have to keep copying to individual makefiles.
+#  Contains files used by all the Makefiles.
+#
+################################################################################
+
+ENGINE_HEADERS :=   action.h \
+                    box.h \
+                    boxresource.h \
+                    canvas.h \
+                    canvasresource.h \
+                    color.h \
+                    dirtyrectangle.h \
+                    encoder.h \
+                    engine.h \
+                    fontresource.h \
+                    image.h \
+                    imagecontainer.h \
+                    imagenode.h \
+                    imagetree.h \
+                    imnode.h \
+                    krmath.h \
+                    kyra.h \
+                    kyrabuild.h \
+                    kyraresource.h \
+                    namefield.h \
+                    painter.h \
+                    parser.h \
+                    pixelblock.h \
+                    rle.h \
+                    sdlutil.h \
+                    sprite.h \
+                    spriteresource.h \
+                    tags.h \
+                    textbox.h \
+                    tile.h \
+                    tileresource.h \
+                    vault.h
+
+UTIL_HEADERS := glcirclelist.h \
+                gldebug.h \
+                gldynarray.h \
+                glfixed.h \
+                glgraph.h \
+                glinsidelist.h \
+                glintarrayset.h \
+                glisomath.h \
+                gllist.h \
+                glmap.h \
+                glmemorypool.h \
+                glperformance.h \
+                glprime.h \
+                glrandom.h \
+                glstack.h \
+                glstring.h \
+                gltypes.h \
+                glutil.h
+
+GUI_HEADERS :=  console.h
+

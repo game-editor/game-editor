@@ -1,0 +1,15 @@
+PRJ_PLATFORMS
+
+WINS ARMI
+
+PRJ_EXPORTS
+
+PRJ_MMPFILES
+
+SDL.mmp
+SDLmain.mmp
+
+PRJ_TESTMMPFILES
+
+graywin.mmp
+testalpha.mmp

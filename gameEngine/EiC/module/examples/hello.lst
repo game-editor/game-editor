@@ -1,0 +1,6 @@
+#include <stdio.h>
+#define str(x)  #x
+#define xstr(x) str(x)
+#define W  world!
+printf(str(Hello) ", " xstr(W) "\n");
+:exit

@@ -1,0 +1,512 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>unistd.h</TITLE>
+<META NAME="description" CONTENT="unistd.h">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="previous" HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+<LINK REL="up" HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<LINK REL="next" HREF="node147.html" tppabs="http://eic.sourceforge.net/documentation/node147.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2574"
+  HREF="node147.html" tppabs="http://eic.sourceforge.net/documentation/node147.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2568"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2564"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2570"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2572"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2575"
+  HREF="node147.html" tppabs="http://eic.sourceforge.net/documentation/node147.html">Implementation library support</A>
+<B> Up:</B> <A NAME="tex2html2569"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">POSIX.1 library support</A>
+<B> Previous:</B> <A NAME="tex2html2565"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">sys/types.h</A>
+ &nbsp <B>  <A NAME="tex2html2571"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2573"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00628000000000000000"></A>
+<A NAME="17485"></A>
+<A NAME="sec:unistdh"></A>
+<BR>
+unistd.h
+</H2>
+
+<P>
+The EiC header file <code>&lt;unistd.h&gt;</code> defines the following macros:
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>F_OK
+<DD><A NAME="item:FOK"></A><A NAME="17490"></A>
+	Does file exist.
+<DT>W_OK
+<DD><A NAME="item:WOK"></A><A NAME="17492"></A>
+	Writable by caller.
+<DT>R_OK
+<DD><A NAME="item:ROK"></A><A NAME="17494"></A>
+	Readable by caller.
+<DT>X_OK
+<DD><A NAME="item:XOK"></A><A NAME="17496"></A>
+	Executable by caller.
+<DT>STDIN_FILENO
+<DD><A NAME="item:STDINFILENO"></A><A NAME="17498"></A>
+	Standard input.
+<DT>STDOUT_FILENO
+<DD><A NAME="item:STDOUTFILENO"></A><A NAME="17500"></A>
+	Standard output.
+<DT>STDERR_FILENO
+<DD><A NAME="item:STDERRFILENO"></A><A NAME="17502"></A>
+Standard error output.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+The following functions are presently implemented from
+<code>&lt;unistd.h&gt;</code> by EiC:
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>access
+<DD><A NAME="item:access"></A><A NAME="17507"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int access(const char * path, int mode);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Checks the file pointed to by <B><TT>path</TT></B> for accessibily according to
+   <B><TT>mode</TT></B>, using the real user ID in place of the effective user ID
+   and the real group ID in place of the effective group ID. This
+   allows a setuid process to verify that the user running it would
+   have had permission to access this file.  The <B><TT>mode</TT></B> can be
+   <B><TT>F_OK</TT></B>, <B><TT>R_OK</TT></B>, <B><TT>W_OK</TT></B>, or <B><TT>X_OK</TT></B>. Returns zero on
+success or -1 on failure and sets <B><TT>errno</TT></B> to one of:
+     EACCES, ENAMETOOLONG, ENOENT, or EROFS.
+
+<P>
+<DT>alarm
+<DD><A NAME="item:alarm"></A><A NAME="17522"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+unsigned int alarm(unsigned int seconds);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<B><TT>alarm</TT></B> arranges to have a <B><TT>SIGALRM</TT></B> delivered to the process for the signal
+<B><TT>SIGALRM</TT></B> after the specified number of seconds have elapsed. If <B><TT>seconds</TT></B> is zero
+then no new alarm is schededuled. In all cases the any previous <B><TT>alarm</TT></B>s are cancelled and
+<B><TT>return</TT></B>s the number of seconds remaining  until  any  scheduled alarm was due to be delivered.
+<B><TT>Return</TT></B>s zero if there is no previously scheduled alarm. 
+
+<P>
+<DT>chdir
+<DD><A NAME="item:chdir"></A><A NAME="17536"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int chdir(const char * pathname);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<B><TT>chdir</TT></B> changes the current working directory to the one specified in <B><TT>pathname</TT></B>.
+Returns on success, 0 and on error returns -1 and it will set <B><TT>errno</TT></B> to one of: <B><TT>EFAULT</TT></B> 
+ <B><TT>ENAMETOOLONG</TT></B>, <B><TT>ENOENT</TT></B>, <B><TT>ENOMEM</TT></B>, <B><TT>ENOTDIR</TT></B>, <B><TT>EACCES</TT></B>, <B><TT>ELOOP</TT></B>, <B><TT>EIO</TT></B>, <B><TT>EBADF</TT></B> or <B><TT>EACCES</TT></B>
+
+<P>
+<DT>close
+<DD><A NAME="item:close"></A><A NAME="17556"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int close(int handle);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Closes the file associated with <B><TT>handle</TT></B>, which may have been
+obtained from <B><TT>creat</TT></B>, <B><TT>open</TT></B>, <B><TT>dup</TT></B>, or <B><TT>dup2</TT></B>.
+Returns 0 on success, else -1 on error and sets <B><TT>errno</TT></B>
+to one of: <B><TT>EBADF</TT></B> or <B><TT>EINTR</TT></B>.
+
+<P>
+<DT>dup
+<DD><A NAME="item:dup"></A><A NAME="17571"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int dup(int filedes);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Duplicates the file handle <B><TT>filedes</TT></B>. The duplicated handle will
+have the same access mode, the same file pointer and same open file or
+device as <B><TT>filedes</TT></B>. Returns the duplicated file handle, else -1 on
+error and sets <B><TT>errno</TT></B> to one of: <B><TT>EBADF</TT></B> or <B><TT>EMFILE</TT></B>.
+
+<P>
+<DT>dup2
+<DD><A NAME="item:dup2"></A><A NAME="17583"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int dup2(int oldfiledes, int newfiledes);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Duplicates an old file handle, <B><TT>oldfiledes</TT></B> onto an existing new
+file handle, <B><TT>newfiledes</TT></B>. The duplicated handle will have the same
+access mode, the same file pointer and same open file or device as the
+old handle.  If the file associated with the new file handle is
+already opened, it will be first closed. Returns 0 on success, else -1
+on error and sets <B><TT>errno</TT></B> to one of <B><TT>EBADF</TT></B> or <B><TT>EMFILE</TT></B>.
+
+<P>
+<DT>fork
+<DD><A NAME="item:fork"></A><A NAME="17595"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+pid_t fork(void);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates a child process, which is a copy of the parent. The child gets
+a copy of the parent's data space, heap and stack. While <B><TT>fork</TT></B>
+is called once, it will return twice: once to the parent and once to the
+child. It returns 0 to the child and returns the process <B><TT>ID</TT></B> of the
+child to the parent. Both the child and parent continue executing from
+the place in the program directly after the call. However, there is no
+guarantee which process will commence first. On error, it returns -1
+and sets <B><TT>errno</TT></B> to one of: <B><TT>EAGAIN</TT></B> or <B><TT>ENOMEM</TT></B>.
+
+<P>
+<DT>getcwd
+<DD><A NAME="item:getcwd"></A><A NAME="17607"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+char *getcwd(char *buf, size_t sz);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The <B><TT>getcwd</TT></B> function gets the current working directory's absolute
+path and copies it into the character array <B><TT>buf</TT></B>, and the length of
+<B><TT>buf</TT></B> is specified by <B><TT>sz</TT></B>. Returns on success <B><TT>buf</TT></B>, or
+<B><TT>NULL</TT></B> on error.
+
+<P>
+<DT>getpid
+<DD><A NAME="item:getpid"></A><A NAME="17620"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+int getpid(void);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns the group ID of the calling process.  No error
+indicated or <B><TT>errno</TT></B> designators.
+
+<P>
+<DT>link
+<DD><A NAME="item:link"></A><A NAME="17628"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int link(const char *oldpath, const char *newpath);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates a link to an existing file or directory specified
+by<B><TT>oldpath</TT></B>, and give it the name <B><TT>newpath</TT></B>. It is an error if the
+newpath already exists. Note, only a superuser process can create a
+link to a directory.  Returns 0 on success, else -1 on error and sets
+<B><TT>errno</TT></B> to one of: <B><TT>EINVAL</TT></B>, <B><TT>EPERM</TT></B> or <B><TT>ESRCH</TT></B>.
+
+<P>
+<DT>lseek
+<DD><A NAME="item:lseek"></A><A NAME="17641"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt; 
+off_t lseek(int filedes, off_t offset, int whence);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Set the file descriptor's, <B><TT>filedes</TT></B>, pointer to the new position
+specified by <B><TT>offset</TT></B>, which will be measured relative to
+<B><TT>whence</TT></B>. <B><TT>whence</TT></B> can be on of:
+<B><TT>SEEK_SET</TT></B>, <B><TT>SEEK_END</TT></B> or <B><TT>SEEK_CUR</TT></B>. Returns on success the 
+resulting position in number of bytes from the beginning of the file,
+else it returns -1 and sets <B><TT>errno</TT></B> to one of: <B><TT>EBADF</TT></B>, <B><TT>EINVAL</TT></B>
+or <B><TT>ESPIPE</TT></B>. Note, <code>lseek(filedes,0,SEEK_CUR)</code> will return
+the current file pointer location.
+
+<P>
+<DT>pause
+<DD><A NAME="item:pause"></A><A NAME="17659"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int pause(void);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Causes the program or calling unit to sleep until a signal is received.
+<B><TT>Return</TT></B>s  -1.
+
+<P>
+<DT>pipe
+<DD><A NAME="item:pipe"></A><A NAME="17667"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int pipe(int filedes[2]);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates a pipe, with read and write file descriptors stored in
+filedes[0] and filedes[1] respectively. The output filedes[0] is the
+input into file filedes[1]. A call to <B><TT>pipe</TT></B> is often accompanied by
+a <B><TT>fork</TT></B>, of which the parent process will close the read end of the
+pipe, while the child process will close the write end.  Returns 0 on
+success, else -1 on error and sets
+<B><TT>errno</TT></B> to one of: <B><TT>EMFILE</TT></B> or <B><TT>ENFILE</TT></B>.
+
+<P>
+<DT>read
+<DD><A NAME="item:read"></A><A NAME="17679"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+ssize_t read(int filedes, char *buf, size_t count);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Attempts to read <B><TT>count</TT></B> bytes from <B><TT>filedes</TT></B> and will place
+them in <B><TT>buf</TT></B>. One success, returns the number of bytes read,
+on <B><TT>end-of-file</TT></B> zero, otherwise -1 and sets <B><TT>errno</TT></B> to one of:
+<B><TT>EACCESS</TT></B>, <B><TT>EAGAIN</TT></B>, <B><TT>EBADF</TT></B>, <B><TT>EINTR</TT></B>, <B><TT>EISDIR</TT></B>, or 
+<B><TT>EFAULT</TT></B>.
+
+<P>
+<DT>rmdir
+<DD><A NAME="item:rmdir"></A><A NAME="17697"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int rmdir(const char * path);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Removes the directory specified by <B><TT>path</TT></B>, which must be empty.
+Returns zero on success, else -1 on error and
+<B><TT>errno</TT></B> will be set to one of: <B><TT>EBUSY</TT></B>, <B><TT>EFAULT</TT></B>,
+<B><TT>ENAMETOOLONG</TT></B>, <B><TT>ENOENT</TT></B>, <B><TT>ENOMEM</TT></B>, <B><TT>ENOTDIR</TT></B>,
+ <B><TT>ENOTEMPTY</TT></B>, <B><TT>EPERM </TT></B> or <B><TT>EROFS</TT></B>.
+
+<P>
+<DT>sleep
+<DD><A NAME="item:sleep"></A><A NAME="17715"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+unsigned int sleep(unsigned int sec);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Puts the current process to sleep for  <B><TT>sec</TT></B> seconds.
+or until a signal arrives which is not ignored. Returns
+the amount of time not slept. No error codes used.
+
+<P>
+<DT>unlink
+<DD><A NAME="item:unlink"></A><A NAME="17723"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+int unlink(const char *fname);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Removes the link, <B><TT>fname</TT></B> from the filesystem. If it is the last
+link to the that name and no other process has the file opened, then
+the file space will also be freed. If there are no other links and any
+process still has the file opened then the file space will remain in
+existence until the last file descriptor referring to it is
+closed. Returns zero on success, else -1 and 
+<B><TT>errno</TT></B> is set to one of: <B><TT>EACCES</TT></B>, <B><TT>EFAULT</TT></B>, <B><TT>EISDIR</TT></B>, 
+<B><TT>ENAMETOOLONG</TT></B>, <B><TT>ENOENT</TT></B>, <B><TT>ENOMEM</TT></B>, <B><TT>ENOTDIR</TT></B>,  <B><TT>EPERM </TT></B>, or <B><TT>EROFS</TT></B>.
+
+<P>
+<DT>usleep
+<DD><A NAME="item:usleep"></A><A NAME="17741"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+void usleep(unsigned long usec);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The <B><TT>usleep</TT></B> function when called waits <B><TT>usec</TT></B> microseconds before
+returning to its caller.  Its accuracy depends on the time needed to
+actually process the call, but as the value of <B><TT>usec</TT></B> increase so should its
+accuracy. 1sec=50#50usec.
+
+<P>
+<DT>write
+<DD><A NAME="item:write"></A><A NAME="17751"></A>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;unistd.h&gt;
+ssize_t write(int filedes, const char *buf, size_t count);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Writes up to <B><TT>count</TT></B> bytes to file descriptor <B><TT>filedes</TT></B> from from
+<B><TT>buf</TT></B>. Returns the number of bytes written, zero on end-of-file or
+otherwise -1 and <B><TT>errno</TT></B> will be set to one of: <B><TT>EAGAIN</TT></B>, <B><TT>EBADF</TT></B>, 
+<B><TT>EFAULT</TT></B>, <B><TT>EINTR</TT></B>, <B><TT>EINVAL</TT></B>, <B><TT>ENOSPC</TT></B> or <B><TT>EPIPE</TT></B>. 
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2574"
+  HREF="node147.html" tppabs="http://eic.sourceforge.net/documentation/node147.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2568"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2564"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2570"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2572"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2575"
+  HREF="node147.html" tppabs="http://eic.sourceforge.net/documentation/node147.html">Implementation library support</A>
+<B> Up:</B> <A NAME="tex2html2569"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">POSIX.1 library support</A>
+<B> Previous:</B> <A NAME="tex2html2565"
+  HREF="node145.html" tppabs="http://eic.sourceforge.net/documentation/node145.html">sys/types.h</A>
+ &nbsp <B>  <A NAME="tex2html2571"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2573"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

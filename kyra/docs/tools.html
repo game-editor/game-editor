@@ -1,0 +1,140 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">The Tools</font></h1>
+      <h3><font face="Arial, Helvetica, sans-serif">Overview | <a href="toolsSpriteEditor.html">Sprite 
+        Editor</a> | <a href="toolsEncoder.html">Encoder</a> | <a href="kyraxml.html">Kyra 
+        XML</a></font></h3>
+      <p><font face="Arial, Helvetica, sans-serif">The tools are used to change 
+        source images into sprites and tiles. There is a Sprite Editor to mark 
+        the location of sprites and tiles, and an Encoder to convert multiple 
+        input files into a .dat file for run time use.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Before looking at the tools 
+        however, it's important to review:</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><b>The Anatomy 
+        of a Sprite Frame</b><br>
+        <img src="spriteAnatomy.gif" width="180" height="228"> </font></p>
+      <p><font face="Arial, Helvetica, sans-serif">This is one of the DRONE sprites 
+        in the BEM demo.</font></p>
+      <p> 
+        <blockquote> 
+          <p><font face="Arial, Helvetica, sans-serif">Sprite: DRONE<br>
+            Action: WALK.DIR3<br>
+          Frame: 1 (and shown for reference) 2</font></p>
+        </blockquote>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">The <b>hotspot</b> is the origin 
+        point of the frame. If you position the sprite at 10, 10 and Draw(), the 
+        sprite will be drawn with the hotspot at location 10, 10. The <b>bounds</b> 
+        of the frame (not shown) is a bounding box that fully encompasses the 
+        image in the frame. The bounds will be different for every frame.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">It is important to note that 
+        Frame 2 is in a very particular relation to Frame 1. If Frame 2 is drawn 
+        in a different relative location, the feet will appear to &quot;slide&quot; 
+        as the sprite moves. For this sprite, <b>aligning</b> is very important. 
+        If you need to align sprites, you'll need to use the Sprite Editor. (More 
+        below.) A sprite's <b>delta</b> refers to the x and y distance between 
+        its hotspots from the current frame to the next frame. You can call DoStep() 
+        to automatically advance the frame and apply the delta.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">A Tile -- in contrast to a 
+        sprite -- is always square (width == height.) It can be rotated and flipped, 
+        however. You should always use Sprites unless you need to rotate and flip 
+        the image.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">A Font is a special kind of 
+        sprite that contains letters, numbers, and symbols. (Actually, the fact 
+        that is is a special sprite has almost no practical implication....a font 
+        is a font.)</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Sprites, Tiles, and Fonts all 
+        start with source images: pictures of characters walking, backgrounds, 
+        room objects, whatever makes up the world you are trying to create. These 
+        images are usually scanned or rendered, and cleaned up with an image editor 
+        before they are ready to be used by Kyra.</font></p>
+      <h2><font face="Arial, Helvetica, sans-serif">Overview of Tools</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">The <a href="toolsEncoder.html">Encoder</a> 
+        takes the source images and the XML files that describe them and creates 
+        data files that are used by the engine. A '.dat' file stores all the source 
+        image data, and a C header file is also written for the client program's 
+        use.</font></p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif"><img src="tools2.jpg" width="290" height="145"></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">There are several ways to create 
+        the XML files the encoder needs:</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">
+        
+      <ul>
+        <li><font face="Arial, Helvetica, sans-serif">The <a href="toolsSpriteEditor.html">Sprite 
+          Editor</a> is used to define the names of the images and their relationships. 
+          The Sprite Editor is used, for example, to mark 4 images as an alien 
+          walking, and other images as the floor it walks on. It is a very powerful 
+          tool, and is used to mark up images like the DRONE, above. The Sprite 
+          Editor generates XML used by the encoder.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Fonts use a very simple 
+          XML file, that can be hand created. See <a href="kyraxml.html">KyraXML</a>.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Sprite Frames marked with 
+          color key data, <img src="bemParticle.gif" width="78" height="62" align="middle">, 
+          which uses colors to mark the frames and hotspots, can be imported with 
+          hand created xml. See <a href="kyraxml.html">KyraXML</a>. Complete images 
+          can be imported with Direct Encoding as well. This is often simpler 
+          than the Sprite Editor, and more easy to automate. It lacks the powerful 
+          aligning capabilities, but it is very convenient to be able to add all 
+          the data needed to represent sprite frames in the image file itself.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">User data, either text or 
+          binary, can be encoding into the .dat and accessed as a resource. See 
+          <a href="kyraxml.html">KyraXML</a>.</font> 
+          <p><font face="Arial, Helvetica, sans-serif">Each tool is described 
+            in detail on its own page.</font></p>
+        </li>
+      </ul>
+      </font><!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

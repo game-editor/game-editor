@@ -1,0 +1,94 @@
+TODO:
+
+-Respond to events indicating that system colors have changed by updating the interal brushes / pens and
+ redrawing the interface.
+
+-dont display buttons if the button manager doesnt have enough room
+
+-update getting started docs
+
+-prevent resize xor lines from moving beyond min / max sizes
+-move event class implementation into events.cpp
+
+-consider if i should return (0,0) for stuff if hidden. Its easy enough to see if a component is hidden before hand
+
+-toolbar functionality ala msoffice
+
+-fix mouse release bug if application loses focus during resize or drag
+
+-Possibly add a docking event to determine if the current floating frame of a component
+ can be reused during dragging instead of making a new one
+
+-Make members of component private and provide setter methods that actually set them
+	Maybe?
+
+-I could split the event handling out of InterfacePlugin and make it a common base shared
+ by interfaceplugin and floatingwindowbase, because the handling is the same in both cases
+	Usually the same...
+
+-Draw a border, or something, around the component that cross drop buttons are being displayed for
+
+-Correct the Update handling for the ShowChild event.
+	Maybe letting plugins handle the updating themselves is wrong?
+
+	I have an issue where one plugin recieves the event first, but needs to modify data
+	before the interface updates. It also needs to let the plugins that go before do their
+	own updating. This causes the actual update to happen before the first plugin can change
+	what it needs to change resulting in some funny business.
+
+	I cannot simply let the wxInterfaceManager object do updating, because a plugin may
+	want to update in a specific (faster) way that I don't know about. I can sort of fix it by
+	having the plugins that go first use AddPendingEvent instead of ProcessPluginEvent,
+	but that is not the best fix, because it fixes a problem in a different plugin. If there
+	are other issues like this, the plugin that needs to go first may be loaded at run time,
+	and the plugins that come after cannot be changed.
+
+	For now I will use AddPendingEvent.
+
+-fix quirks when docking above a horizontal container that is already docked
+	I sort of fixed them. The final result is incorrect, but no longer eventually crashes
+	the program
+
+-possibly add a way to specify component specific data in the NewComponentEvent
+
+-cleanup the dragndrop plugin
+
+-make more dragging events like
+	"Display component target dock buttons for component _____"
+		This would allow for disabling tabulated docking into containers and the
+		content window
+
+-prevent resizing beyond mins or maxes
+
+-Allow the specification of what sides the application wishes to allow docking
+	As in, the application can tell wxIFM that it only wants windows docking on
+	the left or right side.
+		Maybe?
+
+-Add a flag to component that specifies if a change has been made since the last update
+-Add a flag to the Update event which specifies if the entire interface needs
+ to be updated which would signal the interface plugin to not make any optimizations.
+
+-Integrated options windows for interface plugins and extensions that "plug in" to 
+ application provided option dialogs, notebooks, or what have you to allow plugin configuration
+
+-Provide "lock interface" option
+
+-Provide a way to make certain components "un-hideable" as in not closeable
+	Being not closeable would disable the X for floating components.
+	I have the data member for this I just don't do anything with it yet and need to.
+
+-Globalize preferences and configurations
+	-Floating
+	-Paint colors
+
+-Possibly provide events to allow individual components to recieve focus.
+
+-Possibly use exceptions?
+
+-Decide whether or not to allow message boxes to be shown within extension plugins if they are added
+ to the wrong interface plugin
+
+-Allow for dynamic plugin creation / pushing from DLLs. This would make it truely a plugin based system!
+	I can achieve this if I provide a C style entry function which is used by users of the dynamic library.
+	This avoids c++ name mangling and is really cool.

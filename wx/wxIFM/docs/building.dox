@@ -1,0 +1,14 @@
+/*!
+\page building Notes for building wxIFM
+
+\section building_shared_vs_static Building a Shared version of wxIFM
+
+It is possible to build wxIFM as a DLL (Shared Library) or a static library.
+DLL builds of wxIFM require that you also be using a DLL version of wxWidgets.
+To build the DLL version of wxIFM, make sure "WXMAKINGDLL_IFM" is define when
+building the library source files. To use the DLL version of wxIFM, define
+"WXUSINGDLL" in your program.
+
+\note As of this writing, DLL builds of wxIFM are only officially supported if
+you are building wxIFM using the provided Visual Studio 2003 project files.
+*/

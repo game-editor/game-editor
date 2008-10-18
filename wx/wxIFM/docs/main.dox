@@ -1,0 +1,103 @@
+/*!
+\mainpage
+
+\section Introduction
+
+Welcome to the wxIFM documentation. wxIFM is a sophistocated docking library for the wxWidgets
+application framework.\n
+
+Some basic information on using the library: \ref gettingstarted\n
+Basic overview of wxIFM: \ref overview\n
+Notes on building wxIFM: \ref building\n
+*/
+
+/*!
+\page gettingstarted Getting Started
+
+\section usingwxifm Using wxIFM
+
+This section provides an explanation of the basic usage of wxIFM for your application
+
+\subsection initwxifm Initializing wxIFM
+
+Using wxIFM entails two basic steps. You must first create and initialize a wxInterfaceManager object, which is the
+main object of wxIFM. It manages plugins and provides an interface between the application and the library.
+Secondly you must add children that you wish to be managed by the library. Adding a child to the library
+means the library will take over all positioning and sizing of that child window.
+
+Here is a short example snippet
+
+\code
+MyFrame::MyFrame()
+{
+	// Create an interface manager object.
+	// m_manager is a class member: wxInterfaceManager *m_manager;
+	m_manager = new wxInterfaceManager(this);
+
+	// Intialize it, loading the default plugins
+	m_manager->Initialize(true);
+
+	// Add some children to the interface.
+	// We use wxIFMDefaultChildData to add children specifically to the default interface provided
+	// my wxIFM. It contains information that tells the default interface where to put the child,
+	// how big it should be, and other information.
+
+	// You may be wondering why I use new here. I use it to show that the same
+	// child data object can be used more than once. You do not need to construct
+	// a new child data object for each call to add child. Naturally, the m_child
+	// data member should be different each time you call wxInterfaceManager::AddChild
+	// or wierd things will happen.
+	wxIFMDefaultChildData *data = new wxIFMDefaultChildData;
+
+	// We are just adding a regular child window
+	data->m_type = IFM_CHILD_GENERIC;
+
+	// How big we would like the child to be
+	data->m_desiredSize = wxSize(200, 75);
+
+	// Let wxifm automatically chose a position for the child.
+	// We could have added it to the top, bottom, left, or right of the frame instead
+	// with IFM_ORIENTATION_(TOP|LEFT|RIGHT|BOTTOM). You can also create floating components
+	// with IFM_ORIENTATION_FLOATING, but only if your port support it (wxGTK and wxMSW currently).
+	// The default orientation starts on the top, and cycles clockwise around the frame
+	data->m_orientation = IFM_ORIENTATION_DEFAULT;
+
+	// automatically chose a position within the chosen container
+	// we could have chosen to always add children as the first child of any given container
+	// using this value will simply append children after existing children in the container
+	data->m_index = IFM_DEFAULT_INDEX;
+
+	// finally, specify what child we want to add
+	// we'll just make a new textctrl here
+	data->m_child = new wxTextCtrl(this, wxID_ANY);
+
+	// now lets add the child to the interface
+	m_manager->AddChild(data);
+
+	delete data;
+}
+\endcode
+
+\note I highly recommend that you create a wxPanel as the only child of your wxFrame or wxFrame
+derivative, and letting wxIFM manage that wxPanel. This will allow the wxFrame to manage a toolbar
+without causing wxIFM to mess up, and is generally a better way to design applications.
+
+\subsection shuttingdownwxifm Shutting down wxIFM
+
+To shutdown the wxInterfaceManager object, simply call wxInterfaceManager::Shutdown(). After doing
+so, it is safe to delete the wxInterfaceManager object.
+
+\code
+{
+	// ...
+	
+	// shut down the interface management object
+    m_ifm->Shutdown();
+
+    // it is now safe to delete it
+    delete m_ifm;
+
+	// ...
+}
+\endcode
+*/

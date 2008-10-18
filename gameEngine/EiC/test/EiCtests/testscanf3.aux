@@ -1,0 +1,37 @@
+Hi Ed,
+
+Today I downloaded EiC, and I must say, I really don't regret it!
+Great stuff!
+
+I ran into a little problem however, when I tried to use fscanf,
+in (for example):
+			
+  	  	
+FILE * f = fopen("somefile", "r"); 
+        /* Just a file with some lines of text, separated by newlines */
+        /* Perhaps this e-mail will do ;-) */
+char buf[256];
+
+while (fscanf(f,"%[^\n]\n",buf) != EOF) printf("%s\n", buf);
+
+        /* If you try this at home, I suggest you use : */
+
+int j = 1, maxj = 100; 
+        /* or some convenient number for maxj */
+
+while ((fscanf(f,"%[^\n]\n",buf) != EOF) && (j < maxj))\
+printf("Line %i: %s\n", j++, buf);
+
+There were two problems:
+  1: fscanf never gets past the first newline.
+  2: later on, (after I fixed 1), I found EOF is never detected.
+
+I took the liberty of hacking around in _eicUscanf (in stdio.c)
+until it worked, and hereby send you the result. 
+This version is also allows one to use ranges in scansets.
+I hope you can use it, and that it doesnot break anything.
+(I attached the improved (?) version of _eicUscanf and also
+ a diff of the new(<) and the old (>) stdio.c)
+
+Oh, by the way, the makefile for seic (Makefile.seic) misses two
+objects, reset.o and callback.o, IIRC.

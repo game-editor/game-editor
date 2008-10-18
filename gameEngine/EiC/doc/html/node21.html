@@ -1,0 +1,1182 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>EiC commands</TITLE>
+<META NAME="description" CONTENT="EiC commands">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="previous" HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">
+<LINK REL="up" HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">
+<LINK REL="next" HREF="node22.html" tppabs="http://eic.sourceforge.net/documentation/node22.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html617"
+  HREF="node22.html" tppabs="http://eic.sourceforge.net/documentation/node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html611"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html607"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html613"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html615"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html618"
+  HREF="node22.html" tppabs="http://eic.sourceforge.net/documentation/node22.html">The EiC Preprocessor</A>
+<B> Up:</B> <A NAME="tex2html612"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">The EiC interpreter</A>
+<B> Previous:</B> <A NAME="tex2html608"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">The EiC interpreter</A>
+ &nbsp <B>  <A NAME="tex2html614"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html616"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00331000000000000000"></A>
+<A NAME="sec:EiCcommands"></A>
+<BR>
+EiC commands
+</H2>
+An interpreter directive as opposed to a C statement, a preprocessor
+directive, or an external declaration (see below) are communicated from 
+lines beginning with a colon <B><TT>:</TT></B> followed by an <I>eic-command</I> production such as:
+
+<P>
+
+<BLOCKQUOTE></BLOCKQUOTE><TABLE  WIDTH="317">
+<TR><TD><PRE><TT>
+eic-command: 
+<BR><B><TT>show</TT></B>  id 
+<BR><B><TT>rm</TT></B> item[<B><TT>,</TT></B>item]1#1
+<BR><B><TT>clear</TT></B> file-name[<B><TT>,</TT></B>file-name]1#1 
+<BR><B><TT>gen</TT></B> header-file [num]  ["outfile"] 
+<BR><B><TT>exit</TT></B>  
+<BR><B><TT>variables</TT></B> 
+<BR><B><TT>variables</TT></B>  [ type-name 2#2 <B><TT>tags</TT></B> ] 
+<BR><B><TT>help</TT></B> 
+<BR><B><TT>history</TT></B> 
+<BR><B><TT>files</TT></B> [ file-name ] 
+<BR><B><TT>reset</TT></B> [ <B><TT>here</TT></B> ] 
+<BR><B><TT>-</TT></B> comm-switch [ path ] 
+<BR>
+toggle 
+<BR>
+comm-switch: <B><TT>one of</TT></B>
+<BR><B><TT>I  R  L</TT></B> 
+<BR>
+toggle: 
+<BR><B><TT>trace</TT></B> [<B><TT>funcs</TT></B>]
+<BR><B><TT>listcode</TT></B>  [<B><TT>linenums</TT></B>]
+<BR>[ <B><TT>timer</TT></B> 2#2 <B><TT>showline</TT></B>  2#2 <B><TT>interpreter</TT></B>  2#2 <B><TT>memdump</TT></B> 2#2 <B><TT>verbose</TT></B> 2#2 <B><TT>includes</TT></B> ] 
+<BR>
+item: <B><TT>one of</TT></B>
+<BR>
+identifier  constant-expression 
+<BR>
+path:
+<BR><B><TT>any valid directory path</TT></B> 
+<BR>
+file-name
+<BR><B><TT>the name of any included file</TT></B> 
+</TT></PRE>
+</TD></TR>
+</TABLE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+For example, you exit<A NAME="1779"></A> EiC by entering <TT>:exit</TT>. Note, the keywords; that is, the terminal symbols used in the
+<I>eic-command</I> productions will not conflict with C identifiers,
+as the interpreter distinguishes the difference based upon context of
+use (see &#167;&nbsp;<A HREF="node47.html#sec:NameSpace" tppabs="http://eic.sourceforge.net/documentation/node47.html#sec:NameSpace">3.6</A>, pg:&nbsp;<A HREF="node47.html#sec:NameSpace" tppabs="http://eic.sourceforge.net/documentation/node47.html#sec:NameSpace"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). The <I>eic-command's</I> are now
+explained:
+
+<P>
+<FONT SIZE="-1"> </FONT>
+
+<DL COMPACT>
+<DT>show
+<DD><A NAME="item:show"></A><A NAME="1787"></A>
+is used to display type and other information concerning
+variable and function definitions and declarations. It also
+provides a quick way to test for the existence of a
+variable. Example: 
+
+<P><PRE>
+EiC 1&gt; float (*fval)[5];
+        (void)
+EiC 2&gt; :show fval
+fval -&gt; * ARY[5]float
+</PRE>
+
+<P>
+which is read as: fval is a pointer to an array of 5 floats. When <B><TT>show</TT></B>
+is used to display a <B><TT>structure</TT></B> or <B><TT>union</TT></B> it reveals the size
+and the members also:
+
+<P><PRE>
+EiC 3&gt; struct stag {int x; double da[5];} st;
+        (void)
+EiC 4&gt; :show st
+st -&gt; struct: size 44 bytes
+        x -&gt; int 
+        da -&gt; ARY[5]double
+</PRE>
+
+<P>
+If the structure or union contains nested structures or unions,
+<B><TT>show</TT></B> only expands the first level of nesting:
+
+<P><PRE>
+EiC 5&gt; struct { float v; struct stag st;} sr;
+        (void)
+EiC 6&gt; :show sr
+sr -&gt; struct: size 48 bytes
+        v -&gt; float 
+        st -&gt; struct: size 44 bytes
+                x -&gt; int 
+                da -&gt; ARY[5]double
+</PRE>
+
+<P>
+<B><TT>Show</TT></B> can also be used to look at function declarations
+and definitions:
+
+<P><PRE>
+EiC 7&gt; int sqr(int x);
+        (void)
+EiC 8&gt; :show sqr
+sqr -&gt; dec_Func (
+        x: int 
+        ) returning int 
+        (void)
+</PRE>
+
+<P>
+This is interpreted as: <B><TT>sqr</TT></B> is a function declaration <B><TT>dec_Func</TT></B> that
+receives an integer argument declared with name <TT>x</TT> and returns
+an integer to its caller. The prefix <B><TT>dec_</TT></B> implies that the body
+of the function has not yet been defined. Converting the declaration
+into a definition:
+
+<P><PRE>
+EiC 9&gt; int sqr(int x) { return x * x;}
+        (void)
+EiC 10&gt; :show sqr
+sqr -&gt; Func (
+        x: int 
+        ) returning int 
+        (void)
+</PRE>
+
+<P>
+In EiC there are basically two types of functions (see section
+&#167;&nbsp;<A HREF="node84.html#sec:FunctionTypes" tppabs="http://eic.sourceforge.net/documentation/node84.html#sec:FunctionTypes">3.18</A>, pg:&nbsp;<A HREF="node84.html#sec:FunctionTypes" tppabs="http://eic.sourceforge.net/documentation/node84.html#sec:FunctionTypes"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). There are interpreter
+functions<A NAME="1818"></A> and there are builtin
+functions<A NAME="1819"></A>. To distinguish these forms the
+<B><TT>show</TT></B> command adds the prefix
+<B><TT>Builtin</TT></B> to builtin functions:
+
+<P><PRE>
+EiC 11&gt; :show printf
+printf -&gt; Builtin Func (
+        ) returning
+</PRE>
+
+<P>
+Notice that the argument list is empty and the returning type is
+undefined. The above informs that while the function <B><TT>printf</TT></B>, which
+is discussed on page <A HREF="node134.html#item:printf" tppabs="http://eic.sourceforge.net/documentation/node134.html#item:printf"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>, is built
+into EiC, it has not yet been prototyped.  No builtin function can be
+called from EiC until its prototype has been processed:
+
+<P><PRE>
+EiC 12&gt; printf("hello\n");
+Error in ::EiC:: near line 12: Incorrect function usage: printf
+</PRE>
+
+<P>
+However, this is easily rectified by including the appropriate header
+file:
+
+<P><PRE>
+EiC 13&gt; #include &lt;stdio.h&gt;
+EiC 14&gt; :show printf
+printf -&gt; Builtin Func (
+        fmt: * const char ,
+        ...
+        ) returning int
+</PRE>
+
+<P>
+Now, a call can be made to <B><TT>printf</TT></B>:
+
+<P><PRE>
+EiC 15&gt; printf("hello\n");
+hello
+        6
+</PRE>
+
+<P>
+The 6 is the return value from <B><TT>printf</TT></B>
+and represents the number of characters printed.
+
+<P>
+The <B><TT>show</TT></B> command also helps to promote function
+documentation:<A NAME="1843"></A><A NAME="1844"></A> as it
+displays the first comment <B><TT>past</TT></B> the line the opening <TT>{</TT>
+bracket of the function is on. Therefore, it provides a simple way of
+adding function usage. For example, consider the following function
+stored in <B><TT>examples/regline.c</TT></B>:
+
+<P><PRE>
+void regline(float *x,float *y, int n,     
+             float *m,  float *b )
+{
+    /*  In a least square sense, find the equation:
+     * y = mx + b; Returns the slope in `m' and
+     * the offset in `b', from the data given in
+     * `y' and `x'. `n' being the size of the
+     * arrays `y' and `x'.
+     */
+     ...
+</PRE>
+
+<P>
+Now from EiC:
+
+<P><PRE>
+EiC 16&gt; #include examples/regline.c
+EiC 17&gt; :show regline
+regline -&gt; Func (
+        x: * float ,
+        y: * float ,
+        n: int ,
+        m: * float ,
+        b: * float 
+        ) returning void 
+
+    /*  In a least square sense, find the equation:
+     * y = mx + b; Returns the slope in `m' and
+     * the offset in `b', from the data given in
+     * `y' and `x'. `n' being the size of the
+     * arrays `y' and `x'.
+     */
+</PRE>
+
+<P>
+Because of semantic reasons the comment considered to be the
+documenting comment will be the <I>first comment</I> after the line
+the opening bracket of the function is on. If the first comment
+happens to start on the same line as the opening bracket it will not
+be recognised and the next comment (if it exists) will be used to form
+the documenting comment. See also the EiC command
+<B><TT>listcode</TT></B> on page <A HREF="node21.html#item:listcode" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:listcode"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> for further examples of
+<B><TT>show</TT></B>.
+
+<P>
+<DT>rm
+<DD><A NAME="item:rm"></A><A NAME="1861"></A>
+        is used to remove mostly variables and functions from EiC's
+        symbol table. Example:
+
+<P><PRE>
+EiC 18&gt; :rm fval
+        (void)
+EiC 19&gt; :show fval
+Error in ::EiC:: near line 19: Unknown identifier fval
+</PRE>
+        Here the error is simply informing
+        us that the identifier <TT>fval</TT> is no 
+        longer recognized by the interpreter.
+
+<P>
+The operand to the <B><TT>rm</TT></B> operator can also be an integral
+        <I>constant-expression</I> (see&nbsp;&#167;&nbsp;<A HREF="node50.html#sec:Constants" tppabs="http://eic.sourceforge.net/documentation/node50.html#sec:Constants">3.9</A>, pg:&nbsp;<A HREF="node50.html#sec:Constants" tppabs="http://eic.sourceforge.net/documentation/node50.html#sec:Constants"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). The value
+        of the <I>constant-expression</I> is used when removing
+        manually memory leaks as reported by <B><TT>memdump</TT></B>. It is an
+        error to attempt to remove a memory item that is not deemed to
+        be a memory leak or to use an invalid item number (see
+        <B><TT>memdump</TT></B> page:&nbsp;<A HREF="node21.html#item:memdump" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:memdump"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>).
+
+<P>
+<DT>clear
+<DD><A NAME="item:clear"></A><A NAME="1875"></A>
+        is used to remove the contents of entire files from EiC's
+        symbol tables and memory pool. This handy operator removes the
+        contents of an entire file before say re-including it so
+        as to avoid conflicts between variable and function changes
+        that EiC forbids. Example:
+
+<P><PRE>
+EiC 1&gt; #include "examples/sqr.c"
+        (void)
+EiC 2&gt; :clear examples/sqr.c
+</PRE>
+The <I>file-name</I>, operand, must match with one of the strings listed
+by the <B><TT>:files</TT></B> operator (page:&nbsp;<A HREF="node21.html#item:files" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:files"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). The <B><TT>:clear</TT></B> operator also
+excepts a comma seperated list of file names, with no white spaces intervening.
+
+<P>
+<DT>gen
+<DD><A NAME="item:gen"></A><A NAME="1885"></A>
+
+<P>
+The <B><TT>gen</TT></B> command takes upto three arguments, <I>header-file</I>,
+<I>num</I> and <I>outfile</I>:
+
+<P>
+
+<BLOCKQUOTE><FONT SIZE="-1"><B><TT>:gen</TT></B> <I>header-file</I> [<I>num</I>]  ["<I>outfile</I>"] 
+</FONT></BLOCKQUOTE>
+<P>
+The <B><TT>gen</TT></B> command is used for generating EiC interfaces to builtin
+C code. It purpose is to allow the easy interfacing of EiC to libraries
+of C, and this is covered in more detail in &#167;&nbsp;<A HREF="node157.html#sec:interface_ccode" tppabs="http://eic.sourceforge.net/documentation/node157.html#sec:interface_ccode">5.1.6</A>, pg:&nbsp;<A HREF="node157.html#sec:interface_ccode" tppabs="http://eic.sourceforge.net/documentation/node157.html#sec:interface_ccode"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>.
+
+<P><PRE>
+EiC &gt; :gen foo.h
+</PRE>
+
+<P>
+The above would generate the EiC interface to the <I>header-file</I>t
+<B><TT>foo.h</TT></B> to <B><TT>stdout</TT></B>. 
+
+<P>
+The <I>outfile</I> is used for redirecting the output from <B><TT>:gen</TT></B> to a file rather
+than <B><TT>stdout</TT></B>:
+
+<P><PRE>
+EiC &gt; :gen foo.h "foo.c"
+</PRE>
+
+<P>
+The above would be used to direct the output from <B><TT>:gen</TT></B> to the file
+<B><TT>foo.c</TT></B>. Note the <I>outfile</I> argument must be a string; that
+is, enclosed in double quotes..
+
+<P>
+The <I>num</I> option is a constant integer value, and is used to control 
+the level of multiplexing callback code to generate. The default value
+for <I>num</I> is 1:
+
+<P><PRE>
+EiC &gt; :gen foo.h 4 "foo.c"
+</PRE>
+
+<P>
+<DT>exit
+<DD><A NAME="item:exit"></A><A NAME="1927"></A>
+         is used to terminate an EiC session.
+
+<P>
+<DT>status
+<DD><A NAME="item:status"></A><A NAME="1929"></A>
+        is used for inspecting the current status
+of the EiC toggle switches (see below).
+
+<P>
+<DT>variables
+<DD><A NAME="item:variables"></A><A NAME="1931"></A>
+        <B><TT>variables</TT></B> is like the <B><TT>show</TT></B> command
+        (page&nbsp;<A HREF="node21.html#item:show" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:show"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>), except rather than showing just
+        one identifier it shows groups of identifiers. However, unlike the
+        <B><TT>show</TT></B> command it does not expand structures and unions to
+        reveal their members.
+
+<P>
+Basically, there are three forms of the <B><TT>variables</TT></B>
+        command. When entered on its own it displays all the declared
+        identifiers. Generally, this will supply too much
+        information. Therefore, to limit the information produced by
+        <B><TT>variables</TT></B> it is possible to select various subsets by
+        using one of the two other forms:
+
+<P><TABLE  WIDTH="317">
+<TR><TD><PRE><TT>
+		      <B><TT>variables</TT></B>  [ type-name 2#2 <B><TT>tags</TT></B> ] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>type-name
+<DD>The <I>type-name</I> specifier is discussed
+        in detail in section&nbsp;&#167;&nbsp;<A HREF="node89.html#sec:TypeNames" tppabs="http://eic.sourceforge.net/documentation/node89.html#sec:TypeNames">3.22</A>, pg:&nbsp;<A HREF="node89.html#sec:TypeNames" tppabs="http://eic.sourceforge.net/documentation/node89.html#sec:TypeNames"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>. But briefly
+        it is used to display various identifier types such as, 
+        all the pointers to integers:
+
+<P><PRE>
+EiC 20&gt; int *p1, *p2, a, b,c;
+EiC 21&gt; :variables int *
+p1 -&gt; * int 
+p2 -&gt; * int
+</PRE>
+        See the <B><TT>show</TT></B> command on page&nbsp;<A HREF="node21.html#item:show" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:show"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> for
+        an explanation of such output.
+
+<P>
+As an example of using <B><TT>variables</TT></B> to view all the functions of
+a specified form, consider:
+
+<P><PRE>
+EiC 22&gt; int f(char * s) { return 1;}
+        (void)
+EiC 23&gt; int foo(const char * str);
+        (void)
+EiC 24&gt; :variables  int (char *)
+f -&gt; Func (
+        s: * char 
+        ) returning int 
+foo -&gt; dec_Func (
+        str: * const char 
+        ) returning int 
+system -&gt; Builtin Func (
+        str: * const char 
+        ) returning int 
+...
+</PRE>
+Note, <I>type-qualifiers</I> are not considered in the
+matching processing and any matching builtin function will also
+be displayed.
+
+<P>
+<DT>tags
+<DD>The <B><TT>tags</TT></B> option is used to display the structure, union
+        (&#167;&nbsp;<A HREF="node70.html#sec:structures" tppabs="http://eic.sourceforge.net/documentation/node70.html#sec:structures">3.12.9</A>, pg:&nbsp;<A HREF="node70.html#sec:structures" tppabs="http://eic.sourceforge.net/documentation/node70.html#sec:structures"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>) and the
+        enumeration (&#167;&nbsp;<A HREF="node60.html#sec:enumeration" tppabs="http://eic.sourceforge.net/documentation/node60.html#sec:enumeration">3.12.3</A>, pg:&nbsp;<A HREF="node60.html#sec:enumeration" tppabs="http://eic.sourceforge.net/documentation/node60.html#sec:enumeration"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>) tags that have been
+        declared:<PRE>
+EiC 25&gt; struct stag {int x,y;};
+EiC 26&gt; enum etag {RED,GREE, BLUE};
+EiC 27&gt; :variables tags
+etag -&gt; enum 
+stag -&gt; struct: size 8 bytes
+</PRE>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<DT>help
+<DD><A NAME="item:help"></A><A NAME="1969"></A>
+         is used to obtain a quick reference summary of the EiC
+        interpreter commands:
+<BLOCKQUOTE>
+</BLOCKQUOTE><PRE>
+EiC 28&gt; :help
+-----------------------------------------------------------------------------
+EiC-COMMAND          SUMMARY DESCRIPTION
+-----------------------------------------------------------------------------
+:-I path       Append path to the include-file search list.
+:-L            List search paths.
+:-R path       Remove path from the include-file search list.
+:clear fname   Removes the contents of file fname from EiC.
+:exit          Terminates an EiC session.
+:files         Display the names of all included files.
+:files fname   Summarize the contents of the included file `fname'.
+:gen fname     Generates EiC interface of the included file `fname'.
+:gen fname "outfile" Places the interface in outfile
+:gen 4 fname   Generates EiC interface with 4 levels of multiplexing.
+:help          Display summary of EiC commands.
+:history       List the history of all input commands.
+:includes      Display path of include files when loaded.
+:interpreter   Execute input commands. By default it is on.
+:listcode      List stack code.
+:listcode linenums     List stack code with associated line numbers.
+:memdump       Show potential memory leaks.
+:rm  dddd      Remove memory item dddd, which is a constant integer value.
+:rm   f        Removes f's definition from the symbol tables.
+:show f        Shows type or  macro definition of `f'.
+:showline      Show input line after macro expansion.
+:status        Display the status of the toggle switches.
+:timer         Time in seconds of execution.
+:trace         Trace function calls and line numbers during code execution.
+:trace funcs   Trace function calls only during code execution.
+:variables     Display declared variables and interpreter-ed function names.
+:variables tags       Display the tag identifiers.
+:variables type-name  Display variables of type `type-name'.
+:verbose       Suppresses EiC's copyright and warning messages on start up.
+------------------------------------------------------------------------------
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<FONT SIZE="-1"> </FONT>
+
+<DL COMPACT>
+<DT>files
+<DD><A NAME="item:files"></A> <A NAME="1978"></A>
+
+<P>
+The <B><TT>files</TT></B> command is used to get a list of the names
+of all the include files currently entered into EiC:
+
+<P><PRE>
+EiC 29&gt; :files
+::EiC::
+starteic.h
+stdio.h
+stdarg.h
+math.h
+
+...
+
+fcntl.h
+sys/fcntl.h
+sys/types.h
+../doc/regline.c
+</PRE>
+
+<P>
+It is also possible to get a summary of the contents of any
+particular  include file:
+
+<P><PRE>
+EiC 30&gt; :files fcntl.h
+FCNTLH_ -&gt; #define FCNTLH_
+open -&gt; Builtin Func (
+        path: * const char ,
+        access: int ,
+        ...
+        ) returning int
+creat -&gt; Builtin Func (
+        path: * const char ,
+        amode: usigned short
+        ) returning int
+        (void)
+</PRE>
+
+<P>
+The contents of an include file is summarised by first displaying
+the declared macros followed by the global variables (if any), which are
+in turn followed by the function definintions.
+
+<P>
+<DT>reset
+<DD><A NAME="item:reset"></A> <A NAME="1989"></A>
+
+<P>
+The <B><TT>reset</TT></B> operator is used to set EiC to a default
+        internal state.  All allocated memory is freed, the contents
+        of all include files and global variables, included and
+        declared after the <B><TT>reset</TT></B> point, are removed. All previous
+        global scalar variables defined prior to the <B><TT>reset</TT></B> point will have
+        their values restored.
+
+<P>
+The default <B><TT>reset</TT></B> point sets EiC to the point that is
+        equivalent to starting EiC with the <B><TT>-N</TT></B> command line switch
+        (see, &#167;&nbsp;<A HREF="node11.html#sec:starteich" tppabs="http://eic.sourceforge.net/documentation/node11.html#sec:starteich">1.2.4</A>, pg:&nbsp;<A HREF="node11.html#sec:starteich" tppabs="http://eic.sourceforge.net/documentation/node11.html#sec:starteich"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>):
+
+<P><PRE>
+EiC 1&gt; :files
+::EiC::
+starteic.h
+stdio.h
+stdarg.h
+sys/stdtypes.h
+sys/stdio.h
+stdlib.h
+ ...           
+        (void)
+EiC 2&gt; :reset
+        (void)
+EiC 3&gt; :files
+::EiC::
+        (void)
+</PRE>
+
+<P>
+It is also possible to define the <B><TT>reset</TT></B> point by using the
+	<B><TT>here</TT></B> operator:
+
+<P><PRE>
+EiC 1&gt; int p = 66;
+        (void)
+EiC 2&gt; :reset here
+        (void)
+EiC 3&gt; p = 88;
+        88
+EiC 4&gt; :reset    // set the reset point to the current state.
+        (void)
+EiC 5&gt; p;
+        66
+</PRE>
+
+<P>
+However, there is no guarantee that the reset state will be
+	restored 100%.  This is because, EiC, at this stage, will not
+	retore the contents of arrays or structure/union members to
+	their initial values. Also, if a pointer is pointing to some
+	allocated memory that was allocated before the <B><TT>:reset here</TT></B>
+	command was issued but freed before the <B><TT>:reset</TT></B> command,
+	then the behaviour of that pointer will be undefined.
+
+<P>
+<DT>comm-switch
+<DD><A NAME="item:comm-switch"></A> <A NAME="2009"></A>
+        the <I>comm-switch<A NAME="comm-switch"></A></I> 
+        production is analogous
+        to what is commonly known as a C program's command-line switch, which
+        is an argument usually preceded by a dash <B><TT>-</TT></B>. Comm-switches are 
+        used to modify
+        the behaviour of EiC and its preprocessor. 
+        The current valid switches are:
+
+<P>
+
+<DL COMPACT>
+<DT>I
+<DD><A NAME="2014"></A> 
+        insert the given path into the preprocessors search list. 
+                Used during file inclusion. Example:
+
+<P><PRE>
+EiC 31&gt; : -I./tests
+</PRE>
+
+<P>
+Append the directory <TT>tests</TT>, which is off the currently
+        working directory to the search list.
+
+<P>
+<DT>R
+<DD><A NAME="2020"></A> 
+
+<P>
+remove the given path from the preprocessors search list.
+                Example:
+
+<P><PRE>
+EiC 32&gt; :-R ./tests
+</PRE>
+
+<P>
+<DT>L
+<DD><A NAME="2025"></A> 
+
+<P>
+list the current search list. Example:
+
+<P><PRE>
+EiC 33&gt; :-L
+</PRE>
+
+<P>
+The include search list is further discussed in section 
+        &#167;&nbsp;<A HREF="node31.html#sec:Include" tppabs="http://eic.sourceforge.net/documentation/node31.html#sec:Include">2.6</A>, pg:&nbsp;<A HREF="node31.html#sec:Include" tppabs="http://eic.sourceforge.net/documentation/node31.html#sec:Include"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>.
+
+<P>
+</DD>
+</DL> 
+<P>
+<DT>history
+<DD><A NAME="item:history"></A> <A NAME="2033"></A>
+
+<P>
+EiC automatically records each command line as entered from the user
+in a history list. The default maximum length of the history list
+<A NAME="2034"></A> is set at compile time and is normally 500
+lines. Individual lines are of arbitrary length.  When the history
+list is full old lines are removed from the top while the new command
+line entries are entered from the bottom.
+
+<P>
+The user can go backwards through the history list by either pressing
+the up arrow or by pressing control-p; or forward by pressing the
+down arrow or control-n. Each line of history can be re-edited and
+then re-entered by pressing the enter key, <code>&lt;CR&gt;</code>. The entire current
+history list is seen via:
+
+<P><PRE>
+EiC 34&gt; :history
+float (*fval)[5];
+:show fval
+struct stag {int x; double da[5];} st;
+:show st
+struct { float v; struct stag st;} sr;
+:show sr
+int sqr(int x);
+...
+:history
+</PRE>
+
+<P>
+Note, the list has been truncated manually. 
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+EiC has several  keywords that associate with the <I>toggle</I> production,
+&#167;&nbsp;<A HREF="node20.html#sec:EiCInterpreter" tppabs="http://eic.sourceforge.net/documentation/node20.html#sec:EiCInterpreter">1.3</A>, pg:&nbsp;<A HREF="node20.html#sec:EiCInterpreter" tppabs="http://eic.sourceforge.net/documentation/node20.html#sec:EiCInterpreter"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>.  They are all toggle-switches <A NAME="2042"></A> 
+that are either turned on or off.  That is, they are turned on by
+entering their command once and turned off by reentering the same
+command:<PRE>
+EiC 1&gt; int i;
+        (void)
+EiC 2&gt; :timer   // turn timer on
+&lt;time taken&gt;: 0
+EiC 3&gt; for(i=0;i&lt;100000;++i);
+        (void)
+&lt;time taken&gt;: 2.6
+EiC 4&gt; :timer  // turn timer off
+</PRE>
+
+<P>
+The status of all the toggle-switches can be examined by using
+the EiC command <B><TT>status</TT></B> (pg:&nbsp;<A HREF="node21.html#item:status" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:status"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). 
+The toggle-switches  provide EiC with the following
+optional features:
+
+<P>
+<FONT SIZE="-1"> </FONT>
+
+<DL COMPACT>
+<DT>trace
+<DD><A NAME="item:trace"></A> <A NAME="2052"></A>
+
+<P>
+The trace facility is a toggle-switch (see below) with an extra
+production.  If on, <B><TT>trace</TT></B>, traces the function calls and line numbers
+associated with a given translation unit and prints this information
+to the screen. Consider the following nonsensical piece of code, which
+is stored (without the line numbers) in the file
+<B><TT>examples/testtrace.c</TT></B>:
+
+<P><PRE>
+ 1      int f(void)
+ 2      {   int i;
+ 3          for(i=0;i&lt;3;++i)
+ 4              if(i&gt;2)
+ 5                  break;
+ 6          return i;
+ 7      }
+ 8      int g(void)
+ 9      {   int k = 0,i = 2;
+10          while(i--)
+11              k += f();
+12          return k;
+13      }
+14      int main(void)
+15      {   int i = 2;
+16          do {
+17              int k = g();
+18          } while(--i);
+19          return 0;
+20      }
+</PRE>
+
+<P>
+Now, <B><TT>trace</TT></B> can be used to follow the sequence of program flow:<PRE>
+EiC 1&gt; #include examples/testtrace.c
+EiC 2&gt; :trace
+EiC 3&gt; main();
+[main] 15,17,
+[g] 9,10,11,
+[f] 3,4,3,4,3,4,3,6,
+[g] 11,10,11,
+[f] 3,4,3,4,3,4,3,6,
+[g] 11,10,12,
+[main] 17,18,17,
+[g] 9,10,11,
+[f] 3,4,3,4,3,4,3,6,
+[g] 11,10,11,
+[f] 3,4,3,4,3,4,3,6,
+[g] 11,10,12,
+[main] 17,18,19,
+[::EiC::]
+</PRE>
+
+<P>
+The first line of the response tells us that control started at
+function <B><TT>main</TT></B> and then passed through lines 15 and 17 after
+which, control was passed to function <B><TT>g</TT></B>. In function <B><TT>g</TT></B>,
+control passed through lines 9, 10 and 11 before entering function
+<B><TT>f</TT></B>, and so on. After leaving function <B><TT>f</TT></B>, on line 6, control was
+passed back to function <B><TT>g</TT></B> on line 11, etc. Finally, the trace
+finished when control was returned back to the EiC command line. The
+trace facility can also be used during batch mode operations via the command line switch <B><TT>-t</TT></B><A NAME="2071"></A> (see also
+&#167;&nbsp;<A HREF="node12.html#sec:EiCCommandLineOptions" tppabs="http://eic.sourceforge.net/documentation/node12.html#sec:EiCCommandLineOptions">1.2.5</A>, pg:&nbsp;<A HREF="node12.html#sec:EiCCommandLineOptions" tppabs="http://eic.sourceforge.net/documentation/node12.html#sec:EiCCommandLineOptions"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>):<PRE>
+% eic -t examples/testtrace
+...
+</PRE>
+
+<P>
+Clearly, trace can help in debugging <A NAME="2077"></A>
+programs: it traces the activation and steps in a sequence of code. It
+can be used to quickly locate sections of code that are causing
+crashes or blockages. However, at times, this amount of information
+can be too verbose, and therefore, the <B><TT>trace</TT></B> command has the
+optional argument <B><TT>funcs</TT></B>:<TABLE  WIDTH="317">
+<TR><TD><PRE><TT>
+<B><TT>trace</TT></B> [<B><TT>funcs</TT></B>] 
+</TT></PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+When the extra argument is specified, the trace facility
+prints out only the names of the functions entered:
+
+<P><PRE>
+EiC 4&gt; :trace funcs
+EiC 5&gt; g(); 
+[g] 
+[f] 
+[g] 
+[f] 
+[g] 
+[::EiC::] 
+EiC 6&gt; :trace  // turn trace off
+</PRE>
+
+<P>
+<DT>listcode
+<DD><A NAME="item:listcode"></A>  <A NAME="2091"></A>
+<B><TT>Listcode</TT></B> will be essentially of interest to those people interested in the bytecode <A NAME="2093"></A>
+produced by EiC. If <B><TT>listcode</TT></B> is toggled on then the bytecode for
+the current command or translation unit (see
+&#167;&nbsp;<A HREF="node42.html#sec:translationUnit" tppabs="http://eic.sourceforge.net/documentation/node42.html#sec:translationUnit">3.2</A>, pg:&nbsp;<A HREF="node42.html#sec:translationUnit" tppabs="http://eic.sourceforge.net/documentation/node42.html#sec:translationUnit"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>) will be displayed, non-recursively, to the
+screen.  That is, it does not show the code for any associated
+functions. By default, <B><TT>listcode</TT></B> is off. For example:
+
+<P><PRE>
+EiC 1&gt; int i;
+EiC 2&gt; :listcode  // toggle on
+   0:halt                
+        (void)
+EiC 3&gt; i = 5;
+   0:pushint  5          
+   1:stoint   0 0        
+   2:halt                
+        5
+EiC 4&gt; :listcode  // toggle off
+</PRE>
+
+<P>
+<B><TT>Listcode</TT></B> also affects the output produced from the EiC command
+<B><TT>show</TT></B> (see pg:&nbsp;<A HREF="node21.html#item:show" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:show"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>). For example,
+ consider the <B><TT>swap</TT></B> function as stored (without the line numbers)
+in the file examples/swap.c:
+
+<P><PRE>
+ 1      void swap(int *a, int *b)
+ 2      {
+ 3          /* swap the values of a and b */
+ 4          int t = *a;
+ 5          *a = *b;
+ 6          *b = t;
+ 7      }
+</PRE>
+
+<P>
+Now from within EiC:<PRE>
+EiC 5&gt; #include examples/swap.c
+EiC 6&gt; :show swap
+swap -&gt; Func (
+        a: * int ,
+        b: * int 
+        ) returning void 
+
+    /*  swap the values of a and b */
+
+EiC 7&gt; :listcode
+   0:halt                
+        (void)
+EiC 8&gt; :show swap
+swap -&gt; Func (
+        a: * int ,
+        b: * int 
+        ) returning void 
+
+    /*  swap the values of a and b */
+
+   0:checkar  1 0           7:drefint             
+   1:rvalptr  -1 1          8:refint              
+   2:drefint                9:rvalptr  -2 1       
+   3:stoint   0 1          10:bump     1          
+   4:rvalptr  -1 1         11:rvalint  0 1        
+   5:bump     1            12:refint              
+   6:rvalptr  -2 1         13:eicreturn
+</PRE>
+
+<P>
+<B><TT>listcode</TT></B>, like the <B><TT>trace</TT></B> command (page&nbsp;<A HREF="node21.html#item:trace" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:trace"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>) has
+an extra form: <code>`listcode linenums'</code>. When used in this form it
+displays the associated line numbers corresponding to the
+bytecode<A NAME="2116"></A> instruction:
+
+<P><PRE>
+EiC 9&gt; :listcode linenums  // toggle linenums on 
+   9:   0:halt                
+
+        (void)
+EiC 10&gt; :show swap
+swap -&gt; Func (
+        a: * int ,
+        b: * int 
+        ) returning void 
+
+    /*  swap the values of a and b */
+
+   0:   0:checkar  1 0           5:   7:drefint             
+   4:   1:rvalptr  -1 1          5:   8:refint              
+   4:   2:drefint                6:   9:rvalptr  -2 1       
+   4:   3:stoint   0 1           6:  10:bump     1          
+   5:   4:rvalptr  -1 1          6:  11:rvalint  0 1        
+   5:   5:bump     1             6:  12:refint              
+   5:   6:rvalptr  -2 1          7:  13:eicreturn           
+
+  10:   0:halt                
+
+        (void)
+EiC 11&gt; :listcode  // toggle listcode and linenums off
+</PRE>
+
+<P>
+Note, any line number with the value zero represents extra ``house
+keeping'' code added by the EiC interpreter.
+
+<P>
+<DT>memdump
+<DD><A NAME="item:memdump"></A> <A NAME="2122"></A>
+EiC attempts to keep track of all memory dynamically allocated. 
+If EiC cannot find the owner of a piece of dynamic memory the
+address and how it was allocated will show up automatically if
+<B><TT>memdump</TT></B> is switched on. For example, consider the following
+useless piece of code in <B><TT>examples/leak.c</TT></B>:
+
+<P><PRE>
+ 1      #include &lt;stdlib.h&gt;
+ 2      void leak(void)
+ 3      {
+ 4          char * s = malloc(10);
+ 5      }
+</PRE>
+
+<P>
+The following session provides an example of the usage of memdump:
+
+<P>
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+EiC 9&gt; #include examples/leak.c
+EiC 10&gt; :memdump   // toggle memdump on
+       (void)
+EiC 11&gt; leak();
+       (void)
+item 3656 Create line 917 file stdlib.c nbytes 10
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The above output informs that the memory item number 3656, which
+maybe different number during your session of length 10 bytes cannot be
+associate with an owner. That is, it is a potential leak. Also, it
+tells us that the memory was allocated from line 917 in file
+<B><TT>stdlib.c</TT></B> rather than from line 4 in file
+<B><TT>examples/leak.c</TT></B>. Strickly speaking, it is correct because if we
+were to look at line 917 in file <B><TT>stdlib.c</TT></B> we would find that this
+is where EiC does its memory allocation for the EiC interpreter.
+
+<P>
+It is possible to remove leaked memory items via the
+<B><TT>rm</TT></B> command (page:&nbsp;<A HREF="node21.html#item:rm" tppabs="http://eic.sourceforge.net/documentation/node21.html#item:rm"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>):
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+EiC 12&gt; :rm 3656
+       (void)
+EiC 13&gt;
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Also, note from the following session:
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+EiC 1&gt; :memdump  // toggle memdump on
+        (void)
+EiC 2&gt; char *s = malloc(10);
+        (void)
+item 3611 Create line 781 file stdlib.c nbytes 10
+EiC 3&gt; free(s);
+        (void)
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+shows that all memory allocated dynamically in EiC is considered to be a
+potential leak - if not freed. This is because EiC does not look at
+the memory a pointer is pointing to when assigning homes to dynamic
+memory items. Therefore, the usage of <B><TT>memdump</TT></B> should be considered
+carefully when trying to determine if a  genuine memory leak has
+occured or not. However, <B><TT>memdump</TT></B> is still useful as it  provides a
+guide to locating potential memory leaks.
+
+<P>
+<DT>timer
+<DD><A NAME="item:timer"></A> <A NAME="2149"></A> <A NAME="2150"></A>
+
+<P>
+if on, the execution time in seconds of a given translation unit is
+printed out.  By default, the timer is off. From the following piece
+of code I get from my 66Mhz 486 PC:<PRE>
+EiC 1&gt; int i; float f,g;
+EiC 2&gt; :timer   // turn timer on
+EiC 3&gt; for(i=0;i&lt;200000;++i) f *=g;
+        (void)
+&lt;time taken&gt;: 8.57
+EiC 4&gt; :timer  // turn timer off
+</PRE> The <B><TT>timer</TT></B> is handy when attempting to optimise <A NAME="2156"></A> 
+
+<P>
+a piece of code as it measures the actual processor time used.
+
+<P>
+<DT>interpreter
+<DD><A NAME="item:interpreter"></A> <A NAME="2158"></A>
+         if on then input commands will be
+         interpreter-ed. By default it is on.
+<DT>showline
+<DD><A NAME="item:showline"></A> <A NAME="2160"></A>
+
+<P>
+if on then the input sequence to the
+interpreter is displayed. Useful for
+inspecting the expansion of macros. 
+By default it is off:
+
+<P><PRE>
+EiC 1&gt; #define help(s)  system("man 3 " #s)
+        (void)
+EiC 2&gt; :showline   // toggle showline on
+        (void)
+EiC 3&gt; help(printf);       
+system("man 3 " "printf");
+...
+EiC 4&gt; :showline  // toggle showline off
+</PRE>     
+This facility can also be turned on from the command line using the
+switch <B><TT>-p</TT></B><A NAME="2166"></A>:<PRE>
+ % eic -p
+</PRE>     
+
+<P>
+<DT>verbose
+<DD><A NAME="item:verbose"></A><A NAME="2172"></A>
+
+<P>
+the verbose command is essentially used when running EiC remotely, as
+it suppresses EiC's copyright and warning messages on start up. It can
+also be turned on from the command line using the switch <B><TT>-v</TT></B><A NAME="2174"></A><PRE>
+ % eic -v
+</PRE>     
+
+<P>
+<DT>includes
+<DD><A NAME="item:includes"></A> <A NAME="2180"></A>
+If on, the path of include files will be displayed when loaded. This
+facility can also be turned on from the command line using 
+the <B><TT>-P</TT></B><A NAME="2182"></A> switch:<PRE>
+ % eic -P
+</PRE>     
+and causes EiC to reveal the paths of all the files it
+includes.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html617"
+  HREF="node22.html" tppabs="http://eic.sourceforge.net/documentation/node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html611"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html607"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html613"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html615"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html618"
+  HREF="node22.html" tppabs="http://eic.sourceforge.net/documentation/node22.html">The EiC Preprocessor</A>
+<B> Up:</B> <A NAME="tex2html612"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">The EiC interpreter</A>
+<B> Previous:</B> <A NAME="tex2html608"
+  HREF="node20.html" tppabs="http://eic.sourceforge.net/documentation/node20.html">The EiC interpreter</A>
+ &nbsp <B>  <A NAME="tex2html614"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html616"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,168 @@
+************************ Struct align
+
+                                 action.actionType: 0
+                                  action.actorName: 2
+                          action.bAbsolutePosition: 34
+                               action.bConditional: 35
+
+                                  action.eventData: 36
+                        action.eventData.eventType: 36
+                             action.eventData.data: 40
+                       action.eventData.data.mouse: 40
+                     action.eventData.data.mouse.x: 40
+                     action.eventData.data.mouse.y: 44
+                 action.eventData.data.mouse.bDrag: 49
+                        action.eventData.data.name: 40
+                    action.eventData.data.keyEvent: 40
+                action.eventData.data.keyEvent.key: 40
+     action.eventData.data.keyEvent.bDisableRepeat: 44
+        action.eventData.data.keyEvent.keySequence: 46
+                     action.eventData.data.message: 40
+           action.eventData.data.message.fromActor: 40
+           action.eventData.data.message.messageId: 44
+             action.eventData.data.message.message: 48
+
+                                       action.data: 72
+                                  action.data.name: 72
+                               action.data.bEnable: 72
+
+                          action.data.eventcontrol: 72
+                  action.data.eventcontrol.bEnable: 72
+                   action.data.eventcontrol.events: 76
+
+                          action.data.pathPosition: 72
+                 action.data.pathPosition.dataType: 72
+                     action.data.pathPosition.data: 76
+           action.data.pathPosition.data.direction: 76
+               action.data.pathPosition.data.fixed: 76
+         action.data.pathPosition.data.fixed.frame: 76
+            action.data.pathPosition.data.envelope: 76
+        action.data.pathPosition.data.envelope.env: 76
+
+                                  action.data.path: 72
+                             action.data.path.name: 72
+                             action.data.path.axis: 104
+
+                        action.data.animationFrame: 72
+               action.data.animationFrame.dataType: 72
+                   action.data.animationFrame.data: 76
+             action.data.animationFrame.data.fixed: 76
+       action.data.animationFrame.data.fixed.frame: 76
+          action.data.animationFrame.data.envelope: 76
+      action.data.animationFrame.data.envelope.env: 76
+
+                                 action.data.color: 72
+                        action.data.color.dataType: 72
+                            action.data.color.data: 76
+                      action.data.color.data.fixed: 76
+                  action.data.color.data.fixed.red: 76
+                action.data.color.data.fixed.green: 78
+                 action.data.color.data.fixed.blue: 80
+                   action.data.color.data.envelope: 76
+               action.data.color.data.envelope.env: 76
+
+                          action.data.transparency: 72
+                 action.data.transparency.dataType: 72
+                     action.data.transparency.data: 80
+               action.data.transparency.data.fixed: 80
+            action.data.transparency.data.envelope: 80
+        action.data.transparency.data.envelope.env: 80
+
+                                action.data.cursor: 72
+                        action.data.cursor.imgName: 72
+                       action.data.cursor.nFramesH: 328
+                       action.data.cursor.nFramesV: 330
+                       action.data.cursor.hotSpotX: 332
+                       action.data.cursor.hotSpotY: 334
+
+                                 action.data.timer: 72
+                            action.data.timer.name: 72
+                     action.data.timer.miliseconds: 104
+
+                               action.data.settext: 72
+                          action.data.settext.text: 72
+                      action.data.settext.fontPath: 328
+                  action.data.settext.iniASCIIChar: 584
+                        action.data.settext.nChars: 586
+
+                                 action.data.sound: 72
+                          action.data.sound.bMusic: 72
+                            action.data.sound.path: 73
+                          action.data.sound.volume: 330
+                            action.data.sound.loop: 332
+                        action.data.sound.priority: 334
+                             action.data.sound.pan: 336
+
+                     action.data.conditionalaction: 72
+         action.data.conditionalaction.expression1: 72
+         action.data.conditionalaction.expression2: 104
+           action.data.conditionalaction.condition: 136
+
+                             action.data.animation: 72
+                        action.data.animation.name: 72
+                       action.data.animation.state: 104
+
+                           action.data.createActor: 72
+                      action.data.createActor.name: 72
+             action.data.createActor.animationName: 104
+                action.data.createActor.parentName: 136
+                  action.data.createActor.pathName: 168
+
+                              action.data.position: 72
+                     action.data.position.dataType: 72
+                         action.data.position.data: 76
+                   action.data.position.data.fixed: 76
+                 action.data.position.data.fixed.x: 76
+                 action.data.position.data.fixed.y: 80
+                action.data.position.data.envelope: 76
+            action.data.position.data.envelope.env: 76
+
+                               action.data.message: 72
+                       action.data.message.message: 72
+
+                                action.data.moveto: 72
+                              action.data.moveto.x: 72
+                              action.data.moveto.y: 80
+                       action.data.moveto.velocity: 88
+                       action.data.moveto.relative: 96
+                       action.data.moveto.obstacle: 128
+                       action.data.moveto.moveType: 160
+
+                        action.data.physicalbounce: 72
+               action.data.physicalbounce.moveType: 72
+               action.data.physicalbounce.massType: 76
+         action.data.physicalbounce.massEventActor: 80
+       action.data.physicalbounce.massCollideActor: 88
+action.data.physicalbounce.collideVelocityMultiplier: 96
+action.data.physicalbounce.eventVelocityMultiplier: 104
+
+                                action.data.zdepth: 72
+
+                                       action.next: 592
+                                          action.x: 596
+                                          action.y: 600
+                              action.executionType: 604
+                     action.bLastActionInQueueOnly: 605
+                                       action.name: 606
+                                    action.nFrames: 638
+                                     action.frames: 640
+                                  action.timeStamp: 660
+
+                                          srs.rgba: 0
+                                          srs.info: 4
+
+                               srl.flags_nSegments: 0
+                                       srl.segment: 4
+
+                                        srle.flags: 0
+                                         srle.line: 4
+                             srle.deltaHotToOrigin: 8
+                                         srle.size: 16
+                                        srle.delta: 24
+                                 srle.collisionMap: 32
+                                   srle.bitMapArea: 36
+                                      srle.bigData: 40
+                               srle.bigDataUsingGC: 44
+                                   srle.frameIndex: 48
+                                      srle.texture: 52
+

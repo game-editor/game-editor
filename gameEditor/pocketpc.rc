@@ -1,0 +1,167 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "pocketpc_resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "commctrl.h"
+
+#ifdef _WIN32_WCE
+#include "aygshell.h"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Pocket PC and Smartphone Menu
+//
+
+#ifdef _WIN32_WCE
+
+IDR_MENUBAR RCDATA
+BEGIN
+	0,
+	2,
+
+	I_IMAGENONE, ID_CONTINUE, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+	IDS_CAP_CONTINUE, 0, NOMENU,
+
+	I_IMAGENONE, ID_EXIT, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+	IDS_CAP_EXIT, 0, NOMENU,
+END
+
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Pocket PC Menubar
+//
+
+
+/*IDR_MENUBAR_DUMMY MENU DISCARDABLE 
+IDR_MENUBAR MENU DISCARDABLE 
+
+BEGIN
+    MENUITEM "Continue Game",               ID_CONTINUE
+    MENUITEM "Exit",                        ID_EXIT
+END*/
+
+
+/////////////////////////////////////////////////////////////////////////////
+//	
+// SHMENUBAR
+//
+
+//Without this, HI_RES_AWARE don't will have CEUX propertie after update
+IDR_MENUBAR_DUMMY SHMENUBAR_DUMMY DISCARDABLE 
+BEGIN
+    0x0065, 0x0002, 0xfffe, 0x9c41, 0x0004, 0x0010, 0x9c43, 0x0000, 0xffff, 
+    0xfffe, 0x9c45, 0x0004, 0x0010, 0x9c47, 0x0000, 0xffff
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CAP_CONTINUE        "Continue Game"
+    IDS_CAP_EXIT            "Exit"
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "pocketpc_resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""commctrl.h""\r\n"
+    "#include ""aygshell.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+
+#ifdef USE_ACTIVATION
+/////////////////////////////////////////////////////////////////////////////
+//
+// DLL
+//
+
+1                       DLL     DISCARDABLE     "eSellerateEngine.dll"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// CEUX
+//
+/*HI_RES_AWARE CEUX DISCARDABLE
+BEGIN
+0x0000 //With this flag QVGA don't works on Dell Axim x50
+END*/
+
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

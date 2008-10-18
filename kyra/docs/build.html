@@ -1,0 +1,264 @@
+<HTML><!-- #BeginTemplate "/Templates/kyra.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>Kyra</TITLE>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</HEAD>
+
+<BODY BGCOLOR="#000000" text="#FFFFFF" link="#00FF00" vlink="#00CC00">
+<table width="100%" border="0">
+  <tr>
+    <td width="100" valign="top"> 
+      <p><a href="../index.html"><img src="navHome.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../grinliz.html"><img src="navGrinliz.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../lee.html"><img src="navAboutLee.gif" width="75" height="42" border="0"></a></p>
+      <p><a href="../projects.html"><img src="navProjects.gif" width="75" height="42" border="0"></a></p>
+      </td>
+    <td align="left" valign="top"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="172" height="46"><a href="index.html"><img src="kyra1.jpg" width="172" height="89" border="0"></a></td>
+          <td width="73%" height="46"> 
+            <table width="100%" border="0" height="100%">
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><b><a href="http://sourceforge.net/projects/kyra">Kyra 
+                    on SourceForge</a></b></font></div></td>
+              </tr>
+              <tr>
+                <td><div align="center"><font face="Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+                    | <a href="build.html">Build</a> | <a href="installation.html">Installation</a><a href="kryaFAQ.html"></a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"> 
+                    <a href="quickinfo.htm">Quick Info</a> | <a href="kryaFAQ.html">FAQ</a> 
+                    | <a href="changes.html">Changes</a> | <a href="releasenotes.html">Release 
+                    Notes</a></font></div></td>
+              </tr>
+              <tr> 
+                <td> <div align="center"><font face="Arial, Helvetica, sans-serif"><a href="demo.html">Demo</a> 
+                    | <a href="tools.html">Tools</a> | <a href="engine.html">Engine</a> 
+                    | <a href="api/index.html">API</a> | <a href="tutorial.htm">Tutorial</a></font></div></td>
+              </tr>
+              <tr> 
+                <td>
+<div align="center"><font face="Arial, Helvetica, sans-serif"><a href="community.html">Community 
+                    Page</a></font></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "body" --> 
+      <h1><font face="Arial, Helvetica, sans-serif">Building</font></h1>
+      <p><font face="Arial, Helvetica, sans-serif">If you have a source distribution 
+        -- excellent -- this page will help you compile the tools and test.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> The build instructions for 
+        Windows and Linux (and other *nix versions) follow this section. For orientation, 
+        the various projects and their directories are as follows: </font></p>
+      <font face="Arial, Helvetica, sans-serif"> 
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif"><b>tests. </b>Tthe testbed 
+          and demo application. See <a href="demo.html">Demo</a>. </font></p>
+        <ul>
+          <li><font face="Arial, Helvetica, sans-serif">Linux: tests/krdemo </font></li>
+          <li><font face="Arial, Helvetica, sans-serif">Windows: tests/release/krdemos.exe</font></li>
+        </ul>
+        <p><font face="Arial, Helvetica, sans-serif"><b>encoder.</b> The Encoder 
+          which creates the data files Kyra uses from source graphics. See <a href="tools.html">Tools</a>.</font></p>
+        <ul>
+          <li><font face="Arial, Helvetica, sans-serif">Linux: ../encoder/krencoder</font></li>
+          <li><font face="Arial, Helvetica, sans-serif">Winodws: ..\encoder\release\krencoder</font></li>
+        </ul>
+        <p><font face="Arial, Helvetica, sans-serif"><b>engine.</b> Builds the 
+          Kyra Engine to a library file, that can be statically or dynamically 
+          linked. </font></p>
+        <p><font face="Arial, Helvetica, sans-serif"><i>Note that no attempt has 
+          been made at binary compatibility between versions of Kyra, so I don't 
+          recommend dynamic linking unless you can be sure of version of the dynamic 
+          library you'll be loading. </i></font></p>
+        <p><font face="Arial, Helvetica, sans-serif"><i>The code for a sprite 
+          engine is small compared to the assets that it uses. Static linking 
+          is easier and more reliable, and should probably be used for a shipping 
+          product. Dynamic linking can be convenient during development.</i></font></p>
+        <p><font face="Arial, Helvetica, sans-serif"><b>spriteed. </b>The Sprite 
+          Editor. See <a href="tools.html">Tools</a>.</font></p>
+        <ul>
+          <li><font face="Arial, Helvetica, sans-serif">Linux: ../spriteed/krspriteed</font></li>
+          <li><font face="Arial, Helvetica, sans-serif">Windows: ..\spriteed\release\krspriteed</font> 
+          </li>
+        </ul>
+      </blockquote>
+      </font> 
+      <blockquote>
+        <p><font face="Arial, Helvetica, sans-serif"><b>guitest. </b>Kyra provides 
+          some simple, extensible widgets. See <a href="engine.html#widgets">Engine</a>.</font></p>
+        <ul>
+          <li><font face="Arial, Helvetica, sans-serif">Linux: ../guitest/krguitest</font></li>
+          <li><font face="Arial, Helvetica, sans-serif">Windows: ..\guitest\release\krguitest</font></li>
+        </ul>
+      </blockquote>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="windows"></a>Windows</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">The Windows version .dsw and 
+        .dsp files are for building under Microsoft's Visual C++ version 6 or 
+        higher.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The Kyra project needs (like 
+        any SDL client) the following connections to SDL:</font> </p>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">At compile time, the compiler 
+          needs to be able to find the SDL headers.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">At link time, the linker 
+          needs to be able to find your sdl.lib and sdlmain.lib files.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">At run time, the executable 
+          needs to find your sdl.dll (and for other projects, sdl_image.dll) file.</font></li>
+      </ol>
+      <p><font face="Arial, Helvetica, sans-serif">To accomplish this this is 
+        Visual Studio, go to Tools::Options::Directories. Under the &quot;Show 
+        Directories For&quot; tab, choose &quot;Include files&quot;. In the path 
+        list box, add the path to your SDL include files (/SDL/include depending 
+        on where you installed it.) The compiler can now locate the SDL headers. 
+        Make sure both the SDL and SDL_image headers are at the same location, 
+        or add another path for SDL_image.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Switch &quot;Show directories 
+        for&quot; to library files, and add a path to where your sdl.lib, sdl_image.lib, 
+        and sdlmain.lib files are. The linker will now be able to find the library 
+        files.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">For run time, sdl.dll and sdl_image.dll 
+        will need to be available. Windows will search directories in the followng 
+        order for these dll's:</font></p>
+      <p> 
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">The directory from which 
+          the application loaded.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">The current directory. </font></li>
+        <li><font face="Arial, Helvetica, sans-serif">The Windows system directory.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">The directories that are 
+          listed in the PATH environment variable. </font></li>
+      </ol>
+      <p></p>
+      <p><font face="Arial, Helvetica, sans-serif">Once you've gone through these 
+        steps, they are applied to all your projects and you shouldn't have to 
+        go through them again.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Build Process</font></h3>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">From the Visual Studio IDE, 
+          open 'Kyra.dsw' in the kyra root.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Select Build-&gt;Batch Build. 
+          Build everything <strong>except</strong> the 'demos' and 'tutorial1' 
+          projects. This builds the libraries and the tools.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Before you can build the 
+          demo project, you need to build the .dat file that supplies the resources 
+          for the sprite engine. On the command line, switch to the 'tests' directory, 
+          and run 'encodeall.bat'. This creates the resources needed by the executable. 
+          You will see a bunch of graphics screens be displayed as they are processed. 
+          Press the spacebar to clear a screen and move to the next.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Back in the IDE, build the 
+          release or debug of the 'demos' project.</font></li>
+      </ol>
+      <h4><font face="Arial, Helvetica, sans-serif">Build Options</font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">The Windows project files have 
+        KYRA_SUPPORT_OPENGL turned on by default in &quot;ProjectSettings --&gt; 
+        C/C++ --&gt; Preprocessor definitions&quot;. Remove the #define to disable 
+        OpenGL support. Note that with KYRA_SUPPORT_OPENGL turned on, you need 
+        to link your executable with the opengl32.lib.</font></p>
+      <h2><font face="Arial, Helvetica, sans-serif"><a name="linux"></a>Linux</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">Linux is an easier build process 
+        than Windows, fortunately. First, verify that you have SDL and SDL_image 
+        correctly installed. From the command line, 'sdl-config --version' should 
+        return version 1.2 or higher.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">You have 2 build choices: using 
+        the &quot;old skewl&quot; make files, or using the autotools system. The 
+        autotools code is the preferred choice for many. It is also newer, and 
+        feedback is appreciated.</font></p>
+      <h3><font face="Arial, Helvetica, sans-serif">Autotools</font></h3>
+      <p><font face="Arial, Helvetica, sans-serif"><em>Note: if upgrading from 
+        a previous version installed with 'configure', I suggest switching to 
+        your Kyra directory and running make uninstall to clean up your system 
+        before starting.</em></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">From the Kyra root,</font></p>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">./configure</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">make</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">make install (note that 
+          you may neet root privilege to install)</font></li>
+      </ol>
+      <p><font face="Arial, Helvetica, sans-serif">From the tests subdirectory,</font></p>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">./encodeall</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">./configure</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">make</font> 
+          <h4><font face="Arial, Helvetica, sans-serif">kyra-config</font></h4>
+          <p><font face="Arial, Helvetica, sans-serif">The utility &quot;ky</font><font face="Arial, Helvetica, sans-serif">ra-config&quot; 
+            will return path and version information. Your app builds with a command 
+            line something like this:</font></p>
+          <pre><font face="Arial, Helvetica, sans-serif">g++ yourkyraapp.cpp `kyra-config --cflags` `kyra-config -libs` -o yourkyraapp</font></pre>
+          <h4><font face="Arial, Helvetica, sans-serif">Build Options</font></h4>
+          <p><font face="Arial, Helvetica, sans-serif">./configure --with-debug 
+            will build a debug version of the kyra library.<br>
+            </font><font face="Arial, Helvetica, sans-serif">./configure --with-opengl 
+            will turn on OpenGL support.</font></p>
+        </li>
+      </ol>
+      <h3><font face="Arial, Helvetica, sans-serif">Traditional make</font></h3>
+      <ol>
+        <li><font face="Arial, Helvetica, sans-serif">From Kyra directory, 'make 
+          -f MakefileKyra'. This will build all the projects except the test application. 
+          'make depend' is no longer necessary. The dependencies are hard-coded 
+          to the make files.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">Switch to the 'tests' subdirectory.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">'./encodeall' This will 
+          build the resources for the demo. Screenshots will be displayed of the 
+          resource. Press the spacebar to move to the next screen.</font></li>
+        <li><font face="Arial, Helvetica, sans-serif">From the tests directory 
+          again, 'make -f MakefileKyra'. The test application is now ready to 
+          run.</font></li>
+      </ol>
+      <blockquote> 
+        <p> <font face="Arial, Helvetica, sans-serif">Kyra also supports the &quot;make 
+          install' target. &quot;make install&quot; will copy: </font> 
+        <ul>
+          <li><font face="Arial, Helvetica, sans-serif">headers to usr/local/include/kyra</font></li>
+          <li><font face="Arial, Helvetica, sans-serif">libkyra.a and libkyra_1_x_y.a 
+            to usr/local/lib</font></li>
+        </ul>
+        <p><font face="Arial, Helvetica, sans-serif">Note that Kyra does not have 
+          binary compatibilty between versions of its libraries. It is highly 
+          recommended that clients of kyra link to the libkyra_1_x_y.a library, 
+          or make sure of the Kyra version they link against, in order to guarentee 
+          they link and run correctly.</font></p>
+        <h4><font face="Arial, Helvetica, sans-serif">Build Options</font></h4>
+        <p><font face="Arial, Helvetica, sans-serif">The Linux/FreeBSD makefile 
+          supports the following environment variables. You can set them with 
+          the Bash shell with the export command. For example, MAKE_KYRA=DEBUG. 
+          </font> 
+        <ul>
+          <li><font face="Arial, Helvetica, sans-serif">MAKE_KYRA=DEBUG | RELEASE 
+            | PROFILE. Build Kyra for release or with debugging information. Building 
+            with debugging information can be *very* helpful when developing with 
+            Kyra.</font></li>
+          <li><font face="Arial, Helvetica, sans-serif">KYRA_OPENGL=YES. If set 
+            to yes, will compile Kyra with OpenGL support. Default is to not include 
+            OpenGL support, since some Unix systems seem to have trouble with 
+            it. (Once Kyra switches over to autoconf &amp; automake we should 
+            be able to detect this more easily.)</font></li>
+        </ul>
+      </blockquote>
+      <h2><font face="Arial, Helvetica, sans-serif">Using or Linking Kyra to Your 
+        App</font></h2>
+      <p><font face="Arial, Helvetica, sans-serif">Both the Windows and Linux 
+        builds provide static link time libraries. This is probably the easiest 
+        way to use Kyra. Note that Kyra is not binary compatibile between versions...so 
+        be sure that the Kyra library you are using is consistent with the headers 
+        you include.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The file &quot;kyra.h&quot; 
+        is provided in the &quot;engine&quot; subdirectory. The most common Kyra 
+        headers are included by this file, so you can use it as a one stop include.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">As of 1.5, <strong>if</strong> 
+        OpenGL support is turned on, the target executable will need to link with 
+        OpenGL. For Win32, link with opengl32.lib. For Linux, link with the GL 
+        library. By default, OpenGL support is ON in Windows, OFF in Linux.</font></p>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+</BODY>
+<!-- #EndTemplate --></HTML>

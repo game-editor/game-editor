@@ -1,0 +1,304 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fcntl.h</TITLE>
+<META NAME="description" CONTENT="fcntl.h">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node142.html" tppabs="http://eic.sourceforge.net/documentation/node142.html">
+<LINK REL="previous" HREF="node140.html" tppabs="http://eic.sourceforge.net/documentation/node140.html">
+<LINK REL="up" HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<LINK REL="next" HREF="node142.html" tppabs="http://eic.sourceforge.net/documentation/node142.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2506"
+  HREF="node142.html" tppabs="http://eic.sourceforge.net/documentation/node142.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2500"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2494"
+  HREF="node140.html" tppabs="http://eic.sourceforge.net/documentation/node140.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2502"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2504"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2507"
+  HREF="node142.html" tppabs="http://eic.sourceforge.net/documentation/node142.html">limits.h</A>
+<B> Up:</B> <A NAME="tex2html2501"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">POSIX.1 library support</A>
+<B> Previous:</B> <A NAME="tex2html2495"
+  HREF="node140.html" tppabs="http://eic.sourceforge.net/documentation/node140.html">errno.h</A>
+ &nbsp <B>  <A NAME="tex2html2503"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2505"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00623000000000000000"></A>
+<A NAME="17093"></A>
+<A NAME="sec:fcntlh"></A>
+<BR>
+fcntl.h
+</H2>
+
+<P>
+The EiC header file <code>&lt;fcntl.h&gt;</code> defines the following macros:
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>O_APPEND
+<DD><A NAME="item:OAPPEND"></A><A NAME="17098"></A>
+	If on, set offset to end-of-file before each write.
+<DT>O_CREAT
+<DD><A NAME="item:OCREAT"></A><A NAME="17100"></A>
+	If file does not exist, the the file is created
+	and with file attribute according to the value
+	of <I>mode</I>. If files does exist, then this
+	flag has no effect.
+
+<P>
+<DT>O_EXCL
+<DD><A NAME="item:OEXCL"></A><A NAME="17103"></A>
+	Fail if file exists and if <B><TT>O_CREAT</TT></B> is also specified.
+	Otherwise, create the file. 	
+
+<P>
+<DT>O_NOCTTY
+<DD><A NAME="item:ONOCTTY"></A><A NAME="17106"></A>
+	Not used with regular files.
+
+<P>
+<DT>O_NONBLOCK
+<DD><A NAME="item:ONONBLOCK"></A><A NAME="17108"></A>
+	Not used with regular files.
+<DT>O_RDONLY
+<DD><A NAME="item:ORDONLY"></A><A NAME="17110"></A>
+	Open for read only.
+<DT>O_RDWR
+<DD><A NAME="item:ORDWR"></A><A NAME="17112"></A>
+
+<P>
+Open for read and write.
+<DT>O_TRUNC
+<DD><A NAME="item:OTRUNC"></A><A NAME="17114"></A>
+	If the file exists, its length will be truncated to zero.
+<DT>O_WRONLY
+<DD><A NAME="item:OWRONLY"></A><A NAME="17116"></A>
+	Open for write only.
+
+<P>
+<DT>O_NDELAY
+<DD><A NAME="item:ONDELAY"></A><A NAME="17118"></A>
+	For compatibility with System V.3. 
+
+<P>
+<DT>O_BINARY
+<DD><A NAME="item:OBINARY"></A><A NAME="17120"></A>
+	Open file in binary mode. Added for DOS compatibility.
+<DT>O_TEXT
+<DD><A NAME="item:OTEXT"></A><A NAME="17122"></A>
+	Open file in text mode. Added for DOS compatibility.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+The following functions are defined in <code>&lt;fcntl.h&gt;</code>:
+ 
+
+<DL COMPACT>
+<DT>creat
+<DD><A NAME="item:creat"></A><A NAME="17127"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stats.h&gt;
+#include &lt;fcntl.h&gt;
+int creat(const char *path,  mode_t mode);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates a new file or rewrites an existing one for writing,  as
+specified by <B><TT>path</TT></B>. Its access is specified by <B><TT>mode</TT></B>, 
+which maybe one or a bitwise combination of:
+<B><TT>S_IS[UG]ID</TT></B>, <B><TT>S_ISVTX</TT></B>, <B><TT>S_I[RWX](GRP|USR|OTH)</TT></B>. 
+It returns a nonnegative file descriptor if
+successful, else it returns -1 and sets <B><TT>errno</TT></B> to one of:
+<B><TT>EACCES</TT></B>, <B><TT>EEXIST</TT></B>, <B><TT>EINTR</TT></B>, <B><TT>EISDIR</TT></B>, <B><TT>EMFILE</TT></B>, <B><TT>ENAMETOOLONG</TT></B>, 
+<B><TT>ENFILE</TT></B>, <B><TT>ENOENT</TT></B>, <B><TT>ENOSPS</TT></B>, <B><TT>ENOTODIR</TT></B>, or <B><TT>EROFS</TT></B>.
+
+<P>
+<DT>open
+<DD><A NAME="item:open"></A><A NAME="17151"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/stats.h&gt; 
+#include &lt;fcntl.h&gt; 
+int open(const char *path, int access, ... /* mode_t mode */);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Create or open the file specified by <B><TT>path</TT></B>, with access defined by
+<B><TT>access</TT></B>, which maybe one or a bitwise combination of:
+<B><TT>O_APPEND</TT></B>, <B><TT>O_CREAT</TT></B>, <B><TT>O_EXCL</TT></B>, <B><TT>O_NONBLOCK</TT></B>,  
+<B><TT>O_NOCTTY</TT></B>,  <B><TT>O_RDONLY</TT></B>, <B><TT>O_RDWR</TT></B> or <B><TT>O_WRONLY</TT></B>.  
+The extra argument <B><TT>mode</TT></B> is used when creating a file with the
+access flag <B><TT>O_CREAT</TT></B> specified. The <B><TT>mode</TT></B> maybe one or a bitwise
+combination of
+<B><TT>S_IS[UG]ID</TT></B>, <B><TT>S_ISVTX</TT></B>, <B><TT>S_I[RWX](GRP|USR|OTH)</TT></B>. <B><TT>Open</TT></B> 
+returns a nonnegative file descriptor if successful, else it returns
+-1 and sets <B><TT>errno</TT></B> to one of: 
+<B><TT>EACCES</TT></B>, <B><TT>EEXIST</TT></B>, <B><TT>EINTR</TT></B>, <B><TT>EISDIR</TT></B>, <B><TT>EMFILE</TT></B>, <B><TT>ENAMETOOLONG</TT></B>, 
+<B><TT>ENFILE</TT></B>, <B><TT>ENOENT</TT></B>, <B><TT>ENOSPS</TT></B>, <B><TT>ENOTODIR</TT></B>, TENXIO or <B><TT>EROFS</TT></B>.
+
+<P>
+<DT>fcntl
+<DD><A NAME="item:fcntl"></A><A NAME="17188"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;fcntl.h&gt;
+int fcntl(int filedes, int cmd, ..., /* optional int arg */);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+The properties of a file can be changed via the <B><TT>fcntl</TT></B> function.
+It is used for the following five purposes:
+
+<OL>
+<LI>Makes arg be a copy of fd, closing  fd  first  if
+                necessary, when <B><TT>cmd</TT></B> = <B><TT>F_DUPFD</TT></B>.
+</LI>
+<LI>Read or set file discriptor flags,  <B><TT>cmd</TT></B> = <B><TT>F_GETFD</TT></B> or <B><TT>F_SETFD</TT></B>.
+</LI>
+<LI>Read or set a file's status flags , <B><TT>cmd</TT></B> = <B><TT>F_GETFL</TT></B> or <B><TT>F_SETFL</TT></B>.
+</LI>
+<LI>Read or set the  process  ID  (or  process group) of the owner of a socket,
+        <B><TT>cmd</TT></B> = <B><TT>F_GETOWN</TT></B> or <B><TT>F_SETOWN</TT></B>.
+</LI>
+<LI>Read or set  record locks, <B><TT>cmd</TT></B> = <B><TT>F_GETL</TT></B>,
+ <B><TT>F_SETLK</TT></B> or <B><TT>SETLKW</TT></B>. 
+</LI>
+</OL>
+
+<P>
+All commands return -1 on error otherwise the return value depends on
+the input command: <B><TT>F_DUPFD</TT></B>, a new descriptor; <B><TT>F_GETFD</TT></B>, the
+value of the flag <B><TT>F_GETFL</TT></B>  value of flags and <B><TT>F_GETOWN</TT></B> 
+a positive or negative process <B><TT>ID</TT></B>.
+
+<P>
+On error, sets <B><TT>errno</TT></B> to one of: <B><TT>EACCESS</TT></B>, <B><TT>EAGAIN</TT></B>, <B><TT>EDEADLK</TT></B>.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2506"
+  HREF="node142.html" tppabs="http://eic.sourceforge.net/documentation/node142.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2500"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2494"
+  HREF="node140.html" tppabs="http://eic.sourceforge.net/documentation/node140.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2502"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2504"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2507"
+  HREF="node142.html" tppabs="http://eic.sourceforge.net/documentation/node142.html">limits.h</A>
+<B> Up:</B> <A NAME="tex2html2501"
+  HREF="node138.html" tppabs="http://eic.sourceforge.net/documentation/node138.html">POSIX.1 library support</A>
+<B> Previous:</B> <A NAME="tex2html2495"
+  HREF="node140.html" tppabs="http://eic.sourceforge.net/documentation/node140.html">errno.h</A>
+ &nbsp <B>  <A NAME="tex2html2503"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2505"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

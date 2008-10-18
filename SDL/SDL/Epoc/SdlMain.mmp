@@ -1,0 +1,25 @@
+// *** EPOC MMP FILE FOR SDLMAIN.LIB
+
+// *** Definitions
+
+TARGET          sdlmain.lib
+TARGETTYPE      lib
+SOURCEPATH      ..\src
+
+// *** SDL main source files
+
+SOURCE          main\epoc\SDL_main.cpp
+
+// *** Include paths
+
+SYSTEMINCLUDE   \epoc32\include \epoc32\include\libc
+USERINCLUDE     ..\include
+
+
+// *** Libraries
+
+LIBRARY         euser.lib fbscli.lib estlib.lib ws32.LIB hal.lib gdi.lib
+
+#if defined(WINS)
+LIBRARY         estw32.lib wserv.lib
+#endif

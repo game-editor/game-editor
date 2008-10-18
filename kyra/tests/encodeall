@@ -1,0 +1,5 @@
+krencoder -w -pTITLE_ title.dat title.xml
+krencoder -w -pSPACE_ space.dat allship.xml stars.xml
+krencoder -w -pBEM_ -rbemlist.txt bem.dat
+krencoder -w standardtest.dat standardtest.xml
+krencoder -w font.dat arialfont.xml consolefont.xml

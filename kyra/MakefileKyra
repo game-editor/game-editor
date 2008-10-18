@@ -1,0 +1,50 @@
+#****************************************************************************
+#
+# Makefile for Kyra.
+# Lee Thomason
+# www.grinninglizard.com
+#
+# This is a GNU make (gmake) makefile
+#
+# Note: use the environment variables MAKE_KYRA
+#       to controll the build. It can have the values RELEASE,
+#       DEBUG, or PROFILE.
+# Example:
+#       export MAKE_KYRA=DEBUG
+#       make clean
+#       make
+#
+#****************************************************************************
+
+BUILD_SUBDIRS =		engine \
+			        spriteed \
+			        encoder \
+					guitest
+
+INSTALL_SUBDIRS = 	engine \
+			        spriteed \
+			        encoder
+
+
+
+all:
+	for i in $(BUILD_SUBDIRS); do ( cd $$i ; ${MAKE} -f MakefileKyra ) ; done
+
+clean:
+	for i in $(BUILD_SUBDIRS); do ( cd $$i ; ${MAKE} -f MakefileKyra clean ) ; done ;\
+	find . -name "*.dat" | xargs rm
+
+#depend:
+#	for i in $(BUILD_SUBDIRS); do ( cd $$i ; ${MAKE} -f MakefileKyra depend ) ; done
+
+install:
+	mkdir -p /usr/local/include/kyra ; \
+	for i in $(INSTALL_SUBDIRS); do ( cd $$i ; ${MAKE} -f MakefileKyra install ) ; done ; \
+	install -m755 kyra.h /usr/local/include/kyra ;
+
+uninstall:
+	rm -rf /usr/local/include/kyra ; \
+	rm -f /usr/local/lib/libkyra*.a ; \
+	rm -f /usr/local/bin/krencoder ; \
+	rm -f /usr/local/bin/krspriteed;
+# DO NOT DELETE

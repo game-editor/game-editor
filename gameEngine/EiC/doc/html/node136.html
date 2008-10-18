@@ -1,0 +1,467 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>string.h</TITLE>
+<META NAME="description" CONTENT="string.h">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node137.html" tppabs="http://eic.sourceforge.net/documentation/node137.html">
+<LINK REL="previous" HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+<LINK REL="up" HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<LINK REL="next" HREF="node137.html" tppabs="http://eic.sourceforge.net/documentation/node137.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2430"
+  HREF="node137.html" tppabs="http://eic.sourceforge.net/documentation/node137.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2424"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2418"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2426"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2428"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2431"
+  HREF="node137.html" tppabs="http://eic.sourceforge.net/documentation/node137.html">time.h</A>
+<B> Up:</B> <A NAME="tex2html2425"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">Standard C libraries</A>
+<B> Previous:</B> <A NAME="tex2html2419"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">stdlib.h</A>
+ &nbsp <B>  <A NAME="tex2html2427"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2429"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION006114000000000000000"></A>
+<A NAME="16561"></A>
+<A NAME="sec:stringh"></A>
+<BR>
+string.h
+</H2>
+
+<P>
+The header file <code>&lt;string.h&gt;</code> defines the following types and macros:
+ 
+
+<DL COMPACT>
+<DT>size_t
+<DD>See <code>&lt;stddef.h&gt;</code> &#167;&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh">4.1.11</A>, pg:&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> 
+<DT>NULL
+<DD>See <code>&lt;stddef.h&gt;</code> &#167;&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh">4.1.11</A>, pg:&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> 
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+The following functions are defined in <code>&lt;string.h&gt;</code>:
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>strcpy
+<DD><A NAME="item:strcpy"></A><A NAME="16571"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strcpy(char* s, const char* ct);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Copy <B><TT>ct</TT></B> to <B><TT>s</TT></B> including terminating null character. Returns 
+	a pointer to <B><TT>s</TT></B>.
+
+<P>
+<DT>strncpy
+<DD><A NAME="item:strncpy"></A><A NAME="16581"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strncpy(char* s, const char* ct, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Copy at most <B><TT>n</TT></B> characters of <B><TT>ct</TT></B> to <B><TT>s</TT></B>. Pad with zeros
+     if <B><TT>ct</TT></B> is of length less than <B><TT>n</TT></B>. Returns a pointer to <B><TT>s</TT></B>.
+
+<P>
+<DT>strcat
+<DD><A NAME="item:strcat"></A><A NAME="16594"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char *strcat(char *s2, const char *s1);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Concatenates the string pointed to by <B><TT>s2</TT></B> to the string pointed to by
+<B><TT>s1</TT></B>.  The calling program must assure that <B><TT>s1</TT></B> has enough space for the
+concatenation.
+
+<P>
+<DT>strncat
+<DD><A NAME="item:strncat"></A><A NAME="16604"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strncat(char* s, const char* ct, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Concatenate at most <B><TT>n</TT></B> characters of <B><TT>ct</TT></B> to
+	<B><TT>s</TT></B>. Terminate <B><TT>s</TT></B> with the null character and returns a
+	pointer to it.
+
+<P>
+<DT>strcmp
+<DD><A NAME="item:strcmp"></A><A NAME="16615"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+int strcmp(const char* s1, const char* s2);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Compares two strings.  The comparison stops when a <B><TT>null</TT></B>
+terminator is encountered in either of the two strings. 
+Returns a 0 if the two strings are identical, less than
+zero if <B><TT>s2</TT></B> is greater than <B><TT>s1</TT></B>, and greater than zero if <B><TT>s1</TT></B>
+is greater than <B><TT>s2</TT></B>.
+
+<P>
+<DT>strdup
+<DD><A NAME="item:strdup"></A><A NAME="16627"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char * strdup(const char* s);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns a pointer to a new string which is a duplicate of the
+       string s.  Memory for the new string is obtained with
+       malloc, and can be freed with free.
+
+<P>
+<DT>strncmp
+<DD><A NAME="item:strncmp"></A><A NAME="16634"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+int strncmp(const char* s1, const char* s2, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Compares  two strings.  The comparison stops when a <B><TT>null</TT></B>
+terminator is encountered in either of the two strings or
+when n number of bytes are compared.  Returns a 0 if the
+two strings are identical, less than zero if <B><TT>s2</TT></B> is greater
+than <B><TT>s1</TT></B>, and greater than zero if <B><TT>s1</TT></B> is greater than <B><TT>s2</TT></B>.
+
+<P>
+<DT>strchr
+<DD><A NAME="item:strchr"></A><A NAME="16646"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strchr(const char* s1, int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return pointer to first occurrence of <B><TT>c</TT></B> in <B><TT>s1</TT></B>, or
+     <B><TT>NULL</TT></B> if not found.
+
+<P>
+<DT>strrchr
+<DD><A NAME="item:strrchr"></A><A NAME="16656"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strrchr(const char* s1, int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return pointer to last occurrence of <B><TT>c</TT></B> in <B><TT>s1</TT></B>, or <B><TT>NULL</TT></B> if not found.
+
+<P>
+<DT>strspn
+<DD><A NAME="item:strspn"></A><A NAME="16666"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+size_t strspn(const char* s1, const char* s2);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return length of prefix of <B><TT>s1</TT></B> consisting entirely of characters in <B><TT>s2</TT></B>.
+
+<P>
+<DT>strcspn
+<DD><A NAME="item:strcspn"></A><A NAME="16675"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+size_t strcspn(const char* s1, const char* s2);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return length of prefix of <B><TT>s1</TT></B> consisting entirely of
+     characters not in <B><TT>s2</TT></B>.
+
+<P>
+<DT>strpbrk
+<DD><A NAME="item:strpbrk"></A><A NAME="16684"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strpbrk(const char* s1, const char* s2);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return pointer to first occurrence within <B><TT>s1</TT></B> of any character of <B><TT>s2</TT></B>, or
+     <B><TT>NULL</TT></B> if not found.
+
+<P>
+<DT>strstr
+<DD><A NAME="item:strstr"></A><A NAME="16694"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strstr(const char* s1, const char* s2);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return pointer to first occurrence of <B><TT>s2</TT></B> in <B><TT>s1</TT></B>, or
+     <B><TT>NULL</TT></B> if not found.
+
+<P>
+<DT>strlen
+<DD><A NAME="item:strlen"></A><A NAME="16704"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+size_t strlen(const char* s1);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return length of <B><TT>s1</TT></B>.
+
+<P>
+<DT>strerror
+<DD><A NAME="item:strerror"></A><A NAME="16712"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strerror(int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return pointer to implementation-defined string corresponding with error
+     <B><TT>n</TT></B>.
+
+<P>
+<DT>strtok
+<DD><A NAME="item:strtok"></A><A NAME="16720"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+char* strtok(char* s, const char* ct);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+A sequence of calls to <B><TT>strtok</TT></B> returns tokens from <B><TT>s</TT></B>
+     delimted by a character in <B><TT>ct</TT></B>. A non-NULL <B><TT>s</TT></B> indicates the
+     first call in a sequence. Also,<B><TT>ct</TT></B> may differ on each
+     call. Returns <B><TT>NULL</TT></B> when no such token found.
+
+<P>
+<DT>memcpy
+<DD><A NAME="item:memcpy"></A><A NAME="16733"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+void* memcpy(void* dest, const void* src, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Copy <B><TT>n</TT></B> characters from <B><TT>src</TT></B> to <B><TT>dest</TT></B>. Return
+     <B><TT>dest</TT></B>. Does not work correctly if objects overlap.
+
+<P>
+<DT>memmove
+<DD><A NAME="item:memmove"></A><A NAME="16744"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+void* memmove(void* dest, const void* src, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Copy <B><TT>n</TT></B> characters from <B><TT>src</TT></B> to <B><TT>dest</TT></B>. Return
+     <B><TT>dest</TT></B>. Works correctly even if objects overlap.
+
+<P>
+<DT>memcmp
+<DD><A NAME="item:memcmp"></A><A NAME="16755"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+int memcmp(const void* s1, const void* s2, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Compare first <B><TT>n</TT></B> characters of <B><TT>s1</TT></B> with <B><TT>s2</TT></B>. Return
+     negative if <B><TT>s1</TT></B> &lt; <B><TT>s2</TT></B>, zero if <B><TT>s1</TT></B> == <B><TT>s2</TT></B>, positive
+     if <B><TT>s1</TT></B> &gt; <B><TT>s2</TT></B>.
+
+<P>
+<DT>memchr
+<DD><A NAME="item:memchr"></A><A NAME="16771"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+void* memchr(const char* s1, int c, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Return pointer to first occurrence of <B><TT>c</TT></B> in the first <B><TT>n</TT></B> characters
+     of <B><TT>s1</TT></B>, or <B><TT>NULL</TT></B> if not found.
+
+<P>
+<DT>memset
+<DD><A NAME="item:memset"></A><A NAME="16782"></A>
+<B><TT>Synopsis</TT></B>:
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;string.h&gt;
+void* memset(char* s, int c, int n);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Replace each of the first <B><TT>n</TT></B> characters of <B><TT>s</TT></B> by <B><TT>c</TT></B>. Return <B><TT>s</TT></B>.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2430"
+  HREF="node137.html" tppabs="http://eic.sourceforge.net/documentation/node137.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2424"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2418"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2426"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2428"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2431"
+  HREF="node137.html" tppabs="http://eic.sourceforge.net/documentation/node137.html">time.h</A>
+<B> Up:</B> <A NAME="tex2html2425"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">Standard C libraries</A>
+<B> Previous:</B> <A NAME="tex2html2419"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">stdlib.h</A>
+ &nbsp <B>  <A NAME="tex2html2427"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2429"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,32 @@
+/*!
+    \page coordsystems Coordinate Systems
+
+    Components in wxIFM are really just rectangles, but they follow the box model. This means that
+	there are conceptual rectangles within a component: the background rectangle, and the client rectangle.
+	wxIFM refers to these different rectangles as <b>Coordinate Systems</b>.
+
+    The current coordinate systems are:
+    \li Absolute:        The actual size of the component including everything\n
+    \li Background:      Area in which the component can draw its background. Excludes
+                         border widths.\n
+    \li Client:          Area in which a component is allowed to place children. Excludes
+                         margin and border widths.\n
+	\li Floating Window: The size that a floating window would occupy around a component
+
+	You may request a rectangle from a certain coordinate systems for a component using wxIFMRectEvent.
+	This event can be used to set rectangles for coordinate systems as well.
+
+	\section coordsystems_converting Converting between coordinate systems
+
+	You may convert from one coordinate system to another using wxIFMConvertRectEvent.
+	Specify what coordinates you are converting to and from using the constants below.
+
+	\section coordsystems_hittesting Hit Testing and coordinate systems
+
+	wxIFMHitTestEvent is used to determine if a given point is within a given component.
+	You must specify a coordinate system in this events constructor, which lets you hit test
+	only the given coordinate system.
+
+	\see IFM_COORDS_ABSOLUTE, IFM_COORDS_BACKGROUND, IFM_COORDS_CLIENT, IFM_COORDS_FLOATINGWINDOW
+	\see wxIFMRectEvent, wxIFMConvertRectEvent, wxIFMHitTestEvent
+*/

@@ -1,0 +1,4 @@
+<Definition filename="ConsoleFont.bmp" Transparent0="LowerLeft">
+    <Font name="CONSOLE" start="32" length="95" type="fixed" />
+</Definition>
+

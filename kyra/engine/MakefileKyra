@@ -1,0 +1,212 @@
+#****************************************************************************
+#
+# Makefile for Kyra.
+# Lee Thomason and David Leimbach
+# www.grinninglizard.com
+# www.sourceforge.net/projects/kyra
+#
+# This is a GNU make (gmake) makefile
+#****************************************************************************
+
+# DEBUG can be set to YES to include debugging info, or NO otherwise
+DEBUG          := NO
+
+# PROFILE can be set to YES to include profiling info, or NO otherwise
+PROFILE        := NO
+
+#****************************************************************************
+
+ifeq (RELEASE, ${MAKE_KYRA})
+	DEBUG   := NO
+	PROFILE := NO
+endif
+
+ifeq (DEBUG, ${MAKE_KYRA})
+	DEBUG   := YES
+	PROFILE := NO
+endif
+
+ifeq (PROFILE, ${MAKE_KYRA})
+	DEBUG   := NO
+	PROFILE := YES
+endif
+
+
+CC     := gcc
+CXX    := g++
+LD     := g++
+AR     := ar rc
+RANLIB := ranlib
+
+DEBUG_CFLAGS     := -Wall -Wno-unknown-pragmas -Wno-format -I/usr/X11R6/include -g -DDEBUG
+RELEASE_CFLAGS   := -Wall -Wno-unknown-pragmas -Wno-format -I/usr/X11R6/include -O3
+
+DEBUG_CXXFLAGS   := ${DEBUG_CFLAGS}
+RELEASE_CXXFLAGS := ${RELEASE_CFLAGS}
+
+DEBUG_LDFLAGS    := -g -shared
+RELEASE_LDFLAGS  := -shared
+
+ifeq (YES, ${DEBUG})
+   CFLAGS       := ${DEBUG_CFLAGS}
+   CXXFLAGS     := ${DEBUG_CXXFLAGS}
+   LDFLAGS      := ${DEBUG_LDFLAGS}
+else
+   CFLAGS       := ${RELEASE_CFLAGS}
+   CXXFLAGS     := ${RELEASE_CXXFLAGS}
+   LDFLAGS      := ${RELEASE_LDFLAGS}
+endif
+
+ifeq (YES, ${PROFILE})
+   CFLAGS   := ${CFLAGS} -pg
+   CXXFLAGS := ${CXXFLAGS} -pg
+   LDFLAGS  := ${LDFLAGS} -pg
+endif
+
+#****************************************************************************
+# Preprocessor directives
+#****************************************************************************
+
+ifeq (YES, ${PROFILE})
+  DEFS :=
+else
+  DEFS :=
+endif
+
+
+#############################
+# OpenGL support
+# Defaults off.
+#############################
+
+ifeq (YES, ${KYRA_OPENGL})
+	DEFS := ${DEFS} -DKYRA_SUPPORT_OPENGL
+endif
+
+#****************************************************************************
+# Include paths
+#****************************************************************************
+
+INCS := $(shell sdl-config --cflags)
+
+
+#****************************************************************************
+# Makefile code common to all platforms
+#****************************************************************************
+
+CFLAGS   := ${CFLAGS}   ${DEFS}
+CXXFLAGS := ${CXXFLAGS} ${DEFS}
+
+#****************************************************************************
+# Targets of the build
+#****************************************************************************
+
+OUTPUT := libkyra.a
+
+all: ${OUTPUT}
+
+#****************************************************************************
+# Source files
+#****************************************************************************
+
+SRCS := action.cpp \
+		box.cpp \
+		boxresource.cpp \
+		canvas.cpp \
+		canvasresource.cpp \
+		color.cpp \
+		dataresource.cpp \
+		dirtyrectangle.cpp \
+		encoder.cpp \
+		engine.cpp \
+		fontresource.cpp \
+		krmath.cpp \
+		image.cpp \
+		imagetree.cpp \
+		imnode.cpp \
+		kyraresource.cpp \
+		painter.cpp \
+		parser.cpp \
+		pixelblock.cpp \
+		rle.cpp \
+		sdlutil.cpp \
+		sprite.cpp \
+		spriteresource.cpp \
+		textbox.cpp \
+		tile.cpp \
+		tileresource.cpp \
+		vault.cpp \
+        namefield.cpp \
+		ogltexture.cpp \
+		splash.cpp \
+		../util/glmap.cpp \
+		../util/glrandom.cpp \
+		../util/glstring.cpp \
+		../util/gldebug.cpp \
+		../util/glmemorypool.cpp \
+        ../util/glisomath.cpp \
+        ../util/glperformance.cpp \
+        ../util/glgraph.cpp \
+        ../util/glprime.cpp \
+		../util/glperformance.cpp \
+		../util/glbitstream.cpp \
+		../gui/console.cpp \
+		../gui/widget.cpp \
+		../gui/button.cpp \
+		../gui/eventmanager.cpp \
+		../gui/textwidget.cpp \
+		../gui/listbox.cpp \
+		../guiExtended/progress.cpp \
+		../guiExtended/KrImageListBox.cpp \
+		../tinyxml/tinyxml.cpp \
+		../tinyxml/tinyxmlparser.cpp \
+		../tinyxml/tinyxmlerror.cpp
+
+
+SRCS := ${SRCS}
+
+OBJS := $(addsuffix .o,$(basename ${SRCS}))
+
+
+#****************************************************************************
+# Output
+#****************************************************************************
+
+${OUTPUT}: ${OBJS}
+	${AR} ${OUTPUT} ${OBJS}
+
+#****************************************************************************
+# common rules
+#****************************************************************************
+
+# Rules for compiling source files to object files
+%.o : %.cpp
+	${CXX} -c ${CXXFLAGS} ${INCS} $< -o $@
+
+%.o : %.c
+	${CC} -c ${CFLAGS} ${INCS} $< -o $@
+
+clean:
+	-rm -f core ${OBJS} ${OUTPUT}
+
+install: ${OUTPUT}
+	install -m755 libkyra.a /usr/local/lib ; \
+	cp libkyra.a libkyra_2_0_4.a ; \
+	install -m755 libkyra_2_0_4.a /usr/local/lib ; \
+	mkdir -p /usr/local/include/kyra/engine ; \
+	install -m755 *.h /usr/local/include/kyra/engine ; \
+	mkdir -p /usr/local/include/kyra/util ; \
+	install -m755 ../util/*.h /usr/local/include/kyra/util ; \
+	mkdir -p /usr/local/include/kyra/gui ; \
+	install -m755 ../gui/*.h /usr/local/include/kyra/gui ; \
+	mkdir -p /usr/local/include/kyra/guiExtended ; \
+	install -m755 ../guiExtended/*.h /usr/local/include/kyra/guiExtended ; \
+	mkdir -p /usr/local/include/kyra/tinyxml ; \
+	install -m755 ../tinyxml/*.h /usr/local/include/kyra/tinyxml
+
+
+# Dependencies. Badly over included, but there were just too many problems
+# using makedepend and sharing the makefiles.
+
+include ../makefiledefines
+${OBJS} :  ${ENGINE_HEADERS} $(addprefix ../util/, ${UTIL_HEADERS}) $(addprefix ../gui/, ${GUI_HEADERS})

@@ -1,0 +1,1355 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#f8362732976a698727caf7bd3b18f3bb"><param name="Name" value="AddButton"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#b1f07e3ed1705237145ea03c450e8754"><param name="Name" value="AddChild"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#38af3f80a3befab8511abb152490fd29"><param name="Name" value="AddChildWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#38af3f80a3befab8511abb152490fd29"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#38af3f80a3befab8511abb152490fd29"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#85f04c2734b4510d05f93de1dfb44531"><param name="Name" value="AddComponent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#a58ecb4de325a13f1f181fc216f95072"><param name="Name" value="AddExtensionData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8e8446044a6e1965f4846b6d8083d1cb"><param name="Name" value="AddPendingPluginEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8e8446044a6e1965f4846b6d8083d1cb"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8e8446044a6e1965f4846b6d8083d1cb"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#30ae36b42fed0f0919a6914f61c89686"><param name="Name" value="AddPendingUpdate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#30ae36b42fed0f0919a6914f61c89686"><param name="Name" value="wxIFMFloatingFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#30ae36b42fed0f0919a6914f61c89686"><param name="Name" value="wxIFMFloatingWindowBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#6c53b8684a3d820fb7ad65799c3d50a9"><param name="Name" value="wxInterfaceManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#8e53afc1d263675e9cf2b668891db173"><param name="Name" value="AltDown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#c2703487ffdbfd8bf8ba0204b80b7075"><param name="Name" value="CaptureInput"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#6feea6d0da44cd90cb806c742a174807"><param name="Name" value="ControlDown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="wxIFMContainerData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_data_base.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="wxIFMExtensionDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="wxIFMFloatingData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="wxIFMPanelData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_tab_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="wxIFMPanelTabData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="wxIFMResizeData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="events_8h.html#44183ab995f9f7c6482fd46c8564d49b"><param name="Name" value="DECLARE_EXPORTED_EVENT_TYPE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html"><param name="Name" value="definterface.h"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a02d2c926384dec9443646e634344b83e0"><param name="Name" value="IFM_CAPTION_CENTER"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a09c41f88cab34f6c3fade7d28c617bf7c"><param name="Name" value="IFM_CAPTION_GRADIENT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0516164b24fb6489bb751cc4c714c6a37"><param name="Name" value="IFM_CAPTION_LEFT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0721b078d69563d4bfe781074a20eb7ad"><param name="Name" value="IFM_CAPTION_MASK"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#2d7f07d7acf2bebd03d08106048909b3"><param name="Name" value="IFM_CAPTION_PAD"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a05e79282ec6af03c2eeb126df2952ea5c"><param name="Name" value="IFM_CAPTION_RIGHT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0b3f572000156eb69c3e995bb4cd9535b"><param name="Name" value="IFM_CAPTION_SOLID"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0"><param name="Name" value="IFM_CAPTION_STYLES"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0667551ac7a0e681bda30bdf0e8d50ed5"><param name="Name" value="IFM_CAPTION_TITLE_MASK"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#d98a08734f1d73aaa1e2345c744bdc09"><param name="Name" value="IFM_COMPONENT_ID_CLOSE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#d50a27e94568e1d5d25f7481e1f879d9"><param name="Name" value="IFM_ORIENTATION_BOTTOM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#672de684558feaf5b26d4457e82c9140"><param name="Name" value="IFM_ORIENTATION_DEFAULT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#a8c3291bf9638387cda2954c5ae5f856"><param name="Name" value="IFM_ORIENTATION_DOCKED"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#b1a6b5f0cb820a1fcb90655cc02a3b3e"><param name="Name" value="IFM_ORIENTATION_FLOAT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3f14eaaad8293f402d5930d4033ebe6b"><param name="Name" value="IFM_ORIENTATION_LEFT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#ffa539f83d41498675f8be1ca8f75655"><param name="Name" value="IFM_ORIENTATION_NONE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#7d7c0a48e33bd72821df72155995314b"><param name="Name" value="IFM_ORIENTATION_RIGHT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#a616ea0cbd0be42078a13e3b5d635f45"><param name="Name" value="IFM_ORIENTATION_TOP"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#0e4f393c6c1cc140b26e58e5ff96caec"><param name="Name" value="DisplayStatusMessage"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#d624dbee1eb42bdcc21f50f9e92cb701"><param name="Name" value="Enable"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#d624dbee1eb42bdcc21f50f9e92cb701"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#d624dbee1eb42bdcc21f50f9e92cb701"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="events_8h.html"><param name="Name" value="events.h"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#46db3e235fea701319b461c5dee28c7e"><param name="Name" value="FindChildWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#46db3e235fea701319b461c5dee28c7e"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#46db3e235fea701319b461c5dee28c7e"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#8fd8b6b32244d471e305c239960dde5b"><param name="Name" value="get_caption_color"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#a1628bd5305fa73e7e74afc83d8ec635"><param name="Name" value="get_caption_gradient_color"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#b7ae10cddcb8c6ee69cff83b18b76f38"><param name="Name" value="get_caption_style"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#33b6c63351be4338dc696777589a5a34"><param name="Name" value="get_font"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#33b6c63351be4338dc696777589a5a34"><param name="Name" value="wxIFMCaptionConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#33b6c63351be4338dc696777589a5a34"><param name="Name" value="wxIFMTabConfig"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#c279e48d5099a3d029daef9a08ec9bce"><param name="Name" value="get_font_colour"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#c279e48d5099a3d029daef9a08ec9bce"><param name="Name" value="wxIFMCaptionConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#c279e48d5099a3d029daef9a08ec9bce"><param name="Name" value="wxIFMTabConfig"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#0c8f7a2b32bad661d6fc47ec3db673b2"><param name="Name" value="get_font_height"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#3ad898f390c66833017c6d25a75c2000"><param name="Name" value="get_indent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#1ee53668faabe0d1c3a3714c44874e6e"><param name="Name" value="get_rounding_factor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#25c8393794d8561bd29fa2a4a15c4801"><param name="Name" value="get_tab_spacing"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#376ffd58f718857596ffb38f4078d545"><param name="Name" value="GetActivateEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#fb939308594110d5424228fb9ff3bf9b"><param name="Name" value="GetBackgroundRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_event.html#047baeb4f65abb9b3b3c839f144505e7"><param name="Name" value="GetButton"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_event.html#047baeb4f65abb9b3b3c839f144505e7"><param name="Name" value="wxIFMComponentButtonEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#f384c9818311753fc4649633616bdd87"><param name="Name" value="wxIFMComponentButtonManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html#25e755eba8c49d105736237428b38801"><param name="Name" value="GetCaptionConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#e241a5ad835d74487fce8fb77c8d737f"><param name="Name" value="GetCapturedComponent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#7b1bcc36c79573ae0077d64464e600a4"><param name="Name" value="GetCapturedWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="GetChild"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="wxIFMChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="wxIFMSetChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#90cc80fbae27f355a5adc84a763cbd9f"><param name="Name" value="GetChildData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#859a09fdcd315b73b3d87a55bbf1bb44"><param name="Name" value="GetChildType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#f2677f7938422e76f1c51be985882ed3"><param name="Name" value="GetClientRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMActivateEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMAddChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMAddTopContainerEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMCalcRectsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMComponentButtonEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMComponentVisibilityChangedEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMConvertRectEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMCreateFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMDeleteComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMDestroyFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMEndPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMFloatingMoveEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMFloatingSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMFloatNotifyEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMFocusEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMHitTestEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMInitDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMKeyEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMMouseEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMNewComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMPaintInterfaceEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMPluginEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMRectEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMRemoveTopContainerEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMResizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMSelectTabEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMSetChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMSetCursorEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMShowComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMShowDropTargetsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMUndockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMUpdateConfigEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="wxIFMUpdateResizeSashEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#44567b329d53b753debc18e10aad9fe0"><param name="Name" value="GetComponentByPos"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#44567b329d53b753debc18e10aad9fe0"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#156665b33ec0209f0e8aaf1ec2cf1bd1"><param name="Name" value="wxIFMFloatingFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#156665b33ec0209f0e8aaf1ec2cf1bd1"><param name="Name" value="wxIFMFloatingWindowBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#44567b329d53b753debc18e10aad9fe0"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#0697d72d77e8fbb341f878ba923e737a"><param name="Name" value="GetComponentRects"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#06d9555663582994d62bf0ac5602587a"><param name="Name" value="GetComponents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#06d9555663582994d62bf0ac5602587a"><param name="Name" value="wxIFMCalcRectsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#f48439a1e9ac04cf02ea68b6d3aa5048"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#f48439a1e9ac04cf02ea68b6d3aa5048"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMActivateEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMAddChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMAddTopContainerEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMCalcRectsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMComponentButtonEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMComponentVisibilityChangedEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMConvertRectEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMCreateFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMDeleteComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMDestroyFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMEndPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMFloatingMoveEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMFloatingSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMFloatNotifyEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMFocusEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMHitTestEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMInitDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMKeyEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMMouseEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMNewComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMPaintInterfaceEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMPluginEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMRectEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMRemoveTopContainerEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMResizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMSelectTabEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMSetChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMSetCursorEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMShowComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMShowDropTargetsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMUndockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMUpdateConfigEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="wxIFMUpdateResizeSashEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#88ccea3b751e9394c0b3504db74d06c9"><param name="Name" value="GetContainer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#6bb1180bee19012cae3ddd717de66a33"><param name="Name" value="GetContent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#1e542a66ac09029e4557fb72b9594f32"><param name="Name" value="GetContentWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#633510b54731e05856fd74f9266902ae"><param name="Name" value="GetConvertedRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#4a388714b5eb45faa4cd71babaa48cd1"><param name="Name" value="GetCoords"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html#f03e4a8f4de45a78031334325b29f7fa"><param name="Name" value="GetCursorEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="GetDataKey"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="wxIFMContainerData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_data_base.html#3445a042a78e6e4582ba4a81947df152"><param name="Name" value="wxIFMExtensionDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="wxIFMFloatingData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="wxIFMPanelData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_tab_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="wxIFMPanelTabData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="wxIFMResizeData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="GetDC"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="wxIFMEndPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="wxIFMPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="wxIFMPaintInterfaceEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#911a866bbd50f063289b32e00362dd7f"><param name="Name" value="GetDelete"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#d434f0955cbd44cca17f820150e67341"><param name="Name" value="GetDesiredSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#d434f0955cbd44cca17f820150e67341"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#920f4396b07248c80770e02b3e1cd0ea"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e9a329a00adecacacf646c83d3e994db"><param name="Name" value="GetDestination"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e9a329a00adecacacf646c83d3e994db"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e9a329a00adecacacf646c83d3e994db"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#45b1687069574bf660ee65b08b9e0162"><param name="Name" value="GetDestinationCoords"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8a54c36be489bb1a9c0224fa5bb74b93"><param name="Name" value="GetDestinationType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8a54c36be489bb1a9c0224fa5bb74b93"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8a54c36be489bb1a9c0224fa5bb74b93"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#50b9b75389701cde6439c1e52cb7fe2d"><param name="Name" value="GetDraggedComponent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#50b9b75389701cde6439c1e52cb7fe2d"><param name="Name" value="wxIFMInitDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html#50b9b75389701cde6439c1e52cb7fe2d"><param name="Name" value="wxIFMShowDropTargetsEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#015dcd354056f6afaecde449b4f9b4cf"><param name="Name" value="GetExtensionData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#938d6993463175b4205567095f135bbc"><param name="Name" value="GetFlags"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#c83c92fb9ec2ffe3147ef02e6a36329d"><param name="Name" value="GetFloating"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8634001506485f684018a771e020ecd2"><param name="Name" value="GetFloatingComponentByPos"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8634001506485f684018a771e020ecd2"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8634001506485f684018a771e020ecd2"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#ddf7ac672c735b72ebd6c9423fd6b580"><param name="Name" value="GetFloatingWindows"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#ddf7ac672c735b72ebd6c9423fd6b580"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#ddf7ac672c735b72ebd6c9423fd6b580"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#df729ec5a0c919cc23bcbad2d1648888"><param name="Name" value="GetFoating"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html#fe88e07f82ffa35f541143f1179bf19c"><param name="Name" value="GetFocusEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="GetIndex"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="wxIFMAddTopContainerEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#31c3618b299fc0d5130f1a7e77a58bf8"><param name="Name" value="GetIndexMode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#9b2ccbd07cd85e6dd13bcd5dd3e65d3c"><param name="Name" value="GetInterfaceRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html#dd6c4d351c032a5ae410e85a308d31bf"><param name="Name" value="GetKeyEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#4db27cf06d3846032934bc7baf5e8f96"><param name="Name" value="GetMaxSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#4db27cf06d3846032934bc7baf5e8f96"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#91d51a9c47153710eabd1df894cd40d0"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#2f2fb2c113ed456bbf47dbf6c74b39fd"><param name="Name" value="GetMaxSizes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#097150bb9e0c54863339fca0cb71ed99"><param name="Name" value="GetMinSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#097150bb9e0c54863339fca0cb71ed99"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#55636f00708a24d74b60de14c5056581"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#decc041926b5d9ec7477855fb64427a7"><param name="Name" value="GetMinSizes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html#f5fa1740cfff4aef033086179bf97564"><param name="Name" value="GetMouseEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html#45195d6859ed9f7ca611bb873b0b79ba"><param name="Name" value="GetMoveEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#2c2b8438b1bbcae52d1567a430c0f818"><param name="Name" value="GetNewChildType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#2c2b8438b1bbcae52d1567a430c0f818"><param name="Name" value="manager.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html#2c2b8438b1bbcae52d1567a430c0f818"><param name="Name" value="manager.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#550db6ad9c595d5390b41138e0e03c9d"><param name="Name" value="GetNewComponentType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#550db6ad9c595d5390b41138e0e03c9d"><param name="Name" value="manager.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html#550db6ad9c595d5390b41138e0e03c9d"><param name="Name" value="manager.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#cabdae7dbbbead50bfab5f158081ea70"><param name="Name" value="GetNewDataKey"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#cabdae7dbbbead50bfab5f158081ea70"><param name="Name" value="manager.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html#cabdae7dbbbead50bfab5f158081ea70"><param name="Name" value="manager.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#83b093ef226a15d4469ce89fa846d56d"><param name="Name" value="GetNextVisibleComponent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#80aec33e47dcddfec059201ee7e96897"><param name="Name" value="GetOnPaint"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="GetParent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="wxIFMCreateFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="wxIFMUndockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="wxInterfaceManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#92ffaa2a868ad19eaac4c5eb09a20254"><param name="Name" value="GetParentType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#7a5882047edf3480cd3c4c8779cf72ce"><param name="Name" value="GetParentWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#4dcb873501288108b7bc0a4f42caee22"><param name="Name" value="GetPassed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#93333f404e2c62f6157887d0b5aa7be4"><param name="Name" value="GetPos"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#93333f404e2c62f6157887d0b5aa7be4"><param name="Name" value="wxIFMHitTestEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#93333f404e2c62f6157887d0b5aa7be4"><param name="Name" value="wxIFMInitDragEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMComponentButtonManager"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMResizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMShowDropTargetsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#1725704b75e5f854d98700f57651fd49"><param name="Name" value="GetRect"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#1725704b75e5f854d98700f57651fd49"><param name="Name" value="wxIFMCalcRectsEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#1725704b75e5f854d98700f57651fd49"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#2150832e66d52342341c89630edcda8a"><param name="Name" value="wxIFMComponentButtonManager"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#2150832e66d52342341c89630edcda8a"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#2150832e66d52342341c89630edcda8a"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#a71e40023c460fdf27d2014e13c4cfeb"><param name="Name" value="GetRegion"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="GetShow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="wxIFMComponentVisibilityChangedEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="wxIFMShowComponentEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="GetSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html#c411a5f00e254335cb426f4b848f04b2"><param name="Name" value="GetSizeEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#cf02a4146b0071e73ad2eee20adb3ecb"><param name="Name" value="GetSourceCoords"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#ec032a75cf3de5cb08c0e1c05f66974e"><param name="Name" value="GetSuccess"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#54cbde1c30e8f83764585bbd34ec2d44"><param name="Name" value="GetTab"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html#9bcdb15491236ab5231fbb741c915ebe"><param name="Name" value="GetTabConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#cf9eb565bfbb957b3eeae129cb42ecca"><param name="Name" value="GetTopContainerList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#b01aa636f4384cb72ec4a6e992b10682"><param name="Name" value="GetType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#5782a6ee47f6f02a70a1c4caf1b27278"><param name="Name" value="GetUpdate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#5782a6ee47f6f02a70a1c4caf1b27278"><param name="Name" value="wxIFMSelectTabEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#5db432952987c05004ab60bbe35a0079"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#5db432952987c05004ab60bbe35a0079"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html#5db432952987c05004ab60bbe35a0079"><param name="Name" value="wxIFMShowComponentEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#160ae4a16f9b6bf3f333156e082862c3"><param name="Name" value="GetUpdateRegion"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="wxIFMCreateFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="wxIFMDestroyFloatingWindowEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="wxIFMFloatingMoveEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="wxIFMFloatingSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="wxIFMFloatNotifyEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_container_plugin.html#0d222d01d0279c9028750af9d8369822"><param name="Name" value="HasVisibleChildren"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#adc5e4f6e634d8256376de2928cf5344"><param name="Name" value="HideChild"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#986dc0f85e765fb824ce7a20a1e7a2d3"><param name="Name" value="IFM_ALIGN_HORIZONTAL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#42f5f1291a376bf6d92548e50148caa8"><param name="Name" value="IFM_ALIGN_NONE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#3720eff3ac8a30dadbfb50bd0e4a25cc"><param name="Name" value="IFM_ALIGN_VERTICAL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#9b28230c071369a47f75f4c648d482ed"><param name="Name" value="IFM_ALLOW_NESTED_PANELS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a02d2c926384dec9443646e634344b83e0"><param name="Name" value="IFM_CAPTION_CENTER"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a09c41f88cab34f6c3fade7d28c617bf7c"><param name="Name" value="IFM_CAPTION_GRADIENT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0516164b24fb6489bb751cc4c714c6a37"><param name="Name" value="IFM_CAPTION_LEFT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0721b078d69563d4bfe781074a20eb7ad"><param name="Name" value="IFM_CAPTION_MASK"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#2d7f07d7acf2bebd03d08106048909b3"><param name="Name" value="IFM_CAPTION_PAD"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a05e79282ec6af03c2eeb126df2952ea5c"><param name="Name" value="IFM_CAPTION_RIGHT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0b3f572000156eb69c3e995bb4cd9535b"><param name="Name" value="IFM_CAPTION_SOLID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0"><param name="Name" value="IFM_CAPTION_STYLES"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3322df2441c33496e14e8d251c92f1a0667551ac7a0e681bda30bdf0e8d50ed5"><param name="Name" value="IFM_CAPTION_TITLE_MASK"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#352d6e4c07f4586f12576c8cea0ee4e2"><param name="Name" value="IFM_COMPONENT_FLOATING_ROOT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#d98a08734f1d73aaa1e2345c744bdc09"><param name="Name" value="IFM_COMPONENT_ID_CLOSE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#430ae7053297295b6cc0e30d8adfd936"><param name="Name" value="IFM_COORDS_ABSOLUTE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#1153862566861a37685246e695a85f43"><param name="Name" value="IFM_COORDS_BACKGROUND"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#e92a4177791b7aff1d86ea12dfaecc1d"><param name="Name" value="IFM_COORDS_CLIENT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#a118e40809430d9e2b1a3378964e10ac"><param name="Name" value="IFM_COORDS_FLOATINGWINDOW"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#4a63ad3d617235a92af2fdfd063b89f2"><param name="Name" value="IFM_DISABLE_STATUS_MESSAGES"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#98d607c84f49e6ccce1106460e9a37fe"><param name="Name" value="IFM_NO_MAXIMUM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#8d07a0b8f9860f7b0067520fa1868f75"><param name="Name" value="IFM_NO_MAXIMUM_SIZE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#ab4d5805e0c863cc91c0e3d54cf4bebd"><param name="Name" value="IFM_NO_MINIMUM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#ef23979c37519f40f0509b2f6d89ac8d"><param name="Name" value="IFM_NO_MINIMUM_SIZE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#66d7d185aacfff0307d7d51017a6ea26"><param name="Name" value="IFM_NO_RESIZE_UPDATE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#d50a27e94568e1d5d25f7481e1f879d9"><param name="Name" value="IFM_ORIENTATION_BOTTOM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#672de684558feaf5b26d4457e82c9140"><param name="Name" value="IFM_ORIENTATION_DEFAULT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#a8c3291bf9638387cda2954c5ae5f856"><param name="Name" value="IFM_ORIENTATION_DOCKED"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#b1a6b5f0cb820a1fcb90655cc02a3b3e"><param name="Name" value="IFM_ORIENTATION_FLOAT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#3f14eaaad8293f402d5930d4033ebe6b"><param name="Name" value="IFM_ORIENTATION_LEFT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#ffa539f83d41498675f8be1ca8f75655"><param name="Name" value="IFM_ORIENTATION_NONE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#7d7c0a48e33bd72821df72155995314b"><param name="Name" value="IFM_ORIENTATION_RIGHT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="definterface_8h.html#a616ea0cbd0be42078a13e3b5d635f45"><param name="Name" value="IFM_ORIENTATION_TOP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#9159db748dcac0d41a04d2711af6023e"><param name="Name" value="IFM_USE_CHILD_MINSIZE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#81d7311bcaceb3bc6940db53610dabf5"><param name="Name" value="IFM_USE_CURRENT_VALUE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html"><param name="Name" value="ifmdefs.h"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#986dc0f85e765fb824ce7a20a1e7a2d3"><param name="Name" value="IFM_ALIGN_HORIZONTAL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#42f5f1291a376bf6d92548e50148caa8"><param name="Name" value="IFM_ALIGN_NONE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#3720eff3ac8a30dadbfb50bd0e4a25cc"><param name="Name" value="IFM_ALIGN_VERTICAL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#9b28230c071369a47f75f4c648d482ed"><param name="Name" value="IFM_ALLOW_NESTED_PANELS"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#352d6e4c07f4586f12576c8cea0ee4e2"><param name="Name" value="IFM_COMPONENT_FLOATING_ROOT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#430ae7053297295b6cc0e30d8adfd936"><param name="Name" value="IFM_COORDS_ABSOLUTE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#1153862566861a37685246e695a85f43"><param name="Name" value="IFM_COORDS_BACKGROUND"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#e92a4177791b7aff1d86ea12dfaecc1d"><param name="Name" value="IFM_COORDS_CLIENT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#a118e40809430d9e2b1a3378964e10ac"><param name="Name" value="IFM_COORDS_FLOATINGWINDOW"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#4a63ad3d617235a92af2fdfd063b89f2"><param name="Name" value="IFM_DISABLE_STATUS_MESSAGES"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#98d607c84f49e6ccce1106460e9a37fe"><param name="Name" value="IFM_NO_MAXIMUM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#8d07a0b8f9860f7b0067520fa1868f75"><param name="Name" value="IFM_NO_MAXIMUM_SIZE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#ab4d5805e0c863cc91c0e3d54cf4bebd"><param name="Name" value="IFM_NO_MINIMUM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#ef23979c37519f40f0509b2f6d89ac8d"><param name="Name" value="IFM_NO_MINIMUM_SIZE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#66d7d185aacfff0307d7d51017a6ea26"><param name="Name" value="IFM_NO_RESIZE_UPDATE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#9159db748dcac0d41a04d2711af6023e"><param name="Name" value="IFM_USE_CHILD_MINSIZE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#81d7311bcaceb3bc6940db53610dabf5"><param name="Name" value="IFM_USE_CURRENT_VALUE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#049a266038aadd5ab0036bd22db53dc4"><param name="Name" value="wxIFMComponentDataKeyType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_plugin_base.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="Initialize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_plugin_base.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="wxIFMDefaultContainerPlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_docking_plugin.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="wxIFMDefaultDockingPlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#0045ba8b32792ecc55724dd1562ec582"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="wxIFMDefaultPanelPlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="wxIFMDefaultResizePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_plugin_base.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="wxIFMExtensionPluginBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#30c71c9b5556cececb6122c4c33658e4"><param name="Name" value="wxInterfaceManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#8098e8df6f828d8450dad2777a7220b4"><param name="Name" value="IsChildOf"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#8599ef9a848f59a3150f63f512a5543f"><param name="Name" value="IsChildVisible"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#b70387f83c5d26fc45f47732a756b129"><param name="Name" value="IsInputCaptured"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#d28983cfb0500e267f55cd1eb52f7c6f"><param name="Name" value="IsShown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#89cb2e50029221e50d0d680ac633304c"><param name="Name" value="IsVisible"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#89cb2e50029221e50d0d680ac633304c"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#2751f52cfa5d8b94c6e4a8349fceaea1"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#21f0a8e497543839e5e5e4e8b77b0cdd"><param name="Name" value="Layout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#960d5c5ae6884f01e0b729c5b1f27178"><param name="Name" value="m_active_tab"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#7bb89c94cc601af957e5f5555767768a"><param name="Name" value="m_active_tab_index"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#5f9d334a8fc7e9b536a1735aadf1c599"><param name="Name" value="m_alignment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#0182306cc4117d129cf30ff5ccd88abe"><param name="Name" value="m_bitmap"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#85e72f005eabc8ba411a3143bb937467"><param name="Name" value="m_borders"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#dfb1783bec9611511c31b9da6557f2b8"><param name="Name" value="m_canHide"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMSetChildEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#eca01260f1c05dd62761526b91dc74fa"><param name="Name" value="m_children"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#7d42659b73804725eecacdf2af3637cd"><param name="Name" value="m_childType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#7d42659b73804725eecacdf2af3637cd"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#7d42659b73804725eecacdf2af3637cd"><param name="Name" value="wxIFMSetChildEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#3623004d94936c156e97ed9603b6b5dd"><param name="Name" value="m_content"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#7b8090e6e99abad2075fa6f691a21ff2"><param name="Name" value="m_coords"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#3a79bcc7688959dcc0352e1b5467f3fd"><param name="Name" value="m_coordsFrom"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#e560a57c5f592f8091960d3b1c951cbe"><param name="Name" value="m_coordsTo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#bf9e3c21a24d9d5a3de1ffb33d6efe5d"><param name="Name" value="m_data"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="m_dc"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="wxIFMEndPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="wxIFMPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="wxIFMPaintInterfaceEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#ccbf99764ab40c95a1741f8757a11d92"><param name="Name" value="m_delete"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="m_desiredSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e466bdd45499c6aaa2bad1f8203d96bf"><param name="Name" value="m_destination"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e466bdd45499c6aaa2bad1f8203d96bf"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e466bdd45499c6aaa2bad1f8203d96bf"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#c2bdfd72841a9939203f43f53aaa8427"><param name="Name" value="m_destinationType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#c2bdfd72841a9939203f43f53aaa8427"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#c2bdfd72841a9939203f43f53aaa8427"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#a22540b56ac679fcbe3c56968db3c458"><param name="Name" value="m_display"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#11c585f1a075f345ea59e91ac7a56e8e"><param name="Name" value="m_docked"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#ddb82a7424c8d537e4cdd7da3482c401"><param name="Name" value="m_dont_hide_tab"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="m_event"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="wxIFMActivateEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="wxIFMFocusEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="wxIFMKeyEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="wxIFMMouseEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="wxIFMSetCursorEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="m_fixed"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#fba6e5e1b2ba4d7c65cb371201364b9a"><param name="Name" value="m_floating"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#fba6e5e1b2ba4d7c65cb371201364b9a"><param name="Name" value="wxIFMFloatingData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#fba6e5e1b2ba4d7c65cb371201364b9a"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8b3864c092af4e361e98e9678c922e4e"><param name="Name" value="m_floatingWindows"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8b3864c092af4e361e98e9678c922e4e"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8b3864c092af4e361e98e9678c922e4e"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="m_hidden"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#aa62c88bf43fa9ecc482663850286531"><param name="Name" value="m_hideable"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#aa62c88bf43fa9ecc482663850286531"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#aa62c88bf43fa9ecc482663850286531"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="m_index"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#75cf99d1f7fb30532b800912e0d7722a"><param name="Name" value="m_margins"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="m_maxSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="m_minSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="m_name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html#baaf5229a15347acc9453aa5f8c9f0f8"><param name="Name" value="m_name_width"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#2a357ad880b9991c9cabb3ed688bbbc0"><param name="Name" value="m_newRow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#a3f953ef32f7d8f86536d4ad5377f070"><param name="Name" value="m_onpaint"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#9f9e40dde51d1c0b9ca439bdb4c68572"><param name="Name" value="m_orientation"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#9f9e40dde51d1c0b9ca439bdb4c68572"><param name="Name" value="wxIFMContainerData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#9f9e40dde51d1c0b9ca439bdb4c68572"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#2ce7a77c1cb2c3d35d742801305ea608"><param name="Name" value="m_parent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#2ce7a77c1cb2c3d35d742801305ea608"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#2ce7a77c1cb2c3d35d742801305ea608"><param name="Name" value="wxIFMUndockEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#59b98b8d5badaa18a7fda276e988b262"><param name="Name" value="m_parentType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#846a7e1fcafa8c8ba5384eec6279a5bd"><param name="Name" value="m_passed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#d1f3c058caf81e9f251594984d16ce4f"><param name="Name" value="m_pos"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#d1f3c058caf81e9f251594984d16ce4f"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#d1f3c058caf81e9f251594984d16ce4f"><param name="Name" value="wxIFMHitTestEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMFloatingData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMResizeData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMTab"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#31bcbbcbce1bd2c859ad807abe2f3967"><param name="Name" value="m_region"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#31bcbbcbce1bd2c859ad807abe2f3967"><param name="Name" value="wxIFMPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#31bcbbcbce1bd2c859ad807abe2f3967"><param name="Name" value="wxIFMPaintInterfaceEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#04fc80a41c051da4fefc84b69193e878"><param name="Name" value="m_show"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html#77a00b900ad4f009a91108e7315ba0bd"><param name="Name" value="m_tab"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#b41f6f99acd2c089c1ee0d3209180651"><param name="Name" value="m_tabify"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#3ce2d8546519afb0cb876ae70ce3df68"><param name="Name" value="m_tray_rect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#3c3a1749e56c5a79ba7f71607cd8cd91"><param name="Name" value="m_type"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#3c3a1749e56c5a79ba7f71607cd8cd91"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#3c3a1749e56c5a79ba7f71607cd8cd91"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#b0abe52866c0dca5b02b69a254b73553"><param name="Name" value="m_update"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#6982b8aa79600f47e80c3c001696589b"><param name="Name" value="m_visible"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#6982b8aa79600f47e80c3c001696589b"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#6982b8aa79600f47e80c3c001696589b"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#3a38a23626175c7da2b7198404239609"><param name="Name" value="m_window"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#3a38a23626175c7da2b7198404239609"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#3a38a23626175c7da2b7198404239609"><param name="Name" value="wxIFMFloatingData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html"><param name="Name" value="manager.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#2c2b8438b1bbcae52d1567a430c0f818"><param name="Name" value="GetNewChildType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#550db6ad9c595d5390b41138e0e03c9d"><param name="Name" value="GetNewComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8cpp.html#cabdae7dbbbead50bfab5f158081ea70"><param name="Name" value="GetNewDataKey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html"><param name="Name" value="manager.h"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html#2c2b8438b1bbcae52d1567a430c0f818"><param name="Name" value="GetNewChildType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html#550db6ad9c595d5390b41138e0e03c9d"><param name="Name" value="GetNewComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="manager_8h.html#cabdae7dbbbead50bfab5f158081ea70"><param name="Name" value="GetNewDataKey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#976da3ad987c4e1a5fd336792214d166"><param name="Name" value="OnLeftDown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#0e552fadefbbbf7d9619ea5ab2f58b5e"><param name="Name" value="OnPaintDecor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#231fbac59d176dfad546f4c10856ffdc"><param name="Name" value="Paint"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#0b9cfbfa970fb467936bd9d030fbc2f7"><param name="Name" value="PopAllExtensionPlugins"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#0b9cfbfa970fb467936bd9d030fbc2f7"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#0b9cfbfa970fb467936bd9d030fbc2f7"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#3d949130afe94c67783c0d93f7e40aa6"><param name="Name" value="PopExtensionPlugin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#3d949130afe94c67783c0d93f7e40aa6"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#3d949130afe94c67783c0d93f7e40aa6"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#a06bca136aaf011e416c1368c7159deb"><param name="Name" value="ProcessPluginEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#a06bca136aaf011e416c1368c7159deb"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#a06bca136aaf011e416c1368c7159deb"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#aeb1245f789c71eba8e5585bcd4129fe"><param name="Name" value="PushExtensionPlugin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#aeb1245f789c71eba8e5585bcd4129fe"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#aeb1245f789c71eba8e5585bcd4129fe"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#e26e32c5b70b4c1de15944020cddfd52"><param name="Name" value="RealtimeUpdates"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#e26e32c5b70b4c1de15944020cddfd52"><param name="Name" value="wxIFMDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#e26e32c5b70b4c1de15944020cddfd52"><param name="Name" value="wxIFMResizeEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#d1df22b6123ecf30920eaf534928435a"><param name="Name" value="ReleaseInput"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#354039efb7a5d5a218863072df26f37a"><param name="Name" value="RemoveButton"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#527267c5324d9f3f84b2243a954eb103"><param name="Name" value="RemoveExtensionData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#4ca1241a54e4e60a3edb54d403de308b"><param name="Name" value="ResetInterfaceRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#8e09e72861119eb1a69d9cfc1f3c2755"><param name="Name" value="ResetStatusMessage"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dimensions.html#eb0213301056057c757f9ff72eb0bdf5"><param name="Name" value="Set"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#5769bf3907d063128ac1eb4a51e1d35a"><param name="Name" value="set_caption_color"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#4942ec04b55011dc68cc854da4030726"><param name="Name" value="set_caption_gradient_color"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#c2bf024a81ad2492c9b4291663fffbfd"><param name="Name" value="set_caption_style"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#341924cb1c0b689a854efa7a29ab3762"><param name="Name" value="set_font"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#341924cb1c0b689a854efa7a29ab3762"><param name="Name" value="wxIFMCaptionConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#341924cb1c0b689a854efa7a29ab3762"><param name="Name" value="wxIFMTabConfig"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#10036fa7ddfb811bda70e6522bede2ce"><param name="Name" value="set_font_colour"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#10036fa7ddfb811bda70e6522bede2ce"><param name="Name" value="wxIFMCaptionConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#10036fa7ddfb811bda70e6522bede2ce"><param name="Name" value="wxIFMTabConfig"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#fbe5cd62cd3fc0031bc5e7f1aaf6e9b5"><param name="Name" value="set_indent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#c6601749164150ea9ee035509d749d15"><param name="Name" value="set_rounding_factor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#29e65f32f820dd49191cfbc106f2415c"><param name="Name" value="set_tab_spacing"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#fc4791f84e20cc35c9978f570892b5cf"><param name="Name" value="SetChildSize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_new_component_event.html#86816ead132f86a3f29978682e1d6a44"><param name="Name" value="SetComponent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#48b362a055609941f199d9b1b41db3d8"><param name="Name" value="SetComponentRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#e64b6884418425f412243e83321d545e"><param name="Name" value="SetContentWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#c15422dfa46470c440eb17a561ad1bc8"><param name="Name" value="SetDC"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#95a6ddefa64ec774af0e24b9692b5acc"><param name="Name" value="SetDesiredSize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#670bed50e19e2c9b2ae1cb740c5a5a9c"><param name="Name" value="SetFlags"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#feea73156231ff8f250e7f9f349e49f0"><param name="Name" value="SetHeight"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#30eb91a60cdef840a6a2fc115fbe4d42"><param name="Name" value="SetInterfaceRect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#b7bfedfcc8889c1bb2c0515af256c866"><param name="Name" value="SetParent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#c786b6e2723808bbcc0c58273979bd56"><param name="Name" value="SetPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#e9b7199de53c9bbbfd24455a9b27d35e"><param name="Name" value="SetStatusMessagePane"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#8ffb23ac76af14b1b2ec0bb62ade590d"><param name="Name" value="SetSuccess"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#53c18dc616cdeeaa86de0d06d6aeeae9"><param name="Name" value="SetWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#4f98a81527a9ef469c79992a386b2e3c"><param name="Name" value="ShiftDown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html#a90c3d00a26b84f714c8ce219a8c6dfc"><param name="Name" value="ShouldDestroyRoot"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#ab5380ac59c0ceb167bb5a012c0d4fda"><param name="Name" value="Show"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#ab5380ac59c0ceb167bb5a012c0d4fda"><param name="Name" value="wxIFMComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#cf52f9d853066876a2f86bb4ce41b162"><param name="Name" value="wxIFMComponentButtonManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#f9366cfbad0363acaefcbea4066c76bd"><param name="Name" value="ShowChild"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#d62605874538a0d60027c3b229f8a2c0"><param name="Name" value="Shutdown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#408f1aaf6cce80d6bd5785678d2aa80f"><param name="Name" value="Update"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#408f1aaf6cce80d6bd5785678d2aa80f"><param name="Name" value="wxIFMFloatingFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#408f1aaf6cce80d6bd5785678d2aa80f"><param name="Name" value="wxIFMFloatingWindowBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#85987fa2498970ce0c22610e4c5bf10e"><param name="Name" value="wxInterfaceManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#743cbf08f6126be133e2165fbaf42fc0"><param name="Name" value="UpdateConfiguration"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#8d8516d5b43d9f1ff6513c1279cf1e96"><param name="Name" value="UpdateResizeSashes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#0f0315264de6f72ec0f9b9bbec53b84c"><param name="Name" value="VisibilityChanged"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#c6073972be23f5b97dac8316b51ac7b6"><param name="Name" value="WasCanceled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#c6073972be23f5b97dac8316b51ac7b6"><param name="Name" value="wxIFMDragEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#c6073972be23f5b97dac8316b51ac7b6"><param name="Name" value="wxIFMResizeEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html"><param name="Name" value="wxIFMActivateEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#376ffd58f718857596ffb38f4078d545"><param name="Name" value="GetActivateEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_activate_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="m_event"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html"><param name="Name" value="wxIFMAddChildEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#90cc80fbae27f355a5adc84a763cbd9f"><param name="Name" value="GetChildData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#ec032a75cf3de5cb08c0e1c05f66974e"><param name="Name" value="GetSuccess"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#bf9e3c21a24d9d5a3de1ffb33d6efe5d"><param name="Name" value="m_data"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_child_event.html#8ffb23ac76af14b1b2ec0bb62ade590d"><param name="Name" value="SetSuccess"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html"><param name="Name" value="wxIFMAddTopContainerEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="GetIndex"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_add_top_container_event.html#31c3618b299fc0d5130f1a7e77a58bf8"><param name="Name" value="GetIndexMode"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html"><param name="Name" value="wxIFMBeginPaintEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="GetDC"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#80aec33e47dcddfec059201ee7e96897"><param name="Name" value="GetOnPaint"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="m_dc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#a3f953ef32f7d8f86536d4ad5377f070"><param name="Name" value="m_onpaint"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#3a38a23626175c7da2b7198404239609"><param name="Name" value="m_window"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_begin_paint_event.html#c15422dfa46470c440eb17a561ad1bc8"><param name="Name" value="SetDC"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html"><param name="Name" value="wxIFMCalcRectsEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#85f04c2734b4510d05f93de1dfb44531"><param name="Name" value="AddComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#0697d72d77e8fbb341f878ba923e737a"><param name="Name" value="GetComponentRects"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#06d9555663582994d62bf0ac5602587a"><param name="Name" value="GetComponents"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#2f2fb2c113ed456bbf47dbf6c74b39fd"><param name="Name" value="GetMaxSizes"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#decc041926b5d9ec7477855fb64427a7"><param name="Name" value="GetMinSizes"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#1725704b75e5f854d98700f57651fd49"><param name="Name" value="GetRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#48b362a055609941f199d9b1b41db3d8"><param name="Name" value="SetComponentRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_calc_rects_event.html#64b4cd69fff51d21bbd5b6432da87a12"><param name="Name" value="wxIFMCalcRectsEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html"><param name="Name" value="wxIFMCaptionConfig"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#8fd8b6b32244d471e305c239960dde5b"><param name="Name" value="get_caption_color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#a1628bd5305fa73e7e74afc83d8ec635"><param name="Name" value="get_caption_gradient_color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#b7ae10cddcb8c6ee69cff83b18b76f38"><param name="Name" value="get_caption_style"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#33b6c63351be4338dc696777589a5a34"><param name="Name" value="get_font"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#c279e48d5099a3d029daef9a08ec9bce"><param name="Name" value="get_font_colour"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#5769bf3907d063128ac1eb4a51e1d35a"><param name="Name" value="set_caption_color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#4942ec04b55011dc68cc854da4030726"><param name="Name" value="set_caption_gradient_color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#c2bf024a81ad2492c9b4291663fffbfd"><param name="Name" value="set_caption_style"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#341924cb1c0b689a854efa7a29ab3762"><param name="Name" value="set_font"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_caption_config.html#10036fa7ddfb811bda70e6522bede2ce"><param name="Name" value="set_font_colour"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html"><param name="Name" value="wxIFMChildDataBase"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="m_desiredSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="m_fixed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="m_hidden"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#aa62c88bf43fa9ecc482663850286531"><param name="Name" value="m_hideable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="m_maxSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="m_minSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="m_name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_data_base.html#3c3a1749e56c5a79ba7f71607cd8cd91"><param name="Name" value="m_type"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html"><param name="Name" value="wxIFMChildEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="GetChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html"><param name="Name" value="wxIFMComponent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#a58ecb4de325a13f1f181fc216f95072"><param name="Name" value="AddExtensionData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#fb939308594110d5424228fb9ff3bf9b"><param name="Name" value="GetBackgroundRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#f2677f7938422e76f1c51be985882ed3"><param name="Name" value="GetClientRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#633510b54731e05856fd74f9266902ae"><param name="Name" value="GetConvertedRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#d434f0955cbd44cca17f820150e67341"><param name="Name" value="GetDesiredSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#015dcd354056f6afaecde449b4f9b4cf"><param name="Name" value="GetExtensionData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#4db27cf06d3846032934bc7baf5e8f96"><param name="Name" value="GetMaxSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#097150bb9e0c54863339fca0cb71ed99"><param name="Name" value="GetMinSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#83b093ef226a15d4469ce89fa846d56d"><param name="Name" value="GetNextVisibleComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#7a5882047edf3480cd3c4c8779cf72ce"><param name="Name" value="GetParentWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#1725704b75e5f854d98700f57651fd49"><param name="Name" value="GetRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#b01aa636f4384cb72ec4a6e992b10682"><param name="Name" value="GetType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#8098e8df6f828d8450dad2777a7220b4"><param name="Name" value="IsChildOf"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#d28983cfb0500e267f55cd1eb52f7c6f"><param name="Name" value="IsShown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#89cb2e50029221e50d0d680ac633304c"><param name="Name" value="IsVisible"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#5f9d334a8fc7e9b536a1735aadf1c599"><param name="Name" value="m_alignment"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#85e72f005eabc8ba411a3143bb937467"><param name="Name" value="m_borders"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#dfb1783bec9611511c31b9da6557f2b8"><param name="Name" value="m_canHide"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#eca01260f1c05dd62761526b91dc74fa"><param name="Name" value="m_children"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#7d42659b73804725eecacdf2af3637cd"><param name="Name" value="m_childType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="m_desiredSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#11c585f1a075f345ea59e91ac7a56e8e"><param name="Name" value="m_docked"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="m_fixed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="m_hidden"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#75cf99d1f7fb30532b800912e0d7722a"><param name="Name" value="m_margins"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="m_maxSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="m_minSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="m_name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#2ce7a77c1cb2c3d35d742801305ea608"><param name="Name" value="m_parent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#6982b8aa79600f47e80c3c001696589b"><param name="Name" value="m_visible"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#231fbac59d176dfad546f4c10856ffdc"><param name="Name" value="Paint"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#527267c5324d9f3f84b2243a954eb103"><param name="Name" value="RemoveExtensionData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#95a6ddefa64ec774af0e24b9692b5acc"><param name="Name" value="SetDesiredSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#ab5380ac59c0ceb167bb5a012c0d4fda"><param name="Name" value="Show"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#0f0315264de6f72ec0f9b9bbec53b84c"><param name="Name" value="VisibilityChanged"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component.html#78e9df710006d13f300f73f9bedd9f21"><param name="Name" value="wxIFMComponent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_event.html"><param name="Name" value="wxIFMComponentButtonEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_event.html#047baeb4f65abb9b3b3c839f144505e7"><param name="Name" value="GetButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html"><param name="Name" value="wxIFMComponentButtonManager"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#f8362732976a698727caf7bd3b18f3bb"><param name="Name" value="AddButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#f384c9818311753fc4649633616bdd87"><param name="Name" value="GetButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#2150832e66d52342341c89630edcda8a"><param name="Name" value="GetRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#21f0a8e497543839e5e5e4e8b77b0cdd"><param name="Name" value="Layout"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#354039efb7a5d5a218863072df26f37a"><param name="Name" value="RemoveButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#feea73156231ff8f250e7f9f349e49f0"><param name="Name" value="SetHeight"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#b7bfedfcc8889c1bb2c0515af256c866"><param name="Name" value="SetParent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#c786b6e2723808bbcc0c58273979bd56"><param name="Name" value="SetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_button_manager.html#cf52f9d853066876a2f86bb4ce41b162"><param name="Name" value="Show"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="ifmdefs_8h.html#049a266038aadd5ab0036bd22db53dc4"><param name="Name" value="wxIFMComponentDataKeyType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html"><param name="Name" value="wxIFMComponentVisibilityChangedEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_component_visibility_changed_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="GetShow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html"><param name="Name" value="wxIFMContainerData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="GetDataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#9f9e40dde51d1c0b9ca439bdb4c68572"><param name="Name" value="m_orientation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_container_data.html#3ce2d8546519afb0cb876ae70ce3df68"><param name="Name" value="m_tray_rect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html"><param name="Name" value="wxIFMConvertRectEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#45b1687069574bf660ee65b08b9e0162"><param name="Name" value="GetDestinationCoords"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#cf02a4146b0071e73ad2eee20adb3ecb"><param name="Name" value="GetSourceCoords"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#3a79bcc7688959dcc0352e1b5467f3fd"><param name="Name" value="m_coordsFrom"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_convert_rect_event.html#e560a57c5f592f8091960d3b1c951cbe"><param name="Name" value="m_coordsTo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html"><param name="Name" value="wxIFMCreateFloatingWindowEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="GetParent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_create_floating_window_event.html#53c18dc616cdeeaa86de0d06d6aeeae9"><param name="Name" value="SetWindow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html"><param name="Name" value="wxIFMDefaultChildData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#0182306cc4117d129cf30ff5ccd88abe"><param name="Name" value="m_bitmap"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#f378f39980c672fac1836a4737a588e7"><param name="Name" value="m_desiredSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#fe9fbd9effd9ae23df545c62c2da19a5"><param name="Name" value="m_fixed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#94cf3638e6193f5628101b5d3f775e96"><param name="Name" value="m_hidden"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#aa62c88bf43fa9ecc482663850286531"><param name="Name" value="m_hideable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="m_index"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#b9827b67beac1a431c51bc79c7da6bbd"><param name="Name" value="m_maxSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#44f1392bd1020022b30cbcfdf060c459"><param name="Name" value="m_minSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#86cce5eb4063b44d1d3df906eddde135"><param name="Name" value="m_name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#2a357ad880b9991c9cabb3ed688bbbc0"><param name="Name" value="m_newRow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#9f9e40dde51d1c0b9ca439bdb4c68572"><param name="Name" value="m_orientation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#d1f3c058caf81e9f251594984d16ce4f"><param name="Name" value="m_pos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#b41f6f99acd2c089c1ee0d3209180651"><param name="Name" value="m_tabify"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_child_data.html#3c3a1749e56c5a79ba7f71607cd8cd91"><param name="Name" value="m_type"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_container_plugin.html"><param name="Name" value="wxIFMDefaultContainerPlugin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_container_plugin.html#0d222d01d0279c9028750af9d8369822"><param name="Name" value="HasVisibleChildren"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_container_plugin.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="Initialize"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_docking_plugin.html"><param name="Name" value="wxIFMDefaultDockingPlugin"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html"><param name="Name" value="wxIFMDefaultInterfacePlugin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#38af3f80a3befab8511abb152490fd29"><param name="Name" value="AddChildWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#8e8446044a6e1965f4846b6d8083d1cb"><param name="Name" value="AddPendingPluginEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#d624dbee1eb42bdcc21f50f9e92cb701"><param name="Name" value="Enable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#46db3e235fea701319b461c5dee28c7e"><param name="Name" value="FindChildWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#44567b329d53b753debc18e10aad9fe0"><param name="Name" value="GetComponentByPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#f48439a1e9ac04cf02ea68b6d3aa5048"><param name="Name" value="GetComponents"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#88ccea3b751e9394c0b3504db74d06c9"><param name="Name" value="GetContainer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#8634001506485f684018a771e020ecd2"><param name="Name" value="GetFloatingComponentByPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#ddf7ac672c735b72ebd6c9423fd6b580"><param name="Name" value="GetFloatingWindows"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#cf9eb565bfbb957b3eeae129cb42ecca"><param name="Name" value="GetTopContainerList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#0045ba8b32792ecc55724dd1562ec582"><param name="Name" value="Initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#8b3864c092af4e361e98e9678c922e4e"><param name="Name" value="m_floatingWindows"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#0b9cfbfa970fb467936bd9d030fbc2f7"><param name="Name" value="PopAllExtensionPlugins"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#3d949130afe94c67783c0d93f7e40aa6"><param name="Name" value="PopExtensionPlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#a06bca136aaf011e416c1368c7159deb"><param name="Name" value="ProcessPluginEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_interface_plugin.html#aeb1245f789c71eba8e5585bcd4129fe"><param name="Name" value="PushExtensionPlugin"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html"><param name="Name" value="wxIFMDefaultPanelPlugin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html#25e755eba8c49d105736237428b38801"><param name="Name" value="GetCaptionConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html#9bcdb15491236ab5231fbb741c915ebe"><param name="Name" value="GetTabConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_panel_plugin.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="Initialize"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html"><param name="Name" value="wxIFMDefaultResizePlugin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#686af1771ace0235e2b83066f4c15e99"><param name="Name" value="Initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#976da3ad987c4e1a5fd336792214d166"><param name="Name" value="OnLeftDown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#0e552fadefbbbf7d9619ea5ab2f58b5e"><param name="Name" value="OnPaintDecor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_default_resize_plugin.html#8d8516d5b43d9f1ff6513c1279cf1e96"><param name="Name" value="UpdateResizeSashes"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_delete_component_event.html"><param name="Name" value="wxIFMDeleteComponentEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_delete_component_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_delete_component_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html"><param name="Name" value="wxIFMDestroyFloatingWindowEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_destroy_floating_window_event.html#a90c3d00a26b84f714c8ce219a8c6dfc"><param name="Name" value="ShouldDestroyRoot"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dimensions.html"><param name="Name" value="wxIFMDimensions"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html"><param name="Name" value="wxIFMDockEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e9a329a00adecacacf646c83d3e994db"><param name="Name" value="GetDestination"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8a54c36be489bb1a9c0224fa5bb74b93"><param name="Name" value="GetDestinationType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="GetIndex"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#e466bdd45499c6aaa2bad1f8203d96bf"><param name="Name" value="m_destination"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#c2bdfd72841a9939203f43f53aaa8427"><param name="Name" value="m_destinationType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="m_index"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html"><param name="Name" value="wxIFMDockEventEx"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#e9a329a00adecacacf646c83d3e994db"><param name="Name" value="GetDestination"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#8a54c36be489bb1a9c0224fa5bb74b93"><param name="Name" value="GetDestinationType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#98afe20a55c27565ee7f70859b43234b"><param name="Name" value="GetIndex"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#e466bdd45499c6aaa2bad1f8203d96bf"><param name="Name" value="m_destination"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#c2bdfd72841a9939203f43f53aaa8427"><param name="Name" value="m_destinationType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_dock_event_ex.html#8f1033abd2c7240bd2a55bd810884c25"><param name="Name" value="m_index"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html"><param name="Name" value="wxIFMDragEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#8e53afc1d263675e9cf2b668891db173"><param name="Name" value="AltDown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#6feea6d0da44cd90cb806c742a174807"><param name="Name" value="ControlDown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#e26e32c5b70b4c1de15944020cddfd52"><param name="Name" value="RealtimeUpdates"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#4f98a81527a9ef469c79992a386b2e3c"><param name="Name" value="ShiftDown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_drag_event.html#c6073972be23f5b97dac8316b51ac7b6"><param name="Name" value="WasCanceled"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html"><param name="Name" value="wxIFMEndPaintEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="GetDC"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_end_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="m_dc"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_data_base.html"><param name="Name" value="wxIFMExtensionDataBase"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_data_base.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_data_base.html#3445a042a78e6e4582ba4a81947df152"><param name="Name" value="GetDataKey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_extension_plugin_base.html"><param name="Name" value="wxIFMExtensionPluginBase"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html"><param name="Name" value="wxIFMFloatEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#2150832e66d52342341c89630edcda8a"><param name="Name" value="GetRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="GetSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_event.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html"><param name="Name" value="wxIFMFloatingData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="GetDataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#fba6e5e1b2ba4d7c65cb371201364b9a"><param name="Name" value="m_floating"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_data.html#3a38a23626175c7da2b7198404239609"><param name="Name" value="m_window"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_frame.html"><param name="Name" value="wxIFMFloatingFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_frame.html#30ae36b42fed0f0919a6914f61c89686"><param name="Name" value="AddPendingUpdate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_frame.html#156665b33ec0209f0e8aaf1ec2cf1bd1"><param name="Name" value="GetComponentByPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_frame.html#408f1aaf6cce80d6bd5785678d2aa80f"><param name="Name" value="Update"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html"><param name="Name" value="wxIFMFloatingMoveEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html#45195d6859ed9f7ca611bb873b0b79ba"><param name="Name" value="GetMoveEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_move_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html"><param name="Name" value="wxIFMFloatingSizeEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html#c411a5f00e254335cb426f4b848f04b2"><param name="Name" value="GetSizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_size_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html"><param name="Name" value="wxIFMFloatingWindowBase"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#30ae36b42fed0f0919a6914f61c89686"><param name="Name" value="AddPendingUpdate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#156665b33ec0209f0e8aaf1ec2cf1bd1"><param name="Name" value="GetComponentByPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_floating_window_base.html#408f1aaf6cce80d6bd5785678d2aa80f"><param name="Name" value="Update"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html"><param name="Name" value="wxIFMFloatNotifyEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#c83c92fb9ec2ffe3147ef02e6a36329d"><param name="Name" value="GetFloating"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#5756070515f0d3de4270b1ec625bb1a9"><param name="Name" value="GetWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_float_notify_event.html#8f1536cd0f41ba8026ff646ad4ecee85"><param name="Name" value="wxIFMFloatNotifyEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html"><param name="Name" value="wxIFMFocusEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html#fe88e07f82ffa35f541143f1179bf19c"><param name="Name" value="GetFocusEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_focus_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="m_event"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html"><param name="Name" value="wxIFMHitTestEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#4a388714b5eb45faa4cd71babaa48cd1"><param name="Name" value="GetCoords"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#4dcb873501288108b7bc0a4f42caee22"><param name="Name" value="GetPassed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#93333f404e2c62f6157887d0b5aa7be4"><param name="Name" value="GetPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#7b8090e6e99abad2075fa6f691a21ff2"><param name="Name" value="m_coords"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#846a7e1fcafa8c8ba5384eec6279a5bd"><param name="Name" value="m_passed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_hit_test_event.html#d1f3c058caf81e9f251594984d16ce4f"><param name="Name" value="m_pos"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html"><param name="Name" value="wxIFMInitDragEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#50b9b75389701cde6439c1e52cb7fe2d"><param name="Name" value="GetDraggedComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_init_drag_event.html#93333f404e2c62f6157887d0b5aa7be4"><param name="Name" value="GetPos"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html"><param name="Name" value="wxIFMInterfacePluginBase"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#38af3f80a3befab8511abb152490fd29"><param name="Name" value="AddChildWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8e8446044a6e1965f4846b6d8083d1cb"><param name="Name" value="AddPendingPluginEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#d624dbee1eb42bdcc21f50f9e92cb701"><param name="Name" value="Enable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#46db3e235fea701319b461c5dee28c7e"><param name="Name" value="FindChildWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#44567b329d53b753debc18e10aad9fe0"><param name="Name" value="GetComponentByPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#f48439a1e9ac04cf02ea68b6d3aa5048"><param name="Name" value="GetComponents"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8634001506485f684018a771e020ecd2"><param name="Name" value="GetFloatingComponentByPos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#ddf7ac672c735b72ebd6c9423fd6b580"><param name="Name" value="GetFloatingWindows"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#8b3864c092af4e361e98e9678c922e4e"><param name="Name" value="m_floatingWindows"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#0b9cfbfa970fb467936bd9d030fbc2f7"><param name="Name" value="PopAllExtensionPlugins"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#3d949130afe94c67783c0d93f7e40aa6"><param name="Name" value="PopExtensionPlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#a06bca136aaf011e416c1368c7159deb"><param name="Name" value="ProcessPluginEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_interface_plugin_base.html#aeb1245f789c71eba8e5585bcd4129fe"><param name="Name" value="PushExtensionPlugin"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html"><param name="Name" value="wxIFMKeyEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html#dd6c4d351c032a5ae410e85a308d31bf"><param name="Name" value="GetKeyEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_key_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="m_event"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html"><param name="Name" value="wxIFMMouseEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html#f5fa1740cfff4aef033086179bf97564"><param name="Name" value="GetMouseEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_mouse_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="m_event"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_new_component_event.html"><param name="Name" value="wxIFMNewComponentEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_new_component_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_new_component_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_new_component_event.html#86816ead132f86a3f29978682e1d6a44"><param name="Name" value="SetComponent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html"><param name="Name" value="wxIFMPaintEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="GetDC"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#a71e40023c460fdf27d2014e13c4cfeb"><param name="Name" value="GetRegion"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="m_dc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_event.html#31bcbbcbce1bd2c859ad807abe2f3967"><param name="Name" value="m_region"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html"><param name="Name" value="wxIFMPaintInterfaceEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#07c3a25fcb6cf7d131014a77fdab93ec"><param name="Name" value="GetDC"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#160ae4a16f9b6bf3f333156e082862c3"><param name="Name" value="GetUpdateRegion"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#10fdbe380fcb3373ea9d715a7ca8d3b8"><param name="Name" value="m_dc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_paint_interface_event.html#31bcbbcbce1bd2c859ad807abe2f3967"><param name="Name" value="m_region"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html"><param name="Name" value="wxIFMPanelData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="GetDataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#960d5c5ae6884f01e0b729c5b1f27178"><param name="Name" value="m_active_tab"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#7bb89c94cc601af957e5f5555767768a"><param name="Name" value="m_active_tab_index"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_data.html#ddb82a7424c8d537e4cdd7da3482c401"><param name="Name" value="m_dont_hide_tab"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_tab_data.html"><param name="Name" value="wxIFMPanelTabData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_tab_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_panel_tab_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="GetDataKey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html"><param name="Name" value="wxIFMPluginEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_plugin_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html"><param name="Name" value="wxIFMQueryChildEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="GetChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#2751f52cfa5d8b94c6e4a8349fceaea1"><param name="Name" value="IsVisible"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_query_child_event.html#6982b8aa79600f47e80c3c001696589b"><param name="Name" value="m_visible"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_rect_event.html"><param name="Name" value="wxIFMRectEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_rect_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_rect_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_remove_top_container_event.html"><param name="Name" value="wxIFMRemoveTopContainerEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_remove_top_container_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_remove_top_container_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html"><param name="Name" value="wxIFMResizeData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#7c1df5cf6d822fc7742d708d14f8b103"><param name="Name" value="DataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#54cb6e1e685e3ebaa0e592e431b77993"><param name="Name" value="GetDataKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#a22540b56ac679fcbe3c56968db3c458"><param name="Name" value="m_display"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_data.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html"><param name="Name" value="wxIFMResizeEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#e26e32c5b70b4c1de15944020cddfd52"><param name="Name" value="RealtimeUpdates"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_resize_event.html#c6073972be23f5b97dac8316b51ac7b6"><param name="Name" value="WasCanceled"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html"><param name="Name" value="wxIFMSelectTabEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#54cbde1c30e8f83764585bbd34ec2d44"><param name="Name" value="GetTab"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_select_tab_event.html#5782a6ee47f6f02a70a1c4caf1b27278"><param name="Name" value="GetUpdate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html"><param name="Name" value="wxIFMSetChildEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="GetChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#859a09fdcd315b73b3d87a55bbf1bb44"><param name="Name" value="GetChildType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_event.html#7d42659b73804725eecacdf2af3637cd"><param name="Name" value="m_childType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html"><param name="Name" value="wxIFMSetChildSizeEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="GetChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#920f4396b07248c80770e02b3e1cd0ea"><param name="Name" value="GetDesiredSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#91d51a9c47153710eabd1df894cd40d0"><param name="Name" value="GetMaxSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#55636f00708a24d74b60de14c5056581"><param name="Name" value="GetMinSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#5db432952987c05004ab60bbe35a0079"><param name="Name" value="GetUpdate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_child_size_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html"><param name="Name" value="wxIFMSetCursorEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html#f03e4a8f4de45a78031334325b29f7fa"><param name="Name" value="GetCursorEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_set_cursor_event.html#bbf84d8d2fbfdb076c9deb6f701bb062"><param name="Name" value="m_event"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html"><param name="Name" value="wxIFMShowChildEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#e5cb22840df032ffa28fd4c435380f22"><param name="Name" value="GetChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="GetShow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#5db432952987c05004ab60bbe35a0079"><param name="Name" value="GetUpdate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#58ab29703c7904ab27d31e4be77f8ef3"><param name="Name" value="m_child"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#04fc80a41c051da4fefc84b69193e878"><param name="Name" value="m_show"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_child_event.html#b0abe52866c0dca5b02b69a254b73553"><param name="Name" value="m_update"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html"><param name="Name" value="wxIFMShowComponentEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html#05d91bce550d0035319e9487c6d0540a"><param name="Name" value="GetShow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_component_event.html#5db432952987c05004ab60bbe35a0079"><param name="Name" value="GetUpdate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html"><param name="Name" value="wxIFMShowDropTargetsEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html#50b9b75389701cde6439c1e52cb7fe2d"><param name="Name" value="GetDraggedComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_show_drop_targets_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html"><param name="Name" value="wxIFMTab"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html#baaf5229a15347acc9453aa5f8c9f0f8"><param name="Name" value="m_name_width"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab.html#77a00b900ad4f009a91108e7315ba0bd"><param name="Name" value="m_tab"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html"><param name="Name" value="wxIFMTabConfig"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#33b6c63351be4338dc696777589a5a34"><param name="Name" value="get_font"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#c279e48d5099a3d029daef9a08ec9bce"><param name="Name" value="get_font_colour"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#0c8f7a2b32bad661d6fc47ec3db673b2"><param name="Name" value="get_font_height"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#3ad898f390c66833017c6d25a75c2000"><param name="Name" value="get_indent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#1ee53668faabe0d1c3a3714c44874e6e"><param name="Name" value="get_rounding_factor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#25c8393794d8561bd29fa2a4a15c4801"><param name="Name" value="get_tab_spacing"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#341924cb1c0b689a854efa7a29ab3762"><param name="Name" value="set_font"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#10036fa7ddfb811bda70e6522bede2ce"><param name="Name" value="set_font_colour"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#fbe5cd62cd3fc0031bc5e7f1aaf6e9b5"><param name="Name" value="set_indent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#c6601749164150ea9ee035509d749d15"><param name="Name" value="set_rounding_factor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_tab_config.html#29e65f32f820dd49191cfbc106f2415c"><param name="Name" value="set_tab_spacing"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html"><param name="Name" value="wxIFMUndockEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#911a866bbd50f063289b32e00362dd7f"><param name="Name" value="GetDelete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="GetParent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#92ffaa2a868ad19eaac4c5eb09a20254"><param name="Name" value="GetParentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#ccbf99764ab40c95a1741f8757a11d92"><param name="Name" value="m_delete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#2ce7a77c1cb2c3d35d742801305ea608"><param name="Name" value="m_parent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_undock_event.html#59b98b8d5badaa18a7fda276e988b262"><param name="Name" value="m_parentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html"><param name="Name" value="wxIFMUpdateComponentEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#2150832e66d52342341c89630edcda8a"><param name="Name" value="GetRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="GetSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_component_event.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_config_event.html"><param name="Name" value="wxIFMUpdateConfigEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_config_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_config_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html"><param name="Name" value="wxIFMUpdateEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#6bb1180bee19012cae3ddd717de66a33"><param name="Name" value="GetContent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#df729ec5a0c919cc23bcbad2d1648888"><param name="Name" value="GetFoating"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#c2dcbcc4960b8d15e1538933fa7d5a66"><param name="Name" value="GetPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#f2259ebe9d1c07ceb60119edb0a86416"><param name="Name" value="GetSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#3623004d94936c156e97ed9603b6b5dd"><param name="Name" value="m_content"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#fba6e5e1b2ba4d7c65cb371201364b9a"><param name="Name" value="m_floating"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_event.html#1ef1286fd8d08084fa323bba2d437822"><param name="Name" value="m_rect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_resize_sash_event.html"><param name="Name" value="wxIFMUpdateResizeSashEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_resize_sash_event.html#0b9262d6f05dbe0b193a786f2b36c47a"><param name="Name" value="GetComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_i_f_m_update_resize_sash_event.html#4b2e8665377d5669b066436099604b99"><param name="Name" value="GetComponentType"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html"><param name="Name" value="wxInterfaceManager"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#b1f07e3ed1705237145ea03c450e8754"><param name="Name" value="AddChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#6c53b8684a3d820fb7ad65799c3d50a9"><param name="Name" value="AddPendingUpdate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#c2703487ffdbfd8bf8ba0204b80b7075"><param name="Name" value="CaptureInput"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#0e4f393c6c1cc140b26e58e5ff96caec"><param name="Name" value="DisplayStatusMessage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#e241a5ad835d74487fce8fb77c8d737f"><param name="Name" value="GetCapturedComponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#7b1bcc36c79573ae0077d64464e600a4"><param name="Name" value="GetCapturedWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#1e542a66ac09029e4557fb72b9594f32"><param name="Name" value="GetContentWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#938d6993463175b4205567095f135bbc"><param name="Name" value="GetFlags"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#9b2ccbd07cd85e6dd13bcd5dd3e65d3c"><param name="Name" value="GetInterfaceRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#a38f6dc2a605e8fd1dfb4b81fad3249b"><param name="Name" value="GetParent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#adc5e4f6e634d8256376de2928cf5344"><param name="Name" value="HideChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#30c71c9b5556cececb6122c4c33658e4"><param name="Name" value="Initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#8599ef9a848f59a3150f63f512a5543f"><param name="Name" value="IsChildVisible"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#b70387f83c5d26fc45f47732a756b129"><param name="Name" value="IsInputCaptured"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#d1df22b6123ecf30920eaf534928435a"><param name="Name" value="ReleaseInput"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#4ca1241a54e4e60a3edb54d403de308b"><param name="Name" value="ResetInterfaceRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#8e09e72861119eb1a69d9cfc1f3c2755"><param name="Name" value="ResetStatusMessage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#fc4791f84e20cc35c9978f570892b5cf"><param name="Name" value="SetChildSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#e64b6884418425f412243e83321d545e"><param name="Name" value="SetContentWindow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#670bed50e19e2c9b2ae1cb740c5a5a9c"><param name="Name" value="SetFlags"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#30eb91a60cdef840a6a2fc115fbe4d42"><param name="Name" value="SetInterfaceRect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#e9b7199de53c9bbbfd24455a9b27d35e"><param name="Name" value="SetStatusMessagePane"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#f9366cfbad0363acaefcbea4066c76bd"><param name="Name" value="ShowChild"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#d62605874538a0d60027c3b229f8a2c0"><param name="Name" value="Shutdown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#85987fa2498970ce0c22610e4c5bf10e"><param name="Name" value="Update"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#743cbf08f6126be133e2165fbaf42fc0"><param name="Name" value="UpdateConfiguration"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classwx_interface_manager.html#debe063970edb56f62db188e6b3a083f"><param name="Name" value="wxInterfaceManager"></OBJECT>
+  </UL>
+</UL>

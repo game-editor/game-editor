@@ -1,0 +1,16 @@
+/* XPM */
+static char *btn_min_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"8 8 2 1",
+"  c black",
+". c #003399",
+/* pixels */
+"........",
+"........",
+"........",
+"........",
+"........",
+".      .",
+".      .",
+"........"
+};

@@ -1,0 +1,19 @@
+/* XPM */
+static char *btn_hide_hp_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"10 11 2 1",
+"x c #404040",
+". c none",
+/* pixels */
+"..........",
+"..........",
+"..........",
+"..xx....xx",
+"...xx..xx.",
+"....xxxx..",
+".....xx...",
+"....xxxx..",
+"...xx..xx.",
+"..xx....xx",
+".........."
+};

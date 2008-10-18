@@ -1,0 +1,950 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>stdio.h</TITLE>
+<META NAME="description" CONTENT="stdio.h">
+<META NAME="keywords" CONTENT="EiC">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="EiC.css" tppabs="http://eic.sourceforge.net/documentation/EiC.css">
+
+<LINK REL="next" HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+<LINK REL="previous" HREF="node133.html" tppabs="http://eic.sourceforge.net/documentation/node133.html">
+<LINK REL="up" HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<LINK REL="next" HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+</HEAD>
+<body bgcolor="ffffff" text="3e3e64" link="863644" vlink="8e4e5c" alink="8e4e5c">
+<!-- StArT-EiC-top-LiNe -->
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="3e3e64" align="center"><font size="4" color="999999">
+#!/usr/bin/eic -f
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+int main() { printf("Hello World!\n"); return 0; }
+</td></font>
+<td bgcolor="3e3e64" align="center"><font size="3" color="999999">
+EiC 1> Hello World!;
+</td></font>
+</table>
+<!-- EnD-EiC-top-LiNe -->
+<blockquote>
+<!-- Begin-EiC-logo -->
+<img src="logo.gif" tppabs="http://eic.sourceforge.net/images/logo.gif" border="0"><br>  
+<!-- End-EiC-logo -->
+</blockquote>
+<hr size="1" width="93%">
+<!-- The master table that contains the left nav bar and the right-side
+     page text... -->
+<table border="0">
+<tr>
+   <!-- Begin navbar -->
+<td valign="top">
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/index.html'" tppabs="http://eic.sourceforge.net/index.html"><img border="0" src="navbar_news.gif" tppabs="http://eic.sourceforge.net/images/navbar_news.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/overview/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/overview/'" tppabs="http://eic.sourceforge.net/overview/"><img border="0" src="navbar_overview.gif" tppabs="http://eic.sourceforge.net/images/navbar_overview.gif"></a><br>
+   <a href="index.htm" tppabs="http://eic.sourceforge.net/documentation/"><img border="0" src="navbar_documentation.gif" tppabs="http://eic.sourceforge.net/images/navbar_documentation.gif"></a></br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/download/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/download/'" tppabs="http://eic.sourceforge.net/download/"><img border="0" src="navbar_download.gif" tppabs="http://eic.sourceforge.net/images/navbar_download.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/addons/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/addons/'" tppabs="http://eic.sourceforge.net/addons/"><img border="0" src="navbar_addons.gif" tppabs="http://eic.sourceforge.net/images/navbar_addons.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/links.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/links.html'" tppabs="http://eic.sourceforge.net/links.html"><img border="0" src="navbar_links.gif" tppabs="http://eic.sourceforge.net/images/navbar_links.gif"></a><br>
+   <a href="javascript:if(confirm('http://eic.sourceforge.net/support/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://eic.sourceforge.net/support/'" tppabs="http://eic.sourceforge.net/support/"><img border="0" src="navbar_support.gif" tppabs="http://eic.sourceforge.net/images/navbar_support.gif"></a><br>
+<br><br>
+<!-- Begin sponsors -->
+ <font size = "-1"> Sponsors:<br> </font>
+ <a href="javascript:if(confirm('http://sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://sourceforge.net/'" tppabs="http://sourceforge.net/"><img src="sflogo.php-group_id=6113&type=4" tppabs="http://sourceforge.net/sflogo.php?group_id=6113&type=4" width="125" height="38" border="0" alt="SourceForge.net Logo"></a> <br>
+<!-- End sponsors -->
+</td>
+   <!-- End navbar -->
+   <!-- Begin right-side page data -->
+<td valign="top">  <font size="3" face="Helvetica">
+<!--Navigation Panel-->
+<A NAME="tex2html2402"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2396"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2390"
+  HREF="node133.html" tppabs="http://eic.sourceforge.net/documentation/node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2398"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2400"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2403"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">stdlib.h</A>
+<B> Up:</B> <A NAME="tex2html2397"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">Standard C libraries</A>
+<B> Previous:</B> <A NAME="tex2html2391"
+  HREF="node133.html" tppabs="http://eic.sourceforge.net/documentation/node133.html">stddef.h</A>
+ &nbsp <B>  <A NAME="tex2html2399"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2401"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION006112000000000000000"></A>
+<A NAME="15835"></A>
+<A NAME="sec:stdioh"></A>
+<BR>
+stdio.h
+</H2>
+
+<P>
+<B><TT>stdio.h</TT></B> has the following types and macros defined:
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>FILE
+<DD><A NAME="item:FILE"></A><A NAME="15841"></A>
+
+<P>
+Type which records information necessary to control a stream.
+<DT>fpos_t
+<DD><A NAME="item:fpost"></A><A NAME="15843"></A>
+	Variable used for specification of positions within an opened file.
+<DT>size_t
+<DD><A NAME="15844"></A>
+	See <code>&lt;stddef.h&gt;</code> &#167;&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh">4.1.11</A>, pg:&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> 
+<DT>stdin
+<DD><A NAME="item:stdin"></A><A NAME="15847"></A>
+     Standard input stream. Automatically opened when a program begins
+     execution.
+<DT>stdout
+<DD><A NAME="item:stdout"></A><A NAME="15849"></A>
+     Standard output stream. Automatically opened when a program begins
+     execution.
+<DT>stderr
+<DD><A NAME="item:stderr"></A><A NAME="15851"></A>
+     Standard error stream. Automatically opened when a program begins
+     execution.
+<DT>FILENAME_MAX
+<DD><A NAME="item:FILENAMEMAX"></A><A NAME="15853"></A>
+     Maximum permissible length of a file name
+<DT>FOPEN_MAX
+<DD><A NAME="item:FOPENMAX"></A><A NAME="15855"></A>
+     Maximum number of files which may be open simultaneously.
+<DT>TMP_MAX
+<DD><A NAME="item:TMPMAX"></A><A NAME="15857"></A>
+     Maximum number of temporary files during program execution.
+<DT>NULL
+<DD>See <code>&lt;stddef.h&gt;</code> &#167;&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh">4.1.11</A>, pg:&nbsp;<A HREF="node133.html#sec:stddefh" tppabs="http://eic.sourceforge.net/documentation/node133.html#sec:stddefh"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A> 
+<DT>_IOFBF
+<DD><A NAME="item:IOFBF"></A><A NAME="15860"></A>
+<DT>_IOLBF
+<DD><A NAME="item:IOLBF"></A><A NAME="15862"></A> 
+<DT>_IONBF
+<DD><A NAME="item:IONBF"></A><A NAME="15864"></A>
+	Macros used for the third argument to function <B><TT>setvbuf</TT></B>.
+<DT>BUFSIZ
+<DD><A NAME="item:BUFSIZ"></A><A NAME="15867"></A>
+	The default buffer size used by <B><TT>setbuf</TT></B>.
+<DT>EOF
+<DD><A NAME="item:EOF"></A><A NAME="15870"></A>
+	Macro used to indicate the end-of-file.
+<DT>L_tmpnam
+<DD><A NAME="item:Ltmpnam"></A><A NAME="15872"></A>
+	Macro that expands to an intergergral constant expression, which is the size for 
+	the array of characters allocated to the default name returned by function <B><TT>tmpnam</TT></B>.
+<DT>SEEK_SET
+<DD><A NAME="item:SEEKSET"></A><A NAME="15875"></A>
+<DT>SEEK_CUR
+<DD><A NAME="item:SEEKCUR"></A><A NAME="15877"></A>
+<DT>SEEK_END
+<DD><A NAME="item:SEEKEND"></A><A NAME="15879"></A>
+	Macros values used by <B><TT>fseek</TT></B> to locate current file seek
+position with respect to the beginning of the file, the current file
+position, or the end of the file respectively.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+The following functions are defined in <B><TT>stdio.h</TT></B>
+
+<P>
+ 
+
+<DL COMPACT>
+<DT>fopen
+<DD><A NAME="item:fopen"></A><A NAME="15886"></A>
+
+<P>
+<B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+FILE* fopen(const char* filename, const char* mode);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Opens file <B><TT>filename</TT></B> and returns a pointer to an opened
+stream, or NULL on failure. The stream can be opened with <B><TT>mode</TT></B>:
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+"a"    Append. The file is created if it does not exist.
+"w"    Write. If the file exists, it is deleted first.
+"r"    Read. The file must already exist.
+"r+"   Read and write. The file must already exist. 
+"w+"   Read and write. If the file exists, it is deleted 
+       first.
+"a+"   Read and append. The file is created if it does  not 
+       exist.
+"ab"   Append binary. The file is created if it does not 
+       exist. 
+"rb"   Open binary file for reading. 
+"wb"   Write binary file. If the files exist, it gets truncated 
+       to  zero first.
+"ab+" or "a+b"  Append binary update.
+"rb+" or "r+b"  Read binary update.
+"wb+" or "w+b"  Write binary update.
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<DT>freopen
+<DD><A NAME="15898"></A>
+<A NAME="item:freopen"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+FILE* freopen(const char* filename, 
+              const char* mode, 
+              FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Opens file <B><TT>filename</TT></B> with the specified <B><TT>mode</TT></B> and associates with it the
+     specified <B><TT>stream</TT></B>. Returns stream or <B><TT>NULL</TT></B> on error. Usually used to change
+     files associated with <B><TT>stdin</TT></B>, <B><TT>stdout</TT></B>, <B><TT>stderr</TT></B>.
+
+<P>
+<DT>fflush
+<DD><A NAME="15912"></A>
+<A NAME="item:fflush"></A><B><TT>Synopsis</TT></B>
+
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fflush(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Flushes stream <B><TT>stream</TT></B>. Effect undefined for input
+     <B><TT>stream</TT></B>. Returns <B><TT>EOF</TT></B> for write error, zero
+     otherwise. <B><TT>fflush(NULL)</TT></B> flushes all output streams.
+
+<P>
+<DT>fclose
+<DD><A NAME="15923"></A>
+<A NAME="item:fclose"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fclose(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Closes stream <B><TT>stream</TT></B> (after flushing, if output stream). Returns <B><TT>EOF</TT></B> on
+     error, zero otherwise.
+
+<P>
+<DT>remove
+<DD><A NAME="15932"></A>
+<A NAME="item:remove"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int remove(const char* filename);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Removes file <B><TT>filename</TT></B>. Returns non-zero on failure.
+
+<P>
+<DT>rename
+<DD><A NAME="15940"></A>
+<A NAME="item:rename"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int rename(const char* oldname, const char* newname);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Changes name of file <B><TT>oldname</TT></B> to <B><TT>newname</TT></B>. Returns non-zero on failure.
+
+<P>
+<DT>tmpfile
+<DD><A NAME="15949"></A>
+<A NAME="item:tmpfile"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+FILE* tmpfile();
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Creates temporary file (mode "wb+") which will be removed when closed or
+     on normal program termination. Returns stream or NULL on failure.
+
+<P>
+<DT>tmpname
+<DD><A NAME="15956"></A>
+<A NAME="item:tmpname"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+char* tmpname(char s[L_tmpnam]);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Assigns to <B><TT>s</TT></B> and returns unique name for temporary file.
+
+<P>
+<DT>setvbuf
+<DD><A NAME="15964"></A>
+<A NAME="item:setvbuf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int setvbuf(FILE* stream, char* buf, int mode, size_t size);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Controls buffering for stream <B><TT>stream</TT></B> and can only be used
+	after the stream pointer by <B><TT>stream</TT></B> has been associated
+	initially with an open file and before any read or write
+	operations are performed. The argument <B><TT>mode</TT></B> determines how
+	<B><TT>stream</TT></B> will be buffered such as <B><TT>_IOLB</TT></B>, <B><TT>_IOFBF</TT></B>,
+	<B><TT>_IONBF</TT></B>.  If <B><TT>buf</TT></B> is non-NULL then setvbuf will assign
+	it as the buffer for <B><TT>stream</TT></B> otherwise <B><TT>setvbuf</TT></B> will
+	allocate one and the value at <B><TT>size</TT></B> will determine the size
+	of the buffer. 
+
+<P>
+Returns zero on success or nonzero on error.
+
+<P>
+<DT>setbuf
+<DD><A NAME="15982"></A>
+<A NAME="item:setbuf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+void setbuf(FILE* stream, char* buf);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Controls buffering for stream <B><TT>stream</TT></B>. See also
+	<B><TT>setvbuf</TT></B>&nbsp;<A HREF="node134.html#item:setvbuf" tppabs="http://eic.sourceforge.net/documentation/node134.html#item:setvbuf"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png" tppabs="http://eic.sourceforge.net/documentation/crossref.png"></A>. 
+
+<P>
+<DT>fprintf
+<DD><A NAME="15992"></A>
+<A NAME="item:fprintf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fprintf(FILE* stream, const char* format, ...);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Converts (with format <B><TT>format</TT></B>) and writes output to stream
+     <B><TT>stream</TT></B>. Number of characters written [negative on error] is
+     returned. Between 
+<P>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+Flags:
+- ........ left adjust
++ ........ always sign
+space .... outputs a space if the first character is not a 
+           sign.
+0 ........ zero pad
+# ........ Alternate form: for conversion character o, 
+           first digit will be zero, for [xX], prefix 0x 
+           or 0X to  non-zero, for [eEfgG], always decimal 
+           point, for [gG] trailing zeros not removed.
+Width:
+Period:
+Precision: 
+  for conversion character s, maximum characters to be
+  printed from the string, for [eEf], digits after decimal 
+  point, for [gG], significant digits, for an integer, 
+  minimum  number of digits to be printed.
+Length modifier:
+h ............. short or unsigned short
+l ............. long or unsigned long
+L ............. long double
+Conversions:
+d, i .......... int; signed decimal notation
+o    .......... int; unsigned octal notation
+x,X  .......... int; unsigned hexadecimal notation
+u    .......... int; unsigned decimal notation
+c    .......... int; single character
+s    .......... char* ; outputs the character of a string
+f    .......... double; [-]mmm.ddd
+e,E  .......... double; [-]m.dddddde(+|-)xx
+g,G  .......... double
+p    .......... void*; print as pointer
+n    .......... int*; number of chars written into arg
+%    .......... print %
+</PRE><BLOCKQUOTE></BLOCKQUOTE>Example Uses of of the format string in <B><TT>fprintf</TT></B>:
+
+<P>
+<PRE>
+%3d     print in a 3 digit field, right justified
+%3.0f   print no decimal point and no fraction
+%3.1f   print 1 digit after the decimal point
+%.1f    print 1 digit after the decimal point, any width
+</PRE>
+
+<P>
+Between the to specify left adjustment of the field, and two digit strings
+separated by a period.  The first string specifies minimum field
+width, and the second string specifies the maximum number of chars
+to be printed from the string.
+
+<P>
+<PRE>
+:%10s:          :hello, world:
+:%-10s:         :hello, world:
+:%20s:          :        hello, world:
+:%-20s:         :hello, world        :
+:%20.10s:       :          hello, wor:
+:%-20.10s:      :hello, wor          :
+:%.10s:         :hello, wor:
+</PRE>
+
+<P>
+<DT>printf
+<DD><A NAME="16010"></A>
+<A NAME="item:printf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int printf(const char* format, ...);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<B><TT>printf(f, ...)</TT></B> is equivalent to <B><TT>fprintf(stdout, f, ...)</TT></B>
+
+<P>
+<DT>sprintf
+<DD><A NAME="16019"></A>
+<A NAME="item:sprintf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int sprintf(char* s, const char* format, ...);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Like <B><TT>fprintf</TT></B>, but output written into string <B><TT>s</TT></B>, which must be
+     large enough to hold the output, rather than to a stream. Output
+     is null terminated; that is, the null character.  Return length
+     does not include the null terminating character.
+
+<P>
+<DT>vfprintf
+<DD><A NAME="16028"></A>
+<A NAME="item:vfprintf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int vfprintf(FILE* stream, const char* format, va_list arg);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Equivalent to <B><TT>fprintf</TT></B> except that the variable argument list
+     is replaced by <B><TT>arg</TT></B>, which must have been initialised by the
+     <B><TT>va_start</TT></B> macro and may have been used in calls to
+     <B><TT>va_arg</TT></B>. See <code>&lt;stdarg.h&gt;</code>
+
+<P>
+<DT>vprintf
+<DD><A NAME="16039"></A>
+<A NAME="item:vprintf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int vprintf(const char* format, va_list arg);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Equivalent to <B><TT>printf</TT></B> except that the variable argument list is replaced by
+     <B><TT>arg</TT></B>, which must have been initialised by the <B><TT>va_start</TT></B> macro and may have
+     been used in calls to <B><TT>va_arg</TT></B>. See verb+&lt;stdarg.h&gt;+
+
+<P>
+<DT>vsprintf
+<DD><A NAME="16050"></A>
+<A NAME="item:vsprintf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int vsprintf(char* s, const char* format, va_list arg);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Equivalent to <B><TT>sprintf</TT></B> except that the variable argument list is replaced
+     by <B><TT>arg</TT></B>, which must have been initialised by the <B><TT>va_start</TT></B> macro and may
+     have been used in calls to <B><TT>va_arg</TT></B>. See <code>&lt;stdarg.h&gt;</code>
+
+<P>
+<DT>fscanf
+<DD><A NAME="16061"></A>
+<A NAME="item:fscanf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fscanf(FILE* stream, const char* format, ...);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Performs formatted input conversion, reading from stream <B><TT>stream</TT></B> according
+     to format <B><TT>format</TT></B>. The function returns when <B><TT>format</TT></B> is fully processed.
+     Returns <B><TT>EOF</TT></B> if end-of-file or error occurs before any conversion;
+     otherwise, the number of items converted and assigned. Each of the
+     arguments following format must be a pointer. Format string may contain:
+
+<P>
+<PRE>
+   o Blanks, Tabs : ignored
+   o ordinary characters : expected to match next non-white-space
+   o % : Conversion specification, consisting of %, optional assignment
+     suppression character *, optional number indicating maximum field
+     width, optional [hlL] indicating width of target, conversion
+     character.
+Conversion characters:
+d
+     decimal integer; int* parameter required
+i
+     integer; int* parameter required; decimal, octal or hex
+o
+     octal integer; int* parameter required
+u
+     unsigned decimal integer; unsigned int* parameter required
+x
+     hexadecimal integer; int* parameter required
+c
+     characters; char* parameter required; up to width; no '\0' 
+     added; no skip
+s
+     string of non-white-space; char* parameter required; '\0' added
+e,f,g
+     floating-point number; float* parameter required
+p
+     pointer value; void* parameter required
+n
+     chars read so far; int* parameter required
+[...]
+     longest non-empty string from set; char* parameter required; '\0'
+[^...]
+     longest non-empty string not from set; char* parameter 
+     required; '\0'
+%
+          literal %; no assignment
+</PRE>
+<P>
+<DT>scanf
+<DD><A NAME="16074"></A>
+<A NAME="item:scanf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int scanf(const char* format, ...);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<B><TT>scanf(f, ...)</TT></B> is equivalent to <B><TT>fscanf(stdin, f, ...)</TT></B>
+
+<P>
+<DT>sscanf
+<DD><A NAME="16083"></A>
+<A NAME="item:sscanf"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int sscanf(char* s, const char* format, ...);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Like <B><TT>fscanf</TT></B>, but input read from string <B><TT>s</TT></B>.
+
+<P>
+<DT>fgetc
+<DD><A NAME="16092"></A>
+<A NAME="item:fgetc"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fgetc(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns next character from stream <B><TT>stream</TT></B> as an <B><TT>unsigned</TT></B>
+     <B><TT>char</TT></B>, or <B><TT>EOF</TT></B> on end-of-file or error.
+
+<P>
+<DT>fgets
+<DD><A NAME="16103"></A>
+<A NAME="item:fgets"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+char* fgets(char* s, int n, FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Reads at most the next <B><TT>n</TT></B>-1 characters from stream stream into <B><TT>s</TT></B>, stopping
+     if a newline is encountered (after copying the newline to s). s is
+     null terminated. Returns <B><TT>s</TT></B>, or <B><TT>NULL</TT></B> on end-of-file or error.
+
+<P>
+<DT>fputc
+<DD><A NAME="16114"></A>
+<A NAME="item:fputc"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fputc(int c, FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Writes <B><TT>c</TT></B>, converted to <B><TT>unsigned char</TT></B>, to stream <B><TT>stream</TT></B>. Returns the
+     character written, or <B><TT>EOF</TT></B> on error.
+
+<P>
+<DT>fputs
+<DD><A NAME="16125"></A>
+<A NAME="item:fputs"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+char* fputs(const char* s, FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Writes <B><TT>s</TT></B>, which need not contain <code>'\n'</code> on stream stream. Returns
+     non-negative on success, <B><TT>EOF</TT></B> on error.
+
+<P>
+<DT>getc
+<DD><A NAME="16134"></A>
+<A NAME="item:getc"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int getc(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Equivalent to <B><TT>fgetc</TT></B> except that it may be a macro.
+
+<P>
+<DT>getchar
+<DD><A NAME="16142"></A>
+<A NAME="item:getchar"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int getchar();
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Equivalent to <B><TT>getc(stdin)</TT></B>.
+
+<P>
+<DT>gets
+<DD><A NAME="16150"></A>
+<A NAME="item:gets"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+char* gets(char* s);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Reads next line from <B><TT>stdin</TT></B> into <B><TT>s</TT></B>. Replaces terminating newline with <code>'\0'</code>.
+     Returns <B><TT>s</TT></B>, or <B><TT>NULL</TT></B> on end-of-file or error.
+
+<P>
+<DT>putc
+<DD><A NAME="16161"></A>
+<A NAME="item:putc"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int putc(int c, FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Equivalent to <B><TT>fputc</TT></B> except that it may be a macro.
+
+<P>
+<DT>putchar
+<DD><A NAME="16169"></A>
+<A NAME="item:putchar"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int putchar(int c);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<B><TT>putchar(c)</TT></B> is equivalent to <B><TT>putc(c, stdout)</TT></B>.
+
+<P>
+<DT>puts
+<DD><A NAME="16178"></A>
+<A NAME="item:puts"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int puts(const char* s);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Writes <B><TT>s</TT></B> and a newline to <B><TT>stdout</TT></B>. Returns non-negative on success, <B><TT>EOF</TT></B> on
+     error.
+
+<P>
+<DT>unget
+<DD><A NAME="16188"></A>
+<A NAME="item:unget"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int unget(int c, FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Pushes <B><TT>c</TT></B> (which must not be EOF), converted to <B><TT>unsigned
+     char</TT></B>, onto stream <B><TT>stream</TT></B> such that it will be returned by the
+     next read. Only one character of pushback is guaranteed for a
+     stream. Returns <B><TT>c</TT></B>, or <B><TT>EOF</TT></B> on error.
+
+<P>
+<DT>fread
+<DD><A NAME="16200"></A>
+<A NAME="item:fread"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+size_t fread(void* ptr, 
+             size_t size, 
+             size_t nobj, 
+             FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Reads at most <B><TT>nobj</TT></B> objects of size <B><TT>size</TT></B> from stream
+     <B><TT>stream</TT></B> into <B><TT>ptr</TT></B>.  Returns the number of objects
+     read. <B><TT>feof</TT></B> and <B><TT>ferror</TT></B> must be used to determine status.
+
+<P>
+<DT>fwrite
+<DD><A NAME="16213"></A>
+<A NAME="item:fwrite"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+size_t fwrite(const void* ptr, 
+              size_t size, 
+              size_t nobj, 
+              FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Writes to stream <B><TT>stream</TT></B>, <B><TT>nobj</TT></B> objects of size <B><TT>size</TT></B>
+     from array <B><TT>ptr</TT></B>. Returns the number of objects written (which
+     will be less than <B><TT>nobj</TT></B> on error).
+
+<P>
+<DT>fseek
+<DD><A NAME="16225"></A>
+<A NAME="item:fseek"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fseek(FILE* stream, long offset, int origin);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Sets file position for stream <B><TT>stream</TT></B>. For a binary file,
+     position is set to <B><TT>offset</TT></B> characters from <B><TT>origin</TT></B>, which
+     may be <B><TT>SEEK_SET</TT></B> (beginning), <B><TT>SEEK_CUR</TT></B> (current
+     position) or <B><TT>SEEK_END</TT></B> (end-of-file); for a text stream,
+     <B><TT>offset</TT></B> must be zero or a value returned by <B><TT>ftell</TT></B> (in
+     which case <B><TT>origin</TT></B> must be <B><TT>SEEK_SET</TT></B>). Returns non-zero on
+     error.
+
+<P>
+<DT>ftell
+<DD><A NAME="16242"></A>
+<A NAME="item:ftell"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+long ftell(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns current file position for stream <B><TT>stream</TT></B>, or -1L on error.
+
+<P>
+<DT>rewind
+<DD><A NAME="16250"></A>
+<A NAME="item:rewind"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+void rewind(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<B><TT>rewind(stream)</TT></B> is equivalent to <B><TT>fseek(stream, 0L, SEEK_SET)</TT></B>;
+
+<P>
+<DT>fgetpos
+<DD><A NAME="16259"></A>
+<A NAME="item:fgetpos"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fgetpos(FILE* stream, fpos_t* ptr);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Assigns current position in stream stream to <B><TT>*ptr</TT></B>. Type <code>fpos_t</code> is suitable
+     for recording such values. Returns non-zero on error.
+<DT>fsetpos
+<DD><A NAME="16267"></A>
+<A NAME="item:fsetpos"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int fsetpos(FILE* stream, const fpos_t* ptr);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Sets current position of stream <B><TT>stream</TT></B> to <B><TT>*ptr</TT></B>. Returns non-zero on <B><TT>error</TT></B>.
+
+<P>
+<DT>clearerr
+<DD><A NAME="16277"></A>
+<A NAME="item:clearerr"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+void clearerr(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Clears the end-of-file and error indicators for stream <B><TT>stream</TT></B>.
+
+<P>
+<DT>feof
+<DD><A NAME="16285"></A>
+<A NAME="item:feof"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int feof(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns non-zero if end-of-file indicator for stream <B><TT>stream</TT></B> is set.
+
+<P>
+<DT>ferror
+<DD><A NAME="16293"></A>
+<A NAME="item:ferror"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+int ferror(FILE* stream);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Returns non-zero if error indicator for stream <B><TT>stream</TT></B> is set.
+
+<P>
+<DT>perror
+<DD><A NAME="16301"></A>
+<A NAME="item:perror"></A><B><TT>Synopsis</TT></B>
+
+
+<BLOCKQUOTE></BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+void perror(const char* s);
+</PRE><BLOCKQUOTE></BLOCKQUOTE>
+<P>
+Prints <B><TT>s</TT></B> and implementation-defined error message corresponding to <B><TT>errno</TT></B>:
+     <code>fprintf(stderr, "%s: %s\n", s, "error message")</code>
+<BR>
+See <B><TT>strerror</TT></B>.
+
+<P>
+</DD>
+</DL><FONT SIZE="-1"> </FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2402"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png" tppabs="http://eic.sourceforge.net/documentation/next.png"></A> 
+<A NAME="tex2html2396"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png" tppabs="http://eic.sourceforge.net/documentation/up.png"></A> 
+<A NAME="tex2html2390"
+  HREF="node133.html" tppabs="http://eic.sourceforge.net/documentation/node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png" tppabs="http://eic.sourceforge.net/documentation/prev.png"></A> 
+<A NAME="tex2html2398"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png" tppabs="http://eic.sourceforge.net/documentation/contents.png"></A> 
+<A NAME="tex2html2400"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png" tppabs="http://eic.sourceforge.net/documentation/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2403"
+  HREF="node135.html" tppabs="http://eic.sourceforge.net/documentation/node135.html">stdlib.h</A>
+<B> Up:</B> <A NAME="tex2html2397"
+  HREF="node122.html" tppabs="http://eic.sourceforge.net/documentation/node122.html">Standard C libraries</A>
+<B> Previous:</B> <A NAME="tex2html2391"
+  HREF="node133.html" tppabs="http://eic.sourceforge.net/documentation/node133.html">stddef.h</A>
+ &nbsp <B>  <A NAME="tex2html2399"
+  HREF="node1.html" tppabs="http://eic.sourceforge.net/documentation/node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2401"
+  HREF="node166.html" tppabs="http://eic.sourceforge.net/documentation/node166.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+</td> <!-- End right-side page text -->
+</tr> 
+</table>
+<!-- End master table -->
+</ADDRESS>
+</BODY>
+</HTML>

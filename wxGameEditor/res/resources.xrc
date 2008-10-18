@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxFrame" name="ID_FRAME" subclass="wxMainFrame">
+        <style>wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX</style>
+        <size>800,600</size>
+        <title>Game Editor</title>
+        <object class="wxMenuBar" name="ID_MENUBAR">
+            <object class="wxMenu">
+                <label>&amp;File</label>
+                <object class="wxMenuItem" name="ID_MENU">
+                    <label>New...</label>
+                </object>
+                <object class="wxMenuItem" name="ID_MENU_EXIT">
+                    <label>Exit</label>
+                </object>
+            </object>
+            <object class="wxMenu">
+                <label>&amp;Window</label>
+                <object class="wxMenuItem" name="ID_MENU_TITLE_BAR">
+                    <label>Title Bar</label>
+                    <checkable>1</checkable>
+                    <checked>1</checked>
+                </object>
+                <object class="wxMenuItem" name="ID_MENU_LAYOUT_RESET">
+                    <label>Reset Layout</label>
+                </object>
+                <object class="separator">
+                </object>
+            </object>
+        </object>
+        <object class="wxToolBar" name="ID_TOOLBAR">
+            <style>wxTB_FLAT|wxTB_DOCKABLE|wxTB_HORIZONTAL|wxTB_NODIVIDER|wxNO_BORDER</style>
+            <bitmapsize>20,20</bitmapsize>
+            <object class="tool" name="ID_OPEN">
+                <bitmap>open_b.gif</bitmap>
+                <tooltip>Open</tooltip>
+            </object>
+            <object class="tool" name="ID_SAVE">
+                <bitmap>save_b.gif</bitmap>
+                <tooltip>Save</tooltip>
+            </object>
+            <object class="separator">
+            </object>
+            <object class="tool" name="ID_GAME_MODE">
+                <bitmap>play_b.gif</bitmap>
+                <tooltip>Game Mode</tooltip>
+            </object>
+        </object>
+    </object>
+    <object class="wxDialog" name="ID_DIALOG_SAVE_LAYOUT" subclass="DlgSaveLayout">
+        <style>wxCAPTION|wxTAB_TRAVERSAL</style>
+        <exstyle>wxWS_EX_BLOCK_EVENTS</exstyle>
+        <size>400,300</size>
+        <title>Save Layout</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE</flag>
+                        <border>5</border>
+                        <object class="wxStaticText" name="wxID_STRING_NAME">
+                            <label>Name:</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxComboBox" name="ID_COMBOBOX_LAYOUT">
+                            <size>128,-1</size>
+                            <style>wxCB_DROPDOWN</style>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxButton" name="wxID_OK">
+                            <size>-1,19</size>
+                            <label>&amp;OK</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxButton" name="wxID_CANCEL">
+                            <size>-1,19</size>
+                            <label>&amp;Cancel</label>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

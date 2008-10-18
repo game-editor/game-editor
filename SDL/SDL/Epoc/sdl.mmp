@@ -1,0 +1,94 @@
+// *** EPOC MMP FILE FOR SDL.LIB
+
+// *** Definitions
+
+TARGET          sdl.lib
+TARGETTYPE      lib
+SOURCEPATH      ..\src
+
+// *** defines
+
+MACRO			NO_SIGNAL_H
+MACRO			ENABLE_EPOC 
+MACRO			DISABLE_JOYSTICK
+MACRO			DISABLE_CDROM
+MACRO			DISABLE_AUDIO
+
+// *** General sources
+
+SOURCE          SDL.c
+SOURCE          SDL_error.c
+SOURCE          SDL_fatal.c
+
+// *** Video sources
+
+SOURCE          video\SDL_blit.c
+SOURCE          video\SDL_blit_0.c
+SOURCE          video\SDL_blit_1.c
+SOURCE          video\SDL_blit_A.c
+SOURCE          video\SDL_blit_N.c
+SOURCE          video\SDL_bmp.c
+SOURCE          video\SDL_cursor.c
+SOURCE          video\SDL_gamma.c
+SOURCE          video\SDL_pixels.c
+SOURCE          video\SDL_RLEaccel.c
+SOURCE          video\SDL_stretch.c
+SOURCE          video\SDL_surface.c
+SOURCE          video\SDL_video.c
+SOURCE          video\SDL_yuv.c
+SOURCE          video\SDL_yuv_mmx.c
+SOURCE          video\SDL_yuv_sw.c
+SOURCE          video\Epoc\SDL_epocvideo.cpp
+SOURCE          video\Epoc\SDL_epocevents.cpp   
+
+// *** Audio sources
+//SOURCE		audio\SDL_audio.c
+//SOURCE		audio\SDL_audiocvt.c
+//SOURCE		audio\SDL_audiodev.c
+//SOURCE		audio\SDL_audiomem.c
+//SOURCE		audio\SDL_mixer.c
+//SOURCE		audio\SDL_wave.c
+
+// *** Endian sources
+
+SOURCE          endian\SDL_endian.c
+
+// *** Thread sources
+
+SOURCE          thread\SDL_thread.c
+SOURCE          thread\epoc\SDL_sysmutex.cpp
+SOURCE          thread\epoc\SDL_syssem.cpp
+SOURCE          thread\epoc\SDL_systhread.cpp
+
+// *** Events sources
+
+SOURCE          events\SDL_active.c
+SOURCE          events\SDL_events.c
+SOURCE          events\SDL_keyboard.c
+SOURCE          events\SDL_mouse.c
+SOURCE          events\SDL_quit.c
+SOURCE          events\SDL_resize.c
+
+// *** Timer sources
+
+SOURCE          timer\SDL_timer.c
+SOURCE          timer\epoc\SDL_systimer.cpp
+
+// *** File sources
+
+SOURCE          file\SDL_rwops.c
+
+// *** Include paths
+
+SYSTEMINCLUDE   \epoc32\include \epoc32\include\libc
+USERINCLUDE     ..\include ..\src ..\src\video ..\src\video\epoc ..\src\events
+//USERINCLUDE		..\src\audio 
+//USERINCLUDE		..\src\audio\epoc
+USERINCLUDE     ..\src\main\epoc
+USERINCLUDE     ..\src\thread ..\src\thread\generic ..\src\thread\epoc
+USERINCLUDE     ..\src\timer ..\src\joystick
+
+
+// *** Libraries
+
+LIBRARY         euser.lib fbscli.lib estlib.lib ws32.LIB hal.lib gdi.lib
