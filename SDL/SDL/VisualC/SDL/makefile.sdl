@@ -147,10 +147,10 @@ $(BIN): $(OBJ)
 #	$(CC) -c ../../src/audio/alsa/SDL_alsa_audio.c -o ../../../../output//SDL_alsa_audio.o $(CFLAGS)
 
 ifeq (,$(findstring LLVM,$(TARGET)))
-    ../../../../output//SDL_dmaaudio.o: ../../src/audio/dma/SDL_dmaaudio.c
+../../../../output//SDL_dmaaudio.o: ../../src/audio/dma/SDL_dmaaudio.c
 	$(CC) -c ../../src/audio/dma/SDL_dmaaudio.c -o ../../../../output//SDL_dmaaudio.o $(CFLAGS)
 	
-	../../../../output//SDL_dspaudio.o: ../../src/audio/dsp/SDL_dspaudio.c
+../../../../output//SDL_dspaudio.o: ../../src/audio/dsp/SDL_dspaudio.c
 	$(CC) -c ../../src/audio/dsp/SDL_dspaudio.c -o ../../../../output//SDL_dspaudio.o $(CFLAGS)
 endif
 

@@ -4,6 +4,7 @@
 	Version="9,00"
 	Name="stc"
 	ProjectGUID="{A0C40420-78FC-4ED1-A7A9-B8A98AD894BD}"
+	RootNamespace="stc"
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -946,7 +947,7 @@
 		</Configuration>
 		<Configuration
 			Name="Unicode Release|Win32"
-			OutputDirectory=".\..\..\src\stc\..\..\..\lib\vc_lib"
+			OutputDirectory="..\..\..\output\vc_lib\"
 			IntermediateDirectory=".\vc_mswu\stc"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -1155,7 +1156,7 @@
 		</Configuration>
 		<Configuration
 			Name="Universal Release|Win32"
-			OutputDirectory=".\..\..\src\stc\..\..\..\lib\vc_lib"
+			OutputDirectory="..\..\..\output\vc_lib\"
 			IntermediateDirectory=".\vc_mswuniv\stc"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -1396,7 +1397,7 @@
 				RuntimeLibrary="1"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				PrecompiledHeaderFile=".\vc_mswd\stc/stc.pch"
+				PrecompiledHeaderFile=""
 				AssemblerListingLocation="..\..\..\output\vc_lib\"
 				ObjectFile="..\..\..\output\vc_lib\"
 				ProgramDataBaseFileName="..\..\..\output\vc_lib\\wxmsw_stc.pdb"
@@ -2265,7 +2266,7 @@
 		</Configuration>
 		<Configuration
 			Name="Universal Debug|Win32"
-			OutputDirectory=".\..\..\src\stc\..\..\..\lib\vc_lib"
+			OutputDirectory="..\..\..\output\vc_lib\"
 			IntermediateDirectory=".\vc_mswunivd\stc"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -2508,7 +2509,7 @@
 				BufferSecurityCheck="false"
 				EnableFunctionLevelLinking="true"
 				RuntimeTypeInfo="true"
-				PrecompiledHeaderFile=".\vc_msw\stc/stc.pch"
+				PrecompiledHeaderFile=""
 				AssemblerListingLocation="..\..\..\output\vc_lib\"
 				ObjectFile="..\..\..\output\vc_lib\"
 				ProgramDataBaseFileName="..\..\..\output\vc_lib\wxmsw_stc.pdb"
@@ -2683,7 +2684,7 @@
 		</Configuration>
 		<Configuration
 			Name="Universal Unicode Release|Win32"
-			OutputDirectory=".\..\..\src\stc\..\..\..\lib\vc_lib"
+			OutputDirectory="..\..\..\output\vc_lib\"
 			IntermediateDirectory=".\vc_mswunivu\stc"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -3124,7 +3125,7 @@
 		</Configuration>
 		<Configuration
 			Name="Unicode Debug|Win32"
-			OutputDirectory=".\..\..\src\stc\..\..\..\lib\vc_lib"
+			OutputDirectory="..\..\..\output\vc_lib\"
 			IntermediateDirectory=".\vc_mswud\stc"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -3333,7 +3334,7 @@
 		</Configuration>
 		<Configuration
 			Name="Universal Unicode Debug|Win32"
-			OutputDirectory=".\..\..\src\stc\..\..\..\lib\vc_lib"
+			OutputDirectory="..\..\..\output\vc_lib\"
 			IntermediateDirectory=".\vc_mswunivud\stc"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"

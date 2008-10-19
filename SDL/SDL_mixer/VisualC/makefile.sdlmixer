@@ -3,7 +3,7 @@
 
 RES  = 
 OBJ  = ../../../output//bitwise.o ../../../output//block.o ../../../output//codebook.o ../../../output//floor0.o ../../../output//floor1.o ../../../output//framing.o ../../../output//info.o ../../../output//mapping0.o ../../../output//mdct.o ../../../output//registry.o ../../../output//res012.o ../../../output//sharedbook.o ../../../output//synthesis.o ../../../output//vorbisfile.o ../../../output//window.o ../../../output//effect_position.o ../../../output//effect_stereoreverse.o ../../../output//effects_internal.o ../../../output//load_aiff.o ../../../output//load_ogg.o ../../../output//load_voc.o ../../../output//mixer.o ../../../output//music.o ../../../output//music_cmd.o ../../../output//music_ogg.o ../../../output//wavestream.o $(RES)
-INCS = -I"../../SDL/include"  -I"../SDL_mad"  -I"../mikmod"  -I"../timidity"  -I"../native_midi"  -I"tremor" 
+INCS = -I"../../SDL/include"  -I"../SDL_mad"  -I"../MIKMOD"  -I"../timidity"  -I"../native_midi"  -I"tremor" 
 BIN  = ../../../output/SDL_mixer.a
 CFLAGS = $(INCS) $(TARGET) -DWAV_MUSIC -DMOD_MUSIC -DMID_MUSIC -DUSE_NATIVE_MIDI -DOGG_MUSIC -DUSE_RWOPS -D_LIB $(BUILD_TYPE)
 

@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////
-To compile the gameEditor and wxGameEditor projects (editor version, not the stand alone engines):
+To compile the gameEditor (current interface) and wxGameEditor (new interface) projects (editor version, not the stand alone engines):
 
 1) Get the RakNet at http://www.jenkinssoftware.com/
 
@@ -49,7 +49,6 @@ Configure all projects of the wxWidgets to:
 Multi-threaded Debug
 
 
-
 /////////////////////////////////////////////////////////////////////////
 Windows:
 
@@ -58,21 +57,12 @@ In the Visual Studio 2008, choose the version you want to compile:
 	- View->Property Manager
 	- In gameEditor project , _BaseConfiguration of any configuration, in the User Macros put the configuration you want in the VersionType:
 
-- To compile for the GP2X select 'Windows Mobile 5.0 Pocket PC SDK (ARMV4I)' (you need to install the Windows Mobile 5.0 SDK for Pocket PC and have the devkitpro installed (http://www.devkitpro.org/))
-		
-	- Para compilar em outra plataforma, se necessario:
-	
-		- Ativar 'GCC Compiler' em Project -> 'Custom Build Rules' nos projetos: 
-		
-			eiclib, engine, gameEditor, gameEngine, mikmod, native_midi, RakNet, 
-			staticSDL, staticSDL_mixer, timidity
-			
-		- Em Project -> 'Tool Build Order' Mover 'GCC Linker' e 'GCC Archiver' para depois de 'Linker Tool'
-		- Colocar as bibliotecas geradas em Properties -> 'GCC Linker' -> General -> 'Additional Dependencies'
-			
-			../output/PocketPC/RakNet.lib;../output/PocketPC/gameEngine.lib;../output/PocketPC/engine.lib;../output/PocketPC/eiclib.lib;../output/PocketPC/staticSDL_mixer.lib;../output/PocketPC/mikmod.lib;../output/PocketPC/timidity.lib;../output/PocketPC/native_midi.lib;../output/PocketPC/staticSDL.lib;E:\devkitpro\devkitGP2X\sysroot\usr\lib\libm.a;E:\devkitpro\devkitGP2X\sysroot\usr\lib\libpthread.a;E:\devkitpro\devkitGP2X\arm-linux\lib\libstdc++.a;$(NOINHERIT)
-		
+- To compile the Pocket PC engine, select the 'Pocket PC 2003 (ARMV4)' configuration (you need to to get the PocketHAL library at http://www.droneship.com)
 
+- To make a Pocket PC compilation works in the Pocket PC 2002, uses: /subsystem:windowsce,3.00 /MACHINE:ARM	
+
+- To compile for the GP2X select the 'Windows Mobile 5.0 Pocket PC SDK (ARMV4I)' configuration (you need to install the Windows Mobile 5.0 SDK for Pocket PC and have the devkitpro installed (http://www.devkitpro.org/))
+		
 - Use the GameControl::CreateEngines() function to create the bin files from the compiled executables:
   transforma os arquivos .exe em .bin compactados:
   
@@ -82,10 +72,11 @@ In the Visual Studio 2008, choose the version you want to compile:
 	gameEditorPocket.exe.gpe	-> bin\\gp2x.bin
 
 
-- To make a Pocket PC compilation works in the Pocket PC 2002, uses: /subsystem:windowsce,3.00 /MACHINE:ARM	
-
 
 /////////////////////////////////////////////////////////////////////////
 Linux:
 
-make makefile
+1) Open a console window
+2) Go to the Game Editor directory
+3) type: make
+4) copy the contents of the directory gameEditor/res to output/editor

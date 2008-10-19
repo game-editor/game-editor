@@ -5,7 +5,6 @@
 	Name="stedit"
 	ProjectGUID="{DCD7EA4C-44E4-40C3-B367-B2608578A7ED}"
 	RootNamespace="stedit"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -1837,10 +1836,10 @@
 				BufferSecurityCheck="false"
 				EnableFunctionLevelLinking="true"
 				RuntimeTypeInfo="true"
-				PrecompiledHeaderFile=".\msvc6prj_lib\stedit/wxstedit_stedit.pch"
-				AssemblerListingLocation=".\msvc6prj_lib\stedit/"
-				ObjectFile=".\msvc6prj_lib\stedit/"
-				ProgramDataBaseFileName="..\lib\stedit.pdb"
+				PrecompiledHeaderFile=""
+				AssemblerListingLocation="..\..\..\output\stedit\"
+				ObjectFile="..\..\..\output\stedit\"
+				ProgramDataBaseFileName="..\..\..\output\stedit.pdb"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2252,10 +2251,10 @@
 				RuntimeLibrary="1"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				PrecompiledHeaderFile=".\msvc6prjd_lib\stedit/wxstedit_stedit.pch"
-				AssemblerListingLocation=".\msvc6prjd_lib\stedit/"
-				ObjectFile=".\msvc6prjd_lib\stedit/"
-				ProgramDataBaseFileName="..\lib\steditd.pdb"
+				PrecompiledHeaderFile=""
+				AssemblerListingLocation="..\..\..\output\stedit\"
+				ObjectFile="..\..\..\output\stedit\"
+				ProgramDataBaseFileName="..\..\..\output\steditd.pdb"
 				WarningLevel="4"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -5838,4 +5837,6 @@
 			</File>
 		</Filter>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>
