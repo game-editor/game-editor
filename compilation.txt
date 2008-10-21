@@ -4,7 +4,7 @@ To compile the gameEditor (current interface) and wxGameEditor (new interface) p
 1) Get the RakNet at http://www.jenkinssoftware.com/
 
 Configure the LibStatic project to:
-Multi-threaded ( or Multi-threaded Debug)
+Multi-threaded (/MT or /MTd)
 
 Build the LibStatic version of the RakNet
 
@@ -27,13 +27,12 @@ Put the follow llvm dirs in your library path:
 llvm/win32
 
 Configure all projects of the LLVM to:
-Multi-threaded ( or Multi-threaded Debug)
+Multi-threaded (/MT or /MTd)
 
 Build the clang project
 
 3) Get the wxWidgets at http://www.wxwidgets.org/
 
-Compile with the option Multi-threaded (/MT or /MTd)
 
 Put the follow llvm dirs in your include path:
 
@@ -47,7 +46,9 @@ Put the follow llvm dirs in your library path:
 wxWidgets/lib/vc_lib
 
 Configure all projects of the wxWidgets to:
-Multi-threaded ( or Multi-threaded Debug)
+Multi-threaded (/MT or /MTd)
+
+Build all projects
 
 
 /////////////////////////////////////////////////////////////////////////
