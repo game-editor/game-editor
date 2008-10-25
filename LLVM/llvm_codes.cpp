@@ -393,8 +393,7 @@ public:
 
   void setHeaderSearch(HeaderSearch &HS) { TheHeaderSearch = &HS; }
 
-  virtual bool IgnoreDiagnostic(Diagnostic::Level Level, 
-                                FullSourceLoc Pos);
+
 
   virtual void HandleDiagnostic(Diagnostic &Diags, Diagnostic::Level DiagLevel,
                                 FullSourceLoc Pos,
@@ -452,23 +451,7 @@ std::string TextDiagnostics::FormatDiagnostic(Diagnostic &Diags,
   return Msg;
 }
 
-bool TextDiagnostics::IgnoreDiagnostic(Diagnostic::Level Level,
-                                       FullSourceLoc Pos) {
-  if (Pos.isValid()) {
-    // If this is a warning or note, and if it a system header, suppress the
-    // diagnostic.
-    if (Level == Diagnostic::Warning || Level == Diagnostic::Note) {
-      if (const FileEntry *F = Pos.getFileEntryForLoc()) {
-        DirectoryLookup::DirType DirInfo = TheHeaderSearch->getFileDirFlavor(F);
-        if (DirInfo == DirectoryLookup::SystemHeaderDir ||
-            DirInfo == DirectoryLookup::ExternCSystemHeaderDir)
-          return true;
-      }
-    }
-  }
 
-  return false;
-}
 
 static llvm::cl::opt<bool>
 NoShowColumn("fno-show-column",
