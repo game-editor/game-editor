@@ -23,7 +23,7 @@ The following restrictions apply to the use of GEC:
 (a) This license is granted to individuals only, and cannot be owned by corporate or business entities.
 (b) Licensee may not use the License if the annual revenue of the Company employing, partnering, or affiliated in any way with the Licensee is greater than $100,000 annually. Companies that grow to greater than $100,000 annually must upgrade to the GEC Commercial Product License for each seat of the GEC product.
 (c) Licensee may not sell any: (i) derivative works of the Engine or IDE, including translations or localizations, other than the Games; redistribute, encumber, sell, rent, lease, sublicense, or otherwise transfer rights to GEC; or (iv) remove or alter any trademark, logo, copyright or other proprietary notices, legends, symbols or labels in GEC.
-(d) Licensee may not distribute the binaries, source code or documentation to the engine in any manner, without prior written approval from http://game-editorcom and the recipient also as a license to GEC.
+(d) Licensee may not distribute the binaries, source code or documentation to the engine in any manner, without prior written approval from http://game-editor.com and the recipient also as a license to GEC.
 (e) Licensee may not release Products intended for operation on Game Console Systems including the Microsoft XBox, Sony Playstation 2, Nintendo GameCube, or their successors without first obtaining a separate GEC Game Engine Console License from http://game-editor.com.
 (f) Licensee may not be a government contractor, government entity, large corporation, or small company performing subcontract work for any of these entities without obtaining a Commercial License. Small companies cannot take royalty advances or development fees from large companies or corporate entities for Games using the GEC without first obtaining a Commercial License for all programmers.
 
@@ -65,7 +65,7 @@ Game Editor uses the RakNet network library. The use of RakNet in your game requ
 
 8. TERMINATION.
 
-Without prejudice to any other rights, Licensor may terminate this Agreement if Licensee breaches any of its terms and conditions. Upon termination, Licensee shall destroy all copies of the Engine. Licensee's access to the Game-Editor Private SDK forums and access to source upgrades may be pulled at http://game-editor.com sole discretion that Licensee is not abiding by reasonable rules and etiquette regarding such access.
+Without prejudice to any other rights, Licensor may terminate this Agreement if Licensee breaches any of its terms and conditions. Upon termination, Licensee shall destroy all copies of the Engine. Licensee's access to the Game Editor Private SDK forums and access to source upgrades may be pulled at http://game-editor.com sole discretion that Licensee is not abiding by reasonable rules and etiquette regarding such access.
 
 9. DISCLAIMER OF WARRANTY.
 
