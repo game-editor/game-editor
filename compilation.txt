@@ -31,10 +31,9 @@ Multi-threaded (/MT or /MTd)
 
 Build the clang project
 
-3) Get the wxWidgets at http://www.wxwidgets.org/
+3) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
 
-
-Put the follow llvm dirs in your include path:
+Put the follow dirs in your include path:
 
 wxWidgets/include
 wxWidgets/include/msvc
@@ -45,6 +44,7 @@ Put the follow llvm dirs in your library path:
 
 wxWidgets/lib/vc_lib
 
+Open the wx.dsw project
 Configure all projects of the wxWidgets to:
 Multi-threaded (/MT or /MTd)
 
