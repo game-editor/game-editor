@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<anthemion-project version="1.0.0.0" xmlns="http://www.anthemion.co.uk">
+  <header>
+    <long name="name_counter">0</long>
+    <string name="html_path">""</string>
+    <string name="title">""</string>
+    <string name="author">""</string>
+    <string name="description">""</string>
+    <string name="xrc_filename">""</string>
+    <bool name="convert_images_to_xpm">0</bool>
+    <bool name="inline_images">0</bool>
+    <bool name="generate_cpp_for_xrc">0</bool>
+    <long name="working_mode">1</long>
+    <bool name="use_help_text_for_tooltips">1</bool>
+    <bool name="translate_strings">1</bool>
+    <bool name="make_unicode_strings">1</bool>
+    <bool name="extract_strings">0</bool>
+    <string name="user_name">"Volodymir (T-Rex) Tryapichko"</string>
+    <string name="copyright_string">"Volodymir (T-Rex) Tryapichko, 2008"</string>
+    <string name="resource_prefix">""</string>
+    <bool name="use_two_step_construction">0</bool>
+    <bool name="use_enums">0</bool>
+    <string name="current_platform">"&lt;All platforms&gt;"</string>
+    <string name="target_wx_version">"2.6.4"</string>
+    <string name="cpp_header_comment">"/////////////////////////////////////////////////////////////////////////////
+// Name:        %HEADER-FILENAME%
+// Purpose:     
+// Author:      %AUTHOR%
+// Modified by: 
+// Created:     %DATE%
+// RCS-ID:      
+// Copyright:   %COPYRIGHT%
+// Licence:     
+/////////////////////////////////////////////////////////////////////////////
+
+"</string>
+    <string name="cpp_implementation_comment">"/////////////////////////////////////////////////////////////////////////////
+// Name:        %SOURCE-FILENAME%
+// Purpose:     
+// Author:      %AUTHOR%
+// Modified by: 
+// Created:     %DATE%
+// RCS-ID:      
+// Copyright:   %COPYRIGHT%
+// Licence:     
+/////////////////////////////////////////////////////////////////////////////
+
+"</string>
+    <string name="cpp_symbols_file_comment">"/////////////////////////////////////////////////////////////////////////////
+// Name:        %SYMBOLS-FILENAME%
+// Purpose:     Symbols file
+// Author:      %AUTHOR%
+// Modified by: 
+// Created:     %DATE%
+// RCS-ID:      
+// Copyright:   %COPYRIGHT%
+// Licence:     
+/////////////////////////////////////////////////////////////////////////////
+
+"</string>
+    <string name="cpp_header_preamble">""</string>
+    <string name="cpp_implementation_preamble">"// For compilers that support precompilation, includes &quot;wx/wx.h&quot;.
+#include &quot;wx/wxprec.h&quot;
+
+#ifdef __BORLANDC__
+#pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+#include &quot;wx/wx.h&quot;
+#endif
+
+"</string>
+    <string name="cpp_function_declaration_comment">"	/// %BODY%
+"</string>
+    <string name="cpp_function_implementation_comment">"
+/*!
+ * %BODY%
+ */
+
+"</string>
+    <string name="resource_file_header">"app_resources.h"</string>
+    <string name="resource_file_implementation">"app_resources.cpp"</string>
+    <string name="resource_class_name">"AppResources"</string>
+    <string name="app_file_header">"app.h"</string>
+    <string name="app_file_implementation">"app.cpp"</string>
+    <string name="app_class_name">"Application"</string>
+    <bool name="generate_app_class">0</bool>
+    <string name="external_symbol_filenames">""</string>
+    <string name="configuration">"&lt;None&gt;"</string>
+    <string name="source_encoding">"windows-1251"</string>
+    <string name="xrc_encoding">"utf-8"</string>
+    <string name="project_encoding">"utf-8"</string>
+    <string name="resource_archive">""</string>
+    <long name="text_file_type">0</long>
+    <bool name="use_tabs">0</bool>
+    <long name="indent_size">4</long>
+    <string name="whitespace_after_return_type">" "</string>
+    <string name="resource_xrc_cpp">""</string>
+    <bool name="use_resource_archive">0</bool>
+    <bool name="use_generated_xrc_cpp">0</bool>
+    <bool name="always_generate_xrc">1</bool>
+    <bool name="use_id_name_for_name">0</bool>
+    <bool name="archive_xrc_files">1</bool>
+    <bool name="archive_image_files">1</bool>
+    <bool name="archive_all_image_files">0</bool>
+    <bool name="xrc_retain_relative_paths">1</bool>
+    <bool name="xrc_generate_id_tags">0</bool>
+  </header>
+  <data>
+    <document>
+      <string name="title">""</string>
+      <string name="type">"data-document"</string>
+      <string name="filename">""</string>
+      <string name="icon-name">""</string>
+      <long name="is-transient">0</long>
+      <long name="owns-file">1</long>
+      <long name="title-mode">0</long>
+      <long name="locked">0</long>
+      <document>
+        <string name="title">"Configurations"</string>
+        <string name="type">"config-data-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">""</string>
+        <long name="is-transient">0</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">0</long>
+        <string name="template-name">""</string>
+        <bool name="dirty">1</bool>
+        <string name="Compiler name">""</string>
+        <string name="Build mode">"Debug"</string>
+        <string name="Unicode mode">"ANSI"</string>
+        <string name="Shared mode">"Static"</string>
+        <string name="Modularity">"Modular"</string>
+        <string name="GUI mode">"GUI"</string>
+        <string name="Toolkit">"wxMSW"</string>
+        <string name="Runtime linking">"Dynamic"</string>
+        <string name="Use exceptions">"Yes"</string>
+        <string name="Use ODBC">"No"</string>
+        <string name="Use OpenGL">"No"</string>
+        <string name="wxWidgets version">"%WXVERSION%"</string>
+        <string name="Executable name">"%EXECUTABLE%"</string>
+        <string name="Program arguments">""</string>
+        <string name="Working path">"%AUTO%"</string>
+        <string name="Output path">"%AUTO%"</string>
+        <string name="Objects path">"%AUTO%"</string>
+        <string name="Compiler location">"%AUTO%"</string>
+        <string name="wxWidgets location">"%AUTO%"</string>
+        <string name="C++ command">"%AUTO%"</string>
+        <string name="Resource compiler">"%AUTO%"</string>
+        <string name="Make command">"%AUTO%"</string>
+        <string name="Project makefile">"%AUTO%"</string>
+        <string name="wxWidgets makefile">"%AUTO%"</string>
+        <string name="Compiler bin path">"%AUTO%"</string>
+        <string name="Compiler include path">"%AUTO%"</string>
+        <string name="Compiler lib path">"%AUTO%"</string>
+        <string name="Preprocessor flags">"%AUTO%"</string>
+        <string name="Optimizations">"%AUTO%"</string>
+        <string name="Warnings">"%AUTO%"</string>
+        <string name="Debug flags">"%AUTO%"</string>
+        <string name="Libraries">"%AUTO%"</string>
+        <string name="Library path">"%AUTO%"</string>
+        <string name="Linker flags">"%AUTO%"</string>
+        <string name="Include path">"%AUTO%"</string>
+        <string name="Resource flags">"%AUTO%"</string>
+        <string name="Resource path">"%AUTO%"</string>
+        <string name="wxWidgets build path">"%AUTO%"</string>
+        <string name="wxWidgets build command">"%AUTO%"</string>
+        <string name="wxWidgets clean command">"%AUTO%"</string>
+        <string name="PATH variable">"%AUTO%"</string>
+        <bool name="Suppress source rules">0</bool>
+      </document>
+    </document>
+  </data>
+
+  <documents>
+    <document>
+      <string name="title">"Projects"</string>
+      <string name="type">"root-document"</string>
+      <string name="filename">""</string>
+      <string name="icon-name">"project"</string>
+      <long name="is-transient">1</long>
+      <long name="owns-file">1</long>
+      <long name="title-mode">0</long>
+      <long name="locked">1</long>
+      <document>
+        <string name="title">"Windows"</string>
+        <string name="type">"html-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">"dialogsfolder"</string>
+        <long name="is-transient">1</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">1</long>
+        <document>
+          <string name="title">"wxJigsawShapeListBox: ID_WXJIGSAWSHAPELISTBOX"</string>
+          <string name="type">"dialog-document"</string>
+          <string name="filename">""</string>
+          <string name="icon-name">"foreign"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"24/3/2008"</string>
+          <string name="proxy-type">"wbForeignCtrlProxy"</string>
+          <long name="base-id">10000</long>
+          <bool name="use-id-prefix">0</bool>
+          <string name="id-prefix">""</string>
+          <bool name="use-id-suffix">0</bool>
+          <string name="id-suffix">""</string>
+          <long name="use-xrc">0</long>
+          <long name="working-mode">0</long>
+          <string name="variable-0">"m_Shapes|wxJigsawShapeList *|Shapes|NULL|0|0|List of shapes"</string>
+          <string name="variable-1">"m_AssociatedCanvas|wxJigsawEditorCanvas *|AssociatedCanvas|NULL|0|0|"</string>
+          <string name="event-handler-0">"wxEVT_PAINT|OnPaint|NONE||"</string>
+          <string name="event-handler-1">"wxEVT_IDLE|OnIdle|NONE||"</string>
+          <string name="event-handler-2">"wxEVT_ERASE_BACKGROUND|OnEraseBackground|NONE||"</string>
+          <string name="event-handler-3">"wxEVT_LEFT_DOWN|OnLeftDown|NONE||"</string>
+          <string name="event-handler-4">"wxEVT_MOTION|OnMotion|NONE||"</string>
+          <string name="proxy-Id name">"ID_WXJIGSAWSHAPELISTBOX"</string>
+          <long name="proxy-Id value">10000</long>
+          <string name="proxy-Name">""</string>
+          <string name="proxy-Class">"wxJigsawShapeListBox"</string>
+          <string name="proxy-Base class">"wxWindow"</string>
+          <bool name="proxy-External implementation">0</bool>
+          <bool name="proxy-Separate files">1</bool>
+          <string name="proxy-Implementation filename">"wxJigsawShapeListBox.cpp"</string>
+          <string name="proxy-Header filename">"wxJigsawShapeListBox.h"</string>
+          <string name="proxy-Member variable name">""</string>
+          <bool name="proxy-Create in situ">1</bool>
+          <string name="proxy-Help text">""</string>
+          <string name="proxy-Tooltip text">""</string>
+          <string name="proxy-Background colour">""</string>
+          <string name="proxy-Foreground colour">""</string>
+          <string name="proxy-Font">""</string>
+          <bool name="proxy-Hidden">0</bool>
+          <bool name="proxy-Enabled">1</bool>
+          <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          <string name="proxy-Data variable">""</string>
+          <string name="proxy-Data validator">""</string>
+          <string name="proxy-Data source">""</string>
+          <string name="proxy-Data class name">""</string>
+          <string name="proxy-Data class implementation filename">""</string>
+          <string name="proxy-Data class header filename">""</string>
+          <string name="proxy-Data class manager window">""</string>
+          <bool name="proxy-wxNO_BORDER">0</bool>
+          <bool name="proxy-wxSIMPLE_BORDER">1</bool>
+          <bool name="proxy-wxDOUBLE_BORDER">0</bool>
+          <bool name="proxy-wxSUNKEN_BORDER">0</bool>
+          <bool name="proxy-wxRAISED_BORDER">0</bool>
+          <bool name="proxy-wxSTATIC_BORDER">0</bool>
+          <bool name="proxy-wxWANTS_CHARS">0</bool>
+          <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+          <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+          <bool name="proxy-wxCLIP_CHILDREN">0</bool>
+          <bool name="proxy-wxHSCROLL">0</bool>
+          <bool name="proxy-wxVSCROLL">0</bool>
+          <bool name="proxy-wxWS_EX_VALIDATE_RECURSIVELY">0</bool>
+          <string name="proxy-Custom styles">""</string>
+          <long name="proxy-X">-1</long>
+          <long name="proxy-Y">-1</long>
+          <long name="proxy-Width">150</long>
+          <long name="proxy-Height">300</long>
+          <string name="proxy-AlignH">"Centre"</string>
+          <string name="proxy-AlignV">"Centre"</string>
+          <long name="proxy-Stretch factor">0</long>
+          <long name="proxy-Border">5</long>
+          <bool name="proxy-wxLEFT">1</bool>
+          <bool name="proxy-wxRIGHT">1</bool>
+          <bool name="proxy-wxTOP">1</bool>
+          <bool name="proxy-wxBOTTOM">1</bool>
+          <bool name="proxy-wxSHAPED">0</bool>
+          <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+          <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+          <string name="proxy-Custom arguments">""</string>
+          <string name="proxy-Custom ctor arguments">""</string>
+          <string name="proxy-Event sources">""</string>
+        </document>
+      </document>
+      <document>
+        <string name="title">"Sources"</string>
+        <string name="type">"html-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">"sourcesfolder"</string>
+        <long name="is-transient">1</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">1</long>
+        <document>
+          <string name="title">"wxJigsawShapes.rc"</string>
+          <string name="type">"source-editor-document"</string>
+          <string name="filename">"wxJigsawShapes.rc"</string>
+          <string name="icon-name">"source-editor"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">1</long>
+          <long name="locked">0</long>
+          <string name="created">"24/3/2008"</string>
+          <string name="language">""</string>
+        </document>
+      </document>
+      <document>
+        <string name="title">"Images"</string>
+        <string name="type">"html-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">"bitmapsfolder"</string>
+        <long name="is-transient">1</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">1</long>
+      </document>
+    </document>
+  </documents>
+
+</anthemion-project>

@@ -1,0 +1,32 @@
+Changes in version 1.1.3 beta (2008-01-17):
+-------------------------------------------
+- Updated code to use wxList::compatibility_iterator instead of pointers to wxNode class (so the
+  STL lists are supported now).
+- Each xsSerializable class instance added to the wxXmlSerializer container now knows its
+  parent (functions xsSerializable::GetParentManager() and xsSerializable::SetParentManager() were added).
+- Added new sample project (Sample4)
+- Simplified older samples (why to do it in a complex way when it can be done in a simple way?:) )
+  (please delete old saved XML configuration files).
+
+Changes in version 1.1.2 beta (2007-12-21):
+-------------------------------------------
+- Instances of xsSerializable and wxXmlSerializer classes can be now cloned. This
+  functionality is provided by special XS_DECLARE_CLONABLE_CLASS and XS_IMPLEMENT_CLONABLE_CLASS
+  which must be used instead of classic macros DECLARE_DYNAMIC_CLASS and IMPLEMENT_DYNAMIC_CLASS
+  in all derived classes which should be clonable. In this case the clonable class provides
+  Clone() function which creates and returns a copy of the class instance done via its 
+  copy constructor (it must be defined by the user).
+- Added function wxXmlSerializer::CopyItems() which allow user to do full copy of given
+  data manager (serializer). Note that stored content must be clonable (class instances must
+  include the Clone() funtion (see the previous paragraph)). 
+- Fixed possible memory leak in xsListRealPointPropIO data handler.
+
+Changes in version 1.1.1 beta (2007-12-10):
+-------------------------------------------
+- Added wxChar support
+- Fixed build of library samples on Linux
+- Fixed build of "CustomDataSample" sample with MinGW compiler on MS Windows platform
+
+Changes in version 1.0.0 beta (2007-12-04):
+-------------------------------------------
+- Initial public release.

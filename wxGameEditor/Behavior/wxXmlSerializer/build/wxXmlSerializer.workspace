@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="wxXmlSerializer">
+		<Project filename="../src/wxXmlSerializer.cbp" active="1">
+		</Project>
+		<Project filename="../samples/Sample1/DynamicSettingsSample.cbp">
+			<Depends filename="../src/wxXmlSerializer.cbp" />
+		</Project>
+		<Project filename="../samples/Sample4/StaticSettingsSample.cbp">
+			<Depends filename="../src/wxXmlSerializer.cbp" />
+		</Project>
+		<Project filename="../samples/Sample2/DataTreeSample.cbp">
+			<Depends filename="../src/wxXmlSerializer.cbp" />
+		</Project>
+		<Project filename="../samples/Sample3/CustomDataSample.cbp">
+			<Depends filename="../src/wxXmlSerializer.cbp" />
+		</Project>
+	</Workspace>
+</CodeBlocks_workspace_file>

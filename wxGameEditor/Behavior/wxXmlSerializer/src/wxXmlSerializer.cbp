@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxXmlSerializer" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../lib/gcc_lib/libwxmsw28u_xs.a" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-Winvalid-pch" />
+					<Add option="-include &quot;wx_pch.h&quot;" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add option="-fno-strict-aliasing" />
+					<Add directory="../include" />
+					<Add directory="../src" />
+					<Add directory="$(#WX.include)" />
+					<Add directory="$(#WX.lib)/gcc_lib/mswu" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add directory="../build" />
+					<Add directory="../lib/gcc_lib" />
+					<Add directory="$(#WX.lib)/gcc_lib" />
+					<Add library="wxmsw28u" />
+					<Add library="wxexpat" />
+					<Add library="wxjpeg" />
+					<Add library="wxpng" />
+					<Add library="wxtiff" />
+					<Add library="wxregexu" />
+					<Add library="winmm" />
+					<Add library="rpcrt4" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="comctl32" />
+					<Add library="wsock32" />
+					<Add library="odbc32" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../lib/gcc_lib/libwxmsw28ud_xs.a" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-Winvalid-pch" />
+					<Add option="-include &quot;wx_pch.h&quot;" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-O0" />
+					<Add directory="../include" />
+					<Add directory="../src" />
+					<Add directory="$(#WX.include)" />
+					<Add directory="$(#WX.lib)/gcc_lib/mswud" />
+				</Compiler>
+				<Linker>
+					<Add directory="../build" />
+					<Add directory="../lib/gcc_lib" />
+					<Add directory="$(#WX.lib)/gcc_lib" />
+					<Add library="wxmsw28ud" />
+					<Add library="wxexpatd" />
+					<Add library="wxjpegd" />
+					<Add library="wxpngd" />
+					<Add library="wxtiffd" />
+					<Add library="wxregexud" />
+					<Add library="winmm" />
+					<Add library="rpcrt4" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="comctl32" />
+					<Add library="wsock32" />
+					<Add library="odbc32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="PropertyIO.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="wx_pch.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="XmlSerializer.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="wx_pch.h">
+			<Option compile="1" />
+			<Option weight="0" />
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../include/wx/wxxmlserializer/Defs.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../include/wx/wxxmlserializer/PropertyIO.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../include/wx/wxxmlserializer/XmlSerializer.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
