@@ -12,7 +12,6 @@ class wxJigsawEditorDocument : public wxDocument
 	wxJigsawDiagram * m_Diagram;
 	wxXmlSerializer m_XmlIO;
 	wxSize m_DiagramSize;
-	void CreateDefaultDiagram();
 public:
 	wxJigsawEditorDocument();
 	~wxJigsawEditorDocument();
@@ -31,28 +30,29 @@ public:
 
 	wxJigsawShapeGroup * GetShapeGroup(wxJigsawShape * shape);
 
-	wxJigsawShape * GetShapeFromPoint(const wxPoint & pos,
+	wxJigsawShape * GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
 		wxJigsawShape::wxJigsawShapeHitTestInfo & info,
-		wxJigsawShapeGroup * ignoreGroup);
+		wxJigsawShapeGroup * ignoreGroup, double scale);
 
 	bool AppendChildren(wxJigsawShape * dest, 
 		wxJigsawShapeGroup * group, size_t beforeIndex);
 	bool InsertGroup(wxJigsawShapeGroup * target, wxJigsawShapeGroup * source, int insertIndex);
 
-	bool ProcessDrop(const wxPoint & pos, wxJigsawShapeGroup * group, const wxSize & hotSpotOffset);
+	bool ProcessDrop(wxDC & dc, const wxPoint & pos, wxJigsawShapeGroup * group, 
+		const wxSize & hotSpotOffset, double scale);
 
-	void UpdateLayout(double scale);
+	void UpdateLayout(wxDC & dc, double scale);
 
 	/// Creates a new group of shapes by given shape
 	/// If shape does not have any parent then new group will contain only this shape.
 	/// If shape has a parent then group will contain this shape and all other children of
 	/// shape's parent which come after given shape
-	wxJigsawShapeGroup * CreateGroupByShape(wxJigsawShape * shape);
+	wxJigsawShapeGroup * CreateGroupByShape(wxDC & dc, wxJigsawShape * shape);
 
 	/// Returns the size of diagram
 	wxSize GetDiagramSize();
 
-	void ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, 
+	void ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, 
 		wxJigsawShapeGroup * groupToSkip, double scale);
 	void RequestSizeRecalculation();
 };

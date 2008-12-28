@@ -99,6 +99,9 @@ public:
 
 ////@begin wxJigsawEditorCanvas event handler declarations
 
+    /// wxEVT_SIZE event handler for ID_WXJIGSAWEDITORCANVAS
+    void OnSize( wxSizeEvent& event );
+
     /// wxEVT_PAINT event handler for ID_WXJIGSAWEDITORCANVAS
     void OnPaint( wxPaintEvent& event );
 
@@ -229,6 +232,11 @@ public:
 	double GetScale() const;
 	void SetScale(double value);
 
+	wxFont GetScaledFont();
+	void RefreshBuffer();
+
+	wxDC & GetDoubleBufferDC() {return m_DoubleBufferDC;}
+
 ////@begin wxJigsawEditorCanvas member variables
     wxJigsawEditorView * m_View;
     wxJigsawShapeGroup * m_SelectedObject;
@@ -245,6 +253,9 @@ public:
 ////@end wxJigsawEditorCanvas member variables
 	/// \brief Increment for scrolling
 	static int ScrollIncrement;
+private:
+	wxBitmap m_DoubleBufferBitmap;
+	wxMemoryDC m_DoubleBufferDC;
 };
 
 #endif

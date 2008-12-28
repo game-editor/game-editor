@@ -208,7 +208,7 @@ public:
 	int GetParametersOffset(double scale);
 	int GetParametersOffset();
 	/// \brief Returns the size of shape's header
-	wxSize GetHeaderSize();
+	//wxSize GetHeaderSize();
 	/// Returns the size of shape's header
 	/// \param dc device context which should be used for retrieving sizes of text labels
 	wxSize GetHeaderSize(wxDC & dc, double scale);
@@ -224,8 +224,6 @@ public:
 	/// \param dc device context which should be used for retrieving sizes of text labels
 	wxSize GetInputParametersSize(wxDC & dc, double scale);
 
-	/// \brief returns the size of shape's children
-	wxSize GetChildrenSize();
 	/// \brief returns the size of shape's children
 	/// \param dc device context for calculating label sizes
 	wxSize GetChildrenSize(wxDC & dc, double scale);
@@ -247,7 +245,8 @@ public:
 	/// \brief Indicates which part of shape contains the specified point
 	/// \param pos point
 	/// \param info receives a clue about the area which contains a point
-	wxJigsawShapeHitTest HitTest(wxPoint pos, wxJigsawShapeHitTestInfo & info, bool bDebug = false);
+	wxJigsawShapeHitTest HitTest(wxDC & dc, wxPoint pos, 
+		wxJigsawShapeHitTestInfo & info, double scale, bool bDebug = false);
 
 	/// \brief Preforms dragging of a shape
 	/// \param dragAction dragging action
@@ -264,11 +263,11 @@ public:
 	static void SetConnectorSize(const wxSize & value);
 
 	/// \brief Updates the layout (moves children to their appropriate places)
-	void Layout(double scale, bool reCreateHotSpots = false);
+	void Layout(wxDC & dc, double scale, bool reCreateHotSpots = false);
 
 	wxJigsawHotSpotArray & GetHotSpots();
 
-	void ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double scale);
+	void ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, double scale);
 
 	void RequestSizeRecalculation();
 	void RecalculateLabelSizes(wxDC & dc);
@@ -364,7 +363,7 @@ private:
 	/// \brief Returns the top left corner of input parameters
 	/// \param dc device context for calculating label sizes
 	wxPoint GetinputParametersPosition(wxDC & dc, double scale);
-	wxPoint GetinputParametersPosition();
+	//wxPoint GetinputParametersPosition();
 
 };
 

@@ -57,11 +57,11 @@ void wxJigsawEditorView::OnUpdate(wxView *sender, wxObject *hint)
 		wxJigsawEditorCanvas * canvas = GetCanvas();
 		if(!canvas) break;
 		canvas->AdjustScrollBars();
-        canvas->Refresh();
+        canvas->RefreshBuffer();
 		wxJigsawEditorDocument * document = wxDynamicCast(GetDocument(), wxJigsawEditorDocument);
 		if(!document) break;
-		document->UpdateLayout(m_Scale);
-		canvas->Refresh();
+		document->UpdateLayout(canvas->GetDoubleBufferDC(), m_Scale);
+		canvas->RefreshBuffer();
 	}
 	while(false);
 }
@@ -115,7 +115,7 @@ const wxSize & wxJigsawEditorView::GetViewOffset()
 	return m_ViewOffset;
 }
 
-wxJigsawShape * wxJigsawEditorView::GetShapeFromPoint(const wxPoint & pos,
+wxJigsawShape * wxJigsawEditorView::GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
 		wxJigsawShapeGroup * ignoreGroup)
 {
 	do
@@ -124,18 +124,7 @@ wxJigsawShape * wxJigsawEditorView::GetShapeFromPoint(const wxPoint & pos,
 			wxDynamicCast(GetDocument(), wxJigsawEditorDocument);
 		if(!document) break;
 		wxJigsawShape::wxJigsawShapeHitTestInfo info;
-		return document->GetShapeFromPoint(pos, info, ignoreGroup);
-		/*for(wxJigsawShapeGroupList::Node * groupNode = document->GetGroups().GetFirst();
-			groupNode; groupNode = groupNode->GetNext())
-		{
-			wxJigsawShapeGroup * group = groupNode->GetData();
-			if(!group) break;
-			wxJigsawShape * shape = group->GetShapeFromPoint(pos);
-			if(shape)
-			{
-				return shape;
-			}
-		}*/
+		return document->GetShapeFromPoint(dc, pos, info, ignoreGroup, m_Scale);
 	}
 	while(false);
 	return NULL;
@@ -180,8 +169,8 @@ void wxJigsawEditorView::SetScale(double value)
 		document->RequestSizeRecalculation();
 		wxJigsawEditorCanvas * canvas = GetCanvas();
 		if(!canvas) break;
-		canvas->Refresh();
-		document->UpdateLayout(m_Scale);
+		canvas->RefreshBuffer();
+		document->UpdateLayout(canvas->GetDoubleBufferDC(), m_Scale);
 	}
 
 	while(false);

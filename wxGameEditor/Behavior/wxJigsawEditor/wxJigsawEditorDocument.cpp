@@ -22,93 +22,14 @@ wxJigsawEditorDocument::wxJigsawEditorDocument()
 	m_XmlIO.SetRootItem(m_Diagram);
 
 	m_DiagramSize = wxSize(0,0);
-
-	CreateDefaultDiagram();
 }
 
 wxJigsawEditorDocument::~wxJigsawEditorDocument()
 {
 	m_XmlIO.RemoveAll();
-}
-
-void wxJigsawEditorDocument::CreateDefaultDiagram()
-{
-	do
-	{
-		wxJigsawShapeList::Node * node(NULL);
-		wxJigsawShapeGroup * group(NULL);
-		wxJigsawShape * shape(NULL);
-		wxJigsawShape * child(NULL);
-		
-		if(wxGetApp().GetShapeRegistry()->GetCount() < 3) break;
-
-		// Group A
-		group = new wxJigsawShapeGroup;
-		group->SetPosition(wxRealPoint(100, 100), 1.0);
-		
-		// Shape A
-		node = wxGetApp().GetShapeRegistry()->Item(2);
-		shape = wxDynamicCast(node->GetData()->Clone(), wxJigsawShape);
-		if(!shape) break;
-		shape->SetPosition(100, 100);
-
-		//// Child A.1
-		//node = wxGetApp().GetShapeRegistry()->Item(0);
-		//child = wxDynamicCast(node->GetData()->Clone(), wxJigsawShape);
-		//if(!child) break;
-		//// Add child A.1 to shape A
-		//shape->GetChildren().Append(child);
-		//child->SetParent(shape);
-		
-		// Add shape A to gtoup A
-		group->GetShapes().Append(shape);
-
-		//// Shape B
-		//node = wxGetApp().GetShapeRegistry()->Item(2);
-		//shape = wxDynamicCast(node->GetData()->Clone(), wxJigsawShape);
-		//if(!shape) break;
-		//shape->SetPosition(100, 100);
-		//// Add shape B to group A
-		//group->GetShapes().Append(shape);
-
-		// Add group A to list
-		GetGroups().Append(group);
-		
-		//// Group B
-		//group = new wxJigsawShapeGroup;
-		//group->SetPosition(wxRealPoint(300, 150));
-		//// Shape C
-		//node = wxGetApp().GetShapeRegistry()->Item(2);
-		//shape = wxDynamicCast(node->GetData()->Clone(), wxJigsawShape);
-		//if(!shape) break;
-		//shape->SetPosition(100, 100);
-		//// Add shape C to group B
-		//group->GetShapes().Append(shape);
-
-		//// Shape D
-		//node = wxGetApp().GetShapeRegistry()->Item(2);
-		//shape = wxDynamicCast(node->GetData()->Clone(), wxJigsawShape);
-		//if(!shape) break;
-		//shape->SetPosition(100, 100);
-		//// Add shape D to group B
-		//group->GetShapes().Append(shape);
-		//// Add group B to list
-		//GetGroups().Append(group);
-		
-		//// Group C
-		//group = new wxJigsawShapeGroup;
-		//group->SetPosition(wxRealPoint(200, 250));
-		//// Shape E
-		//node = wxGetApp().GetShapeRegistry()->Item(1);
-		//shape = wxDynamicCast(node->GetData()->Clone(), wxJigsawShape);
-		//if(!shape) break;
-		//shape->SetPosition(100, 100);
-		//// Add shape E to group C
-		//group->GetShapes().Append(shape);
-		//// Add group C to list
-		//GetGroups().Append(group);
-	}
-	while(false);
+#if defined(_DEBUG) || defined(DEBUG)
+	wxDELETE(m_Diagram);
+#endif
 }
 
 wxJigsawDiagram & wxJigsawEditorDocument::GetDiagram()
@@ -116,9 +37,9 @@ wxJigsawDiagram & wxJigsawEditorDocument::GetDiagram()
 	return *m_Diagram;
 }
 
-void wxJigsawEditorDocument::UpdateLayout(double scale)
+void wxJigsawEditorDocument::UpdateLayout(wxDC & dc, double scale)
 {
-	m_Diagram->UpdateLayout(scale);
+	m_Diagram->UpdateLayout(dc, scale);
 }
 
 wxInputStream & wxJigsawEditorDocument::LoadObject(wxInputStream & stream)
@@ -159,10 +80,11 @@ bool wxJigsawEditorDocument::OnOpenDocument(const wxString& filename)
 		Modify(false);
 		m_Diagram->UpdateParents();
 		//UpdateAllViews();
-		return true;
+		//return true;
+		break;
 	}
 	while(false);
-    return false;
+    return true;
 }
 
 wxJigsawShapeGroupList & wxJigsawEditorDocument::GetGroups()
@@ -180,7 +102,7 @@ wxJigsawShapeGroup * wxJigsawEditorDocument::GetShapeGroup(wxJigsawShape * shape
 	return m_Diagram->GetShapeGroup(shape);
 }
 
-wxJigsawShapeGroup * wxJigsawEditorDocument::CreateGroupByShape(wxJigsawShape * shape)
+wxJigsawShapeGroup * wxJigsawEditorDocument::CreateGroupByShape(wxDC & dc, wxJigsawShape * shape)
 {
 	do
 	{
@@ -201,11 +123,11 @@ wxJigsawShapeGroup * wxJigsawEditorDocument::CreateGroupByShape(wxJigsawShape * 
 				// Create a group
 				group = new wxJigsawShapeGroup();
 				// Set the position of a group
-				group->SetPosition(wxRealPoint(shape->GetPosition().x, shape->GetPosition().y), 1.0);
+				group->SetPosition(dc, wxRealPoint(shape->GetPosition().x, shape->GetPosition().y), 1.0);
 				// Add shape to the group
 				group->GetShapes().Append(shape);
 				// Layout the group
-				group->Layout(1.0);
+				group->Layout(dc, 1.0);
 			}
 			else
 			{
@@ -213,7 +135,7 @@ wxJigsawShapeGroup * wxJigsawEditorDocument::CreateGroupByShape(wxJigsawShape * 
 				// to extract it and all shapes after it
 				if(group->GetShapes().IndexOf(shape) > 0)
 				{
-					group = wxJigsawShapeGroup::CreateFromShapeList(
+					group = wxJigsawShapeGroup::CreateFromShapeList(dc, 
 						group->GetShapes(),
 						group->GetShapes().IndexOf(shape), 1.0);
 				}
@@ -230,7 +152,7 @@ wxJigsawShapeGroup * wxJigsawEditorDocument::CreateGroupByShape(wxJigsawShape * 
 			// If shape belongs to children
 			if(indexInChildren >= 0)
 			{
-				group = wxJigsawShapeGroup::CreateFromShapeList(
+				group = wxJigsawShapeGroup::CreateFromShapeList(dc, 
 					parent->GetChildren(),
 					parent->GetChildren().IndexOf(shape),
 					1.0);
@@ -252,9 +174,9 @@ wxJigsawShapeGroup * wxJigsawEditorDocument::CreateGroupByShape(wxJigsawShape * 
 						param->SetShape(NULL);
 						shape->SetParent(NULL);
 						group = new wxJigsawShapeGroup;
-						group->SetPosition(shape->GetPosition(), 1.0);
+						group->SetPosition(dc, shape->GetPosition(), 1.0);
 						group->GetShapes().Append(shape);
-						group->Layout(1.0);
+						group->Layout(dc, 1.0);
 					}
 				}
 			}
@@ -278,9 +200,9 @@ wxSize wxJigsawEditorDocument::GetDiagramSize()
 	/*return wxSize(2000,2000);*/
 }
 
-wxJigsawShape * wxJigsawEditorDocument::GetShapeFromPoint(const wxPoint & pos,
+wxJigsawShape * wxJigsawEditorDocument::GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
 		wxJigsawShape::wxJigsawShapeHitTestInfo & info,
-		wxJigsawShapeGroup * ignoreGroup)
+		wxJigsawShapeGroup * ignoreGroup, double scale)
 {
 	do
 	{
@@ -290,7 +212,7 @@ wxJigsawShape * wxJigsawEditorDocument::GetShapeFromPoint(const wxPoint & pos,
 			wxJigsawShapeGroup * group = groupNode->GetData();
 			if(!group) break;
 			if(group == ignoreGroup) continue;
-			wxJigsawShape * shape = group->GetShapeFromPoint(pos, info);
+			wxJigsawShape * shape = group->GetShapeFromPoint(dc, pos, info, scale);
 			if(shape)
 			{
 				return info.GetShape();
@@ -301,8 +223,8 @@ wxJigsawShape * wxJigsawEditorDocument::GetShapeFromPoint(const wxPoint & pos,
 	return NULL;
 }
 
-bool wxJigsawEditorDocument::ProcessDrop(const wxPoint & pos, 
-		wxJigsawShapeGroup * group, const wxSize & hotSpotOffset)
+bool wxJigsawEditorDocument::ProcessDrop(wxDC & dc, const wxPoint & pos, 
+		wxJigsawShapeGroup * group, const wxSize & hotSpotOffset, double scale)
 {
 	do
 	{
@@ -311,7 +233,7 @@ bool wxJigsawEditorDocument::ProcessDrop(const wxPoint & pos,
 		if(!group) break;
 		if(GetGroups().IndexOf(group) < 0) break;
 		wxJigsawShape::wxJigsawShapeHitTestInfo info;
-		wxJigsawShape * shape = GetShapeFromPoint(pos, info, group);
+		wxJigsawShape * shape = GetShapeFromPoint(dc, pos, info, group, scale);
 		if(!shape) break;
 		/// If user dropped the group on the slot
 		if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_SLOT)
@@ -361,7 +283,6 @@ bool wxJigsawEditorDocument::ProcessDrop(const wxPoint & pos,
 			}
 			//group->GetShapes().Insert(group->GetShapes().IndexOf(info.GetShape()), info.GetShape())
 			GetGroups().DeleteObject(group);
-			UpdateLayout(view->GetScale());
 		}
 		else if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_NOTCH_DOCKING_AREA)
 		{
@@ -375,6 +296,7 @@ bool wxJigsawEditorDocument::ProcessDrop(const wxPoint & pos,
 			//group->GetShapes().Insert(group->GetShapes().IndexOf(info.GetShape()), info.GetShape())
 			GetGroups().DeleteObject(group);
 		}
+		UpdateLayout(dc, view->GetScale());
 		UpdateAllViews();
 		return true;
 	}
@@ -387,16 +309,39 @@ bool wxJigsawEditorDocument::InsertGroup(wxJigsawShapeGroup * target,
 {
 	do
 	{
-		if((insertIndex < 0 ) || !target || !source) break;
-		wxJigsawShapeList::Node * node = source->GetShapes().GetFirst();
-		wxJigsawShape * shape = node->GetData();
-		if(!shape->GetHasNotch()) break;
+		if(!target || !source || ((insertIndex < 0) || (insertIndex > target->GetShapes().GetCount()))) break;
+		wxJigsawShape * prevShape(NULL);
+		wxJigsawShape * nextShape(NULL);
+		wxJigsawShape * sourceFirstShape(NULL);
+		wxJigsawShape * sourceLastShape(NULL);
+		wxJigsawShapeList::Node * node(NULL);
+
+		// Check if group is insertable
+		node = source->GetShapes().GetFirst();
+		sourceFirstShape = node->GetData();
+		if(insertIndex > 0)
+		{
+			node = target->GetShapes().Item(insertIndex-1);
+			if(!node) break;
+			prevShape = node->GetData();
+		}
+
 		node = source->GetShapes().GetLast();
-		shape = node->GetData();
-		if(!shape->GetHasBump()) break;
+		sourceLastShape = node->GetData();
+		if(insertIndex < (target->GetShapes().GetCount()-1))
+		{
+			node = target->GetShapes().Item(insertIndex);
+			nextShape = node->GetData();
+		}
+
+		// If "previous" shape exists but we can't insert the shape then exit
+		if(prevShape && (!prevShape->GetHasBump()  || !sourceFirstShape->GetHasNotch())) break;
+		// If "next" shape exists but we can't insert the shape then exit
+		if(nextShape && (!nextShape->GetHasNotch() || !sourceLastShape->GetHasBump())) break;
+
 		for(node = source->GetShapes().GetLast(); node; node = node->GetPrevious())
 		{
-			shape = node->GetData();
+			wxJigsawShape * shape = node->GetData();
 			if(!shape) continue;
 			target->GetShapes().Insert(insertIndex, shape);
 		}
@@ -439,7 +384,7 @@ bool wxJigsawEditorDocument::AppendChildren(wxJigsawShape * dest,
 		GetGroups().DeleteObject(group);
 		wxJigsawEditorView * view = wxDynamicCast(GetFirstView(), wxJigsawEditorView);
 		RequestSizeRecalculation();
-		UpdateLayout(view->GetScale());
+		//UpdateLayout(view->GetScale());
 		return true;
 	}
 	while(false);
@@ -456,7 +401,7 @@ void wxJigsawEditorDocument::RequestSizeRecalculation()
 	}
 }
 
-void wxJigsawEditorDocument::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, 
+void wxJigsawEditorDocument::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, 
 		wxJigsawShapeGroup * groupToSkip, double scale)
 {
 	hotSpots.Clear();
@@ -464,7 +409,7 @@ void wxJigsawEditorDocument::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots,
 	{
 		wxJigsawShapeGroup * group = node->GetData();
 		if(!group || (group == groupToSkip)) continue;
-		group->ReCreateHotSpots(hotSpots, scale);
+		group->ReCreateHotSpots(dc, hotSpots, scale);
 	}
 	wxLogTrace(wxTraceMask(), 
 		_("wxJigsawEditorDocument::ReCreateHotSpots; Count =  %i"), 

@@ -151,13 +151,8 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 		if(!child) continue;
 		child->SetPosition(wxPoint(child->GetPosition().x, pos.y));
 		child->Draw(dc, offset, scale);
-		pos.y += child->GetSize().GetHeight();
+		pos.y += child->GetSize(dc, scale).GetHeight();
 	}
-
-	/*dc.SetBrush(*wxTRANSPARENT_BRUSH);
-	dc.SetPen(*wxBLACK_PEN);
-	dc.DrawRectangle(realPosition, GetHeaderSize());
-	dc.DrawRectangle(realPosition, GetSize());*/
 }
 
 const wxString & wxJigsawShape::GetName() const
@@ -275,27 +270,6 @@ void wxJigsawShape::SetMinSize(const wxSize & value)
 
 wxSize wxJigsawShape::GetSize()
 {
-	//wxSize res(0, 0);
-	//wxSize headerSize = GetHeaderSize();
-	//wxSize childrenSize = GetChildrenSize();
-	//if(m_HasCShape) 
-	//{
-	//	childrenSize.SetHeight(wxMax(childrenSize.GetHeight(), 10));
-	//}
-	//res.x = headerSize.GetWidth();
-	//// If a shape has children then we also have to add horizontal spacing
-	//int spacing = childrenSize.GetWidth() != 0 ? wxJigsawShape::ChildrenSpacing : 0;
-	//res.x = wxMax(res.x, spacing + childrenSize.GetWidth());
-	//// If the width is lower than minimal width, then we have to set it to its minimal value
-
-	//res.y = headerSize.GetHeight();
-	//res.y = wxMax(res.y, GetMinSize().GetHeight());
-	//if(m_HasCShape)
-	//{
-	//	res.y += childrenSize.GetHeight();
-	//	res.y += wxJigsawShape::CShapeThickness;
-	//}
-	//return res;
 	return m_Size;
 }
 
@@ -415,24 +389,24 @@ wxSize wxJigsawShape::GetInputParametersSize(wxDC & dc, double scale)
 	return res;
 }
 
-wxPoint wxJigsawShape::GetinputParametersPosition()
-{
-	wxPoint result = GetPosition();
-	result.x += wxJigsawShape::ShapeLabelOffset.GetWidth();
-	// If shape has an icon then increment by width of icon + spacing
-	if(m_Bitmap.IsOk())
-	{
-		result.x += m_Bitmap.GetWidth();
-		result.x += wxJigsawShape::HeaderElementSpacing;
-	}
-	// Add the width of string label + spacing
-	result.x += m_LabelSize.GetWidth();
-	result.x += wxJigsawShape::HeaderElementSpacing;
-	wxSize paramSize = GetInputParametersSize();
-	wxSize headerSize = GetHeaderSize();
-	result.y += (headerSize.GetHeight()-paramSize.GetHeight())/2;
-	return result;
-}
+//wxPoint wxJigsawShape::GetinputParametersPosition()
+//{
+//	wxPoint result = GetPosition();
+//	result.x += wxJigsawShape::ShapeLabelOffset.GetWidth();
+//	// If shape has an icon then increment by width of icon + spacing
+//	if(m_Bitmap.IsOk())
+//	{
+//		result.x += m_Bitmap.GetWidth();
+//		result.x += wxJigsawShape::HeaderElementSpacing;
+//	}
+//	// Add the width of string label + spacing
+//	result.x += m_LabelSize.GetWidth();
+//	result.x += wxJigsawShape::HeaderElementSpacing;
+//	wxSize paramSize = GetInputParametersSize();
+//	wxSize headerSize = GetHeaderSize();
+//	result.y += (headerSize.GetHeight()-paramSize.GetHeight())/2;
+//	return result;
+//}
 
 wxPoint wxJigsawShape::GetinputParametersPosition(wxDC & dc, double scale)
 {
@@ -454,50 +428,50 @@ wxPoint wxJigsawShape::GetinputParametersPosition(wxDC & dc, double scale)
 	return result;
 }
 
-wxSize wxJigsawShape::GetHeaderSize()
-{
-	//wxSize res(0, 0);
-	//wxSize paramSize(0, 0);
-	//
-	//if(m_InputParameters.GetCount() && (m_LabelSize.GetWidth() || m_LabelSize.GetHeight()))
-	//{
-	//	paramSize = GetInputParametersSize();
-	//}
-
-	//	// Add an offset
-	//res.x += wxJigsawShape::ShapeLabelOffset.GetWidth();
-	//// If shape has an icon then increment by width of icon + spacing
-	//if(m_Bitmap.IsOk())
-	//{
-	//	res.x += m_Bitmap.GetWidth();
-	//	res.x += wxJigsawShape::HeaderElementSpacing;
-	//}
-	//// Add the width of string label + spacing
-	//res.x += m_LabelSize.GetWidth();
-	//res.x += wxJigsawShape::HeaderElementSpacing;
-	//// Add the width of input parameters
-	//res.x += paramSize.GetWidth();
-	//// Add an offset on the right side
-	//res.x += wxJigsawShape::ShapeLabelOffset.GetWidth();
-	//res.x = wxMax(res.x, m_MinSize.GetWidth());
-
-	//// Height should have the maximum value of:
-	//// Height of icon
-	//if(m_Bitmap.IsOk())
-	//{
-	//	res.y = wxMax(res.y, m_Bitmap.GetHeight());
-	//}
-	//// height of string label
-	//res.y = wxMax(res.y, m_LabelSize.GetHeight());
-	//// height of imput parameters
-	//res.y = wxMax(res.y, paramSize.GetHeight());
-	//// Add an spacing on top and on bottom
-	//res.y += 2 * wxJigsawShape::ShapeLabelOffset.GetHeight();
-	//res.y = wxMax(res.y, m_MinSize.GetHeight());
-
-	//return res;
-	return m_HeaderSize;
-}
+//wxSize wxJigsawShape::GetHeaderSize()
+//{
+//	//wxSize res(0, 0);
+//	//wxSize paramSize(0, 0);
+//	//
+//	//if(m_InputParameters.GetCount() && (m_LabelSize.GetWidth() || m_LabelSize.GetHeight()))
+//	//{
+//	//	paramSize = GetInputParametersSize();
+//	//}
+//
+//	//	// Add an offset
+//	//res.x += wxJigsawShape::ShapeLabelOffset.GetWidth();
+//	//// If shape has an icon then increment by width of icon + spacing
+//	//if(m_Bitmap.IsOk())
+//	//{
+//	//	res.x += m_Bitmap.GetWidth();
+//	//	res.x += wxJigsawShape::HeaderElementSpacing;
+//	//}
+//	//// Add the width of string label + spacing
+//	//res.x += m_LabelSize.GetWidth();
+//	//res.x += wxJigsawShape::HeaderElementSpacing;
+//	//// Add the width of input parameters
+//	//res.x += paramSize.GetWidth();
+//	//// Add an offset on the right side
+//	//res.x += wxJigsawShape::ShapeLabelOffset.GetWidth();
+//	//res.x = wxMax(res.x, m_MinSize.GetWidth());
+//
+//	//// Height should have the maximum value of:
+//	//// Height of icon
+//	//if(m_Bitmap.IsOk())
+//	//{
+//	//	res.y = wxMax(res.y, m_Bitmap.GetHeight());
+//	//}
+//	//// height of string label
+//	//res.y = wxMax(res.y, m_LabelSize.GetHeight());
+//	//// height of imput parameters
+//	//res.y = wxMax(res.y, paramSize.GetHeight());
+//	//// Add an spacing on top and on bottom
+//	//res.y += 2 * wxJigsawShape::ShapeLabelOffset.GetHeight();
+//	//res.y = wxMax(res.y, m_MinSize.GetHeight());
+//
+//	//return res;
+//	return m_HeaderSize;
+//}
 
 void wxJigsawShape::RequestSizeRecalculation()
 {
@@ -575,21 +549,6 @@ void wxJigsawShape::GetHeaderSize(wxDC & dc, wxCoord * w, wxCoord * h, double sc
 	{
 		*h = height;
 	}
-}
-
-wxSize wxJigsawShape::GetChildrenSize()
-{
-	wxSize res(0,0);
-	// Width and height of child shape
-	wxSize shapeSize(0,0);
-	for(wxJigsawShapeList::Node * node = m_Children.GetFirst(); node; node = node->GetNext())
-	{
-		wxJigsawShape * shape = node->GetData();
-		shapeSize = shape->GetSize();
-		res.x = wxMax(res.x, shapeSize.GetWidth());
-		res.y += shapeSize.GetHeight();
-	}
-	return res;
 }
 
 wxSize wxJigsawShape::GetChildrenSize(wxDC & dc, double scale)
@@ -720,13 +679,13 @@ int wxJigsawShape::GetParametersOffset(double scale)
 	return m_ParametersOffset;
 }
 
-wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxPoint pos, 
-	wxJigsawShapeHitTestInfo & info, bool bDebug)
+wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxDC & dc, wxPoint pos, 
+	wxJigsawShapeHitTestInfo & info, double scale, bool bDebug)
 {
 	wxJigsawShapeHitTest res = wxJS_HITTEST_NONE;
-	wxSize headerSize = GetHeaderSize();
+	wxSize headerSize = GetHeaderSize(dc, scale);
 	wxRect headerRect(GetPosition(), headerSize);
-	wxSize size = GetSize();
+	wxSize size = GetSize(dc, scale);
 	wxRect dockingRectTop = wxRect(m_Position.x, m_Position.y-wxJigsawShape::HotSpotHeight/2, 
 		headerSize.GetWidth(), wxJigsawShape::HotSpotHeight);
 	wxRect dockingRectBottom = wxRect(m_Position.x, 
@@ -745,7 +704,7 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxPoint pos,
 	{
 		do
 		{
-			int paramRectOffset = GetParametersOffset();
+			int paramRectOffset = GetParametersOffset(scale);
 			wxRect labelRect(GetPosition().x, GetPosition().y, 
 				paramRectOffset, headerSize.GetHeight());
 			if(labelRect.Contains(pos) || m_InputParameters.GetCount() == 0)
@@ -774,7 +733,7 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxPoint pos,
 					bFound = true;
 					break;
 				case wxJigsawInputParameter::wxJSP_HITTEST_SHAPE:
-					res = param->GetShape()->HitTest(pos, info, bDebug);
+					res = param->GetShape()->HitTest(dc, pos, info, scale, bDebug);
 					bFound = true;
 					break;
 				default:
@@ -803,7 +762,7 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxPoint pos,
 			wxRect horizontalCShapeRect(
 				GetPosition().x, 
 				GetPosition().y + size.GetHeight() - wxJigsawShape::CShapeThickness,
-				GetHeaderSize().GetWidth(),
+				GetHeaderSize(dc, scale).GetWidth(),
 				wxJigsawShape::CShapeThickness);
 
 			if(m_Children.IsEmpty())
@@ -854,7 +813,7 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxPoint pos,
 				{
 					wxJigsawShape * child = node->GetData();
 					if(!child) continue;
-					res = child->HitTest(pos, info);
+					res = child->HitTest(dc, pos, info, scale);
 					if(res != wxJS_HITTEST_NONE) break;
 				}
 				if(res != wxJS_HITTEST_NONE) break;
@@ -934,7 +893,7 @@ void wxJigsawShape::DrawBackground(wxDC & dc,
 	wxSize childrenSize = GetChildrenSize(dc, scale);
 	int cShapeHeight = wxMax(childrenSize.GetHeight(), 10*scale);
 	wxRegion clippingRegion(0, 0, dc.GetSize().GetWidth(), dc.GetSize().GetHeight());
-	if(m_HasBump)
+	if(m_HasNotch)
 	{
 		wxRegion connectorRegion(5, connector);
 		connectorRegion.Offset(pos.x + wxJigsawShape::ConnectorSize.GetWidth()*scale, pos.y);
@@ -968,7 +927,7 @@ void wxJigsawShape::DrawBackground(wxDC & dc,
 			pos.x + (wxJigsawShape::CShapeThickness+wxJigsawShape::ConnectorSize.GetWidth())*scale, 
 			pos.y + headerSize.GetHeight());
 	}
-	if(m_HasNotch)
+	if(m_HasBump)
 	{
 		dc.DrawPolygon(5, connector, 
 			pos.x + wxJigsawShape::ConnectorSize.GetWidth()*scale, 
@@ -1021,11 +980,11 @@ wxJigsawHotSpotArray & wxJigsawShape::GetHotSpots()
 	return m_HotSpots;
 }
 
-void wxJigsawShape::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double scale)
+void wxJigsawShape::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, double scale)
 {
-	wxSize size = GetSize();
-	wxSize headerSize = GetHeaderSize();
-	wxPoint parameterPos = GetinputParametersPosition();
+	wxSize size = GetSize(dc, scale);
+	wxSize headerSize = GetHeaderSize(dc, scale);
+	wxPoint parameterPos = GetinputParametersPosition(dc, scale);
 	if(m_Style == wxJigsawShapeStyle::wxJS_TYPE_NONE)
 	{
 		if(m_HasBump)
@@ -1069,7 +1028,7 @@ void wxJigsawShape::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double sca
 				{
 					wxJigsawShape * child = node->GetData();
 					if(!child) continue;
-					child->ReCreateHotSpots(hotSpots, scale);
+					child->ReCreateHotSpots(dc, hotSpots, scale);
 				}
 			}
 		}
@@ -1094,18 +1053,18 @@ void wxJigsawShape::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double sca
 					paramRect.GetWidth()-slotOffset,
 					paramRect.GetHeight()),					
 				wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER, index));
-			param->ReCreateHotSpots(hotSpots, scale);
+			param->ReCreateHotSpots(dc, hotSpots, scale);
 			paramRect.Offset(paramRect.GetWidth() + wxJigsawInputParameter::ParameterSpacing, 0);
 		}
 	}
 }
 
-void wxJigsawShape::Layout(double scale, bool reCreateHotSpots)
+void wxJigsawShape::Layout(wxDC & dc, double scale, bool reCreateHotSpots)
 {
 	do
 	{
 		if(m_Children.IsEmpty()) break;
-		wxSize headerSize = GetHeaderSize();
+		wxSize headerSize = GetHeaderSize(dc, scale);
 		wxPoint childPos = wxPoint(
 			m_Position.x + wxJigsawShape::CShapeThickness*scale,
 			m_Position.y + headerSize.GetHeight());
@@ -1115,7 +1074,7 @@ void wxJigsawShape::Layout(double scale, bool reCreateHotSpots)
 			if(!child) break;
 			child->SetParent(this);
 			child->SetPosition(childPos);
-			child->Layout(scale, reCreateHotSpots);
+			child->Layout(dc, scale, reCreateHotSpots);
 			wxSize childSize = child->GetSize();
 			childPos.y += childSize.GetHeight();
 		}

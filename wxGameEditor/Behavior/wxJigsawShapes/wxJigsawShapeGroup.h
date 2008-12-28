@@ -15,7 +15,7 @@ class wxJigsawShapeGroup : public xsSerializable
 	/// \brief Shapes
 	wxJigsawShapeList m_Shapes;
 	/// \brief Updates the layout (moves shapes to their appropriate places)
-	void Layout(double scale);
+	void Layout(wxDC & dc, double scale);
 public:
 	/// \brief Constructor
 	wxJigsawShapeGroup();
@@ -26,10 +26,10 @@ public:
 	
 	/// \brief Sets the position
 	/// \brief value new value
-	void SetPosition(const wxRealPoint & value, double scale);
+	void SetPosition(wxDC & dc, const wxRealPoint & value, double scale);
 	/// \brief Sets the position
 	/// \brief value new value
-	void SetPosition(const wxPoint & value, double scale);
+	void SetPosition(wxDC & dc, const wxPoint & value, double scale);
 
 	/// \brief Returns the position
 	const wxRealPoint & GetPosition();
@@ -37,7 +37,7 @@ public:
 	/// \brief Preforms dragging
 	/// \param destPoint current position of mouse pointer (in logical coordinates)
 	/// \param offset offset of mouse pointer from the top left corner of the first shape
-	bool Drag(const wxPoint & destPoint, const wxSize & offset, double scale);
+	bool Drag(wxDC & dc, const wxPoint & destPoint, const wxSize & offset, double scale);
 
 	/// \brief Returns the size of group
 	wxSize GetSize();
@@ -51,8 +51,8 @@ public:
 
 	/// \brief Returns the shape under specified point (in logical coordinates)
 	/// \param pos point
-	wxJigsawShape * GetShapeFromPoint(const wxPoint & pos,
-		wxJigsawShape::wxJigsawShapeHitTestInfo & info);
+	wxJigsawShape * GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
+		wxJigsawShape::wxJigsawShapeHitTestInfo & info, double scale);
 
 	/// \brief Clones current object
 	virtual xsSerializable * Clone();
@@ -64,12 +64,12 @@ public:
 	/// from specified position
 	/// \param shapes list of shapes
 	/// \param startIndex index of first shape fro new group
-	static wxJigsawShapeGroup * CreateFromShapeList(wxJigsawShapeList & shapes, 
+	static wxJigsawShapeGroup * CreateFromShapeList(wxDC & dc, wxJigsawShapeList & shapes, 
 		int startIndex, double scale);
 
 	void Detach(wxJigsawShape * shape);
 
-	void ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double scale);
+	void ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, double scale);
 
 	void RequestSizeRecalculation();
 

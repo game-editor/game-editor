@@ -28,13 +28,13 @@ void wxJigsawDiagram::InitSerialization()
 	XS_SERIALIZE_LISTJIGSAWSHAPEGROUP(m_Groups, wxT("groups"));
 }
 
-void wxJigsawDiagram::UpdateLayout(double scale)
+void wxJigsawDiagram::UpdateLayout(wxDC & dc, double scale)
 {
 	for(wxJigsawShapeGroupList::Node * node = m_Groups.GetFirst(); node; node = node->GetNext())
 	{
 		wxJigsawShapeGroup * group = node->GetData();
 		if(!group) continue;
-		group->Layout(scale);
+		group->Layout(dc, scale);
 	}
 }
 

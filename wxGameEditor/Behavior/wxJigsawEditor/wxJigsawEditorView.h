@@ -27,7 +27,7 @@ public:
 
 	wxSize GetDiagramSize();
 
-	wxJigsawShape * GetShapeFromPoint(const wxPoint & pos,
+	wxJigsawShape * GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
 		wxJigsawShapeGroup * ignoreGroup);
 
 	wxJigsawShapeGroup * GetSelectedObject();

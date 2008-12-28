@@ -48,6 +48,7 @@ IMPLEMENT_DYNAMIC_CLASS( wxJigsawEditorCanvas, wxWindow )
 BEGIN_EVENT_TABLE( wxJigsawEditorCanvas, wxWindow )
 
 ////@begin wxJigsawEditorCanvas event table entries
+    EVT_SIZE( wxJigsawEditorCanvas::OnSize )
     EVT_PAINT( wxJigsawEditorCanvas::OnPaint )
     EVT_IDLE( wxJigsawEditorCanvas::OnIdle )
     EVT_ERASE_BACKGROUND( wxJigsawEditorCanvas::OnEraseBackground )
@@ -202,37 +203,41 @@ void wxJigsawEditorCanvas::AdjustScrollBars()
 
 void wxJigsawEditorCanvas::OnPaint( wxPaintEvent& event )
 {
-    // Before editing this code, remove the block markers.
-    wxBufferedPaintDC dc(this);	
-	dc.SetBackground(wxBrush(GetBackgroundColour()));
-	dc.Clear();
-	wxPoint scrollPos = GetScrollPosition();
-	if(m_View)
-	{
-		/*if(m_View->GetSelectedObject() && wxGetMouseState().LeftDown())
-		{
-			dc.SetBackground(wxBrush(wxColour(0, 0, 127)));
-			dc.Clear();
-		}*/
-		wxFont font = GetFont();
-		font.SetPointSize(font.GetPointSize() * m_View->GetScale());
-		dc.SetFont(font);
-		m_View->OnDraw(&dc);
+	wxPaintDC dc(this);
+	int width = wxMin(m_DoubleBufferDC.GetSize().GetWidth(), dc.GetSize().GetWidth());
+	int height = wxMin(m_DoubleBufferDC.GetSize().GetHeight(), dc.GetSize().GetHeight());
+	dc.Blit(0, 0, width, height, &m_DoubleBufferDC, 0, 0);
+ //   // Before editing this code, remove the block markers.
+ //   wxBufferedPaintDC dc(this);	
+	//dc.SetBackground(wxBrush(GetBackgroundColour()));
+	//dc.Clear();
+	//wxPoint scrollPos = GetScrollPosition();
+	//if(m_View)
+	//{
+	//	/*if(m_View->GetSelectedObject() && wxGetMouseState().LeftDown())
+	//	{
+	//		dc.SetBackground(wxBrush(wxColour(0, 0, 127)));
+	//		dc.Clear();
+	//	}*/
+	//	wxFont font = GetFont();
+	//	font.SetPointSize(font.GetPointSize() * m_View->GetScale());
+	//	dc.SetFont(font);
+	//	m_View->OnDraw(&dc);
 
-		/*double scale = m_View->GetScale();
-		dc.SetBrush(wxBrush(*wxWHITE, wxCROSSDIAG_HATCH ));
-		dc.SetPen(*wxWHITE_PEN);
-		for(size_t i = 0; i < m_HotSpots.Count(); i++)
-		{
-			dc.DrawRectangle(m_HotSpots[i].GetRect().GetLeft(),
-				m_HotSpots[i].GetRect().GetTop(),
-				m_HotSpots[i].GetRect().GetWidth(),
-				m_HotSpots[i].GetRect().GetHeight());
-		}
-		dc.SetBrush(*wxTRANSPARENT_BRUSH);
-		dc.SetPen(*wxBLACK_PEN);
-		dc.DrawRectangle(m_SelectionRect);*/
-	}
+	//	/*double scale = m_View->GetScale();
+	//	dc.SetBrush(wxBrush(*wxWHITE, wxCROSSDIAG_HATCH ));
+	//	dc.SetPen(*wxWHITE_PEN);
+	//	for(size_t i = 0; i < m_HotSpots.Count(); i++)
+	//	{
+	//		dc.DrawRectangle(m_HotSpots[i].GetRect().GetLeft(),
+	//			m_HotSpots[i].GetRect().GetTop(),
+	//			m_HotSpots[i].GetRect().GetWidth(),
+	//			m_HotSpots[i].GetRect().GetHeight());
+	//	}
+	//	dc.SetBrush(*wxTRANSPARENT_BRUSH);
+	//	dc.SetPen(*wxBLACK_PEN);
+	//	dc.DrawRectangle(m_SelectionRect);*/
+	//}
 }
 
 void wxJigsawEditorCanvas::DrawHotSpot(wxDC * dc, double scale)
@@ -240,8 +245,8 @@ void wxJigsawEditorCanvas::DrawHotSpot(wxDC * dc, double scale)
 	if(m_View->GetSelectedObject() && m_ActiveHotSpot && m_HotSpotBitmap.IsOk())
 	{
 		wxPoint scrollPos = GetScrollPosition();
-		wxLogTrace(wxTraceMask(), _("HotSpot bitmap: %i,%i"),
-			m_HotSpotBitmap.GetWidth(), m_HotSpotBitmap.GetHeight());
+		/*wxLogTrace(wxTraceMask(), _("HotSpot bitmap: %i,%i"),
+			m_HotSpotBitmap.GetWidth(), m_HotSpotBitmap.GetHeight());*/
 		dc->DrawBitmap(m_HotSpotBitmap, 
 			m_ActiveHotSpot->GetRect().GetLeft()-scrollPos.x,
 			m_ActiveHotSpot->GetRect().GetTop()-scrollPos.y,
@@ -299,7 +304,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		if(!m_View) break;
 		wxJigsawEditorDocument * document = GetDocument();
 		if(!document) break;
-		document->ReCreateHotSpots(m_HotSpots, NULL, m_View->GetScale());
+		document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, NULL, m_View->GetScale());
 		wxPoint diagramPoint = PointToViewPoint(event.GetPosition());
 		wxLogTrace(wxTraceMask(), 
 			_("wxJigsawEditorCanvas::OnLeftDown: Client Pos (%i, %i); View offset (%i, %i); Point (%i, %i)"),
@@ -311,14 +316,14 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		switch(hitTest)
 		{
 		case wxJSEC_HITTEST_SHAPE:
-			shape = m_View->GetShapeFromPoint(diagramPoint, NULL);
+			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, NULL);
 			if(shape)
 			{
 				wxJigsawShapeGroup * group(NULL);
 				group = document->GetShapeGroup(shape);
 				if(!group)
 				{
-					group = document->CreateGroupByShape(shape);
+					group = document->CreateGroupByShape(m_DoubleBufferDC, shape);
 				}
 				else
 				{
@@ -326,7 +331,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 					if(group->GetShapes().IndexOf(shape) > 0)
 					{
 						// Then extract the shape and all shapes after it into separate group
-						group = document->CreateGroupByShape(shape);
+						group = document->CreateGroupByShape(m_DoubleBufferDC, shape);
 					}
 				}
 				if(!group) 
@@ -344,12 +349,12 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 				}
 				
 				m_View->SetSelectedObject(group);
-				document->ReCreateHotSpots(m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
+				document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
 				FixActiveHotSpot(diagramPoint);
 				m_Mode = wxJSEC_MODE_DRAGGING;
 
 				CaptureMouse();
-				Refresh();
+				RefreshBuffer();
 			}
 			break;
 		case wxJSEC_HITTEST_NONE:
@@ -359,7 +364,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		//if(displayRect.Contains(event.GetPosition())) break;
 		//CaptureMouse();
 
-		Refresh();
+		RefreshBuffer();
 		m_TR = m_BL = event.GetPosition();
 		m_SelectionRect.SetPosition(event.GetPosition());
 		m_SelectionRect.SetSize(wxSize(0,0));
@@ -386,21 +391,21 @@ void wxJigsawEditorCanvas::OnLeftUp( wxMouseEvent& event )
 			wxPoint realPosition = PointToViewPoint(event.GetPosition());
 			if(m_View->GetSelectedObject())
 			{
-				if(document->ProcessDrop(realPosition, 
-					m_View->GetSelectedObject(), m_SelectedObjectOffset))
+				if(document->ProcessDrop(m_DoubleBufferDC, realPosition, 
+					m_View->GetSelectedObject(), m_SelectedObjectOffset, m_View->GetScale()))
 				{
 					m_View->SetSelectedObject(NULL);
 				}
 				document->RequestSizeRecalculation();
-				wxWindowDC dc(this);
+				/*wxWindowDC dc(this);
 				dc.SetFont(GetFont());
-				m_View->OnDraw(&dc);
-				document->UpdateLayout(m_View->GetScale());
+				m_View->OnDraw(&dc);*/
+				document->UpdateLayout(m_DoubleBufferDC, m_View->GetScale());
 			}
 		}
 		while(false);
 
-		Refresh();
+		RefreshBuffer();
 		m_TR = m_BL = wxPoint(0,0);
 		m_SelectionRect.SetPosition(m_TR);
 		m_SelectionRect.SetSize(wxSize(0,0));
@@ -440,7 +445,7 @@ void wxJigsawEditorCanvas::OnMotion( wxMouseEvent& event )
 		AutoScroll(currentPos, scrollPos);
 		FixViewOffset();
 		FixActiveHotSpot(viewPos);
-		Refresh();
+		RefreshBuffer();
 	}
 }
 
@@ -474,7 +479,7 @@ wxJigsawShape * wxJigsawEditorCanvas::GetShapeFromPoint(const wxPoint & pos,
 	{
 		if(!m_View) break;
 		wxPoint viewPoint = PointToViewPoint(pos);
-		return m_View->GetShapeFromPoint(viewPoint, ignoreGroup);
+		return m_View->GetShapeFromPoint(m_DoubleBufferDC, viewPoint, ignoreGroup);
 	}
 	while(false);
 	return NULL;
@@ -488,7 +493,7 @@ wxJigsawEditorCanvas::wxJigsawEditorCanvasHitTest wxJigsawEditorCanvas::HitTest(
 		wxPoint realPoint = PointToViewPoint(pos);
 		wxLogTrace(wxTraceMask(), _("wxJigsawEditorCanvas::HitTest - (%i,%i)"),
 			realPoint.x, realPoint.y);
-		wxJigsawShape * shape = m_View->GetShapeFromPoint(realPoint, ignoreGroup);
+		wxJigsawShape * shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, realPoint, ignoreGroup);
 		if(!shape) break;
 		return wxJSEC_HITTEST_SHAPE;
 	}
@@ -520,7 +525,7 @@ void wxJigsawEditorCanvas::Scroll(const wxPoint & pt)
 		SetScrollPos(wxHORIZONTAL, pt.x);
 	if((pt.y) >= 0 && (GetScrollPos(wxVERTICAL) != pt.y))
 		SetScrollPos(wxVERTICAL, pt.y);
-	Refresh();
+	RefreshBuffer();
 }
 
 wxRect wxJigsawEditorCanvas::GetDisplayRect(const wxPoint & scrollPos)
@@ -596,7 +601,7 @@ bool wxJigsawEditorCanvas::AutoScroll(const wxPoint & currentPos, const wxPoint 
 
 			m_SelectedObjectOffset.x /= m_View->GetScale();
 			m_SelectedObjectOffset.y /= m_View->GetScale();
-			m_View->GetSelectedObject()->Drag(cursorPosOnDiagram, m_SelectedObjectOffset,
+			m_View->GetSelectedObject()->Drag(m_DoubleBufferDC, cursorPosOnDiagram, m_SelectedObjectOffset,
 				m_View->GetScale());
 			GetDocument()->Modify(true);
 			AdjustScrollBars();
@@ -633,7 +638,7 @@ void wxJigsawEditorCanvas::OnScrollLineUp(wxScrollWinEvent & event)
 	int increment = wxJigsawEditorCanvas::ScrollIncrement;
 	SetScrollPos(event.GetOrientation(), GetScrollPos(event.GetOrientation()) - increment);
 	FixViewOffset();
-	Refresh();
+	RefreshBuffer();
 }
 
 void wxJigsawEditorCanvas::OnScrollLineDown(wxScrollWinEvent & event)
@@ -642,7 +647,7 @@ void wxJigsawEditorCanvas::OnScrollLineDown(wxScrollWinEvent & event)
 	int increment = wxJigsawEditorCanvas::ScrollIncrement;
 	SetScrollPos(event.GetOrientation(), GetScrollPos(event.GetOrientation()) + increment);
 	FixViewOffset();
-	Refresh();
+	RefreshBuffer();
 }
 
 void wxJigsawEditorCanvas::OnScrollPageUp(wxScrollWinEvent & event)
@@ -651,7 +656,7 @@ void wxJigsawEditorCanvas::OnScrollPageUp(wxScrollWinEvent & event)
 	SetScrollPos(event.GetOrientation(), 
 		GetScrollPos(event.GetOrientation()) - GetScrollThumb(event.GetOrientation()));
 	FixViewOffset();
-	Refresh();
+	RefreshBuffer();
 }
 
 void wxJigsawEditorCanvas::OnScrollPageDown(wxScrollWinEvent & event)
@@ -660,7 +665,7 @@ void wxJigsawEditorCanvas::OnScrollPageDown(wxScrollWinEvent & event)
 	SetScrollPos(event.GetOrientation(), 
 		GetScrollPos(event.GetOrientation()) + GetScrollThumb(event.GetOrientation()));
 	FixViewOffset();
-	Refresh();
+	RefreshBuffer();
 }
 
 void wxJigsawEditorCanvas::OnScrollThumbTrack(wxScrollWinEvent & event)
@@ -669,7 +674,7 @@ void wxJigsawEditorCanvas::OnScrollThumbTrack(wxScrollWinEvent & event)
 		event.GetPosition());
 	SetScrollPos(event.GetOrientation(), event.GetPosition());
 	FixViewOffset();
-	Refresh();
+	RefreshBuffer();
 }
 
 void wxJigsawEditorCanvas::OnScrollThumbRelease(wxScrollWinEvent & event)
@@ -678,7 +683,7 @@ void wxJigsawEditorCanvas::OnScrollThumbRelease(wxScrollWinEvent & event)
 		event.GetPosition());
 	SetScrollPos(event.GetOrientation(), event.GetPosition());
 	FixViewOffset();
-	Refresh();
+	RefreshBuffer();
 }
 
 bool wxJigsawEditorCanvas::CreateDragImage(wxJigsawShape * shape)
@@ -734,10 +739,10 @@ void wxJigsawEditorCanvas::ProcessDrop(const wxPoint & pos,
 		wxJigsawShape * newShape = new wxJigsawShape(*shape);
 		newShape->SetPosition(	realPosition.x - hotSpotOffset.GetWidth(),
 			realPosition.y - hotSpotOffset.GetHeight());
-		wxJigsawShapeGroup * newGroup = document->CreateGroupByShape(newShape);
+		wxJigsawShapeGroup * newGroup = document->CreateGroupByShape(m_DoubleBufferDC, newShape);
 		if(!newGroup) break;
-		document->ProcessDrop(realPosition, newGroup, hotSpotOffset);
-		Refresh();
+		document->ProcessDrop(m_DoubleBufferDC, realPosition, newGroup, hotSpotOffset, m_View->GetScale());
+		RefreshBuffer();
 	}
 	while(false);
 }
@@ -770,7 +775,12 @@ wxJigsawHotSpot * wxJigsawEditorCanvas::GetHotSpotByPoint(
 	{
 		if(singleShape)
 		{
-			if((singleShape->GetStyle() != wxJigsawShapeStyle::wxJS_TYPE_DEFAULT) &&
+			if((singleShape->GetStyle() == wxJigsawShapeStyle::wxJS_TYPE_DEFAULT) &&
+				(m_HotSpots[i].GetHotSpotType() == wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER))
+			{
+				continue;
+			}
+			else if((singleShape->GetStyle() != wxJigsawShapeStyle::wxJS_TYPE_DEFAULT) &&
 				(m_HotSpots[i].GetHotSpotType() != wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER))
 			{
 				continue;
@@ -822,10 +832,10 @@ void wxJigsawEditorCanvas::SetScale(double value)
 	{
 		if(!m_View) break;
 		m_View->SetScale(value);
-		Refresh();
+		RefreshBuffer();
 		wxJigsawEditorDocument * document = GetDocument();
 		if(!document) break;
-		document->ReCreateHotSpots(m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
+		document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
 	}
 	while(false);
 }
@@ -894,3 +904,42 @@ void wxJigsawEditorCanvas::ReCreateHotSpotBitmap()
 	while(false);
 	m_HotSpotBitmap = wxNullBitmap;
 }
+
+void wxJigsawEditorCanvas::RefreshBuffer()
+{
+	do
+	{
+		if(!m_DoubleBufferDC.IsOk()) break;
+		m_DoubleBufferDC.SetBackground(wxBrush(GetBackgroundColour()));
+		m_DoubleBufferDC.Clear();
+		if(!m_View) break;
+		m_DoubleBufferDC.SetFont(GetScaledFont());
+		m_View->OnDraw(&m_DoubleBufferDC);
+	}
+	while(false);
+	Refresh();
+}
+
+wxFont wxJigsawEditorCanvas::GetScaledFont()
+{
+	wxFont font = GetFont();
+	if(m_View)
+	{
+		font.SetPointSize(font.GetPointSize() * m_View->GetScale());
+	}
+	return font;
+}
+
+
+/*!
+ * wxEVT_SIZE event handler for ID_WXJIGSAWEDITORCANVAS
+ */
+
+void wxJigsawEditorCanvas::OnSize( wxSizeEvent& event )
+{
+	m_DoubleBufferDC.SelectObject(wxNullBitmap);
+	m_DoubleBufferBitmap = wxBitmap(event.GetSize().GetWidth(), event.GetSize().GetHeight());
+	m_DoubleBufferDC.SelectObject(m_DoubleBufferBitmap);
+	RefreshBuffer();
+}
+

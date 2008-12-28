@@ -40,16 +40,16 @@ wxJigsawShapeList & wxJigsawShapeGroup::GetShapes()
 	return m_Shapes;
 }
 
-void wxJigsawShapeGroup::SetPosition(const wxRealPoint & value, double scale)
+void wxJigsawShapeGroup::SetPosition(wxDC & dc, const wxRealPoint & value, double scale)
 {
 	m_Position = value;
-	Layout(scale);
+	Layout(dc, scale);
 }
 
-void wxJigsawShapeGroup::SetPosition(const wxPoint & value, double scale)
+void wxJigsawShapeGroup::SetPosition(wxDC & dc, const wxPoint & value, double scale)
 {
 	m_Position = wxRealPoint(value.x, value.y);
-	Layout(scale);
+	Layout(dc, scale);
 }
 
 const wxRealPoint & wxJigsawShapeGroup::GetPosition()
@@ -57,7 +57,7 @@ const wxRealPoint & wxJigsawShapeGroup::GetPosition()
 	return m_Position;
 }
 
-void wxJigsawShapeGroup::Layout(double scale)
+void wxJigsawShapeGroup::Layout(wxDC & dc, double scale)
 {
 	wxRealPoint shapePosition = m_Position;
 	shapePosition.x *= scale;
@@ -72,13 +72,13 @@ void wxJigsawShapeGroup::Layout(double scale)
 		wxLogTrace(wxTraceMask(), _("Shape position = (%i,%i)"),
 			newPosition.x, newPosition.y);
 		shape->SetPosition(newPosition);
-		shape->Layout(scale);
+		shape->Layout(dc, scale);
 		shapeSize = shape->GetSize();
 		shapePosition.y += shapeSize.GetHeight();
 	}
 }
 
-bool wxJigsawShapeGroup::Drag(const wxPoint & destPoint, const wxSize & offset, double scale)
+bool wxJigsawShapeGroup::Drag(wxDC & dc, const wxPoint & destPoint, const wxSize & offset, double scale)
 {
 	wxLogTrace(wxTraceMask(), _("wxJigsawShapeGroup::Drag; OldPos=(%i,%i); Offset=(%i,%i); Cursor=(%i,%i); NewPos=(%i,%i)"),
 		static_cast<int>(m_Position.x), static_cast<int>(m_Position.y), 
@@ -86,7 +86,7 @@ bool wxJigsawShapeGroup::Drag(const wxPoint & destPoint, const wxSize & offset, 
 		destPoint.x, destPoint.y,
 		destPoint.x - offset.GetWidth(), destPoint.y - offset.GetHeight());
 	m_Position = wxRealPoint(destPoint.x - offset.GetWidth(), destPoint.y - offset.GetHeight());
-	Layout(scale);
+	Layout(dc, scale);
 	return true;
 }
 
@@ -109,7 +109,7 @@ wxRect wxJigsawShapeGroup::GetRect()
 	return wxRect(wxPoint(m_Position.x, m_Position.y), GetSize());
 }
 
-wxJigsawShapeGroup * wxJigsawShapeGroup::CreateFromShapeList(wxJigsawShapeList & shapes, 
+wxJigsawShapeGroup * wxJigsawShapeGroup::CreateFromShapeList(wxDC & dc, wxJigsawShapeList & shapes, 
 	int startIndex, double scale)
 {
 	do
@@ -123,7 +123,7 @@ wxJigsawShapeGroup * wxJigsawShapeGroup::CreateFromShapeList(wxJigsawShapeList &
 		// Create new group
 		wxJigsawShapeGroup * group = new wxJigsawShapeGroup();
 		// Set the position of a group
-		group->SetPosition(wxRealPoint(shape->GetPosition().x, shape->GetPosition().y), scale);
+		group->SetPosition(dc, wxRealPoint(shape->GetPosition().x, shape->GetPosition().y), scale);
 		// Add a shape and all shapes after it to the group
 		for(wxJigsawShapeList::Node * node = shapeNode; node; node = node->GetNext())
 		{
@@ -131,7 +131,7 @@ wxJigsawShapeGroup * wxJigsawShapeGroup::CreateFromShapeList(wxJigsawShapeList &
 			group->GetShapes().Append(child);
 		}
 		// Layout the shapes inside a group
-		group->Layout(scale);
+		group->Layout(dc, scale);
 		// Delete the shapes from parent
 		bool prevDeleteContents = shapes.GetDeleteContents();
 		shapes.DeleteContents(false);
@@ -157,15 +157,15 @@ void wxJigsawShapeGroup::Draw(wxDC & dc, const wxSize & offset, double scale)
 	}
 }
 
-wxJigsawShape * wxJigsawShapeGroup::GetShapeFromPoint(const wxPoint & pos,
-		wxJigsawShape::wxJigsawShapeHitTestInfo & info)
+wxJigsawShape * wxJigsawShapeGroup::GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
+		wxJigsawShape::wxJigsawShapeHitTestInfo & info, double scale)
 {
 	for(wxJigsawShapeList::Node * node = m_Shapes.GetLast(); node; node = node->GetPrevious())
 	{
 		wxJigsawShape * shape = node->GetData();
 		if(!shape) continue;
 		wxJigsawShape::wxJigsawShapeHitTestInfo tempInfo;
-		wxJigsawShape::wxJigsawShapeHitTest hittest = shape->HitTest(pos, tempInfo);
+		wxJigsawShape::wxJigsawShapeHitTest hittest = shape->HitTest(dc, pos, tempInfo, scale);
 		if(hittest != wxJigsawShape::wxJS_HITTEST_NONE)
 		{
 			info = tempInfo;
@@ -178,7 +178,7 @@ wxJigsawShape * wxJigsawShapeGroup::GetShapeFromPoint(const wxPoint & pos,
 			{
 				wxJigsawShape * child = childNode->GetData();
 				if(!child) continue;
-				hittest = child->HitTest(pos, tempInfo);
+				hittest = child->HitTest(dc, pos, tempInfo, scale);
 				if(hittest != wxJigsawShape::wxJS_HITTEST_NONE)
 				{
 					info = tempInfo;
@@ -208,13 +208,13 @@ void wxJigsawShapeGroup::RequestSizeRecalculation()
 	}
 }
 
-void wxJigsawShapeGroup::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double scale)
+void wxJigsawShapeGroup::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, double scale)
 {
 	for(wxJigsawShapeList::Node * node = m_Shapes.GetFirst(); node; node = node->GetNext())
 	{
 		wxJigsawShape * shape = node->GetData();
 		if(!shape) continue;
-		shape->ReCreateHotSpots(hotSpots, scale);
+		shape->ReCreateHotSpots(dc, hotSpots, scale);
 	}
 }
 

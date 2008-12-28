@@ -5,8 +5,8 @@
             <property name="name" type="string">Some Operation</property>
             <property name="colour" type="colour">51,153,255</property>
             <property name="style" type="int">0</property>
-            <property name="has_notch" type="bool">0</property>
-            <property name="has_bump" type="bool">1</property>
+            <property name="has_notch" type="bool">1</property>
+            <property name="has_bump" type="bool">0</property>
             <property name="has_c_shape" type="bool">1</property>
             <property name="min_size" type="size">80,17</property>
             <property name="position" type="point">163,172</property>

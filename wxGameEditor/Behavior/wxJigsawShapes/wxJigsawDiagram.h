@@ -24,7 +24,7 @@ public:
 	/// \brief Returns the size of diagram
 	wxSize GetSize();
 	/// \brief Updates the layout (moves all shapes to appropriate places)
-	void UpdateLayout(double scale);
+	void UpdateLayout(wxDC & dc, double scale);
 	void UpdateParents();
 
 	/// \brief Clones current object

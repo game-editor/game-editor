@@ -121,7 +121,7 @@ public:
 	/// \brief Initializes serialization (binds class members to xsSerializable properties
 	void InitSerialization();
 
-	void ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double scale);
+	void ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, double scale);
 	int GetSlotOffset(double scale);
 
 	void RequestSizeRecalculation();

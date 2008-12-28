@@ -225,11 +225,11 @@ wxJigsawInputParameter::wxJigsawInputParameterHitTest wxJigsawInputParameter::Hi
 	return wxJSP_HITTEST_NONE;
 }
 
-void wxJigsawInputParameter::ReCreateHotSpots(wxJigsawHotSpotArray & hotSpots, double scale)
+void wxJigsawInputParameter::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots, double scale)
 {
 	if(m_Shape)
 	{
-		m_Shape->ReCreateHotSpots(hotSpots, scale);
+		m_Shape->ReCreateHotSpots(dc, hotSpots, scale);
 	}
 }
 
