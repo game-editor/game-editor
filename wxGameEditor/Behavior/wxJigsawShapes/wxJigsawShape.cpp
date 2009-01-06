@@ -987,7 +987,7 @@ void wxJigsawShape::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots,
 	wxPoint parameterPos = GetinputParametersPosition(dc, scale);
 	if(m_Style == wxJigsawShapeStyle::wxJS_TYPE_NONE)
 	{
-		if(m_HasBump)
+		if(m_HasNotch)
 		{
 			hotSpots.Add(wxJigsawHotSpot(this,
 				wxRect(m_Position.x, 
@@ -996,7 +996,7 @@ void wxJigsawShape::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots,
 					wxJigsawShape::HotSpotHeight*scale),
 				wxJigsawHotSpotType::wxJS_HOTSPOT_BUMP));
 		}
-		if(m_HasNotch)
+		if(m_HasBump)
 		{
 			int a = (m_Position.x);
 			int b = m_Position.y+size.GetHeight()-wxJigsawShape::HotSpotHeight/2* scale;

@@ -844,12 +844,37 @@ void wxJigsawEditorCanvas::FixActiveHotSpot(const wxPoint & currentPos)
 {
 	do
 	{
-		if(!m_ActiveHotSpot) break;
-		if(!m_ActiveHotSpot->GetRect().Contains(currentPos)) break;
-		return;
+		if(!m_View) break;
+		do
+		{
+			if(!m_ActiveHotSpot) break;
+			if(!m_ActiveHotSpot->GetRect().Contains(currentPos)) break;
+			return;
+		}
+		while(false);
+		wxJigsawHotSpot * hotSpot = GetHotSpotByPoint(currentPos, m_View->GetSelectedObject());
+		m_ActiveHotSpot = NULL;
+		if(!hotSpot) break;
+		if(m_View->GetSelectedObject()->IsInputParameterShapeGroup())
+		{
+			bool matchStyle = false;
+			do 
+			{
+				if(hotSpot->GetHotSpotType() != wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER) break;
+				if(!hotSpot->GetShape()) break;
+				wxJigsawInputParameter * param = 
+					hotSpot->GetShape()->GetInputParameters()[hotSpot->GetIndex()];
+				if(param->GetStyle() != m_View->GetSelectedObject()->GetFirstShape()->GetStyle()) break;
+				matchStyle = true;
+			} 
+			while (false);
+			if(!matchStyle) break;
+			m_ActiveHotSpot = hotSpot;
+			break;
+		}
+		m_ActiveHotSpot = hotSpot;
 	}
 	while(false);
-	m_ActiveHotSpot = GetHotSpotByPoint(currentPos, m_View->GetSelectedObject());
 	/*if(m_ActiveHotSpot)
 	{
 		wxLogTrace(wxTraceMask(), _("Active HotSpot: (%i,%i,%i,%i)"),

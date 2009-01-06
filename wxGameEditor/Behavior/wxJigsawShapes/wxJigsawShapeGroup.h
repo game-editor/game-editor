@@ -74,6 +74,10 @@ public:
 	void RequestSizeRecalculation();
 
 	void UpdateParents();
+
+	bool IsSingleShapeGroup();
+	bool IsInputParameterShapeGroup();
+	wxJigsawShape * GetFirstShape();
 };
 
 /// \brief List of groups

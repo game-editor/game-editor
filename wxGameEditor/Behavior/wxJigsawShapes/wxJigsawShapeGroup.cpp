@@ -227,3 +227,35 @@ void wxJigsawShapeGroup::UpdateParents()
 		shape->UpdateParents(NULL);
 	}
 }
+
+bool wxJigsawShapeGroup::IsSingleShapeGroup()
+{
+	return (m_Shapes.GetCount() == 1);
+}
+
+bool wxJigsawShapeGroup::IsInputParameterShapeGroup()
+{
+	do 
+	{
+		if(!IsSingleShapeGroup()) break;
+		wxJigsawShape * shape = GetFirstShape();
+		if(!shape) break;
+		return shape->GetStyle() != (wxJigsawShapeStyle::wxJS_TYPE_NONE);
+	} 
+	while (false);
+	return false;
+}
+
+wxJigsawShape * wxJigsawShapeGroup::GetFirstShape()
+{
+	do 
+	{
+		if(!IsSingleShapeGroup()) break;
+		wxJigsawShapeList::Node * node = m_Shapes.GetFirst();
+		if(!node) break;
+		wxJigsawShape * shape = node->GetData();
+		return shape;
+	} 
+	while (false);
+	return NULL;
+}

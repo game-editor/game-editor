@@ -26,10 +26,6 @@ wxJigsawEditorDocument::wxJigsawEditorDocument()
 
 wxJigsawEditorDocument::~wxJigsawEditorDocument()
 {
-	m_XmlIO.RemoveAll();
-#if defined(_DEBUG) || defined(DEBUG)
-	wxDELETE(m_Diagram);
-#endif
 }
 
 wxJigsawDiagram & wxJigsawEditorDocument::GetDiagram()
@@ -235,6 +231,20 @@ bool wxJigsawEditorDocument::ProcessDrop(wxDC & dc, const wxPoint & pos,
 		wxJigsawShape::wxJigsawShapeHitTestInfo info;
 		wxJigsawShape * shape = GetShapeFromPoint(dc, pos, info, group, scale);
 		if(!shape) break;
+		bool isSingleShape = (group->GetShapes().GetCount() == 1);
+		bool isParamShape = false;
+		if(isSingleShape)
+		{
+			wxJigsawShapeList::Node * node = group->GetShapes().GetFirst();
+			if(node)
+			{
+				wxJigsawShape * firstShape = node->GetData();
+				if(firstShape)
+				{
+					isParamShape = (firstShape->GetStyle() != wxJigsawShapeStyle::wxJS_TYPE_DEFAULT);
+				}
+			}
+		}
 		/// If user dropped the group on the slot
 		if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_SLOT)
 		{
@@ -262,18 +272,22 @@ bool wxJigsawEditorDocument::ProcessDrop(wxDC & dc, const wxPoint & pos,
 		}
 		else if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_C_SHAPE_BUMP)
 		{
+			if(isParamShape) break;
 			AppendChildren(info.GetShape(), group, 0);
 		}
 		else if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_C_SHAPE_NOTCH)
 		{
+			if(isParamShape) break;
 			AppendChildren(info.GetShape(), group, info.GetShape()->GetChildren().GetCount());
 		}
 		else if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_CHILD_INSERTION_AREA)
 		{
+			if(isParamShape) break;
 			AppendChildren(info.GetShape(), group, info.GetChildIndex());
 		}
 		else if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_BUMP_DOCKING_AREA)
 		{
+			if(isParamShape) break;
 			wxJigsawShapeGroup * targetGroup = GetShapeGroup(info.GetShape());
 			if(!targetGroup) break;
 			if(!InsertGroup(targetGroup, group, 
@@ -286,6 +300,7 @@ bool wxJigsawEditorDocument::ProcessDrop(wxDC & dc, const wxPoint & pos,
 		}
 		else if(info.GetResult() == wxJigsawShape::wxJS_HITTEST_NOTCH_DOCKING_AREA)
 		{
+			if(isParamShape) break;
 			wxJigsawShapeGroup * targetGroup = GetShapeGroup(info.GetShape());
 			if(!targetGroup) break;
 			if(!InsertGroup(targetGroup, group, 
