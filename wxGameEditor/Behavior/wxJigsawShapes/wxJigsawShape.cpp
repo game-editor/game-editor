@@ -1047,12 +1047,15 @@ void wxJigsawShape::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots,
 			wxJigsawInputParameter * param = node->GetData();
 			paramRect.SetWidth(param->GetSize().GetWidth());
 			slotOffset = param->GetSlotOffset(scale);
-			hotSpots.Add(wxJigsawHotSpot(this, 
-				wxRect(paramRect.GetLeft()+slotOffset, 
+			if(!param->GetShape())
+			{
+				hotSpots.Add(wxJigsawHotSpot(this, 
+					wxRect(paramRect.GetLeft()+slotOffset, 
 					paramRect.GetTop(),
 					paramRect.GetWidth()-slotOffset,
 					paramRect.GetHeight()),					
-				wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER, index));
+					wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER, index));
+			}
 			param->ReCreateHotSpots(dc, hotSpots, scale);
 			paramRect.Offset(paramRect.GetWidth() + wxJigsawInputParameter::ParameterSpacing, 0);
 		}
