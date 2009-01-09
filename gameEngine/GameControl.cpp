@@ -1015,14 +1015,16 @@ gedString GameControl::GenerateUniqueID()
 #endif
 }
 
+#ifdef USE_LLVM
 void testClang(); //maks:teste
+#endif
 
 GameControl::GameControl()
 {
 	//createCipherText("Made with Game Editor\nhttp://game-editor.com");
 	//decodeCipherText(geInfo);	
 
-#ifdef DEBUG
+#if defined(DEBUG) && defined(USE_LLVM)
 	testClang(); //maks:teste
 #endif
 			

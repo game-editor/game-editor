@@ -1,3 +1,5 @@
+#ifdef USE_LLVM
+
 #include "llvm.h"
 
 #include "clang/AST/TranslationUnit.h"
@@ -784,3 +786,5 @@ void testClang()
 
 
 }
+
+#endif //USE_LLVM
