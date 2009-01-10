@@ -587,6 +587,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\block.c"
@@ -609,6 +619,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\codebook.c"
@@ -629,6 +649,16 @@
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -665,6 +695,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\floor1.c"
@@ -685,6 +725,16 @@
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -709,6 +759,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\info.c"
@@ -729,6 +789,16 @@
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -765,6 +835,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\mdct.c"
@@ -785,6 +865,16 @@
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -833,6 +923,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\registry.h"
@@ -859,6 +959,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\sharedbook.c"
@@ -879,6 +989,16 @@
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -903,6 +1023,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\vorbisfile.c"
@@ -925,6 +1055,16 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\tremor\window.c"
@@ -945,6 +1085,16 @@
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1014,7 +1164,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\effect_stereoreverse.c"
 			>
@@ -1036,7 +1196,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\effects_internal.c"
 			>
@@ -1058,7 +1228,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\effects_internal.h"
 			>
@@ -1084,7 +1264,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\load_aiff.h"
 			>
@@ -1110,7 +1300,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\load_ogg.h"
 			>
@@ -1136,7 +1336,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\load_voc.h"
 			>
@@ -1162,7 +1372,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\music.c"
 			>
@@ -1184,7 +1404,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\music_cmd.c"
 			>
@@ -1206,7 +1436,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\music_cmd.h"
 			>
@@ -1232,7 +1472,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\music_ogg.h"
 			>
@@ -1262,7 +1512,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\wavestream.h"
 			>

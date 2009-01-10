@@ -621,7 +621,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\SDL.c"
 			>
@@ -644,7 +654,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\events\SDL_active.c"
 			>
@@ -667,7 +687,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\SDL_audio.c"
 			>
@@ -690,7 +720,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\SDL_audiocvt.c"
 			>
@@ -713,7 +753,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\SDL_audiodev.c"
 			>
@@ -772,7 +822,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_blit.c"
 			>
@@ -795,7 +855,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_blit_0.c"
 			>
@@ -818,7 +888,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_blit_1.c"
 			>
@@ -841,7 +921,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_blit_A.c"
 			>
@@ -864,7 +954,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_blit_N.c"
 			>
@@ -887,7 +987,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_bmp.c"
 			>
@@ -910,7 +1020,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\cdrom\SDL_cdrom.c"
 			>
@@ -930,7 +1050,17 @@
 					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\cpuinfo\SDL_cpuinfo.c"
 			>
@@ -1008,7 +1138,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\windib\SDL_dibaudio.c"
 			>
@@ -1039,7 +1179,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\windib\SDL_dibevents.c"
 			>
@@ -1070,7 +1220,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\windib\SDL_dibvideo.c"
 			>
@@ -1432,7 +1592,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\SDL_error.c"
 			>
@@ -1455,7 +1625,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\events\SDL_events.c"
 			>
@@ -1478,7 +1658,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\events\SDL_expose.c"
 			>
@@ -1501,7 +1691,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\SDL_fatal.c"
 			>
@@ -1524,7 +1724,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\gapi\SDL_gapievents.c"
 			>
@@ -1552,7 +1762,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\gapi\SDL_gapivideo.c"
 			>
@@ -1580,7 +1800,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\SDL_getenv.c"
 			>
@@ -1600,7 +1830,17 @@
 					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\gp2x\SDL_gp2xevents.c"
 			>
@@ -1731,7 +1971,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\events\SDL_keyboard.c"
 			>
@@ -1754,7 +2004,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\SDL_mixer.c"
 			>
@@ -1777,7 +2037,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\SDL_mixer_MMX_VC.c"
 			>
@@ -1839,7 +2109,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_pixels.c"
 			>
@@ -1862,7 +2142,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\events\SDL_quit.c"
 			>
@@ -1885,7 +2175,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\events\SDL_resize.c"
 			>
@@ -1908,7 +2208,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_RLEaccel.c"
 			>
@@ -1931,7 +2241,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\file\SDL_rwops.c"
 			>
@@ -1954,7 +2274,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_stretch.c"
 			>
@@ -1977,7 +2307,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_surface.c"
 			>
@@ -2000,7 +2340,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\cdrom\dummy\SDL_syscdrom.c"
 			>
@@ -2020,7 +2370,17 @@
 					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\wincommon\SDL_sysevents.c"
 			>
@@ -2051,7 +2411,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\joystick\dummy\SDL_sysjoystick.c"
 			>
@@ -2074,7 +2444,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\wincommon\SDL_sysmouse.c"
 			>
@@ -2105,7 +2485,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\thread\linux\SDL_sysmutex.c"
 			>
@@ -2172,7 +2562,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\thread\win32\SDL_syssem.c"
 			>
@@ -2203,7 +2603,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\thread\linux\SDL_syssem.c"
 			>
@@ -2306,7 +2716,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\timer\win32\SDL_systimer.c"
 			>
@@ -2337,7 +2757,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\timer\linux\SDL_systimer.c"
 			>
@@ -2404,7 +2834,17 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\thread\SDL_thread.c"
 			>
@@ -2427,7 +2867,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\timer\SDL_timer.c"
 			>
@@ -2450,7 +2900,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_video.c"
 			>
@@ -2473,7 +2933,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\audio\SDL_wave.c"
 			>
@@ -2496,7 +2966,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\wincommon\SDL_wingl.c"
 			>
@@ -2558,7 +3038,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\src\video\SDL_yuv_sw.c"
 			>
@@ -2581,7 +3071,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 	</Files>
 	<Globals>
 	</Globals>

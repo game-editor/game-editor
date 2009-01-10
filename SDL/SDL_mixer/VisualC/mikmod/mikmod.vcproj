@@ -619,7 +619,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\drv_sdl.c"
 			>
@@ -641,7 +651,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\load_it.c"
 			>
@@ -663,7 +683,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\load_mod.c"
 			>
@@ -685,7 +715,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\load_s3m.c"
 			>
@@ -707,7 +747,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\load_xm.c"
 			>
@@ -729,7 +779,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mdreg.c"
 			>
@@ -751,7 +811,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mdriver.c"
 			>
@@ -773,7 +843,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mikmod.h"
 			>
@@ -807,7 +887,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mlreg.c"
 			>
@@ -829,7 +919,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mlutil.c"
 			>
@@ -851,7 +951,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mmalloc.c"
 			>
@@ -873,7 +983,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mmerror.c"
 			>
@@ -895,7 +1015,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mmio.c"
 			>
@@ -917,7 +1047,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mplayer.c"
 			>
@@ -939,7 +1079,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\munitrk.c"
 			>
@@ -961,7 +1111,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\mwav.c"
 			>
@@ -983,7 +1143,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\npertab.c"
 			>
@@ -1005,7 +1175,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\sloader.c"
 			>
@@ -1027,7 +1207,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\virtch.c"
 			>
@@ -1049,7 +1239,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\virtch2.c"
 			>
@@ -1071,7 +1271,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\mikmod\virtch_common.c"
 			>
@@ -1093,7 +1303,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 	</Files>
 	<Globals>
 	</Globals>

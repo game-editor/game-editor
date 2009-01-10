@@ -609,7 +609,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\common.h"
 			>
@@ -639,7 +649,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\controls.h"
 			>
@@ -665,7 +685,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\filter.h"
 			>
@@ -691,7 +721,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\instrum.h"
 			>
@@ -717,7 +757,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\mix.h"
 			>
@@ -743,7 +793,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\output.h"
 			>
@@ -769,7 +829,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\playmidi.h"
 			>
@@ -795,7 +865,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\readmidi.h"
 			>
@@ -821,7 +901,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\resample.h"
 			>
@@ -847,7 +937,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\sdl_c.c"
 			>
@@ -869,7 +969,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\tables.c"
 			>
@@ -891,7 +1001,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\tables.h"
 			>
@@ -917,7 +1037,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		</File>
+		<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UndefinePreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
 		<File
 			RelativePath="..\..\timidity\timidity.h"
 			>

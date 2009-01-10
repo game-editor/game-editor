@@ -1,12 +1,10 @@
 /////////////////////////////////////////////////////////////////////////
-To compile the gameEditor (current interface) and wxGameEditor (new interface) projects (editor version, not the stand alone engines):
+To compile the gameEditor (current interface) and wxGameEditor (new interface) projects:
 
-1) Get the RakNet at http://www.jenkinssoftware.com/
+1) Get the RakNet at http://www.jenkinssoftware.com/ (tested with the 3.301 version)
 
 Configure the LibStatic project to:
 Multi-threaded (/MT or /MTd)
-
-Build the LibStatic version of the RakNet
 
 2) Get the LLVM and clang (you need to get the last version via svn) (optional for while, look the USE_LLVM definition)
 
@@ -52,12 +50,14 @@ Build all projects
 
 
 /////////////////////////////////////////////////////////////////////////
-Windows:
+Compiling the engines on Windows:
 
 In the Visual Studio 2008, choose the version you want to compile:
 
 	- View->Property Manager
-	- In gameEditor project , _BaseConfiguration of any configuration, in the User Macros put the configuration you want in the VersionType:
+	- In gameEditor project , _BaseConfiguration of any configuration, in the User Macros put the configuration you want in the VersionType.
+	  The configurations are: Professional and Standalone_Pro
+	  For compile the engines, use: VersionType = $(Standalone_Pro)
 
 - To compile the Pocket PC engine, select the 'Pocket PC 2003 (ARMV4)' configuration (you need to to get the PocketHAL library at http://www.droneship.com)
 
