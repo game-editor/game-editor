@@ -5,7 +5,6 @@
 	Name="eiclib"
 	ProjectGUID="{2BB6FC70-BB46-41E0-A9AF-499CC2F23062}"
 	RootNamespace="eiclib"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -1668,4 +1667,6 @@
 			</FileConfiguration>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

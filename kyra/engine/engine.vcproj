@@ -5,7 +5,6 @@
 	Name="engine"
 	ProjectGUID="{73BEA137-37A5-4183-A743-70A75DCD38FD}"
 	RootNamespace="engine"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -411,7 +410,7 @@
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../OpenGL ES/include/,../../PocketHAL/,../../SDL/SDL//include,../../SDL/SDL_image"
-				PreprocessorDefinitions="STAND_ALONE_GAME;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;KYRA_SUPPORT_OPENGL;NDEBUG;_LIB"
+				PreprocessorDefinitions="STAND_ALONE_GAME;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;KYRA_SUPPORT_OPENGL1;NDEBUG;_LIB"
 				ExceptionHandling="0"
 				StructMemberAlignment="4"
 				BufferSecurityCheck="false"
@@ -2184,4 +2183,6 @@
 			>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

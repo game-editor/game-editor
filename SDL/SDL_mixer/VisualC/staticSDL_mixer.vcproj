@@ -5,7 +5,6 @@
 	Name="staticSDL_mixer"
 	ProjectGUID="{4BD34352-9190-4A32-A1DC-360CC19EB427}"
 	RootNamespace="staticSDL_mixer"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -1269,4 +1268,6 @@
 			>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

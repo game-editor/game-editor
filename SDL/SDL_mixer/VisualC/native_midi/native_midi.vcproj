@@ -5,7 +5,6 @@
 	Name="native_midi"
 	ProjectGUID="{771E83A4-ED92-478C-9871-99FA13E3471D}"
 	RootNamespace="native_midi"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -788,4 +787,6 @@
 			</FileConfiguration>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

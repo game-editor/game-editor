@@ -31,7 +31,7 @@
 #include <time.h>
 #endif
 
-#if !defined(linux)
+#if !defined(linux) && defined(HAVE_OPENGL)
 #include "SDL_opengl.h"
 #endif
 

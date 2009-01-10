@@ -5,7 +5,6 @@
 	Name="staticSDL"
 	ProjectGUID="{841A6311-093C-47B5-8B21-D9597C0E8C46}"
 	RootNamespace="staticSDL"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -410,7 +409,7 @@
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../../../OpenGL ES/include/,../../../../PocketHAL/,..\..\src,..\..\src\audio,..\..\src\video,..\..\src\video\wincommon,..\..\src\video\windx5,..\..\src\events,..\..\src\joystick,..\..\src\cdrom,..\..\src\thread,..\..\src\thread\win32,..\..\src\timer,..\..\include,..\..\include\SDL"
-				PreprocessorDefinitions="HAVE_OPENGL;NO_SIGNAL_H;ENABLE_GAPI;NDEBUG;_LIB;_WIN32_WCE=$(CEVER);$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;$(CePlatform);ARM;_ARM_;ARMV4;UNDER_CE=$(CEVER)"
+				PreprocessorDefinitions="NO_SIGNAL_H;ENABLE_GAPI;NDEBUG;_LIB;_WIN32_WCE=$(CEVER);$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;$(CePlatform);ARM;_ARM_;ARMV4;UNDER_CE=$(CEVER)"
 				ExceptionHandling="0"
 				StructMemberAlignment="4"
 				BufferSecurityCheck="false"
@@ -2521,6 +2520,14 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
 				ExcludedFromBuild="true"
 				>
@@ -2576,4 +2583,6 @@
 			</FileConfiguration>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

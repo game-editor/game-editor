@@ -4,7 +4,6 @@
 	Version="9,00"
 	Name="wxIFM"
 	ProjectGUID="{FB56F435-E584-4649-AFC5-E5FE8738AC78}"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -314,6 +313,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Pocket PC 2003 (ARMV4)"
+			OutputDirectory="$(SolutionDir)Pocket PC 2003 (ARMV4)\$(ConfigurationName)"
 			IntermediateDirectory="Pocket PC 2003 (ARMV4)\$(ConfigurationName)"
 			ConfigurationType="1"
 			>
@@ -1195,4 +1195,6 @@
 			>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>
