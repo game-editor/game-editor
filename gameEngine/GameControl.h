@@ -663,12 +663,6 @@ void openBuySite();
 #define MAX_GAME_ID		36
 #define MAX_CLIENT_ID	92
 
-#define GAME_NET_VERSION	1
-#define GAME_FILE_VERSION	55
-//#define GAME_EDITOR_VERSION	0x01030900 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
-#define GAME_EDITOR_VERSION 0x01040000//maks:teste 
-
-
 //Introdutory feature versions (for tutorial retro compatibility)
 #define	VERSION_IDENTATION					0x00100101
 #define VERSION_CLONE_ARRAY					0x01020200
@@ -682,6 +676,10 @@ void openBuySite();
 #define VERSION_MOVE_TO_PATHFINDER			0x01030500
 #define VERSION_NETWORK						0x01040000
 
+
+#define GAME_NET_VERSION	1
+#define GAME_FILE_VERSION	55
+#define GAME_EDITOR_VERSION	0x01030900 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
 
 extern gedString EDITOR_DAT;
 
