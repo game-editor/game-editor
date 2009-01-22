@@ -76,6 +76,33 @@ void operator delete(void * mem)
 	}
 }
 
+void *operator new[](size_t size)
+{
+	if(bUse_dlmalloc)
+	{		
+		return dlmalloc(size);
+	}
+	else
+	{
+		return malloc(size);
+	}
+}
+
+void operator delete[](void * mem)
+{
+	if(mem) 
+	{		
+		if(bUse_dlmalloc)
+		{			
+			dlfree(mem);
+		}
+		else
+		{
+			free(mem);
+		}		
+	}
+}
+
 #if defined(_WIN32_WCE) && !defined(DISABLE_DLMALLOC)
 //It's ok avoid the malloc system functions?
 extern "C" void *malloc(size_t bytes)

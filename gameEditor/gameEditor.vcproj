@@ -577,7 +577,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory=""
+				RemoteDirectory="\Storage Card"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>

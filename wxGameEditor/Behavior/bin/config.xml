@@ -10,6 +10,7 @@
                         <item>test1.jigshape</item>
                         <item>test2.jigshape</item>
                         <item>test3.jigshape</item>
+                        <item>test6.jigshape</item>
                     </property>
                 </object>
                 <object type="wxJigsawShapeCategory">wxJigsawShapeCategory at address 0x1436618
@@ -18,6 +19,7 @@
                     <property name="ShapeFileNames" type="arraystring">
                         <item>test4.jigshape</item>
                         <item>test5.jigshape</item>
+                        
                     </property>
                 </object>
             </property>
