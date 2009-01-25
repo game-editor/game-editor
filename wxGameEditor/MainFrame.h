@@ -32,6 +32,7 @@
 #include "wxGed/wxGedStatusBar.h"
 #include "wxGed/wxGedControls.h"
 #include "wx/toolbar.h"
+#include "wx/docview.h"
 
 
 
@@ -106,6 +107,12 @@ public:
     /// wxEVT_ERASE_BACKGROUND event handler for ID_FRAME
     void OnEraseBackground( wxEraseEvent& event );
 
+	/// wxEVT_COMMAND_MENU_SELECTED event handler for ID_MENU_NEW
+    void OnMenuNewClick( wxCommandEvent& event );
+
+	/// wxEVT_COMMAND_MENU_SELECTED event handler for ID_MENU_OPEN
+    void OnMenuOpenClick( wxCommandEvent& event );
+
     /// wxEVT_COMMAND_MENU_SELECTED event handler for ID_MENU_EXIT
     void OnMenuExitClick( wxCommandEvent& event );
 
@@ -117,6 +124,9 @@ public:
 
     /// wxEVT_COMMAND_MENU_SELECTED event handler for ID_GAME_MODE
     void OnGameModeClick( wxCommandEvent& event );
+
+	/// wxEVT_COMMAND_MENU_SELECTED event handler for ID_MENU_MRU
+    void OnMRUFile( wxCommandEvent& event );
 
 ////@end wxMainFrame event handler declarations
 
@@ -176,6 +186,7 @@ private:
 	void AppendPanelToMenu(wxWindow *window, wxString &name);
 	void AppendLayoutToMenu(wxString name);
 	void RemoveLayoutFromMenu(wxString name);
+	void SetupMRU();
 
 
     
@@ -189,6 +200,7 @@ private:
 	wxIFMLayoutControl *layoutControl;
 
 	wxString applicationDir;
+	wxFileHistory mru;
 
 	bool bMaximized;
 

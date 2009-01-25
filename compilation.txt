@@ -29,6 +29,8 @@ Multi-threaded (/MT or /MTd)
 
 Build the clang project
 
+Another good way to compile the LLVM is using the cmake tool (http://cmake.org)
+
 3) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
 
 Put the follow dirs in your include path:

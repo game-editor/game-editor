@@ -21,6 +21,9 @@
 #include "wx/sysopt.h"
 #include "../gameEngine/GameControl.h"
 #include "../gameEditor/MainPanel.h"
+#include "../gameEditor/UndoControl.h"
+#include "../gameEditor/ActorProperty.h"
+#include "../gameEditor/LoadSaveGame.h"
 #include "PanelProperty.h"
 #include "PanelEvents.h"
 #include "PanelActors.h"
@@ -93,6 +96,10 @@ BEGIN_EVENT_TABLE( wxMainFrame, wxFrame )
     EVT_CLOSE( wxMainFrame::OnCloseWindow )
     EVT_ERASE_BACKGROUND( wxMainFrame::OnEraseBackground )
 
+	EVT_MENU( XRCID("ID_MENU_NEW"), wxMainFrame::OnMenuNewClick )
+
+	EVT_MENU( XRCID("ID_MENU_OPEN"), wxMainFrame::OnMenuOpenClick )
+
     EVT_MENU( XRCID("ID_MENU_EXIT"), wxMainFrame::OnMenuExitClick )
 
     EVT_MENU( XRCID("ID_MENU_TITLE_BAR"), wxMainFrame::OnMenuTitleBarClick )
@@ -100,6 +107,8 @@ BEGIN_EVENT_TABLE( wxMainFrame, wxFrame )
     EVT_MENU( XRCID("ID_MENU_LAYOUT_RESET"), wxMainFrame::OnMenuLayoutResetClick )
 
     EVT_MENU( XRCID("ID_GAME_MODE"), wxMainFrame::OnGameModeClick )
+
+	EVT_MENU_RANGE(wxID_FILE1, wxID_FILE9, wxMainFrame::OnMRUFile)
 
 ////@end wxMainFrame event table entries
 
@@ -432,6 +441,8 @@ void wxMainFrame::Setup_wxIFM()
 	{
 		AppendLayoutToMenu(layoutList[i]);
 	}
+
+	SetupMRU();
 
 	m_ifm->UpdateConfiguration();
 
@@ -842,7 +853,86 @@ void wxMainFrame::OnMenuExitClick( wxCommandEvent& event )
 	Close();	
 }
 
+void wxMainFrame::OnMenuNewClick( wxCommandEvent& event )
+{
+	bool bNewOk = false;
 
+	if (GameControl::Get()->Modified())
+	{
+		int answer = wxMessageBox(wxT("This will discard the current game.\nProceed anyway?"), wxT("Confirm"), wxYES_NO | wxCENTRE);
+
+		if(answer == wxYES)
+		{			
+			bNewOk = true;
+		}
+	}
+	else
+	{
+		bNewOk = true;
+	}
+	
+	if(bNewOk)
+	{
+		GameControl::Get()->NewGame();
+		UndoControl::Get()->Clear();
+		
+		/*Close actor dialog*/
+		ActorProperty::Destroy();
+	}	
+}
+
+void wxMainFrame::SetupMRU()
+{
+	wxMenu *menu = NULL;
+	wxMenuItem *menuItem = GetMenuBar()->FindItem(XRCID("ID_MENU_EXIT"), &menu);
+
+	if(menuItem && menu)
+	{		
+		wxConfig config("GameEditor");
+		mru.UseMenu(menu);
+		mru.Load(config);		
+	}
+
+}
+
+
+void wxMainFrame::OnMRUFile(wxCommandEvent& event)
+{
+    wxString file(mru.GetHistoryFile(event.GetId() - wxID_FILE1));
+    if (!file.empty())
+	{
+		LoadSaveGame::Load(file.mbc_str(), true);
+	}
+}
+
+void wxMainFrame::OnMenuOpenClick( wxCommandEvent& event )
+{
+	wxFileDialog* OpenDialog = new wxFileDialog(
+		this, _("Load Game"), wxEmptyString, wxEmptyString, 
+		_("Ged files (*.ged)|*.ged"), wxFD_OPEN, wxDefaultPosition);
+
+	if (OpenDialog->ShowModal() == wxID_OK)
+	{
+		if(LoadSaveGame::Load(OpenDialog->GetPath().mbc_str(), true))
+		{			
+			wxConfig config("GameEditor");
+			mru.AddFileToHistory(OpenDialog->GetPath());
+			mru.Save(config);
+		}
+		else
+		{
+			//mru.Remove(file);
+					
+
+			wxMessageBox(wxT("Can't load this project"), wxT("Error"), wxOK | wxCENTRE);
+			GameControl::Get()->NewGame();
+			UndoControl::Get()->Clear();
+		}
+
+		
+		//SetTitle(wxString("Edit - ") << OpenDialog->GetFilename()); // Set the Title to reflect the file open
+	}
+}
 
 
 void wxMainFrame::OnMenuLayoutSaveAsClick( wxCommandEvent& event )

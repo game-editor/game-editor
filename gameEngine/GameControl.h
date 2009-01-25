@@ -870,8 +870,11 @@ public:
 		for(int i = 0; i < n; i++)
 		{
 			ActorMessage *p = (ActorMessage *)freeList[i];
-			delete p->nameActorTo;
-			delete p;	
+			if(p)
+			{
+				delete p->nameActorTo;
+				delete p;	
+			}
 		}
 
 		freeList.Clear();

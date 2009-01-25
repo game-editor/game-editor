@@ -3831,7 +3831,7 @@
 			>
 		</File>
 		<File
-			RelativePath="resources.xrc"
+			RelativePath=".\res\resources.xrc"
 			>
 		</File>
 		<File
