@@ -6,7 +6,7 @@ To compile the gameEditor (current interface) and wxGameEditor (new interface) p
 Configure the LibStatic project to:
 Multi-threaded (/MT or /MTd)
 
-2) Get the LLVM and clang (you need to get the last version via svn) (optional for while, look the USE_LLVM definition)
+2) Get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 63487 runs ok) (optional for while, look the USE_LLVM definition)
 
 cd llvm
 svn co http://llvm.org/svn/llvm-project/llvm/trunk .
