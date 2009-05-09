@@ -25,7 +25,7 @@
 #include "../gameEditor/ActorProperty.h"
 #include "../gameEditor/LoadSaveGame.h"
 #include "PanelProperty.h"
-#include "PanelEvents.h"
+#include "Behavior/wxJigsawEditor/wxJigsawEditorMainFrame.h"
 #include "PanelActors.h"
 #include "PanelScript.h"
 #include "GameGraph.h"
@@ -146,7 +146,7 @@ wxMainFrame::wxMainFrame( )
 	m_ifm = NULL;
 	sdlPanel = NULL;
 	panelProperty = NULL;
-	panelEvents = NULL;
+	pBehavior = NULL;
 	bMaximized = false;
 }
 
@@ -157,7 +157,7 @@ wxMainFrame::wxMainFrame( wxString _applicationDir, wxWindowID id, const wxStrin
 	m_ifm = NULL;
 	sdlPanel = NULL;
 	panelProperty = NULL;
-	panelEvents = NULL;
+	pBehavior = NULL;
 	bMaximized = false;
 	applicationDir = _applicationDir;
 
@@ -167,7 +167,7 @@ wxMainFrame::wxMainFrame( wxString _applicationDir, wxWindowID id, const wxStrin
 wxMainFrame::~wxMainFrame( )
 {
 	panelProperty = NULL;
-	panelEvents = NULL;
+	pBehavior = NULL;
 	mainFrame = NULL;
 	m_root_panel = NULL;
 }
@@ -274,7 +274,8 @@ void wxMainFrame::Setup_wxIFM()
 	// add some windows in a format most common to programming IDE's
 
 	panelProperty = new PanelProperty(m_root_panel); 
-	panelEvents = new PanelEvents(m_root_panel);
+	//pBehavior = new Behavior(m_root_panel);
+	pBehavior = new wxJigsawEditorMainFrame( NULL, (wxFrame*)m_root_panel, wxJigsawEditorMainFrame::ID_WXJIGSAWEDITORMAINFRAME );
 	panelActors = new PanelActors(m_root_panel);
 	panelScript = new PanelScript(m_root_panel);
 
@@ -349,7 +350,7 @@ void wxMainFrame::Setup_wxIFM()
 	data.m_newRow = false;
 	data.bCanDrag = true;
 	
-	data.m_child = panelEvents;
+	data.m_child = pBehavior;
 	data.m_desiredSize.Set(600, 150);
 	AppendPanelToMenu(data.m_child, data.m_name);
 
@@ -976,7 +977,7 @@ void wxMainFrame::OnMenuLayoutResetClick( wxCommandEvent& event )
 	{
 		layoutControl->LoadDefault();
 		panelProperty->ResetState();
-		panelEvents->ResetState();
+		//pBehavior->ResetState();
 	}
 }
 
@@ -1082,18 +1083,18 @@ void wxMainFrame::OnGameModeClick( wxCommandEvent& event )
 
 void wxMainFrame::OnLayoutState(wxLayoutStateEvent& event)
 {
-	if(panelProperty && panelEvents)
+	if(panelProperty && pBehavior)
 	{
 		switch(event.GetType())
 		{
 		case LAYOUT_STATE_SAVE:
 			panelProperty->SaveState(*event.GetOutputStream());
-			panelEvents->SaveState(*event.GetOutputStream());
+			//pBehavior->SaveState(*event.GetOutputStream());
 			break;
 			
 		case LAYOUT_STATE_LOAD:
 			panelProperty->LoadState(*event.GetInputStream());
-			panelEvents->LoadState(*event.GetInputStream());
+			//pBehavior->LoadState(*event.GetInputStream());
 			break;
 		}
 	}

@@ -76,7 +76,7 @@ WX_DECLARE_HASH_MAP(int, wxString, wxIntegerHash, wxIntegerEqual, wxIntStringMap
 
 class SDLPanel;
 class PanelProperty;
-class PanelEvents;
+class wxJigsawEditorMainFrame;
 class PanelActors;
 class PanelScript;
 
@@ -208,7 +208,7 @@ private:
 
 	SDLPanel *sdlPanel;
 	PanelProperty *panelProperty;
-	PanelEvents *panelEvents;
+	wxJigsawEditorMainFrame *pBehavior;
 	PanelActors *panelActors;
 	PanelScript *panelScript;
 };

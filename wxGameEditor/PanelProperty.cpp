@@ -4,7 +4,7 @@
 
 #include "PanelProperty.h"
 #include "PanelActors.h"
-#include "PanelEvents.h"
+//#include "PanelEvents.h"
 #include "Path.h"
 #include "../gameEditor/UndoControl.h"
 
@@ -561,7 +561,7 @@ void PanelProperty::Update(Actor *_actor)
 	panelProperty->actor = _actor;
 	panelProperty->Update();
 	
-	PanelEvents::Update(_actor);
+	//PanelEvents::Update(_actor);
 }
 
 void PanelProperty::Update()
