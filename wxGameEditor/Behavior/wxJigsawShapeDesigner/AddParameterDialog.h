@@ -5,7 +5,7 @@
 // Modified by: 
 // Created:     26/03/2008 15:05:20
 // RCS-ID:      
-// Copyright:   Volodymir (T-Rex) Tryapichko, 2008
+// Copyright:   
 // Licence:     
 /////////////////////////////////////////////////////////////////////////////
 

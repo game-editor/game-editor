@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="wxXmlSerializer"
 	ProjectGUID="{B066A5DF-5A3F-1548-B552-9C7113D2C95B}"
 	RootNamespace="wxXmlSerializer"
@@ -109,7 +109,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="../include;../src;$(WXWIN)/include;$(WXWIN)/lib/vc_lib/mswud"
-				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;UNICODE;_UNICODE;__WX__;__WXMSW__;WIN32;_WINDOWS;DEBUG;_DEBUG;__WXDEBUG__"
+				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;__WX__;__WXMSW__;WIN32;_WINDOWS;DEBUG;_DEBUG;__WXDEBUG__;$(NOINHERIT)"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"

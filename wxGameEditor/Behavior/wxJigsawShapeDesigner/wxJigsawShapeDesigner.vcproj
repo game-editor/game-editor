@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="wxJigsawShapeDesigner"
 	ProjectGUID="{E191D31D-8501-4FE6-B468-4B59CE142E4A}"
 	RootNamespace="wxJigsawShapeDesigner"
@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="$(SolutionDir)wxJigsawShapes;$(SolutionDir)Common;$(SolutionDir)propgrid/include;$(SolutionDir)wxXmlSerializer/include;$(SolutionDir)propgrid_advprops;$(SolutionDir)wxJigsawShapeUtils"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;$(NOINHERIT)"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comctl32.lib advapi32.lib uuid.lib rpcrt4.lib wxbase28ud.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxmsw28ud_adv.lib wxmsw28ud_aui.lib wxpngd.lib wxzlibd.lib wxjpegd.lib wxexpatd.lib wxJigsawShapesd.lib propgrid_advpropsd.lib wxJigsawShapeUtilsd.lib"
+				AdditionalDependencies="comctl32.lib advapi32.lib uuid.lib rpcrt4.lib wxbase28d.lib wxbase28d_xml.lib wxmsw28d_core.lib wxmsw28d_adv.lib wxmsw28d_aui.lib wxpngd.lib wxzlibd.lib wxjpegd.lib wxexpatd.lib wxJigsawShapesd.lib propgrid_advpropsd.lib wxJigsawShapeUtilsd.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="$(SolutionDir)lib;$(SolutionDir)propgrid/lib/vc_lib"
 				GenerateManifest="false"

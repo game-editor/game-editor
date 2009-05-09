@@ -16,7 +16,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxXmlSerializer", "wxXmlSer
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxJigsawEditor", "wxJigsawEditor\wxJigsawEditor.vcproj", "{A46BEF7F-4978-46B0-A15C-3DB16AB19253}"
 	ProjectSection(ProjectDependencies) = postProject
-		{E191D31D-8501-4FE6-B468-4B59CE142E4A} = {E191D31D-8501-4FE6-B468-4B59CE142E4A}
 		{FA8B9A24-6EAE-46A0-B7F0-17E85E49FAAD} = {FA8B9A24-6EAE-46A0-B7F0-17E85E49FAAD}
 		{4F81F533-E3BF-4D1B-AB95-4338BCB2A58E} = {4F81F533-E3BF-4D1B-AB95-4338BCB2A58E}
 		{B066A5DF-5A3F-1548-B552-9C7113D2C95B} = {B066A5DF-5A3F-1548-B552-9C7113D2C95B}
@@ -29,10 +28,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxJigsawShapeUtils", "wxJigsawShapeUtils\wxJigsawShapeUtils.vcproj", "{FA8B9A24-6EAE-46A0-B7F0-17E85E49FAAD}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		DLL ANSI Debug Monolithic|Win32 = DLL ANSI Debug Monolithic|Win32
@@ -309,5 +304,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

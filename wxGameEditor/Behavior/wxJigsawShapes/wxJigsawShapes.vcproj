@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="wxJigsawShapes"
 	ProjectGUID="{4F81F533-E3BF-4D1B-AB95-4338BCB2A58E}"
 	RootNamespace="wxJigsawShapes"
@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="$(SolutionDir)Common;$(SolutionDir)wxXmlSerializer/include"
-				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
+				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;$(NOINHERIT)"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="propgrid_advprops"
 	ProjectGUID="{0E61CF6E-614F-4E3B-AA9C-CBDED972D03D}"
 	RootNamespace="propgrid_advprops"
@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="../propgrid/include"
-				PreprocessorDefinitions="_LIB;_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
+				PreprocessorDefinitions="_LIB;__WXDEBUG__;__WXMSW__;_DEBUG;$(NOINHERIT)"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"

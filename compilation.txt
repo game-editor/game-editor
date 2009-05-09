@@ -48,7 +48,8 @@ Open the wx.dsw project
 Configure all projects of the wxWidgets to:
 Multi-threaded (/MT or /MTd)
 
-Build all projects
+Disable the "Edit and Continue" option of the Visual Studio
+Build all projects 
 
 
 /////////////////////////////////////////////////////////////////////////

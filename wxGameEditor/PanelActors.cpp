@@ -271,8 +271,8 @@ int PanelActors::GetImage(const wxString &cloneName)
 	{			
 		if(!imageList.GetImageCount())
 		{
-			//There is a buit in wxWidgets that return 0 event if item has no image
-			//So, add a blanck image to index 0
+			//There is a bug in wxWidgets that return 0 even if item has no image
+			//So, add a blank image to index 0
 			imageIndex = imageList.Add(wxBitmap(ICON_SIZE, ICON_SIZE), wxColour(0, 0, 0));
 		}
 
