@@ -28,6 +28,9 @@
 #include "wxJigsawShapeListBox.h"
 #include "CategoryList.h"
 
+#include <wx/wxxmlserializer/XmlSerializer.h>
+#include <wxJigsawPalette.h>
+
 /*!
  * Forward declarations
  */
@@ -36,6 +39,7 @@
 class CategoryList;
 class wxJigsawShapeListBox;
 class wxJigsawEditorCanvas;
+class wxJigsawEditorConfig;
 ////@end forward declarations
 
 /*!
@@ -113,6 +117,22 @@ public:
     /// Should we show tooltips?
     static bool ShowToolTips();
 
+	wxJigsawShape * LoadShape(const wxString & shapeFileName);
+	void LoadConfig();
+	void SaveConfig();
+	void LoadPalettes();
+	bool LoadShapeRegistry();
+	void InitConfigSerialization();
+
+	wxJigsawShapeList * GetShapeRegistry() const { return m_ShapeRegistry ; }
+	void SetShapeRegistry(wxJigsawShapeList * value) { m_ShapeRegistry = value ; }
+
+	wxJigsawEditorConfig * GetConfig() const { return m_Config ; }
+	void SetConfig(wxJigsawEditorConfig * value) { m_Config = value ; }
+
+
+	wxJigsawPaletteList & GetPalettes() {return m_Palettes;}
+
 ////@begin wxJigsawEditorMainFrame member variables
     wxAuiManager m_auiManager;
     wxSlider* m_ScaleSlider;
@@ -136,6 +156,13 @@ public:
     };
 ////@end wxJigsawEditorMainFrame member variables
 	wxJigsawShapeList m_SearchResults;
+
+	wxJigsawShapeList * m_ShapeRegistry;
+	wxJigsawEditorConfig * m_Config;
+////@end wxJigsawEditorApp member variables
+private:
+	wxXmlSerializer m_XmlIO;
+	wxJigsawPaletteList m_Palettes;
 };
 
 #endif

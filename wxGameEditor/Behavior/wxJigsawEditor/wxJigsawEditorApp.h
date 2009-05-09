@@ -30,7 +30,7 @@
 
 ////@begin forward declarations
 ////@end forward declarations
-class wxJigsawEditorConfig;
+
 
 /*!
  * Control identifiers
@@ -69,30 +69,14 @@ public:
 	wxDocManager * GetDocManager() const { return m_DocManager ; }
 	void SetDocManager(wxDocManager * value) { m_DocManager = value ; }
 
-	wxJigsawShapeList * GetShapeRegistry() const { return m_ShapeRegistry ; }
-	void SetShapeRegistry(wxJigsawShapeList * value) { m_ShapeRegistry = value ; }
-
-	wxJigsawEditorConfig * GetConfig() const { return m_Config ; }
-	void SetConfig(wxJigsawEditorConfig * value) { m_Config = value ; }
-
 ////@end wxJigsawEditorApp member function declarations
-	wxJigsawPaletteList & GetPalettes() {return m_Palettes;}
 
-	bool LoadShapeRegistry();
-	void InitConfigSerialization();
+	
 
-	wxJigsawShape * LoadShape(const wxString & shapeFileName);
-	void LoadConfig();
-	void SaveConfig();
-	void LoadPalettes();
+	
 ////@begin wxJigsawEditorApp member variables
 	wxDocManager * m_DocManager;
-	wxJigsawShapeList * m_ShapeRegistry;
-	wxJigsawEditorConfig * m_Config;
-////@end wxJigsawEditorApp member variables
-private:
-	wxXmlSerializer m_XmlIO;
-	wxJigsawPaletteList m_Palettes;
+	
 };
 
 /*!

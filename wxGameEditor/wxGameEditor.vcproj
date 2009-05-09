@@ -56,7 +56,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/EHsc "
 				Optimization="0"
-				AdditionalIncludeDirectories="../../llvm/include;../../llvm/tools/clang/include;../../llvm/win32;../Graphviz/lib/gd;../Graphviz/lib/fdpgen;../Graphviz/lib/cdt;../Graphviz/lib/graph;../Graphviz/lib/pathplan;../Graphviz/lib/common;../Graphviz/lib/gvc;../Graphviz;../SDL/SDL_ttf/VisualC/FreeType/include;../SDL/SDL_mixer;../gameEngine;../SDL/SDL/include;../SDL/SDL_image;../kyra;../gameEngine/Eic/src;../wx/include;../wx/wxstedit/include"
+				AdditionalIncludeDirectories="../../llvm/include;../../llvm/tools/clang/include;../../llvm/win32;../Graphviz/lib/gd;../Graphviz/lib/fdpgen;../Graphviz/lib/cdt;../Graphviz/lib/graph;../Graphviz/lib/pathplan;../Graphviz/lib/common;../Graphviz/lib/gvc;../Graphviz;../SDL/SDL_ttf/VisualC/FreeType/include;../SDL/SDL_mixer;../gameEngine;../SDL/SDL/include;../SDL/SDL_image;../kyra;../gameEngine/Eic/src;../wx/include;../wx/wxstedit/include;Behavior/wxJigsawShapes;Behavior/Common;Behavior/wxXmlSerializer/include"
 				PreprocessorDefinitions="GAME_EDITOR_PROFESSIONAL;WIN32;_DEBUG;_WINDOWS;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;NOPCH;__WXMSW__;__WXDEBUG__;wxUSE_GUI;HAVE_CONFIG_H;MSWIN32"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="1"
@@ -87,7 +87,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FIXED:NO /FORCE:MULTIPLE"
-				AdditionalDependencies="wxbase28d.lib wxbase28d_xml.lib wxmsw28d_core.lib wxmsw28d_adv.lib wxmsw28d_aui.lib ../RakNet/Lib/RakNetLibStaticDebug.lib wxpngd.lib wxzlibd.lib wxjpegd.lib wxexpatd.lib ../output/Windows/Debug/wxIFM.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib dxguid.lib"
+				AdditionalDependencies="Behavior/lib/wxmsw28ud_xs.lib wxbase28d.lib wxbase28d_xml.lib wxmsw28d_core.lib wxmsw28d_adv.lib wxmsw28d_aui.lib ../RakNet/Lib/RakNetLibStaticDebug.lib wxpngd.lib wxzlibd.lib wxjpegd.lib wxexpatd.lib ../output/Windows/Debug/wxIFM.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib dxguid.lib"
 				OutputFile="../output/wxGameEditor.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -3713,6 +3713,194 @@
 					</FileConfiguration>
 				</File>
 			</Filter>
+		</Filter>
+		<Filter
+			Name="Behavior"
+			>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\CategoryButton.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\CategoryButton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\CategoryList.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\CategoryList.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\DnDJigsawShapeDataobject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\DnDJigsawShapeDataObject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxGradientButton.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxGradientButton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapeUtils\wxIndexTreeItemData.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapeUtils\wxIndexTreeItemData.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawDiagram.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawDiagram.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorCanvas.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorCanvas.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorConfig.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorConfig.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorDocument.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorDocument.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorMainFrame.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorMainFrame.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorView.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawEditorView.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawHotSpot.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawHotSpot.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawInputParameter.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawInputParameter.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawInputParameterPropertyIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawInputParameterPropertyIO.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawPalette.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawPalette.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShape.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShape.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawShapeCategory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawShapeCategory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapeGroup.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapeGroup.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapeGroupPropertyIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapeGroupPropertyIO.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawShapeListBox.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\wxJigsawShapeListBox.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\xsColourDataPropIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxJigsawEditor\xsColourDataPropIO.h"
+				>
+			</File>
 		</Filter>
 		<File
 			RelativePath="wx\msw\blank.cur"
