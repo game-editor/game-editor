@@ -278,7 +278,7 @@ void wxMainFrame::Setup_wxIFM()
 	//pBehavior = new Behavior(m_root_panel);
 
 	///////////////////////////////////////
-	//maks:teste
+	//Behavior
 	wxDocManager *m_DocManager = new wxDocManager;
 	wxDocTemplate * docTemplate = new wxDocTemplate(m_DocManager, _("Jigsaw Scene"),
 		wxT("*.jigscene;*.xml"), wxEmptyString, wxT("jigscene"), 

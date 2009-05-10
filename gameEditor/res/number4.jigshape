@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wxJigsawShape owner="wxJigsawShapeEngine" version="1.0.0">
+  <wxJigsawShape_properties>
+    <object type="wxJigsawShape">
+      <property name="colour" type="colour">50,200,50</property>
+      <property name="style" type="int">1</property>
+      <property name="has_notch" type="bool">0</property>
+      <property name="has_bump" type="bool">0</property>
+      <property name="has_c_shape" type="bool">0</property>
+      <property name="min_size" type="size">80,17</property>
+      <property name="position" type="point">196,182</property>
+      <property name="inputparameters" type="listjigsawinputparameter">
+        <object type="wxJigsawInputParameter">
+          <property name="style" type="int">1</property>
+        </object>
+        <object type="wxJigsawInputParameter">
+          <property name="label" type="string">/</property>
+          <property name="style" type="int">1</property>
+        </object>
+      </property>
+    </object>
+  </wxJigsawShape_properties>
+</wxJigsawShape>

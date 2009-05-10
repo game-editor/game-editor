@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings owner="wxJigsawEditor" version="1.0.0">
+  <settings_properties>
+    <object type="wxJigsawEditorConfig">
+      <property name="ShapeCategories" type="listjigsawshapecategory">
+        <object type="wxJigsawShapeCategory">          
+          <property name="CategoryName" type="string">Flow Control</property>
+          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="ShapeFileNames" type="arraystring">
+            <item>flow_control1.jigshape</item>            
+            <item>flow_control2.jigshape</item>            
+          </property>
+        </object>
+        <object type="wxJigsawShapeCategory">          
+          <property name="CategoryName" type="string">Types</property>
+          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="ShapeFileNames" type="arraystring">
+            <item>type1.jigshape</item>
+            <item>type2.jigshape</item>
+            <item>type3.jigshape</item>
+          </property>
+        </object>
+        <object type="wxJigsawShapeCategory">          
+          <property name="CategoryName" type="string">Commands</property>
+          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="ShapeFileNames" type="arraystring">
+            <item>command1.jigshape</item>
+            <item>command2.jigshape</item>
+            <item>command3.jigshape</item>
+          </property>
+        </object>
+        <object type="wxJigsawShapeCategory">
+        <property name="CategoryName" type="string">Numbers</property>
+        <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+        <property name="ShapeFileNames" type="arraystring">
+          <item>number1.jigshape</item>
+          <item>number2.jigshape</item>
+          <item>number3.jigshape</item>
+          <item>number4.jigshape</item>
+        </property>
+      </object>
+        <object type="wxJigsawShapeCategory">
+          <property name="CategoryName" type="string">Logic</property>
+          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="ShapeFileNames" type="arraystring">
+            <item>logic1.jigshape</item>
+            <item>logic2.jigshape</item>
+            <item>logic3.jigshape</item>
+            <item>logic4.jigshape</item>
+            <item>logic5.jigshape</item>
+            <item>logic6.jigshape</item>
+          </property>
+        </object>
+    </property>
+      <property name="ShapesLookupDirectories" type="arraystring">
+        <item>.</item>
+        <item>shapes</item>
+      </property>
+    </object>
+  </settings_properties>
+</settings>

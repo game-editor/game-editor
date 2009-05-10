@@ -2,7 +2,7 @@
 <wxJigsawShape owner="wxJigsawShapeEngine" version="1.0.0">
     <wxJigsawShape_properties>
         <object type="wxJigsawShape">
-            <property name="name" type="string">Run</property>
+            <property name="name" type="string">Repeat</property>
             <property name="colour" type="colour">153,180,209</property>
             <property name="style" type="int">0</property>
             <property name="has_notch" type="bool">1</property>
@@ -11,17 +11,9 @@
             <property name="min_size" type="size">80,17</property>
             <property name="position" type="point">159,172</property>
             <property name="inputparameters" type="listjigsawinputparameter">
-                <object type="wxJigsawInputParameter">wxJigsawInputParameter at address 0x23cd6c8
-                    <property name="style" type="int">2</property>
-                </object>
-                <object type="wxJigsawInputParameter">wxJigsawInputParameter at address 0x23cf490
-                    <property name="label" type="string">OR</property>
-                    <property name="style" type="int">2</property>
-                </object>
-                <object type="wxJigsawInputParameter">wxJigsawInputParameter at address 0x23cd518
-                    <property name="label" type="string">AND</property>
-                    <property name="style" type="int">2</property>
-                </object>
+                <object type="wxJigsawInputParameter">
+                    <property name="style" type="int">1</property>
+                </object>                
             </property>
         </object>
     </wxJigsawShape_properties>

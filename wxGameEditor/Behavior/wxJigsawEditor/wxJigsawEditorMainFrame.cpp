@@ -34,6 +34,8 @@
 #include <wxJigsawShape.h>
 #include <wxJigsawShapePropertyIO.h>
 #include <wxJigsawInputParameterPropertyIO.h>
+#include "wx/ifm/ifmdefs.h"
+#include "../../wxGed/wxGedControls.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -181,19 +183,22 @@ void wxJigsawEditorMainFrame::CreateControls()
 
     wxPanel* itemPanel14 = new wxPanel( itemDocParentFrame1, ID_PALETTE_CONTAINER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
     itemDocParentFrame1->GetAuiManager().AddPane(itemPanel14, wxAuiPaneInfo()
-        .Name(_T("Palette")).MinSize(wxSize(200, -1)).BestSize(wxSize(220, -1)).CaptionVisible(false).CloseButton(false).DestroyOnClose(false).Resizable(true).Floatable(false));
+        .Name(_T("Palette")).MinSize(wxSize(250, -1)).BestSize(wxSize(220, -1)).CaptionVisible(false).CloseButton(false).DestroyOnClose(false).Resizable(true).Floatable(false));
 
     wxBoxSizer* itemBoxSizer15 = new wxBoxSizer(wxVERTICAL);
     itemPanel14->SetSizer(itemBoxSizer15);
+	itemPanel14->SetBackgroundColour(wxBackground_Pen);
 
-    m_ScaleSlider = new wxSlider( itemPanel14, ID_SCALE_SLIDER, 0, 1, 500, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
-    itemBoxSizer15->Add(m_ScaleSlider, 0, wxGROW, 5);
+	//Zoom is not working very well. So, doesn't use it now.
+	m_ScaleSlider = NULL;
+    /*m_ScaleSlider = new wxSlider( itemPanel14, ID_SCALE_SLIDER, 0, 1, 500, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
+    itemBoxSizer15->Add(m_ScaleSlider, 0, wxGROW, 5);*/
 
-    wxArrayString itemChoice17Strings;
+    /*wxArrayString itemChoice17Strings;
     wxChoice* itemChoice17 = new wxChoice( itemPanel14, ID_SHAPE_GROUP_CHOICE, wxDefaultPosition, wxDefaultSize, itemChoice17Strings, 0 );
-    itemBoxSizer15->Add(itemChoice17, 0, wxGROW|wxALL, 5);
+    itemBoxSizer15->Add(itemChoice17, 0, wxGROW|wxALL, 5);*/
 
-    wxStaticText* itemStaticText18 = new wxStaticText( itemPanel14, wxID_STATIC, _("Search:"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText18 = new wxStaticText( itemPanel14, wxID_STATIC, _(""), wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer15->Add(itemStaticText18, 0, wxALIGN_LEFT|wxLEFT|wxRIGHT|wxTOP, 5);
 
     wxBoxSizer* itemBoxSizer19 = new wxBoxSizer(wxHORIZONTAL);
@@ -202,15 +207,19 @@ void wxJigsawEditorMainFrame::CreateControls()
     m_SearchTextCtrl = new wxTextCtrl( itemPanel14, ID_SEARCH_TEXTCTRL, _T(""), wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER );
     itemBoxSizer19->Add(m_SearchTextCtrl, 1, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, 5);
 
-    wxButton* itemButton21 = new wxButton( itemPanel14, wxID_FIND, _("&Find"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT );
-    itemBoxSizer19->Add(itemButton21, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxSplitterWindow* itemSplitterWindow22 = new wxSplitterWindow( itemPanel14, ID_SPLITTERWINDOW, wxDefaultPosition, wxSize(100, 100), wxSP_3DBORDER|wxSP_3DSASH|wxNO_BORDER );
+    wxButton* itemButton21 = new wxButton( itemPanel14, wxID_FIND, _("&Search"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT );
+    itemBoxSizer19->Add(itemButton21, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	
+
+    wxSplitterWindow* itemSplitterWindow22 = new wxSplitterWindow( itemPanel14, ID_SPLITTERWINDOW, wxDefaultPosition, wxSize(100, 200), wxSP_3DBORDER|wxSP_3DSASH|wxNO_BORDER );
     itemSplitterWindow22->SetMinimumPaneSize(0);
 
     m_CategoryList = new CategoryList( itemSplitterWindow22, ID_CATEGORY_LIST, wxDefaultPosition, wxSize(100, 150), wxSUNKEN_BORDER );
+	m_CategoryList->SetBackgroundColour(wxBackground_Pen);
 
     m_Palette = new wxJigsawShapeListBox( itemSplitterWindow22, ID_PALETTE, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER|wxTAB_TRAVERSAL );
+	m_Palette->SetBackgroundColour(wxBackground_Pen);
 
     itemSplitterWindow22->SplitHorizontally(m_CategoryList, m_Palette, 150);
     itemBoxSizer15->Add(itemSplitterWindow22, 1, wxGROW, 0);
@@ -223,7 +232,7 @@ void wxJigsawEditorMainFrame::CreateControls()
     GetAuiManager().Update();
 
     // Set validators
-    m_ScaleSlider->SetValidator( wxGenericValidator(& m_ScaleValue) );
+	if(m_ScaleSlider)     m_ScaleSlider->SetValidator( wxGenericValidator(& m_ScaleValue) );
 ////@end wxJigsawEditorMainFrame content construction
 	TransferDataToWindow();
 	m_Canvas->SetDropTarget(new DnDJigsawShapeDropTarget(m_Canvas));
@@ -440,19 +449,6 @@ void wxJigsawEditorMainFrame::InitConfigSerialization()
 
 	m_Config = new wxJigsawEditorConfig;
 	m_XmlIO.SetRootItem(m_Config);
-
-	wxJigsawShapeCategory * category(NULL);
-	category = new wxJigsawShapeCategory;
-	category->SetCategoryName(_("First"));
-	category->GetShapeFileNames().Add(wxT("test1.jigshape"));
-	category->GetShapeFileNames().Add(wxT("test2.jigshape"));
-	category->GetShapeFileNames().Add(wxT("test3.jigshape"));
-	m_Config->GetCategories().Append(category);
-	category = new wxJigsawShapeCategory;
-	category->SetCategoryName(_("Second"));
-	category->GetShapeFileNames().Add(wxT("test4.jigshape"));
-	category->GetShapeFileNames().Add(wxT("test5.jigshape"));
-	m_Config->GetCategories().Append(category);
 }
 
 void wxJigsawEditorMainFrame::LoadConfig()

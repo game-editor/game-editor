@@ -19,6 +19,8 @@ public:
 		wxJS_TYPE_NUMERIC,
 		/// Boolean
 		wxJS_TYPE_BOOLEAN,
+		/// String
+		wxJS_TYPE_STRING,
 		/// Default style (alias to wxJS_TYPE_NONE)
 		wxJS_TYPE_DEFAULT = wxJS_TYPE_NONE
 	};

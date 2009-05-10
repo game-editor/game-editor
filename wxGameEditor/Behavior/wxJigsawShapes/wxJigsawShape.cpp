@@ -13,6 +13,8 @@ wxJigsawShapeStyle IntToJigsawShapeStyle(int value)
 		return wxJigsawShapeStyle::wxJS_TYPE_NUMERIC;
 	case wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN:
 		return wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN;
+	case wxJigsawShapeStyle::wxJS_TYPE_STRING:
+		return wxJigsawShapeStyle::wxJS_TYPE_STRING;
 	default:
 		break;
 	}
@@ -27,6 +29,8 @@ wxString JigsawShapeStyleToStr(wxJigsawShapeStyle value)
 		return _("Numeric");
 	case wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN:
 		return _("Boolean");
+	case wxJigsawShapeStyle::wxJS_TYPE_STRING:
+		return _("String");
 	case wxJigsawShapeStyle::wxJS_TYPE_NONE:
 	default:
 		break;
@@ -616,6 +620,44 @@ void wxJigsawShape::DrawShapeHeader(wxDC & dc, const wxPoint & pos,
 			points[5] = wxPoint(size.GetHeight()/2, size.GetHeight());
 			points[6] = wxPoint(0, size.GetHeight()/2);
 			dc.DrawPolygon(7, points, pos.x, pos.y);
+			wxDELETEA(points);
+		}
+		else // If it is impossible to draw a shape then we will draw a rectangle
+		{
+			dc.DrawRectangle(pos, size);
+		}
+		break;
+	case wxJigsawShapeStyle::wxJS_TYPE_STRING:
+		// If it is possible to draw a shape then we will draw it
+		if(size.GetWidth() >= size.GetHeight())
+		{
+			/*
+			1/3,1
+			1/3,2/3
+			0,2/3
+			0,1/3
+			1/3,1/3
+			1/3,0
+			*/
+			points = new wxPoint[13];
+
+			points[0] = wxPoint(size.GetHeight()/3.0, size.GetHeight());
+			points[1] = wxPoint(size.GetHeight()/3.0, 2*size.GetHeight()/3.0);
+			points[2] = wxPoint(0, 2*size.GetHeight()/3.0);
+			points[3] = wxPoint(0, size.GetHeight()/3.0);
+			points[4] = wxPoint(size.GetHeight()/3.0, size.GetHeight()/3.0);
+			points[5] = wxPoint(size.GetHeight()/3.0, 0);
+
+			points[6] = wxPoint(size.GetWidth()-points[5].x, points[5].y);
+			points[7] = wxPoint(size.GetWidth()-points[4].x, points[4].y);
+			points[8] = wxPoint(size.GetWidth()-points[3].x, points[3].y);
+			points[9] = wxPoint(size.GetWidth()-points[2].x, points[2].y);
+			points[10] = wxPoint(size.GetWidth()-points[1].x, points[1].y);
+			points[11] = wxPoint(size.GetWidth()-points[0].x, points[0].y);
+
+			points[12] = points[0];
+
+			dc.DrawPolygon(13, points, pos.x, pos.y);
 			wxDELETEA(points);
 		}
 		else // If it is impossible to draw a shape then we will draw a rectangle
