@@ -26,6 +26,7 @@
 #include "../gameEditor/LoadSaveGame.h"
 #include "PanelProperty.h"
 #include "Behavior/wxJigsawEditor/wxJigsawEditorMainFrame.h"
+#include "Behavior/wxJigsawEditor/wxJigsawEditorDocument.h"
 #include "PanelActors.h"
 #include "PanelScript.h"
 #include "GameGraph.h"
@@ -275,7 +276,22 @@ void wxMainFrame::Setup_wxIFM()
 
 	panelProperty = new PanelProperty(m_root_panel); 
 	//pBehavior = new Behavior(m_root_panel);
-	pBehavior = new wxJigsawEditorMainFrame( NULL, (wxFrame*)m_root_panel, wxJigsawEditorMainFrame::ID_WXJIGSAWEDITORMAINFRAME );
+
+	///////////////////////////////////////
+	//maks:teste
+	wxDocManager *m_DocManager = new wxDocManager;
+	wxDocTemplate * docTemplate = new wxDocTemplate(m_DocManager, _("Jigsaw Scene"),
+		wxT("*.jigscene;*.xml"), wxEmptyString, wxT("jigscene"), 
+		wxT("wxJigsawEditorDoc"), wxT("wxJigsawEditorView"),
+		CLASSINFO(wxJigsawEditorDocument), CLASSINFO(wxJigsawEditorView));
+	wxUnusedVar(docTemplate);
+	m_DocManager->SetMaxDocsOpen(1);
+	pBehavior = new wxJigsawEditorMainFrame( m_DocManager, (wxFrame*)m_root_panel, wxJigsawEditorMainFrame::ID_WXJIGSAWEDITORMAINFRAME, SYMBOL_WXJIGSAWEDITORMAINFRAME_TITLE, SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION, SYMBOL_WXJIGSAWEDITORMAINFRAME_SIZE, wxTAB_TRAVERSAL | wxNO_BORDER | wxFRAME_TOOL_WINDOW);
+	pBehavior->SetExtraStyle(0);	
+	wxCommandEvent cmd;
+	m_DocManager->CreateDocument( wxEmptyString, wxDOC_NEW );
+	///////////////////////////////////////
+
 	panelActors = new PanelActors(m_root_panel);
 	panelScript = new PanelScript(m_root_panel);
 

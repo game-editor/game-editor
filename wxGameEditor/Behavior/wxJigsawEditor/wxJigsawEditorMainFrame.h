@@ -54,12 +54,19 @@ class wxJigsawEditorConfig;
 #define SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION wxDefaultPosition
 ////@end control identifiers
 
+#define USE_WXPANEL_FOR_FRAME
+
+#ifdef USE_WXPANEL_FOR_FRAME
+#define wxBehaviorFrame wxPanel
+#else
+#define wxBehaviorFrame wxDocParentFrame
+#endif
 
 /*!
  * wxJigsawEditorMainFrame class declaration
  */
 
-class wxJigsawEditorMainFrame: public wxDocParentFrame
+class wxJigsawEditorMainFrame: public wxBehaviorFrame
 {    
     DECLARE_CLASS( wxJigsawEditorMainFrame )
     DECLARE_EVENT_TABLE()
@@ -133,6 +140,8 @@ public:
 
 	wxJigsawPaletteList & GetPalettes() {return m_Palettes;}
 
+	static wxJigsawEditorMainFrame *Get() {return pFrame;}
+
 ////@begin wxJigsawEditorMainFrame member variables
     wxAuiManager m_auiManager;
     wxSlider* m_ScaleSlider;
@@ -163,6 +172,7 @@ public:
 private:
 	wxXmlSerializer m_XmlIO;
 	wxJigsawPaletteList m_Palettes;
+	static wxJigsawEditorMainFrame *pFrame;
 };
 
 #endif

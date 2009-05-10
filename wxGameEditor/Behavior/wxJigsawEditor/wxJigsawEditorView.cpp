@@ -68,8 +68,8 @@ void wxJigsawEditorView::OnUpdate(wxView *sender, wxObject *hint)
 
 wxJigsawEditorCanvas * wxJigsawEditorView::GetCanvas()
 {
-	wxJigsawEditorMainFrame * frame = 
-		wxDynamicCast(GetFrame(), wxJigsawEditorMainFrame);
+	//wxJigsawEditorMainFrame * frame = wxDynamicCast(GetFrame(), wxJigsawEditorMainFrame);
+	wxJigsawEditorMainFrame * frame = wxJigsawEditorMainFrame::Get();
 	if(frame)
 	{
 		return frame->m_Canvas;

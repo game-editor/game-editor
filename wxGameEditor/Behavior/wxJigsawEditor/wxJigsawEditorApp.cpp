@@ -92,6 +92,7 @@ void wxJigsawEditorApp::Init()
 	wxUnusedVar(docTemplate);
 	m_DocManager->SetMaxDocsOpen(1);
 	
+		
 }
 
 /*!
@@ -116,8 +117,10 @@ bool wxJigsawEditorApp::OnInit()
 
 	wxJigsawEditorMainFrame* mainWindow = 
 		new wxJigsawEditorMainFrame( GetDocManager(), NULL, wxJigsawEditorMainFrame::ID_WXJIGSAWEDITORMAINFRAME );
-	mainWindow->Maximize();
+//	mainWindow->Maximize();
 	mainWindow->Show(true);
+
+	m_DocManager->CreateDocument( wxEmptyString, wxDOC_NEW );
 
     return true;
 }

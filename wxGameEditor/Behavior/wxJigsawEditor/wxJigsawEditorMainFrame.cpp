@@ -43,14 +43,14 @@
  * wxJigsawEditorMainFrame type definition
  */
 
-IMPLEMENT_CLASS( wxJigsawEditorMainFrame, wxDocParentFrame )
+IMPLEMENT_CLASS( wxJigsawEditorMainFrame, wxBehaviorFrame )
 
 
 /*!
  * wxJigsawEditorMainFrame event table definition
  */
 
-BEGIN_EVENT_TABLE( wxJigsawEditorMainFrame, wxDocParentFrame )
+BEGIN_EVENT_TABLE( wxJigsawEditorMainFrame, wxBehaviorFrame )
 
 ////@begin wxJigsawEditorMainFrame event table entries
     EVT_MENU( wxID_EXIT, wxJigsawEditorMainFrame::OnEXITClick )
@@ -72,10 +72,16 @@ END_EVENT_TABLE()
 /*!
  * wxJigsawEditorMainFrame constructors
  */
+wxJigsawEditorMainFrame *wxJigsawEditorMainFrame::pFrame = NULL;
 
 wxJigsawEditorMainFrame::wxJigsawEditorMainFrame( wxDocManager *manager, wxFrame *parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
-    : wxDocParentFrame( manager, parent, id, caption, pos, size, style )
+#ifdef USE_WXPANEL_FOR_FRAME
+    : wxPanel(parent)
+#else
+	: wxBehaviorFrame( manager, parent, id, caption, pos, size, style )
+#endif
 {
+	pFrame = this;
     Init();
     Create( manager, parent, id, caption, pos, size, style );
 }
@@ -102,6 +108,7 @@ bool wxJigsawEditorMainFrame::Create( wxDocManager *manager, wxFrame *parent, wx
 
 wxJigsawEditorMainFrame::~wxJigsawEditorMainFrame()
 {
+	pFrame = NULL;
 	wxDELETE(m_ShapeRegistry);
 ////@begin wxJigsawEditorMainFrame destruction
     GetAuiManager().UnInit();
@@ -151,6 +158,7 @@ void wxJigsawEditorMainFrame::CreateControls()
 
     GetAuiManager().SetManagedWindow(this);
 
+#ifndef USE_WXPANEL_FOR_FRAME
     wxMenuBar* menuBar = new wxMenuBar;
     wxMenu* itemMenu3 = new wxMenu;
     itemMenu3->Append(wxID_NEW, _("New\tCtrl+N"), _T(""), wxITEM_NORMAL);
@@ -169,6 +177,7 @@ void wxJigsawEditorMainFrame::CreateControls()
     wxStatusBar* itemStatusBar13 = new wxStatusBar( itemDocParentFrame1, ID_JIGSAW_EDITOR_MAIN_STATUSBAR, wxST_SIZEGRIP|wxNO_BORDER );
     itemStatusBar13->SetFieldsCount(2);
     itemDocParentFrame1->SetStatusBar(itemStatusBar13);
+#endif
 
     wxPanel* itemPanel14 = new wxPanel( itemDocParentFrame1, ID_PALETTE_CONTAINER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
     itemDocParentFrame1->GetAuiManager().AddPane(itemPanel14, wxAuiPaneInfo()
