@@ -482,6 +482,7 @@ wxJigsawShape * wxJigsawEditorMainFrame::LoadShape(const wxString & shapeFileNam
 			wxFILE_SEP_PATH + shapeFileName;
 		if(!wxFileExists(fileName)) continue;
 		serializer.DeserializeFromXml(fileName);
+		if(shape->GetBitmapFileName() != "") shape->SetBitmapFileName(shape->GetBitmapFileName());
 		return (wxJigsawShape*)shape->Clone();
 	}
 	serializer.RemoveAll();

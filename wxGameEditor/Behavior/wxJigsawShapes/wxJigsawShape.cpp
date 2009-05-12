@@ -61,7 +61,7 @@ m_NeedCalcLabelSize(true), m_LabelSize(0,0)
 	m_InputParameters.DeleteContents(true);
 	m_Children.DeleteContents(true);
 
-	InitSerialization();
+	InitSerialization();	
 }
 
 wxJigsawShape::wxJigsawShape(const wxJigsawShape & shape)
