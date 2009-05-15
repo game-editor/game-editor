@@ -3758,14 +3758,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Behavior\wxJigsawShapeUtils\wxIndexTreeItemData.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Behavior\wxJigsawShapeUtils\wxIndexTreeItemData.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawDiagram.cpp"
 				>
 			</File>

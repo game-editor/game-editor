@@ -2,6 +2,7 @@
 #include "wxJigsawShapePropertyIO.h"
 #include "wxJigsawInputParameterPropertyIO.h"
 #include <wx/listimpl.cpp>
+#include <stdlib.h>
 
 wxJigsawShapeStyle IntToJigsawShapeStyle(int value)
 {
@@ -757,12 +758,13 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxDC & dc, wxPoint po
 			wxRect paramRect(GetPosition(), headerSize);
 			paramRect.Offset(paramRectOffset, 0);
 			bool bFound = false;
-			int paramIndex(0);
+			int paramIndex = 0;
 			for(wxJigsawInputParameters::Node * node = m_InputParameters.GetFirst();
 				node; node = node->GetNext(), paramIndex++)
 			{
-				wxJigsawInputParameter * param = node->GetData();
+				wxJigsawInputParameter * param = node->GetData();				
 				paramRect.SetSize(param->GetSize());
+				paramRect.SetTop((headerRect.GetHeight() - paramRect.GetHeight())/2 + headerRect.GetTop()); 
 				switch(param->HitTest(pos, paramRect, bDebug))
 				{
 				case wxJigsawInputParameter::wxJSP_HITETST_LABEL:
@@ -913,8 +915,23 @@ void wxJigsawShape::SetColour(const wxColour & value)
 void wxJigsawShape::DrawBackground(wxDC & dc, 
 		const wxPoint & pos, const wxSize & headerSize, 
 		const wxSize & size, double scale)
-{
-	dc.SetBrush(wxBrush(m_Colour));
+{	
+	wxColour color(m_Colour);
+
+	if(m_Parent && m_Colour == m_Parent->GetColour())
+	{
+		//Change the shape bright to contrast with the parent shape
+
+		//Alternate the bright
+		//double bright =  1 - .1*(GetLevelColor() % 2);
+
+		//Increase the bright
+		double bright =  1 + .08*GetLevelColor();
+
+		color.Set(__min(bright*color.Red(), 255), __min(bright*color.Green(), 255), __min(bright*color.Blue(), 255));
+	}
+	
+	dc.SetBrush(wxBrush(color));
 	dc.SetPen(*wxTRANSPARENT_PEN);
 	
 	wxPoint connector[5] = 
@@ -1017,6 +1034,34 @@ wxJigsawShape * wxJigsawShape::GetTopParent()
 	return NULL;
 }
 
+int wxJigsawShape::GetLevel()
+{
+	int level = 0;
+	wxJigsawShape * parent = this;
+
+	while(parent->GetParent())
+	{		
+		level++;
+		parent = parent->GetParent();		
+	}
+
+	return level;
+}
+
+int wxJigsawShape::GetLevelColor()
+{
+	int level = 0;
+	wxJigsawShape * parent = this;
+
+	while(parent->GetParent() && parent->GetParent()->GetColour() == m_Colour)
+	{		
+		level++;
+		parent = parent->GetParent();		
+	}
+
+	return level;
+}
+
 wxJigsawHotSpotArray & wxJigsawShape::GetHotSpots()
 {
 	return m_HotSpots;
@@ -1081,13 +1126,21 @@ void wxJigsawShape::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots,
 		int paramRectOffset = GetParametersOffset(scale);
 		wxRect paramRect(GetPosition(), headerSize);
 		paramRect.Offset(paramRectOffset, 0);
-		int index(0);
-		int slotOffset(0);
+		int index = 0;
+		int slotOffset = 0;
+		int paramTop = -1;
 		for(wxJigsawInputParameters::Node * node = m_InputParameters.GetFirst();
 			node; node = node->GetNext(), index++)
 		{
 			wxJigsawInputParameter * param = node->GetData();
-			paramRect.SetWidth(param->GetSize().GetWidth());
+
+			//Hotspot size
+			//paramRect.SetWidth(param->GetSize().GetWidth());
+						
+			paramRect.SetSize(param->GetSize());
+			if(paramTop == -1) paramTop = (headerSize.GetHeight() - paramRect.GetHeight())/2 + paramRect.GetTop();
+			paramRect.SetTop(paramTop);
+
 			slotOffset = param->GetSlotOffset(scale);
 			if(!param->GetShape())
 			{

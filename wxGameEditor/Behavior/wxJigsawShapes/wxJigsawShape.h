@@ -120,6 +120,12 @@ public:
 	/// \brief Returns top level parent of a shape
 	wxJigsawShape * GetTopParent();
 
+	/// \brief Returns level of the shape
+	int GetLevel();
+
+	/// \brief Returns level of the shape with the same color
+	int GetLevelColor();
+
 	/// \brief Returns shape's name
 	const wxString & GetName() const;
 	/// \brief Sets shape's name
