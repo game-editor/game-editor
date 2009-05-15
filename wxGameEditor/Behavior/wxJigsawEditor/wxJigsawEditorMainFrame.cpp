@@ -66,9 +66,11 @@ BEGIN_EVENT_TABLE( wxJigsawEditorMainFrame, wxBehaviorFrame )
 
     EVT_BUTTON( wxID_FIND, wxJigsawEditorMainFrame::OnSEARCHClicked )
 
+	
 ////@end wxJigsawEditorMainFrame event table entries
 
 END_EVENT_TABLE()
+
 
 
 /*!

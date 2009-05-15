@@ -1,6 +1,7 @@
 #include "DnDJigsawShapeDropTarget.h"
 #include <wxJigsawShape.h>
 #include "wxJigsawEditorCanvas.h"
+#include "wxJigsawShapeListBox.h"
 #include "DnDJigsawShapeDataObject.h"
 
 DnDJigsawShapeDropTarget::DnDJigsawShapeDropTarget(wxJigsawEditorCanvas * pOwner)
@@ -38,10 +39,11 @@ wxDragResult DnDJigsawShapeDropTarget::OnData(wxCoord x, wxCoord y, wxDragResult
 
 wxDragResult DnDJigsawShapeDropTarget::OnEnter(wxCoord x, wxCoord y, wxDragResult def)
 {
-	if((m_pOwner->GetView() != NULL) && m_pOwner->GetDragImage())
+	/*if((m_pOwner->GetView() != NULL) && m_pOwner->GetDragImage())
 	{
 		m_pOwner->GetDragImage()->Show();
-	}
+	}*/
+
 	return OnDragOver(x, y, def);
 }
 
@@ -52,10 +54,34 @@ wxDragResult DnDJigsawShapeDropTarget::OnDragOver(wxCoord x, wxCoord y, wxDragRe
 		if(!m_pOwner->GetView()) break;
 		if((m_pOwner->GetView() != NULL) && m_pOwner->GetDragImage())
 		{
-			m_pOwner->GetDragImage()->Move(wxPoint(x, y));
+			/*wxMouseEvent event;
+			wxPoint point(::wxGetMousePosition());
+			
+			event.m_x = point.x;
+			event.m_y = point.y;
+
+			m_pOwner->OnMotion(event); */
+
+			//m_pOwner->GetDragImage()->Move(wxPoint(x, y));
 		}
+
 		return wxDropTarget::OnDragOver(x, y, def);
 	}
 	while(false);
+
 	return wxDragNone;
+}
+
+bool DnDJigsawShapeSource::GiveFeedback(wxDragResult effect)
+{
+	if(pTarget->GetDragImage())
+	{
+		//Must show the drag image in any place of the screen
+		wxPoint point(::wxGetMousePosition());
+		point -= pSource->ClientToScreen(wxPoint(0,0));
+
+		pTarget->GetDragImage()->Move(point);
+	}
+
+	return false;
 }

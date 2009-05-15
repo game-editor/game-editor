@@ -23,4 +23,28 @@ private:
     wxJigsawEditorCanvas * m_pOwner;
 };
 
+class DnDJigsawShapeSource : public wxDropSource 
+{
+
+public:
+
+	DnDJigsawShapeSource(wxDataObject& data, wxJigsawShapeListBox *_pSource, wxJigsawEditorCanvas *_pTarget)
+	: wxDropSource(data)
+	{
+		pSource = _pSource;
+		pTarget = _pTarget;
+	}
+
+	virtual ~DnDJigsawShapeSource()
+	{
+	}
+
+	
+	virtual bool GiveFeedback(wxDragResult effect);
+
+private:
+	wxJigsawEditorCanvas *pTarget;
+	wxJigsawShapeListBox *pSource;
+};
+
 #endif

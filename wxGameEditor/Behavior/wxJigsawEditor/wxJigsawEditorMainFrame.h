@@ -103,6 +103,8 @@ public:
     /// wxEVT_COMMAND_TEXT_ENTER event handler for ID_SEARCH_TEXTCTRL
     void OnSEARCHClicked( wxCommandEvent& event );
 
+	
+
 ////@end wxJigsawEditorMainFrame event handler declarations
 	void OnCategorySelected(wxCommandEvent & event);
 

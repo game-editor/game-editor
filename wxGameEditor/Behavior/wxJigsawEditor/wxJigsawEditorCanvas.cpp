@@ -841,7 +841,7 @@ void wxJigsawEditorCanvas::SetScale(double value)
 }
 
 void wxJigsawEditorCanvas::FixActiveHotSpot(const wxPoint & currentPos)
-{
+{	
 	do
 	{
 		if(!m_View) break;
@@ -914,7 +914,7 @@ void wxJigsawEditorCanvas::ReCreateHotSpotBitmap()
 				if(!mdc.GetPixel(x, y, &clr)) continue;
 				if(clr == *wxWHITE)
 				{
-					img.SetAlpha(x, y, 160);
+					img.SetAlpha(x, y, 240);
 				}
 				else
 				{

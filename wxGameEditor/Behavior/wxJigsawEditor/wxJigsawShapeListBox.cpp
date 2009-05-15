@@ -27,6 +27,7 @@
 #include "wxJigsawShapeListBox.h"
 #include "wxJigsawEditorCanvas.h"
 #include "DnDJigsawShapeDataObject.h"
+#include "DnDJigsawShapeDropTarget.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -305,16 +306,18 @@ void wxJigsawShapeListBox::OnLeftDown( wxMouseEvent& event )
 			realPosition.y-shape->GetPosition().y);
 		DnDJigsawShapeDataObject * dataObject = new DnDJigsawShapeDataObject(shapeInfo);
 		m_AssociatedCanvas->GetDropTarget()->SetDataObject(dataObject);
-		wxDropSource dropSource(*dataObject, NULL,
+		DnDJigsawShapeSource dropSource(*dataObject, this, m_AssociatedCanvas);/*, NULL,
 			wxDROP_ICON(dnd_copy),
 			wxDROP_ICON(dnd_move),
-			wxDROP_ICON(dnd_none));
+			wxDROP_ICON(dnd_none));*/
 		if(m_AssociatedCanvas->CreateDragImage(shape))
 		{
 			m_AssociatedCanvas->GetDragImage()->BeginDrag(
 				wxPoint(shapeInfo->m_offset.x,shapeInfo->m_offset.y),
 				//m_AssociatedCanvas->ScreenToClient(ClientToScreen(event.GetPosition())),
-				m_AssociatedCanvas, false);
+				this, true);
+
+			m_AssociatedCanvas->GetDragImage()->Show();
 		}
 		
 		wxDragResult dragResult = dropSource.DoDragDrop(wxDrag_DefaultMove);
@@ -335,6 +338,7 @@ void wxJigsawShapeListBox::OnLeftDown( wxMouseEvent& event )
 
 void wxJigsawShapeListBox::OnMotion( wxMouseEvent& event )
 {
+
 ////@begin wxEVT_MOTION event handler for ID_WXJIGSAWSHAPELISTBOX in wxJigsawShapeListBox.
     // Before editing this code, remove the block markers.
     event.Skip();
