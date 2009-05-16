@@ -437,16 +437,19 @@ void wxJigsawEditorCanvas::OnMotion( wxMouseEvent& event )
 	UpdateCursor(event.GetPosition());
 	if(HasCapture())
 	{
-		// current point
-		wxPoint currentPos = event.GetPosition();
-		// get scroll position
-		wxPoint scrollPos = GetScrollPosition();
-		wxPoint viewPos = PointToViewPoint(currentPos);
-		AutoScroll(currentPos, scrollPos);
-		FixViewOffset();
-		FixActiveHotSpot(viewPos);
-		RefreshBuffer();
+		MotionUpdate(event.GetPosition());
 	}
+}
+
+void wxJigsawEditorCanvas::MotionUpdate(wxPoint currentPos)
+{		
+	// get scroll position
+	wxPoint scrollPos = GetScrollPosition();
+	wxPoint viewPos = PointToViewPoint(currentPos);
+	AutoScroll(currentPos, scrollPos);
+	FixViewOffset();
+	FixActiveHotSpot(viewPos);
+	RefreshBuffer();
 }
 
 wxJigsawEditorDocument * wxJigsawEditorCanvas::GetDocument()
@@ -742,6 +745,7 @@ void wxJigsawEditorCanvas::ProcessDrop(const wxPoint & pos,
 		wxJigsawShapeGroup * newGroup = document->CreateGroupByShape(m_DoubleBufferDC, newShape);
 		if(!newGroup) break;
 		document->ProcessDrop(m_DoubleBufferDC, realPosition, newGroup, hotSpotOffset, m_View->GetScale());
+		m_View->BringToFront(newGroup);
 		RefreshBuffer();
 	}
 	while(false);

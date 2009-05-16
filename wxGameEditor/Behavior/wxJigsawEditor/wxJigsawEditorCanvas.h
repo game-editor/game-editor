@@ -140,6 +140,8 @@ public:
 
 ////@begin wxJigsawEditorCanvas member function declarations
 
+	void MotionUpdate(wxPoint currentPos);
+
     wxJigsawEditorView * GetView() const { return m_View ; }
     void SetView(wxJigsawEditorView * value) { m_View = value ; }
 
