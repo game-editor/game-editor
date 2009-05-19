@@ -1405,10 +1405,6 @@ void UpdateActorAnim(Actor *_actor)
 {
 }
 
-void UpdatePanelEvents()
-{
-}
-
 void AddToGameGraph(Actor *to, int interation, Actor *from = NULL)
 {
 }

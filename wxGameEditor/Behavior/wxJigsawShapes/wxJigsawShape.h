@@ -340,7 +340,7 @@ private:
 	/// \param pos position of top left corner
 	/// \param headerSize size of shape's header
 	/// \param size size of a shape
-	void DrawBackground(wxDC & dc, const wxPoint & pos, 
+	wxColour DrawBackground(wxDC & dc, const wxPoint & pos, 
 		const wxSize & headerSize, const wxSize & size, double scale);
 
 	/// \brief Draws shape's header

@@ -159,7 +159,7 @@ wxSize wxJigsawInputParameter::GetDefaultParameterSize()
 	return wxSize(30, 10);
 }
 
-void wxJigsawInputParameter::Draw(wxDC & dc, const wxPoint & pos, const wxSize & offset, double scale)
+void wxJigsawInputParameter::Draw(wxDC & dc, const wxPoint & pos, const wxSize & offset, double scale, wxColour color)
 {
 	wxPoint realPosition(
 		pos.x + offset.GetWidth(), 
@@ -185,7 +185,11 @@ void wxJigsawInputParameter::Draw(wxDC & dc, const wxPoint & pos, const wxSize &
 	else
 	{
 		dc.SetPen(*wxBLACK_PEN);
-		dc.SetBrush(*wxWHITE_BRUSH);
+
+		wxBrush paramBrush(wxColour(color.Red()*.9,color.Green()*.9,color.Blue()*.9)); 
+		dc.SetBrush(paramBrush);
+		//dc.SetBrush(*wxWHITE_BRUSH);
+
 		shapeSize = wxJigsawInputParameter::GetDefaultParameterSize();
 		shapeSize.x *= scale;
 		shapeSize.y *= scale;

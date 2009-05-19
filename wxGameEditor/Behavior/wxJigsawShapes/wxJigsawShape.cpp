@@ -115,7 +115,7 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 	// Size of input parameter (needed for drawing of each parameter)
 	wxSize paramSize(0,0);
 	// Draw background of a shape with connectors and C-Shape
-	DrawBackground(dc, realPosition, headerSize, size, scale);
+	wxColour color(DrawBackground(dc, realPosition, headerSize, size, scale));
 
 	// Rectangle wich contains a label
 	wxRect labelRect(realPosition.x + wxJigsawShape::ShapeLabelOffset.GetWidth()*scale, 
@@ -144,7 +144,8 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 		paramSize = param->GetSize(dc, scale);
 		// Draw the parameter
 		parametersPos.y = realPosition.y + (headerSize.GetHeight()-paramSize.GetHeight())/2;
-		param->Draw(dc, parametersPos, offset, scale);
+
+		param->Draw(dc, parametersPos, offset, scale, color);
 
 		// Move to next parameter
 		parametersPos.x += paramSize.GetWidth() + wxJigsawInputParameter::ParameterSpacing*scale;
@@ -603,6 +604,16 @@ void wxJigsawShape::DrawShapeHeader(wxDC & dc, const wxPoint & pos,
 		const wxSize & size, const wxJigsawShapeStyle style)
 {
 	wxPoint * points(NULL);
+	bool bDrawBevel = true;
+	wxColour bevelBright(200,200,200), bevelDarker(50,50,50);
+	if(dc.GetPen() == *wxTRANSPARENT_PEN)
+	{
+		wxColour aux;
+		aux = bevelBright;
+		bevelBright = bevelDarker;
+		bevelDarker = aux;		
+	}
+
 	switch(style)
 	{
 	case wxJigsawShapeStyle::wxJS_TYPE_NUMERIC:
@@ -615,12 +626,22 @@ void wxJigsawShape::DrawShapeHeader(wxDC & dc, const wxPoint & pos,
 			points = new wxPoint[7];
 			points[0] = wxPoint(0, size.GetHeight()/2);
 			points[1] = wxPoint(size.GetHeight()/2, 0);
-			points[2] = wxPoint(size.GetWidth()-size.GetHeight()/2, 0);
+			points[2] = wxPoint(size.GetWidth()-size.GetHeight()/2, 0);			
 			points[3] = wxPoint(size.GetWidth(), size.GetHeight()/2);
 			points[4] = wxPoint(size.GetWidth()-size.GetHeight()/2, size.GetHeight());
 			points[5] = wxPoint(size.GetHeight()/2, size.GetHeight());
 			points[6] = wxPoint(0, size.GetHeight()/2);
-			dc.DrawPolygon(7, points, pos.x, pos.y);
+			dc.DrawPolygon(7, points, pos.x, pos.y);			
+
+			if(bDrawBevel)
+			{
+				dc.SetPen(bevelDarker); 
+				dc.DrawLines(3, points, pos.x, pos.y);	
+
+				dc.SetPen(bevelBright); 
+				dc.DrawLines(4, &points[3], pos.x, pos.y);	
+			} 
+
 			wxDELETEA(points);
 		}
 		else // If it is impossible to draw a shape then we will draw a rectangle
@@ -658,7 +679,17 @@ void wxJigsawShape::DrawShapeHeader(wxDC & dc, const wxPoint & pos,
 
 			points[12] = points[0];
 
-			dc.DrawPolygon(13, points, pos.x, pos.y);
+			dc.DrawPolygon(13, points, pos.x, pos.y);			
+
+			if(bDrawBevel)
+			{
+				dc.SetPen(bevelDarker); 
+				dc.DrawLines(7, points, pos.x, pos.y);	
+
+				dc.SetPen(bevelBright); 
+				dc.DrawLines(6, &points[7], pos.x, pos.y);	
+			} 
+
 			wxDELETEA(points);
 		}
 		else // If it is impossible to draw a shape then we will draw a rectangle
@@ -912,12 +943,12 @@ void wxJigsawShape::SetColour(const wxColour & value)
 	m_Colour = value;
 }
 
-void wxJigsawShape::DrawBackground(wxDC & dc, 
+wxColour wxJigsawShape::DrawBackground(wxDC & dc, 
 		const wxPoint & pos, const wxSize & headerSize, 
 		const wxSize & size, double scale)
 {	
 	wxColour color(m_Colour);
-
+	
 	if(m_Parent && m_Colour == m_Parent->GetColour())
 	{
 		//Change the shape bright to contrast with the parent shape
@@ -993,6 +1024,8 @@ void wxJigsawShape::DrawBackground(wxDC & dc,
 			pos.y + size.GetHeight());
 	}
 	dc.DestroyClippingRegion();
+
+	return color;
 }
 
 const wxSize & wxJigsawShape::GetConnectorSize()

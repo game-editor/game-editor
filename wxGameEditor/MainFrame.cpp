@@ -200,13 +200,16 @@ bool wxMainFrame::Create( wxWindow* parent, wxWindowID id, const wxString& capti
 ////@end wxMainFrame creation
 
 	//Create status bar
-	statusBar = new wxGedStatusBar(this, wxID_ANY, wxST_SIZEGRIP);	
+	statusBar = NULL; //Need any status bar? statusBar = new wxGedStatusBar(this, wxID_ANY, wxST_SIZEGRIP);	
 	SetStatusBar(statusBar);
 
 	int widths[] = { -1 };
 
-	GetStatusBar()->SetFieldsCount(WXSIZEOF(widths), widths);
-	GetStatusBar()->SetStatusText(wxT("Ready"), 0);
+	if(GetStatusBar()) 
+	{
+		GetStatusBar()->SetFieldsCount(WXSIZEOF(widths), widths);
+		GetStatusBar()->SetStatusText(wxT("Ready"), 0);
+	}
 	
 
 	//Setup tool bar color
@@ -264,7 +267,7 @@ void wxMainFrame::Setup_wxIFM()
 
 
     // specify the status bar pane to use for displaying messages
-    m_ifm->SetStatusMessagePane(GetStatusBar(), 0);
+    if(GetStatusBar()) m_ifm->SetStatusMessagePane(GetStatusBar(), 0);
 
 
 	// First we need to create the add child data object

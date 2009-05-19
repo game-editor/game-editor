@@ -112,7 +112,7 @@ public:
 	/// \param dc device context
 	/// \param pos position of input parameter (passed by its parent)
 	/// \param offset offset on the device context (used for scrolling)
-	void Draw(wxDC & dc, const wxPoint & pos, const wxSize & offset, double scale);
+	void Draw(wxDC & dc, const wxPoint & pos, const wxSize & offset, double scale, wxColour color);
 	/// \brief Returns the code of area under a given point
 	/// \param pos point (in logical coordinates)
 	/// \param paramRect rectangle of input parameter (passed by its parent)

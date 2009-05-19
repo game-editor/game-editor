@@ -49,7 +49,6 @@
 #include "../gameEditor/ActorText.h"
 #include "../wxGameEditor/GameGraph.h"
 
-void UpdatePanelEvents();
 
 #endif //#ifndef STAND_ALONE_GAME
 
@@ -1636,9 +1635,6 @@ void Action::ToEvent(stAction *action, ListActions *pUpdateList)
 	}
 
 
-#ifndef STAND_ALONE_GAME
-	UpdatePanelEvents();
-#endif
 }
 
 
@@ -5798,9 +5794,6 @@ bool Action::RemoveAction(stAction *actionRemove)
 	if(!actionRemove) return false;
 	bool bRemoved = false;
 
-#ifndef STAND_ALONE_GAME
-	UpdatePanelEvents();
-#endif
 
 	
 	//Remove from list
