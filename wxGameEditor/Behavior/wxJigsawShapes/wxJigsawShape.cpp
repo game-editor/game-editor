@@ -605,7 +605,7 @@ void wxJigsawShape::DrawShapeHeader(wxDC & dc, const wxPoint & pos,
 {
 	wxPoint * points(NULL);
 	bool bDrawBevel = true;
-	wxColour bevelBright(200,200,200), bevelDarker(50,50,50);
+	wxColour bevelBright(200,200,200), bevelDarker(50,50,50);	
 	if(dc.GetPen() == *wxTRANSPARENT_PEN)
 	{
 		wxColour aux;
@@ -617,7 +617,34 @@ void wxJigsawShape::DrawShapeHeader(wxDC & dc, const wxPoint & pos,
 	switch(style)
 	{
 	case wxJigsawShapeStyle::wxJS_TYPE_NUMERIC:
-		dc.DrawRoundedRectangle(pos, size, size.GetHeight()/2);
+
+		
+
+		if(bDrawBevel)
+		{
+			wxPoint pos1(pos);
+			wxSize size1(size);
+
+			dc.SetPen(bevelDarker); 
+			dc.DrawRoundedRectangle(pos1, size1, size1.GetHeight()/2);
+
+			dc.SetPen(bevelBright); 			
+			pos1.x += 1;
+			pos1.y += 1;			
+			dc.DrawRoundedRectangle(pos1, size1, size1.GetHeight()/2);
+
+			dc.SetPen(*wxTRANSPARENT_PEN); 
+			pos1.y -= 1;
+			dc.DrawRoundedRectangle(pos1, size, size.GetHeight()/2);
+
+			dc.SetPen(bevelDarker); 
+			dc.DrawLine(pos1.x + size.GetHeight()/2, pos1.y, pos1.x + size.GetWidth() - size.GetHeight()/2, pos1.y);
+		} 
+		else 
+		{
+			dc.DrawRoundedRectangle(pos, size, size.GetHeight()/2);
+		}
+
 		break;
 	case wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN:
 		// If it is possible to draw a shape then we will draw it
