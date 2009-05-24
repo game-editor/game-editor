@@ -15,6 +15,7 @@ wxJigsawEditorDocument::wxJigsawEditorDocument()
 	XS_REGISTER_IO_HANDLER(wxT("listjigsawinputparameter"), xsListJigsawInputParameterPropIO);
 	XS_REGISTER_IO_HANDLER(wxT("jigsawshapegroup"), xsJigsawShapeGroupPropIO);
 	XS_REGISTER_IO_HANDLER(wxT("listjigsawshapegroup"), xsListJigsawShapeGroupPropIO);
+	XS_REGISTER_IO_HANDLER(wxT("emit"), xsCodeEmitter);
 
 	m_XmlIO.SetSerializerOwner(wxT("wxJigsawShapeEngine"));
 	m_XmlIO.SetSerializerRootName(wxT("wxJigsawDiagram"));

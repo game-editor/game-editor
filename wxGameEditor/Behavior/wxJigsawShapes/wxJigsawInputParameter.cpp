@@ -29,7 +29,8 @@ wxJigsawInputParameter::wxJigsawInputParameter(const wxJigsawInputParameter & pa
 : xsSerializable(param),
 m_Label(param.m_Label), m_Style(param.m_Style), 
 m_Shape(param.m_Shape), m_NeedCalcLabelSize(param.m_NeedCalcLabelSize), 
-m_LabelSize(param.m_LabelSize)
+m_LabelSize(param.m_LabelSize),
+m_Emit(param.m_Emit)
 {
 	InitSerialization();
 }
@@ -48,6 +49,7 @@ void wxJigsawInputParameter::InitSerialization()
 {
 	XS_SERIALIZE(m_Label, wxT("label"));
 	XS_SERIALIZE(m_Style, wxT("style"));
+	XS_SERIALIZE_CODEEMITTER(m_Emit, wxT("emit"));
 	XS_SERIALIZE_JIGSAWSHAPE(m_Shape, wxT("shape"));
 }
 

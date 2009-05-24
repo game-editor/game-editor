@@ -1,32 +1,32 @@
-/////////////////////////////////////////////////////////////////////////////
-// Name:        wxJigsawEditorMainFrame.h
-// Purpose:     
-// Author:      Volodymir (T-Rex) Tryapichko
-// Modified by: 
-// Created:     02/03/2008 19:34:55
-// RCS-ID:      
-// Copyright:   
-// Licence:     
-/////////////////////////////////////////////////////////////////////////////
+// Behavior.h: interface for the Behavior class.
+//
+//////////////////////////////////////////////////////////////////////
 
-#ifndef _WXJIGSAWEDITORMAINFRAME_H_
-#define _WXJIGSAWEDITORMAINFRAME_H_
+#if !defined(AFX_PANELEVENTS_H__721C4D92_A22B_4720_8A41_2FF2AAAD9C06_ASDFFSE___INCLUDED_)
+#define AFX_PANELEVENTS_H__721C4D92_A22B_4720_8A41_2FF2AAAD9C06_ASDFFSE___INCLUDED_
 
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
 
 /*!
  * Includes
  */
 
 ////@begin includes
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
 #include "wx/aui/framemanager.h"
 #include "wx/docview.h"
 #include "wx/statusbr.h"
 #include "wx/valgen.h"
 #include "wx/splitter.h"
 ////@end includes
-#include "wxJigsawEditorCanvas.h"
-#include "wxJigsawShapeListBox.h"
-#include "CategoryList.h"
+#include "wxJigsawEditor/wxJigsawEditorCanvas.h"
+#include "wxJigsawEditor/wxJigsawShapeListBox.h"
+#include "wxJigsawEditor/CategoryList.h"
 
 #include <wx/wxxmlserializer/XmlSerializer.h>
 #include <wxJigsawPalette.h>
@@ -54,31 +54,20 @@ class wxJigsawEditorConfig;
 #define SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION wxDefaultPosition
 ////@end control identifiers
 
-#define USE_WXPANEL_FOR_FRAME
-
-#ifdef USE_WXPANEL_FOR_FRAME
-#define wxBehaviorFrame wxPanel
-#else
-#define wxBehaviorFrame wxDocParentFrame
-#endif
-
-/*!
- * wxJigsawEditorMainFrame class declaration
- */
-
-class wxJigsawEditorMainFrame: public wxBehaviorFrame
-{    
-    DECLARE_CLASS( wxJigsawEditorMainFrame )
+class Behavior : public wxPanel  
+{
+	DECLARE_CLASS(Behavior)
     DECLARE_EVENT_TABLE()
 
 public:
-    /// Constructors
-    wxJigsawEditorMainFrame( wxDocManager *manager, wxFrame *parent, wxWindowID id = SYMBOL_WXJIGSAWEDITORMAINFRAME_IDNAME, const wxString& caption = SYMBOL_WXJIGSAWEDITORMAINFRAME_TITLE, const wxPoint& pos = SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION, const wxSize& size = SYMBOL_WXJIGSAWEDITORMAINFRAME_SIZE, long style = SYMBOL_WXJIGSAWEDITORMAINFRAME_STYLE );
+	Behavior(wxWindow *parent);
+	virtual ~Behavior();
+	
+	static Behavior *Get() {return pBehavior;}
+	
+	bool Create( wxDocManager *manager, wxFrame *parent, wxWindowID id = SYMBOL_WXJIGSAWEDITORMAINFRAME_IDNAME, const wxString& caption = SYMBOL_WXJIGSAWEDITORMAINFRAME_TITLE, const wxPoint& pos = SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION, const wxSize& size = SYMBOL_WXJIGSAWEDITORMAINFRAME_SIZE, long style = SYMBOL_WXJIGSAWEDITORMAINFRAME_STYLE );
 
-    bool Create( wxDocManager *manager, wxFrame *parent, wxWindowID id = SYMBOL_WXJIGSAWEDITORMAINFRAME_IDNAME, const wxString& caption = SYMBOL_WXJIGSAWEDITORMAINFRAME_TITLE, const wxPoint& pos = SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION, const wxSize& size = SYMBOL_WXJIGSAWEDITORMAINFRAME_SIZE, long style = SYMBOL_WXJIGSAWEDITORMAINFRAME_STYLE );
-
-    /// Destructor
-    ~wxJigsawEditorMainFrame();
+  
 
     /// Initialises member variables
     void Init();
@@ -86,7 +75,7 @@ public:
     /// Creates the controls and sizers
     void CreateControls();
 
-////@begin wxJigsawEditorMainFrame event handler declarations
+////@begin Behavior event handler declarations
 
     /// wxEVT_COMMAND_MENU_SELECTED event handler for wxID_EXIT
     void OnEXITClick( wxCommandEvent& event );
@@ -103,12 +92,10 @@ public:
     /// wxEVT_COMMAND_TEXT_ENTER event handler for ID_SEARCH_TEXTCTRL
     void OnSEARCHClicked( wxCommandEvent& event );
 
-	
-
-////@end wxJigsawEditorMainFrame event handler declarations
+////@end Behavior event handler declarations
 	void OnCategorySelected(wxCommandEvent & event);
 
-////@begin wxJigsawEditorMainFrame member function declarations
+////@begin Behavior member function declarations
 
     /// Returns the AUI manager object
     wxAuiManager& GetAuiManager() { return m_auiManager; }
@@ -121,7 +108,7 @@ public:
 
     /// Retrieves icon resources
     wxIcon GetIconResource( const wxString& name );
-////@end wxJigsawEditorMainFrame member function declarations
+////@end Behavior member function declarations
 
     /// Should we show tooltips?
     static bool ShowToolTips();
@@ -133,8 +120,6 @@ public:
 	bool LoadShapeRegistry();
 	void InitConfigSerialization();
 
-	wxString GetCode();
-
 	wxJigsawShapeList * GetShapeRegistry() const { return m_ShapeRegistry ; }
 	void SetShapeRegistry(wxJigsawShapeList * value) { m_ShapeRegistry = value ; }
 
@@ -144,9 +129,7 @@ public:
 
 	wxJigsawPaletteList & GetPalettes() {return m_Palettes;}
 
-	static wxJigsawEditorMainFrame *Get() {return pFrame;}
-
-////@begin wxJigsawEditorMainFrame member variables
+////@begin Behavior member variables
     wxAuiManager m_auiManager;
     wxSlider* m_ScaleSlider;
     wxTextCtrl* m_SearchTextCtrl;
@@ -167,7 +150,7 @@ public:
         ID_PALETTE = 10006,
         ID_CANVAS = 10003
     };
-////@end wxJigsawEditorMainFrame member variables
+////@end Behavior member variables
 	wxJigsawShapeList m_SearchResults;
 
 	wxJigsawShapeList * m_ShapeRegistry;
@@ -176,8 +159,10 @@ public:
 private:
 	wxXmlSerializer m_XmlIO;
 	wxJigsawPaletteList m_Palettes;
-	static wxJigsawEditorMainFrame *pFrame;
+
+private:
+	static Behavior *pBehavior;
 };
 
-#endif
-    // _WXJIGSAWEDITORMAINFRAME_H_
+
+#endif // !defined(AFX_PANELEVENTS_H__721C4D92_A22B_4720_8A41_2FF2AAAD9C06_ASDFFSE___INCLUDED_)

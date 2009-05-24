@@ -71,7 +71,8 @@ m_Parent(shape.m_Parent), m_Name(shape.m_Name), m_Bitmap(shape.m_Bitmap),
 m_Colour(shape.m_Colour), m_Style(shape.m_Style), m_HasNotch(shape.m_HasNotch), 
 m_HasBump(shape.m_HasBump), m_HasCShape(shape.m_HasCShape), m_MinSize(shape.m_MinSize), 
 m_Position(shape.m_Position), m_NeedCalcLabelSize(shape.m_NeedCalcLabelSize),
-m_LabelSize(shape.m_LabelSize)
+m_LabelSize(shape.m_LabelSize),
+m_Emit(shape.m_Emit), m_EmitOpen(shape.m_EmitOpen), m_EmitIntra(shape.m_EmitIntra), m_EmitClose(shape.m_EmitClose)
 {
 	m_InputParameters.DeleteContents(true);
 	CopyInputParameters(*this, shape);
@@ -97,8 +98,13 @@ void wxJigsawShape::InitSerialization()
 	XS_SERIALIZE(m_HasCShape, wxT("has_c_shape"));
 	XS_SERIALIZE(m_MinSize, wxT("min_size"));
 	XS_SERIALIZE(m_Position, wxT("position"));
+	XS_SERIALIZE_CODEEMITTER(m_Emit, wxT("emit"));
+	XS_SERIALIZE_CODEEMITTER(m_EmitOpen, wxT("emit_open"));
 	XS_SERIALIZE_LISTJIGSAWINPUTPARAMETER(m_InputParameters, wxT("inputparameters"));
+	XS_SERIALIZE_CODEEMITTER(m_EmitIntra, wxT("emit_intra"));
 	XS_SERIALIZE_LISTJIGSAWSHAPE(m_Children, wxT("children"));
+	XS_SERIALIZE_CODEEMITTER(m_EmitClose, wxT("emit_close"));
+	
 }
 
 void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)

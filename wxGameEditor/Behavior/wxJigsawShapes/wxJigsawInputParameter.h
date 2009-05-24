@@ -5,6 +5,7 @@
 #include <wx/list.h>
 #include <wx/wxxmlserializer/XmlSerializer.h>
 #include <smart_enum.h>
+#include "../CodeEmitter.h"
 
 /// Source class for shape's style (value provider)
 class wxJigsawShapeStyle_def
@@ -38,6 +39,8 @@ class wxJigsawInputParameter : public xsSerializable
 	DECLARE_DYNAMIC_CLASS(wxJigsawInputParameter)
 	/// \brief Label
 	wxString m_Label;
+	/// \brief 
+	CodeEmitter m_Emit;
 	/// \brief Style
 	int m_Style;
 	/// \brief Shape associated to parameter

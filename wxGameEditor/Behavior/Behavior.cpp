@@ -1,130 +1,54 @@
-/////////////////////////////////////////////////////////////////////////////
-// Name:        wxJigsawEditorMainFrame.cpp
-// Purpose:     
-// Author:      Volodymir (T-Rex) Tryapichko
-// Modified by: 
-// Created:     02/03/2008 19:34:55
-// RCS-ID:      
-// Copyright:   
-// Licence:     
-/////////////////////////////////////////////////////////////////////////////
+// Behavior.cpp: implementation of the Behavior class.
+//
+//////////////////////////////////////////////////////////////////////
 
-// For compilers that support precompilation, includes "wx/wx.h".
-#include "wx/wxprec.h"
+#include "Behavior.h"
+#include "wxJigsawEditor/DnDJigsawShapeDropTarget.h"
 
-#ifdef __BORLANDC__
-#pragma hdrstop
-#endif
-
-#ifndef WX_PRECOMP
-#include "wx/wx.h"
-#endif
-
-////@begin includes
-////@end includes
-
-#include "wxJigsawEditorMainFrame.h"
-#include "wxJigsawEditorApp.h"
-#include "DnDJigsawShapeDropTarget.h"
-
-#include "wxJigsawEditorView.h"
-#include "wxJigsawShapeCategory.h"
-#include "wxJigsawEditorConfig.h"
-#include "xsColourDataPropIO.h"
+#include "wxJigsawEditor/wxJigsawEditorView.h"
+#include "wxJigsawEditor/wxJigsawShapeCategory.h"
+#include "wxJigsawEditor/wxJigsawEditorConfig.h"
+#include "wxJigsawEditor/xsColourDataPropIO.h"
 #include <wxJigsawShape.h>
 #include <wxJigsawShapePropertyIO.h>
 #include <wxJigsawInputParameterPropertyIO.h>
-#include "wx/ifm/ifmdefs.h"
-#include "../../wxGed/wxGedControls.h"
-
-////@begin XPM images
-////@end XPM images
 
 
-/*!
- * wxJigsawEditorMainFrame type definition
- */
+IMPLEMENT_CLASS(Behavior, wxPanel)
 
-IMPLEMENT_CLASS( wxJigsawEditorMainFrame, wxBehaviorFrame )
+BEGIN_EVENT_TABLE(Behavior, wxPanel)
+    EVT_MENU( wxID_EXIT, Behavior::OnEXITClick )
+    EVT_UPDATE_UI( wxID_EXIT, Behavior::OnEXITUpdate )
 
+    EVT_MENU( wxID_ABOUT, Behavior::OnABOUTClick )
 
-/*!
- * wxJigsawEditorMainFrame event table definition
- */
+    EVT_SLIDER( ID_SCALE_SLIDER, Behavior::OnSCALESLIDERUpdated )
 
-BEGIN_EVENT_TABLE( wxJigsawEditorMainFrame, wxBehaviorFrame )
+    EVT_TEXT_ENTER( ID_SEARCH_TEXTCTRL, Behavior::OnSEARCHClicked )
 
-////@begin wxJigsawEditorMainFrame event table entries
-    EVT_MENU( wxID_EXIT, wxJigsawEditorMainFrame::OnEXITClick )
-    EVT_UPDATE_UI( wxID_EXIT, wxJigsawEditorMainFrame::OnEXITUpdate )
-
-    EVT_MENU( wxID_ABOUT, wxJigsawEditorMainFrame::OnABOUTClick )
-
-    EVT_SLIDER( ID_SCALE_SLIDER, wxJigsawEditorMainFrame::OnSCALESLIDERUpdated )
-
-    EVT_TEXT_ENTER( ID_SEARCH_TEXTCTRL, wxJigsawEditorMainFrame::OnSEARCHClicked )
-
-    EVT_BUTTON( wxID_FIND, wxJigsawEditorMainFrame::OnSEARCHClicked )
-
-	
-////@end wxJigsawEditorMainFrame event table entries
-
+    EVT_BUTTON( wxID_FIND, Behavior::OnSEARCHClicked )
 END_EVENT_TABLE()
 
 
+Behavior *Behavior::pBehavior = NULL;
 
-/*!
- * wxJigsawEditorMainFrame constructors
- */
-wxJigsawEditorMainFrame *wxJigsawEditorMainFrame::pFrame = NULL;
-
-wxJigsawEditorMainFrame::wxJigsawEditorMainFrame( wxDocManager *manager, wxFrame *parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
-#ifdef USE_WXPANEL_FOR_FRAME
-    : wxPanel(parent)
-#else
-	: wxBehaviorFrame( manager, parent, id, caption, pos, size, style )
-#endif
+Behavior::Behavior(wxWindow *parent)   : wxPanel(parent)
 {
-	pFrame = this;
-    Init();
-    Create( manager, parent, id, caption, pos, size, style );
-}
-
-
-/*!
- * wxJigsawEditorMainFrame creator
- */
-
-bool wxJigsawEditorMainFrame::Create( wxDocManager *manager, wxFrame *parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
-{
-////@begin wxJigsawEditorMainFrame creation
-    SetParent(parent);
+	Init();	
     CreateControls();
     Centre();
-////@end wxJigsawEditorMainFrame creation
-    return true;
+
+	pBehavior = this;
 }
 
-
-/*!
- * wxJigsawEditorMainFrame destructor
- */
-
-wxJigsawEditorMainFrame::~wxJigsawEditorMainFrame()
+Behavior::~Behavior()
 {
-	pFrame = NULL;
 	wxDELETE(m_ShapeRegistry);
-////@begin wxJigsawEditorMainFrame destruction
-    GetAuiManager().UnInit();
-////@end wxJigsawEditorMainFrame destruction
+	pBehavior = NULL;	
 }
 
 
-/*!
- * Member initialisation
- */
-
-void wxJigsawEditorMainFrame::Init()
+void Behavior::Init()
 {
 	m_ShapeRegistry = new wxJigsawShapeList;
 	m_Config = NULL;
@@ -139,31 +63,30 @@ void wxJigsawEditorMainFrame::Init()
 
 	LoadShapeRegistry();
 
-////@begin wxJigsawEditorMainFrame member initialisation
+////@begin Behavior member initialisation
     m_ScaleValue = 100;
     m_ScaleSlider = NULL;
     m_SearchTextCtrl = NULL;
     m_CategoryList = NULL;
     m_Palette = NULL;
     m_Canvas = NULL;
-////@end wxJigsawEditorMainFrame member initialisation
+////@end Behavior member initialisation
 }
 
 
 /*!
- * Control creation for wxJigsawEditorMainFrame
+ * Control creation for Behavior
  */
 
-void wxJigsawEditorMainFrame::CreateControls()
+void Behavior::CreateControls()
 {    
 	SetExtraStyle(wxWS_EX_VALIDATE_RECURSIVELY);
-////@begin wxJigsawEditorMainFrame content construction
-    wxJigsawEditorMainFrame* itemDocParentFrame1 = this;
+////@begin Behavior content construction
+    Behavior* itemDocParentFrame1 = this;
 
     GetAuiManager().SetManagedWindow(this);
 
-#ifndef USE_WXPANEL_FOR_FRAME
-    wxMenuBar* menuBar = new wxMenuBar;
+    /*wxMenuBar* menuBar = new wxMenuBar;
     wxMenu* itemMenu3 = new wxMenu;
     itemMenu3->Append(wxID_NEW, _("New\tCtrl+N"), _T(""), wxITEM_NORMAL);
     itemMenu3->Append(wxID_OPEN, _("Open\tCtrl+O"), _T(""), wxITEM_NORMAL);
@@ -176,31 +99,27 @@ void wxJigsawEditorMainFrame::CreateControls()
     wxMenu* itemMenu11 = new wxMenu;
     itemMenu11->Append(wxID_ABOUT, _("About..."), _T(""), wxITEM_NORMAL);
     menuBar->Append(itemMenu11, _("Help"));
-    itemDocParentFrame1->SetMenuBar(menuBar);
+    itemDocParentFrame1->SetMenuBar(menuBar);*/
 
-    wxStatusBar* itemStatusBar13 = new wxStatusBar( itemDocParentFrame1, ID_JIGSAW_EDITOR_MAIN_STATUSBAR, wxST_SIZEGRIP|wxNO_BORDER );
+    /*wxStatusBar* itemStatusBar13 = new wxStatusBar( itemDocParentFrame1, ID_JIGSAW_EDITOR_MAIN_STATUSBAR, wxST_SIZEGRIP|wxNO_BORDER );
     itemStatusBar13->SetFieldsCount(2);
-    itemDocParentFrame1->SetStatusBar(itemStatusBar13);
-#endif
+    itemDocParentFrame1->SetStatusBar(itemStatusBar13);*/
 
     wxPanel* itemPanel14 = new wxPanel( itemDocParentFrame1, ID_PALETTE_CONTAINER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
     itemDocParentFrame1->GetAuiManager().AddPane(itemPanel14, wxAuiPaneInfo()
-        .Name(_T("Palette")).MinSize(wxSize(250, -1)).BestSize(wxSize(220, -1)).CaptionVisible(false).CloseButton(false).DestroyOnClose(false).Resizable(true).Floatable(false));
+        .Name(_T("Palette")).MinSize(wxSize(200, -1)).BestSize(wxSize(220, -1)).CaptionVisible(false).CloseButton(false).DestroyOnClose(false).Resizable(true).Floatable(false));
 
     wxBoxSizer* itemBoxSizer15 = new wxBoxSizer(wxVERTICAL);
     itemPanel14->SetSizer(itemBoxSizer15);
-	itemPanel14->SetBackgroundColour(wxBackground_Pen);
 
-	//Zoom is not working very well. So, doesn't use it now.
-	m_ScaleSlider = NULL;
-    /*m_ScaleSlider = new wxSlider( itemPanel14, ID_SCALE_SLIDER, 0, 1, 500, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
-    itemBoxSizer15->Add(m_ScaleSlider, 0, wxGROW, 5);*/
+    m_ScaleSlider = new wxSlider( itemPanel14, ID_SCALE_SLIDER, 0, 1, 500, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
+    itemBoxSizer15->Add(m_ScaleSlider, 0, wxGROW, 5);
 
-    /*wxArrayString itemChoice17Strings;
+    wxArrayString itemChoice17Strings;
     wxChoice* itemChoice17 = new wxChoice( itemPanel14, ID_SHAPE_GROUP_CHOICE, wxDefaultPosition, wxDefaultSize, itemChoice17Strings, 0 );
-    itemBoxSizer15->Add(itemChoice17, 0, wxGROW|wxALL, 5);*/
+    itemBoxSizer15->Add(itemChoice17, 0, wxGROW|wxALL, 5);
 
-    wxStaticText* itemStaticText18 = new wxStaticText( itemPanel14, wxID_STATIC, _(""), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText18 = new wxStaticText( itemPanel14, wxID_STATIC, _("Search:"), wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer15->Add(itemStaticText18, 0, wxALIGN_LEFT|wxLEFT|wxRIGHT|wxTOP, 5);
 
     wxBoxSizer* itemBoxSizer19 = new wxBoxSizer(wxHORIZONTAL);
@@ -209,19 +128,15 @@ void wxJigsawEditorMainFrame::CreateControls()
     m_SearchTextCtrl = new wxTextCtrl( itemPanel14, ID_SEARCH_TEXTCTRL, _T(""), wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER );
     itemBoxSizer19->Add(m_SearchTextCtrl, 1, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, 5);
 
-
-    wxButton* itemButton21 = new wxButton( itemPanel14, wxID_FIND, _("&Search"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT );
+    wxButton* itemButton21 = new wxButton( itemPanel14, wxID_FIND, _("&Find"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT );
     itemBoxSizer19->Add(itemButton21, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
-	
 
-    wxSplitterWindow* itemSplitterWindow22 = new wxSplitterWindow( itemPanel14, ID_SPLITTERWINDOW, wxDefaultPosition, wxSize(100, 200), wxSP_3DBORDER|wxSP_3DSASH|wxNO_BORDER );
+    wxSplitterWindow* itemSplitterWindow22 = new wxSplitterWindow( itemPanel14, ID_SPLITTERWINDOW, wxDefaultPosition, wxSize(100, 100), wxSP_3DBORDER|wxSP_3DSASH|wxNO_BORDER );
     itemSplitterWindow22->SetMinimumPaneSize(0);
 
     m_CategoryList = new CategoryList( itemSplitterWindow22, ID_CATEGORY_LIST, wxDefaultPosition, wxSize(100, 150), wxSUNKEN_BORDER );
-	m_CategoryList->SetBackgroundColour(wxBackground_Pen);
 
     m_Palette = new wxJigsawShapeListBox( itemSplitterWindow22, ID_PALETTE, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER|wxTAB_TRAVERSAL );
-	m_Palette->SetBackgroundColour(wxBackground_Pen);
 
     itemSplitterWindow22->SplitHorizontally(m_CategoryList, m_Palette, 150);
     itemBoxSizer15->Add(itemSplitterWindow22, 1, wxGROW, 0);
@@ -234,8 +149,8 @@ void wxJigsawEditorMainFrame::CreateControls()
     GetAuiManager().Update();
 
     // Set validators
-	if(m_ScaleSlider)     m_ScaleSlider->SetValidator( wxGenericValidator(& m_ScaleValue) );
-////@end wxJigsawEditorMainFrame content construction
+    m_ScaleSlider->SetValidator( wxGenericValidator(& m_ScaleValue) );
+////@end Behavior content construction
 	TransferDataToWindow();
 	m_Canvas->SetDropTarget(new DnDJigsawShapeDropTarget(m_Canvas));
 	m_Palette->SetAssociatedCanvas(m_Canvas);
@@ -252,10 +167,10 @@ void wxJigsawEditorMainFrame::CreateControls()
 		m_CategoryList->AddCategory(palette->GetPaletteName(), &palette->GetShapes());
 	}
 	Connect(m_CategoryList->GetId(), wxEVT_COMMAND_LISTBOX_SELECTED,
-		wxCommandEventHandler(wxJigsawEditorMainFrame::OnCategorySelected));
+		wxCommandEventHandler(Behavior::OnCategorySelected));
 }
 
-void wxJigsawEditorMainFrame::OnCategorySelected(wxCommandEvent & event)
+void Behavior::OnCategorySelected(wxCommandEvent & event)
 {
 	wxJigsawShapeList * shapes = wxDynamicCast(event.GetClientData(), wxJigsawShapeList);
 	if(shapes)
@@ -272,12 +187,12 @@ void wxJigsawEditorMainFrame::OnCategorySelected(wxCommandEvent & event)
  * wxEVT_COMMAND_MENU_SELECTED event handler for wxID_EXIT
  */
 
-void wxJigsawEditorMainFrame::OnEXITClick( wxCommandEvent& event )
+void Behavior::OnEXITClick( wxCommandEvent& event )
 {
-////@begin wxEVT_COMMAND_MENU_SELECTED event handler for wxID_EXIT in wxJigsawEditorMainFrame.
+////@begin wxEVT_COMMAND_MENU_SELECTED event handler for wxID_EXIT in Behavior.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_MENU_SELECTED event handler for wxID_EXIT in wxJigsawEditorMainFrame. 
+////@end wxEVT_COMMAND_MENU_SELECTED event handler for wxID_EXIT in Behavior. 
 }
 
 
@@ -285,12 +200,12 @@ void wxJigsawEditorMainFrame::OnEXITClick( wxCommandEvent& event )
  * wxEVT_UPDATE_UI event handler for wxID_EXIT
  */
 
-void wxJigsawEditorMainFrame::OnEXITUpdate( wxUpdateUIEvent& event )
+void Behavior::OnEXITUpdate( wxUpdateUIEvent& event )
 {
-////@begin wxEVT_UPDATE_UI event handler for wxID_EXIT in wxJigsawEditorMainFrame.
+////@begin wxEVT_UPDATE_UI event handler for wxID_EXIT in Behavior.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_UPDATE_UI event handler for wxID_EXIT in wxJigsawEditorMainFrame. 
+////@end wxEVT_UPDATE_UI event handler for wxID_EXIT in Behavior. 
 }
 
 
@@ -298,12 +213,12 @@ void wxJigsawEditorMainFrame::OnEXITUpdate( wxUpdateUIEvent& event )
  * wxEVT_COMMAND_MENU_SELECTED event handler for wxID_ABOUT
  */
 
-void wxJigsawEditorMainFrame::OnABOUTClick( wxCommandEvent& event )
+void Behavior::OnABOUTClick( wxCommandEvent& event )
 {
-////@begin wxEVT_COMMAND_MENU_SELECTED event handler for wxID_ABOUT in wxJigsawEditorMainFrame.
+////@begin wxEVT_COMMAND_MENU_SELECTED event handler for wxID_ABOUT in Behavior.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_MENU_SELECTED event handler for wxID_ABOUT in wxJigsawEditorMainFrame. 
+////@end wxEVT_COMMAND_MENU_SELECTED event handler for wxID_ABOUT in Behavior. 
 }
 
 
@@ -311,7 +226,7 @@ void wxJigsawEditorMainFrame::OnABOUTClick( wxCommandEvent& event )
  * Should we show tooltips?
  */
 
-bool wxJigsawEditorMainFrame::ShowToolTips()
+bool Behavior::ShowToolTips()
 {
     return true;
 }
@@ -320,26 +235,26 @@ bool wxJigsawEditorMainFrame::ShowToolTips()
  * Get bitmap resources
  */
 
-wxBitmap wxJigsawEditorMainFrame::GetBitmapResource( const wxString& name )
+wxBitmap Behavior::GetBitmapResource( const wxString& name )
 {
     // Bitmap retrieval
-////@begin wxJigsawEditorMainFrame bitmap retrieval
+////@begin Behavior bitmap retrieval
     wxUnusedVar(name);
     return wxNullBitmap;
-////@end wxJigsawEditorMainFrame bitmap retrieval
+////@end Behavior bitmap retrieval
 }
 
 /*!
  * Get icon resources
  */
 
-wxIcon wxJigsawEditorMainFrame::GetIconResource( const wxString& name )
+wxIcon Behavior::GetIconResource( const wxString& name )
 {
     // Icon retrieval
-////@begin wxJigsawEditorMainFrame icon retrieval
+////@begin Behavior icon retrieval
     wxUnusedVar(name);
     return wxNullIcon;
-////@end wxJigsawEditorMainFrame icon retrieval
+////@end Behavior icon retrieval
 }
 
 
@@ -347,7 +262,7 @@ wxIcon wxJigsawEditorMainFrame::GetIconResource( const wxString& name )
  * wxEVT_COMMAND_SLIDER_UPDATED event handler for ID_SCALE_SLIDER
  */
 
-void wxJigsawEditorMainFrame::OnSCALESLIDERUpdated( wxCommandEvent& event )
+void Behavior::OnSCALESLIDERUpdated( wxCommandEvent& event )
 {
 	if(m_Canvas->GetView())
 	{
@@ -357,26 +272,14 @@ void wxJigsawEditorMainFrame::OnSCALESLIDERUpdated( wxCommandEvent& event )
 }
 
 
-wxString wxJigsawEditorMainFrame::GetCode()
-{
-	//Generates the current code of the blocks on view
-
-	xsCodeEmitter::Start();
-	m_Canvas->GetView()->GetDocument()->OnSaveDocument("code.jigscene");
-	xsCodeEmitter::Stop();
-
-	return xsCodeEmitter::GetCode();
-}
 
 
 /*!
  * wxEVT_COMMAND_TEXT_ENTER event handler for ID_SEARCH_TEXTCTRL
  */
 
-void wxJigsawEditorMainFrame::OnSEARCHClicked( wxCommandEvent& event )
+void Behavior::OnSEARCHClicked( wxCommandEvent& event )
 {
-	wxFile file("code.c", wxFile::write); file.Write(GetCode());//maks:teste
-
 	do 
 	{
 		m_SearchResults.DeleteContents(false);
@@ -406,7 +309,7 @@ void wxJigsawEditorMainFrame::OnSEARCHClicked( wxCommandEvent& event )
 	while (false);
 }
 
-bool wxJigsawEditorMainFrame::LoadShapeRegistry()
+bool Behavior::LoadShapeRegistry()
 {
 	do
 	{
@@ -446,7 +349,7 @@ bool wxJigsawEditorMainFrame::LoadShapeRegistry()
 	return false;
 }
 
-void wxJigsawEditorMainFrame::InitConfigSerialization()
+void Behavior::InitConfigSerialization()
 {
 	m_XmlIO.SetSerializerOwner(wxT("wxJigsawEditor"));
 	m_XmlIO.SetSerializerRootName(wxT("settings"));
@@ -461,13 +364,24 @@ void wxJigsawEditorMainFrame::InitConfigSerialization()
 	XS_REGISTER_IO_HANDLER(wxT("jigsawshapecategory"), xsJigsawShapeCategoryPropIO);
 	XS_REGISTER_IO_HANDLER(wxT("listjigsawshapecategory"), xsListJigsawShapeCategoryPropIO);
 
-	XS_REGISTER_IO_HANDLER(wxT("emit"), xsCodeEmitter);
-
 	m_Config = new wxJigsawEditorConfig;
 	m_XmlIO.SetRootItem(m_Config);
+
+	wxJigsawShapeCategory * category(NULL);
+	category = new wxJigsawShapeCategory;
+	category->SetCategoryName(_("First"));
+	category->GetShapeFileNames().Add(wxT("test1.jigshape"));
+	category->GetShapeFileNames().Add(wxT("test2.jigshape"));
+	category->GetShapeFileNames().Add(wxT("test3.jigshape"));
+	m_Config->GetCategories().Append(category);
+	category = new wxJigsawShapeCategory;
+	category->SetCategoryName(_("Second"));
+	category->GetShapeFileNames().Add(wxT("test4.jigshape"));
+	category->GetShapeFileNames().Add(wxT("test5.jigshape"));
+	m_Config->GetCategories().Append(category);
 }
 
-void wxJigsawEditorMainFrame::LoadConfig()
+void Behavior::LoadConfig()
 {
 	wxString configFileName = wxT("config.xml");
 	if(wxFileExists(configFileName))
@@ -476,13 +390,13 @@ void wxJigsawEditorMainFrame::LoadConfig()
 	}
 }
 
-void wxJigsawEditorMainFrame::SaveConfig()
+void Behavior::SaveConfig()
 {
 	wxString configFileName = wxT("config.xml");
 	m_XmlIO.SerializeToXml(configFileName, true);
 }
 
-wxJigsawShape * wxJigsawEditorMainFrame::LoadShape(const wxString & shapeFileName)
+wxJigsawShape * Behavior::LoadShape(const wxString & shapeFileName)
 {
 	wxXmlSerializer serializer;
 	wxJigsawShape * shape = new wxJigsawShape;
@@ -498,14 +412,13 @@ wxJigsawShape * wxJigsawEditorMainFrame::LoadShape(const wxString & shapeFileNam
 			wxFILE_SEP_PATH + shapeFileName;
 		if(!wxFileExists(fileName)) continue;
 		serializer.DeserializeFromXml(fileName);
-		if(shape->GetBitmapFileName() != "") shape->SetBitmapFileName(shape->GetBitmapFileName());
 		return (wxJigsawShape*)shape->Clone();
 	}
 	serializer.RemoveAll();
 	return NULL;
 }
 
-void wxJigsawEditorMainFrame::LoadPalettes()
+void Behavior::LoadPalettes()
 {
 	m_Palettes.DeleteContents(true);
 	for(wxJigsawShapeCategoryList::Node * node = m_Config->GetCategories().GetFirst();
@@ -525,3 +438,11 @@ void wxJigsawEditorMainFrame::LoadPalettes()
 		m_Palettes.Append(palette);
 	}
 }
+
+
+
+
+
+
+
+

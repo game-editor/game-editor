@@ -10,11 +10,14 @@
             <property name="has_c_shape" type="bool">1</property>
             <property name="min_size" type="size">80,17</property>
             <property name="position" type="point">159,172</property>
+            <property name="emit_open" type="emit">for&#40;int count = 0&#59; count &lt;</property>
             <property name="inputparameters" type="listjigsawinputparameter">
                 <object type="wxJigsawInputParameter">
                     <property name="style" type="int">1</property>
                 </object>                
             </property>
+            <property name="emit_intra" type="emit">&#59; count++&#41; {</property>
+            <property name="emit_close" type="emit">}</property>
         </object>
     </wxJigsawShape_properties>
 </wxJigsawShape>

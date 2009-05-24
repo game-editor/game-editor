@@ -48,7 +48,7 @@ wxString xsJigsawShapeGroupPropIO::GetValueStr(xsProperty *property)
 
 wxString xsJigsawShapeGroupPropIO::ToString(wxJigsawShapeGroup * value)
 {
-	return wxString::Format(wxT("wxJigsawShapeGroup at address 0x%x"), value);
+	return ""; //return wxString::Format(wxT("wxJigsawShapeGroup at address 0x%x"), value);
 }
 
 wxJigsawShapeGroup * xsJigsawShapeGroupPropIO::FromString(const wxString&)

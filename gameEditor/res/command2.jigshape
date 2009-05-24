@@ -11,15 +11,18 @@
             <property name="has_c_shape" type="bool">0</property>
             <property name="min_size" type="size">80,17</property>
             <property name="position" type="point">129,143</property>
+            <property name="emit_open" type="emit">&#40;</property>
             <property name="inputparameters" type="listjigsawinputparameter">
-                <object type="wxJigsawInputParameter">wxJigsawInputParameter at address 0x8949d0
+                <object type="wxJigsawInputParameter">
                     <property name="style" type="int">1</property>
                 </object>
-                <object type="wxJigsawInputParameter">wxJigsawInputParameter at address 0x894a40
+                <object type="wxJigsawInputParameter">
+                    <property name="emit" type="emit">+</property>
                     <property name="label" type="string">+</property>
                     <property name="style" type="int">1</property>
                 </object>
             </property>
+            <property name="emit_close" type="emit">&#41;</property>
         </object>
     </wxJigsawShape_properties>
 </wxJigsawShape>

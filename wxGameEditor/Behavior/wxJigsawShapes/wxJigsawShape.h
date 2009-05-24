@@ -5,6 +5,7 @@
 #include <wx/list.h>
 #include "wxJigsawInputParameter.h"
 #include "wxJigsawHotSpot.h"
+#include "../CodeEmitter.h"
 
 /// \brief Converts integer value to wxJigsawShapeStyle
 wxJigsawShapeStyle IntToJigsawShapeStyle(int value);
@@ -286,6 +287,19 @@ private:
 	wxJigsawShape * m_Parent;
 	/// \brief Name of a shape object. It is also used as label when displaying a shape
 	wxString m_Name;
+
+	/// \brief 
+	CodeEmitter m_Emit;
+
+	/// \brief 
+	CodeEmitter m_EmitOpen;
+
+	/// \brief 
+	CodeEmitter m_EmitIntra;
+
+	/// \brief 
+	CodeEmitter m_EmitClose;
+
 	/// \brief File name of shape icon
 	wxString m_BitmapFileName;
 	/// \brief Shape colour

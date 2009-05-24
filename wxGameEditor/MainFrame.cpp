@@ -290,9 +290,8 @@ void wxMainFrame::Setup_wxIFM()
 	wxUnusedVar(docTemplate);
 	m_DocManager->SetMaxDocsOpen(1);
 	pBehavior = new wxJigsawEditorMainFrame( m_DocManager, (wxFrame*)m_root_panel, wxJigsawEditorMainFrame::ID_WXJIGSAWEDITORMAINFRAME, SYMBOL_WXJIGSAWEDITORMAINFRAME_TITLE, SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION, SYMBOL_WXJIGSAWEDITORMAINFRAME_SIZE, wxTAB_TRAVERSAL | wxNO_BORDER | wxFRAME_TOOL_WINDOW);
-	pBehavior->SetExtraStyle(0);	
-	wxCommandEvent cmd;
-	m_DocManager->CreateDocument( wxEmptyString, wxDOC_NEW );
+	pBehavior->SetExtraStyle(0);		
+	m_DocManager->CreateDocument(wxEmptyString, wxDOC_NEW );		
 	///////////////////////////////////////
 
 	panelActors = new PanelActors(m_root_panel);

@@ -10,12 +10,13 @@
             <property name="has_c_shape" type="bool">0</property>
             <property name="min_size" type="size">80,17</property>
             <property name="position" type="point">201,182</property>
+            <property name="emit_open" type="emit">doWork&#40; </property>
             <property name="inputparameters" type="listjigsawinputparameter">
-                <object type="wxJigsawInputParameter">wxJigsawInputParameter at address 0x23cecb8
-                    <property name="label" type="string">!</property>
+                <object type="wxJigsawInputParameter">                    
                     <property name="style" type="int">2</property>
                 </object>
             </property>
+          <property name="emit_close" type="emit">&#41;&#59;</property>
         </object>
     </wxJigsawShape_properties>
 </wxJigsawShape>

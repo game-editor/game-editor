@@ -87,7 +87,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FIXED:NO /FORCE:MULTIPLE"
-				AdditionalDependencies="Behavior/lib/wxmsw28ud_xs.lib wxbase28d.lib wxbase28d_xml.lib wxmsw28d_core.lib wxmsw28d_adv.lib wxmsw28d_aui.lib ../RakNet/Lib/RakNetLibStaticDebug.lib wxpngd.lib wxzlibd.lib wxjpegd.lib wxexpatd.lib ../output/Windows/Debug/wxIFM.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib dxguid.lib"
+				AdditionalDependencies="wxbase28d.lib wxbase28d_xml.lib wxmsw28d_core.lib wxmsw28d_adv.lib wxmsw28d_aui.lib ../RakNet/Lib/RakNetLibStaticDebug.lib wxpngd.lib wxzlibd.lib wxjpegd.lib wxexpatd.lib ../output/Windows/Debug/wxIFM.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib dxguid.lib"
 				OutputFile="../output/wxGameEditor.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -3710,6 +3710,18 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Behavior\CodeEmitter.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\CodeEmitter.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxXmlSerializer\include\wx\wxxmlserializer\Defs.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Behavior\wxJigsawEditor\DnDJigsawShapeDataobject.cpp"
 				>
 			</File>
@@ -3723,6 +3735,14 @@
 			</File>
 			<File
 				RelativePath=".\Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxXmlSerializer\src\PropertyIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxXmlSerializer\include\wx\wxxmlserializer\PropertyIO.h"
 				>
 			</File>
 			<File
@@ -3859,6 +3879,14 @@
 			</File>
 			<File
 				RelativePath=".\Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxXmlSerializer\src\XmlSerializer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Behavior\wxXmlSerializer\include\wx\wxxmlserializer\XmlSerializer.h"
 				>
 			</File>
 			<File

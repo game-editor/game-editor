@@ -48,7 +48,7 @@ wxString xsJigsawInputParameterPropIO::GetValueStr(xsProperty *property)
 
 wxString xsJigsawInputParameterPropIO::ToString(wxJigsawInputParameter * value)
 {
-	return wxString::Format(wxT("wxJigsawInputParameter at address 0x%x"), value);
+	return ""; //return wxString::Format(wxT("wxJigsawInputParameter at address 0x%x"), value);
 }
 
 wxJigsawInputParameter * xsJigsawInputParameterPropIO::FromString(const wxString&)

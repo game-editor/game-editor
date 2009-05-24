@@ -10,6 +10,7 @@
             <property name="has_c_shape" type="bool">0</property>
             <property name="min_size" type="size">40,17</property>
             <property name="position" type="point">223,182</property>
+            <property name="emit" type="emit">number</property>
         </object>
     </wxJigsawShape_properties>
 </wxJigsawShape>

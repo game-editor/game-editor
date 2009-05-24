@@ -74,7 +74,7 @@ wxString xsJigsawShapeCategoryPropIO::GetValueStr(xsProperty *property)
 
 wxString xsJigsawShapeCategoryPropIO::ToString(wxJigsawShapeCategory value)
 {
-	return wxString::Format(wxT("wxJigsawShapeCategory at address 0x%x"), value);
+	return ""; //return wxString::Format(wxT("wxJigsawShapeCategory at address 0x%x"), value);
 }
 
 wxJigsawShapeCategory xsJigsawShapeCategoryPropIO::FromString(const wxString&)

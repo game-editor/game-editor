@@ -45,7 +45,7 @@ wxString xsJigsawShapePropIO::GetValueStr(xsProperty *property)
 
 wxString xsJigsawShapePropIO::ToString(wxJigsawShape * value)
 {
-	return wxString::Format(wxT("wxJigsawShape at address 0x%x"), value);
+	return ""; //return wxString::Format(wxT("wxJigsawShape at address 0x%x"), value);
 }
 
 wxJigsawShape * xsJigsawShapePropIO::FromString(const wxString&)
