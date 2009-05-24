@@ -54,9 +54,8 @@ wxDragResult DnDJigsawShapeDropTarget::OnDragOver(wxCoord x, wxCoord y, wxDragRe
 		if(!m_pOwner->GetView()) break;
 		if((m_pOwner->GetView() != NULL) && m_pOwner->GetDragImage())
 		{	
-			//The selecion while dragging is not working
-			//Need to have an group selected in the view, not just call the MotionUpdate
-			//m_pOwner->MotionUpdate(m_pOwner->ScreenToClient(::wxGetMousePosition()));  
+			//Update hot spots
+			m_pOwner->MotionUpdate(m_pOwner->ScreenToClient(::wxGetMousePosition()));
 
 			//m_pOwner->GetDragImage()->Move(wxPoint(x, y));
 		}

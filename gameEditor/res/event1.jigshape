@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wxJigsawShape owner="wxJigsawShapeEngine" version="1.0.0">
+    <wxJigsawShape_properties>
+        <object type="wxJigsawShape">
+            <property name="name" type="string">Key Down</property>
+            <property name="bitmap" type="string">img_event_keyboard.gif</property>
+            <property name="colour" type="colour">200,150,0</property>
+            <property name="style" type="int">0</property>
+            <property name="has_notch" type="bool">0</property>
+            <property name="has_bump" type="bool">0</property>
+            <property name="has_c_shape" type="bool">1</property>
+            <property name="min_size" type="size">80,17</property>
+            <property name="position" type="point">201,182</property>
+            <property name="emit_open" type="emit">void keyDown&#40; </property>
+            <property name="inputparameters" type="listjigsawinputparameter">
+                <object type="wxJigsawInputParameter">                    
+                    <property name="style" type="int">2</property>
+                </object>
+            </property>
+          <property name="emit_intra" type="emit">&#41;{</property>
+          <property name="emit_close" type="emit">}</property>
+        </object>
+    </wxJigsawShape_properties>
+</wxJigsawShape>

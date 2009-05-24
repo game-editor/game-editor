@@ -26,6 +26,7 @@ public:
     DnDJigsawShapeDataObject(DND_JigsawShapeInfo * shapeinfo = NULL);
     virtual ~DnDJigsawShapeDataObject();
 	DND_JigsawShapeInfo * GetShapeInfo();
+	DND_JigsawShapeInfo * ReadShapeInfo() {return m_shapeInfo;}
 	wxSize GetShapeOffset();
 
     // implement base class pure virtuals

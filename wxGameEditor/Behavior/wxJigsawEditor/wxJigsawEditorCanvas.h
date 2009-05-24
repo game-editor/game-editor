@@ -220,6 +220,7 @@ public:
 
 	bool CreateDragImage(wxJigsawShape * shape);
 	void DestroyDragImage();
+	wxJigsawShape *GetDragShape() const;
 
 	void ShowDragImage(bool value);
 	void MoveDragImage(const wxPoint & pos, const wxSize & offset);
@@ -227,6 +228,7 @@ public:
 		const wxJigsawShape * shape, 
 		const wxSize & hotSpotOffset);
 	wxJigsawHotSpot * GetHotSpotByPoint(const wxPoint & pos, wxJigsawShapeGroup * targetGroup) const;
+	void ReCreateHotSpots();
 	void FixActiveHotSpot(const wxPoint & currentPos);
 	void ReCreateHotSpotBitmap();
 	void DrawHotSpot(wxDC * dc, double scale);

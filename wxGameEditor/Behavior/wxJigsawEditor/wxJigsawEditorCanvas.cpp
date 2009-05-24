@@ -27,6 +27,7 @@
 #include "wxJigsawEditorCanvas.h"
 #include "wxJigsawEditorDocument.h"
 #include <wxJigsawShapeGroup.h>
+#include "DnDJigsawShapeDataObject.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -242,7 +243,7 @@ void wxJigsawEditorCanvas::OnPaint( wxPaintEvent& event )
 
 void wxJigsawEditorCanvas::DrawHotSpot(wxDC * dc, double scale)
 {
-	if(m_View->GetSelectedObject() && m_ActiveHotSpot && m_HotSpotBitmap.IsOk())
+	if((m_View->GetSelectedObject() || GetDragShape()) && m_ActiveHotSpot && m_HotSpotBitmap.IsOk())
 	{
 		wxPoint scrollPos = GetScrollPosition();
 		/*wxLogTrace(wxTraceMask(), _("HotSpot bitmap: %i,%i"),
@@ -294,6 +295,7 @@ void wxJigsawEditorCanvas::OnEraseBackground( wxEraseEvent& event )
 /*!
  * wxEVT_LEFT_DOWN event handler for ID_WXJIGSAWEDITORCANVAS
  */
+
 
 void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 {
@@ -689,6 +691,20 @@ void wxJigsawEditorCanvas::OnScrollThumbRelease(wxScrollWinEvent & event)
 	RefreshBuffer();
 }
 
+wxJigsawShape *wxJigsawEditorCanvas::GetDragShape() const
+{
+	if(GetDropTarget() && GetDropTarget()->GetDataObject())
+	{
+		DnDJigsawShapeDataObject *pData = (DnDJigsawShapeDataObject *)GetDropTarget()->GetDataObject();
+		if(pData && pData->ReadShapeInfo())
+		{
+			return pData->ReadShapeInfo()->m_shape;
+		}
+	}
+
+	return NULL;
+}
+
 bool wxJigsawEditorCanvas::CreateDragImage(wxJigsawShape * shape)
 {
 	DestroyDragImage();
@@ -760,20 +776,27 @@ wxJigsawHotSpot * wxJigsawEditorCanvas::GetHotSpotByPoint(
 	wxJigsawShape * lastShape(NULL);
 	do
 	{
-		if(!targetGroup) break;
-		wxJigsawShapeList::Node * node;
-		node = targetGroup->GetShapes().GetFirst();
-		if(!node) break;
-		if(targetGroup->GetShapes().GetCount() == 1)
+		if(targetGroup)
 		{
-			singleShape = node->GetData();
+			wxJigsawShapeList::Node * node;
+			node = targetGroup->GetShapes().GetFirst();
+			if(!node) break;
+			if(targetGroup->GetShapes().GetCount() == 1)
+			{
+				singleShape = node->GetData();
+			}
+			firstShape = node->GetData();
+			node = targetGroup->GetShapes().GetLast();
+			if(!node) break;
+			lastShape = node->GetData();
 		}
-		firstShape = node->GetData();
-		node = targetGroup->GetShapes().GetLast();
-		if(!node) break;
-		lastShape = node->GetData();
+		else 
+		{
+			singleShape = firstShape = lastShape = GetDragShape();		
+		}
 	}
 	while(false);
+
 	if(!firstShape || !lastShape) return NULL;
 	for(size_t i = 0; i < m_HotSpots.Count(); i++)
 	{
@@ -788,6 +811,22 @@ wxJigsawHotSpot * wxJigsawEditorCanvas::GetHotSpotByPoint(
 				(m_HotSpots[i].GetHotSpotType() != wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER))
 			{
 				continue;
+			}
+			else if((singleShape->GetStyle() == wxJigsawShapeStyle::wxJS_TYPE_DEFAULT) &&
+				(m_HotSpots[i].GetHotSpotType() != wxJigsawHotSpotType::wxJS_HOTSPOT_INPUT_PARAMETER))
+			{
+				if(m_HotSpots[i].GetHotSpotType() == wxJigsawHotSpotType::wxJS_HOTSPOT_INNER_NOTCH)
+				{
+					if(!singleShape->GetHasBump()) continue;
+				}
+				if(m_HotSpots[i].GetHotSpotType() == wxJigsawHotSpotType::wxJS_HOTSPOT_BUMP)
+				{
+					if(!singleShape->GetHasBump()) continue;
+				}
+				if(m_HotSpots[i].GetHotSpotType() == wxJigsawHotSpotType::wxJS_HOTSPOT_NOTCH)
+				{
+					if(!singleShape->GetHasNotch()) continue;
+				}
 			}
 		}
 		else
@@ -844,6 +883,15 @@ void wxJigsawEditorCanvas::SetScale(double value)
 	while(false);
 }
 
+void wxJigsawEditorCanvas::ReCreateHotSpots()
+{
+	if(m_View)
+	{
+		wxJigsawEditorDocument * document = GetDocument();
+		if(document) document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, NULL, m_View->GetScale());
+	}
+}
+
 void wxJigsawEditorCanvas::FixActiveHotSpot(const wxPoint & currentPos)
 {	
 	do
@@ -859,7 +907,28 @@ void wxJigsawEditorCanvas::FixActiveHotSpot(const wxPoint & currentPos)
 		wxJigsawHotSpot * hotSpot = GetHotSpotByPoint(currentPos, m_View->GetSelectedObject());
 		m_ActiveHotSpot = NULL;
 		if(!hotSpot) break;
-		if(m_View->GetSelectedObject()->IsInputParameterShapeGroup())
+
+
+		bool bInput = false;
+		wxJigsawShapeStyle style = wxJigsawShapeStyle::wxJS_TYPE_NONE;
+
+		if(m_View->GetSelectedObject())
+		{
+			//Moving group
+			bInput = m_View->GetSelectedObject()->IsInputParameterShapeGroup();
+			style = m_View->GetSelectedObject()->GetFirstShape()->GetStyle();
+		}
+		else
+		{
+			//Drag over
+			if(GetDragShape())
+			{	
+				style = GetDragShape()->GetStyle();
+				bInput = style != wxJigsawShapeStyle::wxJS_TYPE_NONE;				
+			}
+		}
+
+		if(bInput)
 		{
 			bool matchStyle = false;
 			do 
@@ -868,14 +937,15 @@ void wxJigsawEditorCanvas::FixActiveHotSpot(const wxPoint & currentPos)
 				if(!hotSpot->GetShape()) break;
 				wxJigsawInputParameter * param = 
 					hotSpot->GetShape()->GetInputParameters()[hotSpot->GetIndex()];
-				if(param->GetStyle() != m_View->GetSelectedObject()->GetFirstShape()->GetStyle()) break;
+				if(param->GetStyle() != style) break;
 				matchStyle = true;
 			} 
 			while (false);
 			if(!matchStyle) break;
 			m_ActiveHotSpot = hotSpot;
 			break;
-		}
+		}		
+
 		m_ActiveHotSpot = hotSpot;
 	}
 	while(false);
