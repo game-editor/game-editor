@@ -42,6 +42,9 @@ int wxJigsawEditorCanvas::ScrollIncrement = 10;
 IMPLEMENT_DYNAMIC_CLASS( wxJigsawEditorCanvas, wxWindow )
 
 
+//Behavior events
+DEFINE_EVENT_TYPE(wxEVT_BEHAVIOR_BLOCK_SELECTED)
+
 /*!
  * wxJigsawEditorCanvas event table definition
  */
@@ -350,7 +353,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 						diagramPoint.y - groupPosition.y);
 				}
 				
-				m_View->SetSelectedObject(group);
+				SetSelectedObject(group);
 				document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
 				FixActiveHotSpot(diagramPoint);
 				m_Mode = wxJSEC_MODE_DRAGGING;
@@ -396,7 +399,7 @@ void wxJigsawEditorCanvas::OnLeftUp( wxMouseEvent& event )
 				if(document->ProcessDrop(m_DoubleBufferDC, realPosition, 
 					m_View->GetSelectedObject(), m_SelectedObjectOffset, m_View->GetScale()))
 				{
-					m_View->SetSelectedObject(NULL);
+					SetSelectedObject(NULL);
 				}
 				document->RequestSizeRecalculation();
 				/*wxWindowDC dc(this);
@@ -1042,3 +1045,18 @@ void wxJigsawEditorCanvas::OnSize( wxSizeEvent& event )
 	RefreshBuffer();
 }
 
+void wxJigsawEditorCanvas::SetSelectedObject(wxJigsawShapeGroup * value) 
+{ 	
+	m_SelectedObject = value ; 
+	m_View->SetSelectedObject(m_SelectedObject);
+
+	//Sed the select event to other windows
+	wxCommandEvent event( wxEVT_BEHAVIOR_BLOCK_SELECTED, GetId() );
+    event.SetEventObject( this );
+	event.SetClientData(m_SelectedObject);
+
+	if(m_SelectedObject) event.SetString(m_SelectedObject->GetFirstShape()->GetName());
+
+    // Send it	
+    GetEventHandler()->ProcessEvent( event );
+}

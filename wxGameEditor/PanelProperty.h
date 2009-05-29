@@ -35,11 +35,12 @@ private:
 	void OnPropertyGridSelect ( wxPropertyGridEvent& event );
 	void OnPropertyGridButtonClick(wxCommandEvent &event);
 	void OnMenuClick(wxCommandEvent& event);
+	void OnBehaviorBlockSelected( wxCommandEvent &event );
 
 	void CreateMenu();
 
 	void Update();
-	void UpdateOptionalProperties();
+	void UpdateOptionalProperties(bool bBehavior = false);
 	void UpdateParent();
 	void UpdateCreateAtStartup();
 	void UpdateInheritEvents();

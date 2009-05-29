@@ -7,6 +7,7 @@
 //#include "PanelEvents.h"
 #include "Path.h"
 #include "../gameEditor/UndoControl.h"
+#include "Behavior/wxJigsawEditor/wxJigsawEditorCanvas.h"
 
 
 #define ID_MENU_ANIM_ADD_ANIMATION		1000
@@ -42,6 +43,7 @@ BEGIN_EVENT_TABLE(PanelProperty, PanelGenericProperty)
 	EVT_PG_ITEM_EXPANDED(PANEL_PROPERTY_ID, PanelProperty::OnItemExpanded)
 	EVT_BUTTON( PANEL_PROPERTY_ID, PanelProperty::OnPropertyGridButtonClick )
 	EVT_MENU( wxID_ANY, PanelProperty::OnMenuClick )
+	EVT_COMMAND(wxID_ANY, wxEVT_BEHAVIOR_BLOCK_SELECTED, PanelProperty::OnBehaviorBlockSelected)
 END_EVENT_TABLE()
 
 
@@ -745,7 +747,7 @@ void PanelProperty::UpdateCategoryNames()
 }
 
 
-void PanelProperty::UpdateOptionalProperties()
+void PanelProperty::UpdateOptionalProperties(bool bBehavior)
 {
 	//Manage optional properties
 	Freeze();
@@ -778,7 +780,29 @@ void PanelProperty::UpdateOptionalProperties()
 	idBackgroundColor.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 	idGrid.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 
-	if(actor == GameControl::Get()->GetAxis())
+	if(bBehavior)
+	{
+		//Behavior block selected
+		idX.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idY.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idZDepth.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idDescription.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idEditorAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idParent.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idPath.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idLocked.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idSize.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idEvents.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idUser.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idCreateAtStartup.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idAppearance.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idColor.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idTransparency.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idInfinite.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idReceiveEventsEvenIfOutOfVision.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+	}
+	else if(actor == GameControl::Get()->GetAxis())
 	{
 		//Grid selected
 
@@ -816,15 +840,18 @@ void PanelProperty::UpdateOptionalProperties()
 			idSize.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 			idAppearance.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 			idReceiveEventsEvenIfOutOfVision.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+			idEditorAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 			pg->DisableProperty ( idName );
 		}
 		else if(actor->getType() == REGION_ACTOR || actor->getType() == REGION_ACTOR_FILLED)
 		{
 			idAppearance.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+			idEditorAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		}
 		else if(actor->getType() == CANVAS)
 		{
 			idAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+			idEditorAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		}
 		else if(actor->getTile())
 		{
@@ -835,6 +862,7 @@ void PanelProperty::UpdateOptionalProperties()
 		{
 			idAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 			idSize.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+			idEditorAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		}		
 	}
 
@@ -1167,4 +1195,18 @@ void PanelProperty::OnMenuClick(wxCommandEvent& event)
 	case ID_MENU_PATH_REMOVE:
 		break;
 	}
+}
+
+void PanelProperty::OnBehaviorBlockSelected( wxCommandEvent &event ) //maks:teste
+{
+	if(event.GetClientData()) 
+	{
+		pg->SetPropertyValue(idName, event.GetString());   
+	}
+	else
+	{
+		pg->SetPropertyValue(idName, "");
+	}
+
+	UpdateOptionalProperties(true);
 }

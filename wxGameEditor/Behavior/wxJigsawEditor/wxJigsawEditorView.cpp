@@ -150,7 +150,7 @@ wxJigsawShapeGroup * wxJigsawEditorView::GetSelectedObject()
 
 void wxJigsawEditorView::SetSelectedObject(wxJigsawShapeGroup * value)
 {
-	m_SelectedObject = value;
+	m_SelectedObject = value;	
 }
 
 double wxJigsawEditorView::GetScale() const

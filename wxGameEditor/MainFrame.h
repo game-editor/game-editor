@@ -163,6 +163,8 @@ public:
     void OnMenuLayoutRestoreClick( wxCommandEvent& event );
 	void OnLayoutState(wxLayoutStateEvent& event);
 
+	void OnBehaviorBlockSelected( wxCommandEvent &event );
+
 	void OnDropFiles(wxDropFilesEvent & event);
 
 

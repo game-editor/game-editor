@@ -132,6 +132,8 @@ BEGIN_EVENT_TABLE( wxMainFrame, wxFrame )
 	EVT_DROP_FILES(wxMainFrame::OnDropFiles)
 	EVT_LAYOUT_STATE(wxID_ANY, wxMainFrame::OnLayoutState)
 
+	EVT_COMMAND(wxID_ANY, wxEVT_BEHAVIOR_BLOCK_SELECTED, wxMainFrame::OnBehaviorBlockSelected)
+
 
 END_EVENT_TABLE()
 
@@ -1116,4 +1118,10 @@ void wxMainFrame::OnLayoutState(wxLayoutStateEvent& event)
 			break;
 		}
 	}
+}
+
+void wxMainFrame::OnBehaviorBlockSelected( wxCommandEvent &event )
+{
+	//Forwad the event to the Property Panel
+	panelProperty->ProcessEvent(event);   
 }

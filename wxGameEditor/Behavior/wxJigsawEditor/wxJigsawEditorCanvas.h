@@ -45,6 +45,10 @@ class wxJigsawShapeGroup;
 #define SYMBOL_WXJIGSAWEDITORCANVAS_POSITION wxDefaultPosition
 ////@end control identifiers
 
+//Behavior events
+BEGIN_DECLARE_EVENT_TYPES()
+DECLARE_EVENT_TYPE(wxEVT_BEHAVIOR_BLOCK_SELECTED, wxID_ANY)
+END_DECLARE_EVENT_TYPES()
 
 /// \brief Diagram canvas
 class wxJigsawEditorCanvas: public wxWindow
@@ -146,7 +150,7 @@ public:
     void SetView(wxJigsawEditorView * value) { m_View = value ; }
 
     wxJigsawShapeGroup * GetSelectedObject() const { return m_SelectedObject ; }
-    void SetSelectedObject(wxJigsawShapeGroup * value) { m_SelectedObject = value ; }
+    void SetSelectedObject(wxJigsawShapeGroup * value);
 
     wxJigsawEditorCanvasMode GetMode() const { return m_Mode ; }
     void SetMode(wxJigsawEditorCanvasMode value) { m_Mode = value ; }
