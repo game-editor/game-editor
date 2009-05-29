@@ -321,7 +321,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		switch(hitTest)
 		{
 		case wxJSEC_HITTEST_SHAPE:
-			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, NULL);
+			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, NULL);			
 			if(shape)
 			{
 				wxJigsawShapeGroup * group(NULL);
@@ -339,6 +339,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 						group = document->CreateGroupByShape(m_DoubleBufferDC, shape);
 					}
 				}
+
 				if(!group) 
 				{
 					wxLogTrace(wxTraceMask(), _("Error obtaining group of shapes"));
@@ -919,7 +920,7 @@ void wxJigsawEditorCanvas::FixActiveHotSpot(const wxPoint & currentPos)
 		{
 			//Moving group
 			bInput = m_View->GetSelectedObject()->IsInputParameterShapeGroup();
-			style = m_View->GetSelectedObject()->GetFirstShape()->GetStyle();
+			if(m_View->GetSelectedObject()->GetFirstShape()) style = m_View->GetSelectedObject()->GetFirstShape()->GetStyle();
 		}
 		else
 		{
@@ -1055,7 +1056,7 @@ void wxJigsawEditorCanvas::SetSelectedObject(wxJigsawShapeGroup * value)
     event.SetEventObject( this );
 	event.SetClientData(m_SelectedObject);
 
-	if(m_SelectedObject) event.SetString(m_SelectedObject->GetFirstShape()->GetName());
+	if(m_SelectedObject && m_SelectedObject->GetFirstShape()) event.SetString(m_SelectedObject->GetFirstShape()->GetName());
 
     // Send it	
     GetEventHandler()->ProcessEvent( event );
