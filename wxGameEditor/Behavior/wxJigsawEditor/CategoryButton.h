@@ -22,6 +22,11 @@
 #include "wxGradientButton.h"
 #include <wxJigsawShape.h>
 
+#define COLOUR_TO_ARRAY(A,B)\
+	B[0] = A.Red();\
+	B[1] = A.Green();\
+	B[2] = A.Blue();\
+
 /*!
  * Forward declarations
  */
@@ -75,6 +80,7 @@ public:
 
     wxJigsawShapeList * GetShapes() const { return m_Shapes ; }
     void SetShapes(wxJigsawShapeList * value) { m_Shapes = value ; }
+	void SetColor(const wxColour &color);
 
 ////@end CategoryButton member function declarations
 

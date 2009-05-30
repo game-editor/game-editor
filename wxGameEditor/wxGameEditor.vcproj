@@ -508,6 +508,10 @@
 			Name="Source Files"
 			>
 			<File
+				RelativePath=".\color.cpp"
+				>
+			</File>
+			<File
 				RelativePath="DlgSaveLayout.cpp"
 				>
 				<FileConfiguration
@@ -749,6 +753,10 @@
 		<Filter
 			Name="Header Files"
 			>
+			<File
+				RelativePath=".\color.h"
+				>
+			</File>
 			<File
 				RelativePath="DlgSaveLayout.h"
 				>

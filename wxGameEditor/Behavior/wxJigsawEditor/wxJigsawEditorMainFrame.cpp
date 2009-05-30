@@ -214,16 +214,18 @@ void wxJigsawEditorMainFrame::CreateControls()
     itemBoxSizer19->Add(itemButton21, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 	
 
-    wxSplitterWindow* itemSplitterWindow22 = new wxSplitterWindow( itemPanel14, ID_SPLITTERWINDOW, wxDefaultPosition, wxSize(100, 200), wxSP_3DBORDER|wxSP_3DSASH|wxNO_BORDER );
+    wxSplitterWindow* itemSplitterWindow22 = new wxSplitterWindow( itemPanel14, ID_SPLITTERWINDOW, wxDefaultPosition, wxSize(100, 10), wxSP_3DBORDER|wxSP_3DSASH|wxNO_BORDER|wxSP_LIVE_UPDATE );
     itemSplitterWindow22->SetMinimumPaneSize(0);
 
-    m_CategoryList = new CategoryList( itemSplitterWindow22, ID_CATEGORY_LIST, wxDefaultPosition, wxSize(100, 150), wxSUNKEN_BORDER );
+
+    m_CategoryList = new CategoryList( itemSplitterWindow22, ID_CATEGORY_LIST, wxDefaultPosition, wxSize(100, 10), wxSUNKEN_BORDER );
 	m_CategoryList->SetBackgroundColour(wxBackground_Pen);
 
     m_Palette = new wxJigsawShapeListBox( itemSplitterWindow22, ID_PALETTE, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER|wxTAB_TRAVERSAL );
 	m_Palette->SetBackgroundColour(wxBackground_Pen);
 
-    itemSplitterWindow22->SplitHorizontally(m_CategoryList, m_Palette, 150);
+	itemSplitterWindow22->SplitHorizontally(m_CategoryList, m_Palette, 10);
+    
     itemBoxSizer15->Add(itemSplitterWindow22, 1, wxGROW, 0);
 
     m_Canvas = new wxJigsawEditorCanvas( itemDocParentFrame1, ID_CANVAS, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
@@ -249,8 +251,13 @@ void wxJigsawEditorMainFrame::CreateControls()
 	{
 		wxJigsawPalette * palette = node->GetData();
 		if(!palette) continue;
-		m_CategoryList->AddCategory(palette->GetPaletteName(), &palette->GetShapes());
+		m_CategoryList->AddCategory(palette);
 	}
+
+
+	itemSplitterWindow22->SetMinimumPaneSize(m_CategoryList->GetSize().GetHeight());
+
+
 	Connect(m_CategoryList->GetId(), wxEVT_COMMAND_LISTBOX_SELECTED,
 		wxCommandEventHandler(wxJigsawEditorMainFrame::OnCategorySelected));
 }
@@ -520,6 +527,7 @@ void wxJigsawEditorMainFrame::LoadPalettes()
 		{
 			wxJigsawShape * shape = LoadShape(category->GetShapeFileNames()[i]);
 			if(!shape) continue;
+			if(category->GetOverwriteShapeColor()) shape->SetColour(palette->GetColours().GetColour());
 			palette->GetShapes().Append(shape);
 		}
 		m_Palettes.Append(palette);

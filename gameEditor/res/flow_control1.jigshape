@@ -3,7 +3,7 @@
     <wxJigsawShape_properties>
         <object type="wxJigsawShape">
             <property name="name" type="string">If</property>
-            <property name="bitmap" type="string">makscursorMao.bmp</property>
+            <property name="bitmap" type="string">flow_control_if.gif</property>
             <property name="colour" type="colour">153,255,209</property>
             <property name="style" type="int">0</property>
             <property name="has_notch" type="bool">1</property>

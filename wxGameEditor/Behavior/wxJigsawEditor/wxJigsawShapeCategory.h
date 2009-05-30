@@ -12,6 +12,8 @@ class wxJigsawShapeCategory : public xsSerializable
 	wxString m_CategoryName;
 	wxColourData m_ColourData;
 	wxArrayString m_ShapeFileNames;
+	bool m_Overwrite_Shape_Color;
+
 	void InitSerialization();
 public:
 	wxJigsawShapeCategory();
@@ -20,6 +22,9 @@ public:
 
 	const wxString & GetCategoryName() {return m_CategoryName;}
 	void SetCategoryName(const wxString & value) {m_CategoryName = value;}
+
+	const bool GetOverwriteShapeColor() {return m_Overwrite_Shape_Color;}
+	void SetOverwriteShapeColor(const bool value) {m_Overwrite_Shape_Color = value;}
 
 	wxColourData & GetColourData() {return m_ColourData;}
 	wxArrayString & GetShapeFileNames() {return m_ShapeFileNames;}

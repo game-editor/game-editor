@@ -13,11 +13,12 @@ wxJigsawShapeCategory::wxJigsawShapeCategory()
 	m_ColourData.SetCustomColour(3, wxColour(57,56,57));
 	m_ColourData.SetCustomColour(4, wxColour(57,56,57));
 	m_ColourData.SetCustomColour(5, wxColour(0,0,0));
+	m_Overwrite_Shape_Color = false;
 	InitSerialization();
 }
 
 wxJigsawShapeCategory::wxJigsawShapeCategory(const wxJigsawShapeCategory & value)
-: xsSerializable(value), m_ColourData(value.m_ColourData),
+: xsSerializable(value), m_ColourData(value.m_ColourData), m_Overwrite_Shape_Color(value.m_Overwrite_Shape_Color),
 m_ShapeFileNames(value.m_ShapeFileNames)
 {
 	InitSerialization();
@@ -27,6 +28,7 @@ void wxJigsawShapeCategory::InitSerialization()
 {
 	XS_SERIALIZE_STRING_EX(m_CategoryName, wxT("CategoryName"), wxEmptyString);
 	XS_SERIALIZE_COLOURDATA(m_ColourData, wxT("Colours"));
+	XS_SERIALIZE(m_Overwrite_Shape_Color, wxT("overwrite_shape_color"));
 	XS_SERIALIZE_ARRAYSTRING(m_ShapeFileNames, wxT("ShapeFileNames"));
 }
 

@@ -104,7 +104,12 @@ void wxJigsawShape::InitSerialization()
 	XS_SERIALIZE_CODEEMITTER(m_EmitIntra, wxT("emit_intra"));
 	XS_SERIALIZE_LISTJIGSAWSHAPE(m_Children, wxT("children"));
 	XS_SERIALIZE_CODEEMITTER(m_EmitClose, wxT("emit_close"));
-	
+
+	labelFont.SetPointSize(8);
+	labelFont.SetFamily(wxSWISS);
+	labelFont.SetStyle(wxNORMAL);
+	labelFont.SetWeight(wxBOLD);
+	labelFont.SetFaceName(wxT("Tahoma"));
 }
 
 void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
@@ -130,6 +135,7 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 		headerSize.GetHeight());
 	// Draw a label (on the left side of a shape and centerred vertically)
 	dc.SetTextForeground(*wxWHITE);
+	dc.SetFont(labelFont);
 	if(m_Bitmap.IsOk())
 	{
 		dc.DrawLabel(m_Name, m_Bitmap, labelRect, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);

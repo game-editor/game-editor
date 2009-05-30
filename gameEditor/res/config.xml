@@ -5,22 +5,25 @@
       <property name="ShapeCategories" type="listjigsawshapecategory">
         <object type="wxJigsawShapeCategory">
           <property name="CategoryName" type="string">Events</property>
-          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="Colours" type="colourdata">232,168,48</property>
+          <property name="overwrite_shape_color" type="bool">1</property>
           <property name="ShapeFileNames" type="arraystring">
             <item>event1.jigshape</item>            
           </property>
         </object>
         <object type="wxJigsawShapeCategory">          
           <property name="CategoryName" type="string">Flow Control</property>
-          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="Colours" type="colourdata">162,80,24</property>
+          <property name="overwrite_shape_color" type="bool">1</property>
           <property name="ShapeFileNames" type="arraystring">
             <item>flow_control1.jigshape</item>            
             <item>flow_control2.jigshape</item>            
           </property>
         </object>
         <object type="wxJigsawShapeCategory">          
-          <property name="CategoryName" type="string">Types</property>
-          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="CategoryName" type="string">Values</property>
+          <property name="Colours" type="colourdata">209,175,126</property>
+          <property name="overwrite_shape_color" type="bool">1</property>
           <property name="ShapeFileNames" type="arraystring">
             <item>type1.jigshape</item>
             <item>type2.jigshape</item>
@@ -30,7 +33,8 @@
         </object>
         <object type="wxJigsawShapeCategory">          
           <property name="CategoryName" type="string">Commands</property>
-          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="Colours" type="colourdata">0,200,255</property>
+          <property name="overwrite_shape_color" type="bool">1</property>
           <property name="ShapeFileNames" type="arraystring">
             <item>command1.jigshape</item>
             <item>command2.jigshape</item>
@@ -38,8 +42,9 @@
           </property>
         </object>
         <object type="wxJigsawShapeCategory">
-        <property name="CategoryName" type="string">Numbers</property>
-        <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+        <property name="CategoryName" type="string">Math</property>
+          <property name="Colours" type="colourdata">0,128,108</property>
+          <property name="overwrite_shape_color" type="bool">1</property>
         <property name="ShapeFileNames" type="arraystring">
           <item>number1.jigshape</item>
           <item>number2.jigshape</item>
@@ -49,7 +54,8 @@
       </object>
         <object type="wxJigsawShapeCategory">
           <property name="CategoryName" type="string">Logic</property>
-          <property name="Colours" type="colourdata">0,0,0|132,125,132|74,69,74|0,0,0|57,56,57|57,56,57|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0|0,0,0</property>
+          <property name="Colours" type="colourdata">96,192,40</property>
+          <property name="overwrite_shape_color" type="bool">1</property>
           <property name="ShapeFileNames" type="arraystring">
             <item>logic1.jigshape</item>
             <item>logic2.jigshape</item>

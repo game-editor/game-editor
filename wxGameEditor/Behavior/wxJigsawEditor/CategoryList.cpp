@@ -162,19 +162,27 @@ void CategoryList::OnSize( wxSizeEvent& event )
 	ReCreateScrollBars();
 }
 
-void CategoryList::ResizeButtons()
+int CategoryList::ResizeButtons()
 {
-	int y = 5;
-	int w = GetClientSize().GetWidth();
+	int border = 5;
+	int x = border, y = border, n = 0;
+	int w = (GetClientSize().GetWidth() - 3*border)/2, h = 0;
 	for(wxWindowList::Node * node = GetChildren().GetFirst(); node; node = node->GetNext())
 	{
 		wxWindow * window = node->GetData();
 		if(!window) continue;
 		if(!wxIsKindOf(window, CategoryButton)) continue;
-		int h = window->GetSize().GetHeight();
-		window->SetSize(5, y, w-10, h);
-		y += (h+5);
+		h = window->GetSize().GetHeight();		
+		window->SetSize(x, y, w, h);
+
+		
+		if(n % 2) {y += (h+border); x = border;}
+		else x = w + 2*border;
+
+		n++;
 	}
+
+	return y + border;
 }
 
 void CategoryList::DestroyChildren()
@@ -185,14 +193,17 @@ void CategoryList::DestroyChildren()
 	}
 }
 
-void CategoryList::AddCategory(const wxString & name, wxJigsawShapeList * shapes)
+void CategoryList::AddCategory(wxJigsawPalette *palette)
 {
-	long newButtonID = wxNewId();
-	CategoryButton * newButton = new CategoryButton(this, newButtonID, name);
-	newButton->SetShapes(shapes);
+	long newButtonID = wxNewId(), h;
+	CategoryButton * newButton = new CategoryButton(this, newButtonID, palette->GetPaletteName());
+	newButton->SetShapes(&palette->GetShapes());
+	newButton->SetColor(palette->GetColours().GetColour());
+	
 	Connect(newButtonID, wxEVT_COMMAND_BUTTON_CLICKED, 
 		wxCommandEventHandler(CategoryList::OnCategoryButtonPressed));
-	ResizeButtons();
+	h = ResizeButtons();
+	SetSize(GetSize().GetWidth(), h);
 	ReCreateScrollBars();
 	if(GetCategoryCount() == 1)
 	{

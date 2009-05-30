@@ -17,6 +17,8 @@
  * Includes
  */
 
+#include "wxJigsawPalette.h"
+
 ////@begin includes
 ////@end includes
 
@@ -83,10 +85,10 @@ public:
     /// Retrieves icon resources
     wxIcon GetIconResource( const wxString& name );
 ////@end CategoryList member function declarations
-	void ResizeButtons();
+	int ResizeButtons();
 	void ReCreateScrollBars();
 	void DestroyChildren();
-	void AddCategory(const wxString & name, wxJigsawShapeList * shapes);
+	void AddCategory(wxJigsawPalette *palette);
 	size_t GetCategoryCount();
 
     /// Should we show tooltips?

@@ -24,6 +24,7 @@
 ////@end includes
 
 #include "CategoryButton.h"
+#include "../../color.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -111,3 +112,32 @@ void CategoryButton::CreateControls()
 ////@end CategoryButton content construction
 }
 
+
+void CategoryButton::SetColor(const wxColour &color) 
+{ 
+	unsigned char newColor[3], colorA[3], colorB[3];
+
+	colorA[0] = color.Red();
+	colorA[1] = color.Green();
+	colorA[2] = color.Blue();
+
+	COLOUR_TO_ARRAY(m_GradientTopStartColour, colorB)
+	ColorBlend_Overlay(newColor, colorA, colorB);
+	m_GradientTopStartColour = wxColour(newColor[0], newColor[1], newColor[2]);
+
+	COLOUR_TO_ARRAY(m_GradientBottomStartColour, colorB)
+	ColorBlend_Overlay(newColor, colorA, colorB);
+	m_GradientBottomStartColour = wxColour(newColor[0], newColor[1], newColor[2]);
+
+	COLOUR_TO_ARRAY(m_GradientBottomEndColour, colorB)
+	ColorBlend_Overlay(newColor, colorA, colorB);
+	m_GradientBottomEndColour = wxColour(newColor[0], newColor[1], newColor[2]);
+
+	COLOUR_TO_ARRAY(m_PressedColourTop, colorB)
+	ColorBlend_Overlay(newColor, colorA, colorB);
+	m_PressedColourTop = wxColour(newColor[0], newColor[1], newColor[2]);
+
+	COLOUR_TO_ARRAY(m_PressedColourBottom, colorB)
+	ColorBlend_Overlay(newColor, colorA, colorB);
+	m_PressedColourBottom = wxColour(newColor[0], newColor[1], newColor[2]);
+}

@@ -333,6 +333,8 @@ private:
 
 	wxSize m_HeaderSize;
 
+	wxFont labelFont;
+
 	int m_ParametersOffset;
 
 	wxSize m_Size;
