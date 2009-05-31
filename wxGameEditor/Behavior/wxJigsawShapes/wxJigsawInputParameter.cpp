@@ -123,7 +123,7 @@ void wxJigsawInputParameter::GetSize(wxDC & dc, wxCoord * w, wxCoord * h, double
 	wxCoord shapeWidth(0), shapeHeight(0);
 	if(m_NeedCalcLabelSize)
 	{
-		dc.GetTextExtent(m_Label, &m_LabelSize.x, &m_LabelSize.y);
+		dc.GetTextExtent(m_Label, &m_LabelSize.x, &m_LabelSize.y, 0, 0, (wxFont *)&dc.GetFont());
 		m_NeedCalcLabelSize = false;
 	}
 	if(m_Shape)
@@ -170,7 +170,7 @@ void wxJigsawInputParameter::Draw(wxDC & dc, const wxPoint & pos, const wxSize &
 		realPosition.x, realPosition.y, offset.x, offset.y);*/
 	wxSize labelSize;
 	wxSize size = GetSize(dc, scale);
-	dc.GetTextExtent(m_Label, &labelSize.x, &labelSize.y);
+	dc.GetTextExtent(m_Label, &labelSize.x, &labelSize.y, 0, 0, (wxFont *)&dc.GetFont());
 	dc.DrawLabel(m_Label, wxRect(realPosition, size), wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
 	wxPoint shapePos;
 	wxSize shapeSize;
@@ -241,7 +241,7 @@ void wxJigsawInputParameter::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & 
 
 void wxJigsawInputParameter::RecalculateLabelSizes(wxDC & dc)
 {
-	dc.GetTextExtent(m_Label, &m_LabelSize.x, &m_LabelSize.y);
+	dc.GetTextExtent(m_Label, &m_LabelSize.x, &m_LabelSize.y, 0, 0, (wxFont *)&dc.GetFont());
 	if(m_Shape)
 	{
 		m_Shape->RecalculateLabelSizes(dc);

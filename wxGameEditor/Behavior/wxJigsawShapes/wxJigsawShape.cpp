@@ -516,10 +516,10 @@ void wxJigsawShape::GetHeaderSize(wxDC & dc, wxCoord * w, wxCoord * h, double sc
 	m_HeaderSize.Set(0,0);
 	if(m_NeedCalcLabelSize)
 	{
-		dc.GetTextExtent(m_Name, &m_LabelSize.x, &m_LabelSize.y);
+		dc.GetTextExtent(m_Name, &m_LabelSize.x, &m_LabelSize.y, 0, 0, &labelFont);
 		m_NeedCalcLabelSize = false;
 	}
-	//dc.GetTextExtent(m_Name, &labelWidth, &labelHeight);
+	//dc.GetTextExtent(m_Name, &labelWidth, &labelHeight, 0, 0, &labelFont);
 	if(m_InputParameters.GetCount() && (w || h))
 	{
 		paramSize = GetInputParametersSize(dc, scale);
@@ -1209,8 +1209,8 @@ void wxJigsawShape::ReCreateHotSpots(wxDC & dc, wxJigsawHotSpotArray & hotSpots,
 			//Hotspot size
 			//paramRect.SetWidth(param->GetSize().GetWidth());
 						
-			paramRect.SetSize(param->GetSize());
-			if(paramTop == -1) paramTop = (headerSize.GetHeight() - paramRect.GetHeight())/2 + paramRect.GetTop();
+			paramRect.SetSize(param->GetSize());			
+			paramTop = (headerSize.GetHeight() - paramRect.GetHeight())/2 + GetPosition().y;
 			paramRect.SetTop(paramTop);
 
 			slotOffset = param->GetSlotOffset(scale);
@@ -1254,7 +1254,7 @@ void wxJigsawShape::Layout(wxDC & dc, double scale, bool reCreateHotSpots)
 
 void wxJigsawShape::RecalculateLabelSizes(wxDC & dc)
 {
-	dc.GetTextExtent(m_Name, &m_LabelSize.x, &m_LabelSize.y);
+	dc.GetTextExtent(m_Name, &m_LabelSize.x, &m_LabelSize.y, 0, 0, &labelFont);
 	for(wxJigsawShapeList::Node * node = m_Children.GetFirst(); node; node = node->GetNext())
 	{
 		wxJigsawShape * child = node->GetData();
