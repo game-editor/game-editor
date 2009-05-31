@@ -10,6 +10,7 @@
 #endif // _MSC_VER > 1000
 
 #include "PanelGenericProperty.h"
+#include "Behavior/wxJigsawEditor/wxJigsawEditorCanvas.h"
 
 class PanelProperty : public PanelGenericProperty  
 {
@@ -50,7 +51,8 @@ private:
 	static PanelProperty *panelProperty;
 
 	wxPGId	idGeneral, idPosition, idSize, idAppearance, idEvents, idUser,
-			idDescription, idName, idCreateAtStartup, idEditorAnimation, idX, idY, idZDepth, idParent, idPath,
+			idName, idDescription, idValueBool, idValueString, idValueNumeric,
+			idCreateAtStartup, idEditorAnimation, idX, idY, idZDepth, idParent, idPath,
 			idLocked, idColor, idTransparency,
 			idAnimation, idAnimationName, idAnimationFile, idAnimationMultiple,
 			idAnimationHorizontalFrames, idAnimationVerticalFrames, idAnimationFps, idInfinite,
@@ -60,8 +62,13 @@ private:
 			idGrid, idGridShow, idGridSnap, idGridSizeX, idGridSizeY,
 			idColorGrid1, idColorGrid2, idGridZoom;
 
+	void OnTimerEvent(wxTimerEvent &event);
+
+	wxTimer m_TimerShapeEdit;
+
 
 	Actor *actor;
+	wxJigsawShape *shape;
 	wxMenu *m_menuAnim, *m_menuPath;
 };
 

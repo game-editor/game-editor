@@ -104,6 +104,8 @@ public:
 	/// \param shape source object
 	wxJigsawShape(const wxJigsawShape & shape);
 
+	bool IsAtomic() {return m_Style != wxJigsawShapeStyle::wxJS_TYPE_NONE && m_InputParameters.GetCount() == 0 && !m_HasBump && !m_HasCShape && !m_HasNotch;}
+
 	/// \brief Destructor
 	virtual ~wxJigsawShape();
 	
@@ -132,6 +134,14 @@ public:
 	/// \brief Sets shape's name
 	/// \param value new value
 	void SetName(const wxString & value);
+
+	const wxString & GetDescription() const;
+	void SetDescription(const wxString & value);
+
+	const wxString & GetValue() const;
+	void SetValue(const wxString & value);
+	void SetValue(const bool value);
+	void SetValue(const double value);
 
 	/// \brief Returns shape's icon
 	const wxBitmap & GetBitmap() const;
@@ -287,6 +297,9 @@ private:
 	wxJigsawShape * m_Parent;
 	/// \brief Name of a shape object. It is also used as label when displaying a shape
 	wxString m_Name;
+
+	/// \brief Description of a shape object.
+	wxString m_Description;
 
 	/// \brief 
 	CodeEmitter m_Emit;

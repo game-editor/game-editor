@@ -7,7 +7,7 @@
 //#include "PanelEvents.h"
 #include "Path.h"
 #include "../gameEditor/UndoControl.h"
-#include "Behavior/wxJigsawEditor/wxJigsawEditorCanvas.h"
+
 
 
 #define ID_MENU_ANIM_ADD_ANIMATION		1000
@@ -44,6 +44,7 @@ BEGIN_EVENT_TABLE(PanelProperty, PanelGenericProperty)
 	EVT_BUTTON( PANEL_PROPERTY_ID, PanelProperty::OnPropertyGridButtonClick )
 	EVT_MENU( wxID_ANY, PanelProperty::OnMenuClick )
 	EVT_COMMAND(wxID_ANY, wxEVT_BEHAVIOR_BLOCK_SELECTED, PanelProperty::OnBehaviorBlockSelected)
+	EVT_TIMER(-1,PanelProperty::OnTimerEvent)
 END_EVENT_TABLE()
 
 
@@ -64,6 +65,11 @@ PanelProperty::PanelProperty(wxWindow *parent)  : PanelGenericProperty(parent, P
 	pg->DisableProperty ( idName ); //Enable only when implement rename
 
 	idDescription = pg->Append ( wxStringProperty (wxT("Description"), wxPG_LABEL, wxT("")) ); 
+
+	idValueString = pg->Append ( wxStringProperty (wxT("Value"), wxPG_LABEL, wxT("")) ); idValueString.GetProperty().SetToolTip("Set the value for the string block");
+	idValueBool = pg->Append ( wxBoolProperty ( wxT("Value"), wxPG_LABEL, true ) ); idValueBool.GetProperty().SetToolTip("Click to set the block value");
+	idValueNumeric = pg->Append ( wxFloatProperty (wxT("Value"),wxPG_LABEL,0) ); pg->SetPropertyEditor( idValueNumeric, wxPG_EDITOR(SpinCtrl) ); idValueNumeric.GetProperty().SetToolTip("Set the value for the numeric block");
+	//SetFloatConstraints(idValueNumeric.GetPropertyPtr(), 2, 200, 1 );
 
     idCreateAtStartup = pg->Append ( wxBoolProperty ( wxT("Create at startup"), wxPG_LABEL, true ) ); idCreateAtStartup.GetProperty().SetToolTip(TIP_ACTORCONTROL_CREATE);
 	idEditorAnimation = pg->Append ( wxBoolProperty ( wxT("Editor Animation"), wxPG_LABEL, false ) ); idEditorAnimation.GetProperty().SetToolTip(TIP_ACTORCONTROL_MOVE);
@@ -242,7 +248,7 @@ void PanelProperty::OnItemExpanded ( wxPropertyGridEvent& event )
 
 void PanelProperty::OnPropertyGridChange ( wxPropertyGridEvent& event )
 {
-	if(!IS_VALID_ACTOR(actor)) return;
+	if(!IS_VALID_ACTOR(actor) && !shape) return;
 
 	wxPGId id = event.GetProperty(), id1 = event.GetMainParent();
 	wxVariant value = event.GetPropertyValue();
@@ -327,10 +333,29 @@ void PanelProperty::OnPropertyGridChange ( wxPropertyGridEvent& event )
 			}
         }
     }
+	else if(id == idValueBool && shape)
+	{
+		shape->SetValue(idValueBool.GetProperty().GetValueAsBool());
+	}
+	else if(id == idValueNumeric && shape)
+	{
+		shape->SetValue(idValueNumeric.GetProperty().GetValueAsDouble());
+	}
+	else if(id == idValueString && shape)
+	{
+		shape->SetValue(idValueString.GetProperty().GetValueAsString());
+	}
 	else if(id == idDescription)
 	{
 		//Description
-		actor->setDescription(idDescription.GetProperty().GetValueAsString().GetData());
+		if(shape)
+		{
+			shape->SetDescription(idDescription.GetProperty().GetValueAsString());
+		}
+		else
+		{
+			actor->setDescription(idDescription.GetProperty().GetValueAsString().GetData());
+		}
 	}
 	else if(id == idX || id == idY)
 	{
@@ -560,6 +585,7 @@ void PanelProperty::Update(Actor *_actor)
 		_actor = GameControl::Get()->GetActor("view");
 	}
 
+	panelProperty->shape = NULL;
 	panelProperty->actor = _actor;
 	panelProperty->Update();
 	
@@ -785,8 +811,7 @@ void PanelProperty::UpdateOptionalProperties(bool bBehavior)
 		//Behavior block selected
 		idX.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		idY.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
-		idZDepth.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
-		idDescription.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idZDepth.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);		
 		idEditorAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		idParent.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		idPath.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
@@ -801,6 +826,35 @@ void PanelProperty::UpdateOptionalProperties(bool bBehavior)
 		idAnimation.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		idInfinite.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
 		idReceiveEventsEvenIfOutOfVision.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idValueBool.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idValueString.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+		idValueNumeric.GetProperty().SetFlag(wxPG_PROP_HIDEABLE);
+
+		double fValue = 0.0;
+		long bValue = 0;
+
+		if(shape)
+		{
+			switch(shape->GetStyle())
+			{
+			case wxJigsawShapeStyle::wxJS_TYPE_NUMERIC:
+				idValueNumeric.GetProperty().ClearFlag(wxPG_PROP_HIDEABLE);
+				shape->GetValue().ToDouble(&fValue);
+				pg->SetPropertyValue(idValueNumeric, fValue);				
+				break;
+
+			case wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN:
+				idValueBool.GetProperty().ClearFlag(wxPG_PROP_HIDEABLE);
+				shape->GetValue().ToLong(&bValue);
+				pg->SetPropertyValue(idValueBool, (bool)bValue);
+				break;
+
+			case wxJigsawShapeStyle::wxJS_TYPE_STRING:
+				idValueString.GetProperty().ClearFlag(wxPG_PROP_HIDEABLE);
+				pg->SetPropertyValue(idValueString, shape->GetValue());
+				break;
+			}
+		}
 	}
 	else if(actor == GameControl::Get()->GetAxis())
 	{
@@ -1197,16 +1251,51 @@ void PanelProperty::OnMenuClick(wxCommandEvent& event)
 	}
 }
 
-void PanelProperty::OnBehaviorBlockSelected( wxCommandEvent &event ) //maks:teste
+void PanelProperty::OnBehaviorBlockSelected( wxCommandEvent &event )
 {
-	if(event.GetClientData()) 
-	{
-		pg->SetPropertyValue(idName, event.GetString());   
+	shape = (wxJigsawShape *)event.GetClientData();
+
+	if(shape) 
+	{	
+		pg->SetPropertyValue(idName, shape->GetName());   
+		pg->SetPropertyValue(idDescription, shape->GetDescription()); 
+
+		if(shape->IsAtomic())
+		{
+			//Set the value only for atomic blocks
+			m_TimerShapeEdit.SetOwner(this);
+			m_TimerShapeEdit.Start(500, true);
+		}
 	}
 	else
 	{
 		pg->SetPropertyValue(idName, "");
+		pg->SetPropertyValue(idDescription, "");
 	}
 
-	UpdateOptionalProperties(true);
+	UpdateOptionalProperties(true);	
+}
+
+void PanelProperty::OnTimerEvent(wxTimerEvent &event)
+{
+	if(shape)
+	{
+		switch(shape->GetStyle())
+		{
+		case wxJigsawShapeStyle::wxJS_TYPE_NUMERIC:
+							
+			pg->SelectProperty(idValueNumeric, true);
+			break;
+
+		case wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN:
+			
+			pg->SelectProperty(idValueBool, true);
+			break;
+
+		case wxJigsawShapeStyle::wxJS_TYPE_STRING:
+			
+			pg->SelectProperty(idValueString, true);
+			break;
+		}
+	}
 }

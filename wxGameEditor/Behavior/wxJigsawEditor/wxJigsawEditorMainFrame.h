@@ -146,6 +146,8 @@ public:
 
 	static wxJigsawEditorMainFrame *Get() {return pFrame;}
 
+	void RefreshCanvas();
+
 ////@begin wxJigsawEditorMainFrame member variables
     wxAuiManager m_auiManager;
     wxSlider* m_ScaleSlider;

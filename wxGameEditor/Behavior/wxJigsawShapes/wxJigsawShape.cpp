@@ -1,5 +1,6 @@
 #include "wxJigsawShape.h"
 #include "wxJigsawShapePropertyIO.h"
+#include "../wxJigsawEditor/wxJigsawEditorMainFrame.h"
 #include "wxJigsawInputParameterPropertyIO.h"
 #include <wx/listimpl.cpp>
 #include <stdlib.h>
@@ -53,7 +54,7 @@ IMPLEMENT_DYNAMIC_CLASS(wxJigsawShape, xsSerializable);
 
 wxJigsawShape::wxJigsawShape(const wxString & name, const wxString & bitmapFileName, 
 	const wxColour & colour)
-: m_Parent(NULL), m_Name(name), m_BitmapFileName(bitmapFileName), m_Colour(colour), 
+: m_Parent(NULL), m_Name(name), m_Description(""), m_BitmapFileName(bitmapFileName), m_Colour(colour), 
 m_Style(wxJigsawShapeStyle::wxJS_TYPE_DEFAULT), m_HasNotch(false), m_HasBump(false),
 m_HasCShape(false), m_MinSize(80,17), m_Position(wxDefaultPosition), 
 m_NeedCalcLabelSize(true), m_LabelSize(0,0)
@@ -67,7 +68,7 @@ m_NeedCalcLabelSize(true), m_LabelSize(0,0)
 
 wxJigsawShape::wxJigsawShape(const wxJigsawShape & shape)
 : xsSerializable(shape), 
-m_Parent(shape.m_Parent), m_Name(shape.m_Name), m_Bitmap(shape.m_Bitmap), 
+m_Parent(shape.m_Parent), m_Name(shape.m_Name), m_Description(shape.m_Description), m_Bitmap(shape.m_Bitmap), 
 m_Colour(shape.m_Colour), m_Style(shape.m_Style), m_HasNotch(shape.m_HasNotch), 
 m_HasBump(shape.m_HasBump), m_HasCShape(shape.m_HasCShape), m_MinSize(shape.m_MinSize), 
 m_Position(shape.m_Position), m_NeedCalcLabelSize(shape.m_NeedCalcLabelSize),
@@ -90,6 +91,7 @@ wxJigsawShape::~wxJigsawShape()
 void wxJigsawShape::InitSerialization()
 {
 	XS_SERIALIZE(m_Name, wxT("name"));
+	XS_SERIALIZE(m_Description, wxT("description"));
 	XS_SERIALIZE(m_BitmapFileName, wxT("bitmap"));
 	XS_SERIALIZE(m_Colour, wxT("colour"));
 	XS_SERIALIZE(m_Style, wxT("style"));
@@ -97,9 +99,9 @@ void wxJigsawShape::InitSerialization()
 	XS_SERIALIZE(m_HasBump, wxT("has_bump"));
 	XS_SERIALIZE(m_HasCShape, wxT("has_c_shape"));
 	XS_SERIALIZE(m_MinSize, wxT("min_size"));
-	XS_SERIALIZE(m_Position, wxT("position"));
-	XS_SERIALIZE_CODEEMITTER(m_Emit, wxT("emit"));
+	XS_SERIALIZE(m_Position, wxT("position"));	
 	XS_SERIALIZE_CODEEMITTER(m_EmitOpen, wxT("emit_open"));
+	XS_SERIALIZE_CODEEMITTER(m_Emit, wxT("emit"));
 	XS_SERIALIZE_LISTJIGSAWINPUTPARAMETER(m_InputParameters, wxT("inputparameters"));
 	XS_SERIALIZE_CODEEMITTER(m_EmitIntra, wxT("emit_intra"));
 	XS_SERIALIZE_LISTJIGSAWSHAPE(m_Children, wxT("children"));
@@ -182,6 +184,60 @@ void wxJigsawShape::SetName(const wxString & value)
 {
 	m_Name = value;
 	m_NeedCalcLabelSize = true;
+}
+
+const wxString & wxJigsawShape::GetDescription() const
+{
+	return m_Description;
+}
+
+void wxJigsawShape::SetDescription(const wxString & value)
+{
+	m_Description = value;
+}
+
+const wxString & wxJigsawShape::GetValue() const
+{
+	return m_Emit.data;
+}
+
+void wxJigsawShape::SetValue(const wxString & value)
+{
+	//Only for atomic blocks
+	if(m_Style != wxJigsawShapeStyle::wxJS_TYPE_STRING || !IsAtomic()) return;
+	
+	m_Emit.data = m_Name = value;	
+	RequestSizeRecalculation();
+
+	wxJigsawEditorMainFrame * frame = wxJigsawEditorMainFrame::Get();
+	if(frame) frame->RefreshCanvas();
+}
+
+void wxJigsawShape::SetValue(const bool value)
+{
+	//Only for atomic blocks
+	if(m_Style != wxJigsawShapeStyle::wxJS_TYPE_BOOLEAN || !IsAtomic()) return;
+	
+	m_Emit.data = value?"1":"0";	
+	m_Name = value?"true":"false";	
+	RequestSizeRecalculation();
+
+	wxJigsawEditorMainFrame * frame = wxJigsawEditorMainFrame::Get();
+	if(frame) frame->RefreshCanvas();
+}
+
+void wxJigsawShape::SetValue(const double value)
+{
+	//Only for atomic blocks
+	if(m_Style != wxJigsawShapeStyle::wxJS_TYPE_NUMERIC || !IsAtomic()) return;
+	
+	m_Emit.data = m_Name = wxString::Format(wxT("%f"), value);	
+	while(m_Name.Length() > 2 && m_Name.Right(1) == "0") m_Name = m_Name.Left(m_Name.Length() -  1);
+	if(m_Name.Right(1) == ".") m_Name = m_Name.Left(m_Name.Length() -  1);
+	RequestSizeRecalculation();
+
+	wxJigsawEditorMainFrame * frame = wxJigsawEditorMainFrame::Get();
+	if(frame) frame->RefreshCanvas();
 }
 
 const wxBitmap & wxJigsawShape::GetBitmap() const

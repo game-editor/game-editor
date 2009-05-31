@@ -363,6 +363,10 @@ void wxJigsawEditorMainFrame::OnSCALESLIDERUpdated( wxCommandEvent& event )
 	}
 }
 
+void wxJigsawEditorMainFrame::RefreshCanvas()
+{
+	if(m_Canvas) m_Canvas->RefreshBuffer();
+}
 
 wxString wxJigsawEditorMainFrame::GetCode()
 {

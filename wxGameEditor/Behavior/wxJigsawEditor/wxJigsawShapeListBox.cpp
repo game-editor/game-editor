@@ -323,7 +323,7 @@ void wxJigsawShapeListBox::OnLeftDown( wxMouseEvent& event )
 		m_AssociatedCanvas->SetSelectedObject(NULL);
 		m_AssociatedCanvas->ReCreateHotSpots();
 		wxDragResult dragResult = dropSource.DoDragDrop(wxDrag_DefaultMove);
-		m_AssociatedCanvas->SetSelectedObject(NULL);
+		if(dragResult != wxDragResult::wxDragMove) m_AssociatedCanvas->SetSelectedObject(NULL);
 
 		if(m_AssociatedCanvas->GetDragImage())
 		{

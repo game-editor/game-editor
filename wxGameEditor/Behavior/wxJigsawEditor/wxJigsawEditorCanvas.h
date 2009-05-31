@@ -151,6 +151,7 @@ public:
 
     wxJigsawShapeGroup * GetSelectedObject() const { return m_SelectedObject ; }
     void SetSelectedObject(wxJigsawShapeGroup * value);
+	void SetSelectedShape(wxJigsawShape * value);
 
     wxJigsawEditorCanvasMode GetMode() const { return m_Mode ; }
     void SetMode(wxJigsawEditorCanvasMode value) { m_Mode = value ; }
