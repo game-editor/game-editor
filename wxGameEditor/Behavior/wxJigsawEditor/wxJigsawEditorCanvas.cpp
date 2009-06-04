@@ -355,9 +355,11 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 				}
 				
 				SetSelectedObject(group);
+				SetSelectedShape(shape);
 				document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
 				FixActiveHotSpot(diagramPoint);
 				m_Mode = wxJSEC_MODE_DRAGGING;
+				
 
 				CaptureMouse();
 				RefreshBuffer();
@@ -766,7 +768,7 @@ void wxJigsawEditorCanvas::ProcessDrop(const wxPoint & pos,
 		if(!newGroup) break;
 		document->ProcessDrop(m_DoubleBufferDC, realPosition, newGroup, hotSpotOffset, m_View->GetScale());
 		m_View->BringToFront(newGroup);
-		SetSelectedShape(newShape); //maks:teste
+		SetSelectedShape(newShape);
 		RefreshBuffer();
 	}
 	while(false);
@@ -1047,22 +1049,13 @@ void wxJigsawEditorCanvas::OnSize( wxSizeEvent& event )
 	RefreshBuffer();
 }
 
-void wxJigsawEditorCanvas::SetSelectedObject(wxJigsawShapeGroup * value) 
+void wxJigsawEditorCanvas::SetSelectedObject(wxJigsawShapeGroup * value)
 { 	
 	m_SelectedObject = value ; 
 	m_View->SetSelectedObject(m_SelectedObject);
-
-	//Send the select event to other windows
-	wxCommandEvent event( wxEVT_BEHAVIOR_BLOCK_SELECTED, GetId() );
-    event.SetEventObject( this );
-
-	if(m_SelectedObject && m_SelectedObject->GetFirstShape()) event.SetClientData(m_SelectedObject->GetFirstShape());
-
-    // Send it	
-    GetEventHandler()->ProcessEvent( event );
 }
 
-void wxJigsawEditorCanvas::SetSelectedShape(wxJigsawShape * value) //maks:teste
+void wxJigsawEditorCanvas::SetSelectedShape(wxJigsawShape * value)
 { 	
 	//Send the select event to other windows
 	wxCommandEvent event( wxEVT_BEHAVIOR_BLOCK_SELECTED, GetId() );
