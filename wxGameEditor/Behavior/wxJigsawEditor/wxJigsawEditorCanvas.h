@@ -249,11 +249,13 @@ public:
 ////@begin wxJigsawEditorCanvas member variables
     wxJigsawEditorView * m_View;
     wxJigsawShapeGroup * m_SelectedObject;
+	wxJigsawShape * m_SelectedShape;
     wxJigsawEditorCanvasMode m_Mode;
     wxSize m_SelectedObjectOffset;
     wxDragImage * m_DragImage;
     wxJigsawHotSpotArray m_HotSpots;
     wxJigsawHotSpot * m_ActiveHotSpot;
+	wxPoint m_MouseDownPos;
     bool m_UpdateLayoutOnPaint;
     /// Control identifiers
     enum {

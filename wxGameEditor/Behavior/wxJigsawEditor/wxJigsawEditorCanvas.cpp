@@ -123,8 +123,10 @@ void wxJigsawEditorCanvas::Init()
 ////@begin wxJigsawEditorCanvas member initialisation
     m_View = NULL;
     m_SelectedObject = NULL;
+	m_SelectedShape = NULL;
     m_Mode = wxJSEC_MODE_NONE;
     m_SelectedObjectOffset = wxSize(0,0);
+	m_MouseDownPos = wxPoint(-1, -1);
     m_DragImage = NULL;
     m_ActiveHotSpot = NULL;
     m_UpdateLayoutOnPaint = false;
@@ -264,15 +266,27 @@ void wxJigsawEditorCanvas::DrawHotSpot(wxDC * dc, double scale)
  */
 
 void wxJigsawEditorCanvas::OnIdle( wxIdleEvent& event )
-{
+{	
 	do
 	{
 		if(!HasCapture()) break;
 
-		// get scroll position
-		wxPoint scrollPos = GetScrollPosition();
 		// get mouse in client coordinates
 		wxPoint currentPos = ScreenToClient(wxGetMousePosition());
+
+		//Update the offset to the next mouse down event
+		if(m_View->GetSelectedObject())
+		{
+			wxPoint diagramPoint = PointToViewPoint(currentPos);
+			wxPoint groupPosition = m_View->GetRealGroupPosition(m_View->GetSelectedObject());
+			m_SelectedObjectOffset = wxSize(
+				diagramPoint.x - groupPosition.x,
+				diagramPoint.y - groupPosition.y);
+		}
+
+		// get scroll position
+		wxPoint scrollPos = GetScrollPosition();
+		
 
 		// auto scroll
 		// check current drag position and update scroll regularly
@@ -304,39 +318,72 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 {
 	SetFocus();
 	wxRect displayRect = GetDisplayRect(GetScrollPosition());
+	m_MouseDownPos = event.GetPosition();
 	do
 	{
 		if(!m_View) break;
-		wxJigsawEditorDocument * document = GetDocument();
-		if(!document) break;
-		document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, NULL, m_View->GetScale());
-		wxPoint diagramPoint = PointToViewPoint(event.GetPosition());
-		wxLogTrace(wxTraceMask(), 
-			_("wxJigsawEditorCanvas::OnLeftDown: Client Pos (%i, %i); View offset (%i, %i); Point (%i, %i)"),
-			event.GetPosition().x, event.GetPosition().y,
-			m_View->GetViewOffset().GetWidth(), m_View->GetViewOffset().GetHeight(),
-			diagramPoint.x, diagramPoint.y);
+		
+		wxPoint diagramPoint = PointToViewPoint(m_MouseDownPos);		
 		wxJigsawShape * shape(NULL);
-		wxJigsawEditorCanvasHitTest hitTest = HitTest(event.GetPosition(), NULL);
+		wxJigsawEditorCanvasHitTest hitTest = HitTest(m_MouseDownPos, NULL);
 		switch(hitTest)
 		{
 		case wxJSEC_HITTEST_SHAPE:
 			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, NULL);			
 			if(shape)
+			{				
+				SetSelectedShape(shape);
+				CaptureMouse();			
+				RefreshBuffer();
+			}
+			break;
+		case wxJSEC_HITTEST_NONE:
+			SetSelectedShape(NULL);
+			SetSelectedObject(NULL);
+		default:
+			break;
+		}
+	}
+	while(false);
+}
+
+/*!
+ * wxEVT_MOTION event handler for ID_WXJIGSAWEDITORCANVAS
+ */
+
+void wxJigsawEditorCanvas::OnMotion( wxMouseEvent& event )
+{
+	UpdateCursor(event.GetPosition());
+	if(HasCapture())
+	{
+		if(event.GetPosition() != m_MouseDownPos && m_MouseDownPos != wxPoint(-1, -1) && m_SelectedShape)
+		{
+			do
 			{
+				if(!m_View) break;
+				wxJigsawEditorDocument * document = GetDocument();
+				if(!document) break;
+				document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, NULL, m_View->GetScale());
+				wxPoint diagramPoint = PointToViewPoint(m_MouseDownPos);
+				wxLogTrace(wxTraceMask(), 
+					_("wxJigsawEditorCanvas::OnLeftDown: Client Pos (%i, %i); View offset (%i, %i); Point (%i, %i)"),
+					m_MouseDownPos.x, m_MouseDownPos.y,
+					m_View->GetViewOffset().GetWidth(), m_View->GetViewOffset().GetHeight(),
+					diagramPoint.x, diagramPoint.y);
+
 				wxJigsawShapeGroup * group(NULL);
-				group = document->GetShapeGroup(shape);
+				group = document->GetShapeGroup(m_SelectedShape);
 				if(!group)
 				{
-					group = document->CreateGroupByShape(m_DoubleBufferDC, shape);
+					group = document->CreateGroupByShape(m_DoubleBufferDC, m_SelectedShape);
 				}
 				else
 				{
 					// If it is not the first shape in a group
-					if(group->GetShapes().IndexOf(shape) > 0)
+					if(group->GetShapes().IndexOf(m_SelectedShape) > 0)
 					{
 						// Then extract the shape and all shapes after it into separate group
-						group = document->CreateGroupByShape(m_DoubleBufferDC, shape);
+						group = document->CreateGroupByShape(m_DoubleBufferDC, m_SelectedShape);
 					}
 				}
 
@@ -353,31 +400,26 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 						diagramPoint.x - groupPosition.x,
 						diagramPoint.y - groupPosition.y);
 				}
-				
+
 				SetSelectedObject(group);
-				SetSelectedShape(shape);
 				document->ReCreateHotSpots(m_DoubleBufferDC, m_HotSpots, m_View->GetSelectedObject(), m_View->GetScale());
 				FixActiveHotSpot(diagramPoint);
 				m_Mode = wxJSEC_MODE_DRAGGING;
-				
 
-				CaptureMouse();
 				RefreshBuffer();
+				m_TR = m_BL = m_MouseDownPos;
+				m_SelectionRect.SetPosition(m_MouseDownPos);
+				m_SelectionRect.SetSize(wxSize(0,0));
 			}
-			break;
-		case wxJSEC_HITTEST_NONE:
-		default:
-			break;
-		}
-		//if(displayRect.Contains(event.GetPosition())) break;
-		//CaptureMouse();
+			while(false);
 
-		RefreshBuffer();
-		m_TR = m_BL = event.GetPosition();
-		m_SelectionRect.SetPosition(event.GetPosition());
-		m_SelectionRect.SetSize(wxSize(0,0));
+			m_MouseDownPos = wxPoint(-1, -1);
+		}
+		else
+		{
+			MotionUpdate(event.GetPosition());
+		}
 	}
-	while(false);
 }
 
 
@@ -387,6 +429,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 
 void wxJigsawEditorCanvas::OnLeftUp( wxMouseEvent& event )
 {
+	m_MouseDownPos = wxPoint(-1, -1);
 	if(HasCapture())
 	{
 		ReleaseMouse();
@@ -397,10 +440,18 @@ void wxJigsawEditorCanvas::OnLeftUp( wxMouseEvent& event )
 			wxJigsawEditorDocument * document = GetDocument();
 			if(!document) break;
 			wxPoint realPosition = PointToViewPoint(event.GetPosition());
-			if(m_View->GetSelectedObject())
+			wxJigsawShapeGroup *group = m_View->GetSelectedObject();
+			if(group)
 			{
+				//Update the offset to the next mouse down event
+				wxPoint groupPosition = m_View->GetRealGroupPosition(group);
+					m_SelectedObjectOffset = wxSize(
+						realPosition.x - groupPosition.x,
+						realPosition.y - groupPosition.y); 
+
+				//drop?
 				if(document->ProcessDrop(m_DoubleBufferDC, realPosition, 
-					m_View->GetSelectedObject(), m_SelectedObjectOffset, m_View->GetScale()))
+					group, m_SelectedObjectOffset, m_View->GetScale()))
 				{
 					SetSelectedObject(NULL);
 				}
@@ -436,18 +487,7 @@ void wxJigsawEditorCanvas::OnLeftDClick( wxMouseEvent& event )
 }
 
 
-/*!
- * wxEVT_MOTION event handler for ID_WXJIGSAWEDITORCANVAS
- */
 
-void wxJigsawEditorCanvas::OnMotion( wxMouseEvent& event )
-{
-	UpdateCursor(event.GetPosition());
-	if(HasCapture())
-	{
-		MotionUpdate(event.GetPosition());
-	}
-}
 
 void wxJigsawEditorCanvas::MotionUpdate(wxPoint currentPos)
 {		
@@ -1051,12 +1091,15 @@ void wxJigsawEditorCanvas::OnSize( wxSizeEvent& event )
 
 void wxJigsawEditorCanvas::SetSelectedObject(wxJigsawShapeGroup * value)
 { 	
-	m_SelectedObject = value ; 
+	m_SelectedObject = value; 
+	if(!value) m_SelectedShape = NULL;
 	m_View->SetSelectedObject(m_SelectedObject);
 }
 
 void wxJigsawEditorCanvas::SetSelectedShape(wxJigsawShape * value)
 { 	
+	m_SelectedShape = value ; 
+
 	//Send the select event to other windows
 	wxCommandEvent event( wxEVT_BEHAVIOR_BLOCK_SELECTED, GetId() );
     event.SetEventObject( this );
