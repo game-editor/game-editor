@@ -719,15 +719,7 @@ void wxSpinReal::DoGetPosition(int *x, int *y) const
 
 void wxSpinReal::SetSelection(long from, long to)
 {
-    // if from and to are both -1, it means (in wxWidgets) that all text should
-    // be selected - translate into Windows convention
-    if ( (from == -1) && (to == -1) )
-    {
-        from = 0;
-    }
-
-    //::SendMessage(GetBuddyHwnd(), EM_SETSEL, (WPARAM)from, (LPARAM)to);
-	//if(tc) tc->SetSelection(from, to);
+	if(tc) tc->SetSelection(from, to);
 }
 
 //#endif // __WIN95__

@@ -158,7 +158,7 @@ void wxPGSpinCtrlEditor::OnFocus ( wxPGProperty*, wxWindow* wnd ) const
     wxGedSpin* ctrl = (wxGedSpin*) wnd;
     //wxASSERT( ctrl && ctrl->IsKindOf(CLASSINFO(wxGedSpin)) );
 
-    //ctrl->SetSelection(-1,-1);
+    ctrl->SetSelection(-1,-1);
 }
 
 
