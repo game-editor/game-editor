@@ -171,7 +171,20 @@ void wxJigsawInputParameter::Draw(wxDC & dc, const wxPoint & pos, const wxSize &
 	wxSize labelSize;
 	wxSize size = GetSize(dc, scale);
 	dc.GetTextExtent(m_Label, &labelSize.x, &labelSize.y, 0, 0, (wxFont *)&dc.GetFont());
-	dc.DrawLabel(m_Label, wxRect(realPosition, size), wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
+
+	//Draw the text with bevel
+	wxRect rectText(realPosition, size);
+	rectText.x++;
+	rectText.y++;
+	dc.SetTextForeground(*wxBLACK);
+	dc.DrawLabel(m_Label, rectText, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
+
+	rectText.x--;
+	rectText.y--;
+	dc.SetTextForeground(*wxWHITE);
+	dc.DrawLabel(m_Label, rectText, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
+
+	
 	wxPoint shapePos;
 	wxSize shapeSize;
 	if(m_Shape)

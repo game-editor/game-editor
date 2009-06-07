@@ -147,6 +147,7 @@ public:
 	static wxJigsawEditorMainFrame *Get() {return pFrame;}
 
 	void RefreshCanvas();
+	wxJigsawEditorCanvas *GetCanvas() const {return m_Canvas;}
 
 ////@begin wxJigsawEditorMainFrame member variables
     wxAuiManager m_auiManager;

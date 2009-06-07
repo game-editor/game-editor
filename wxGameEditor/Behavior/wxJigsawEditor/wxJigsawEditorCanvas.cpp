@@ -333,18 +333,18 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 			if(shape)
 			{				
 				SetSelectedShape(shape);
-				CaptureMouse();			
-				RefreshBuffer();
+				CaptureMouse();							
 			}
 			break;
 		case wxJSEC_HITTEST_NONE:
-			SetSelectedShape(NULL);
 			SetSelectedObject(NULL);
 		default:
 			break;
 		}
 	}
 	while(false);
+
+	RefreshBuffer();
 }
 
 /*!

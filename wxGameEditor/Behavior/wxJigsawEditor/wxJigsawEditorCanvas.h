@@ -150,6 +150,7 @@ public:
     void SetView(wxJigsawEditorView * value) { m_View = value ; }
 
     wxJigsawShapeGroup * GetSelectedObject() const { return m_SelectedObject ; }
+	wxJigsawShape * GetSelectedShape() const { return m_SelectedShape;}
     void SetSelectedObject(wxJigsawShapeGroup * value);
 	void SetSelectedShape(wxJigsawShape * value);
 

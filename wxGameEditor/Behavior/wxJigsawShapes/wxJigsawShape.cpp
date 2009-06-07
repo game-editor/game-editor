@@ -135,20 +135,34 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 		realPosition.y, 
 		headerSize.GetWidth()-2*wxJigsawShape::ShapeLabelOffset.GetWidth()*scale, 
 		headerSize.GetHeight());
-	// Draw a label (on the left side of a shape and centerred vertically)
-	dc.SetTextForeground(*wxWHITE);
+	// Draw a label (on the left side of a shape and centerred vertically) with a little bevel (to contrast with white backgrounds)
 	dc.SetFont(labelFont);
 	if(m_Bitmap.IsOk())
 	{
+		labelRect.x++;
+		labelRect.y++;
+		dc.SetTextForeground(*wxBLACK);
+		dc.DrawLabel(m_Name, m_Bitmap, labelRect, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
+
+		labelRect.x--;
+		labelRect.y--;
+		dc.SetTextForeground(*wxWHITE);
 		dc.DrawLabel(m_Name, m_Bitmap, labelRect, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
 	}
 	else
 	{
+		labelRect.x++;
+		labelRect.y++;
+		dc.SetTextForeground(*wxBLACK);
+		dc.DrawLabel(m_Name, labelRect, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
+
+		labelRect.x--;
+		labelRect.y--;
+		dc.SetTextForeground(*wxWHITE);
 		dc.DrawLabel(m_Name, labelRect, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL);
 	}
 	
 	// Draw parameters
-	dc.SetTextForeground(*wxWHITE);
 	for(wxJigsawInputParameters::Node * node = m_InputParameters.GetFirst();
 		node; node = node->GetNext())
 	{
@@ -1043,15 +1057,17 @@ wxColour wxJigsawShape::DrawBackground(wxDC & dc,
 		const wxSize & size, double scale)
 {	
 	wxColour color(m_Colour);
-	
-	if(m_Parent && m_Colour == m_Parent->GetColour())
+		
+	if(wxJigsawEditorMainFrame::Get()->GetCanvas()->GetSelectedShape() == this)
+	{
+		//Shape selected. Give a feedback to the user!
+		double bright =  1.15 + .08*GetLevelColor();
+
+		color.Set(__min(bright*color.Red(), 255), __min(bright*color.Green(), 255), __min(bright*color.Blue(), 255));		
+	}
+	else if(m_Parent && m_Colour == m_Parent->GetColour())
 	{
 		//Change the shape bright to contrast with the parent shape
-
-		//Alternate the bright
-		//double bright =  1 - .1*(GetLevelColor() % 2);
-
-		//Increase the bright
 		double bright =  1 + .08*GetLevelColor();
 
 		color.Set(__min(bright*color.Red(), 255), __min(bright*color.Green(), 255), __min(bright*color.Blue(), 255));
