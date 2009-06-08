@@ -103,6 +103,8 @@ public:
     /// wxEVT_COMMAND_TEXT_ENTER event handler for ID_SEARCH_TEXTCTRL
     void OnSEARCHClicked( wxCommandEvent& event );
 
+	void SearchStyle(wxJigsawShapeStyle style);
+
 	
 
 ////@end wxJigsawEditorMainFrame event handler declarations
@@ -143,6 +145,8 @@ public:
 
 
 	wxJigsawPaletteList & GetPalettes() {return m_Palettes;}
+
+	wxJigsawShapeListBox* GetPalette() {return m_Palette;}
 
 	static wxJigsawEditorMainFrame *Get() {return pFrame;}
 

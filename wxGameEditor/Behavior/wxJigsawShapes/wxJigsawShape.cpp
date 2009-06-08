@@ -913,6 +913,7 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxDC & dc, wxPoint po
 					break;
 				case wxJigsawInputParameter::wxJSP_HITTEST_SLOT:
 					info.SetInputParameterIndex(paramIndex);
+					info.SetInputParameterStyle(param->GetStyle());
 					res = wxJS_HITTEST_SLOT;
 					bFound = true;
 					break;

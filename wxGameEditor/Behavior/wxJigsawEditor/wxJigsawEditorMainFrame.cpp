@@ -417,6 +417,36 @@ void wxJigsawEditorMainFrame::OnSEARCHClicked( wxCommandEvent& event )
 	while (false);
 }
 
+
+void wxJigsawEditorMainFrame::SearchStyle(wxJigsawShapeStyle style)
+{
+	do 
+	{
+		m_SearchResults.DeleteContents(false);
+		m_SearchResults.Clear();
+		for(wxJigsawPaletteList::Node * node = GetPalettes().GetFirst(); 
+			node; node = node->GetNext())
+		{
+			wxJigsawPalette * palette = node->GetData();
+			if(!palette) continue;
+			for(wxJigsawShapeList::Node * shapeNode = palette->GetShapes().GetFirst();
+				shapeNode; shapeNode = shapeNode->GetNext())
+			{
+				wxJigsawShape * shape = shapeNode->GetData();
+				if(!shape) continue;
+				if(shape->GetStyle() == style)
+				{
+					m_SearchResults.Append(shape);
+				}
+			}
+		}
+		m_Palette->SetShapes(&m_SearchResults);
+		m_Palette->Refresh();
+		m_Palette->AdjustScrollBars();
+	} 
+	while (false);
+}
+
 bool wxJigsawEditorMainFrame::LoadShapeRegistry()
 {
 	do

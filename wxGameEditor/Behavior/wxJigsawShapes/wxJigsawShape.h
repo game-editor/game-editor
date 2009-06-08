@@ -61,11 +61,13 @@ public:
 		int m_ChildIndex;
 		wxJigsawShape::wxJigsawShapeHitTest m_Result;
 		wxJigsawShape * m_Shape;
+		wxJigsawShapeStyle m_InputParameterStyle;
 	public:
 		/// \brief Constructor
 		wxJigsawShapeHitTestInfo() : 
 			m_Offset(0,0), 
 			m_InputParameterIndex(wxID_ANY),
+			m_InputParameterStyle(wxJigsawShapeStyle::wxJS_TYPE_NONE),
 			m_ChildIndex(wxID_ANY),
 			m_Result(wxJS_HITTEST_NONE),
 			m_Shape(NULL) {}
@@ -81,6 +83,10 @@ public:
 		void SetInputParameterIndex(int value) {m_InputParameterIndex = value;}
 		/// \brief Returns the index of input parameter under specified point on a shape
 		int GetInputParameterIndex() {return m_InputParameterIndex;}
+
+		void SetInputParameterStyle(wxJigsawShapeStyle value) {m_InputParameterStyle = value;}
+		
+		wxJigsawShapeStyle GetInputParameterStyle() {return m_InputParameterStyle;}
 
 		wxJigsawShape::wxJigsawShapeHitTest GetResult() {return m_Result;}
 		void SetResult(wxJigsawShape::wxJigsawShapeHitTest value) {m_Result = value;}

@@ -3,8 +3,9 @@
 
 #include <wx/wx.h>
 #include <wx/docview.h>
+#include <wxJigsawShape.h>
 
-class wxJigsawShape;
+//class wxJigsawShape;
 class wxJigsawShapeGroup;
 
 class wxJigsawEditorCanvas;
@@ -27,7 +28,7 @@ public:
 
 	wxSize GetDiagramSize();
 
-	wxJigsawShape * GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
+	wxJigsawShape * GetShapeFromPoint(wxDC & dc, const wxPoint & pos, wxJigsawShape::wxJigsawShapeHitTestInfo & info,
 		wxJigsawShapeGroup * ignoreGroup);
 
 	wxJigsawShapeGroup * GetSelectedObject();

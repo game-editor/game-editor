@@ -3,7 +3,7 @@
 #include "wxJigsawEditorApp.h"
 #include "wxJigsawEditorCanvas.h"
 #include "wxJigsawEditorDocument.h"
-#include <wxJigsawShape.h>
+//#include <wxJigsawShape.h>
 
 IMPLEMENT_DYNAMIC_CLASS(wxJigsawEditorView, wxView)
 
@@ -116,6 +116,7 @@ const wxSize & wxJigsawEditorView::GetViewOffset()
 }
 
 wxJigsawShape * wxJigsawEditorView::GetShapeFromPoint(wxDC & dc, const wxPoint & pos,
+	  wxJigsawShape::wxJigsawShapeHitTestInfo & info,
 		wxJigsawShapeGroup * ignoreGroup)
 {
 	do
@@ -123,7 +124,7 @@ wxJigsawShape * wxJigsawEditorView::GetShapeFromPoint(wxDC & dc, const wxPoint &
 		wxJigsawEditorDocument * document = 
 			wxDynamicCast(GetDocument(), wxJigsawEditorDocument);
 		if(!document) break;
-		wxJigsawShape::wxJigsawShapeHitTestInfo info;
+		//wxJigsawShape::wxJigsawShapeHitTestInfo info;
 		return document->GetShapeFromPoint(dc, pos, info, ignoreGroup, m_Scale);
 	}
 	while(false);

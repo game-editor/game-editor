@@ -28,6 +28,7 @@
 #include "wxJigsawEditorDocument.h"
 #include <wxJigsawShapeGroup.h>
 #include "DnDJigsawShapeDataObject.h"
+#include "wxJigsawEditorMainFrame.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -325,11 +326,37 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		
 		wxPoint diagramPoint = PointToViewPoint(m_MouseDownPos);		
 		wxJigsawShape * shape(NULL);
-		wxJigsawEditorCanvasHitTest hitTest = HitTest(m_MouseDownPos, NULL);
+		wxJigsawShape::wxJigsawShapeHitTestInfo info;
+		wxJigsawEditorCanvasHitTest hitTest = HitTest(m_MouseDownPos, info, NULL);
+
+		static wxJigsawShapeList m_PaletteShapeList;
+		if(info.GetResult() == wxJigsawShape::wxJigsawShapeHitTest::wxJS_HITTEST_SLOT) //maks:teste
+		{
+			//Must save the current selected category or save the current search
+			m_PaletteShapeList.DeleteContents(false);
+			m_PaletteShapeList.Clear();
+			for(wxJigsawShapeList::Node * shapeNode = wxJigsawEditorMainFrame::Get()->GetPalette()->GetShapes()->GetFirst();
+				shapeNode; shapeNode = shapeNode->GetNext())
+			{
+				wxJigsawShape * shape = shapeNode->GetData();
+				if(!shape) continue;
+				m_PaletteShapeList.Append(shape);	
+			}
+			
+			wxJigsawEditorMainFrame::Get()->SearchStyle(info.GetInputParameterStyle());
+		}
+		else
+		{
+			//Restore the search or selected category
+			wxJigsawEditorMainFrame::Get()->GetPalette()->SetShapes(&m_PaletteShapeList);
+			wxJigsawEditorMainFrame::Get()->GetPalette()->Refresh();
+			wxJigsawEditorMainFrame::Get()->GetPalette()->AdjustScrollBars();
+		}
+
 		switch(hitTest)
 		{
 		case wxJSEC_HITTEST_SHAPE:
-			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, NULL);			
+			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, info, NULL);			
 			if(shape)
 			{				
 				SetSelectedShape(shape);
@@ -530,13 +557,15 @@ wxJigsawShape * wxJigsawEditorCanvas::GetShapeFromPoint(const wxPoint & pos,
 	{
 		if(!m_View) break;
 		wxPoint viewPoint = PointToViewPoint(pos);
-		return m_View->GetShapeFromPoint(m_DoubleBufferDC, viewPoint, ignoreGroup);
+		wxJigsawShape::wxJigsawShapeHitTestInfo info;
+		return m_View->GetShapeFromPoint(m_DoubleBufferDC, viewPoint, info, ignoreGroup);
 	}
 	while(false);
 	return NULL;
 }
 
-wxJigsawEditorCanvas::wxJigsawEditorCanvasHitTest wxJigsawEditorCanvas::HitTest(const wxPoint & pos,
+wxJigsawEditorCanvas::wxJigsawEditorCanvasHitTest wxJigsawEditorCanvas::HitTest(const wxPoint & pos, 
+		wxJigsawShape::wxJigsawShapeHitTestInfo & info,
 		wxJigsawShapeGroup * ignoreGroup)
 {
 	do
@@ -544,7 +573,7 @@ wxJigsawEditorCanvas::wxJigsawEditorCanvasHitTest wxJigsawEditorCanvas::HitTest(
 		wxPoint realPoint = PointToViewPoint(pos);
 		wxLogTrace(wxTraceMask(), _("wxJigsawEditorCanvas::HitTest - (%i,%i)"),
 			realPoint.x, realPoint.y);
-		wxJigsawShape * shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, realPoint, ignoreGroup);
+		wxJigsawShape * shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, realPoint, info, ignoreGroup);
 		if(!shape) break;
 		return wxJSEC_HITTEST_SHAPE;
 	}

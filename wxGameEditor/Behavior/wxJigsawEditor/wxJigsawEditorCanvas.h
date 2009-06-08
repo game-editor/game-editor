@@ -187,7 +187,7 @@ public:
 
 	/// \brief Retrieves the code of area under specified position (in logical coordinates)
 	/// \param pos point
-	wxJigsawEditorCanvasHitTest HitTest(const wxPoint & pos,
+	wxJigsawEditorCanvasHitTest HitTest(const wxPoint & pos, wxJigsawShape::wxJigsawShapeHitTestInfo & info,
 		wxJigsawShapeGroup * ignoreGroup);
 
 	/// \brief Returns the shape under specified point
