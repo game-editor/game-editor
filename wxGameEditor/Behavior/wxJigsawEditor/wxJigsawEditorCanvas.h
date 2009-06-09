@@ -195,6 +195,8 @@ public:
 	wxJigsawShape * GetShapeFromPoint(const wxPoint & pos,
 		wxJigsawShapeGroup * ignoreGroup);
 
+	const wxJigsawShape::wxJigsawShapeHitTestInfo &GetSelectedShapeInfo() const {return infoSelectedShape;}
+
     /// Should we show tooltips?
     static bool ShowToolTips();
 
@@ -258,6 +260,7 @@ public:
     wxJigsawHotSpot * m_ActiveHotSpot;
 	wxPoint m_MouseDownPos;
     bool m_UpdateLayoutOnPaint;
+	wxJigsawShape::wxJigsawShapeHitTestInfo infoSelectedShape;
     /// Control identifiers
     enum {
         ID_WXJIGSAWEDITORCANVAS = 10001

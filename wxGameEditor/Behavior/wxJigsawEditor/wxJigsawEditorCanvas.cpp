@@ -320,22 +320,22 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 	SetFocus();
 	wxRect displayRect = GetDisplayRect(GetScrollPosition());
 	m_MouseDownPos = event.GetPosition();
+	
 	do
 	{
 		if(!m_View) break;
 		
 		wxPoint diagramPoint = PointToViewPoint(m_MouseDownPos);		
-		wxJigsawShape * shape(NULL);
-		wxJigsawShape::wxJigsawShapeHitTestInfo info;
-		wxJigsawEditorCanvasHitTest hitTest = HitTest(m_MouseDownPos, info, NULL);
+		wxJigsawShape * shape(NULL);		
+		wxJigsawEditorCanvasHitTest hitTest = HitTest(m_MouseDownPos, infoSelectedShape, NULL);
 
 		static wxJigsawShapeList m_PaletteShapeList;
 		static wxJigsawShapeList *pPaletteShapeList = NULL;
-		if(info.GetResult() == wxJigsawShape::wxJigsawShapeHitTest::wxJS_HITTEST_SLOT)
+		if(infoSelectedShape.GetResult() == wxJigsawShape::wxJigsawShapeHitTest::wxJS_HITTEST_SLOT)
 		{
 			//Must save the current selected category or save the current search			
 			if(!pPaletteShapeList) pPaletteShapeList = wxJigsawEditorMainFrame::Get()->GetPalette()->GetShapes();
-			wxJigsawEditorMainFrame::Get()->SearchStyle(info.GetInputParameterStyle());
+			wxJigsawEditorMainFrame::Get()->SearchStyle(infoSelectedShape.GetInputParameterStyle());
 		}
 		else if(pPaletteShapeList)
 		{
@@ -352,7 +352,7 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		switch(hitTest)
 		{
 		case wxJSEC_HITTEST_SHAPE:
-			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, info, NULL);			
+			shape = m_View->GetShapeFromPoint(m_DoubleBufferDC, diagramPoint, infoSelectedShape, NULL);			
 			if(shape)
 			{				
 				SetSelectedShape(shape);

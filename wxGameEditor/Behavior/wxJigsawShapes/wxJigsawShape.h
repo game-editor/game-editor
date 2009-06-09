@@ -62,6 +62,7 @@ public:
 		wxJigsawShape::wxJigsawShapeHitTest m_Result;
 		wxJigsawShape * m_Shape;
 		wxJigsawShapeStyle m_InputParameterStyle;
+		wxPoint m_MousePosition;
 	public:
 		/// \brief Constructor
 		wxJigsawShapeHitTestInfo() : 
@@ -70,7 +71,19 @@ public:
 			m_InputParameterStyle(wxJigsawShapeStyle::wxJS_TYPE_NONE),
 			m_ChildIndex(wxID_ANY),
 			m_Result(wxJS_HITTEST_NONE),
-			m_Shape(NULL) {}
+			m_Shape(NULL),
+			m_MousePosition(-1,-1){}
+
+		void Clear()
+		{
+			m_Offset = wxSize(0,0);
+			m_InputParameterIndex = wxID_ANY;
+			m_InputParameterStyle = wxJigsawShapeStyle::wxJS_TYPE_NONE;
+			m_ChildIndex = wxID_ANY;
+			m_Result = wxJS_HITTEST_NONE;
+			m_Shape = NULL;
+			m_MousePosition = wxPoint(-1,-1);
+		}
 
 		/// \brief Sets the offset of point on a shape
 		/// \param value new value
@@ -93,6 +106,9 @@ public:
 
 		wxJigsawShape * GetShape() {return m_Shape;}
 		void SetShape(wxJigsawShape * value) {m_Shape = value;}
+
+		void SetMousePos(wxPoint &pos) {m_MousePosition = pos;}
+		wxPoint GetMousePos() {return m_MousePosition;}
 
 		int GetChildIndex() {return m_ChildIndex;}
 		void SetChildIndex(int value) {m_ChildIndex = value;}

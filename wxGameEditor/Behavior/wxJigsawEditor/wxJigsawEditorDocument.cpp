@@ -217,6 +217,8 @@ wxJigsawShape * wxJigsawEditorDocument::GetShapeFromPoint(wxDC & dc, const wxPoi
 		}
 	}
 	while(false);
+
+	info.Clear();
 	return NULL;
 }
 

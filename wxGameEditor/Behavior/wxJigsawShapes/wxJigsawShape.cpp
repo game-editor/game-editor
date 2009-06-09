@@ -163,8 +163,11 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 	}
 	
 	// Draw parameters
+	int paramIndex = 0;
+	wxJigsawShapeHitTestInfo info = wxJigsawEditorMainFrame::Get()->GetCanvas()->GetSelectedShapeInfo();
+
 	for(wxJigsawInputParameters::Node * node = m_InputParameters.GetFirst();
-		node; node = node->GetNext())
+		node; node = node->GetNext(), paramIndex++)
 	{
 		// Obtain a pointer to input parameter
 		wxJigsawInputParameter * param = node->GetData();
@@ -173,7 +176,17 @@ void wxJigsawShape::Draw(wxDC & dc, const wxSize & offset, double scale)
 		// Draw the parameter
 		parametersPos.y = realPosition.y + (headerSize.GetHeight()-paramSize.GetHeight())/2;
 
-		param->Draw(dc, parametersPos, offset, scale, color);
+		
+		wxColour colorSlot(color);
+		if(info.GetShape() == this && info.GetInputParameterIndex() == paramIndex)
+		{
+			//Highlight the slot
+			double bright =  1.08;
+
+			colorSlot.Set(__min(bright*color.Red(), 255), __min(bright*color.Green(), 255), __min(bright*color.Blue(), 255));
+		}
+
+		param->Draw(dc, parametersPos, offset, scale, colorSlot);
 
 		// Move to next parameter
 		parametersPos.x += paramSize.GetWidth() + wxJigsawInputParameter::ParameterSpacing*scale;
@@ -1023,6 +1036,7 @@ wxJigsawShape::wxJigsawShapeHitTest wxJigsawShape::HitTest(wxDC & dc, wxPoint po
 	if((res != wxJS_HITTEST_NONE) && !info.GetShape())
 	{
 		info.SetShape(this);
+		info.SetMousePos(pos);
 	}
 	return res;
 }
