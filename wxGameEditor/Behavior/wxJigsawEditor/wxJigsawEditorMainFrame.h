@@ -153,6 +153,8 @@ public:
 	void RefreshCanvas();
 	wxJigsawEditorCanvas *GetCanvas() const {return m_Canvas;}
 
+	bool IsSearchStyleSelected() {return m_Palette && (m_Palette->GetShapes() == &m_SearchStyleResults);}
+
 ////@begin wxJigsawEditorMainFrame member variables
     wxAuiManager m_auiManager;
     wxSlider* m_ScaleSlider;
@@ -176,6 +178,7 @@ public:
     };
 ////@end wxJigsawEditorMainFrame member variables
 	wxJigsawShapeList m_SearchResults;
+	wxJigsawShapeList m_SearchStyleResults;
 
 	wxJigsawShapeList * m_ShapeRegistry;
 	wxJigsawEditorConfig * m_Config;

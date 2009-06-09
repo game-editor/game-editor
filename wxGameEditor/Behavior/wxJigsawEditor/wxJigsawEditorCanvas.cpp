@@ -330,27 +330,23 @@ void wxJigsawEditorCanvas::OnLeftDown( wxMouseEvent& event )
 		wxJigsawEditorCanvasHitTest hitTest = HitTest(m_MouseDownPos, info, NULL);
 
 		static wxJigsawShapeList m_PaletteShapeList;
-		if(info.GetResult() == wxJigsawShape::wxJigsawShapeHitTest::wxJS_HITTEST_SLOT) //maks:teste
+		static wxJigsawShapeList *pPaletteShapeList = NULL;
+		if(info.GetResult() == wxJigsawShape::wxJigsawShapeHitTest::wxJS_HITTEST_SLOT)
 		{
-			//Must save the current selected category or save the current search
-			m_PaletteShapeList.DeleteContents(false);
-			m_PaletteShapeList.Clear();
-			for(wxJigsawShapeList::Node * shapeNode = wxJigsawEditorMainFrame::Get()->GetPalette()->GetShapes()->GetFirst();
-				shapeNode; shapeNode = shapeNode->GetNext())
-			{
-				wxJigsawShape * shape = shapeNode->GetData();
-				if(!shape) continue;
-				m_PaletteShapeList.Append(shape);	
-			}
-			
+			//Must save the current selected category or save the current search			
+			if(!pPaletteShapeList) pPaletteShapeList = wxJigsawEditorMainFrame::Get()->GetPalette()->GetShapes();
 			wxJigsawEditorMainFrame::Get()->SearchStyle(info.GetInputParameterStyle());
 		}
-		else
+		else if(pPaletteShapeList)
 		{
 			//Restore the search or selected category
-			wxJigsawEditorMainFrame::Get()->GetPalette()->SetShapes(&m_PaletteShapeList);
-			wxJigsawEditorMainFrame::Get()->GetPalette()->Refresh();
-			wxJigsawEditorMainFrame::Get()->GetPalette()->AdjustScrollBars();
+			if(wxJigsawEditorMainFrame::Get()->IsSearchStyleSelected())
+			{
+				wxJigsawEditorMainFrame::Get()->GetPalette()->SetShapes(pPaletteShapeList);
+				wxJigsawEditorMainFrame::Get()->GetPalette()->Refresh();
+				wxJigsawEditorMainFrame::Get()->GetPalette()->AdjustScrollBars();
+			}
+			pPaletteShapeList = NULL;			
 		}
 
 		switch(hitTest)

@@ -422,8 +422,8 @@ void wxJigsawEditorMainFrame::SearchStyle(wxJigsawShapeStyle style)
 {
 	do 
 	{
-		m_SearchResults.DeleteContents(false);
-		m_SearchResults.Clear();
+		m_SearchStyleResults.DeleteContents(false);
+		m_SearchStyleResults.Clear();
 		for(wxJigsawPaletteList::Node * node = GetPalettes().GetFirst(); 
 			node; node = node->GetNext())
 		{
@@ -436,11 +436,11 @@ void wxJigsawEditorMainFrame::SearchStyle(wxJigsawShapeStyle style)
 				if(!shape) continue;
 				if(shape->GetStyle() == style)
 				{
-					m_SearchResults.Append(shape);
+					m_SearchStyleResults.Append(shape);
 				}
 			}
 		}
-		m_Palette->SetShapes(&m_SearchResults);
+		m_Palette->SetShapes(&m_SearchStyleResults);
 		m_Palette->Refresh();
 		m_Palette->AdjustScrollBars();
 	} 
