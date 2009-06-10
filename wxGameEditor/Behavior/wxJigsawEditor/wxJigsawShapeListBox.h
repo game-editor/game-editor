@@ -98,6 +98,8 @@ public:
 	/// wxEVT_SCROLL_THUMBRELEASE event handler for ID_WXJIGSAWSHAPELISTBOX
 	void OnScrollThumbRelease(wxScrollEvent & event);
 
+	void OnTimer(wxTimerEvent &event);
+
 ////@begin wxJigsawShapeListBox member function declarations
 
     wxJigsawShapeList * GetShapes() const { return m_Shapes ; }
@@ -131,9 +133,14 @@ public:
 	/// Scrolls to specified point
 	void Scroll(const wxPoint & pos);
 
+
 ////@begin wxJigsawShapeListBox member variables
     wxJigsawShapeList * m_Shapes; // List of shapes
     wxJigsawEditorCanvas * m_AssociatedCanvas;
+	wxTimer m_TimerMove;
+	wxPoint startPosition, endPosition;
+	wxJigsawShape *selectedShape;
+	double f, df;
 ////@end wxJigsawShapeListBox member variables
 };
 

@@ -195,7 +195,7 @@ public:
 	wxJigsawShape * GetShapeFromPoint(const wxPoint & pos,
 		wxJigsawShapeGroup * ignoreGroup);
 
-	const wxJigsawShape::wxJigsawShapeHitTestInfo &GetSelectedShapeInfo() const {return infoSelectedShape;}
+	wxJigsawShape::wxJigsawShapeHitTestInfo &GetSelectedShapeInfo() {return infoSelectedShape;}
 
     /// Should we show tooltips?
     static bool ShowToolTips();

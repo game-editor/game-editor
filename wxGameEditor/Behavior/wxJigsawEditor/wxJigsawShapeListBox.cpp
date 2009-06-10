@@ -61,6 +61,8 @@ EVT_SCROLL_PAGEDOWN(wxJigsawShapeListBox::OnScrollPageDown)
 EVT_SCROLL_THUMBTRACK(wxJigsawShapeListBox::OnScrollThumbTrack)
 EVT_SCROLL_THUMBRELEASE(wxJigsawShapeListBox::OnScrollThumbRelease)
 
+EVT_TIMER(-1,wxJigsawShapeListBox::OnTimer)
+
 END_EVENT_TABLE()
 
 
@@ -114,6 +116,7 @@ void wxJigsawShapeListBox::Init()
 ////@begin wxJigsawShapeListBox member initialisation
     m_Shapes = NULL;
     m_AssociatedCanvas = NULL;
+	selectedShape = NULL;
 ////@end wxJigsawShapeListBox member initialisation
 }
 
@@ -296,6 +299,15 @@ void wxJigsawShapeListBox::OnLeftDown( wxMouseEvent& event )
 {
 	wxPoint realPosition = PointToViewPoint(event.GetPosition());
 	wxJigsawShape * shape = GetShapeByPoint(realPosition);
+	m_TimerMove.Stop();
+
+	if(m_AssociatedCanvas->GetDragImage())
+	{
+		m_AssociatedCanvas->GetDragImage()->Hide();
+		m_AssociatedCanvas->GetDragImage()->EndDrag();
+		m_AssociatedCanvas->DestroyDragImage();
+	}
+
 	if(shape)
 	{
 		//wxMessageBox(_("Shape"));
@@ -322,15 +334,59 @@ void wxJigsawShapeListBox::OnLeftDown( wxMouseEvent& event )
 		
 		m_AssociatedCanvas->SetSelectedObject(NULL);
 		m_AssociatedCanvas->ReCreateHotSpots();
+		wxPoint mousePosBefore(::wxGetMousePosition());
 		wxDragResult dragResult = dropSource.DoDragDrop(wxDrag_DefaultMove);
-		if(dragResult != wxDragResult::wxDragMove) m_AssociatedCanvas->SetSelectedObject(NULL);
+		if(dragResult != wxDragResult::wxDragMove) 
+		{
+			//No drop happens
+			//Check for auto drop for slots
+			wxJigsawShape::wxJigsawShapeHitTestInfo info(m_AssociatedCanvas->GetSelectedShapeInfo());
+			if(mousePosBefore == ::wxGetMousePosition() && info.GetResult() == wxJigsawShape::wxJS_HITTEST_SLOT && info.GetInputParameterStyle() == shape->GetStyle())
+			{
+				//There are a slot selected, so, the selected shape in the list have the same type of the slot
+				startPosition = ScreenToClient(mousePosBefore);
+				endPosition = ScreenToClient(m_AssociatedCanvas->ClientToScreen(info.GetMousePos()));
+				m_AssociatedCanvas->GetDragImage()->Show();
+				selectedShape = shape;
 
-		if(m_AssociatedCanvas->GetDragImage())
+				double duration = 500, timer = 30;
+				f = 0.0;
+				df = timer/duration;
+				m_TimerMove.SetOwner(this);
+				m_TimerMove.Start(timer);
+			}
+
+			//Deselect the shape
+			m_AssociatedCanvas->SetSelectedObject(NULL);
+		}
+
+		if(!m_TimerMove.IsRunning() && m_AssociatedCanvas->GetDragImage())
 		{
 			m_AssociatedCanvas->GetDragImage()->Hide();
 			m_AssociatedCanvas->GetDragImage()->EndDrag();
 			m_AssociatedCanvas->DestroyDragImage();
 		}
+	}
+}
+
+void wxJigsawShapeListBox::OnTimer(wxTimerEvent &event)
+{
+	wxPoint pos(startPosition);
+
+	pos.x = (1 - f)*startPosition.x + f*endPosition.x;
+	pos.y = (1 - f)*startPosition.y + f*endPosition.y;
+
+	m_AssociatedCanvas->GetDragImage()->Move(pos);
+	f += df;
+
+	if(f >= 1.0)
+	{
+		m_AssociatedCanvas->ProcessDrop(m_AssociatedCanvas->GetSelectedShapeInfo().GetMousePos(), selectedShape, wxSize(0,0));
+		m_AssociatedCanvas->GetSelectedShapeInfo().Clear();
+		m_AssociatedCanvas->GetDragImage()->Hide();
+		m_AssociatedCanvas->GetDragImage()->EndDrag();
+		m_AssociatedCanvas->DestroyDragImage();
+		m_TimerMove.Stop();
 	}
 }
 

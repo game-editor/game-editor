@@ -1117,7 +1117,10 @@ void wxJigsawEditorCanvas::OnSize( wxSizeEvent& event )
 void wxJigsawEditorCanvas::SetSelectedObject(wxJigsawShapeGroup * value)
 { 	
 	m_SelectedObject = value; 
-	if(!value) m_SelectedShape = NULL;
+	if(!value) 
+	{
+		m_SelectedShape = NULL;		
+	}
 	m_View->SetSelectedObject(m_SelectedObject);
 }
 
