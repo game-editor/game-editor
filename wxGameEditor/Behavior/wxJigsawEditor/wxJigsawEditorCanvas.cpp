@@ -463,7 +463,8 @@ void wxJigsawEditorCanvas::OnLeftUp( wxMouseEvent& event )
 			wxJigsawEditorDocument * document = GetDocument();
 			if(!document) break;
 			wxPoint realPosition = PointToViewPoint(event.GetPosition());
-			wxJigsawShapeGroup *group = m_View->GetSelectedObject();
+			wxJigsawShapeGroup *group = document->GetShapeGroup(m_SelectedShape);
+			if(group != m_View->GetSelectedObject()) SetSelectedObject(group);
 			if(group)
 			{
 				//Update the offset to the next mouse down event
