@@ -674,12 +674,12 @@ void openBuySite();
 #define VERSION_MOVE_TO_RELATIVE			0x01020800
 #define VERSION_PREFERENCES					0x01020900
 #define VERSION_MOVE_TO_PATHFINDER			0x01030500
-#define VERSION_NETWORK						0x01040000
+#define VERSION_NETWORK						0x01040200
 
 
 #define GAME_NET_VERSION	1
 #define GAME_FILE_VERSION	55
-#define GAME_EDITOR_VERSION	0x01030900 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
+#define GAME_EDITOR_VERSION	0x01040200 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
 
 extern gedString EDITOR_DAT;
 

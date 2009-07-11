@@ -7753,7 +7753,7 @@ int GameControl::InitRakNet(int port)
 
 	//Current owner (will be the external address after the first connection)
 	currentOwnerMachine = UNASSIGNED_SYSTEM_ADDRESS;
-	networkIDManager.SetExternalSystemAddress(currentOwnerMachine);
+	//maks:tesste networkIDManager.SetExternalSystemAddress(currentOwnerMachine);
 
 	//Start server
 	//May be, only after check if the game need network
@@ -7800,11 +7800,10 @@ int GameControl::InitRakNet(int port)
 		currentListenPort = port;
 		rakPeer->SetMaximumIncomingConnections(maxConnections); 
 
+		#define BORADCAST_ADDR "255.255.255.255"
+
 #ifdef _DEBUG
-		rakPeer->ApplyNetworkSimulator(4000, 500, 500);
-		#define BORADCAST_ADDR "127.0.0.1" //Only local machine //maks:teste
-#else
-		#define BORADCAST_ADDR "255.255.255.255" //Doesn't works on Vista (must use multicast fro each adapter)
+		//rakPeer->ApplyNetworkSimulator(4000, 500, 500);		
 #endif
 
 		//Try find to other peer in the local network		
@@ -8035,6 +8034,7 @@ void GameControl::PublishGameSession()
 void GameControl::CreateStringTable()
 {
 	//Create the actor name string table to speed up the communications
+	return; //False duplicated assert in the RakNet. Uses when get a version fix
 	if(rakPeer)
 	{
 		MapActorFileIndexIterator itActor(actorIndex);
