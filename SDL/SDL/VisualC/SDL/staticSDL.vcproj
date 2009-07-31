@@ -405,7 +405,9 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
 				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../../../OpenGL ES/include/,../../../../PocketHAL/,..\..\src,..\..\src\audio,..\..\src\video,..\..\src\video\wincommon,..\..\src\video\windx5,..\..\src\events,..\..\src\joystick,..\..\src\cdrom,..\..\src\thread,..\..\src\thread\win32,..\..\src\timer,..\..\include,..\..\include\SDL"
@@ -415,6 +417,8 @@
 				BufferSecurityCheck="false"
 				DisableLanguageExtensions="false"
 				DebugInformationFormat="3"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 				EnableFloatingPointEmulation="true"
 			/>
 			<Tool
@@ -2895,6 +2899,42 @@
 			</FileConfiguration>
 		</File>
 		<File
+			RelativePath="..\..\src\thread\linux\SDL_sysmutex.c"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-gcc"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
 			RelativePath="..\..\src\thread\win32\SDL_sysmutex.c"
 			>
 			<FileConfiguration
@@ -2942,78 +2982,6 @@
 				>
 				<Tool
 					Name="arm-linux-gcc"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath="..\..\src\thread\linux\SDL_sysmutex.c"
-			>
-			<FileConfiguration
-				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-ar"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-gcc"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath="..\..\src\thread\linux\SDL_syssem.c"
-			>
-			<FileConfiguration
-				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-ar"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-gcc"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>
@@ -3069,6 +3037,78 @@
 			</FileConfiguration>
 		</File>
 		<File
+			RelativePath="..\..\src\thread\linux\SDL_syssem.c"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-gcc"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="..\..\src\thread\linux\SDL_systhread.c"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-gcc"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
 			RelativePath="..\..\src\thread\win32\SDL_systhread.c"
 			>
 			<FileConfiguration
@@ -3120,78 +3160,6 @@
 			</FileConfiguration>
 		</File>
 		<File
-			RelativePath="..\..\src\thread\linux\SDL_systhread.c"
-			>
-			<FileConfiguration
-				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-ar"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-gcc"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath="..\..\src\timer\linux\SDL_systimer.c"
-			>
-			<FileConfiguration
-				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-ar"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-gcc"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
 			RelativePath="..\..\src\timer\win32\SDL_systimer.c"
 			>
 			<FileConfiguration
@@ -3239,6 +3207,42 @@
 				>
 				<Tool
 					Name="arm-linux-gcc"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="..\..\src\timer\linux\SDL_systimer.c"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-gcc"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>

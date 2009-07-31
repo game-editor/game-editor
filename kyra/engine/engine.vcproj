@@ -406,7 +406,9 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
 				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../OpenGL ES/include/,../../PocketHAL/,../../SDL/SDL//include,../../SDL/SDL_image"
@@ -416,6 +418,8 @@
 				BufferSecurityCheck="false"
 				DisableLanguageExtensions="false"
 				DebugInformationFormat="3"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 				EnableFloatingPointEmulation="true"
 			/>
 			<Tool

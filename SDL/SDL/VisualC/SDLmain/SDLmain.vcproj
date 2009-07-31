@@ -121,6 +121,13 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				WholeProgramOptimization="true"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -462,14 +469,6 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
 				Name="Debug|Win32"
 				>
 				<Tool
@@ -477,6 +476,14 @@
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>

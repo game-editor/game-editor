@@ -31,6 +31,6 @@
 	/>
 	<UserMacro
 		Name="VersionType"
-		Value="$(Demo)"
+		Value="$(Standalone_Pro)"
 	/>
 </VisualStudioPropertySheet>

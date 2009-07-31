@@ -401,7 +401,9 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
 				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../SDL/include/,..\SDL_mad,..\mikmod,..\timidity,..\native_midi,tremor"
@@ -411,6 +413,8 @@
 				BufferSecurityCheck="false"
 				DisableLanguageExtensions="false"
 				DebugInformationFormat="3"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 				EnableFloatingPointEmulation="true"
 			/>
 			<Tool
@@ -579,16 +583,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -597,8 +592,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -621,16 +625,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -639,8 +634,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -663,16 +667,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -681,8 +676,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -717,16 +721,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -735,8 +730,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -759,16 +763,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -777,8 +772,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -801,16 +805,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -819,8 +814,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -843,16 +847,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -861,8 +856,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -897,16 +901,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -915,8 +910,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -939,16 +943,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -957,8 +952,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1005,16 +1009,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1023,8 +1018,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1051,16 +1055,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1069,8 +1064,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1093,16 +1097,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1111,8 +1106,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1135,16 +1139,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1153,8 +1148,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1177,16 +1181,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1195,8 +1190,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1219,16 +1223,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
+					Name="Debug|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1237,8 +1232,17 @@
 						UndefinePreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -1292,14 +1296,6 @@
 					Name="arm-linux-ar"
 				/>
 			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-ar"
-				/>
-			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\effect_position.c"
@@ -1314,6 +1310,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1322,27 +1328,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\effect_stereoreverse.c"
 			>
@@ -1356,6 +1352,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1364,27 +1370,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\effects_internal.c"
 			>
@@ -1398,6 +1394,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1406,27 +1412,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\effects_internal.h"
 			>
@@ -1444,6 +1440,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1452,27 +1458,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\load_aiff.h"
 			>
@@ -1490,6 +1486,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1498,27 +1504,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\load_ogg.h"
 			>
@@ -1536,6 +1532,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1544,27 +1550,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\load_voc.h"
 			>
@@ -1582,6 +1578,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1590,27 +1596,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\music.c"
 			>
@@ -1624,6 +1620,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1632,27 +1638,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\music_cmd.c"
 			>
@@ -1666,6 +1662,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1674,27 +1680,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\music_cmd.h"
 			>
@@ -1712,6 +1708,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1720,27 +1726,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\music_ogg.h"
 			>
@@ -1762,6 +1758,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Release|Win32"
 				>
 				<Tool
@@ -1770,27 +1776,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\wavestream.h"
 			>

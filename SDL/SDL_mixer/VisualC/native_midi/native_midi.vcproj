@@ -148,7 +148,9 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
 				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../../SDL/include/,..\..,..\..\native_midi"
@@ -158,6 +160,8 @@
 				BufferSecurityCheck="false"
 				DisableLanguageExtensions="false"
 				DebugInformationFormat="3"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 				EnableFloatingPointEmulation="true"
 			/>
 			<Tool
@@ -570,14 +574,6 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-ar"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
 				Name="Debug|Win32"
 				ExcludedFromBuild="true"
 				>
@@ -614,7 +610,7 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
+				Name="Debug|Win32"
 				ExcludedFromBuild="true"
 				>
 				<Tool
@@ -622,7 +618,7 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Win32"
+				Name="Debug|Pocket PC 2003 (ARMV4)"
 				ExcludedFromBuild="true"
 				>
 				<Tool
@@ -647,6 +643,16 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="Release|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Debug|Win32"
 				>
 				<Tool
@@ -655,27 +661,17 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
-		<FileConfiguration
-					Name="Release|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-<FileConfiguration
-					Name="Debug|Pocket PC 2003 (ARMV4)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						UndefinePreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					UndefinePreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+		</File>
 		<File
 			RelativePath="..\..\native_midi\native_midi_common.h"
 			>
@@ -699,21 +695,20 @@
 					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
-
-			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="arm-linux-gcc"
-				/>
-			</FileConfiguration>
 			<FileConfiguration
 				Name="Debug|Win32"
 				ExcludedFromBuild="true"
 				>
 				<Tool
 					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="arm-linux-gcc"
 				/>
 			</FileConfiguration>
 		</File>
@@ -738,20 +733,20 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
 				Name="Debug|Win32"
 				>
 				<Tool
 					Name="VCCLCompilerTool"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>
@@ -775,19 +770,19 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
 				Name="Debug|Win32"
 				ExcludedFromBuild="true"
 				>
 				<Tool
 					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>
@@ -811,19 +806,19 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
 				Name="Debug|Win32"
 				ExcludedFromBuild="true"
 				>
 				<Tool
 					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>
@@ -847,19 +842,19 @@
 				/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="Debug|Pocket PC 2003 (ARMV4)"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
 				Name="Debug|Win32"
 				ExcludedFromBuild="true"
 				>
 				<Tool
 					Name="arm-linux-ar"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Pocket PC 2003 (ARMV4)"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
 				/>
 			</FileConfiguration>
 		</File>

@@ -103,9 +103,9 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="false"
-				ProgramDatabaseFile=".\../output/Windows/Release/gameEditor.pdb"
+				ProgramDatabaseFile=".\../output/gameEditor.pdb"
 				GenerateMapFile="true"
-				MapFileName=".\../output/Windows/editor/Release/gameEditor.map"
+				MapFileName=".\../output/gameEditor.map"
 				SubSystem="2"
 				StackReserveSize="65536"
 				StackCommitSize="65536"
@@ -127,7 +127,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\../output/Windows/Release/gameEditor.bsc"
+				OutputFile=".\../output/gameEditor.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -182,7 +182,9 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
 				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../SDL/SDL_ttf/VisualC/FreeType/include,../SDL/SDL_mixer,../gameEngine,../SDL/SDL/include,../SDL/SDL_image,../kyra,../gameEngine/Eic/src"
@@ -192,6 +194,8 @@
 				BufferSecurityCheck="false"
 				DisableLanguageExtensions="false"
 				DebugInformationFormat="3"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 				EnableFloatingPointEmulation="true"
 			/>
 			<Tool
@@ -205,7 +209,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/ALIGN:4096 /subsystem:windowsce,3.00 /MACHINE:ARM&#x0D;&#x0A;&quot;..\output\pocketpc\gameengine.lib&quot; &quot;..\output\pocketpc\raknet.lib&quot; &quot;..\output\pocketpc\eiclib.lib&quot; &quot;..\output\pocketpc\engine.lib&quot; &quot;..\output\pocketpc\staticsdl_mixer.lib&quot; &quot;..\output\pocketpc\timidity.lib&quot; &quot;..\output\pocketpc\native_midi.lib&quot; &quot;..\output\pocketpc\mikmod.lib&quot; &quot;..\output\pocketpc\staticsdl.lib&quot;&#x0D;&#x0A;coredll.lib corelibc.lib Winsock.lib"
+				AdditionalOptions="/ALIGN:4096 /subsystem:windowsce,3.00 /MACHINE:ARM&#x0D;&#x0A;&quot;..\output\pocketpc\gameengine.lib&quot; &quot;..\output\pocketpc\raknet.lib&quot; &quot;..\output\pocketpc\eiclib.lib&quot; &quot;..\output\pocketpc\engine.lib&quot; &quot;..\output\pocketpc\staticsdl_mixer.lib&quot; &quot;..\output\pocketpc\timidity.lib&quot; &quot;..\output\pocketpc\native_midi.lib&quot; &quot;..\output\pocketpc\mikmod.lib&quot; &quot;..\output\pocketpc\staticsdl.lib&quot;&#x0D;&#x0A;coredll.lib corelibc.lib Winsock.lib&#x0D;&#x0A;"
 				AdditionalDependencies="ccrtrtti.lib $(NOINHERIT)"
 				OutputFile="../output/gameEditorPocket.exe"
 				LinkIncremental="1"
@@ -217,6 +221,7 @@
 				MapFileName=".\../output/PocketPC/editor/gameEditor.map"
 				StackReserveSize="65536"
 				StackCommitSize="65536"
+				LinkTimeCodeGeneration="1"
 				EntryPointSymbol="WinMainCRTStartup"
 				BaseAddress="0x00010000"
 				RandomizedBaseAddress="1"

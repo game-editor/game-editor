@@ -5,7 +5,6 @@
 	Name="staticSDL_image"
 	ProjectGUID="{CC0F4212-F18E-45F3-A28D-C20BBCD60126}"
 	RootNamespace="staticSDL_image"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -333,6 +332,13 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				WholeProgramOptimization="true"
+				CompileForArchitecture="0"
+				InterworkCalls="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -736,4 +742,6 @@
 			>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>
