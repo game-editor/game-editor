@@ -2728,22 +2728,50 @@ Sequence *Actor::GetSequence(const gedString& sequenceName)
 	return NULL;
 }
 
+void Actor::UpdateAnimIndex()
+{
+	//Speed up the GetAnimationIndex function
+	//Solve???: 
+	//		Low frame rate on ppc's with activation regions
+	//		Game: Apalia
+	//		Reported by:  jimmynewguy, omniarts
+	//		http://game-editor.com/forum/ucp.php?i=pm&mode=view&f=0&p=13087
+	
+	int i = 0;
+
+	ListSequenceIterator it(mySequence->listSequence);
+	for(it.Begin(); !it.Done(); it.Next())
+	{
+		Sequence *seq = it.Current();
+		if(i >= 2)
+		{
+			seq->setAnimIndex(i - 2);
+		}
+		i++;
+	}
+}
+
 int Actor::GetAnimationIndex(const gedString& name)
 {
-	/*int nAnimations = NumAnimations();
+#ifdef STAND_ALONE_GAME
+	//Speed up the GetAnimationIndex function
+	//Solve???: 
+	//		Low frame rate on ppc's with activation regions
+	//		Game: Apalia
+	//		Reported by:  jimmynewguy, omniarts
+	//		http://game-editor.com/forum/ucp.php?i=pm&mode=view&f=0&p=13087
 
-	for(int i = 2; i < nAnimations+2; i++)
+	Sequence **pSeq = mySequence->mapSequence.FindString(name.getCharBuf());
+	if(pSeq && *pSeq && (*pSeq)->getAnimIndex() != -1)
 	{
-		if(AnimationName(i) == name)
-		{
-			return i - 2;
-		}
+		return (*pSeq)->getAnimIndex();
+	}
+#endif
 
-	}*/
 
 	if(getSprite())
 	{
-		int i = 0;//, nAnimations = mySequence->mapSequence.size();
+		int i = 0;
 		
 		ListSequenceIterator it(mySequence->listSequence);
 		for(it.Begin(); !it.Done(); it.Next())
@@ -2751,6 +2779,11 @@ int Actor::GetAnimationIndex(const gedString& name)
 			Sequence *seq = it.Current();
 			if(name == seq->getSequenceName() && i >= 2)
 			{
+
+#ifdef STAND_ALONE_GAME
+				seq->setAnimIndex(i - 2);
+#endif
+
 				return i - 2;
 			}
 			i++;
@@ -3596,6 +3629,10 @@ void Actor::Load(SDL_RWops *src, Uint32 version)
 		currentAction.Read(src);
 		if(currentAction.length()) SetAnimation(currentAction, true);
 	}
+
+#ifdef STAND_ALONE_GAME
+	UpdateAnimIndex();
+#endif
 
 	GameControl::Read(src, &pathDirectionX, sizeof(pathDirectionX), 1);
 	GameControl::Read(src, &pathDirectionY, sizeof(pathDirectionY), 1);

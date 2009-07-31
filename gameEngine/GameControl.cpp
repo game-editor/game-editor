@@ -5276,7 +5276,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 	static gedString firstLevel;
 	SDL_ClearError();
 
-	//if(executableName.find("gameEditor") != gedString::npos) executableName = "game1";
+	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe") executableName = "game1"; //maks
 
 	int i = 0;
 	gedString ext, gameFile;

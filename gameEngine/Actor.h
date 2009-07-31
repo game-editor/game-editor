@@ -708,7 +708,7 @@ protected:
 	GlFlag<U32>			flags;
 
 private:
-
+	void UpdateAnimIndex();
 	
 
 	KrSpriteResource	*spriteResource;

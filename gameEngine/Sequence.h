@@ -48,6 +48,8 @@ public:
 
 	int getNFrames() {return nFrames;}
 	Uint16 *getFrames() {return frames;}
+	int getAnimIndex() {return animIndex;}
+	void setAnimIndex(int value) {animIndex = value;}
 
 private:
 	gedString animationName, sequenceName;
@@ -58,6 +60,9 @@ private:
 	//Don't save
 	int sequenceType; //Animation or defined sequence
 	int frame;
+
+	//For speedup game anim index search
+	int animIndex;
 };
 
 #endif // !defined(AFX_SEQUENCE_H__A5E67279_A4A5_4729_9B8F_492D1D683795__INCLUDED_)

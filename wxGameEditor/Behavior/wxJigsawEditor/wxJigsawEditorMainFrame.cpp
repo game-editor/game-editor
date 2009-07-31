@@ -386,7 +386,7 @@ wxString wxJigsawEditorMainFrame::GetCode()
 
 void wxJigsawEditorMainFrame::OnSEARCHClicked( wxCommandEvent& event )
 {
-	wxFile file("code.c", wxFile::write); file.Write(GetCode());//maks:teste
+	//wxFile file("code.c", wxFile::write); file.Write(GetCode());//maks
 
 	do 
 	{

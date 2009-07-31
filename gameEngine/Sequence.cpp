@@ -14,6 +14,7 @@ Sequence::Sequence(int type)
 	sequenceType = type;
 	frames = NULL;
 	frameInc = 0.0;
+	animIndex = -1;
 	resetFrame();
 }
 
