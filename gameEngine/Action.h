@@ -1037,7 +1037,7 @@ public:
 	static stEvent& getActualEvent() {return actualEvent;}
 	static void setActualEvent(stEvent &event) {actualEvent = event;}
 
-	void Action::UpdateEvent();
+	void UpdateEvent();
 	gedString GetDescriptions(Uint32 events);
 #endif //#ifndef STAND_ALONE_GAME
 
