@@ -75,7 +75,7 @@ public:
 	static bool InRecMode();
 	static bool IsOff(SDL_Event &event);
 	static bool IsOff() {return tutorial == NULL;}
-	static void Tutorial::Destroy();
+	static void Destroy();
 	virtual ~Tutorial();
 
 	void Pause(int type);
