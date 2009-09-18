@@ -37,6 +37,11 @@ extern "C"
 {
 #include "global.h"
 #include "symbol.h"
+
+#ifdef LLVM
+int _ZTVN10__cxxabiv117__class_type_infoE = 0; 
+int _ZTVN10__cxxabiv120__si_class_type_infoE = 0;
+#endif
 }
 
 #define DEFAULT_GAME_PORT 21034
