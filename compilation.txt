@@ -6,7 +6,7 @@ To compile the gameEditor (current interface) and wxGameEditor (new interface) p
 Configure the LibStatic project to:
 Multi-threaded (/MT or /MTd)
 
-2) Get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 63487 runs ok) (optional for while, look the USE_LLVM definition)
+2) Get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 79741 runs ok) (optional for while, look the USE_LLVM definition)
 
 cd llvm
 svn co http://llvm.org/svn/llvm-project/llvm/trunk .
@@ -14,22 +14,32 @@ svn co http://llvm.org/svn/llvm-project/llvm/trunk .
 cd tools
 svn co http://llvm.org/svn/llvm-project/cfe/trunk clang 
 
-Put the follow llvm dirs in your include path:
+If you are using the Windows to build, get the cmake (http://cmake.org/) and generate the Visual Studio files with the follow configuration:
+
+CMAKE_INSTALL_PREFIX:llvm/bin (or other path you want)
+LLVM_BUILD_EXAMPLES:false
+LLVM_BUILD_TOOLS:true
+LLVM_ENABLE_ASSERTIONS:true
+LLVM_ENABLE_PIC:false
+LLVM_ENABLE_THREADS:true
+LLVM_TABLEGEN:tblgen
+LLVM_TARGETS_TO_BUILD:ARM;CBackend;CppBackend;Mips;MSIL;PowerPC;X86
+
+
+Put the follow llvm dirs in your include path (llvm/bin is the path you have used to compile the llvm):
 
 llvm/tools/clang/include
 llvm/include
-llvm/win32
+llvm/bin/include
+llvm/bin/tools/clang/include
+llvm/win32 (for compilation on Windows)
 
 Put the follow llvm dirs in your library path:
 
-llvm/win32
+llvm/bin/lib
 
-Configure all projects of the LLVM to:
-Multi-threaded (/MT or /MTd)
+Build the ALL_BUILD project
 
-Build the clang project
-
-Another good way to compile the LLVM is using the cmake tool (http://cmake.org)
 
 3) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
 
