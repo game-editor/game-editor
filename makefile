@@ -12,7 +12,7 @@ GAMEEDITOR_DEMO_STAND_ALONE=-DSTAND_ALONE_GAME
 
 ## Target machine (LLVM, linux)
 
-TARGET_MACHINE=linux
+TARGET_MACHINE=LLVM
 
 ## Release Definitions
 GE_DEBUG=-DDEBUG -D_DEBUG -g3
@@ -45,15 +45,12 @@ endif
 #Sourcery G++ -> arm-none-linux-gnueabi-gcc, cs-make
 #llvm -> llvm-gcc -emit-llvm -c, make 
 
+MAKE = make	
+
 ifeq ($(TARGET_MACHINE),LLVM)
-        CC = llvm-gcc -emit-llvm -c
-		MAKE = make
-		SDL=#
+        CC = llvm-gcc -emit-llvm -c			
 else
-		CC = gcc
-		MAKE = make	
-		
-		SDL=$(MAKE) -f makefile.sdl -C SDL/SDL/VisualC/SDL 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
+		CC = gcc		
 endif
 
  
@@ -64,7 +61,7 @@ all:
 	$(MAKE) -f makefile.libpng -C SDL/SDL_image/png/libpng/projects/msvc 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.jpegm -C SDL/SDL_image/jpeg/VisualC 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 
-	$(SDL)
+	$(MAKE) -f makefile.sdl -C SDL/SDL/VisualC/SDL 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 
 	$(MAKE) -f makefile.sdlimage -C SDL/SDL_image/VisualC 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 
