@@ -953,6 +953,9 @@ void EngineStart()
 		joystick = SDL_JoystickOpen(0);
 	}
 
+#ifdef _DEBUG //maks
+	remove("code.c");
+#endif
 	
 	new GameControl();	
 

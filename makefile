@@ -33,7 +33,7 @@ BUILD_TYPE=$(GE_RELEASE)
 # linux -> -D__linux -Dlinux -D__linux__ -DLINUX_I386
 
 ifeq ($(TARGET_MACHINE),LLVM)
-        TARGET= -DLLVM	
+        TARGET= -DLLVM
 else
 		TARGET= -D__linux -Dlinux -D__linux__ -DLINUX_I386	
 endif

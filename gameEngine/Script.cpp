@@ -4495,8 +4495,8 @@ void Script::InitAuxVars()
 
 	
 	long offset;
-	EiC_parseString("long _gedActor_offset1 @ %ld;\
-					 Actor _ged_Actor;", (long)&offset);
+	EiC_parseString("long _gedActor_offset1 @ %ld;", (long)&offset);
+	EiC_parseString("Actor _ged_Actor;");
 	char buf[128];
 	
 	//int sizeStruct = sizeof(stActorVars);
