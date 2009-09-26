@@ -171,6 +171,25 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 
 	QueryOrientation();
 
+	//Write a info file if the file deviceinfo.txt exists
+	FILE *f = fopen("deviceinfo.txt", "r");
+	if(f)
+	{
+		//File exists, get the device info
+		fclose(f);
+
+		f = fopen("deviceinfo.txt", "w");
+		if(f)
+		{
+			fwprintf(f, L"Device name: %s\n", szOEM);
+			fprintf(f, "Game resolution: %ld x %ld\n", width, height);
+			fprintf(f, "Screen: %ld x %ld\n", sysScreenW, sysScreenH);
+			fprintf(f, "Flip the screen: %ld\n", GetFlipPocketPCScreen());
+			
+			fclose(f);
+		}
+	}
+
 	//Check the screen. Some system have 320x240 screen
 	if (!_wcsicmp(szOEM, _T("MotoQ")) || !_wcsicmp(szOEM, _T("Gizmondo")) 
 		|| (sysScreenW == 320 && sysScreenH == 240) //Solve the BlackJack II screen problem (http://game-editor.com/forum/viewtopic.php?p=33788)
