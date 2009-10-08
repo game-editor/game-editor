@@ -127,7 +127,6 @@ ___________________________
 If you game or derivative work is not inside of the sections 1 and 2 above, you must agree with our site license.
 
 Our site license is for unlimited applications and grants permissions for unlimited platforms. 
-It also allows resale of RakNet as part of an engine, allowing for sublicensing to other studios. 
 Standard support is free, with support contracts and custom engineering also available.
 
 Contact us for price at sales@game-editor.com
