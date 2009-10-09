@@ -1,13 +1,11 @@
 ________________________________
 1. GPL GAMES OR DERIVATIVE WORKS
 
-Game Editor is 100 percent open source GPL, and if derived work or game is 100 percent open source GPL too (or OSI compliant), 
+Game Editor is 100 percent open source GPL v2, and if derived work or game is 100 percent open source GPL too (or OSI compliant), 
 then you never have to pay us for the licenses. 
 Just get the source code and have fun!
 
-When your derived work  or game is not licensed under either the GPL-compatible Free Software License
-as defined by the Free Software Foundation or approved by OSI, 
-you must first obtain a commercial license (indie or site) to use Game Editor as defined in the sections 2 or 3 below.
+When your derived work or game is not licensed under the GPL, you must first obtain a commercial license (indie or site) to use Game Editor as defined in the sections 2 or 3 below. 
 
 ___________________________________
 2. GAME EDITOR (GE) "INDIE" LICENSE
