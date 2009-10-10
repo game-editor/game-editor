@@ -2,7 +2,7 @@ ________________________________
 
 1. GPL GAMES OR DERIVATIVE WORKS 
 
-Game Editor is 100 percent GPL v3, and if derived work or game is 100 percent GPL v3 too, then you never have to pay us for the licenses. Just get the source code and have fun! 
+Game Editor is 100 percent GPL v3, and if your derived work or game is 100 percent GPL v3 too, then you never have to pay us for the licenses. Just get the source code and have fun! 
 
 When your derived work or game is not licensed under the GPL v3, you must first obtain a commercial license (indie or site) to use Game Editor as defined in the sections 2 or 3 below. 
 
