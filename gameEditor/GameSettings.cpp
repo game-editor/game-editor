@@ -1,3 +1,28 @@
+/**************************************************************************
+
+Game Editor - The Cross Platform Game Creation Tool
+Copyright (C) 2009  Makslane Araujo Rodrigues
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+If GPL v3 does not work for you, we offer a "non-GPL" license 
+<http://game-editor.com/License>, thats will help us to pay our developers 
+<http://game-editor.com/Sharing_Software_Revenues_in_Open_Source>.
+
+***************************************************************************/
+
+
 // GameSettings.cpp: implementation of the GameSettings class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -300,6 +325,8 @@ GameSettings::GameSettings()
 		listRes->AddText("480 x 640 Pocket PC Upside down");
 		listRes->AddText("640 x 480 Pocket PC Rotate left");
 		listRes->AddText("640 x 480 Pocket PC Rotate right");
+		listRes->AddText("800 x 480 Pocket PC Rotate left");
+		listRes->AddText("800 x 480 Pocket PC Rotate right");
 
 		//No changes in screen orientation now (don't have the w > h information)
 		listRes->AddText("240 x 240 Pocket PC");
@@ -467,6 +494,17 @@ GameSettings::GameSettings()
 			listRes->SetText("640 x 480");
 		}
 	}
+	else if(res == "800 x 480")
+	{
+		if(bFlipPocketPCScreen)
+		{
+			listRes->SetText("800 x 480 Rot.right");
+		}
+		else
+		{			
+			listRes->SetText("800 x 480");
+		}
+	}
 	else if(res == "240 x 240")
 	{
 		listRes->SetText("240 x 240 Pocket PC");
@@ -566,6 +604,11 @@ bool GameSettings::OnList(ListPop *list, int index, gedString &text, int listId)
 				if(sFlip == "down") list->SetText("240 x 320 Up. down");
 				else if(sFlip == "left") list->SetText("320 x 240 Rot. left");
 				else if(sFlip == "ight") list->SetText("320 x 240 Rot.right");
+			}
+			else if(w == 800 && h == 480)
+			{				
+				else if(sFlip == "left") list->SetText("800 x 480 Rot. left");
+				else if(sFlip == "ight") list->SetText("800 x 480 Rot.right");
 			}
 			else if(w == 480 || h == 480)
 			{
