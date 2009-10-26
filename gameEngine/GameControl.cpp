@@ -117,7 +117,6 @@ extern "C"
 
 #ifdef _WIN32_WCE
 extern "C" void GetPokcetPCScreenDimensions(int *physicalWidth, int *physicalHeight);
-extern "C" int IsSmartphoneDevice();
 #endif
 
 extern double distance(double x1, double y1, double x2, double y2);
@@ -134,6 +133,11 @@ extern "C" int gedIsBadReadPtr(void *lp, int size)
 }
 
 #endif
+
+extern "C" const char *getHomePath()
+{
+	return GameControl::Get()->getHomePath().c_str();
+}
 
 #if defined(WIN32) && !defined(_WIN32_WCE)
 NormalPriority::NormalPriority(bool _bEnable)
@@ -3591,11 +3595,8 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 		GameControl::Read(src, &_bSuspendGameIfLostFocus, sizeof(Uint8), 1);
 
 #ifdef _WIN32_WCE
-		if(IsSmartphoneDevice())
-		{
-			//Aways suspend with system events in Smartphones
-			_bSuspendGameIfLostFocus = true;
-		}
+		//Aways suspend with system events in any Pocket PC device (http://code.game-editor.com/ticket/16)
+		_bSuspendGameIfLostFocus = true;
 #endif
 	}
 

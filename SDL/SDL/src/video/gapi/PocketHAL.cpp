@@ -65,6 +65,30 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #define	DIR_MIRRORLEFTRIGHT	0x002
 #define	DIR_MIRRORUPDOWN	0x004
 
+extern "C" const char *getHomePath();
+
+extern "C" void writeDebugInfo(const char *s)
+{
+	//Write a info file if the file deviceinfo.txt exists
+	char buf[256];
+
+	if(getHomePath()) sprintf(buf, "%s\\deviceinfo.txt", getHomePath());
+	else sprintf(buf, "deviceinfo.txt");
+
+	FILE *f = fopen(buf, "r");
+	if(f)
+	{
+		//File exists, get the device info
+		fclose(f);
+
+		f = fopen(buf, "a+");
+		if(f)
+		{			
+			fprintf(f, "%s\n", s);			
+			fclose(f);
+		}
+	}
+}
 
 static int screenOrientation = -1;
 extern "C" int QueryOrientation()
@@ -155,8 +179,6 @@ extern "C" int QueryOrientation()
 
 using namespace PHAL;
 static Display *disp = NULL;
-int mouse_orientation = ORIENTATION_NORMAL;
-bool bNeedAdjustMouse = false;
 
 extern int GetFlipPocketPCScreen();
 extern void disable_dlmalloc();
@@ -178,8 +200,7 @@ extern "C" void halClose()
 extern "C" void halCreate(HWND hwnd, int width, int height)
 {
 	DisplayParameters parameters;
-	bNeedAdjustMouse = false;
-
+	
 	if(disp)
 	{
 		halClose();
@@ -197,18 +218,24 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 	QueryOrientation();
 
 	//Write a info file if the file deviceinfo.txt exists
-	FILE *f = fopen("deviceinfo.txt", "r");
+	char buf[256];
+
+	if(getHomePath()) sprintf(buf, "%s\\deviceinfo.txt", getHomePath());
+	else sprintf(buf, "deviceinfo.txt");
+
+	FILE *f = fopen(buf, "r");
 	if(f)
 	{
 		//File exists, get the device info
 		fclose(f);
 
-		f = fopen("deviceinfo.txt", "w");
+		f = fopen(buf, "w");
 		if(f)
 		{
 			fwprintf(f, L"Device name: %s\n", szOEM);
 			fprintf(f, "Game resolution: %ld x %ld\n", width, height);
-			fprintf(f, "Screen: %ld x %ld\n", sysScreenW, sysScreenH);
+			fprintf(f, "Screen resolution: %ld x %ld\n", sysScreenW, sysScreenH);
+			fprintf(f, "Screen orientation: %ld\n", screenOrientation);
 			fprintf(f, "Flip the screen: %ld\n", GetFlipPocketPCScreen());
 			
 			fclose(f);
@@ -242,8 +269,6 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 			{
 				parameters.m_orientation = ORIENTATION_NORMAL;
 			}
-
-			mouse_orientation = parameters.m_orientation;
 		}
 		else
 		{
@@ -258,32 +283,19 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 				//270
 				parameters.m_orientation = ORIENTATION_ROTATE90CCW;
 			}
-
-			//Need to rotate the mouse coordinates?
-			if(sysScreenW > sysScreenH)
-			{
-				//Yes
-				mouse_orientation = parameters.m_orientation;
-			}
-			else
-			{
-				//System rotated screen
-				bNeedAdjustMouse = true;
-			}
 		}
 		
 		
 	}
 	else if(
-		(width == 640 && height == 240) ||		
-		(width == 800 && height == 480) ||
-		(width == 800 && height == 600)
+		(width == 640 && height == 240 && sysScreenW == 640 && sysScreenH == 240) ||		
+		(width == 800 && height == 480 && sysScreenW == 800 && sysScreenH == 480) ||
+		(width == 800 && height == 600 && sysScreenW == 800 && sysScreenH == 600) //(http://code.game-editor.com/ticket/17)
 	  )
 	{
 		//May be is a HPC
 		//No rotation
-		parameters.m_orientation = ORIENTATION_NORMAL;
-		mouse_orientation = parameters.m_orientation;
+		parameters.m_orientation = ORIENTATION_NORMAL;		
 	}
 	else
 	{
@@ -300,18 +312,6 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 				//270
 				parameters.m_orientation = ORIENTATION_ROTATE90CCW;
 			}
-
-			//Need to rotate the mouse coordinates?
-			if(sysScreenW < sysScreenH)
-			{
-				//Yes
-				mouse_orientation = parameters.m_orientation;
-			}
-			else
-			{
-				//System rotated screen
-				bNeedAdjustMouse = true;
-			}
 		}
 		else
 		{
@@ -323,8 +323,6 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 			{
 				parameters.m_orientation = ORIENTATION_NORMAL;
 			}
-
-			mouse_orientation = parameters.m_orientation;
 		}
 	}
 
@@ -615,44 +613,5 @@ extern "C" void InitPocketPCKeys(SDLKey *keymap)
 		keymap[VK_LEFT]		= SDLK_RIGHT;
 		break;
 	}*/
-}
-
-extern "C" void AdjustMouseCoords(Sint16 *x, Sint16 *y)
-{
-	if(!disp) return;
-
-	Sint16 xOri = *x, yOri = *y;
-	DisplayParameters parameters = disp->GetParameters();	
-	
-	if(bNeedAdjustMouse)
-	{
-		if(screenOrientation < 0 || screenOrientation == parameters.m_orientation)
-		{
-			//Game and system with same orientation. Don't change the mouse orientation
-			mouse_orientation = ORIENTATION_NORMAL;
-		}
-		else
-		{
-			mouse_orientation = ORIENTATION_ROTATE180;
-		}
-	}
-
-	switch(mouse_orientation)
-	{
-	case ORIENTATION_ROTATE90CCW:
-		*x = parameters.m_width - yOri;
-		*y = xOri;
-		break;
-
-	case ORIENTATION_ROTATE180:
-		*x = parameters.m_width - xOri;
-		*y = parameters.m_height - yOri;
-		break;
-
-	case ORIENTATION_ROTATE90CW:
-		*x = yOri;
-		*y = parameters.m_height - xOri;
-		break;
-	}
 }
 

@@ -47,7 +47,7 @@ void halSwap(void *backBufer);
 int halWidth, halHeight;
 void CloseGAPI();
 int IsSmartphoneDevice();
-
+void writeDebugInfo(const char *s);
 
 
 #if defined(WIN32_PLATFORM_PSPC)
@@ -357,6 +357,7 @@ void Suspend(HWND wnd)
 	//	SDL_PrivateAppActive(0, appstate);
 	//
 	//don't works with some messages
+
 	
 	SDL_Event event;
 	memset(&event, 0, sizeof(event));
@@ -366,6 +367,13 @@ void Suspend(HWND wnd)
 	SDL_PushEvent(&event);
 	
 	if(wnd) SetForegroundWindow(wnd);
+
+	/*
+	//The iPhone a approach, just exit (http://code.game-editor.com/ticket/16)
+	SDL_Event event;
+	memset(&event, 0, sizeof(SDL_Event));
+	event.quit.type = SDL_QUIT;
+	SDL_PushEvent(&event);*/
 }
 
 LRESULT TaskWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -637,7 +645,6 @@ int GAPI_ShowTaskBar()
 	callShowTaskBar++;
 	if(callShowTaskBar <= 1 && !IsSmartphoneDevice()) return 0; //Avoid initial activation messages on Pocket PC
 
-
 	if(!bShowTaskBar)
 	{
 		int topBorder, bottomBorder;
@@ -672,8 +679,12 @@ int GAPI_ShowTaskBar()
 			
 			SHCreateMenuBar(&cbi);
 			menuBar = (HMENU)cbi.hwndMB;			
+
+			if(menuBar) writeDebugInfo("GAPI_ShowTaskBar Menu Ok"); 
+			else writeDebugInfo("GAPI_ShowTaskBar No Menu"); 
 		}
 
+		
 		return 1;
 	}
 

@@ -60,9 +60,6 @@ static char rcsid =
 #define NO_CHANGEDISPLAYSETTINGS
 #endif
 
-#ifdef _USE_POCKET_HAL_
-extern void AdjustMouseCoords(Sint16 *x, Sint16 *y);
-#endif
 
 
 
@@ -417,10 +414,6 @@ LONG CALLBACK WinMessage(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				x = LOWORD(lParam);
 				y = HIWORD(lParam);
 
-#ifdef _USE_POCKET_HAL_
-				AdjustMouseCoords(&x, &y);
-#endif
-
 				if ( mouse_relative ) {
 					POINT center;
 					center.x = (SDL_VideoSurface->w/2);
@@ -525,9 +518,6 @@ LONG CALLBACK WinMessage(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 					y = (Sint16)HIWORD(lParam);
 				}
 
-#ifdef _USE_POCKET_HAL_
-				AdjustMouseCoords(&x, &y);
-#endif
 				posted = SDL_PrivateMouseButton(
 							state, button, x, y);
 			}
