@@ -638,6 +638,11 @@ void CreateBitMap()
     DeleteDC(hdcDest);
     ReleaseDC(SDL_Window, hdcSrc);
 
+	{
+		char buf[64];
+		sprintf(buf, "Created screenshot: %ldx%ld", videoSurface->w, videoSurface->h);
+		writeDebugInfo(buf);
+	}
 }
 
 int GAPI_ShowTaskBar()
@@ -648,20 +653,26 @@ int GAPI_ShowTaskBar()
 	if(!bShowTaskBar)
 	{
 		int topBorder, bottomBorder;
+		RECT rc;
+
 		//Take screen shot
 		CreateBitMap();		
 
 		//Need close the GAPI to give key control back to the system
-		CloseGAPI(); 		
+		CloseGAPI(); 	
 
+		
 		//ShowWindow(SDL_Window, SW_HIDE); 
 		SHFullScreen(SDL_Window, SHFS_SHOWTASKBAR | SHFS_SHOWSTARTICON | SHFS_SHOWSIPBUTTON);
 		bShowTaskBar = 1;
 
 		GetTopBottomBorder(&topBorder, &bottomBorder);
 		
-		SetWindowPos(SDL_Window, HWND_NOTOPMOST, /*0, 0, 1, 1*/sdlWindowSize.left, sdlWindowSize.top + topBorder, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW);
-		SetWindowLong(SDL_Window, GWL_STYLE, GetWindowLong(SDL_Window, GWL_STYLE) | WS_NONAVDONEBUTTON);
+		//SetWindowPos(SDL_Window, HWND_NOTOPMOST, /*0, 0, 1, 1*/sdlWindowSize.left, sdlWindowSize.top + topBorder, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW);
+		//SetWindowLong(SDL_Window, GWL_STYLE, GetWindowLong(SDL_Window, GWL_STYLE) | WS_NONAVDONEBUTTON);
+
+		
+
 			
 		SDL_WM_SetCaption(GetGameTitle(), NULL);
 
@@ -686,6 +697,12 @@ int GAPI_ShowTaskBar()
 			}
 		}
 
+		//http://msdn.microsoft.com/en-us/library/aa453694.aspx
+		SystemParametersInfo(SPI_GETWORKAREA, 0, &rc, FALSE);
+        MoveWindow(SDL_Window, rc.left, rc.top, rc.right-rc.left, rc.bottom-rc.top, TRUE); //Show the game menu, but not the incoming call menu		
+		SetWindowPos(GetForegroundWindow(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE); //Show incoming call window 
+
+		
 		if(menuBar) writeDebugInfo("GAPI_ShowTaskBar Menu Ok"); 
 		else
 		{
@@ -798,6 +815,12 @@ static void GAPI_WinPAINT(_THIS, HDC hdc)
 			GetTopBottomBorder(&topBorder, &bottomBorder);
 
 			BitBlt(hdc, 0, 0, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), mdc, 0, topBorder, SRCCOPY);
+									
+			{
+				char buf[64];
+				sprintf(buf, "Paint screenshot: %ld, %ld, %ld, %ld", sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), 0, topBorder);
+				writeDebugInfo(buf);
+			}
 
 			DeleteDC(mdc);
 		}

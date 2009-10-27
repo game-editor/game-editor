@@ -5801,7 +5801,7 @@ void GameControl::SuspendGame(int bSuspendOn)
 #ifndef _WIN32_WCE
 			SDL_Pause(true);
 			bSuspendGame = true;			
-#else
+#else			
 			if(GAPI_ShowTaskBar())
 			{
 				SDL_Pause(true);

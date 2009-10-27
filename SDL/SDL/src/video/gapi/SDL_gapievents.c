@@ -178,7 +178,13 @@ LONG
 			{
 				if(LOWORD(wParam) == ID_EXIT)
 				{
+					//Send a continue event first. Without this, causes crash on WM5 smartphones
 					SDL_Event event;
+					memset(&event, 0, sizeof(SDL_Event));
+					event.type = SDL_USEREVENT + 6; //SDL_POCKET_CONTINUE
+					SDL_PushEvent(&event);
+
+					//Send the quit now
 					memset(&event, 0, sizeof(SDL_Event));
 					event.quit.type = SDL_QUIT;
 					SDL_PushEvent(&event);
