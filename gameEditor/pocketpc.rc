@@ -32,11 +32,9 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 // Pocket PC and Smartphone Menu
 //
-
 #ifdef _WIN32_WCE
-
-IDR_MENUBAR RCDATA
-BEGIN
+IDR_MENUBAR RCDATA MOVEABLE PURE 
+BEGIN 
 	0,
 	2,
 
@@ -48,7 +46,6 @@ BEGIN
 END
 
 #endif
-
 
 /////////////////////////////////////////////////////////////////////////////
 //

@@ -668,23 +668,33 @@ int GAPI_ShowTaskBar()
 		SHDoneButton(SDL_Window, SHDB_HIDE);
 		
 		{
+			//http://forum.soft32.com/pda/SHCreateMenuBar-resource-file-ftopict47431.html
 			SHMENUBARINFO cbi;
 			memset(&cbi, 0, sizeof(SHMENUBARINFO));		
+			menuBar = NULL;
 			
 			cbi.cbSize = sizeof(SHMENUBARINFO); 
 			cbi.hwndParent = SDL_Window; 
 			cbi.hInstRes = SDL_Instance; 
 			cbi.nToolBarId = IDR_MENUBAR;
+
 			//cbi.dwFlags = /*SHCMBF_EMPTYBAR |*/ SHCMBF_HIDESIPBUTTON | SHCMBF_HMENU; //Don't use this with the Smartphone menu
 			
-			SHCreateMenuBar(&cbi);
-			menuBar = (HMENU)cbi.hwndMB;			
-
-			if(menuBar) writeDebugInfo("GAPI_ShowTaskBar Menu Ok"); 
-			else writeDebugInfo("GAPI_ShowTaskBar No Menu"); 
+			if(SHCreateMenuBar(&cbi))
+			{
+				menuBar = (HMENU)cbi.hwndMB;				
+			}
 		}
 
-		
+		if(menuBar) writeDebugInfo("GAPI_ShowTaskBar Menu Ok"); 
+		else
+		{
+			char buf[64];
+			sprintf(buf, "GAPI_ShowTaskBar No Menu, Error: %ld", GetLastError());
+			writeDebugInfo(buf); 
+		}
+
+
 		return 1;
 	}
 

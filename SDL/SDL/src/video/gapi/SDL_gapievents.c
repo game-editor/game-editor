@@ -181,9 +181,7 @@ LONG
 					SDL_Event event;
 					memset(&event, 0, sizeof(SDL_Event));
 					event.quit.type = SDL_QUIT;
-					SDL_PushEvent(&event);					
-
-					SDL_PauseOff();
+					SDL_PushEvent(&event);
 					return 0;
 				}
 				else if(LOWORD(wParam) == ID_CONTINUE)
@@ -201,8 +199,17 @@ LONG
 			return 0;
 
 
-		case WM_CLOSE: //maks: Don't close, try release memory
-		case WM_DESTROY: //maks: Don't close, try release memory		
+		case WM_CLOSE: 
+		case WM_DESTROY: 		
+			{
+				//http://code.game-editor.com/ticket/16)
+				SDL_Event event;
+				memset(&event, 0, sizeof(SDL_Event));
+				event.quit.type = SDL_QUIT;
+				SDL_PushEvent(&event);
+
+				return 0;
+			}
 
 		case WM_HIBERNATE: //maks
 			{
