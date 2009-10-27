@@ -79,8 +79,8 @@ In the Visual Studio 2008, choose the version you want to compile:
   In the MSVC 2008, this flag is not working so, the genarated executable have the windowsce 5.00 subsystem.
   To solve this issue, you need a Portable Executable editor (PE Editor) to change the follow configuration in the Optional Header to:
   
-	- OS Major Version: 0004 (Address 0x00000128 in the executable file)
-	- SubSys Major Version: 0003 (Address 0x00000130 in the executable file)
+	- OS Major Version: 0004 (Address 0x00000138) in the executable file)
+	- SubSys Major Version: 0003 (Address 0x00000140) in the executable file)
 
 - To compile for the GP2X select the 'Windows Mobile 5.0 Pocket PC SDK (ARMV4I)' configuration (you need to install the Windows Mobile 5.0 SDK for Pocket PC and have the devkitpro installed (http://www.devkitpro.org/))
 		

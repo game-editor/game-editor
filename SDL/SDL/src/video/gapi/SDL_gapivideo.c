@@ -668,6 +668,8 @@ int GAPI_ShowTaskBar()
 
 		GetTopBottomBorder(&topBorder, &bottomBorder);
 		
+		//Without this call, doesn't show the incoming call controls (finish tthe call, ...), but
+		//with this call, doesn't show the incoming call menu
 		//SetWindowPos(SDL_Window, HWND_NOTOPMOST, /*0, 0, 1, 1*/sdlWindowSize.left, sdlWindowSize.top + topBorder, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW);
 		//SetWindowLong(SDL_Window, GWL_STYLE, GetWindowLong(SDL_Window, GWL_STYLE) | WS_NONAVDONEBUTTON);
 
@@ -701,6 +703,7 @@ int GAPI_ShowTaskBar()
 		SystemParametersInfo(SPI_GETWORKAREA, 0, &rc, FALSE);
         MoveWindow(SDL_Window, rc.left, rc.top, rc.right-rc.left, rc.bottom-rc.top, TRUE); //Show the game menu, but not the incoming call menu		
 		SetWindowPos(GetForegroundWindow(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE); //Show incoming call window 
+		SetWindowPos(SDL_Window, HWND_NOTOPMOST, /*0, 0, 1, 1*/sdlWindowSize.left, sdlWindowSize.top + topBorder, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW); //Allow to show the incomming call window
 
 		
 		if(menuBar) writeDebugInfo("GAPI_ShowTaskBar Menu Ok"); 
