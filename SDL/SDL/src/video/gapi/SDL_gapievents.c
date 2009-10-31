@@ -64,6 +64,8 @@ int MemoryAllocationError(int bytes); //maks
 int ReleaseMemory(int bytes); //maks
 int QueryOrientation(); //maks
 
+#define SN_PHONEINCOMINGCALL_BITMASK 65536 //maks
+
 void Suspend(HWND wnd);
 
 /* The translation table from a Microsoft VK keysym to a SDL keysym */
@@ -244,14 +246,28 @@ LONG
 				//
 				// (http://msdn.microsoft.com/library/default.asp?url=/library/en-us/APISP/html/sp_gx_biaa.asp)
 					
-				Suspend((HWND)wParam);
+				writeDebugInfo("WM_KILLFOCUS");
+				Suspend((HWND)wParam);				
 				return 0;
+			}
+			break;
+
+		case (WM_USER+5123): //maks
+			{
+				if(lParam == WM_USER+5124 && (wParam & SN_PHONEINCOMINGCALL_BITMASK))
+				{
+					//http://code.game-editor.com/ticket/16					
+					
+					writeDebugInfo("SN_PHONEINCOMINGCALL_BITMASK");
+					Suspend(GetForegroundWindow());						
+					return 0;
+				}
 			}
 			break;
 
 		case WM_SIZE: //maks
 			{
-				//Update the orientation fro the ouse coordinates in PokcetHAL
+				//Update the orientation for the mouse coordinates in PokcetHAL
 				//Will works only for a single windows flip
 
 				QueryOrientation();

@@ -76,6 +76,120 @@ void writeDebugInfo(const char *s);
 #include "SDL_loadso.h"
 #include "SDL_wingl_c.h"
 
+/////////////////////////////////////////////////////////////////
+//maks: The declarations from regext.h and snapi.h are included here, because there is no such declaration for Pocket PC 2003
+//http://code.game-editor.com/ticket/16
+//http://msdn.microsoft.com/en-us/library/bb677132.aspx
+//
+
+// PhoneIncomingCall
+// Gets a value indicating whether there is an incoming (ringing) call.
+#define SN_PHONEINCOMINGCALL_ROOT HKEY_LOCAL_MACHINE
+#define SN_PHONEINCOMINGCALL_PATH TEXT("System\\State\\Phone")
+#define SN_PHONEINCOMINGCALL_VALUE TEXT("Status")
+#define SN_PHONEINCOMINGCALL_BITMASK 65536
+
+DECLARE_HANDLE(HREGNOTIFY); // transient notification handle
+
+typedef enum tagREG_COMPARISONTYPE 
+{ 
+    REG_CT_ANYCHANGE,
+    REG_CT_EQUAL,
+    REG_CT_NOT_EQUAL,
+    REG_CT_GREATER,
+    REG_CT_GREATER_OR_EQUAL,
+    REG_CT_LESS,
+    REG_CT_LESS_OR_EQUAL,
+    REG_CT_CONTAINS,
+    REG_CT_STARTS_WITH,
+    REG_CT_ENDS_WITH
+} REG_COMPARISONTYPE;
+
+
+typedef struct tagNOTIFICATIONCONDITION
+{
+    REG_COMPARISONTYPE ctComparisonType;
+    DWORD dwMask;
+    union
+    {
+        LPCTSTR psz;
+        DWORD dw;
+    } TargetValue;
+} NOTIFICATIONCONDITION;
+
+
+		
+
+typedef BOOL (*ShowFull)( HWND, DWORD );
+
+typedef HRESULT (*tRegistryNotifyWindow)(HKEY ,
+                                    LPCTSTR ,
+                                    LPCTSTR ,
+                                    HWND ,
+                                    UINT ,
+                                    DWORD ,
+                                    NOTIFICATIONCONDITION *,
+                                    HREGNOTIFY *);
+
+typedef HRESULT (*tRegistryCloseNotification)(HREGNOTIFY);
+
+tRegistryNotifyWindow  RegistryNotifyWindow = NULL;
+tRegistryCloseNotification  RegistryCloseNotification = NULL;
+
+HREGNOTIFY hregNotifyPhone = NULL; //Create handle
+
+void LoadAygShellFunctions()
+{
+	if(!RegistryNotifyWindow)
+	{
+		//Don't link statically due the notification functions RegistryNotifyWindow missing on early Pocket PC versions
+		HINSTANCE hInst = LoadLibrary( _T( "AygShell.dll" ) );
+
+		RegistryNotifyWindow = GetProcAddress(hInst, _T( "RegistryNotifyWindow" ) );
+		RegistryCloseNotification = GetProcAddress(hInst, _T( "RegistryCloseNotification" ) );
+
+		//ShowFull  fSHFullScreen = GetProcAddress(hInst, _T( "SHFullScreen" ) );
+	}
+}
+
+void CloseIncomingCallNotification()
+{
+	if(hregNotifyPhone && RegistryCloseNotification)
+	{
+		RegistryCloseNotification(hregNotifyPhone);   
+		hregNotifyPhone = NULL;
+	}
+}
+
+void RegisterIncomingCallNotification(HWND wnd)
+{
+	HRESULT hr;	
+
+	LoadAygShellFunctions();
+	if(RegistryNotifyWindow) 
+	{
+		CloseIncomingCallNotification();
+	
+		hr = RegistryNotifyWindow( 
+			SN_PHONEINCOMINGCALL_ROOT, //defined in snapi.h
+			SN_PHONEINCOMINGCALL_PATH, 
+			SN_PHONEINCOMINGCALL_VALUE,
+			wnd,  //handle to our window to receive msg
+			WM_USER+5123, //app defined message to send
+			WM_USER+5124, //app defined value
+			NULL,
+			&hregNotifyPhone
+			); //Don’t forget to close this
+
+		if(hregNotifyPhone && hr == S_OK) writeDebugInfo("Created RegistryNotifyWindow notification");
+	}
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
 extern const char *GetGameTitle();
 
 #ifdef _WIN32_WCE
@@ -392,6 +506,7 @@ LRESULT TaskWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			{
 				//In the smartphone phone call alerts don't put text on the title bar
 				//In Pocket PC must test valid window
+				writeDebugInfo("WM_USER, 4");
 				Suspend(newWindow);
 			}
 		}
@@ -404,9 +519,10 @@ LRESULT TaskWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			((lParam & SHFS_SHOWTASKBAR) || (lParam & SHFS_SHOWSTARTICON) || (lParam & SHFS_SHOWSIPBUTTON)) 
 		  )
 		{
+			writeDebugInfo("WM_USER+7");
 			Suspend(msgWindow);
 		}
-	}
+	}	
 	/*else if(msg == WM_WINDOWPOSCHANGED)
 	{
 		LPWINDOWPOS lpwp = (LPWINDOWPOS)lParam;
@@ -485,6 +601,8 @@ int OpenGAPI(int fullscreen)
 	static int  lastFullscreen = -1;
 
 	
+
+	
 	//Crash when click on Continue Game button, due to disp == NULL (GAPI closed)
 	/*if(fullscreen == -1 && !bGXOpenedDisplay)
 		return 0;*/
@@ -493,6 +611,8 @@ int OpenGAPI(int fullscreen)
 	{
 		CloseGAPI();
 	}
+
+	RegisterIncomingCallNotification(SDL_Window);
 
 #ifdef _USE_POCKET_HAL_
 	if(fullscreen == -1)
@@ -564,6 +684,8 @@ int OpenGAPI(int fullscreen)
 
 void CloseGAPI()
 {
+	CloseIncomingCallNotification();
+
 	if(bGXOpenedDisplay)
 	{
 		
@@ -818,12 +940,6 @@ static void GAPI_WinPAINT(_THIS, HDC hdc)
 			GetTopBottomBorder(&topBorder, &bottomBorder);
 
 			BitBlt(hdc, 0, 0, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), mdc, 0, topBorder, SRCCOPY);
-									
-			{
-				char buf[64];
-				sprintf(buf, "Paint screenshot: %ld, %ld, %ld, %ld", sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), 0, topBorder);
-				writeDebugInfo(buf);
-			}
 
 			DeleteDC(mdc);
 		}

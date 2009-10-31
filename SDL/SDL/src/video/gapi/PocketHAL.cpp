@@ -33,6 +33,8 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 
 #if defined(_WIN32_WCE)
 
+
+
 #ifndef DISP_CHANGE_SUCCESSFUL
 #define DISP_CHANGE_SUCCESSFUL 0
 #endif
@@ -197,6 +199,8 @@ extern "C" void halClose()
 	disp = NULL;
 }
 
+
+
 extern "C" void halCreate(HWND hwnd, int width, int height)
 {
 	DisplayParameters parameters;
@@ -218,27 +222,32 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 	QueryOrientation();
 
 	//Write a info file if the file deviceinfo.txt exists
-	char buf[256];
+	static int nExecution = 0;
 
-	if(getHomePath()) sprintf(buf, "%s\\deviceinfo.txt", getHomePath());
-	else sprintf(buf, "deviceinfo.txt");
-
-	FILE *f = fopen(buf, "r");
-	if(f)
+	if(nExecution++ == 1)
 	{
-		//File exists, get the device info
-		fclose(f);
+		char buf[256];
 
-		f = fopen(buf, "w");
+		if(getHomePath()) sprintf(buf, "%s\\deviceinfo.txt", getHomePath());
+		else sprintf(buf, "deviceinfo.txt");
+
+		FILE *f = fopen(buf, "r");
 		if(f)
 		{
-			fwprintf(f, L"Device name: %s\n", szOEM);
-			fprintf(f, "Game resolution: %ld x %ld\n", width, height);
-			fprintf(f, "Screen resolution: %ld x %ld\n", sysScreenW, sysScreenH);
-			fprintf(f, "Screen orientation: %ld\n", screenOrientation);
-			fprintf(f, "Flip the screen: %ld\n", GetFlipPocketPCScreen());
-			
+			//File exists, get the device info
 			fclose(f);
+
+			f = fopen(buf, "w");
+			if(f)
+			{
+				fwprintf(f, L"Device name: %s\n", szOEM);
+				fprintf(f, "Game resolution: %ld x %ld\n", width, height);
+				fprintf(f, "Screen resolution: %ld x %ld\n", sysScreenW, sysScreenH);
+				fprintf(f, "Screen orientation: %ld\n", screenOrientation);
+				fprintf(f, "Flip the screen: %ld\n\n", GetFlipPocketPCScreen());
+
+				fclose(f);
+			}
 		}
 	}
 
