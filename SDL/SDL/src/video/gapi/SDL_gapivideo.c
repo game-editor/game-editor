@@ -133,55 +133,61 @@ typedef HRESULT (*tRegistryNotifyWindow)(HKEY ,
 
 typedef HRESULT (*tRegistryCloseNotification)(HREGNOTIFY);
 
-tRegistryNotifyWindow  RegistryNotifyWindow = NULL;
-tRegistryCloseNotification  RegistryCloseNotification = NULL;
-
-HREGNOTIFY hregNotifyPhone = NULL; //Create handle
-
-void LoadAygShellFunctions()
-{
-	if(!RegistryNotifyWindow)
-	{
-		//Don't link statically due the notification functions RegistryNotifyWindow missing on early Pocket PC versions
-		HINSTANCE hInst = LoadLibrary( _T( "AygShell.dll" ) );
-
-		RegistryNotifyWindow = GetProcAddress(hInst, _T( "RegistryNotifyWindow" ) );
-		RegistryCloseNotification = GetProcAddress(hInst, _T( "RegistryCloseNotification" ) );
-
-		//ShowFull  fSHFullScreen = GetProcAddress(hInst, _T( "SHFullScreen" ) );
-	}
-}
-
+HREGNOTIFY hregNotifyPhone = NULL;
 void CloseIncomingCallNotification()
 {
-	if(hregNotifyPhone && RegistryCloseNotification)
+	tRegistryCloseNotification  lRegistryCloseNotification = NULL;
+	HINSTANCE hInstAygShell = NULL;
+	
+	if(hregNotifyPhone)
 	{
-		RegistryCloseNotification(hregNotifyPhone);   
-		hregNotifyPhone = NULL;
+		hInstAygShell = LoadLibrary( _T( "AygShell.dll" ) );
+		if(hInstAygShell)
+		{
+			lRegistryCloseNotification = GetProcAddress(hInstAygShell, _T( "RegistryCloseNotification" ) );
+
+			if(lRegistryCloseNotification)
+			{
+				lRegistryCloseNotification(hregNotifyPhone);   
+				hregNotifyPhone = NULL;
+
+				writeDebugInfo("CloseIncomingCallNotification");
+			}	
+
+			FreeLibrary(hInstAygShell);
+		}
 	}
 }
 
 void RegisterIncomingCallNotification(HWND wnd)
 {
 	HRESULT hr;	
+	tRegistryNotifyWindow  lRegistryNotifyWindow = NULL;
+	HINSTANCE hInstAygShell = NULL;
 
-	LoadAygShellFunctions();
-	if(RegistryNotifyWindow) 
+	hInstAygShell = LoadLibrary( _T( "AygShell.dll" ) );
+
+	if(hInstAygShell) 
 	{
-		CloseIncomingCallNotification();
-	
-		hr = RegistryNotifyWindow( 
-			SN_PHONEINCOMINGCALL_ROOT, //defined in snapi.h
-			SN_PHONEINCOMINGCALL_PATH, 
-			SN_PHONEINCOMINGCALL_VALUE,
-			wnd,  //handle to our window to receive msg
-			WM_USER+5123, //app defined message to send
-			WM_USER+5124, //app defined value
-			NULL,
-			&hregNotifyPhone
-			); //Don’t forget to close this
+		lRegistryNotifyWindow = GetProcAddress(hInstAygShell, _T( "RegistryNotifyWindow" ) );
+		if(lRegistryNotifyWindow)
+		{
+			hr = lRegistryNotifyWindow( 
+				SN_PHONEINCOMINGCALL_ROOT, //defined in snapi.h
+				SN_PHONEINCOMINGCALL_PATH, 
+				SN_PHONEINCOMINGCALL_VALUE,
+				wnd,  //handle to our window to receive msg
+				WM_USER+5123, //app defined message to send
+				WM_USER+5124, //app defined value
+				NULL,
+				&hregNotifyPhone
+				); //Don’t forget to close this
 
-		if(hregNotifyPhone && hr == S_OK) writeDebugInfo("Created RegistryNotifyWindow notification");
+			if(hregNotifyPhone && hr == S_OK) writeDebugInfo("Created RegistryNotifyWindow notification");
+		}
+
+		//Load the AygShell when was necessary (the code freezes if hold the reference)
+		FreeLibrary(hInstAygShell);
 	}
 }
 
@@ -300,56 +306,6 @@ void CloseInput()
 	GXCloseInput();
 #endif
 }
-
-/*typedef struct _ModelID
-{
-    Model model;
-    const TCHAR*    oemstring;
-} ModelID;
-
-
-ModelID s_models[] =
-{
-    { MODEL_CASIO_E115,       _T("Pocket PC J580") },
-    { MODEL_CASIO_E125,       _T("Pocket PC J670") },
-    { MODEL_CASIO_EM500,      _T("Pocket PC J760") },
-    { MODEL_JORNADA_540,      _T("HP, Jornada 540") },
-    { MODEL_JORNADA_545,      _T("HP, Jornada 545") },
-    { MODEL_JORNADA_568,      _T("HP, Jornada 568") },
-    { MODEL_IPAQ_3600,        _T("Compaq iPAQ H3600") },
-    { MODEL_IPAQ_3800,        _T("Compaq iPAQ H3800") },
-    { MODEL_IPAQ_3900,        _T("Compaq iPAQ H3900") },
-    { MODEL_SYMBOL_PPT_2700,  _T("PPT2700 by Symbol") },
-    { MODEL_JORNADA_680,      _T("HP, Jornada 680") },
-    { MODEL_JORNADA_720,      _T("HP, Jornada 720") }
-};
-
-Model PocketPC_GetModel() //Frog code
-{
-    static Model model = MODEL_NOT_DETECTED;
-
-    if (model == MODEL_NOT_DETECTED)
-    {
-		TCHAR oeminfo[MAX_PATH];
-        model = MODEL_UNKNOWN;        
-        
-        if (SystemParametersInfo( SPI_GETOEMINFO, MAX_PATH, oeminfo, 0 ))
-        {
-			const ModelID* id = s_models;
-            for (; id != s_models + sizeof(s_models)/sizeof(s_models[0]); ++id)
-            {
-                if (0==_tcsncmp( oeminfo, id->oemstring, _tcslen(id->oemstring) ))
-                {
-                    model = id->model;
-                    break;
-                }
-            }
-        }
-    }
-
-    return model;
-}*/
-
 
 
 /* Initialization/Query functions */
@@ -684,7 +640,7 @@ int OpenGAPI(int fullscreen)
 
 void CloseGAPI()
 {
-	CloseIncomingCallNotification();
+	CloseIncomingCallNotification();	
 
 	if(bGXOpenedDisplay)
 	{
@@ -759,12 +715,6 @@ void CreateBitMap()
     // clean up 
     DeleteDC(hdcDest);
     ReleaseDC(SDL_Window, hdcSrc);
-
-	{
-		char buf[64];
-		sprintf(buf, "Created screenshot: %ldx%ld", videoSurface->w, videoSurface->h);
-		writeDebugInfo(buf);
-	}
 }
 
 int GAPI_ShowTaskBar()
@@ -1769,6 +1719,7 @@ static void FlushMessageQueue()
 
 void GAPI_VideoQuit(_THIS)
 {
+	writeDebugInfo("GAPI_VideoQuit");
 	/* Destroy the window and everything associated with it */
 	if ( SDL_Window ) 
 	{

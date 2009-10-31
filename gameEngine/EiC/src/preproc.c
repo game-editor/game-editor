@@ -312,7 +312,7 @@ static void rebuff(char **buf, int *len);
 static void in(char c);
 static char *out(char c);
 static char *outChar(char *s, char c, int mod, int i);
-static int getline();
+static int eic_getline();
 static void expr_list(eicstack_t *parms, char **p,int more);
 static int findparm(eicstack_t *parms,char *name, size_t len);
 static void mergeTokens(macro_t *mac);
@@ -663,7 +663,7 @@ static char *outChar(char *s, char c, int mod, int i)
 #define EiC_saveComment() NULL
 #endif
 
-static int getline()
+static int eic_getline()
 {
     /* automatically strips out comments and
      * performs line splicing.
@@ -877,7 +877,7 @@ static void expr_list(eicstack_t *parms, char **p,int more)
 		EiC_pre_error("Illegal line continuation during macro expansion");
 		break;
 	    }
-	    getline();
+	    eic_getline();
 	    if(c && !isspace(str[c-1]) && !isspace(*line))
 		str[c++] = ' ';  /* need white space */
 	    s = line;
@@ -1710,7 +1710,7 @@ static char * EiC_expand(char *fld,char **end, int bot, int top)
 					  "during macro expansion");
 				break;
 			    }
-			    getline();
+			    eic_getline();
 			    fld = line;
 			}
 		    } while(*fld && parens);
@@ -1855,7 +1855,7 @@ extern char *EiC_nextproline(void)
     extern int EiC_SHOWLINE;
    
     while (1) {
-	getline();
+	eic_getline();
 	if(line[0] != ':') {
 	    if (!control_line()) {
 		process();

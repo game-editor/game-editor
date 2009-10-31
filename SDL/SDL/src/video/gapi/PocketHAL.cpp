@@ -197,6 +197,8 @@ extern "C" void halClose()
 	enable_dlmalloc();
 
 	disp = NULL;
+
+	writeDebugInfo("halClose");
 }
 
 
@@ -224,7 +226,7 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 	//Write a info file if the file deviceinfo.txt exists
 	static int nExecution = 0;
 
-	if(nExecution++ == 1)
+	//if(nExecution == 0) //Why is not zero!!!!!!!!!!!!!!!!!!
 	{
 		char buf[256];
 
@@ -237,9 +239,10 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 			//File exists, get the device info
 			fclose(f);
 
-			f = fopen(buf, "w");
+			f = fopen(buf, "a+");
 			if(f)
 			{
+				fprintf(f, "\n\nExecution: %ld\n", nExecution);
 				fwprintf(f, L"Device name: %s\n", szOEM);
 				fprintf(f, "Game resolution: %ld x %ld\n", width, height);
 				fprintf(f, "Screen resolution: %ld x %ld\n", sysScreenW, sysScreenH);
@@ -250,6 +253,8 @@ extern "C" void halCreate(HWND hwnd, int width, int height)
 			}
 		}
 	}
+
+	nExecution++;
 
 	//Check the screen. Some system have 320x240 screen
 	if (!_wcsicmp(szOEM, _T("MotoQ")) || !_wcsicmp(szOEM, _T("Gizmondo")) 

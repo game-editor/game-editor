@@ -903,7 +903,13 @@ void EngineShutDown()
 
 	
 	GameControl::Get()->SetGameMode(false);
+
+#ifndef _WIN32_WCE 
+	//I know this is ugly, but in the Windows Mobile the Delete function doen's returns (even only delete the gameControl). 
+	//If we can't run the rest of the function, the game doesn't release the Windows Mobile physical buttons!
+	//So, if you can solve this issue, remove the _WIN32_WCE condition
 	GameControl::Get()->Delete();
+#endif
 
 #ifndef STAND_ALONE_GAME
 	Config::Destroy();
