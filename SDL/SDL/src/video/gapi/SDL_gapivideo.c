@@ -437,13 +437,6 @@ void Suspend(HWND wnd)
 	SDL_PushEvent(&event);
 	
 	if(wnd) SetForegroundWindow(wnd);
-
-	/*
-	//The iPhone a approach, just exit (http://code.game-editor.com/ticket/16)
-	SDL_Event event;
-	memset(&event, 0, sizeof(SDL_Event));
-	event.quit.type = SDL_QUIT;
-	SDL_PushEvent(&event);*/
 }
 
 LRESULT TaskWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -577,7 +570,7 @@ int OpenGAPI(int fullscreen)
 	}
 
 #ifdef _USE_BACK_BUFFER_
-	if(backBufer) 
+	if(backBufer)
 	{
 		free(backBufer);
 		backBufer = NULL;
@@ -692,22 +685,21 @@ void CreateBitMap()
 	HDC hdcSrc, hdcDest;
 	HGDIOBJ hOld;
 
-	// get te hDC of the target window    
+	// get te hDC of the source window    
 	hdcSrc = GetWindowDC(SDL_Window);
 
  
     // create a device context we can copy to
     hdcDest = CreateCompatibleDC(hdcSrc);
 
-    // create a bitmap we can copy it to,
-    // using GetDeviceCaps to get the width/height
-    srcBitmap = CreateCompatibleBitmap(hdcSrc, videoSurface->w, videoSurface->h); 
+    // create a bitmap we can copy it to
+	srcBitmap = CreateCompatibleBitmap(hdcSrc, sdlWindowSize.right, sdlWindowSize.bottom); 
 
     // select the bitmap object
     hOld = SelectObject(hdcDest, srcBitmap);
 
     // bitblt over
-    BitBlt(hdcDest, 0, 0, videoSurface->w, videoSurface->h, hdcSrc, 0, 0, SRCCOPY);
+    BitBlt(hdcDest, 0, 0, sdlWindowSize.right, sdlWindowSize.bottom, hdcSrc, 0, 0, SRCCOPY);
 
     // restore selection
     SelectObject(hdcDest,hOld);
