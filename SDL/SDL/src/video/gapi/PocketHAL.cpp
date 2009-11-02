@@ -182,7 +182,7 @@ extern "C" int QueryOrientation()
 using namespace PHAL;
 static Display *disp = NULL;
 
-extern int GetFlipPocketPCScreen();
+extern "C" int GetFlipPocketPCScreen();
 extern void disable_dlmalloc();
 extern void enable_dlmalloc();
 extern "C" int IsHPC();

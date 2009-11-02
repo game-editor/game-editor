@@ -777,7 +777,7 @@ extern "C" const char *GetGameTitle()
 	return "Game Paused";
 }
 
-int GetFlipPocketPCScreen()
+extern "C" int GetFlipPocketPCScreen()
 {
 	if(GameControl::Get() && GameControl::Get()->getFlipPocketPCScreen())
 	{
@@ -1064,6 +1064,7 @@ GameControl::GameControl()
 			
 	gameControl = this;
 
+	bQueuedShowTaskBar = false;
 	bGameEngineIsRunning = true;
 	bExportMode = false;
 	bAudioOpened = false;
@@ -2792,6 +2793,8 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 	bMouseButtonDown = false;
 	bRestartNetworkAfterPause = false;
 	GeoPathFinder::Remove();
+
+	bQueuedShowTaskBar = false;
 
 	if((!bGameMode && !_bGameMode) ||
 	   (bGameMode && _bGameMode))
@@ -5708,6 +5711,7 @@ void GameControl::MoveView()
 #ifdef _WIN32_WCE
 extern "C" int GAPI_ShowTaskBar();
 extern "C" int GAPI_HideTaskBar();
+extern "C" void *useBackBuffer();
 extern "C" HWND menuBar;
 #endif
 
@@ -5783,6 +5787,7 @@ void ForceSuspendGame()
 	GameControl::Get()->SuspendGame(1);
 }
 
+
 void GameControl::SuspendGame(int bSuspendOn)
 {
 	/*
@@ -5798,24 +5803,18 @@ void GameControl::SuspendGame(int bSuspendOn)
 	{
 		if(!bSuspendGame)
 		{
-#ifndef _WIN32_WCE
 			SDL_Pause(true);
-			bSuspendGame = true;			
-#else			
-			if(GAPI_ShowTaskBar())
-			{
-				SDL_Pause(true);
-				bSuspendGame = true;
-			}
+			bSuspendGame = true;
+
+#ifdef _WIN32_WCE
+			//Can't call engine->Draw() in this thread in order to get the game screen
+			//So, call it later
+			//http://code.game-editor.com/ticket/16
+			bQueuedShowTaskBar = true;
 #endif	
-			
-			if(bSuspendGame)
-			{
-				//Keep all pressed keys at this time stored at mapKeyDown
-				
-				//Clear last keys
-				lastKeys.Clear();
-			}
+			//Keep all pressed keys at this time stored at mapKeyDown
+			//Clear last keys
+			lastKeys.Clear();
 		}
 	}
 	else
@@ -6536,6 +6535,19 @@ bool GameControl::GameTick(SDL_Event &event)
 	}
 #endif
 	
+#ifdef _WIN32_WCE 
+	if(bQueuedShowTaskBar)
+	{
+		//Show the task bar only here, after draw the current game screen to the backbuffer
+		//http://code.game-editor.com/ticket/16
+		bQueuedShowTaskBar = false;
+		useBackBuffer();
+		engine->InvalidateScreen();		
+		engine->Draw();	
+		GAPI_ShowTaskBar();
+	}	
+#endif
+	
 	if (event.type == SDL_POCKET_HIBERNATE)
 	{
 		//Try release some memory
@@ -6765,7 +6777,8 @@ bool GameControl::GameTick(SDL_Event &event)
 		//Exit suspend on PocketPC only if press continue buttom
 		SuspendGame(false);
 	}
-	
+
+
 
 	//Get Actor Text input
 	KrEventManager::Instance()->HandleEvent( event, engine );
@@ -7575,7 +7588,6 @@ bool GameControl::GameTick(SDL_Event &event)
 
 		}
 #endif		
-
 
 					engine->Draw();	
 					CheckSurfaceLost();

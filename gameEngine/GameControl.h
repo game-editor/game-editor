@@ -1657,6 +1657,7 @@ private:
 	MapActorsInCollision2 mapActorsInCollisionInActualFrame;
 
 	static bool bGameEngineIsRunning;
+	bool bQueuedShowTaskBar;
 	bool bCheckOutOfVision;
 	bool bExportMode;
 	bool bAudioOpened;

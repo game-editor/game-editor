@@ -37,8 +37,6 @@ static char rcsid =
 
 #include "../../../../../gameEngine/dlmalloc.h" //maks
 
-//#define _USE_BACK_BUFFER_ //20 fps (fps benchmark.ged)
-
 void halCreate(HWND hwnd, int width, int height);
 void halClose();
 void *halGetBuffer();
@@ -569,17 +567,6 @@ int OpenGAPI(int fullscreen)
 		fullscreen = lastFullscreen;
 	}
 
-#ifdef _USE_BACK_BUFFER_
-	if(backBufer)
-	{
-		free(backBufer);
-		backBufer = NULL;
-	}
-
-	//Create back buffer		
-	backBufer = (WORD *)malloc(halWidth*halHeight*2); //PocketHAL always use 16bit screen
-	if(backBufer) memset(backBufer, 0, halWidth*halHeight*2);
-#endif
 
 	//Reopen
 	halCreate(SDL_Window, halWidth, halHeight);
@@ -640,15 +627,12 @@ void CloseGAPI()
 		
 #ifdef _USE_POCKET_HAL_
 		halClose();
-		
-#ifdef _USE_BACK_BUFFER_
+
 		if(backBufer) 
 		{
 			free(backBufer);
 			backBufer = NULL;
-		}
-#endif
-		
+		}		
 #else
 		
 		GXCloseDisplay();
@@ -677,15 +661,39 @@ BITMAPINFO binfo;
 SDL_Surface *videoSurface = NULL;
 HBITMAP srcBitmap = NULL;
 
+void freeBackBufer()
+{
+	if(backBufer)
+	{
+		free(backBufer);
+		backBufer = NULL;
+		backBuferSize = 0;
+	}
+}
 
+
+void *useBackBuffer()
+{
+	//Be careful when use the backbuffer
+	//It reduce the game frame rate to the half
+
+	freeBackBufer();
+
+	//Create back buffer	
+	backBuferSize = halWidth*halHeight*2; //PocketHAL always use 16bit screen
+	backBufer = (WORD *)malloc(backBuferSize); 
+	if(backBufer) memset(backBufer, 0, backBuferSize);
+
+	return backBufer;
+}
 
 
 void CreateBitMap()
 {
 	HDC hdcSrc, hdcDest;
 	HGDIOBJ hOld;
-
-	// get te hDC of the source window    
+	
+	// get te hDC of the source window   	
 	hdcSrc = GetWindowDC(SDL_Window);
 
  
@@ -695,11 +703,69 @@ void CreateBitMap()
     // create a bitmap we can copy it to
 	srcBitmap = CreateCompatibleBitmap(hdcSrc, sdlWindowSize.right, sdlWindowSize.bottom); 
 
+	
     // select the bitmap object
     hOld = SelectObject(hdcDest, srcBitmap);
 
     // bitblt over
-    BitBlt(hdcDest, 0, 0, sdlWindowSize.right, sdlWindowSize.bottom, hdcSrc, 0, 0, SRCCOPY);
+    if(backBufer) 
+	{		
+		//When you get the hdcSrc for the SDL_Window you also get the window on top (the incoming call)
+		//So, to take the screenshot only for the game window, we need to draw it here
+		//http://code.game-editor.com/ticket/16
+		
+
+		if(sdlWindowSize.right == videoSurface->w)
+		{					
+			/*BITMAPINFO bmi;
+
+			bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+			bmi.bmiHeader.biWidth = videoSurface->w;
+			bmi.bmiHeader.biHeight = videoSurface->h;
+			bmi.bmiHeader.biPlanes = 1; //http://msdn.microsoft.com/en-us/library/dd183376(VS.85).aspx
+			bmi.bmiHeader.biBitCount = 16;
+			bmi.bmiHeader.biCompression = BI_RGB;
+			bmi.bmiHeader.biSizeImage = backBuferSize;
+			bmi.bmiHeader.biXPelsPerMeter = 4800; //Just a guess
+			bmi.bmiHeader.biYPelsPerMeter = 4800;
+			bmi.bmiHeader.biClrUsed = 0;
+			bmi.bmiHeader.biClrImportant = 0;
+			
+			SetDIBits(hdcDest, srcBitmap, 0, videoSurface->pitch*videoSurface->h, backBufer, &bmi, DIB_RGB_COLORS);*/
+
+			//It is fast, but only works if the screen was not rotated	
+			//The SetDIBits is not available in all devices, so use the SetBitmapBits funtion
+			//What about the pixel format?
+			SetBitmapBits(srcBitmap, backBuferSize, backBufer);
+		}
+		else
+		{		
+			//The screen is rotated			
+			int x, y, bFlip = GetFlipPocketPCScreen();
+
+			for(x = 0; x < videoSurface->w; x++)
+			{
+				for(y = 0; y < videoSurface->h; y++)
+				{
+					Uint8* bits = ( (Uint8*) backBufer 
+						+ y * videoSurface->pitch
+						+ x * videoSurface->format->BytesPerPixel ), r, g, b;
+
+					Uint32 color= *((Uint16*) bits);
+					SDL_GetRGB( color, videoSurface->format, &r, &g, &b);
+
+					if(bFlip) SetPixel(hdcDest, videoSurface->h - y - 1, x, RGB(r, g, b));
+					else SetPixel(hdcDest, y, videoSurface->w - x - 1, RGB(r, g, b)); 					
+				}
+			}
+		}
+
+		freeBackBufer();
+	}
+	else
+	{
+		BitBlt(hdcDest, 0, 0, sdlWindowSize.right, sdlWindowSize.bottom, hdcSrc, 0, 0, SRCCOPY);
+	}
 
     // restore selection
     SelectObject(hdcDest,hOld);
@@ -711,9 +777,6 @@ void CreateBitMap()
 
 int GAPI_ShowTaskBar()
 {
-	callShowTaskBar++;
-	if(callShowTaskBar <= 1 && !IsSmartphoneDevice()) return 0; //Avoid initial activation messages on Pocket PC
-
 	if(!bShowTaskBar)
 	{
 		int topBorder, bottomBorder;
@@ -731,14 +794,6 @@ int GAPI_ShowTaskBar()
 		bShowTaskBar = 1;
 
 		GetTopBottomBorder(&topBorder, &bottomBorder);
-		
-		//Without this call, doesn't show the incoming call controls (finish tthe call, ...), but
-		//with this call, doesn't show the incoming call menu
-		//SetWindowPos(SDL_Window, HWND_NOTOPMOST, /*0, 0, 1, 1*/sdlWindowSize.left, sdlWindowSize.top + topBorder, sdlWindowSize.right, sdlWindowSize.bottom - (topBorder + bottomBorder), SWP_NOCOPYBITS | SWP_FRAMECHANGED | SWP_SHOWWINDOW);
-		//SetWindowLong(SDL_Window, GWL_STYLE, GetWindowLong(SDL_Window, GWL_STYLE) | WS_NONAVDONEBUTTON);
-
-		
-
 			
 		SDL_WM_SetCaption(GetGameTitle(), NULL);
 
@@ -907,11 +962,8 @@ static int GAPI_LockHWSurface(_THIS, SDL_Surface *surface)
 
 #ifdef _USE_POCKET_HAL_
 	
-#ifdef _USE_BACK_BUFFER_
-	surface->pixels = backBufer;
-#else
-	surface->pixels = halGetBuffer();
-#endif
+	if(backBufer) surface->pixels = backBufer;
+	else surface->pixels = halGetBuffer();
 
 #else
 	if(backBufer) 
