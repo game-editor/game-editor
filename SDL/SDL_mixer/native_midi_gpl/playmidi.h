@@ -53,12 +53,8 @@
 #include <sys/soundcard.h>
 #include <sys/ioctl.h>
 
-#ifndef GP2X //maks
-	#ifdef linux
-	#include <linux/awe_voice.h>
-	#else
-	#include <awe_voice.h>
-	#endif
+#ifndef GP2X //maks	
+	#include <awe_voice.h>	
 #else
 	#define AWE_KEY_PRESSURE(dev,ch,note,vel) 
 	#define AWE_SET_CHANNEL_MODE(dev,mode) 

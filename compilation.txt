@@ -97,9 +97,24 @@ In the Visual Studio 2008, choose the version you want to compile:
 
 
 /////////////////////////////////////////////////////////////////////////
-Linux:
+Linux: (tested on Kubuntu 9.10 64bits)
 
-1) Open a console window
-2) Go to the Game Editor directory
-3) type: make
-4) copy the contents of the directory gameEditor/res to output/editor
+
+1) Open a terminal window
+2) Install the libx11-dev (if not installed on your system) 
+	sudo apt-get update
+	sudo apt-get install libx11-dev libxpm-dev x11proto-xext-dev libxext-dev
+
+3) Make sure you have the gcc and g++ installed. If not, install it:	
+	sudo apt-get install g++
+		
+		
+4) Install the 32bit library if you are using a 64bit linux (Game Editor was not ported to 64bit yet)
+	sudo apt-get install libc6-dev-i386
+	sudo apt-get install lib32stdc++6	
+	sudo apt-get install g++-multilib
+	sudo apt-get install ia32-libs
+	
+5) Go to the Game Editor directory
+6) type: make
+7) copy the contents of the directory gameEditor/res to output/editor

@@ -43,7 +43,7 @@ union magic_tremor { //maks
 };
 /*#endif 
 #if BYTE_ORDER==BIG_ENDIAN*/
-#elif
+#else
 union magic_tremor { //maks
   struct {
     ogg_int32_t hi;

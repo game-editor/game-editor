@@ -607,7 +607,7 @@ bool GameSettings::OnList(ListPop *list, int index, gedString &text, int listId)
 			}
 			else if(w == 800 && h == 480)
 			{				
-				else if(sFlip == "left") list->SetText("800 x 480 Rot. left");
+				if(sFlip == "left") list->SetText("800 x 480 Rot. left");
 				else if(sFlip == "ight") list->SetText("800 x 480 Rot.right");
 			}
 			else if(w == 480 || h == 480)

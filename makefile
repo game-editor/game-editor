@@ -12,7 +12,7 @@ GAMEEDITOR_DEMO_STAND_ALONE=-DSTAND_ALONE_GAME
 
 ## Target machine (LLVM, linux)
 
-TARGET_MACHINE=LLVM
+TARGET_MACHINE=linux
 
 ## Release Definitions
 GE_DEBUG=-DDEBUG -D_DEBUG -g3
@@ -40,7 +40,7 @@ endif
 
 ## Commands
 
-#linux -> gcc, make
+#linux -> gcc, make (use gcc with the -m32 option on 64bit linux)
 #cygwin ->
 #Sourcery G++ -> arm-none-linux-gnueabi-gcc, cs-make
 #llvm -> llvm-gcc -emit-llvm -c, make 
@@ -50,7 +50,7 @@ MAKE = make
 ifeq ($(TARGET_MACHINE),LLVM)
         CC = llvm-gcc -emit-llvm -c			
 else
-		CC = gcc		
+		CC = gcc -m32		
 endif
 
  

@@ -10,7 +10,7 @@ BIN  = "../output/editor/gameEditor"
 CFLAGS = $(INCS) $(TARGET) -DNO_STDIO_REDIRECT -DNO_LONG_LONG -DNO_DIRENT -DNO_FCNTL -DNO_STAT -DNO_UNISTD -DNO_TERMIOS -DNO_PIPE -DNO_POSIX -DNO_LONGLONG -DNO_HISTORY $(BUILD_TYPE) $(GAMEEDITOR_TYPE)
 
 ifeq (,$(findstring LLVM,$(TARGET)))
-        LIBSYSTEM = -lstdc++ -lpthread /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libXext.so.6
+        LIBSYSTEM = -lstdc++ -lpthread -lX11 /usr/lib32/libXext.so
         CL=$(CC)
         CLFLAGS=$(CFLAGS)
 else
