@@ -1,3 +1,5 @@
+#ifndef linux
+
 #include "gedString.h"
 #include "HTTPClient/httpclient.cpp"
 #include "HTTPClient/HTTPClientAuth.cpp"
@@ -74,3 +76,11 @@ extern "C" char* download(const char *url, long *bytesRead)
 
 	return pBuffer;
 }
+
+#else
+extern "C" char* download(const char *url, long *bytesRead)
+{
+	//Needs to develop the linux version
+	return 0;
+}
+#endif

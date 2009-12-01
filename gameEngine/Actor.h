@@ -104,7 +104,7 @@ public:
 	bool Write(double) {return false;};
 	bool Write(float) {return false;};
 	bool Write(bool) {return false;};
-	bool Write(gedString &) {return false;};
+	bool Write(gedString) {return false;};
 	bool Write(const char *) {return false;};
 	bool Write(const char*, int) {return false;};
 	bool Write(SystemAddress) {return false;};

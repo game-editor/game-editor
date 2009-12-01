@@ -738,14 +738,14 @@ void CreateBitMap()
 			//What about the pixel format?
 			SetBitmapBits(srcBitmap, backBuferSize, backBufer);
 		}
-		else
+		else if(0) //maks:teste
 		{		
 			//The screen is rotated			
 			int x, y, bFlip = GetFlipPocketPCScreen();
 
-			for(x = 0; x < videoSurface->w; x++)
+			for(y = 0; y < videoSurface->h; y++)
 			{
-				for(y = 0; y < videoSurface->h; y++)
+				for(x = 0; x < videoSurface->w; x++)
 				{
 					Uint8* bits = ( (Uint8*) backBufer 
 						+ y * videoSurface->pitch
@@ -760,7 +760,7 @@ void CreateBitMap()
 			}
 		}
 
-		freeBackBufer();
+		//Don't fre the backbuffer now (the device may use it to refresh the screen on a WM_PAINT message)
 	}
 	else
 	{
@@ -842,8 +842,8 @@ int GAPI_ShowTaskBar()
 
 int GAPI_HideTaskBar()
 {
-	callHideTaskBar++;
-	if(!menuBar && callHideTaskBar <= 1) return 0; //Avoid initial activation messages
+	//Free the backbuffer used when call GAPI_ShowTaskBar
+	freeBackBufer();
 
 	if(bShowTaskBar)
 	{

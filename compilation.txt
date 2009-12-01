@@ -1,12 +1,7 @@
 /////////////////////////////////////////////////////////////////////////
 To compile the gameEditor (current interface) and wxGameEditor (new interface) projects:
 
-1) Get the RakNet at http://www.jenkinssoftware.com/ (tested with the 3.301 version)
-
-Configure the LibStatic project to:
-Multi-threaded (/MT or /MTd)
-
-2) Get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 83257 runs ok) (optional for while, look the USE_LLVM definition)
+1) Get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 83257 runs ok) (optional for while, look the USE_LLVM definition)
 
 cd llvm
 svn co http://llvm.org/svn/llvm-project/llvm/trunk .
@@ -42,7 +37,7 @@ llvm/bin/lib
 Build the ALL_BUILD project
 
 
-3) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
+2) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
 
 Put the follow dirs in your include path:
 
