@@ -1,3 +1,0 @@
-You need to get a copy of the RakNet library here:
-
-http://www.jenkinssoftware.com
