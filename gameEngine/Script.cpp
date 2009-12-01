@@ -32,7 +32,9 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "GenericScript.h"
 #include <math.h>
 
+#ifdef USE_RAKNET
 #include "../RakNet/Source/Rand.h"
+#endif
 
 #ifdef _WIN32_WCE
 #include "libce/include/time.h"
@@ -580,7 +582,7 @@ static val_t eic_getHardwareID(void)
 double rand(double t)
 {
 	//return t * (rand() / (double)RAND_MAX);
-	return t*frandomMT();
+	return t*randomMT()/4294967296.0;
 }
 
 double sign(double x)
@@ -1728,7 +1730,7 @@ static val_t eic_Connect(void)
     val_t v;
 	v.ival = 0;
 	
-	if(GameControl::Get()->getGameMode() && GameControl::Get()->GetRakPeer())
+	if(GameControl::Get()->getGameMode() && GameControl::Get()->GetNetWork())
 	{
 		char *ip = (char *)arg(0,getargs(),ptr_t).p;
 		int port = arg(1,getargs(),int);

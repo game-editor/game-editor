@@ -40,11 +40,20 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "RegionLoad.h"
 #include "dlmalloc.h"
 #include "PathFinder/GeoPathfinder.h"
+#include "cokus.cpp"
+#include "SHA1.cpp"
 
+#ifdef USE_RAKNET
 #include "../RakNet/Source/BitStream.h"
 #include "../RakNet/Source/StringTable.h"
 #include "../RakNet/Source/GetTime.h"
 #include "../RakNet/Source/NetworkIDManager.h"
+#else
+RakNetTime NetworkGetTime()
+{
+	return 0;
+}
+#endif
 
 extern NetworkIDManager networkIDManager;
 
@@ -5843,7 +5852,7 @@ void Actor::InitNetActor()
 	if(!flags.IsSet(FLAG_NETACTOR) || owner != UNASSIGNED_SYSTEM_ADDRESS || bInContructionCallBack || !GameControl::Get()->RequestNetworkStart()) return;
 
 	owner = GameControl::Get()->GetOwnerMachine();
-	ownerShipRequestTime = RakNet::GetTime();
+	ownerShipRequestTime = NetworkGetTime();
 
 #ifdef DEBUG
 	GLOUTPUT("+++ Actor::InitNetActor: %s, %s\n", getCloneName(), owner.ToString(true));
@@ -5996,7 +6005,7 @@ bool Actor::ReleaseOwnership()
 }
 
 
-void Actor::WriteState(RakNet::BitStream& out)
+void Actor::WriteState(BitStream& out)
 {
 	//Don't need to write the name end clone index
 
@@ -6029,7 +6038,7 @@ void Actor::WriteState(RakNet::BitStream& out)
 			sParentName = parent->getActorName();
 		}
 
-		RakNet::StringTable::Instance()->EncodeString(sParentName.c_str(), ACTOR_NAME, &out);
+		out.Write(sParentName);
 	}
 	else
 	{
@@ -6037,8 +6046,8 @@ void Actor::WriteState(RakNet::BitStream& out)
 	}
 
 	//Strings	
-	RakNet::StringTable::Instance()->EncodeString(actualSequence.c_str(), ACTOR_NAME, &out);	
-	RakNet::StringTable::Instance()->EncodeString(creatorCloneName.c_str(), ACTOR_NAME, &out);
+	out.Write(actualSequence);	
+	out.Write(creatorCloneName);
 	
 	//Others
 	out.Write(framesToAnim);	
@@ -6069,8 +6078,8 @@ void Actor::WriteState(RakNet::BitStream& out)
 		if(pathX) sPathX = pathX->getName();
 		if(pathY) sPathY = pathY->getName();
 
-		RakNet::StringTable::Instance()->EncodeString(sPathX.c_str(), ACTOR_NAME, &out);
-		RakNet::StringTable::Instance()->EncodeString(sPathY.c_str(), ACTOR_NAME, &out);
+		out.Write(sPathX);
+		out.Write(sPathY);
 
 		//Path finder
 		if(pathFinder)
@@ -6122,7 +6131,7 @@ void Actor::WriteState(RakNet::BitStream& out)
 						else if(time_remaining > timer->interval) time_remaining = timer->interval;
 
 						out.Write(true);
-						RakNet::StringTable::Instance()->EncodeString(p->name, ACTOR_NAME, &out);					
+						out.Write(p->name);					
 						out.Write(timer->interval);
 						out.Write(timer->count);
 						out.Write(time_remaining);
@@ -6140,7 +6149,7 @@ void Actor::WriteState(RakNet::BitStream& out)
 	out.Write((char *)scriptVars, structActorSize);
 }
 
-void Actor::ReadState(RakNet::BitStream& in)
+void Actor::ReadState(BitStream& in)
 {
 	KrImage *pImage = getImage();
 	int size, visible;
@@ -6161,7 +6170,7 @@ void Actor::ReadState(RakNet::BitStream& in)
 	if(bValue)
 	{
 		//Have parent
-		RakNet::StringTable::Instance()->DecodeString(name, ACTOR_NAME, &in);
+		in.Read(name);
 		Actor *parentActor = GameControl::Get()->GetActor(name, true, false, false);
 		SetParent(parentActor);
 	}
@@ -6172,11 +6181,11 @@ void Actor::ReadState(RakNet::BitStream& in)
 	
 
 	//Animation
-	RakNet::StringTable::Instance()->DecodeString(name, ACTOR_NAME, &in);
+	in.Read(name);
 	SetAnimation(name);
 
 	//Creator
-	RakNet::StringTable::Instance()->DecodeString(name, ACTOR_NAME, &in);
+	in.Read(name);
 	setCreator(name);
 	
 	//Others
@@ -6203,10 +6212,10 @@ void Actor::ReadState(RakNet::BitStream& in)
 		in.Read(pathDirectionX);
 		in.Read(pathDirectionY);
 
-		RakNet::StringTable::Instance()->DecodeString(name, ACTOR_NAME, &in);
+		in.Read(name);
 		if(strcmp(name, NO_SELECTION) != 0) pathX = GameControl::Get()->GetPath(name);
 
-		RakNet::StringTable::Instance()->DecodeString(name, ACTOR_NAME, &in);
+		in.Read(name);
 		if(strcmp(name, NO_SELECTION) != 0) pathY = GameControl::Get()->GetPath(name);
 
 		//Path finder
@@ -6235,7 +6244,7 @@ void Actor::ReadState(RakNet::BitStream& in)
 		{
 			int interval, count, time_remaining; 
 
-			RakNet::StringTable::Instance()->DecodeString(name, ACTOR_NAME, &in);
+			in.Read(name);
 			in.Read(interval);
 			in.Read(count);
 			in.Read(time_remaining);

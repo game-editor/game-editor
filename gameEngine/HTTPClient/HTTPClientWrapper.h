@@ -3,10 +3,7 @@
 #define HTTP_CLIENT_WRAPPER
 
 // Compilation mode
-
-#ifdef WIN32 //maks
-#	define _HTTP_BUILD_WIN32            // Set Windows Build flag
-#endif
+#define _HTTP_BUILD_WIN32            // Set Windows Build flag
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -25,26 +22,16 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <time.h>
-//#include <winsock.h>
+#include <winsock.h>
 
 // Generic types
-typedef unsigned int                 Uint32;
-typedef int                          Sint32;
+typedef unsigned int                 UINT32;
+typedef int                          INT32;
 
 // Sockets (Winsock wrapper)
 #define                              HTTP_ECONNRESET     (WSAECONNRESET) 
 #define                              HTTP_EINPROGRESS    (WSAEINPROGRESS)
 #define                              HTTP_EWOULDBLOCK    (WSAEWOULDBLOCK)
-
-#else //maks
-
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include <unistd.h>
-
 #endif
 
 
@@ -70,7 +57,7 @@ extern "C" {
     long                                HTTPWrapperGetUpTime            ();
     int                                 HTTPWrapperGetRandomeNumber     ();
     int                                 HTTPWrapperGetSocketError       (int s);
-    unsigned long                       HTTPWrapperGetHostByName        (char *name, Uint32 *address);
+    unsigned long                       HTTPWrapperGetHostByName        (char *name,UINT32 *address);
     int                                 HTTPWrapperShutDown             (int s,int in);  
     // SSL Wrapper prototypes
     int                                 HTTPWrapperSSLConnect           (int s,const struct sockaddr *name,int namelen,char *hostname);

@@ -12,12 +12,12 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-BOOL                    HTTPStrInsensitiveCompare   (CHAR *pSrc, CHAR* pDest, Uint32 nLength);
-BOOL                    HTTPStrSearch               (CHAR *pSrc, CHAR *pSearched, Uint32 nOffset, Uint32 nScope,HTTP_PARAM *HttpParam);
-CHAR                    HTTPStrExtract              (CHAR *pParam,Uint32 nOffset,CHAR Restore);
-CHAR*                   HTTPStrCaseStr              (const char *pSrc, Uint32 nSrcLength, const char *pFind);  //maks
-CHAR*                   HTTPStrGetToken             (CHAR *pSrc, Uint32 nSrcLength, CHAR *pDest, Uint32 *nDestLength);
-Uint32                  HTTPStrGetDigestToken       (HTTP_PARAM pParamSrc, CHAR *pSearched, HTTP_PARAM *pParamDest);
-Uint32                  HTTPStrHToL                 (CHAR * s); 
-CHAR*                   HTTPStrLToH                 (CHAR * dest,Uint32 nSrc);        
+BOOL                    HTTPStrInsensitiveCompare   (CHAR *pSrc, CHAR* pDest, UINT32 nLength);
+BOOL                    HTTPStrSearch               (CHAR *pSrc, CHAR *pSearched, UINT32 nOffset, UINT32 nScope,HTTP_PARAM *HttpParam);
+CHAR                    HTTPStrExtract              (CHAR *pParam,UINT32 nOffset,CHAR Restore);
+CHAR*					HTTPStrCaseStr				(const char *pSrc,UINT32 nSrcLength,const char *pFind);
+CHAR*                   HTTPStrGetToken             (CHAR *pSrc, UINT32 nSrcLength, CHAR *pDest, UINT32 *nDestLength);
+UINT32                  HTTPStrGetDigestToken       (HTTP_PARAM pParamSrc, CHAR *pSearched, HTTP_PARAM *pParamDest);
+UINT32                  HTTPStrHToL                 (CHAR * s); 
+CHAR*                   HTTPStrLToH                 (CHAR * dest,UINT32 nSrc);        
 #endif

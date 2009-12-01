@@ -13,9 +13,7 @@
 #ifndef _HTTPCLIENT_PROTOCOL_H_
 #define _HTTPCLIENT_PROTOCOL_H_
 
-#ifdef __cplusplus 
-extern "C" { 
-#endif
+
 
     // Global default sizes
 #define HTTP_CLIENT_MAX_URL_LENGTH          512         // Maximum length for an HTTP Url parameter
@@ -106,15 +104,12 @@ extern "C" {
     // Data structure that the caller can request at any time that will include some information regarding the session
     typedef struct _HTTP_CLIENT
     {
-        Uint32        HTTPStatusCode;                 // HTTP Status code (200 OK)
-        Uint32		    RequestBodyLengthSent;          // Total bytes sent (body only)
-        Uint32		    ResponseBodyLengthReceived;     // Total bytes received (body only)
-        Uint32		    TotalResponseBodyLength;        // as extracted from the “content-length" header
-        Uint32        HttpState;
+        UINT32        HTTPStatusCode;                 // HTTP Status code (200 OK)
+        UINT32		    RequestBodyLengthSent;          // Total bytes sent (body only)
+        UINT32		    ResponseBodyLengthReceived;     // Total bytes received (body only)
+        UINT32		    TotalResponseBodyLength;        // as extracted from the “content-length" header
+        UINT32        HttpState;
     } HTTP_CLIENT;
 
-#ifdef __cplusplus 
-}
-#endif
   
 #endif // _HTTPCLIENT_PROTOCOL_H_

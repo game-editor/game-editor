@@ -10,7 +10,7 @@ ___________________________________
 
 2. GAME EDITOR (GE) "INDIE" LICENSE 
 
-The Game Editor Indie License is intended to be used for games thats aren't GPL, by very small independent companies or individuals funding their own game development. Any other use is governed by the Game Editor Site Product License. The use of the Game Editor Engine, sources, binaries or IDE, herin after refered to as ("GEC"), is governed by this license agreement ("Agreement"). Please make copies for all those in your organization who need to be familiar with the license terms. 
+The Game Editor Indie License is intended to be used for games that aren't GPL, by very small independent companies or individuals funding their own game development. Any other use is governed by the Game Editor Site Product License. The use of the Game Editor Engine, sources, binaries or IDE, herin after refered to as ("GEC"), is governed by this license agreement ("Agreement"). Please make copies for all those in your organization who need to be familiar with the license terms. 
 
 Visit the online purchase page at http://game-editor.com/Buy 
 
@@ -47,7 +47,7 @@ The following restrictions apply to the creation of derivative works of GEC:
 
 2.5. THIRD PARTY SOURCE CODES AND COMPONENTS 
 
-Game Editor uses third party source codes and the modifications in the third party source codes are property of their respective owners. The third party components and codes used in Game Editor are property of their respective owners. Game Editor uses the RakNet network library. The use of RakNet in your game requires a separated license and you need to agree with the RakNet license to make multiplayer games or any other modifications thats uses RAkNet. Get the RakNet license at: http://www.jenkinssoftware.com 
+Game Editor uses third party source codes and the modifications in the third party source codes are property of their respective owners. The third party components and codes used in Game Editor are property of their respective owners. 
 
 2.6. TERMINATION. 
 

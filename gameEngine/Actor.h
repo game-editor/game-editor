@@ -41,7 +41,128 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "maksKyra.h"
 #include "dlmalloc.h"
 
+#ifdef USE_RAKNET
 #include "../RakNet/Source/RakPeerInterface.h"
+#else
+//Dummy classes, RakNet need to be replaced
+
+typedef U32 RakNetTime;
+#define UNASSIGNED_SYSTEM_ADDRESS (unsigned long)1
+#define ID_USER_PACKET_ENUM 128
+
+
+
+
+#define ID_DISCONNECTION_NOTIFICATION 6
+#define ID_CONNECTION_LOST 7
+#define ID_INVALID_PASSWORD 8
+#define ID_CONNECTION_REQUEST_ACCEPTED 9
+#define ID_CONNECTION_ATTEMPT_FAILED 10
+#define ID_NEW_INCOMING_CONNECTION 11
+#define ID_TIMESTAMP 12
+#define HIGH_PRIORITY 13
+#define RELIABLE_ORDERED 14
+#define ID_PONG 16
+
+
+
+class SystemAddress
+{
+public:
+	SystemAddress() {}
+	SystemAddress(unsigned long addr) {}
+
+	bool operator!=(const SystemAddress addr) const	{return false;}
+	bool operator==(const SystemAddress addr) const	{return false;}
+
+	void SetBinaryAddress(const char *) {}
+
+	const char *ToString(bool) const {return "";}
+
+	unsigned long binaryAddress;
+	unsigned short port;
+};
+
+
+
+
+class BitStream
+{
+public:
+	BitStream() {}
+	BitStream(int maxMessageSize) {}
+	BitStream(void *, int, bool) {}
+
+	void *GetData() {return NULL;};
+	void SetWriteOffset(int) {};
+
+	bool Write(U32) {return false;};
+	bool Write(U16) {return false;};
+	bool Write(U8) {return false;};
+	bool Write(long) {return false;};
+	bool Write(int) {return false;};
+	bool Write(double) {return false;};
+	bool Write(float) {return false;};
+	bool Write(bool) {return false;};
+	bool Write(gedString &) {return false;};
+	bool Write(const char *) {return false;};
+	bool Write(const char*, int) {return false;};
+	bool Write(SystemAddress) {return false;};
+
+	bool Read(U32&) {return false;};
+	bool Read(U16&) {return false;};
+	bool Read(U8&) {return false;};
+	bool Read(long&) {return false;};
+	bool Read(int&) {return false;};
+	bool Read(double&) {return false;};
+	bool Read(float&) {return false;};
+	bool Read(bool&) {return false;};
+	bool Read(gedString &) {return false;};
+	bool Read(char *) {return false;};
+	bool Read(char*, int) {return false;};
+	bool Read(SystemAddress&) {return false;};
+};
+
+class Packet
+{
+public:
+	SystemAddress systemAddress;
+	char *data;
+	int length;
+};
+
+class NetworkIDManager
+{
+public:
+	SystemAddress GetExternalSystemAddress() {return UNASSIGNED_SYSTEM_ADDRESS;}
+	void SetExternalSystemAddress(SystemAddress) {}
+	void SetIsNetworkIDAuthority(bool) {};
+};
+
+RakNetTime NetworkGetTime();
+
+class gedNetwork
+{
+public:
+	bool Connect(const char *host, int remotePort, int, int) {return false;}
+	void CloseConnection(SystemAddress, bool) {}
+	int NumberOfConnections() {return 0;}
+	void Ping(SystemAddress) {}
+	bool Send(BitStream *out, int, int, int, SystemAddress, bool) {return false;}
+
+	int GetNumberOfAddresses() {return 0;}
+	char *GetLocalIP(int) {return NULL;}
+	SystemAddress GetExternalID(SystemAddress) {SystemAddress addr; return addr;}
+
+	Packet *Receive() {return NULL;}
+	void DeallocatePacket(Packet *) {}
+};
+
+void seedMT(unsigned long seed);
+unsigned long randomMT(void);
+
+
+#endif
 
 #ifndef STAND_ALONE_GAME
 #	define ACTOR_USES_VIRTUAL_FUNCTIONS //Use only in the editor. Tested with "collision benchmark.ged"
@@ -664,8 +785,8 @@ public:
 	const RakNetTime &GetOwnershipTimestamp() {return ownerShipRequestTime;}
 	bool RequestActorOwnership(const SystemAddress& newOwner, const RakNetTime &newRequestTime);
 	bool ReleaseOwnership();
-	void WriteState(RakNet::BitStream& out);
-	void ReadState(RakNet::BitStream& in);
+	void WriteState(BitStream& out);
+	void ReadState(BitStream& in);
 	//////////////////////////////////////////////////////////
 
 	static void setInContructionCallBack(bool value) {bInContructionCallBack = value;}

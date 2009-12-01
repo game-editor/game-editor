@@ -106,8 +106,8 @@
 
 #include "uuid.h"
 #include "SDL.h"
-#include "../RakNet/Source/Rand.h"
-#include "../RakNet/Source/SHA1.h"
+#include "SHA1.h"
+
 
 #ifndef WIN32
 #include <sys/time.h>

@@ -71,7 +71,6 @@ all:
 
 	$(MAKE) -f makefile.freetype -C SDL/SDL_ttf/VisualC/FreeType/builds/win32/visualc 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 
-	$(MAKE) -f makefile.raknet -C RakNet/ 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.eic -C gameEngine/EiC/Visual/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.kyra -C kyra/engine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.gengine -C gameEngine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
@@ -93,7 +92,6 @@ clean:
 
 	$(MAKE) -f makefile.freetype -C SDL/SDL_ttf/VisualC/FreeType/builds/win32/visualc clean
 
-	$(MAKE) -f makefile.raknet -C RakNet/ clean
 	$(MAKE) -f makefile.eic -C gameEngine/EiC/Visual/ clean
 	$(MAKE) -f makefile.kyra -C kyra/engine/ clean
 	$(MAKE) -f makefile.gengine -C gameEngine/ clean

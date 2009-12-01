@@ -2,16 +2,12 @@
 #ifndef _HTTP_CLIENT
 #define _HTTP_CLIENT
 
-
-
 #include "HTTPClientWrapper.h"
-#include "httpclientcommon.h"
+#include "HTTPClientCommon.h"
 
 #ifdef __cplusplus 
 extern "C" { 
 #endif
-
-	class TCPInterface;
 
     ///////////////////////////////////////////////////////////////////////////////
     //
@@ -57,7 +53,6 @@ extern "C" {
 #define HTTP_CLIENT_DEFAULT_TIMEOUT         30          // Default timeout in seconds
 #define HTTP_CLIENT_DEFAULT_KEEP_ALIVE      30          // Default Keep-alive value in seconds
 #define HTTP_CLIENT_DEFAULT_DIGEST_AUTH     "MD5"       // This is for bypassing a known bug in AMT05..
-#define HTTP_CLIENT_DEFAULT_PROXY_AUTH      1           // Basic 
 
 #define HTTP_CLIENT_CRLF                    "\r\n"      // End of line macro
 #define HTTP_CLIENT_CRLFX2                  "\r\n\r\n"  // Double End of line macro
@@ -92,7 +87,7 @@ extern "C" {
 
 
 #ifdef _HTTP_DEBUGGING_
-    typedef VOID _stdcall E_HTTPDebug(const char *,const char*,Uint32,char *,...); // HTTPDebug hook function
+    typedef VOID _stdcall E_HTTPDebug(const char *,const char*,UINT32,char *,...); // HTTPDebug hook function
 #endif
 
 
@@ -109,7 +104,7 @@ extern "C" {
     {
 
         CHAR                *pParam;
-        Uint32              nLength;
+        UINT32              nLength;
 
     } HTTP_PARAM;
 
@@ -117,18 +112,13 @@ extern "C" {
     typedef struct _HTTP_CONNECTION
     {
 
-        //fd_set              FDRead;             // socket read event
-        //fd_set              FDWrite;            // socket write event 
-        //fd_set              FDError;            // socket error event
-        //Sint32               HttpSocket;         // The underling socket
-
-        Uint32              HttpStartTime;      // Time stamp for the session
-        Uint32              HttpClientPort;     // For client side binding
+        fd_set              FDRead;             // socket read event
+        fd_set              FDWrite;            // socket write event 
+        fd_set              FDError;            // socket error event
+        INT32               HttpSocket;         // The underling socket
+        UINT32              HttpStartTime;      // Time stamp for the session
+        UINT32              HttpClientPort;     // For client side binding
         BOOL				TlsNego;            // TLS negotiation flag
-
-		TCPInterface *tcpInterface;
-		SystemAddress ServerAddress;
-		HTTP_PARAM recBuf;
 
     } HTTP_CONNECTION;
 
@@ -164,9 +154,9 @@ extern "C" {
     typedef struct _HTTP_HEADERS_INFO
     {
         HTTP_PARAM           HttpRedirectURL;       // Stores the redirection URL if we got a 301 or 303 return code
-        Uint32               nHTTPStatus;           // the HTTP status code (200 401 407 act')
-        Uint32               nHTTPContentLength;    // the Content length if specified of the returned data
-        Uint32               nHTTPPostContentLength;// the Content-Length of the POSTed data (if known)
+        UINT32               nHTTPStatus;           // the HTTP status code (200 401 407 act')
+        UINT32               nHTTPContentLength;    // the Content length if specified of the returned data
+        UINT32               nHTTPPostContentLength;// the Content-Length of the POSTed data (if known)
         BOOL                 Connection;            // True = Keep alive or undefined, False = Closed
         BOOL                 ValidHeaders;          // a flag that indicates if the incoming header ware parsed OK and found to be valid
         BOOL                 HaveCredentials;       // a flag that indicates if we have credentials for the session
@@ -179,7 +169,7 @@ extern "C" {
     {   
 
         HTTP_PARAM          AuthHeader;             // the pointer and length of the authentication header
-        Uint32              HTTP_AUTH_SCHEMA;       // Its schema (could be any of the supported)
+        UINT32              HTTP_AUTH_SCHEMA;       // Its schema (could be any of the supported)
 
     }HTTP_AUTH_HEADER;
     // Proxy related data
@@ -209,15 +199,15 @@ extern "C" {
     typedef struct _HTTP_COUNTERS
     {   
 
-        Uint32              nRecivedHeaderLength;   // Bytes count of the incoming header
-        Uint32              nRecivedBodyLength;     // Bytes count of the incoming body length
-        Uint32              nRecivedChunkLength;    // The next chunk length in bytes
-        Uint32              nBytesToNextChunk;      // How many bytes we have to read until we can expect the next chunk
-        Uint32              nActionStartTime;       // Operation start time
-        Uint32              nActionTimeout;         // Timeout for the session
-        Uint32              nSentChunks;            // Count of sent chunks
-        Uint32              nSentBodyBytes;         // Count of body bytes that ware sent
-        Uint32              nSentHeaderBytes;       // Count of header bytes thhat ware sent
+        UINT32              nRecivedHeaderLength;   // Bytes count of the incoming header
+        UINT32              nRecivedBodyLength;     // Bytes count of the incoming body length
+        UINT32              nRecivedChunkLength;    // The next chunk length in bytes
+        UINT32              nBytesToNextChunk;      // How many bytes we have to read until we can expect the next chunk
+        UINT32              nActionStartTime;       // Operation start time
+        UINT32              nActionTimeout;         // Timeout for the session
+        UINT32              nSentChunks;            // Count of sent chunks
+        UINT32              nSentBodyBytes;         // Count of body bytes that ware sent
+        UINT32              nSentHeaderBytes;       // Count of header bytes thhat ware sent
 
     }HTTP_COUNTERS;
 
@@ -233,8 +223,8 @@ extern "C" {
         HTTP_CREDENTIALS    HttpCredentials;  
         HTTP_CONNECTION     HttpConnection;
         HTTP_COUNTERS       HttpCounters;
-        Uint32              HttpState;
-        Uint32              HttpFlags;
+        UINT32              HttpState;
+        UINT32              HttpFlags;
 #ifdef _HTTP_DEBUGGING_
         E_HTTPDebug         *pDebug;
 #endif
@@ -242,8 +232,8 @@ extern "C" {
 
 
     // HTTP Type Definitions 
-    typedef Uint32          HTTP_SESSION_HANDLE;
-    typedef Uint32          HTTP_CLIENT_SESSION_FLAGS;
+    typedef UINT32          HTTP_SESSION_HANDLE;
+    typedef UINT32          HTTP_CLIENT_SESSION_FLAGS;
 
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -255,26 +245,26 @@ extern "C" {
 
 
     HTTP_SESSION_HANDLE     HTTPClientOpenRequest         (HTTP_CLIENT_SESSION_FLAGS Flags);
-    Uint32                  HTTPClientCloseRequest        (HTTP_SESSION_HANDLE *pSession);
-    Uint32                  HTTPClientSetLocalConnection  (HTTP_SESSION_HANDLE pSession, Uint32 nPort);
-    Uint32                  HTTPClientSetAuth             (HTTP_SESSION_HANDLE pSession, HTTP_AUTH_SCHEMA AuthSchema, void *pReserved);
-    Uint32                  HTTPClientSetCredentials      (HTTP_SESSION_HANDLE pSession, CHAR *pUserName, CHAR *pPassword);
-    Uint32                  HTTPClientSetProxy            (HTTP_SESSION_HANDLE pSession, CHAR *pProxyName, UINT16 nPort, CHAR *pUserName, CHAR *pPassword);
-    Uint32                  HTTPClientSetVerb             (HTTP_SESSION_HANDLE pSession, HTTP_VERB HttpVerb);
-    Uint32                  HTTPClientAddRequestHeaders   (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderName, CHAR *pHeaderData, BOOL nInsert);
-    Uint32                  HTTPClientSendRequest         (HTTP_SESSION_HANDLE pSession, const char *pUrl, VOID *pData, Uint32 nDataLength, BOOL TotalLength, Uint32 nTimeout,Uint32 nClientPort);
-    Uint32                  HTTPClientWriteData           (HTTP_SESSION_HANDLE pSession, VOID *pBuffer, Uint32 nBufferLength, Uint32 nTimeout);
-    Uint32                  HTTPClientRecvResponse        (HTTP_SESSION_HANDLE pSession, Uint32 nTimeout);
-    Uint32                  HTTPClientReadData            (HTTP_SESSION_HANDLE pSession, VOID *pBuffer, Uint32 nBytesToRead, Uint32 nTimeout, Uint32 *nBytesRecived);
-    Uint32                  HTTPClientGetInfo             (HTTP_SESSION_HANDLE pSession, HTTP_CLIENT *HTTPClient);
+    UINT32                  HTTPClientCloseRequest        (HTTP_SESSION_HANDLE *pSession);
+    UINT32                  HTTPClientSetLocalConnection  (HTTP_SESSION_HANDLE pSession, UINT32 nPort);
+    UINT32                  HTTPClientSetAuth             (HTTP_SESSION_HANDLE pSession, HTTP_AUTH_SCHEMA AuthSchema, void *pReserved);
+    UINT32                  HTTPClientSetCredentials      (HTTP_SESSION_HANDLE pSession, CHAR *pUserName, CHAR *pPassword);
+    UINT32                  HTTPClientSetProxy            (HTTP_SESSION_HANDLE pSession, CHAR *pProxyName, UINT16 nPort, CHAR *pUserName, CHAR *pPassword);
+    UINT32                  HTTPClientSetVerb             (HTTP_SESSION_HANDLE pSession, HTTP_VERB HttpVerb);
+    UINT32                  HTTPClientAddRequestHeaders   (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderName, CHAR *pHeaderData, BOOL nInsert);
+    UINT32                  HTTPClientSendRequest         (HTTP_SESSION_HANDLE pSession, const CHAR *pUrl, VOID *pData, UINT32 nDataLength, BOOL TotalLength, UINT32 nTimeout,UINT32 nClientPort);
+    UINT32                  HTTPClientWriteData           (HTTP_SESSION_HANDLE pSession, VOID *pBuffer, UINT32 nBufferLength, UINT32 nTimeout);
+    UINT32                  HTTPClientRecvResponse        (HTTP_SESSION_HANDLE pSession, UINT32 nTimeout);
+    UINT32                  HTTPClientReadData            (HTTP_SESSION_HANDLE pSession, VOID *pBuffer, UINT32 nBytesToRead, UINT32 nTimeout, UINT32 *nBytesRecived);
+    UINT32                  HTTPClientGetInfo             (HTTP_SESSION_HANDLE pSession, HTTP_CLIENT *HTTPClient);
 
-    Uint32                  HTTPClientFindFirstHeader     (HTTP_SESSION_HANDLE pSession, CHAR *pSearchClue,CHAR *pHeaderBuffer, Uint32 *nLength);
-    Uint32                  HTTPClientGetNextHeader       (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderBuffer, Uint32 *nLength);
-    Uint32                  HTTPClientFindCloseHeader     (HTTP_SESSION_HANDLE pSession);
+    UINT32                  HTTPClientFindFirstHeader     (HTTP_SESSION_HANDLE pSession, CHAR *pSearchClue,CHAR *pHeaderBuffer, UINT32 *nLength);
+    UINT32                  HTTPClientGetNextHeader       (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderBuffer, UINT32 *nLength);
+    UINT32                  HTTPClientFindCloseHeader     (HTTP_SESSION_HANDLE pSession);
 
 
 #ifdef _HTTP_DEBUGGING_
-    Uint32                  HTTPClientSetDebugHook        (HTTP_SESSION_HANDLE pSession,E_HTTPDebug *pDebug);
+    UINT32                  HTTPClientSetDebugHook        (HTTP_SESSION_HANDLE pSession,E_HTTPDebug *pDebug);
 #endif
 
 
@@ -285,27 +275,27 @@ extern "C" {
     //
     ///////////////////////////////////////////////////////////////////////////////
 
-    Uint32                  HTTPIntrnResizeBuffer         (P_HTTP_SESSION pHTTPSession, Uint32 nNewSize);
-    Uint32                  HTTPIntrnSetURL               (P_HTTP_SESSION pHTTPSession, const char *pUrl,Uint32 nUrlLength);
-    Uint32                  HTTPIntrnConnectionClose      (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnConnectionOpen       (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnGetRemoteHeaders     (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnGetRemoteChunkLength (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnSend                 (P_HTTP_SESSION pHTTPSession, CHAR *pData,Uint32 *nLength);
-    Uint32                  HTTPIntrnRecv                 (P_HTTP_SESSION pHTTPSession, CHAR *pData,Uint32 *nLength,BOOL PeekOnly);
-    Uint32                  HTTPIntrnParseAuthHeader      (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnAuthHandler          (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnAuthSendDigest       (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnAuthSendBasic        (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnAuthenticate         (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnHeadersAdd           (P_HTTP_SESSION pHTTPSession, CHAR *pHeaderName, Uint32 nNameLength, CHAR *pHeaderData, Uint32 nDataLength);
-    Uint32                  HTTPIntrnHeadersRemove        (P_HTTP_SESSION pHTTPSession, CHAR *pHeaderName);
-    Uint32                  HTTPIntrnHeadersReceive       (P_HTTP_SESSION pHTTPSession, Uint32 nTimeout);
-    Uint32                  HTTPIntrnHeadersSend          (P_HTTP_SESSION pHTTPSession, HTTP_VERB HttpVerb);
-    Uint32                  HTTPIntrnHeadersParse         (P_HTTP_SESSION pHTTPSession);
-    Uint32                  HTTPIntrnHeadersFind          (P_HTTP_SESSION pHTTPSession, CHAR *pHeaderName, HTTP_PARAM *pParam,BOOL IncommingHeaders,Uint32 nOffset);
-    Uint32                  HTTPIntrnSessionReset         (P_HTTP_SESSION pHTTPSession, BOOL EntireSession);
-    Uint32                  HTTPIntrnSessionGetUpTime     (VOID);
+    UINT32                  HTTPIntrnResizeBuffer         (P_HTTP_SESSION pHTTPSession, UINT32 nNewSize);
+    UINT32                  HTTPIntrnSetURL               (P_HTTP_SESSION pHTTPSession, const CHAR *pUrl,UINT32 nUrlLength);
+    UINT32                  HTTPIntrnConnectionClose      (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnConnectionOpen       (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnGetRemoteHeaders     (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnGetRemoteChunkLength (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnSend                 (P_HTTP_SESSION pHTTPSession, CHAR *pData,UINT32 *nLength);
+    UINT32                  HTTPIntrnRecv                 (P_HTTP_SESSION pHTTPSession, CHAR *pData,UINT32 *nLength,BOOL PeekOnly);
+    UINT32                  HTTPIntrnParseAuthHeader      (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnAuthHandler          (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnAuthSendDigest       (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnAuthSendBasic        (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnAuthenticate         (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnHeadersAdd           (P_HTTP_SESSION pHTTPSession, CHAR *pHeaderName, UINT32 nNameLength, CHAR *pHeaderData, UINT32 nDataLength);
+    UINT32                  HTTPIntrnHeadersRemove        (P_HTTP_SESSION pHTTPSession, CHAR *pHeaderName);
+    UINT32                  HTTPIntrnHeadersReceive       (P_HTTP_SESSION pHTTPSession, UINT32 nTimeout);
+    UINT32                  HTTPIntrnHeadersSend          (P_HTTP_SESSION pHTTPSession, HTTP_VERB HttpVerb);
+    UINT32                  HTTPIntrnHeadersParse         (P_HTTP_SESSION pHTTPSession);
+    UINT32                  HTTPIntrnHeadersFind          (P_HTTP_SESSION pHTTPSession, CHAR *pHeaderName, HTTP_PARAM *pParam,BOOL IncommingHeaders,UINT32 nOffset);
+    UINT32                  HTTPIntrnSessionReset         (P_HTTP_SESSION pHTTPSession, BOOL EntireSession);
+    UINT32                  HTTPIntrnSessionGetUpTime     (VOID);
     BOOL                    HTTPIntrnSessionEvalTimeout   (P_HTTP_SESSION pHTTPSession);
 
 #ifdef __cplusplus 

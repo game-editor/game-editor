@@ -15,7 +15,7 @@ typedef char HASHHEX[HASHHEXLEN+1];
 typedef unsigned long uint32;
 
 // Base 64 Related 
-#define DECODE64(c)  (HTTPWrapperIsAscii(c) ? base64val[c] : BAD)
+#define DECODE64(c)  (isascii(c) ? base64val[c] : BAD)
 #define BAD     -1
 
 static const char base64digits[] =

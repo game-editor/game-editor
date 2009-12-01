@@ -3,7 +3,7 @@
 //
 // Module Name:                                                                
 //   HTTPClient.c                                                              
-//   http://chttpclient.sourceforge.net/                                                                             
+//                                                                             
 // Abstract: Partially Implements the client side of the HTTP 1.1 Protocol as  
 //           Defined in RFC 2616,2617                                          
 // Platform: Any that supports standard C calls and Berkeley sockets           
@@ -17,10 +17,6 @@
 //           The HTTP counters are not 100% correct (will be fixed)            
 //
 ///////////////////////////////////////////////////////////////////////////////
-
-#include "../../RakNet/Source/TCPInterface.h"
-#include "../../RakNet/Source/GetTime.h"
-#include "../../RakNet/Source/RakSleep.h"
 
 #include "HTTPClient.h"
 #include "HTTPClientAuth.h"     // Crypto support (Digest, MD5)
@@ -37,7 +33,7 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientSetLocalConnection  (HTTP_SESSION_HANDLE pSession, Uint32 nPort)
+UINT32 HTTPClientSetLocalConnection  (HTTP_SESSION_HANDLE pSession, UINT32 nPort)
 {
     
     return 0;
@@ -57,7 +53,7 @@ HTTP_SESSION_HANDLE  HTTPClientOpenRequest (HTTP_CLIENT_SESSION_FLAGS Flags)
     
     
     P_HTTP_SESSION pHTTPSession = NULL;         // Handle to the session pointer
-    Uint32         nAllocationSize;             // Size of the dynamically allocated buffer
+    UINT32         nAllocationSize;             // Size of the dynamically allocated buffer
     
     // Attempt to allocate the buffer
     pHTTPSession = (P_HTTP_SESSION)malloc(ALIGN(sizeof(HTTP_SESSION)));
@@ -70,8 +66,6 @@ HTTP_SESSION_HANDLE  HTTPClientOpenRequest (HTTP_CLIENT_SESSION_FLAGS Flags)
     }
     // Reset the allocated space to zeros
     memset(pHTTPSession,0x00,sizeof(HTTP_SESSION));
-
-		
     
     // Allocate space for the incoming and outgoing headers
     // Check if the headers buffer is resizable
@@ -103,9 +97,9 @@ HTTP_SESSION_HANDLE  HTTPClientOpenRequest (HTTP_CLIENT_SESSION_FLAGS Flags)
     pHTTPSession->HttpHeaders.HeadersBuffer.nLength = nAllocationSize;
     
     // Set default values in the session structure
-    HTTPClientSetVerb((Uint32)pHTTPSession,(HTTP_VERB)HTTP_CLIENT_DEFAULT_VERB);    // Default HTTP verb
+    HTTPClientSetVerb((UINT32)pHTTPSession,(HTTP_VERB)HTTP_CLIENT_DEFAULT_VERB);    // Default HTTP verb
     pHTTPSession->HttpUrl.nPort             = HTTP_CLIENT_DEFAULT_PORT;             // Default TCP port
-    //pHTTPSession->HttpConnection.HttpSocket = HTTP_INVALID_SOCKET;                       // Invalidate the socket
+    pHTTPSession->HttpConnection.HttpSocket = HTTP_INVALID_SOCKET;                       // Invalidate the socket
     // Set the outgoing headers pointers
     pHTTPSession->HttpHeaders.HeadersOut.pParam = pHTTPSession->HttpHeaders.HeadersBuffer.pParam;
     // Set our state
@@ -116,7 +110,7 @@ HTTP_SESSION_HANDLE  HTTPClientOpenRequest (HTTP_CLIENT_SESSION_FLAGS Flags)
     
     // Reset the status
     pHTTPSession->HttpHeadersInfo.nHTTPStatus = 0;
-    // Return an allocated session pointer (cast to Uint32 first)
+    // Return an allocated session pointer (cast to UINT32 first)
     return (HTTP_SESSION_HANDLE)pHTTPSession;
 }
 
@@ -130,7 +124,7 @@ HTTP_SESSION_HANDLE  HTTPClientOpenRequest (HTTP_CLIENT_SESSION_FLAGS Flags)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32  HTTPClientReset (HTTP_SESSION_HANDLE pSession)
+UINT32  HTTPClientReset (HTTP_SESSION_HANDLE pSession)
 {
     
     P_HTTP_SESSION pHTTPSession = NULL;
@@ -155,7 +149,7 @@ Uint32  HTTPClientReset (HTTP_SESSION_HANDLE pSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientCloseRequest (HTTP_SESSION_HANDLE *pSession)
+UINT32 HTTPClientCloseRequest (HTTP_SESSION_HANDLE *pSession)
 {
     P_HTTP_SESSION pHTTPSession = NULL;
     
@@ -194,7 +188,7 @@ Uint32 HTTPClientCloseRequest (HTTP_SESSION_HANDLE *pSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32  HTTPClientSetDebugHook (HTTP_SESSION_HANDLE pSession,
+UINT32  HTTPClientSetDebugHook (HTTP_SESSION_HANDLE pSession,
                                 E_HTTPDebug *pDebug)  // [IN] Function pointer to the the caller debugging function)
 {
     
@@ -229,7 +223,7 @@ Uint32  HTTPClientSetDebugHook (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32  HTTPClientSetVerb (HTTP_SESSION_HANDLE pSession,
+UINT32  HTTPClientSetVerb (HTTP_SESSION_HANDLE pSession,
                            HTTP_VERB HttpVerb)  // [IN] Http verb (GET POST HEAD act')
 {
     
@@ -246,7 +240,7 @@ Uint32  HTTPClientSetVerb (HTTP_SESSION_HANDLE pSession,
 #ifdef _HTTP_DEBUGGING_
     if(pHTTPSession->pDebug)
     {
-        pHTTPSession->pDebug("HTTPClientSetVerb",NULL,0,"Selected Verb is %d",(Sint32)HttpVerb);
+        pHTTPSession->pDebug("HTTPClientSetVerb",NULL,0,"Selected Verb is %d",(INT32)HttpVerb);
     }
 #endif
     
@@ -286,7 +280,7 @@ Uint32  HTTPClientSetVerb (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32  HTTPClientSetAuth (HTTP_SESSION_HANDLE pSession,
+UINT32  HTTPClientSetAuth (HTTP_SESSION_HANDLE pSession,
                            HTTP_AUTH_SCHEMA AuthSchema,  // The type of the authentication to perform
                            void *pReserved)
 {
@@ -301,7 +295,7 @@ Uint32  HTTPClientSetAuth (HTTP_SESSION_HANDLE pSession,
 #ifdef _HTTP_DEBUGGING_
     if(pHTTPSession->pDebug)
     {
-        pHTTPSession->pDebug("HTTPClientSetAuth",NULL,0,"Selected authentication is %d",(Sint32)AuthSchema);
+        pHTTPSession->pDebug("HTTPClientSetAuth",NULL,0,"Selected authentication is %d",(INT32)AuthSchema);
     }
 #endif
     
@@ -336,7 +330,7 @@ Uint32  HTTPClientSetAuth (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientSetProxy (HTTP_SESSION_HANDLE pSession,
+UINT32 HTTPClientSetProxy (HTTP_SESSION_HANDLE pSession,
                            CHAR *pProxyHost,        // [IN] Null terminated string containing the host name
                            UINT16 nPort,            // [IN] The proxy port number
                            CHAR *pUserName,         // [IN] User name for proxy authentication (can be null)
@@ -377,7 +371,7 @@ Uint32 HTTPClientSetProxy (HTTP_SESSION_HANDLE pSession,
     // Set the proxy auyjentication schema
     if(pPassword && pUserName)
     {
-        pHTTPSession->HttpProxy.ProxyAuthSchema = (HTTP_AUTH_SCHEMA)HTTP_CLIENT_DEFAULT_PROXY_AUTH;   
+        pHTTPSession->HttpProxy.ProxyAuthSchema = AuthSchemaBasic;   
     }
     return HTTP_CLIENT_SUCCESS;
 }
@@ -391,11 +385,11 @@ Uint32 HTTPClientSetProxy (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientSetCredentials (HTTP_SESSION_HANDLE pSession, 
+UINT32 HTTPClientSetCredentials (HTTP_SESSION_HANDLE pSession, 
                                  CHAR *pUserName,   // [IN] Null terminated string containing the sessions user name
                                  CHAR *pPassword)   // [IN] Null terminated string containing the sessions password
 {
-    Uint32  nLength;
+    UINT32  nLength;
     P_HTTP_SESSION pHTTPSession = NULL;
     
     // Cast the handle to our internal structure and check the pointers validity
@@ -438,14 +432,14 @@ Uint32 HTTPClientSetCredentials (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientAddRequestHeaders (HTTP_SESSION_HANDLE pSession,
+UINT32 HTTPClientAddRequestHeaders (HTTP_SESSION_HANDLE pSession,
                                     CHAR *pHeaderName,      // [IN] The Headers name
                                     CHAR *pHeaderData,      // [IN] The headers data
                                     BOOL nInsert)           // [IN] Reserved could be any
 {
     
-    Uint32  nRetCode;
-    Uint32  nHeaderLength,nDataLength;
+    UINT32  nRetCode;
+    UINT32  nHeaderLength,nDataLength;
     P_HTTP_SESSION pHTTPSession = NULL;
     
     // Cast the handle to our internal structure and check the pointers validity
@@ -483,18 +477,18 @@ Uint32 HTTPClientAddRequestHeaders (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientSendRequest (HTTP_SESSION_HANDLE pSession,
-                              const char *pUrl,           //  [IN] The requested URL
+UINT32 HTTPClientSendRequest (HTTP_SESSION_HANDLE pSession,
+                              const CHAR *pUrl,           //  [IN] The requested URL
                               VOID *pData,          //  [IN] Data to post to the server
-                              Uint32 nDataLength,   //  [IN] Length of posted data
+                              UINT32 nDataLength,   //  [IN] Length of posted data
                               BOOL TotalLength,     //  [IN] 
-                              Uint32 nTimeout,      //  [IN] Operation timeout
-                              Uint32 nClientPort)   //  [IN] Client side port 0 for none
+                              UINT32 nTimeout,      //  [IN] Operation timeout
+                              UINT32 nClientPort)   //  [IN] Client side port 0 for none
 {
     
-    Uint32          nRetCode;               // Function call return code
-    Uint32          nBytes;                 // Bytes counter (socket operations)
-    Uint32          nUrlLength;             // Length of the given Url
+    UINT32          nRetCode;               // Function call return code
+    UINT32          nBytes;                 // Bytes counter (socket operations)
+    UINT32          nUrlLength;             // Length of the given Url
     P_HTTP_SESSION  pHTTPSession = NULL;    // Session pointer
     CHAR            ContentLength[32];
     CHAR            *pPtr;                  // Content length (string conversion)
@@ -632,11 +626,10 @@ Uint32 HTTPClientSendRequest (HTTP_SESSION_HANDLE pSession,
         if(pHTTPSession->HttpHeadersInfo.Connection == FALSE)
         {
             // Gracefully close the connection and set the socket as invalid
-            if(pHTTPSession->HttpConnection.tcpInterface)
+            if(pHTTPSession->HttpConnection.HttpSocket != HTTP_INVALID_SOCKET)
             {
                 HTTPIntrnConnectionClose(pHTTPSession);
             }
-
             // Connect to the remote server (or proxy)
             nRetCode = HTTPIntrnConnectionOpen(pHTTPSession);
             if(nRetCode != HTTP_CLIENT_SUCCESS)
@@ -740,11 +733,11 @@ Uint32 HTTPClientSendRequest (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientRecvResponse (HTTP_SESSION_HANDLE pSession,
-                               Uint32 nTimeout) // [IN] Timeout for the operation
+UINT32 HTTPClientRecvResponse (HTTP_SESSION_HANDLE pSession,
+                               UINT32 nTimeout) // [IN] Timeout for the operation
 {
     
-    Uint32          nRetCode;               // Function return code
+    UINT32          nRetCode;               // Function return code
     P_HTTP_SESSION  pHTTPSession = NULL;    // Session pointer
     
     
@@ -776,14 +769,14 @@ Uint32 HTTPClientRecvResponse (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientWriteData (HTTP_SESSION_HANDLE pSession, 
+UINT32 HTTPClientWriteData (HTTP_SESSION_HANDLE pSession, 
                             VOID *pBuffer, 
-                            Uint32 nBufferLength,
-                            Uint32 nTimeout)
+                            UINT32 nBufferLength,
+                            UINT32 nTimeout)
 {
     
-    Uint32          nRetCode     = HTTP_CLIENT_SUCCESS;
-    Uint32          nBytes;
+    UINT32          nRetCode     = HTTP_CLIENT_SUCCESS;
+    UINT32          nBytes;
     CHAR            Chunk[HTTP_CLIENT_MAX_CHUNK_HEADER];
     CHAR            *pChunkHeaderPtr;
     
@@ -878,16 +871,16 @@ Uint32 HTTPClientWriteData (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
                             
-                            Uint32 HTTPClientReadData (HTTP_SESSION_HANDLE pSession,
+                            UINT32 HTTPClientReadData (HTTP_SESSION_HANDLE pSession,
                                 VOID *pBuffer,           // [IN OUT] a pointer to a buffer that will be filled with the servers response
-                                Uint32 nBytesToRead,     // [IN]     The size of the buffer (numbers of bytes to read)
-                                Uint32 nTimeout,         // [IN]     operation timeout in seconds
-                                Uint32 *nBytesRecived)   // [OUT]    Count of the bytes that ware received in this operation
+                                UINT32 nBytesToRead,     // [IN]     The size of the buffer (numbers of bytes to read)
+                                UINT32 nTimeout,         // [IN]     operation timeout in seconds
+                                UINT32 *nBytesRecived)   // [OUT]    Count of the bytes that ware received in this operation
                             {
                                 
-                                Uint32          nBytes          = 0;
-                                Uint32          nRetCode        = 0 ;
-                                Sint32           nProjectedBytes = 0; // Should support negative numbers
+                                UINT32          nBytes          = 0;
+                                UINT32          nRetCode        = 0 ;
+                                INT32           nProjectedBytes = 0; // Should support negative numbers
                                 CHAR            *pNullPtr;
                                 BOOL            EndOfStream = FALSE;
                                 
@@ -958,7 +951,7 @@ Uint32 HTTPClientWriteData (HTTP_SESSION_HANDLE pSession,
                                     // Length of the projected buffer 
                                     nProjectedBytes = pHTTPSession->HttpCounters.nRecivedBodyLength +  nBytes;
                                     // If we are going to read more then the known content length then..
-                                    if(nProjectedBytes >= (Sint32)pHTTPSession->HttpHeadersInfo.nHTTPContentLength)
+                                    if(nProjectedBytes >= (INT32)pHTTPSession->HttpHeadersInfo.nHTTPContentLength)
                                     {
                                         // Reduce the received bytes count to the correct size
                                         nBytes = pHTTPSession->HttpHeadersInfo.nHTTPContentLength - pHTTPSession->HttpCounters.nRecivedBodyLength;
@@ -1022,7 +1015,7 @@ Uint32 HTTPClientWriteData (HTTP_SESSION_HANDLE pSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientGetInfo (HTTP_SESSION_HANDLE pSession, HTTP_CLIENT *HTTPClient)
+UINT32 HTTPClientGetInfo (HTTP_SESSION_HANDLE pSession, HTTP_CLIENT *HTTPClient)
 {
     P_HTTP_SESSION  pHTTPSession = NULL;
     
@@ -1055,11 +1048,11 @@ Uint32 HTTPClientGetInfo (HTTP_SESSION_HANDLE pSession, HTTP_CLIENT *HTTPClient)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientFindFirstHeader (HTTP_SESSION_HANDLE pSession, CHAR *pSearchClue,CHAR *pHeaderBuffer, Uint32 *nLength)
+UINT32 HTTPClientFindFirstHeader (HTTP_SESSION_HANDLE pSession, CHAR *pSearchClue,CHAR *pHeaderBuffer, UINT32 *nLength)
 {
     
     P_HTTP_SESSION  pHTTPSession = NULL;
-    Uint32         nClueLength;
+    UINT32         nClueLength;
     
     // Cast the handle to our internal structure and check the pointers validity
     pHTTPSession = (P_HTTP_SESSION)pSession;
@@ -1094,7 +1087,7 @@ Uint32 HTTPClientFindFirstHeader (HTTP_SESSION_HANDLE pSession, CHAR *pSearchClu
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPClientFindCloseHeader (HTTP_SESSION_HANDLE pSession)
+UINT32 HTTPClientFindCloseHeader (HTTP_SESSION_HANDLE pSession)
 {
     
     P_HTTP_SESSION  pHTTPSession = NULL;
@@ -1122,12 +1115,12 @@ Uint32 HTTPClientFindCloseHeader (HTTP_SESSION_HANDLE pSession)
 // Last updated : 01/09/2005
 //
 ///////////////////////////////////////////////////////////////////////////////
-Uint32 HTTPClientGetNextHeader (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderBuffer, Uint32 *nLength)
+UINT32 HTTPClientGetNextHeader (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderBuffer, UINT32 *nLength)
 {
     
     P_HTTP_SESSION  pHTTPSession = NULL;
-    Uint32          nOffset = 0;
-    Uint32          nRetCode;
+    UINT32          nOffset = 0;
+    UINT32          nRetCode;
     HTTP_PARAM      HttpHeader;
     CHAR            *pPtr;
     
@@ -1190,12 +1183,12 @@ Uint32 HTTPClientGetNextHeader (HTTP_SESSION_HANDLE pSession, CHAR *pHeaderBuffe
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnSetURL (P_HTTP_SESSION pHTTPSession,
-                        const char *pUrl,         // [IN] a null terminated string containing the Url we should retrieve
-                        Uint32 nUrlLength)  // [IN] The length the Url string
+static UINT32 HTTPIntrnSetURL (P_HTTP_SESSION pHTTPSession,
+                        const CHAR *pUrl,         // [IN] a null terminated string containing the Url we should retrieve
+                        UINT32 nUrlLength)  // [IN] The length the Url string
 {
     
-    Uint32         nUrlOffset;      // Offset in bytes within the Url string
+    UINT32         nUrlOffset;      // Offset in bytes within the Url string
     HTTP_URL       *pUrlPtr;        // a Pointer to the Url structure (within the global session structure)
     CHAR           *pPtr;           // a Pointer for the Url port (Used in the parsing process)
     CHAR           UrlPort[16];     // a temporary byte array for the Url port conversion operation (string to number)
@@ -1342,12 +1335,12 @@ Uint32 HTTPIntrnSetURL (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnResizeBuffer (P_HTTP_SESSION pHTTPSession,
-                              Uint32 nNewBufferSize)    // [IN] The new (and larger) buffer size
+static UINT32 HTTPIntrnResizeBuffer (P_HTTP_SESSION pHTTPSession,
+                              UINT32 nNewBufferSize)    // [IN] The new (and larger) buffer size
 {
     
     CHAR                *pPtr           = NULL;
-    Uint32              nCurrentBufferSize;
+    UINT32              nCurrentBufferSize;
     
     if(!pHTTPSession)
     {
@@ -1412,14 +1405,14 @@ Uint32 HTTPIntrnResizeBuffer (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnHeadersRemove (P_HTTP_SESSION pHTTPSession,
+static UINT32 HTTPIntrnHeadersRemove (P_HTTP_SESSION pHTTPSession,
                                CHAR *pHeaderName)   // [IN] The header's name
                                
 {
     
     HTTP_PARAM  HttpParam;
-    Uint32      nRetCode = HTTP_CLIENT_SUCCESS;
-    Uint32      nBytes;
+    UINT32      nRetCode = HTTP_CLIENT_SUCCESS;
+    UINT32      nBytes;
     
     if(!pHTTPSession) // Pointer validation check
     {
@@ -1472,18 +1465,18 @@ Uint32 HTTPIntrnHeadersRemove (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnHeadersAdd (P_HTTP_SESSION pHTTPSession,
+static UINT32 HTTPIntrnHeadersAdd (P_HTTP_SESSION pHTTPSession,
                             CHAR *pHeaderName,   // [IN] The header's name
-                            Uint32 nNameLength,  // [IN] Name length
+                            UINT32 nNameLength,  // [IN] Name length
                             CHAR *pHeaderData,   // [IN] The Header's data
-                            Uint32 nDataLength)  // [IN] Data length
+                            UINT32 nDataLength)  // [IN] Data length
 {
     CHAR            *pPtr;
-    Uint32          nProjectedHeaderLength;
-    Uint32          nProjectedBufferLength;
-    Sint32           nCurrentfreeSpace;
-    Sint32           nProjectedfreeSpace;
-    Uint32          nRetCode;
+    UINT32          nProjectedHeaderLength;
+    UINT32          nProjectedBufferLength;
+    INT32           nCurrentfreeSpace;
+    INT32           nProjectedfreeSpace;
+    UINT32          nRetCode;
     
     if(!pHTTPSession) // pointer validation check
     {
@@ -1501,7 +1494,7 @@ Uint32 HTTPIntrnHeadersAdd (P_HTTP_SESSION pHTTPSession,
         return HTTP_CLIENT_ERROR_NO_MEMORY;
     }
     
-    if((Sint32)nProjectedfreeSpace < 0)
+    if((INT32)nProjectedfreeSpace < 0)
     {
         if(HTTP_CLIENT_MEMORY_RESIZABLE == FALSE)
         {
@@ -1566,10 +1559,10 @@ Uint32 HTTPIntrnHeadersAdd (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnConnectionClose (P_HTTP_SESSION pHTTPSession)
+UINT32 HTTPIntrnConnectionClose (P_HTTP_SESSION pHTTPSession)
 {
     
-    Sint32  nRetCode = HTTP_CLIENT_SUCCESS;
+    INT32  nRetCode = HTTP_CLIENT_SUCCESS;
     
     do
     {
@@ -1580,31 +1573,21 @@ Uint32 HTTPIntrnConnectionClose (P_HTTP_SESSION pHTTPSession)
         }
         
         // If we have a valid socket then..
-        if(pHTTPSession->HttpConnection.tcpInterface)// INVALID_SOCKET
+        if(pHTTPSession->HttpConnection.HttpSocket != HTTP_INVALID_SOCKET)// INVALID_SOCKET
         {
             if((pHTTPSession->HttpFlags & HTTP_CLIENT_FLAG_SECURE) == HTTP_CLIENT_FLAG_SECURE)
             {
                 // TLS Close
-                //maks: no tls nRetCode = HTTPWrapperSSLClose(pHTTPSession->HttpConnection.HttpSocket);
+                nRetCode = HTTPWrapperSSLClose(pHTTPSession->HttpConnection.HttpSocket);
             }
-
-			if(pHTTPSession->HttpConnection.recBuf.pParam)
-			{
-				free(pHTTPSession->HttpConnection.recBuf.pParam);
-				pHTTPSession->HttpConnection.recBuf.pParam = NULL;
-				pHTTPSession->HttpConnection.recBuf.nLength = 0;
-			}
-
-			delete pHTTPSession->HttpConnection.tcpInterface;
-			pHTTPSession->HttpConnection.tcpInterface = NULL;
             
             // Gracefully close it
-            /*shutdown(pHTTPSession->HttpConnection.HttpSocket,0x01);
+            shutdown(pHTTPSession->HttpConnection.HttpSocket,0x01);
             closesocket(pHTTPSession->HttpConnection.HttpSocket);
             // And invalidate the socket
-            pHTTPSession->HttpConnection.HttpSocket = HTTP_INVALID_SOCKET;*/
+            pHTTPSession->HttpConnection.HttpSocket = HTTP_INVALID_SOCKET;
             
-            break;
+            break;;
         }
         else
         {
@@ -1633,20 +1616,16 @@ Uint32 HTTPIntrnConnectionClose (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
 {
-    Sint32            nRetCode = HTTP_CLIENT_SUCCESS;     // a function return code value
-    Uint32           nNullOffset;                        // a helper value to null terminate a given string
-    int              nNonBlocking    = 1;                // non blocking mode parameter
+    INT32            nRetCode = HTTP_CLIENT_SUCCESS;     // a function return code value
+    UINT32           nNullOffset;                        // a helper value to null terminate a given string
+    unsigned long              nNonBlocking    = 1;                // non blocking mode parameter
     CHAR             Backup;                             // a container for a char value (helps in temporary null termination) 
     // HTTP_HOSTNET     *HostEntry;                          // Socket host entry pointer
-    Uint32           Address = 0;
-    //HTTP_SOCKADDR_IN ServerAddress;                      // Socket address structure
-    //HTTP_SOCKADDR_IN LoaclAddress;                       // Socket address structure (for client binding)
-	SystemAddress server;
-	
-	
-
+    UINT32           Address = 0;
+    HTTP_SOCKADDR_IN ServerAddress;                      // Socket address structure
+    HTTP_SOCKADDR_IN LoaclAddress;                       // Socket address structure (for client binding)
     do
     {
         
@@ -1656,61 +1635,39 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
             break;
         }
         // Use an existing connection if valid
-        if(pHTTPSession->HttpConnection.tcpInterface)
+        if(pHTTPSession->HttpConnection.HttpSocket != HTTP_INVALID_SOCKET)
         {
             // Set the state flag
             pHTTPSession->HttpState  = pHTTPSession->HttpState | HTTP_CLIENT_STATE_HOST_CONNECTED;
             return HTTP_CLIENT_SUCCESS;
         }
         // Zero the socket events 
-        /*FD_ZERO(&pHTTPSession->HttpConnection.FDRead); 
+        FD_ZERO(&pHTTPSession->HttpConnection.FDRead); 
         FD_ZERO(&pHTTPSession->HttpConnection.FDWrite); 
-        FD_ZERO(&pHTTPSession->HttpConnection.FDError); */
+        FD_ZERO(&pHTTPSession->HttpConnection.FDError); 
         
-		
-
-        if(!pHTTPSession->HttpConnection.tcpInterface)
+        if(pHTTPSession->HttpConnection.HttpSocket == HTTP_INVALID_SOCKET)
         {
             
             // Create a TCP/IP stream socket
-            /*pHTTPSession->HttpConnection.HttpSocket = socket(AF_INET,	    // Address family 
+            pHTTPSession->HttpConnection.HttpSocket = socket(AF_INET,	    // Address family 
                 SOCK_STREAM,			                    // Socket type     
-                IPPROTO_TCP);		                        // Protocol       
-				*/
-
-			pHTTPSession->HttpConnection.tcpInterface = new TCPInterface();	
-
-			if(!pHTTPSession->HttpConnection.tcpInterface)
-			{
-				nRetCode = HTTP_CLIENT_ERROR_SOCKET_INVALID;
-				break;
-			}
-
-			if(!pHTTPSession->HttpConnection.tcpInterface->Start(0, 0))
-			{
-				delete pHTTPSession->HttpConnection.tcpInterface;
-				pHTTPSession->HttpConnection.tcpInterface = NULL;
-
-				nRetCode = HTTP_CLIENT_ERROR_SOCKET_INVALID;
-				break;
-			}
-		}
+                IPPROTO_TCP);		                        // Protocol         
+        }
         
         // Exit if we don't have a valid socket
-		if(!pHTTPSession->HttpConnection.tcpInterface)
+        if(pHTTPSession->HttpConnection.HttpSocket == HTTP_INVALID_SOCKET)
         {
             nRetCode = HTTP_CLIENT_ERROR_SOCKET_INVALID;
             break;
         }
-
         // Set non blocking socket
-        /*nRetCode = ioctlsocket(pHTTPSession->HttpConnection.HttpSocket, FIONBIO, &nNonBlocking);
+        nRetCode = ioctlsocket(pHTTPSession->HttpConnection.HttpSocket, FIONBIO, &nNonBlocking);
         if(nRetCode != 0)
         {
             nRetCode = HTTP_CLIENT_ERROR_SOCKET_CANT_SET;
             break;
-        }*/
-
+        }
         // Resolve the target host name
         if((pHTTPSession->HttpFlags & HTTP_CLIENT_FLAG_USINGPROXY) != HTTP_CLIENT_FLAG_USINGPROXY)
         {
@@ -1728,7 +1685,6 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
             Backup = HTTPStrExtract(pHTTPSession->HttpUrl.UrlHost.pParam,nNullOffset,0); 
             // Resolve the host name
             nRetCode = HostByName(pHTTPSession->HttpUrl.UrlHost.pParam,&Address);
-			server.binaryAddress = Address;
             
             // Restore from backup (fix the buffer)
             HTTPStrExtract(pHTTPSession->HttpUrl.UrlHost.pParam,nNullOffset,Backup);
@@ -1738,7 +1694,7 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
         else
         {
             // Using a Proxy server so resolve the proxy host name
-            //nRetCode = HostByName(pHTTPSession->HttpProxy.ProxyHost,&Address);
+            nRetCode = HostByName(pHTTPSession->HttpProxy.ProxyHost,&Address);
         }
         
         // See if we have a valid response from the net resolve operation
@@ -1750,11 +1706,11 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
         }
         */
         // Reset the address structures
-        //memset(&ServerAddress, 0, sizeof(HTTP_SOCKADDR_IN)); 
-        //memset(&LoaclAddress, 0, sizeof(HTTP_SOCKADDR_IN)); 
+        memset(&ServerAddress, 0, sizeof(HTTP_SOCKADDR_IN)); 
+        memset(&LoaclAddress, 0, sizeof(HTTP_SOCKADDR_IN)); 
         
         // Fill in the address structure
-        /*ServerAddress.sin_family        = AF_INET;
+        ServerAddress.sin_family        = AF_INET;
 #ifdef _HTTP_BUILD_AMT
         ServerAddress.sin_len           = sizeof(HTTP_SOCKADDR_IN);
         ServerAddress.sin_addr.s_addr   = htonl(Address);       // Server's address 
@@ -1772,7 +1728,6 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
             // Use the proxy port
             ServerAddress.sin_port      = htons(pHTTPSession->HttpProxy.nProxyPort);  // Proxy Port number 
         }
-		
         
         // Client-side Binding
         if(pHTTPSession->HttpConnection.HttpClientPort != 0)
@@ -1791,41 +1746,31 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
             {
                 nRetCode = HTTP_CLIENT_ERROR_SOCKET_BIND;
             }
-        }*/
+        }
         
         // Connect using TLS or otherwise clear connection
-        /*if((pHTTPSession->HttpFlags & HTTP_CLIENT_FLAG_SECURE) == HTTP_CLIENT_FLAG_SECURE)
+        if((pHTTPSession->HttpFlags & HTTP_CLIENT_FLAG_SECURE) == HTTP_CLIENT_FLAG_SECURE)
         { // Is it a TLS connection?
             nRetCode = HTTPWrapperSSLConnect(pHTTPSession->HttpConnection.HttpSocket,	// Socket
                 (HTTP_SOCKADDR*)&ServerAddress,	        // Server address    
                 sizeof(HTTP_SOCKADDR),                  // Length of server address structure
                 "desktop");	                            // Hostname (ToDo: Fix this)	                    
         }
-        else */   //maks: Non TLS so..
+        else    // Non TLS so..
         {
-			if((pHTTPSession->HttpConnection.ServerAddress = pHTTPSession->HttpConnection.tcpInterface->Connect(server.ToString(false), pHTTPSession->HttpUrl.nPort)) != UNASSIGNED_SYSTEM_ADDRESS)
-			{
-				nRetCode = 0;
-			}
-			else
-			{
-				nRetCode = 1;
-			}
-
-            /*nRetCode = connect(pHTTPSession->HttpConnection.HttpSocket,	// Socket
+            nRetCode = connect(pHTTPSession->HttpConnection.HttpSocket,	// Socket
                 (HTTP_SOCKADDR*)&ServerAddress,			                // Server address    
                 sizeof(HTTP_SOCKADDR));		                    // Length of server address structure
-				*/
         }
         
         // The socket was set to be asyn so we should check the error being returned from connect()
-       // nRetCode = SocketGetErr(pHTTPSession->HttpConnection.HttpSocket);
-        if(nRetCode == 0 /*|| nRetCode == HTTP_EWOULDBLOCK || nRetCode == HTTP_EINPROGRESS*/)
+        nRetCode = SocketGetErr(pHTTPSession->HttpConnection.HttpSocket);
+        if(nRetCode == 0 || nRetCode == HTTP_EWOULDBLOCK || nRetCode == HTTP_EINPROGRESS)
         {      
             // Set TLS Nego flag to flase
             pHTTPSession->HttpConnection.TlsNego = FALSE;
             // Set the Write fd_sets for a socket connection event
-            //FD_SET(pHTTPSession->HttpConnection.HttpSocket, &pHTTPSession->HttpConnection.FDWrite);
+            FD_SET(pHTTPSession->HttpConnection.HttpSocket, &pHTTPSession->HttpConnection.FDWrite);
             // Set the state flag
             pHTTPSession->HttpState  = pHTTPSession->HttpState | HTTP_CLIENT_STATE_HOST_CONNECTED;
             // We have connected so set the return value to success
@@ -1858,24 +1803,18 @@ Uint32 HTTPIntrnConnectionOpen (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnSend (P_HTTP_SESSION pHTTPSession,
+static UINT32 HTTPIntrnSend (P_HTTP_SESSION pHTTPSession,
                       CHAR *pData,            // [IN] a pointer to the data to be sent
-                      Uint32 *nLength)        // [IN OUT] Length of data to send and the transmitted bytes count
+                      UINT32 *nLength)        // [IN OUT] Length of data to send and the transmitted bytes count
 {
     
- //   Sint32           nSocketEvents;                   // Socket events center
-    Sint32           nRetCode            = HTTP_CLIENT_SUCCESS;  // a function return code value
+    INT32           nSocketEvents;                   // Socket events center
+    INT32           nRetCode            = HTTP_CLIENT_SUCCESS;  // a function return code value
     HTTP_TIMEVAL    Timeval             = { 1 , 0 };  // Timeout value for the socket() method
     HTTP_CONNECTION *pConnection        = NULL;      // Pointer for the connection structure
     
-	// Have a pointer on the internal connection structure for simplifying code reading
-    pConnection = &pHTTPSession->HttpConnection;
-
-	pConnection->tcpInterface->Send(pData, *nLength, pConnection->ServerAddress);
-	RakSleep(30);
-	nRetCode = HTTP_CLIENT_SUCCESS;
     
-    /*do
+    do
     {
         // Validate the session pointer
         if(!pHTTPSession)
@@ -1900,7 +1839,7 @@ Uint32 HTTPIntrnSend (P_HTTP_SESSION pHTTPSession,
             // Reset socket events , only Error, since we don't want to get
             // a repeated Write events (socket is connected) 
             
-            //FD_SET(pConnection->HttpSocket, &pConnection->FDError);
+            FD_SET(pConnection->HttpSocket, &pConnection->FDError);
             
             // See if we got any events on the socket
             nSocketEvents = select((pConnection->HttpSocket + 1), 0, 
@@ -1959,14 +1898,14 @@ Uint32 HTTPIntrnSend (P_HTTP_SESSION pHTTPSession,
             // We had a socket related error 
             if(FD_ISSET(pConnection->HttpSocket ,&pConnection->FDError))
             {
-                FD_CLR((Uint32)pConnection->HttpSocket,&pConnection->FDError);
+                FD_CLR((UINT32)pConnection->HttpSocket,&pConnection->FDError);
                 *(nLength) = 0;
                 // To-Do: Handle this case
                 nRetCode = HTTP_CLIENT_ERROR_SOCKET_SEND;
                 break;
             }
         }
-    } while(0);*/
+    } while(0);
     
 #ifdef _HTTP_DEBUGGING_
     if(pHTTPSession->pDebug)
@@ -1989,75 +1928,17 @@ Uint32 HTTPIntrnSend (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnRecv (P_HTTP_SESSION pHTTPSession,
+static UINT32 HTTPIntrnRecv (P_HTTP_SESSION pHTTPSession,
                       CHAR *pData,        // [IN] a pointer for a buffer that receives the data
-                      Uint32 *nLength,    // [IN OUT] Length of the buffer and the count of the received bytes
+                      UINT32 *nLength,    // [IN OUT] Length of the buffer and the count of the received bytes
                       BOOL PeekOnly)      // [IN] State if we should only peek the socket (default is no)
 {
-//    Sint32           nSocketEvents;
-    Sint32           nRetCode = HTTP_CLIENT_SUCCESS;
+    INT32           nSocketEvents;
+    INT32           nRetCode = HTTP_CLIENT_SUCCESS;
     HTTP_TIMEVAL    Timeval         = { 0, 50000 };
     HTTP_CONNECTION *pConnection     = NULL;
-	Uint32 lenBuf = *nLength;
-
-	pConnection = &pHTTPSession->HttpConnection;
-	Packet *packet;
-	RakNetTime timeout;
-	timeout=RakNet::GetTime()+30000;
-	*nLength = 0;
-
-#ifdef _MSC_VER
-	#pragma warning( disable : 4127 ) // warning C4127: conditional expression is constant
-#endif
-
-	while (1)
-	{
-		if(pConnection->recBuf.nLength)
-		{
-			if(lenBuf >= pConnection->recBuf.nLength)
-			{
-				memcpy(pData, pConnection->recBuf.pParam, pConnection->recBuf.nLength);
-				*nLength = pConnection->recBuf.nLength;
-				
-				pConnection->recBuf.nLength = 0;
-			}
-			else
-			{
-				int len = pConnection->recBuf.nLength - lenBuf;
-				memcpy(pData, pConnection->recBuf.pParam, lenBuf);
-				*nLength = lenBuf;
-
-				//Move data pointer
-				char *p = (char *)malloc(len);
-				memcpy(p, pConnection->recBuf.pParam + lenBuf, len);
-				free(pConnection->recBuf.pParam);
-				pConnection->recBuf.pParam = p;
-
-				pConnection->recBuf.nLength = len;				
-			}	
-
-			return HTTP_CLIENT_SUCCESS;
-		}
-		else
-		{
-			packet = pConnection->tcpInterface->Receive();
-			if (packet)
-			{
-				pConnection->recBuf.pParam = (char *)realloc(pConnection->recBuf.pParam, packet->length);
-				memcpy(pConnection->recBuf.pParam, packet->data, packet->length);
-				pConnection->recBuf.nLength = packet->length;
-				pConnection->tcpInterface->DeallocatePacket(packet);						
-			}
-
-			RakSleep(30);
-		}
-
-		if (RakNet::GetTime() > timeout)
-			return HTTP_CLIENT_ERROR_SOCKET_TIME_OUT;	
-	}
-
     
-    /*do
+    do
     {
         if(!pHTTPSession)
         {
@@ -2133,7 +2014,7 @@ Uint32 HTTPIntrnRecv (P_HTTP_SESSION pHTTPSession,
             if(FD_ISSET(pConnection->HttpSocket ,&pConnection->FDRead)) // Are there any read events on the socket ?
             {
                 // Clear the event 
-                FD_CLR((Uint32)pConnection->HttpSocket,&pConnection->FDRead);
+                FD_CLR((UINT32)pConnection->HttpSocket,&pConnection->FDRead);
                 
                 // Socket is readable so so read the data
                 if(PeekOnly == FALSE)
@@ -2187,7 +2068,7 @@ Uint32 HTTPIntrnRecv (P_HTTP_SESSION pHTTPSession,
             // We had a socket related error 
             if(FD_ISSET(pConnection->HttpSocket ,&pConnection->FDError))
             {
-                FD_CLR((Uint32)pConnection->HttpSocket,&pConnection->FDError);
+                FD_CLR((UINT32)pConnection->HttpSocket,&pConnection->FDError);
                 *(nLength) = 0;
                 
                 // To-Do: Handle this case
@@ -2196,7 +2077,7 @@ Uint32 HTTPIntrnRecv (P_HTTP_SESSION pHTTPSession,
                 
             }
         }   
-    }while(0);*/
+    }while(0);
     
     return nRetCode;
 }
@@ -2212,12 +2093,12 @@ Uint32 HTTPIntrnRecv (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnGetRemoteChunkLength (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnGetRemoteChunkLength (P_HTTP_SESSION pHTTPSession)
 {
     
-    Uint32          nBytesRead = 1;
-    Uint32          nRetCode = HTTP_CLIENT_SUCCESS;
-    Uint32          nBytesCount = 0;
+    UINT32          nBytesRead = 1;
+    UINT32          nRetCode = HTTP_CLIENT_SUCCESS;
+    UINT32          nBytesCount = 0;
     CHAR            ChunkHeader[HTTP_CLIENT_MAX_CHUNK_HEADER];
     CHAR            *pPtr;
     
@@ -2292,15 +2173,15 @@ Uint32 HTTPIntrnGetRemoteChunkLength (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnGetRemoteHeaders (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnGetRemoteHeaders (P_HTTP_SESSION pHTTPSession)
 {
     
-    Uint32          nBytesRead = 1;
-    Uint32          nRetCode = HTTP_CLIENT_SUCCESS;
-    Uint32          nProjectedHeaderLength;
-    Uint32          nProjectedBufferLength;
-    Sint32           nCurrentfreeSpace;
-    Sint32           nProjectedfreeSpace;
+    UINT32          nBytesRead = 1;
+    UINT32          nRetCode = HTTP_CLIENT_SUCCESS;
+    UINT32          nProjectedHeaderLength;
+    UINT32          nProjectedBufferLength;
+    INT32           nCurrentfreeSpace;
+    INT32           nProjectedfreeSpace;
     CHAR            *pPtr;
     
     do
@@ -2339,7 +2220,7 @@ Uint32 HTTPIntrnGetRemoteHeaders (P_HTTP_SESSION pHTTPSession)
                 return HTTP_CLIENT_ERROR_NO_MEMORY;
             }
             
-            if((Sint32)nProjectedfreeSpace < 0)
+            if((INT32)nProjectedfreeSpace < 0)
             {
                 if(HTTP_CLIENT_MEMORY_RESIZABLE == FALSE)
                 {
@@ -2408,15 +2289,15 @@ Uint32 HTTPIntrnGetRemoteHeaders (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnHeadersFind (P_HTTP_SESSION pHTTPSession,CHAR *pHeaderName,  
+static UINT32 HTTPIntrnHeadersFind (P_HTTP_SESSION pHTTPSession,CHAR *pHeaderName,  
                              HTTP_PARAM *pParam,     //  [OUT] HTTP parameter structure that holds the search results
                              BOOL IncommingHeaders,  //  [IN]  Indicate if we are to search in the incoming or outgoing headers
-                             Uint32 nOffset)         //  [IN]  Optionaly privide an offset to start looking from
+                             UINT32 nOffset)         //  [IN]  Optionaly privide an offset to start looking from
 {
     CHAR           *pHeaderEnd;
     CHAR           Header[HTTP_CLIENT_MAX_HEADER_SEARCH_CLUE]; // To-Do: Use pointers insted of fixed length
-    Uint32         nLength;
-    Uint32         nRetCode = HTTP_CLIENT_ERROR_HEADER_NOT_FOUND;
+    UINT32         nLength;
+    UINT32         nRetCode = HTTP_CLIENT_ERROR_HEADER_NOT_FOUND;
     
     do
     {
@@ -2485,11 +2366,11 @@ Uint32 HTTPIntrnHeadersFind (P_HTTP_SESSION pHTTPSession,CHAR *pHeaderName,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnAuthenticate(P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnAuthenticate(P_HTTP_SESSION pHTTPSession)
 {
-    Uint32      nRetCode = HTTP_CLIENT_SUCCESS;   // Function call return code
-    Uint32      nBytes = 32;
-    Uint32      nTotalBytes = 0;
+    UINT32      nRetCode = HTTP_CLIENT_SUCCESS;   // Function call return code
+    UINT32      nBytes = 32;
+    UINT32      nTotalBytes = 0;
     CHAR        ErrorPage[32];
     BOOL        NewConnection = FALSE;
     
@@ -2507,7 +2388,7 @@ Uint32 HTTPIntrnAuthenticate(P_HTTP_SESSION pHTTPSession)
         if(pHTTPSession->HttpHeadersInfo.Connection == FALSE)
         {
             // Gracefully close the connection and set the socket as invalid
-            if(pHTTPSession->HttpConnection.tcpInterface)
+            if(pHTTPSession->HttpConnection.HttpSocket != HTTP_INVALID_SOCKET)
             {
                 HTTPIntrnConnectionClose(pHTTPSession);
             }
@@ -2571,13 +2452,13 @@ Uint32 HTTPIntrnAuthenticate(P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnHeadersParse (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnHeadersParse (P_HTTP_SESSION pHTTPSession)
 {
     
     CHAR            *pPtr;                                      // a pointer that points on the incoming headers
-    Uint32          nTokenLength = 0;                           // Length of the parsed token
-    Uint32          nRetCode = HTTP_CLIENT_SUCCESS;             // a function return code value
-    Uint32          nOffset = 0;                                // Bytes offset (strings comperision)
+    UINT32          nTokenLength = 0;                           // Length of the parsed token
+    UINT32          nRetCode = HTTP_CLIENT_SUCCESS;             // a function return code value
+    UINT32          nOffset = 0;                                // Bytes offset (strings comperision)
     CHAR            HTTPToken[HTTP_CLIENT_MAX_TOKEN_LENGTH];    // Buffer for the parsed HTTP token
     HTTP_PARAM      HTTPParam;                                  // A generic pointer\length parameter for parsing
     BOOL            AuthHeaders = FALSE;                        // While we are searching the authentication methods
@@ -2770,7 +2651,7 @@ Uint32 HTTPIntrnHeadersParse (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnParseAuthHeader(P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnParseAuthHeader(P_HTTP_SESSION pHTTPSession)
 {
     
     CHAR            *pPtrStart, *pPtrEnd;
@@ -2828,7 +2709,7 @@ Uint32 HTTPIntrnParseAuthHeader(P_HTTP_SESSION pHTTPSession)
     }
     
     //Make sure we are going to authenticate with the method specified by the caller
-    if(pHTTPSession->HttpAuthHeader.HTTP_AUTH_SCHEMA != (Uint32)pHTTPSession->HttpCredentials.CredAuthSchema)
+    if(pHTTPSession->HttpAuthHeader.HTTP_AUTH_SCHEMA != (UINT32)pHTTPSession->HttpCredentials.CredAuthSchema)
     {
         return HTTP_CLIENT_ERROR_AUTH_MISMATCH;
     }
@@ -2850,13 +2731,13 @@ Uint32 HTTPIntrnParseAuthHeader(P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnHeadersSend(P_HTTP_SESSION pHTTPSession,
+static UINT32 HTTPIntrnHeadersSend(P_HTTP_SESSION pHTTPSession,
                             HTTP_VERB HttpVerb)  // [IN] Argument that can bypass the requested verb
                             // Can be used for evaluating a HEAD request
 {
     
-    Uint32          nBytes;
-    Uint32          nRetCode = HTTP_CLIENT_SUCCESS;
+    UINT32          nBytes;
+    UINT32          nRetCode = HTTP_CLIENT_SUCCESS;
     CHAR            RequestCmd[16];
     CHAR            ContentLength[32];
     BOOL            RestoreHeadersFlag = FALSE;
@@ -2872,7 +2753,7 @@ Uint32 HTTPIntrnHeadersSend(P_HTTP_SESSION pHTTPSession,
     if(pHTTPSession->pDebug)
     {
         pHTTPSession->pDebug("HTTPIntrnHeadersSend",NULL,
-            0,"Using Verb: %d",(Sint32)HttpVerb);
+            0,"Using Verb: %d",(INT32)HttpVerb);
     }
 #endif
     // Cache the original VERB
@@ -3042,10 +2923,10 @@ Uint32 HTTPIntrnHeadersSend(P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnAuthHandler (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnAuthHandler (P_HTTP_SESSION pHTTPSession)
 {
     
-    Uint32 nRetCode = HTTP_CLIENT_SUCCESS;
+    UINT32 nRetCode = HTTP_CLIENT_SUCCESS;
     
     if(!pHTTPSession)
     {
@@ -3119,14 +3000,14 @@ Uint32 HTTPIntrnAuthHandler (P_HTTP_SESSION pHTTPSession)
 ///////////////////////////////////////////////////////////////////////////////
 
 
-Uint32 HTTPIntrnAuthSendBasic (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnAuthSendBasic (P_HTTP_SESSION pHTTPSession)
 {
     
-    Uint32      nSegmentLength;
-    Uint32      nRetCode;
+    UINT32      nSegmentLength;
+    UINT32      nRetCode;
     CHAR        Cred[HTTP_CLIENT_MAX_64_ENCODED_CRED /2];   // Credentials (Clear) 
     CHAR        Cred64[HTTP_CLIENT_MAX_64_ENCODED_CRED];    // Credentials (64 bit encoded)
-    Uint32      nSrcLength, nDestLength;
+    UINT32      nSrcLength, nDestLength;
     CHAR*       pPtr;
     CHAR*       INITIAL_HDR         = "Authorization: Basic ";
     CHAR*       INITIAL_PROXY_HDR   = "Proxy-Authorization: Basic ";
@@ -3173,7 +3054,7 @@ Uint32 HTTPIntrnAuthSendBasic (P_HTTP_SESSION pHTTPSession)
                 pHTTPSession->HttpCounters.nSentHeaderBytes += nSegmentLength;
                 
                 // Convert to base 64
-                HTTPBase64Encoder((unsigned char *)Cred64,(const unsigned char *)Cred,nSrcLength);
+                HTTPBase64Encoder((unsigned char *)Cred64,(CONST unsigned char *)Cred,nSrcLength);
                 nDestLength = strlen(Cred64);
                 
             };
@@ -3242,12 +3123,12 @@ Uint32 HTTPIntrnAuthSendBasic (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnAuthSendDigest (P_HTTP_SESSION pHTTPSession)
+static UINT32 HTTPIntrnAuthSendDigest (P_HTTP_SESSION pHTTPSession)
 {
     CHAR        Cnonce[33];
-    Uint32      nSegmentLength;
-    Uint32      nRetCode;
-    Uint32      nAlgType = 0; // a flag for the algorithem type (default to MD5)
+    UINT32      nSegmentLength;
+    UINT32      nRetCode;
+    UINT32      nAlgType = 0; // a flag for the algorithem type (default to MD5)
     HTTP_PARAM  HttpParamOpq,HttpParamRealm,HttpParamNonce,HttpParamQop,HttpParamAlg;     // Pointers and lengths of the dynamic sections
     // of the Digest response.
     
@@ -3562,10 +3443,10 @@ Uint32 HTTPIntrnAuthSendDigest (P_HTTP_SESSION pHTTPSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnSessionReset (P_HTTP_SESSION pHTTPSession, BOOL EntireSession)
+static UINT32 HTTPIntrnSessionReset (P_HTTP_SESSION pHTTPSession, BOOL EntireSession)
 {
-    Uint32 nActionTimeout; // For restoring a parameter after this reset
-    Uint32 nAllocationSize;
+    UINT32 nActionTimeout; // For restoring a parameter after this reset
+    UINT32 nAllocationSize;
     
     // Validate the pointer
     if(!pHTTPSession)
@@ -3604,7 +3485,7 @@ Uint32 HTTPIntrnSessionReset (P_HTTP_SESSION pHTTPSession, BOOL EntireSession)
         memset(pHTTPSession->HttpHeaders.HeadersBuffer.pParam ,0x00,nAllocationSize);
         
         // Set default values in the session structure
-        HTTPClientSetVerb((Uint32)pHTTPSession,(HTTP_VERB)HTTP_CLIENT_DEFAULT_VERB);    // Default HTTP verb
+        HTTPClientSetVerb((UINT32)pHTTPSession,(HTTP_VERB)HTTP_CLIENT_DEFAULT_VERB);    // Default HTTP verb
         pHTTPSession->HttpUrl.nPort             = HTTP_CLIENT_DEFAULT_PORT;             // Default TCP port
         // Set the outgoing headers pointers
         memset(&pHTTPSession->HttpHeaders.HeadersIn,0,sizeof(HTTP_PARAM));
@@ -3615,7 +3496,7 @@ Uint32 HTTPIntrnSessionReset (P_HTTP_SESSION pHTTPSession, BOOL EntireSession)
         pHTTPSession->HttpState = pHTTPSession->HttpState | HTTP_CLIENT_STATE_INIT;
         
         memset(&pHTTPSession->HttpHeadersInfo,0,sizeof(HTTP_HEADERS_INFO));
-        if(pHTTPSession->HttpConnection.tcpInterface)
+        if(pHTTPSession->HttpConnection.HttpSocket != HTTP_INVALID_SOCKET)
         {
             pHTTPSession->HttpHeadersInfo.Connection = TRUE;
         }
@@ -3639,13 +3520,13 @@ Uint32 HTTPIntrnSessionReset (P_HTTP_SESSION pHTTPSession, BOOL EntireSession)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnHeadersReceive (P_HTTP_SESSION pHTTPSession,
-                                Uint32 nTimeout)        // [IN] Timeout for the operation
+static UINT32 HTTPIntrnHeadersReceive (P_HTTP_SESSION pHTTPSession,
+                                UINT32 nTimeout)        // [IN] Timeout for the operation
                                 
 {
     
-    Uint32          nRetCode;               // Function call return code
-    Uint32          nCount  = 0;
+    UINT32          nRetCode;               // Function call return code
+    UINT32          nCount  = 0;
     if(!pHTTPSession)
     {
         // Bad session pointer error
@@ -3726,7 +3607,7 @@ Uint32 HTTPIntrnHeadersReceive (P_HTTP_SESSION pHTTPSession,
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPIntrnSessionGetUpTime(VOID)
+static UINT32 HTTPIntrnSessionGetUpTime(VOID)
 {
     
     return GetUpTime();
@@ -3743,10 +3624,10 @@ Uint32 HTTPIntrnSessionGetUpTime(VOID)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-BOOL HTTPIntrnSessionEvalTimeout(P_HTTP_SESSION pHTTPSession)
+static BOOL HTTPIntrnSessionEvalTimeout(P_HTTP_SESSION pHTTPSession)
 {
     
-    Uint32 nElapsedTime;    // Integer for calculating the elapsed time
+    UINT32 nElapsedTime;    // Integer for calculating the elapsed time
     
     // Validate the session pointer
     if(!pHTTPSession)

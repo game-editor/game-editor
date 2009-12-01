@@ -1,10 +1,5 @@
  
 #include "HTTPClientWrapper.h"
-#include "../../RakNet/Source/GetTime.h"
-
-#ifndef WIN32
-#include <sys/time.h>
-#endif
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -172,7 +167,7 @@ int HTTPWrapperShutDown (int s,int how)
 int HTTPWrapperGetSocketError (int s)
 {
 
-    return 0;//return WSAGetLastError();
+    return WSAGetLastError();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -184,7 +179,7 @@ int HTTPWrapperGetSocketError (int s)
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-unsigned long HTTPWrapperGetHostByName(char *name, Uint32 *address)
+unsigned long HTTPWrapperGetHostByName(char *name,UINT32 *address)
 {
     HTTP_HOSTNET     *HostEntry;
     int     iPos = 0, iLen = 0,iNumPos = 0,iDots =0;
@@ -305,7 +300,7 @@ long HTTPWrapperGetUpTime()
 
     long lTime = 0;
 
-    lTime = RakNet::GetTime()/1000;
+    lTime = (GetTickCount() / CLOCKS_PER_SEC);
     return lTime;
 
 }

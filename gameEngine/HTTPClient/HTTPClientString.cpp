@@ -13,19 +13,6 @@
 #include "HTTPClient.h"
 #include "HTTPClientWrapper.h" // Cross platform support
 
-int my_strnicmp(const char *str1, const char *str2, int len) {
-	const char *c1=str1, *c2=str2, *e1=c1+len;
-
-	while (c1<e1) {
-		if (HTTPWrapperToUpper(*c1)!=HTTPWrapperToUpper(*c2)) return HTTPWrapperToUpper(*c1)-HTTPWrapperToUpper(*c2);
-		if (*c1==0) return 0;
-		++c1;
-		++c2;
-	};
-
-	return 0;
-};
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Function     : HTTPStrInsensitiveCompare
@@ -35,14 +22,27 @@ int my_strnicmp(const char *str1, const char *str2, int len) {
 //
 ///////////////////////////////////////////////////////////////////////////////
 
+int strnicmp(const char *s1, const char *s2, size_t count)
+{
+  int f, l;
+
+  do 
+  {
+      if (((f = (unsigned char)(*(s1++))) >= 'A') && (f <= 'Z')) f -= 'A' - 'a';
+      if (((l = (unsigned char)(*(s2++))) >= 'A') && (l <= 'Z')) l -= 'A' - 'a';
+  } while (--count && f && (f == l));
+
+  return f - l;
+}
+
 BOOL HTTPStrInsensitiveCompare(CHAR *pSrc,      // [IN] a pointer to the source string
                                CHAR* pDest,     // [IN] a pointer to the string we should search for
-                               Uint32 nLength)  // [IN] The bytes range we should search in
+                               UINT32 nLength)  // [IN] The bytes range we should search in
 {
 
     // Lower case comparison
-    Uint32  nPosition;
-    Uint32  nDestLength;
+    UINT32  nPosition;
+    UINT32  nDestLength;
     CHAR    *pSrcIn, *pDestIn;
     CHAR    a,b;
     pSrcIn  = pSrc;
@@ -107,7 +107,7 @@ BOOL HTTPStrInsensitiveCompare(CHAR *pSrc,      // [IN] a pointer to the source 
 ///////////////////////////////////////////////////////////////////////////////
 
 CHAR HTTPStrExtract(CHAR *pParam,       // [IN] a pointer to the input parameter
-                    Uint32 nOffset,     // [IN] the offset position (where we should null terminate the string)
+                    UINT32 nOffset,     // [IN] the offset position (where we should null terminate the string)
                     CHAR Restore)       // [IN] if this is not 0 we should restore it (instead of the null)
                     //      and reverse the effect.
 {
@@ -144,15 +144,15 @@ CHAR HTTPStrExtract(CHAR *pParam,       // [IN] a pointer to the input parameter
 
 BOOL HTTPStrSearch(CHAR *pSrc,              // [IN] The source string 
                    CHAR *pSearched,         // [IN] Parameter to search for
-                   Uint32 nOffset,          // [IN] Offset from the source string start position
-                   Uint32 nScope,           // [IN] Length in bytes we should search in
+                   UINT32 nOffset,          // [IN] Offset from the source string start position
+                   UINT32 nScope,           // [IN] Length in bytes we should search in
                    HTTP_PARAM *HttpParam)   // [IN OUT] The Pointer\Length value that will be returned on success 
 {
 
     CHAR    *pSrcStart;
     CHAR    *pDstStart;
     CHAR    nOrigCharacter;
-    Uint32  nPosition = 0;
+    UINT32  nPosition = 0;
 
     do
     {
@@ -200,11 +200,11 @@ BOOL HTTPStrSearch(CHAR *pSrc,              // [IN] The source string
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-CHAR *HTTPStrCaseStr(const char *pSrc,Uint32 nSrcLength,const char *pFind)
+CHAR *HTTPStrCaseStr(const char *pSrc,UINT32 nSrcLength,const char *pFind)
 {
     const char *ptr = pSrc;
     const char *ptr2;
-    Uint32 iLength = 0;
+    UINT32 iLength = 0;
 
     while(1) 
     {
@@ -212,8 +212,8 @@ CHAR *HTTPStrCaseStr(const char *pSrc,Uint32 nSrcLength,const char *pFind)
         {
             break;
         }
-        ptr = strchr(pSrc,HTTPWrapperToUpper(*pFind));
-        ptr2 = strchr(pSrc,HTTPWrapperToLower(*pFind));
+        ptr = strchr(pSrc,toupper(*pFind));
+        ptr2 = strchr(pSrc,tolower(*pFind));
         if (!ptr) 
         {
             ptr = ptr2; 
@@ -225,7 +225,7 @@ CHAR *HTTPStrCaseStr(const char *pSrc,Uint32 nSrcLength,const char *pFind)
         if (ptr2 && (ptr2 < ptr)) {
             ptr = ptr2;
         }
-        if (!my_strnicmp(ptr,pFind,strlen(pFind))) 
+        if (!strnicmp(ptr,pFind,strlen(pFind))) 
         {
             return (char *) ptr;
         }
@@ -246,14 +246,14 @@ CHAR *HTTPStrCaseStr(const char *pSrc,Uint32 nSrcLength,const char *pFind)
 ///////////////////////////////////////////////////////////////////////////////
 
 
-CHAR* HTTPStrGetToken (CHAR *pSrc, Uint32 nSrcLength, CHAR *pDest, Uint32 *nDestLength)
+CHAR* HTTPStrGetToken (CHAR *pSrc, UINT32 nSrcLength, CHAR *pDest, UINT32 *nDestLength)
 {
 
     // Get text between the ":" and \r\n or end of string.
     CHAR    *pStart   = pSrc;
     CHAR    *pEnd;
-    Uint32  nTokenLength = 0;
-    Uint32  nPosition    = 0;
+    UINT32  nTokenLength = 0;
+    UINT32  nPosition    = 0;
 
     pStart = strchr(pSrc,':') + 1;
     if(pStart)
@@ -315,7 +315,7 @@ CHAR* HTTPStrGetToken (CHAR *pSrc, Uint32 nSrcLength, CHAR *pDest, Uint32 *nDest
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-Uint32 HTTPStrGetDigestToken (HTTP_PARAM pParamSrc, CHAR *pSearched, HTTP_PARAM *pParamDest)
+UINT32 HTTPStrGetDigestToken (HTTP_PARAM pParamSrc, CHAR *pSearched, HTTP_PARAM *pParamDest)
 {
 
     CHAR Token[HTTP_CLIENT_MAX_TOKEN_NAME_LENGTH];
@@ -381,18 +381,18 @@ Uint32 HTTPStrGetDigestToken (HTTP_PARAM pParamSrc, CHAR *pSearched, HTTP_PARAM 
 ///////////////////////////////////////////////////////////////////////////////
 
 
-Uint32 HTTPStrHToL (CHAR * s) 
+UINT32 HTTPStrHToL (CHAR * s) 
 {
-    Uint32 i , nn, digit;
-    Uint32 n ;
+    UINT32 i , nn, digit;
+    UINT32 n ;
 
     n = i = nn = 0;
     do 
     {
-        if ( HTTPWrapperIsAlNum(s[i]) ) {
-            s[i] = HTTPWrapperToUpper(s[i]) ;  
+        if ( isalnum(s[i]) ) {
+            s[i] = toupper(s[i]) ;  
             if (s[i] == 'X') nn=n=0; else {
-                digit = (HTTPWrapperIsAlpha(s[i]) ? (s[i] - 'A' + 10) : s[i] - '0') ;
+                digit = (isalpha(s[i]) ? (s[i] - 'A' + 10) : s[i] - '0') ;
                 if ( digit > 15 ) digit = 15;
                 n = n * 16 + digit;
                 if (n |= 0) nn++;
@@ -412,11 +412,11 @@ Uint32 HTTPStrHToL (CHAR * s)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-CHAR* HTTPStrLToH (CHAR * dest,Uint32 nSrc)
+CHAR* HTTPStrLToH (CHAR * dest,UINT32 nSrc)
 {
 
     char *hex = "0123456789abcdef";
-    int  i;
+    INT  i;
 
     if (nSrc == 0) {
         dest[0] = '0';

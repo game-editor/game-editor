@@ -53,8 +53,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "dlmalloc.h"
 #include "Actor.h"
 
+#ifdef USE_RAKNET
 #include "../RakNet/Source/RakPeerInterface.h"
 //#include "../RakNet/Source/NatPunchthrough.h"
+#endif
 
 #ifdef USE_AVL_TREE
 #include "ttree.h"
@@ -1098,7 +1100,10 @@ public:
 	void PushFindPathRequisition(Actor *actor, char *obstacleActor, double posX, double posY, double endX, double endY, double width, double height, double velocity);
 
 	void RemoveOldActorsFromCache(bool bForce = false);
-	RakPeerInterface *GetRakPeer() {return rakPeer;}
+
+	gedNetwork *GetNetWork() {return rakPeer;}
+
+
 	bool RequestNetworkStart();
 	bool WaitingForConnectionComplete() {return bWaitingForConnectionComplete;}
 	void ProcessNetwork(bool bFromFrameTick);	
@@ -1418,7 +1423,9 @@ private:
 	ArrayActor visibleActors;
 #endif
 
-	RakPeerInterface *rakPeer;
+	gedNetwork *rakPeer;
+
+
 	SystemAddress currentOwnerMachine;
 	
 	//NatPunchthrough natPunchthrough;
@@ -1432,7 +1439,7 @@ private:
 	GlMap<SystemAddress, ListActor, GlSystemAddressHash> mapUnlinkedActors;	
 	GlMap<SystemAddress, QueueAction, GlSystemAddressHash> mapActionQueue;
 
-	GlDynArray<RakNet::BitStream *> pendingActions;
+	GlDynArray<BitStream *> pendingActions;
 	
 	bool bWaitingForConnectionComplete;
 
@@ -1443,7 +1450,10 @@ private:
 	bool IsRemoteAddress(const SystemAddress& addr);
 	inline bool CanAcceptPacket(Packet *p);
 	
+#ifdef USE_RAKNET
 	void CreateStringTable();
+#endif
+
 	void PingThroughGameServer(const SystemAddress& addr);
 	void PublishGameSession();
 	void SendIDToServer();
@@ -1456,28 +1466,28 @@ private:
 			bool bRemote,
 			unsigned int seed);
 
-	bool ExecuteRemoteAction(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
-	bool ExecuteRemotePosition(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteAction(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemotePosition(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 	void SetExternalSystemAddress(const SystemAddress& addr);
 
 	void SendRemoteMousePosition(bool bReliableSend);
-	bool ExecuteRemoteMousePosition(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteMousePosition(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 
-	bool ExecuteRemoteFrame(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteFrame(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 
 	void SendRemoteLastKey();
-	bool ExecuteRemoteLastKey(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteLastKey(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 
 	void SendRemoteRequestActorOwnership(const char *actorName, long cloneIndex, const RakNetTime &timeStamp, SystemAddress addr = UNASSIGNED_SYSTEM_ADDRESS);
-	bool ExecuteRemoteRequestActorOwnership(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteRequestActorOwnership(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 
 	void SendRemoteReleaseActorOwnership(const char *actorName, long cloneIndex);
-	bool ExecuteRemoteReleaseActorOwnership(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteReleaseActorOwnership(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 	
 	bool ExecuteTimeStampedMessages(Packet *packet);
 
 	void SendRemoteAdressUpdate(const SystemAddress &oldAddr);
-	bool ExecuteRemoteAdressUpdate(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
+	bool ExecuteRemoteAdressUpdate(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr);
 
 	bool HandleNewConnection(SystemAddress &addr);
 	bool HandleEnvironmentInfoRequest(SystemAddress &addr);
@@ -1491,13 +1501,13 @@ private:
 	void SendOnlyStateOfActorsControlledLlocaly(SystemAddress &addr);
 	bool ExecuteStateUpdateOfRemoteControlledActors(Packet *packet);
 
-	void WriteActorIndex(RakNet::BitStream& out);
-	void WriteGlobalVars(RakNet::BitStream& out);
-	void WriteLiveActors(RakNet::BitStream& out, KrImNode *pNode, bool bOnlyLocallyControlledActors);
+	void WriteActorIndex(BitStream& out);
+	void WriteGlobalVars(BitStream& out);
+	void WriteLiveActors(BitStream& out, KrImNode *pNode, bool bOnlyLocallyControlledActors);
 
-	void ReadActorIndex(RakNet::BitStream& in);
-	void ReadGlobalVars(RakNet::BitStream& in);
-	void ReadLiveActors(RakNet::BitStream& in, bool bDeleteAll, const SystemAddress &addr);
+	void ReadActorIndex(BitStream& in);
+	void ReadGlobalVars(BitStream& in);
+	void ReadLiveActors(BitStream& in, bool bDeleteAll, const SystemAddress &addr);
 
 	gedString LoadFingerPrint(SDL_RWops *src);
 

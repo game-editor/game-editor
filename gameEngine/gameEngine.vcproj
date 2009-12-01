@@ -61,7 +61,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../llvm/include;../../llvm/tools/clang/include;../../llvm/win32;../RakNet/Source;../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;EiC/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib;&quot;../OpenGL ES1/include/&quot;"
+				AdditionalIncludeDirectories="../../llvm/include;../../llvm/tools/clang/include;../../llvm/win32;../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;EiC/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib;&quot;../OpenGL ES1/include/&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
@@ -319,7 +319,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="2"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="../RakNet/Source;../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;Eic/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib;&quot;../OpenGL ES1/include/&quot;"
+				AdditionalIncludeDirectories="../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;Eic/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib;&quot;../OpenGL ES1/include/&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY"
 				StringPooling="true"
 				RuntimeLibrary="0"

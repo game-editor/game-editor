@@ -36,8 +36,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "Path.h"
 #include "RegionLoad.h"
 
+#ifdef USE_RAKNET
 #include "../RakNet/Source/Rand.h"
 #include "../RakNet/Source/GetTime.h"
+#endif
 
 #ifndef STAND_ALONE_GAME
 
@@ -5135,7 +5137,7 @@ void Action::Execute(stAction *action, Actor *eventActor, Actor *collideActor, b
 	int eventActorCloneIndex, collideActorCloneIndex = -1;
 	RakNetTime eventActorOwnershipTimestamp;
 	bool bTestCreated = false, bCanExecute = true, bNetActor = eventActor->getNetActor(), bCanExecuteRemoteActionBefore = false;
-	bool bRakPeer = GameControl::Get()->GetRakPeer();
+	bool bRakPeer = GameControl::Get()->GetNetWork();
 
 	///////////////////////////
 	//For remote random sincronization
@@ -5329,7 +5331,7 @@ void Action::Execute(stAction *action, Actor *eventActor, Actor *collideActor, b
 							
 							static int s = 0;
 							s += SDL_GetTicks() % 1000;							
-							seed = RakNet::GetTime() + s;
+							seed = NetworkGetTime() + s;
 						}
 
 						if(seed) seedMT(seed);

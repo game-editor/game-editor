@@ -290,7 +290,9 @@ AboutDlg::AboutDlg()
 	text = AddText("This software uses:", 10, y);
 
 	text = AddText("  PocketHAL: pockethal.droneship.com", text->Left(), text->Down() + 10);
+#ifdef USE_RAKNET
 	text = AddText("  RakNet: www.rakkarsoft.com", text->Left(), text->Down() + 2);
+#endif
 	//text = AddText("  Graphviz: graphviz.org", text->Left(), text->Down() + 2);
 	//text = AddText("  Scintilla: www.scintilla.org", text->Left(), text->Down() + 2);
 	text = AddText("  Kyra: www.grinninglizard.com/kyra", text->Left(), text->Down() + 2);

@@ -9,7 +9,21 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "HTTPClientAuth.h"
-int StriCmp(const char *string1, const char *string2);
+
+int stricmp(const char *s1, const char *s2)
+{
+  char f, l;
+
+  do 
+  {
+    f = ((*s1 <= 'Z') && (*s1 >= 'A')) ? *s1 + 'a' - 'A' : *s1;
+    l = ((*s2 <= 'Z') && (*s2 >= 'A')) ? *s2 + 'a' - 'A' : *s2;
+    s1++;
+    s2++;
+  } while ((f) && (f == l));
+
+  return (int) (f - l);
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -261,16 +275,7 @@ void HTTPDigestCalcResponse(
     HTTPMD5Update(&Md5Ctx, (const unsigned char *)pszMethod, strlen(pszMethod));
     HTTPMD5Update(&Md5Ctx, (const unsigned char *)":", 1);
     HTTPMD5Update(&Md5Ctx, (const unsigned char *)pszDigestUri, nDigestUriLebgth);
-
-#ifdef _WIN32_WCE //maks
-	if (StriCmp(pszQop, "auth-int") == 0) 	
-#elif WIN32	
-	if (stricmp(pszQop, "auth-int") == 0) 		
-#else
-	if (strcasecmp(pszQop, "auth-int") == 0) 	
-#endif
-
-    
+    if (stricmp(pszQop, "auth-int") == 0) 
     {
 
         HTTPMD5Update(&Md5Ctx, (const unsigned char *)":", 1);

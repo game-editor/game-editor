@@ -31,7 +31,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include <stdlib.h>
 #endif
 
+#ifdef USE_RAKNET
 #include "../RakNet/Source/SocketLayer.h"
+#endif
+
 #include <stdio.h>
 #include "GameControl.h"
 #include "Actor.h"
@@ -48,13 +51,14 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "PathFinder/GeoPathfinder.h"
 
 
-
+#ifdef USE_RAKNET
 #include "../RakNet/Source/StringTable.h"
 #include "../RakNet/Source/RakNetworkFactory.h"
 #include "../RakNet/Source/MessageIdentifiers.h"
 #include "../RakNet/Source/GetTime.h"
 #include "../RakNet/Source/BitStream.h"
 #include "../RakNet/Source/NetworkIDManager.h"
+#endif
 
 NetworkIDManager networkIDManager;
 
@@ -1041,7 +1045,7 @@ gedString GameControl::GenerateUniqueID()
 	return uuid.AsString();
 #else
 	char id[32];
-	unsigned long n = RakNet::GetTime() + SDL_GetTicks() % 1000;
+	unsigned long n = NetworkGetTime() + SDL_GetTicks() % 1000;
 
 	sprintf(id, "%ld", n);
 
@@ -5944,7 +5948,7 @@ void GameControl::PushActionInGlobalQueue(
 			)
 {
 	//Get timestamp of request
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 
 	//Get the current machine queue
 	QueueAction *pQueue = mapActionQueue.FindOrCreate(currentOwnerMachine);
@@ -7750,7 +7754,10 @@ int GameControl::InitRakNet(int port)
 	if(rakPeer) return currentListenPort;
 	int requestedPort = port;
 
+#ifdef USE_RAKNET
 	rakPeer = RakNetworkFactory::GetRakPeerInterface();
+#endif
+
 	mapRemoteMousePos.Clear();
 	mapRemoteLastKey.Clear();
 	mapRequestPing.Clear();
@@ -7760,7 +7767,9 @@ int GameControl::InitRakNet(int port)
 	mapUnlinkedActors.Clear();
 	mapActionQueue.Clear();
 	bWaitingForConnectionComplete = false;
+	bool bConnectionOk = false;
 	
+#ifdef USE_RAKNET
 	// This is a global command which will cause sends of NetworkID to use the full SystemAddress / localSystemAddress component.
 	// This way NetworkIDs can be created locally.
 	NetworkID::SetPeerToPeerMode(true);	
@@ -7794,6 +7803,7 @@ int GameControl::InitRakNet(int port)
 	// The network ID manager maps numbers with pointers for object lookups
 	rakPeer->SetNetworkIDManager(&networkIDManager);	
 
+
 	//Current owner (will be the external address after the first connection)
 	currentOwnerMachine = UNASSIGNED_SYSTEM_ADDRESS;
 	//maks:tesste networkIDManager.SetExternalSystemAddress(currentOwnerMachine);
@@ -7806,7 +7816,7 @@ int GameControl::InitRakNet(int port)
 	SocketDescriptor socketDescriptor(port, 0); 
 
 	//5 ms sleep to avoid 100% CPU usage
-	bool bConnectionOk = false;
+	
 	bConnectionOk = rakPeer->Startup(maxConnections, 5, &socketDescriptor, 1);
 
 	//rakPeer->SetTimeoutTime(30000, UNASSIGNED_SYSTEM_ADDRESS); //Only works with a specify address
@@ -7885,6 +7895,7 @@ int GameControl::InitRakNet(int port)
 		SDL_PushEvent(&event);
 #endif
 	}
+#endif
 
 	return bConnectionOk?currentListenPort:-1;
 }
@@ -7954,7 +7965,7 @@ void GameControl::SendIDToServer()
 {
 	//Build the message
 	//Max: 512 bytes
-	RakNet::BitStream out(512);	
+	BitStream out(512);	
 	
 	sprintf((char *)out.GetData(), "version=%ld&msgid=%ld&gameid=%s&clientid=%s", GAME_NET_VERSION, ID_SERVER_REGISTER, gameID.c_str(), clientID.c_str());
 	out.SetWriteOffset(8*(strlen((char *)out.GetData())+1));
@@ -7983,7 +7994,11 @@ void GameControl::PublishGameSession()
 	//Get IP address for game-editor.com
 	if(gameEditorServer == UNASSIGNED_SYSTEM_ADDRESS)
 	{
+#ifdef USE_RAKNET
 		const char *serverIP = SocketLayer::Instance()->DomainNameToIP("game-editor.com");
+#else
+		const char *serverIP  = NULL;
+#endif
 
 		if ( serverIP )
 		{
@@ -8074,6 +8089,7 @@ void GameControl::PublishGameSession()
 	
 }
 
+#ifdef USE_RAKNET
 void GameControl::CreateStringTable()
 {
 	//Create the actor name string table to speed up the communications
@@ -8094,13 +8110,18 @@ void GameControl::CreateStringTable()
 		}		
 	}
 }
+#endif
 
 void GameControl::DestroyRakNet()
 {
 	if(rakPeer)
 	{
+#ifdef USE_RAKNET
 		rakPeer->Shutdown(2000, 0);	
 		RakNetworkFactory::DestroyRakPeerInterface(rakPeer);
+#else
+		delete rakPeer;
+#endif
 		rakPeer = NULL;
 		bWaitingForConnectionComplete = false;
 	}
@@ -8125,10 +8146,10 @@ void GameControl::SendRemoteMousePosition(bool bReliableSend)
 		return;
 	}
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -8155,7 +8176,7 @@ void GameControl::SendRemoteMousePosition(bool bReliableSend)
     //rakPeer->Send(&out, MEDIUM_PRIORITY, bReliableSend?RELIABLE_SEQUENCED:UNRELIABLE_SEQUENCED, NET_CHANNEL_MOUSE, networkIDManager.GetExternalSystemAddress(), true);
 }
 
-bool GameControl::ExecuteRemoteMousePosition(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteMousePosition(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute the position based on a remote machine
 	//x, y in axis coordinates
@@ -8247,10 +8268,10 @@ void GameControl::SendRemoteLastKey()
 		return;
 	}
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -8273,7 +8294,7 @@ void GameControl::SendRemoteLastKey()
     //rakPeer->Send(&out, HIGH_PRIORITY, RELIABLE_SEQUENCED, NET_CHANNEL_ACTIONS, networkIDManager.GetExternalSystemAddress(), true);
 }
 
-bool GameControl::ExecuteRemoteLastKey(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteLastKey(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute the position based on a remote machine
 
@@ -8342,10 +8363,10 @@ void GameControl::SendRemotePosition(Actor *actor, float x, float y, bool bRelia
 		return;
 	}	
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 	
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -8355,7 +8376,7 @@ void GameControl::SendRemotePosition(Actor *actor, float x, float y, bool bRelia
 	out.Write((unsigned char)ID_USER_SET_POSITION);
 
 	//Actor
-	RakNet::StringTable::Instance()->EncodeString(actor->getActorName(), ACTOR_NAME, &out);
+	out.Write(actor->getActorName());
 	out.Write(actor->getCloneIndex());
 
 	//Position
@@ -8372,7 +8393,7 @@ void GameControl::SendRemotePosition(Actor *actor, float x, float y, bool bRelia
 	//rakPeer->Send(&out, HIGH_PRIORITY, bReliableSend?RELIABLE_ORDERED:UNRELIABLE_SEQUENCED, bReliableSend?NET_CHANNEL_ACTIONS:NET_CHANNEL_POSITION, networkIDManager.GetExternalSystemAddress(), true);
 }
 
-bool GameControl::ExecuteRemotePosition(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemotePosition(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute the position based on a remote machine
 
@@ -8384,7 +8405,7 @@ bool GameControl::ExecuteRemotePosition(RakNet::BitStream &in, RakNetTime &timeS
 	//Read the message
 	
 	//Actor
-	RakNet::StringTable::Instance()->DecodeString(eventActorName, ACTOR_NAME, &in);
+	in.Read(eventActorName);
 	in.Read(eventActorCloneIndex);
 
 			
@@ -8431,10 +8452,10 @@ void GameControl::SendRemoteFrame(Actor *actor, bool bReliableSend)
 		return;
 	}	
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 	
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -8444,7 +8465,7 @@ void GameControl::SendRemoteFrame(Actor *actor, bool bReliableSend)
 	out.Write((unsigned char)ID_USER_SET_FRAME);
 
 	//Actor
-	RakNet::StringTable::Instance()->EncodeString(actor->getActorName(), ACTOR_NAME, &out);
+	out.Write(actor->getActorName());
 	out.Write(actor->getCloneIndex());
 
 	//Frame
@@ -8461,7 +8482,7 @@ void GameControl::SendRemoteFrame(Actor *actor, bool bReliableSend)
 	//rakPeer->Send(&out, HIGH_PRIORITY, bReliableSend?RELIABLE_ORDERED:UNRELIABLE_SEQUENCED, NET_CHANNEL_FRAME, networkIDManager.GetExternalSystemAddress(), true);
 }
 
-bool GameControl::ExecuteRemoteFrame(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteFrame(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute the frame change based on a remote machine
 
@@ -8473,7 +8494,7 @@ bool GameControl::ExecuteRemoteFrame(RakNet::BitStream &in, RakNetTime &timeStam
 	//Read the message
 	
 	//Actor
-	RakNet::StringTable::Instance()->DecodeString(eventActorName, ACTOR_NAME, &in);
+	in.Read(eventActorName);
 	in.Read(eventActorCloneIndex);
 
 			
@@ -8531,10 +8552,10 @@ void GameControl::SendRemoteAction(
 		return;
 	}
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 
 	//Build the message
-	RakNet::BitStream *out = new RakNet::BitStream;
+	BitStream *out = new BitStream;
 	if(!out) return;
 
 	//Timestamp
@@ -8550,10 +8571,10 @@ void GameControl::SendRemoteAction(
 	out->Write(actionNumber);
 
 	//Action Name
-	RakNet::StringTable::Instance()->EncodeString(actionName.getCharBuf(), ACTOR_NAME, out);
+	out->Write(actionName.getCharBuf());
 
 	//Event Actor
-	RakNet::StringTable::Instance()->EncodeString(eventActorName.getCharBuf(), ACTOR_NAME, out);
+	out->Write(eventActorName.getCharBuf());
 	out->Write(eventActorCloneIndex);
 	out->Write(eventActorOwnershipTimestamp);
 
@@ -8561,7 +8582,7 @@ void GameControl::SendRemoteAction(
 	if(collideActorCloneIndex >= 0)
 	{
 		out->Write(collideActorCloneIndex);
-		RakNet::StringTable::Instance()->EncodeString(collideActorName.getCharBuf(), ACTOR_NAME, out);		
+		out->Write(collideActorName.getCharBuf());		
 	}
 	else
 	{
@@ -8586,7 +8607,7 @@ void GameControl::SendRemoteAction(
 	if(sendOrder == 0)
 	{
 		//Send all messages
-		RakNet::BitStream *p;
+		BitStream *p;
 
 		for(int i = 0; i < pendingActions.Count(); i++)
 		{			
@@ -8605,7 +8626,7 @@ void GameControl::SendRemoteAction(
 }
 
 
-bool GameControl::ExecuteRemoteAction(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteAction(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute action from a remote machine
 
@@ -8623,16 +8644,16 @@ bool GameControl::ExecuteRemoteAction(RakNet::BitStream &in, RakNetTime &timeSta
 	in.Read(actionNumber);
 
 	//Action Name
-	RakNet::StringTable::Instance()->DecodeString(actionName, ACTOR_NAME, &in);
+	in.Read(actionName);
 
 	//Event Actor
-	RakNet::StringTable::Instance()->DecodeString(eventActorName, ACTOR_NAME, &in);
+	in.Read(eventActorName);
 	in.Read(eventActorCloneIndex);
 	in.Read(eventActorOwnershipTimestamp);
 
 	//Collide Actor
 	in.Read(collideActorCloneIndex);
-	if(collideActorCloneIndex >= 0) RakNet::StringTable::Instance()->DecodeString(collideActorName, ACTOR_NAME, &in);
+	if(collideActorCloneIndex >= 0) in.Read(collideActorName);
 		
 	//Flags
 	in.Read(bExecuteConditional);
@@ -8833,10 +8854,10 @@ void GameControl::SendRemoteAdressUpdate(const SystemAddress &oldAddr)
 		return;
 	}
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -8857,7 +8878,7 @@ void GameControl::SendRemoteAdressUpdate(const SystemAddress &oldAddr)
 	rakPeer->Send(&out, HIGH_PRIORITY, RELIABLE_ORDERED, NET_CHANNEL_ACTIONS, networkIDManager.GetExternalSystemAddress(), true);	
 }
 
-bool GameControl::ExecuteRemoteAdressUpdate(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteAdressUpdate(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute address update from a remote machine
 	SystemAddress oldAddr;	
@@ -8946,7 +8967,7 @@ bool GameControl::RequestActorOwnership(const char *cloneName)
 	if(actor <= COLLIDE_ACTOR) return false; 
 
 	
-	if(actor->RequestActorOwnership(networkIDManager.GetExternalSystemAddress(), RakNet::GetTime()))
+	if(actor->RequestActorOwnership(networkIDManager.GetExternalSystemAddress(), NetworkGetTime()))
 	{
 		//Send to the remote machines
 		SendRemoteRequestActorOwnership(actor->getActorName(), actor->getCloneIndex(), actor->GetOwnershipTimestamp());
@@ -8967,10 +8988,10 @@ void GameControl::SendRemoteReleaseActorOwnership(const char *actorName, long cl
 		return;
 	}
 
-	RakNetTime timeStamp = RakNet::GetTime();
+	RakNetTime timeStamp = NetworkGetTime();
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -8981,7 +9002,7 @@ void GameControl::SendRemoteReleaseActorOwnership(const char *actorName, long cl
 
 
 	//Actor
-	RakNet::StringTable::Instance()->EncodeString(actorName, ACTOR_NAME, &out);
+	out.Write(actorName);
 	out.Write(cloneIndex);
 
 #ifdef DEBUG
@@ -8993,7 +9014,7 @@ void GameControl::SendRemoteReleaseActorOwnership(const char *actorName, long cl
 	rakPeer->Send(&out, HIGH_PRIORITY, RELIABLE_ORDERED, NET_CHANNEL_ACTIONS, networkIDManager.GetExternalSystemAddress(), true);	
 }
 
-bool GameControl::ExecuteRemoteReleaseActorOwnership(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteReleaseActorOwnership(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute ownership release from a remote machine
 	char actorName[ACTOR_NAME];
@@ -9003,7 +9024,7 @@ bool GameControl::ExecuteRemoteReleaseActorOwnership(RakNet::BitStream &in, RakN
 	//Read the message
 	
 	//Actor
-	RakNet::StringTable::Instance()->DecodeString(actorName, ACTOR_NAME, &in);
+	in.Read(actorName);
 	in.Read(cloneIndex);
 	
 	///////////////////////////////////////////////////
@@ -9051,7 +9072,7 @@ void GameControl::SendRemoteRequestActorOwnership(const char *actorName, long cl
 	}
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 	
 	//Timestamp
 	out.Write((unsigned char)ID_TIMESTAMP);
@@ -9062,7 +9083,7 @@ void GameControl::SendRemoteRequestActorOwnership(const char *actorName, long cl
 
 
 	//Actor
-	RakNet::StringTable::Instance()->EncodeString(actorName, ACTOR_NAME, &out);
+	out.Write(actorName);
 	out.Write(cloneIndex);
 
 #ifdef DEBUG
@@ -9083,7 +9104,7 @@ void GameControl::SendRemoteRequestActorOwnership(const char *actorName, long cl
 	}
 }
 
-bool GameControl::ExecuteRemoteRequestActorOwnership(RakNet::BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
+bool GameControl::ExecuteRemoteRequestActorOwnership(BitStream &in, RakNetTime &timeStamp, SystemAddress &addr)
 {
 	//Execute ownership request from a remote machine
 	char actorName[ACTOR_NAME];
@@ -9093,7 +9114,7 @@ bool GameControl::ExecuteRemoteRequestActorOwnership(RakNet::BitStream &in, RakN
 	//Read the message
 
 	//Actor
-	RakNet::StringTable::Instance()->DecodeString(actorName, ACTOR_NAME, &in);
+	in.Read(actorName);
 	in.Read(cloneIndex);
 	
 	///////////////////////////////////////////////////
@@ -9136,7 +9157,7 @@ bool GameControl::ExecuteTimeStampedMessages(Packet *packet)
 
 	///////////////////////////////////////////////////
 	//Read the message
-	RakNet::BitStream in(packet->data, packet->length, false);
+	BitStream in(packet->data, packet->length, false);
 
 	//Already decoded (ID_TIMESTAMP)
 	//Read here to increase data pointer	
@@ -9206,7 +9227,7 @@ bool GameControl::HandleNewConnection(SystemAddress &addr)
 	}
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Message type
 	out.Write((unsigned char)ID_USER_ENVIRONMENT_INFO_REQUEST);
@@ -9233,13 +9254,13 @@ bool GameControl::HandleEnvironmentInfoRequest(SystemAddress &addr)
 	}
 
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Message type
 	out.Write((unsigned char)ID_USER_ENVIRONMENT_INFO);
 
 	//Info
-	RakNet::StringTable::Instance()->EncodeString(getGameID().c_str(), 0, &out);
+	out.Write(getGameID());
 	out.Write(getGameVersion());
 
 
@@ -9263,13 +9284,13 @@ bool GameControl::HandleEnvironmentInfo(Packet *packet)
 
 	///////////////////////////////////////////////////
 	//Read the message
-	RakNet::BitStream in(packet->data, packet->length, false);
+	BitStream in(packet->data, packet->length, false);
 	
 	//Read here to increase data pointer	
 	in.Read(msgType);
 
 	//Read Info
-	RakNet::StringTable::Instance()->DecodeString(remoteGameID, MAX_GAME_ID+1, &in);
+	in.Read(remoteGameID);
 	in.Read(remoteGameVersion);
 
 	if(gedString(remoteGameID) != getGameID())
@@ -9295,7 +9316,7 @@ bool GameControl::HandleEnvironmentInfo(Packet *packet)
 		//Remote machine have a old version, send notification
 
 		//Build the message
-		RakNet::BitStream out;
+		BitStream out;
 
 		//Message type
 		out.Write((unsigned char)ID_USER_OLD_GAME_VERSION);
@@ -9316,7 +9337,7 @@ bool GameControl::HandleEnvironmentInfo(Packet *packet)
 	//Ok, send the green flag!
 	
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Message type
 	out.Write((unsigned char)ID_USER_HANDSHAKE_FINISHED);
@@ -9347,7 +9368,7 @@ bool GameControl::HandleHandShakeFinished(Packet *packet)
 
 	///////////////////////////////////////////////////
 	//Read the message
-	RakNet::BitStream in(packet->data, packet->length, false);
+	BitStream in(packet->data, packet->length, false);
 	
 	//Read here to increase data pointer	
 	in.Read(msgType);
@@ -9356,7 +9377,7 @@ bool GameControl::HandleHandShakeFinished(Packet *packet)
 	{
 		//First connection, request the game state
 		
-		RakNet::BitStream out;
+		BitStream out;
 
 		//Message type
 		out.Write((unsigned char)ID_USER_REQUEST_GAME_STATE);
@@ -9386,7 +9407,7 @@ bool GameControl::HandleHandShakeFinished(Packet *packet)
 void GameControl::SendGameState(SystemAddress &addr)
 {
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Message type
 	out.Write((unsigned char)ID_USER_GAME_STATE);
@@ -9414,7 +9435,7 @@ bool GameControl::ExecuteGameStateUpdate(Packet *packet)
 
 	///////////////////////////////////////////////////
 	//Read the message
-	RakNet::BitStream in(packet->data, packet->length, false);
+	BitStream in(packet->data, packet->length, false);
 
 	//Already decoded by ProcessNetwork
 	//Read here to increase data pointer	
@@ -9442,7 +9463,7 @@ void GameControl::SendOnlyStateOfActorsControlledLlocaly(SystemAddress &addr)
 	//Send only the actors controlled by this machine
 	
 	//Build the message
-	RakNet::BitStream out;
+	BitStream out;
 
 	//Message type
 	out.Write((unsigned char)ID_USER_LOCAL_ACTORS);
@@ -9468,7 +9489,7 @@ bool GameControl::ExecuteStateUpdateOfRemoteControlledActors(Packet *packet)
 
 	///////////////////////////////////////////////////
 	//Read the message
-	RakNet::BitStream in(packet->data, packet->length, false);
+	BitStream in(packet->data, packet->length, false);
 
 	//Already decoded by ProcessNetwork
 	//Read here to increase data pointer	
@@ -9485,7 +9506,7 @@ bool GameControl::ExecuteStateUpdateOfRemoteControlledActors(Packet *packet)
 	return true;
 }
 
-void GameControl::WriteActorIndex(RakNet::BitStream& out)
+void GameControl::WriteActorIndex(BitStream& out)
 {	
 	gedString name, actorName;
 	out.Write((int)actorIndex.size());
@@ -9501,13 +9522,13 @@ void GameControl::WriteActorIndex(RakNet::BitStream& out)
 
 		if(i > 0) cloneindex = atol(actorName.substr(i+1).c_str());
 
-		RakNet::StringTable::Instance()->EncodeString(name.c_str(), ACTOR_NAME, &out);
+		out.Write(name.c_str());
 		out.Write(cloneindex);
 		out.Write(itActor.Value()->bDestroyed);			
 	}
 }
 
-void GameControl::ReadActorIndex(RakNet::BitStream& in)
+void GameControl::ReadActorIndex(BitStream& in)
 {
 	int n;
 	in.Read(n);
@@ -9519,7 +9540,7 @@ void GameControl::ReadActorIndex(RakNet::BitStream& in)
 
 	for(int i = 0; i < n; i++)
 	{
-		RakNet::StringTable::Instance()->DecodeString(actorName, ACTOR_NAME, &in);
+		in.Read(actorName);
 		in.Read(cloneindex);
 		in.Read(bDestroyed);
 
@@ -9553,7 +9574,7 @@ void GameControl::ReadActorIndex(RakNet::BitStream& in)
 	}
 }
 
-void GameControl::WriteGlobalVars(RakNet::BitStream& out)
+void GameControl::WriteGlobalVars(BitStream& out)
 {
 	//Must send all global allocated vars
 	//Global pointers and dynamic allocated memory aren't synchronized.
@@ -9633,7 +9654,7 @@ void GameControl::WriteGlobalVars(RakNet::BitStream& out)
 				if(addr && size)
 				{
 					out.Write(size);
-					RakNet::StringTable::Instance()->EncodeString(sym->id, ACTOR_NAME, &out);
+					out.Write(sym->id);
 					out.Write((const char *)addr, size);	
 				}
 			}
@@ -9644,7 +9665,7 @@ void GameControl::WriteGlobalVars(RakNet::BitStream& out)
 	out.Write((int)0);
 }
 
-void GameControl::ReadGlobalVars(RakNet::BitStream& in)
+void GameControl::ReadGlobalVars(BitStream& in)
 {	
 	int sizeSrc = 0, sizeDst = 0, oldSizeSrc = 0;
 	void *src = NULL, *dst = NULL;
@@ -9660,7 +9681,7 @@ void GameControl::ReadGlobalVars(RakNet::BitStream& in)
 			oldSizeSrc = sizeSrc;
 		}
 
-		RakNet::StringTable::Instance()->DecodeString(symID, ACTOR_NAME, &in);
+		in.Read(symID);
 		if(in.Read((char *)src, sizeSrc))
 		{
 			symentry_t *sym = (symentry_t *)isSymbolInEic(symID);
@@ -9696,7 +9717,7 @@ void GameControl::ReadGlobalVars(RakNet::BitStream& in)
 	free(src);
 }
 
-void GameControl::WriteLiveActors(RakNet::BitStream& out, KrImNode *pNode, bool bOnlyLocallyControlledActors)
+void GameControl::WriteLiveActors(BitStream& out, KrImNode *pNode, bool bOnlyLocallyControlledActors)
 {
 	//Walk the tree and write the parents first
 	static int recursion = 0;
@@ -9720,7 +9741,7 @@ void GameControl::WriteLiveActors(RakNet::BitStream& out, KrImNode *pNode, bool 
 
 			//Actor
 			out.Write(childActor->getCloneIndex());
-			RakNet::StringTable::Instance()->EncodeString(childActor->getActorName(), ACTOR_NAME, &out);				
+			out.Write(childActor->getActorName());				
 
 			//Write the actor state
 			childActor->WriteState(out);
@@ -9738,7 +9759,7 @@ void GameControl::WriteLiveActors(RakNet::BitStream& out, KrImNode *pNode, bool 
 }
 
 
-void GameControl::ReadLiveActors(RakNet::BitStream& in, bool bDeleteAll, const SystemAddress &addr)
+void GameControl::ReadLiveActors(BitStream& in, bool bDeleteAll, const SystemAddress &addr)
 {
 	//Update local actors based on remote machine
 	MapRunningActor removeIfNotExists;
@@ -9775,7 +9796,7 @@ void GameControl::ReadLiveActors(RakNet::BitStream& in, bool bDeleteAll, const S
 
 	while(cloneIndex != -1)
 	{
-		RakNet::StringTable::Instance()->DecodeString(actorName, ACTOR_NAME, &in);
+		in.Read(actorName);
 
 		//Create here and update the state later
 		gedString cloneName(actorName);
@@ -10123,7 +10144,7 @@ void GameControl::ProcessNetwork(bool bFromFrameTick)
 #ifdef DEBUG
 					RakNetTime time;
 					memcpy((char*)&time, p->data+1, sizeof(RakNetTime));				
-					GLOUTPUT("+++ Pong from %s with time %i\n", p->systemAddress.ToString(), RakNet::GetTime() - time);
+					GLOUTPUT("+++ Pong from %s with time %i\n", p->systemAddress.ToString(), NetworkGetTime() - time);
 #endif
 
 					if(p->systemAddress.binaryAddress != gameEditorServer.binaryAddress)
