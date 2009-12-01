@@ -738,7 +738,7 @@ void CreateBitMap()
 			//What about the pixel format?
 			SetBitmapBits(srcBitmap, backBuferSize, backBufer);
 		}
-		else if(0) //maks:teste
+		else
 		{		
 			//The screen is rotated			
 			int x, y, bFlip = GetFlipPocketPCScreen();
