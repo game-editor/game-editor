@@ -62,6 +62,11 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "ttree.h"
 #endif
 
+#if !defined(USE_ACTIVATION)
+#define NANOBEGIN
+#define NANOEND
+#endif
+
 #ifndef STAND_ALONE_GAME
 //////////////////////////////////////////////////////////////////////////////
 //Generic tool tip strings

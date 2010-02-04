@@ -27,7 +27,7 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 //
 //////////////////////////////////////////////////////////////////////
 
-#if /*defined(GAME_EDITOR_PROFESSIONAL) &&*/ defined(WIN32) && !defined(STAND_ALONE_GAME)
+#if /*defined(GAME_EDITOR_PROFESSIONAL) &&*/ !defined(STAND_ALONE_GAME)
 
 #include "ExportGame.h"
 #include "GameControl.h"

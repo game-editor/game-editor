@@ -172,7 +172,9 @@ SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags);
 extern gedString sGameEditorCaption;
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
-#	include "SecuredSections.h"
+#	ifdef USE_ACTIVATION
+#		include "SecuredSections.h"
+#	endif
 #	include <time.h>
 #	include "../gameEditor/AboutDlg.h"
 
@@ -478,14 +480,13 @@ static bool eSellerValidate()
 
 void Inf2()
 {
-	//////////////////////////////////////////////////////
-	//Disable expiration verification
-	//Comment this block in release version
-	//Use for tests only
-	/*GameControl::Get()->setExecuteUpToFrame(103680000);
+
+#if !defined(USE_ACTIVATION)
+	GameControl::Get()->setExecuteUpToFrame(103680000);
 	GameControl::Get()->setCheckFrame(103680000);
-	return;/**/
-	//////////////////////////////////////////////////////
+	return;
+#endif
+
 
 
 	//Check if can run this version
@@ -524,7 +525,7 @@ void Inf2()
 				sscanf(buf, "%4ld.%2ld.%2ld", &tmKeyCreated.tm_year, &tmKeyCreated.tm_mon, &tmKeyCreated.tm_mday);
 
 				/////////////////////////////////////////
-				//maks:teste Keep this until release the new interface
+				//Keep this until release the new interface
 				if(purchasedDays >= 30 && tmKeyCreated.tm_year >= 2006)
 				{
 					//New interface promotion
@@ -571,7 +572,7 @@ void Inf2()
 					new RegisterPanel(keyCreated, purchasedDays);
 				}
 
-				} //maks:teste Keep this until release the new interface
+				} //Keep this until release the new interface
 			}
 			else
 			{

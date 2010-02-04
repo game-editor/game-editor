@@ -61,7 +61,9 @@ extern "C" HWND SDL_Window;
 
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
-#	include "SecuredSections.h"
+#	ifdef USE_ACTIVATION
+#		include "SecuredSections.h"
+#	endif
 #	include <time.h>
 #	include "AboutDlg.h"
 char *date_mac_conv(char *pszDate);
@@ -757,8 +759,10 @@ void MainPanel::UpdateCheck()
 	NANOBEGIN
 
 	char buf[256], keyCreated[20];
-	bool bCanUpdate = false;
+	bool bCanUpdate = true; //Always update
 
+#ifdef USE_ACTIVATION
+	bCanUpdate = false;
 
 	if(GetEnvironmentVariable("EXTRAINFO",  buf, 255))
 	{
@@ -786,7 +790,7 @@ void MainPanel::UpdateCheck()
 				sscanf(buf, "%4ld.%2ld.%2ld", &tmKeyCreated.tm_year, &tmKeyCreated.tm_mon, &tmKeyCreated.tm_mday);
 
 				/////////////////////////////////////////
-				//maks:teste Keep this until release the new interface
+				//Keep this until release the new interface
 				if(purchasedDays >= 30 && tmKeyCreated.tm_year >= 2006)
 				{
 					//New interface promotion
@@ -820,10 +824,11 @@ void MainPanel::UpdateCheck()
 					new RegisterPanel(keyCreated, purchasedDays, true);
 				}
 
-				} //maks:teste Keep this until release the new interface
+				} //Keep this until release the new interface
 			}
 		}
 	}
+#endif
 
 	if(bCanUpdate)
 	{
@@ -885,10 +890,9 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 						UndoControl::Get()->Clear();
 						lastScripts.Clear();
 
-						#ifdef WIN32
+						
 						ExportGame::ClearExportName();
-						#endif
-
+						
 						/*Close actor dialog*/
 						ActorProperty::Destroy();
 					}
@@ -915,9 +919,8 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 			{
 				new LoadSaveGame(LOAD_GAME);
 
-				#ifdef WIN32
 				ExportGame::ClearExportName();
-				#endif
+				
 			}
 			else if(text == "Merge")
 			{
@@ -957,7 +960,7 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 #endif			
 			else if(text == "Export")
 			{
-				#ifdef WIN32//#ifdef GAME_EDITOR_PROFESSIONAL
+				#ifdef GAME_EDITOR_PROFESSIONAL
 
 				if(GenericScript::ParserAll())
 				{
@@ -969,8 +972,6 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 				}
 				
 				#else 
-				//Don't export on Linux
-				//<Odilon> Pequena correcao de Ingles...
 				new PanelInfo(GAME_EDITOR_VERSION_ERROR);
 				#endif
 			}

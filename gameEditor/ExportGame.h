@@ -27,7 +27,7 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 //
 //////////////////////////////////////////////////////////////////////
 
-#if /*defined(GAME_EDITOR_PROFESSIONAL) &&*/ defined(WIN32) && !defined(STAND_ALONE_GAME)
+#if /*defined(GAME_EDITOR_PROFESSIONAL) &&*/ !defined(STAND_ALONE_GAME)
 
 #if !defined(AFX_EXPORTGAME_H__2A2119ED_8FB7_4345_97CA_082E905FB445__INCLUDED_)
 #define AFX_EXPORTGAME_H__2A2119ED_8FB7_4345_97CA_082E905FB445__INCLUDED_

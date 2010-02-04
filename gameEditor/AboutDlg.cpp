@@ -34,7 +34,9 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32)
 #	include <time.h>
-#	include "SecuredSections.h"
+#	ifdef USE_ACTIVATION
+#		include "SecuredSections.h"
+#	endif
 #endif
 
 
@@ -77,7 +79,7 @@ void ShowReg(bool bShowThanks)
 void ShowReg(bool bShowThanks) {}
 #endif
 
-#if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32)
+#if defined(GAME_EDITOR_PROFESSIONAL)
 void Inf1(gedString &userName, gedString &updateDays)
 {
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
@@ -85,6 +87,16 @@ void Inf1(gedString &userName, gedString &updateDays)
 #endif
 
 	char buf[256];
+
+	
+
+#if !defined(USE_ACTIVATION)
+	userName = "Game Editor";
+	updateDays = "Life time";
+	return;
+#endif
+
+#ifdef WIN32
 	if(GetEnvironmentVariable("ALTUSERNAME",  buf, 255))
 	{
 		userName = buf;
@@ -118,7 +130,7 @@ void Inf1(gedString &userName, gedString &updateDays)
 				sscanf(buf, "%4ld.%2ld.%2ld", &tmKeyCreated.tm_year, &tmKeyCreated.tm_mon, &tmKeyCreated.tm_mday);
 
 				/////////////////////////////////////////
-				//maks:teste Keep this until release the new interface
+				//Keep this until release the new interface
 				if(purchasedDays >= 30 && tmKeyCreated.tm_year >= 2006)
 				{
 					//New interface promotion
@@ -148,6 +160,7 @@ void Inf1(gedString &userName, gedString &updateDays)
 			}
 		}
 	}
+#endif
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
 	NANOEND
@@ -259,7 +272,7 @@ AboutDlg::AboutDlg()
 
 	gedString userName("Demo Version"), updateDays("no updates");
 
-#if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32)
+#if defined(GAME_EDITOR_PROFESSIONAL)
 	Inf1(userName, updateDays);
 #endif
 
@@ -270,8 +283,6 @@ AboutDlg::AboutDlg()
 
 	text = AddText("Remaining update days: ", 10, text->Down() + 2);
 	text = AddText(updateDays, text->Right(), text->Top());
-#else
-	//text = AddText("30 days demo version licensed to\nIMECO GmbH, Linz, Austria", 10, y + 2);
 #endif
 
 

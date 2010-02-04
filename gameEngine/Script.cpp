@@ -42,7 +42,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include <time.h>
 #endif
 
-#if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
+#if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME) && defined(USE_ACTIVATION)
 #	include "SecuredSections.h"
 #endif
 
