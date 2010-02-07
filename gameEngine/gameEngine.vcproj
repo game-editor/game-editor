@@ -384,7 +384,7 @@
 			/>
 			<Tool
 				Name="arm-linux-gcc"
-				IncludePaths="../RakNet/Source;../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;Eic/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib"
+				IncludePaths="../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;Eic/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib"
 				OptimizationLevel="4"
 				PreprocessorDefines="$(VersionType);GP2X;__linux;linux;__linux__;STAND_ALONE_GAME;_LIB;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY"
 			/>
@@ -478,7 +478,7 @@
 			<Tool
 				Name="arm-linux-gcc"
 				ExecutionBucket="2"
-				IncludePaths="../RakNet/Source;../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;Eic/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib"
+				IncludePaths="../SDL/SDL_mixer;../SDL/SDL/include;../SDL/SDL_image;../kyra;Eic/src;../SDL/SDL_image/png/libpng;../SDL/SDL_image/png/zlib"
 				OptimizationLevel="4"
 				PreprocessorDefines="$(VersionType);GP2X;__linux;linux;__linux__;STAND_ALONE_GAME;_LIB;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY"
 			/>

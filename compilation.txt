@@ -1,7 +1,33 @@
 /////////////////////////////////////////////////////////////////////////
-To compile the gameEditor (current interface) and wxGameEditor (new interface) projects:
+//Windows
 
-1) Get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 83257 runs ok) (optional for while, look the USE_LLVM definition)
+To compile the gameEditor (current interface) open the solution file gameEditlr.sln and build the gameEditor project (this will create the file gameEditor.exe in the output directory).
+
+To compile the new interface (not functional yet) you need to build the wxGameEditor project thats have the follow dependencies:
+
+1) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
+
+Put the follow dirs in your include path:
+
+wxWidgets/include
+wxWidgets/include/msvc
+wxWidgets/contrib/include
+wxWidgets/contrib/wxstedit/include
+
+Put the follow llvm dirs in your library path:
+
+wxWidgets/lib/vc_lib
+
+Open the wx.dsw project
+Configure all projects of the wxWidgets to:
+Multi-threaded (/MT or /MTd)
+
+Disable the "Edit and Continue" option of the Visual Studio
+Build all projects 
+
+
+2) The LLVM is not used now, but are some tests in the code to generate C code from the Behavior panel. 
+To get the LLVM and clang (you need to get the last version via svn, but if you can't compile the last version the revision 83257 runs ok) (optional for while, look the USE_LLVM definition)
 
 cd llvm
 svn co http://llvm.org/svn/llvm-project/llvm/trunk .
@@ -37,25 +63,29 @@ llvm/bin/lib
 Build the ALL_BUILD project
 
 
-2) Get the wxWidgets at http://www.wxwidgets.org/ (wxAll version)
 
-Put the follow dirs in your include path:
+/////////////////////////////////////////////////////////////////////////
+Linux: (tested on Kubuntu 9.10 64bits)
 
-wxWidgets/include
-wxWidgets/include/msvc
-wxWidgets/contrib/include
-wxWidgets/contrib/wxstedit/include
 
-Put the follow llvm dirs in your library path:
+1) Open a terminal window
+2) Install the libx11-dev (if not installed on your system) 
+	sudo apt-get update
+	sudo apt-get install libx11-dev libxpm-dev x11proto-xext-dev libxext-dev
 
-wxWidgets/lib/vc_lib
-
-Open the wx.dsw project
-Configure all projects of the wxWidgets to:
-Multi-threaded (/MT or /MTd)
-
-Disable the "Edit and Continue" option of the Visual Studio
-Build all projects 
+3) Make sure you have the gcc and g++ installed. If not, install it:	
+	sudo apt-get install g++
+		
+		
+4) Install the 32bit library if you are using a 64bit linux (Game Editor was not ported to 64bit yet)
+	sudo apt-get install libc6-dev-i386
+	sudo apt-get install lib32stdc++6	
+	sudo apt-get install g++-multilib
+	sudo apt-get install ia32-libs
+	
+5) Go to the Game Editor directory
+6) type: make
+7) copy the contents of the directory gameEditor/res to output/editor
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -80,6 +110,8 @@ In the Visual Studio 2008, choose the version you want to compile:
 - To compile for the GP2X select the 'Windows Mobile 5.0 Pocket PC SDK (ARMV4I)' configuration (you need to install the Windows Mobile 5.0 SDK for Pocket PC and have the devkitpro installed (http://www.devkitpro.org/))
 		
 - Build the gameEditor project (not the wxGameEditor project)
+
+- To compile the Linux engine set the GAMEEDITOR_TYPE to GAMEEDITOR_PROFESSIONAL_STAND_ALONE in the makefile
 		
 - Use the GameControl::CreateEngines() function to create the bin files from the compiled executables:
   
@@ -87,28 +119,3 @@ In the Visual Studio 2008, choose the version you want to compile:
 	gameEditorPocket.exe		-> bin\\pocketpc.bin
 	gameEditorLinux				-> bin\\linux.bin
 	gameEditorPocket.exe.gpe	-> bin\\gp2x.bin
-
-
-
-/////////////////////////////////////////////////////////////////////////
-Linux: (tested on Kubuntu 9.10 64bits)
-
-
-1) Open a terminal window
-2) Install the libx11-dev (if not installed on your system) 
-	sudo apt-get update
-	sudo apt-get install libx11-dev libxpm-dev x11proto-xext-dev libxext-dev
-
-3) Make sure you have the gcc and g++ installed. If not, install it:	
-	sudo apt-get install g++
-		
-		
-4) Install the 32bit library if you are using a 64bit linux (Game Editor was not ported to 64bit yet)
-	sudo apt-get install libc6-dev-i386
-	sudo apt-get install lib32stdc++6	
-	sudo apt-get install g++-multilib
-	sudo apt-get install ia32-libs
-	
-5) Go to the Game Editor directory
-6) type: make
-7) copy the contents of the directory gameEditor/res to output/editor

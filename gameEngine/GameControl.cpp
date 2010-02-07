@@ -10142,7 +10142,7 @@ void GameControl::ProcessNetwork(bool bFromFrameTick)
 				if(IsRemoteAddress(p->systemAddress))
 				{
 					//LAN discovery connection
-#ifdef DEBUG
+#if defined(DEBUG) && defined(USE_RAKNET)
 					RakNetTime time;
 					memcpy((char*)&time, p->data+1, sizeof(RakNetTime));				
 					GLOUTPUT("+++ Pong from %s with time %i\n", p->systemAddress.ToString(), NetworkGetTime() - time);
