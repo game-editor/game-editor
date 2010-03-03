@@ -1,4 +1,4 @@
-#ifndef linux
+#if !defined(linux) && !defined(LLVM)
 
 #include "gedString.h"
 #include "HTTPClient/httpclient.cpp"
