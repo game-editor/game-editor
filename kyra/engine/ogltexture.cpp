@@ -73,6 +73,10 @@
 #include "kyrabuild.h"
 #include "canvasresource.h"
 #include "engine.h"
+#ifdef __iPhone__
+#include "SDL_sysvideo.h"
+#endif
+
 
 
 #ifdef KYRA_SUPPORT_OPENGL
@@ -214,6 +218,7 @@ KrOglTexture::KrOglTexture( const KrRGBA* image,
 	}
 	else
 	{
+
 		//Use remove border to solve artifacts in nvidia cards
 		int border = bRemoveBorder?2:0; //maks
 		int offset = 1 /*+ border/2*/; //maks
@@ -274,7 +279,7 @@ void KrOglTexture::SetTexture(	const KrRGBA* pixels,
 void KrOglTexture::SetScaledTexture( const KrRGBA* pixels, int w, int h )
 {
 #ifndef GL_OES_VERSION_1_1 //maks
-
+#ifndef __iPhone__
 	SDL_CurrentVideo->glBindTexture( GL_TEXTURE_2D, textureId );
 	GLint sizeX, sizeY;
 	SDL_CurrentVideo->glGetTexLevelParameteriv( GL_TEXTURE_2D, 0, GL_TEXTURE_WIDTH, &sizeX );
@@ -299,7 +304,7 @@ void KrOglTexture::SetScaledTexture( const KrRGBA* pixels, int w, int h )
 
 	GLASSERT( SDL_CurrentVideo->glGetError() == GL_NO_ERROR );
 	delete [] target;
-
+#endif
 #endif
 }
 
@@ -351,6 +356,8 @@ void KrOglTexture::CreateTexture(	U8* target, int width, int height, int targetS
 void KrOglTexture::CreateScaledTexture(	U8* target, int targetW, int targetH, int targetScan,
 										const KrRGBA* source, int sourceW, int sourceH )
 {
+	//This function is not working (wrong image on iPhone when is used)
+	//So, avoid use it (1019x1019 maximum texture size on iPhone)
 	U32 errorX = 0;
 	U32 errorY = 0;
 	GlFixed xStep = double( sourceW ) / double( targetW );

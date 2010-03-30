@@ -78,7 +78,9 @@
 #include "../../gameEngine/compression.h" //maks
 
 #include "../../gameEngine/dlmalloc.h" //maks
-
+#ifdef __iPhone__
+#include "SDL_sysvideo.h"
+#endif
 #ifdef DEBUG
 	U32 KrPixelBlock::numRGBA = 0;
 #endif

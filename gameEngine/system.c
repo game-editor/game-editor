@@ -58,13 +58,17 @@ void correctDirectoryName(const char *oldName, char *newName)
 }
 
 
-
+#if __iPhone__
+void openUrl(const char * b) { return 0; };
+#endif
 
 
 #ifdef __SYMBIAN32__
 #  include "system_symbian.c"
 #elif _WIN32_WCE
 # include "system_pocketpc.c"
+#elif __APPLE__
+# include "system_iphone.c"
 #elif WIN32
 # include "system_windows.c" 
 #else

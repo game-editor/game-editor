@@ -26,8 +26,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 ///////////////////////////////////////////////////////////////////
 
 #include "GeoPathfinder.h"
-
-#ifdef LLVM
+#if defined(__APPLE__) || defined(LLVM)
 #	define linux
 #endif
 

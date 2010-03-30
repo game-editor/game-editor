@@ -41,6 +41,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "gedString.h"
 #include "dlmalloc.h"
 
+
 extern "C"
 {
 void EiC_parseString(char * fmt,...);

@@ -112,6 +112,17 @@ gedString ANY_ACTOR("Any Actor");
 gedString ALL_ACTORS("All Actors");
 gedString ANY_ANIMATION("Any Animation");
 gedString ANY_PATH("Any Path");
+#if __iPhone__
+enum {
+	
+	/* Maks: famous Any Key*/
+	SDLK_ANY_KEY						= 416,
+	SDLK_ALL_KEYS_PRESSED				= 417,
+	SDLK_KEYS_PRESSED_IN_ORDER			= 418,
+	SDLK_AT_LEAST_ONE_KEY_IS_PRESSED	= 419,
+	
+};
+#endif
 
 GlobalMapActions &Action::getGlobalMapActions()
 {
@@ -4303,7 +4314,7 @@ int execDestroyTimer(char *timerName)
 		{		
 			SDL_TimerID id = *timerId;
 
-			actionActor->RemoveTimer((stTimer *)(id->param)); //Solve the bug: Bug "Gravity Wars only shot one time / ship" (não acontece na 1.3.4, na 1.3.5 debug)
+			actionActor->RemoveTimer((stTimer *)id->param); //Solve the bug: Bug "Gravity Wars only shot one time / ship" (não acontece na 1.3.4, na 1.3.5 debug)
 
 			
 			SDL_RemoveTimer(id);

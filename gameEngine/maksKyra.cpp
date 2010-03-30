@@ -6,6 +6,13 @@
 #include "GameControl.h"
 #include "compression.h"
 #include "SDL_endian.h"
+#if __APPLE__
+#include "strings.h"
+#endif
+
+#if __iPhone__
+#include "SDL_rwops.h"
+#endif
 
 #include "eic.h"
 #include "modules.h"
@@ -29,8 +36,15 @@ extern "C"
 
 #include "dlmalloc.h" //maks
 
-extern "C" int equal(const char a, const char b);
 extern "C" int EiC_ismacroid(char *id);
+#if __APPLE__
+int equal(const char a, const char b)
+{
+	return strcasecmp(&a, &b);
+}
+#else
+extern "C" int equal(const char a, const char b);
+#endif
 
 
 
@@ -425,8 +439,8 @@ SDL_RWops *ged_SDL_RWMemoryMapFile(const char *file, const char *mode)
 
 	SDL_RWops *arq = SDL_RWMemoryMapFile(newName, mode);
 	dlfree(newName);
-
 	return arq;
+
 }
 
 SDL_RWops *ged_SDL_RWFromFile(const char *file, const char *mode)
@@ -614,7 +628,9 @@ SDL_Surface* LoadSurfaceEditor(const char *fileName)
 }
 
 SDL_Surface* ToSurface32(SDL_Surface* surface)
-{
+{   
+	Uint8 a;
+	
 	SDL_PixelFormat format;
 	memset(&format, 0, sizeof(SDL_PixelFormat));
 	
@@ -624,8 +640,12 @@ SDL_Surface* ToSurface32(SDL_Surface* surface)
 	format.Gmask = 0x0000ff00;
 	format.Bmask = 0x000000ff;
 	format.Amask = 0xff000000;
+#ifndef __iPhone__
 	format.alpha = surface->format->alpha;
-	
+#else
+	SDL_GetSurfaceAlphaMod(surface, &a); 
+#endif
+
 	SDL_Surface *surface32 = SDL_ConvertSurface(surface, &format, SDL_SWSURFACE);
 	if(surface32)
 	{
@@ -646,9 +666,14 @@ SDL_Surface* ToSupportedSurface(SDL_Surface* surface, bool bRemoveOld)
 		if(surface->flags & SDL_SRCCOLORKEY)
 		{
 			bHasColorKey = true;
-			SDL_GetRGB(surface->format->colorkey, surface->format, &colorkey.r, &colorkey.g, &colorkey.b);			
+#if __iPhone__
+			Uint32 k;
+			SDL_GetColorKey(surface, &k);
+			SDL_GetRGB(k, surface->format, &colorkey.r, &colorkey.g, &colorkey.b);			
+#else
+			SDL_GetRGB(surface->format->colorkey, surface->format, &colorkey.r, &colorkey.g, &colorkey.b);
+#endif
 		}
-
 		if(surface->format->BytesPerPixel == 4) 
 		{
 			//Put any 32 bit image in same mask format
@@ -1255,6 +1280,7 @@ bool copy(const char *fromFileName, const char *toFileName)
 
 bool copyfile(const char *oldFrom, const char *oldTo, const char *oldFPath, bool overwrite)
 {
+#ifndef __iPhone__
 	//Copy multiple files
 
 	char *from = (char *)dlmalloc(strlen(oldFrom) + 1);
@@ -1313,7 +1339,11 @@ bool copyfile(const char *oldFrom, const char *oldTo, const char *oldFPath, bool
 					}
 				}
 				
-				int src = open(fromPath.c_str(),  O_RDONLY | O_BINARY);
+				int src = open(fromPath.c_str(),
+#ifndef __iPhone__
+				 O_RDONLY |
+#endif
+				 O_BINARY);
 				if(src == -1) 
 				{
 #ifdef _DEBUG
@@ -1386,11 +1416,13 @@ bool copyfile(const char *oldFrom, const char *oldTo, const char *oldFPath, bool
 	dlfree(to);
 	dlfree(fPath);
 	dlfree(buf);
+#endif
 	return true;
 }
 
 bool concatenateFile(const char *oldFirst, const char *oldSecond)
 {
+#ifndef __iPhone__
 	char *first = (char *)dlmalloc(strlen(oldFirst) + 1);
 	correctDirectoryName(oldFirst, first);
 
@@ -1439,6 +1471,7 @@ bool concatenateFile(const char *oldFirst, const char *oldSecond)
 	dlfree(first);
 	dlfree(second);
 	dlfree(buf);
+#endif
 	return true;
 }
 

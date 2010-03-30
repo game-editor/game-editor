@@ -2,6 +2,9 @@
 #include "compression.h"
 #include "Compact/ucl.h"
 #include "SDL_endian.h"
+#if __APPLE__
+#include "SDL_rwops.h"
+#endif
 
 /*
 ARB255.CPP

@@ -393,13 +393,22 @@ SDL_Surface * FastSprite::Convert16(KrRle *rle)
 	KrMatrix2 xForm;
 	KrColorTransform cForm;
 	KrRect clipping;
-
+	
 	xForm.Set(rle->Hotspot().x, rle->Hotspot().y);
 	cForm.SetIdentity();
 	clipping.Set(0, 0, rle->Width() - 1, rle->Height() - 1);
 	
+
+
+#ifdef __iPhone__ //AKR
+	Uint32 key;
+	SDL_SetColorKey(surface,1,SDL_MapRGB(surface->format, rle->getColorKey().c.red, rle->getColorKey().c.green, rle->getColorKey().c.blue));
+	SDL_GetColorKey(surface, &key);
+	SDL_FillRect( surface, NULL, key );
+#else
 	surface->format->colorkey = SDL_MapRGB(surface->format, rle->getColorKey().c.red, rle->getColorKey().c.green, rle->getColorKey().c.blue);
-	SDL_FillRect( surface, NULL, surface->format->colorkey );
+	SDL_FillRect( surface, NULL, surface->format->colorkey);
+#endif
 
 	
 	rle->Draw(&info, xForm, cForm, clipping, 0, false);
@@ -447,8 +456,15 @@ void FastSprite::Create(KrRle *rle, int _screenWidth)
 			U16* bits = (U16*)( (U8*) surface->pixels 
 					 + y * surface->pitch
 					 + x * surface->format->BytesPerPixel );
-			
+#ifdef __iPhone__
+			uint32_t k;
+			SDL_GetColorKey(surface, &k);
+
+			if(*bits != k) 
+#else
+
 			if(*bits != surface->format->colorkey) 
+#endif
 			{
 				if(!bufLen) 
 				{

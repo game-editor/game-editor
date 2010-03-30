@@ -977,13 +977,29 @@ void EngineStart()
 		printf( "Couldn't initialize SDL: %s\n",SDL_GetError());
 		exit(255);
 	}
-
 	if((initFlags & SDL_INIT_JOYSTICK) && SDL_NumJoysticks() > 0)
 	{
-		//Open first joystick
 		joystick = SDL_JoystickOpen(0);
+		
+		/* print out some info about joysticks and try to open accelerometer for use */
+#ifdef DEBUG
+		GLOUTPUT("There are %d joysticks available\n", SDL_NumJoysticks());
+		GLOUTPUT("Default joystick (index 0) is %s\n", SDL_JoystickName(0));
+		if (joystick == NULL) {
+			GLOUTPUT("Could not open joystick / accelerometer\n");
+		} else {
+		GLOUTPUT("joystick number of axis = %d\n",
+			   SDL_JoystickNumAxes(joystick));
+		GLOUTPUT("joystick number of hats = %d\n",
+			   SDL_JoystickNumHats(joystick));
+		GLOUTPUT("joystick number of balls = %d\n",
+			   SDL_JoystickNumBalls(joystick));
+		GLOUTPUT("joystick number of buttons = %d\n",
+			   SDL_JoystickNumButtons(joystick));
+		}
+		
+#endif
 	}
-
 #ifdef _DEBUG //maks
 	remove("code.c");
 #endif
@@ -1179,7 +1195,7 @@ void EngineLoad(const char *gamePath)
 	if(!GameControl::Get()->CheckStandAloneMode(file)) 
 	{
 		Mix_CloseAudio();
-		SDL_Quit();
+
 	
 #ifdef GP2X
 		ReturnGP2X();
@@ -1202,6 +1218,7 @@ void EngineLoad(const char *gamePath)
 			#endif
 		}
 #endif
+		SDL_Quit();
 		GameControl::Get()->Delete();
 		return 1;
 	}

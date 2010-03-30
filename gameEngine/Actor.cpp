@@ -783,7 +783,9 @@ void *Actor::operator new(size_t size)
 
 	if(oldsize && size != oldsize)
 	{
+#ifndef __iPhone__
 		DebugBreak();
+#endif
 	}
 
 	oldsize = size;
@@ -827,6 +829,7 @@ Actor::Actor(const gedString& spriteName, Actor *_parent, ActorType _type, int c
 #endif
 
 	parent = NULL;
+	bDrag = false;
 
 	if(!_bPanel && !_parent)
 	{
@@ -2239,11 +2242,13 @@ void Actor::OnMouseButtonUp(int x, int y, Uint8 button)
 	change = NULL;
 	if(action && (eventControl & EVENTMOUSEBUTTONUP)) action->OnMouseButtonUp(this, x, y, button);
 
-	if(GameControl::Get()->getDragActor() == this && CanSendRemoteAction())
+	if(bDrag && CanSendRemoteAction())
 	{
 		//Send reliable position in the drag finish
 		GameControl::Get()->SendRemotePosition(this, getX(), getY(), true);
 	}
+
+	bDrag = false;
 }
 
 void Actor::OnMouseMove(int x, int y)
@@ -6059,7 +6064,7 @@ void Actor::WriteState(BitStream& out)
 	out.Write(pImage->getVisible());
 	
 	//Owner
-	out.Write(sizeof(SystemAddress));
+	out.Write((unsigned int)sizeof(SystemAddress));
 	out.Write((char *)&owner, sizeof(SystemAddress));
 
 	out.Write(ownerShipRequestTime);

@@ -1,5 +1,11 @@
 #include <stdlib.h>
+
+#if __iPhone__ //maks
+#include <stdarg.h>
+#else
 #include <varargs.h>
+#endif
+
 #include <limits.h>
 #include "eic.h"
 #include "termios.h"

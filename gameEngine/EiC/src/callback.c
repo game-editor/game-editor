@@ -3,7 +3,7 @@
    */
 #include <stdlib.h>
 
-#if defined(__SYMBIAN32__) || defined(linux) //maks
+#if defined(__SYMBIAN32__) || defined(linux) || defined(__APPLE__)//maks
 #	include <stdarg.h>
 #elif !defined(_WIN32_WCE) && !defined(LLVM)//maks
 #	include <varargs.h>

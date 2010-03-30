@@ -155,6 +155,21 @@ short EiC_metric[9][2] = {
 };
 #endif
 
+#ifdef __APPLE__ //maks iphone
+#define LITTLE_ENDIAN 1
+short EiC_metric[9][2] = {
+	{ 1, 1,},  /* char */
+	{ 2, 2,},  /* short */
+	{ 4, 4,},  /* int */
+	{ 4, 4,},  /* long */
+	{ 8, 8,},  /* long long */
+	{ 4, 4,},  /* float */
+	{ 8, 8,},  /* double */
+	{ 4, 4,},  /* pointer */
+	{ 0, 1,},  /* struct */
+};
+#endif
+
 #ifdef __SYMBIAN32__ //maks Symbian (not correct)
 #define LITTLE_ENDIAN 1
 short EiC_metric[9][2] = {

@@ -513,7 +513,10 @@ char *getHardwareID()
 	// Clear both buffers
 	static char serial[20];
 	memset(serial, 0, 20);
-	
+
+#ifdef __iPhone__
+	strcpy(serial,"iPhone OS");
+#endif
 
 #ifdef _WIN32_WCE
 
@@ -1473,7 +1476,6 @@ sprintf(buf, "SEEK_SET=%ld", SEEK_SET); dodefine(buf);
 #else
 #endif*/
 
-
 //Generic FILE
 #if defined(_WIN32_WCE)
 EiC_parseString("#define FILE void");
@@ -1935,6 +1937,38 @@ static val_t eic_PlayMusic(void)
     return v;
 }
 
+static val_t eic_GetJoystick1Axis(void)
+{	extern SDL_Joystick * joystick;
+    val_t v;
+	v.ival = 0;
+	
+	if(GameControl::Get()->getGameMode())
+	{
+		v.ival = SDL_JoystickGetAxis(joystick,arg(0,getargs(),int)); 
+							
+	}
+	
+    return v;
+	
+	
+}
+
+static val_t eic_GetJoystick1Button(void)
+{	extern SDL_Joystick * joystick;
+    val_t v;
+	v.ival = 0;
+	
+	if(GameControl::Get()->getGameMode())
+	{
+		v.ival = SDL_JoystickGetButton(joystick,arg(0,getargs(),int)); 
+		
+	}
+	
+    return v;
+	
+	
+}
+
 static val_t eic_PlayMusic2(void)
 {
     val_t v;
@@ -2289,7 +2323,7 @@ static val_t eic_GetKeyState(void)
 {
     val_t v;
 	v.ival = 0;
-
+#ifndef __iPhone__
 	if(GameControl::Get()->getGameMode())
 	{
 		int numkeys = 0;
@@ -2301,6 +2335,7 @@ static val_t eic_GetKeyState(void)
 	}
 	
 	setEp( v.p, sizeof(Script::keyState));
+#endif
     return v;
 }
 
@@ -2372,8 +2407,9 @@ static val_t eic_remapKey(void)
 
 
 ////////////////////////////////////
-
+#ifndef __iPhone__
 Uint8 Script::keyState[SDLK_LAST + 1];
+#endif
 int Script::frame = 0;
 int Script::real_fps = 0;
 int Script::mousex = 0;
@@ -3035,10 +3071,12 @@ void Script::Init()
 	sprintf(buf, "KEY_LCTRL=%ld", SDLK_LCTRL); dodefine(buf);
 	sprintf(buf, "KEY_RALT=%ld", SDLK_RALT); dodefine(buf);
 	sprintf(buf, "KEY_LALT=%ld", SDLK_LALT); dodefine(buf);
+#ifndef __iPhone__ //maks:remove this when merge the SDL 1.3 changes to not break game made for multiple platforms
 	sprintf(buf, "KEY_RMETA=%ld", SDLK_RMETA); dodefine(buf);
 	sprintf(buf, "KEY_LMETA=%ld", SDLK_LMETA); dodefine(buf);
 	sprintf(buf, "KEY_LWINDOWS=%ld", SDLK_LSUPER); dodefine(buf);
 	sprintf(buf, "KEY_RWINDOWS=%ld", SDLK_RSUPER); dodefine(buf);
+#endif
 	sprintf(buf, "KEY_ALT_GR=%ld", SDLK_MODE); dodefine(buf);
 	sprintf(buf, "KEY_HELP=%ld", SDLK_HELP); dodefine(buf);
 	sprintf(buf, "KEY_PRINT=%ld", SDLK_PRINT); dodefine(buf);
@@ -3047,6 +3085,7 @@ void Script::Init()
 	sprintf(buf, "KEY_MENU=%ld", SDLK_MENU); dodefine(buf);
 	sprintf(buf, "KEY_MAC_POWER=%ld", SDLK_POWER); dodefine(buf);
 	sprintf(buf, "KEY_EURO=%ld", SDLK_EURO); dodefine(buf);
+#ifndef __iPhone__ //maks:remove this when merge the SDL 1.3 changes to not break game made for multiple platforms
 
 	sprintf(buf, "KEY_POCKET_UP=%ld", SDLK_POCKET_UP); dodefine(buf);
 	sprintf(buf, "KEY_POCKET_DOWN=%ld", SDLK_POCKET_DOWN); dodefine(buf);
@@ -3084,9 +3123,15 @@ void Script::Init()
 	sprintf(buf, "KEY_GP2X_BUTTON_SELECT=%ld", SDLK_GP2X_BUTTON_SELECT); dodefine(buf);
 	sprintf(buf, "KEY_GP2X_BUTTON_VOLUP=%ld", SDLK_GP2X_BUTTON_VOLUP); dodefine(buf);
 	sprintf(buf, "KEY_GP2X_BUTTON_VOLDOWN=%ld", SDLK_GP2X_BUTTON_VOLDOWN); dodefine(buf);
-
+#endif
 	
 	//Internal functions
+	EiC_add_builtinfunc("GetJoystick1Axis", eic_GetJoystick1Axis);
+	EiC_parseString("int GetJoystick1Axis(int axis);");
+
+	EiC_add_builtinfunc("GetJoystick1Button", eic_GetJoystick1Button);
+	EiC_parseString("int GetJoystick1Button(int num);");
+	
 	EiC_add_builtinfunc("GetKeyState", eic_GetKeyState);
 	EiC_parseString("char *GetKeyState(void);");
 

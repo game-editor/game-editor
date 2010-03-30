@@ -61,7 +61,7 @@ char *Version = ""; //maks
 ;*/
     
 
-environ_t *EiC_ENV;
+environ_t *EiC_ENV; 
 
 size_t EiC_ENV_NextEntryNum()
 {
@@ -135,7 +135,7 @@ void EiC_SaveGlobalString(ptr_t *s)
  *
  */
 
-jmp_buf env;
+static jmp_buf env; //AKR
 static int jmpOn = 0;
 #define Err_   1
 #define Exit_  2

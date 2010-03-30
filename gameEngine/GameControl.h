@@ -39,6 +39,11 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 
 #include "SDL.h"
 #include "SDL_thread.h"
+
+#if __iPhone__
+#include "SDL_rwops.h"
+#endif
+
 #include "engine/kyra.h"
 #include "gui.h"
 #include "Action.h"
@@ -52,6 +57,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "gedString.h"
 #include "dlmalloc.h"
 #include "Actor.h"
+
+#if __iPhone__
+#include "SDL_rwops.h"
+#endif
 
 #ifdef USE_RAKNET
 #include "../RakNet/Source/RakPeerInterface.h"
@@ -711,7 +720,7 @@ void openBuySite();
 
 #define GAME_NET_VERSION	1
 #define GAME_FILE_VERSION	55
-#define GAME_EDITOR_VERSION	0x01030900 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
+#define GAME_EDITOR_VERSION	0x01040000 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
 
 extern gedString EDITOR_DAT;
 
@@ -840,6 +849,7 @@ public:
 	int size; //Internal script size
 	bool bInternalAddr; //add is allocated here?
 };
+
 
 typedef GlMap< gedString, stVarInfo, GlStringHash >		MapVars;
 typedef GlMapIterator< gedString, stVarInfo, GlStringHash >		MapVarsIterator;
@@ -978,6 +988,8 @@ class Path;
 
 typedef GlMap< void *, char, GlPointerHash<void *> >		MapPointer;
 typedef GlMapIterator< void *, char, GlPointerHash<void *> >		MapPointerIterator;
+typedef GlMap< int, Actor *, GlNumberHash<int> >		MapIntActor;
+typedef GlMapIterator< int, Actor *, GlNumberHash<int> >		MapIntActorIterator;
 
 typedef GlDynArray<Actor *> ArrayActor;  
 
@@ -1209,7 +1221,7 @@ public:
 	void StartKyraSplash() {startKyraSplash = SDL_GetTicks(); engine->StartSplash(startKyraSplash);}
 	void SetMainActor(Actor *actor) {mainActor = actor;}
 	bool GameTick(SDL_Event &event);
-	void HandleMouseMotion();
+	void HandleMouseMotion(int which);
 	void ToggleSnap();
 	bool ImageSnap(KrImage *image, KrImage *root, int *pMoveX = NULL, int *pMoveY = NULL);
 	Actor *GetViewActor() {return viewActor;}
@@ -1279,8 +1291,6 @@ public:
 	KrFontResource *GetFont(const gedString &fontName, int iniASCIIChar = 32, int nChars = 94);
 	
 	
-	Actor *getDragActor();
-	
 	void RemoveActor(Actor *actor, bool bNotifyActors = false);
 
 	void AddActorToHandledCollisionMap(Actor *actor);
@@ -1337,6 +1347,11 @@ public:
 
 	Uint16 getGameWidth() {return resX;}
 	Uint16 getGameHeight() {return resY;}
+
+#if __iPhone__
+	void translate (int *,int*); //AKR
+#endif
+
 	bool getFullScreen() {return bFullScreen;}
 	Uint32 getFrameTimeInterval() {return frameTimeInterval;};
 	Uint16 getFrameRate() {return fps;}
@@ -1581,7 +1596,6 @@ private:
 
 	MapExpression expressions;
 	int mouseX, mouseY;
-	bool bMouseButtonDown;
 
 	
 	MapSound			mapSound;
@@ -1628,9 +1642,8 @@ private:
 	bool bStandAloneMode, bActorSnap;
 
 	//Main loop control
-	Actor *mainActor;
-	Actor *currentActor, *actorButtonDown;
-	Actor *actorDrag;
+	MapIntActor actorButtonDown, actorDrag, currentActor, nMouseButtonDown;
+	Actor *mainActor;	
 	Actor *actorModal;
 	PathPoint *pathPoint;
 	Tile *currentTile;
@@ -1719,9 +1732,11 @@ extern MapActor mapActors, mapWorkingActors;
 #ifdef ACTOR_USES_VIRTUAL_FUNCTIONS
 #	define IS_VALID_ACTOR(actor) (GameControl::Get()->isValidActor(actor))
 #	define IS_VALID_ACTOR1(actor) (actor && globalMapActor[actor])
+#	define IS_VALID_ACTOR2(actor) (actor && *actor && globalMapActor[*actor])
 #else
 #	define IS_VALID_ACTOR(actor) (actor && *(U32*)actor == (U32)actor) //when use magic
 #	define IS_VALID_ACTOR1(actor) IS_VALID_ACTOR(actor)
+#	define IS_VALID_ACTOR2(actor) (actor && *actor && IS_VALID_ACTOR(*actor))
 #endif
 
 

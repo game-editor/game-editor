@@ -764,6 +764,8 @@ public:
 	static bool getLoadingActors() {return loadingActors > 0;}
 	static void resetLoadingActors() {loadingActors = 0;}
 
+	void setDrag() {bDrag = true;}
+
 #ifndef STAND_ALONE_GAME
 	bool getHasShadows() {return flags.IsSet(FLAG_HASSHADOWS);}
 	bool ReplaceFrame(const gedString &animationName, int frame, gedString imagePrefix = "");
@@ -814,6 +816,8 @@ protected:
 	Action				*action;
 	Path				*pathX, *pathY;	//Actual actor path
 	Path				*pathFinder; //Current 
+
+	bool				bDrag; //The actor is being dragged
 
 	//Don't use pointer to save the cretor
 	//Need clonename due to avoid pointer reuse issues

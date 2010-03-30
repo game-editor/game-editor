@@ -3,8 +3,11 @@
 
 #pragma push_safeptr
 
+#if !defined(__iPhone__) //maks
 #include "sys/stdtypes.h"
 #include "sys/termdefs.h"
+#endif
+
 #include "sys/termios.h"
 
 int tcgetattr(int, struct termios *);

@@ -1,4 +1,4 @@
-#if !defined(linux) && !defined(LLVM)
+#if !defined(linux) && !defined(LLVM) && defined(__iPhone__)
 
 #include "gedString.h"
 #include "HTTPClient/httpclient.cpp"

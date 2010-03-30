@@ -68,7 +68,12 @@
 
 #include "SDL.h"
 #ifdef KYRA_SUPPORT_OPENGL
-	#include "SDL_opengl.h"
+#ifdef __iPhone__
+	#include "SDL_opengles.h" //AKR
+#else
+	#include "SDL_opengl.h" //AKR
+
+#endif
 #endif
 #include "rle.h"
 #include "SDL_rwops.h"
@@ -85,7 +90,9 @@
 #include "../../gameEngine/compression.h" //maks
 #include "../util/glperformance.h" //maks
 #include "FastSprite.h" //maks
-
+#ifdef __iPhone__
+#include "SDL_sysvideo.h"
+#endif
 #include "../../gameEngine/dlmalloc.h" //maks
 extern "C" void free_gc(void *mem);
 extern "C" void using_mem_gc(void *mem);
@@ -823,7 +830,7 @@ void KrRle::DrawOpenGL( KrPaintInfo* paintInfo,
 			// Create a canvas resource with the data we need.
 			int hotx, hoty;
 			KrCanvasResource* resource = CreateCanvasResource( &hotx, &hoty, true );
-			texture = manager->CreateTexture( resource->Pixels(), resource->Width(), resource->Height(), true ); //maks
+			texture = manager->CreateTexture( resource->Pixels(), resource->Width(), resource->Height(), true/*AKR*/ );
 			KrTextureManager::AddTextureOwner(&texture); //maks
 			delete resource;
 		}

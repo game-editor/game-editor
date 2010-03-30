@@ -68,12 +68,21 @@
 
 #include "SDL.h"
 #ifdef KYRA_SUPPORT_OPENGL
+#ifdef __iPhone__
+	#include "SDL_opengles.h"
+#else
 	#include "SDL_opengl.h"
+
+#endif
 #endif
 #include "boxresource.h"
 #include "box.h"
 #include "painter.h"
 #include "imagetree.h"
+#ifdef __iPhone__
+#include "SDL_sysvideo.h"
+#endif
+
 
 const gedString KrBoxResource::boxName = "Box";
 int KrBoxResource::boxId = 0;

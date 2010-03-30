@@ -17,8 +17,11 @@
 #include <limits.h>
 #include <string.h>
 #include <math.h>
+#if __iPhone__
+#include "../../../SDL13/include/SDL_types.h" 
+#else
 #include "../../../SDL/SDL/include/SDL_types.h" //maks
-
+#endif
 #ifndef __SYMBIAN32__ //maks
 #include <float.h>
 #endif

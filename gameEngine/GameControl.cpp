@@ -914,13 +914,14 @@ gedString decodeCipherText(const long *cipherText)
 	static unsigned long lastGameFrame = 0;
 
 	if(gameFrame > lastGameFrame) realFrameRate = gameFrame - lastGameFrame;
+
 	lastGameFrame = gameFrame;
 
 	return 1000;
 }*/
 
-#ifdef APPLICATION_THREAD_TIMERS
 volatile bool bCallGameTick = false;
+#ifdef APPLICATION_THREAD_TIMERS
 int GameControl::TimerCallback( void *pParam )
 {
 	//Need this separeted thread to avoid frame flood in slow machines
@@ -1127,7 +1128,6 @@ GameControl::GameControl()
 #endif
 
 	mouseX = mouseY = 0;
-	bMouseButtonDown = false;
 	bModified = false;
 	bCheckOutOfVision = false;
 	tipTime = 0;
@@ -1181,7 +1181,11 @@ GameControl::GameControl()
 	}
 #elif defined(GP2X)
 	resX = 320;
-	resY = 240;	
+	resY = 240;
+#elif defined(__iPhone__)
+	resX = 320;
+	resY = 480;
+	
 #endif
 
 	backgroundColor.all = 0;
@@ -1194,7 +1198,7 @@ GameControl::GameControl()
 	editorPath = ged_getcwd(buf, PATH_LIMIT);	
 
 	//Main loop control
-	actorButtonDown = currentActor = actorDrag = actorModal = NULL;
+	actorModal = NULL;
 	currentTile = NULL;
 	pathPoint = NULL;
 	mainActor = NULL;
@@ -2173,15 +2177,26 @@ void GameControl::RemoveActor(Actor *actor, bool bNotifyActors)
 		}
 	}
 
-	if(actor == currentActor)
-	{
-		currentActor = NULL;
-	}
 
-	if(actor == actorDrag)
+	{MapIntActorIterator itKeys(currentActor);
+	for(itKeys.Begin(); !itKeys.Done(); itKeys.Next())
 	{
-		actorDrag = NULL;
-	}
+		if(actor == *itKeys.Value())
+		{
+			*itKeys.Value() = NULL;
+		}
+	}}
+
+	{MapIntActorIterator itKeys(actorDrag);
+	for(itKeys.Begin(); !itKeys.Done(); itKeys.Next())
+	{
+		if(actor == *itKeys.Value())
+		{
+			*itKeys.Value() = NULL;
+		}
+	}}
+
+	
 
 	ListActor *listActor = mapActors.FindString(actor->getActorName());
 	bool bMoreActors = false;
@@ -2420,12 +2435,6 @@ void GameControl::RemoveOldActorsFromCache(bool bForce)
 
 	bCacheClean = false;
 }
-
-Actor *GameControl::getDragActor()
-{
-	return actorDrag;
-}
-
 
 
 KrFontResource *GameControl::GetFont(const gedString& fontName, int iniASCIIChar, int nChars)
@@ -2795,7 +2804,8 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 	PauseGame(false);
 	bCheckOutOfVision = false;
 	bFastFile = false;
-	bMouseButtonDown = false;
+	nMouseButtonDown.Clear();
+	actorButtonDown.Clear();
 	bRestartNetworkAfterPause = false;
 	GeoPathFinder::Remove();
 
@@ -3271,22 +3281,21 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 
 	gedString fingerPrintError;
 	SDL_ClearError();
-
 	GED_TRY
 	{
-
+		
 	//Clear collision handles (solve the stand alone TheGameFile.ged bug)
 	handledCollisionMap.Clear();
-
+		
 	//Go to file begin
 	SDL_RWseek( src, offsetKyraDat, SEEK_SET );
-	
+		
 	//Load version
 	indexedGameVersion = 0;
 	Uint32 version = GameControl::Read32(src);
 	lastGameFileVersion = version;
 
-	
+		
 	if(version > 14) 
 	{
 		SetNewReadString(true);
@@ -3316,8 +3325,7 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 	{
 		return LoadV8(src, bLoadCursor, bMergeGames, version);
 	}
-
-	
+		
 
 	Uint32 gameEditorVersion = GameControl::Read32(src);
 	if(gameEditorVersion > GAME_EDITOR_VERSION)
@@ -3329,7 +3337,6 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 		return false;
 	}
 
-	
 	//Load fast file flag
 	if(version > 37)
 	{
@@ -3351,7 +3358,7 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 		SDL_RWclose(indexedGame);
 		indexedGame = NULL;
 	}
-
+		
 	if(!bMergeGames)
 	{
 		actionIndex.Clear();
@@ -3371,7 +3378,7 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 		ReadString(src, &name);
 		actionIndex.Add(name, GameControl::Read32( src ) + offsetKyraDat);
 	}
-
+		
 	
 	//Load path index
 	count = GameControl::Read32( src );
@@ -3753,7 +3760,6 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 		axis->SetPos(xAxis, yAxis);
 #endif
 	}
-	
 	if(!bMergeGames)
 	{
 		SetGameProperties(_resX, _resY, _fps, _bFullScreen, _audioSamplerRate, _bStereo, _maximumSounds, _bShowMouse, _iconPath, _gameTitle, false, _backgroundColor, _bSuspendGameIfLostFocus, _viewSafeMargin, _bUseESCKeyToExit);
@@ -4773,7 +4779,7 @@ public:
 SDL_mutex *musicMutEx = SDL_CreateMutex();
 int GameControl::LoadMusicThread( void *pParam )
 {
-#ifndef linux
+#if !defined(linux) && !defined(__iPhone__)
 	MuteEx mutex(musicMutEx);
 
 	stMusicInfo *info = (stMusicInfo *)pParam;
@@ -4792,7 +4798,6 @@ int GameControl::LoadMusicThread( void *pParam )
 
 	delete info;
 #endif
-
     return 0;
 }
 
@@ -5012,7 +5017,7 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 	char *sDevice = "machine";
 #endif
 
-#if !defined(_DEBUG) || defined(_WIN32_WCE)
+#if !defined(_DEBUG) || defined(_WIN32_WCE) || defined(__iPhone__) 
 	if(bFullScreen) flags |= SDL_FULLSCREEN;
 #endif
 
@@ -5038,7 +5043,6 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 		flags |= SDL_DOUBLEBUF | SDL_CREATE_SHADOW;
 	}
 #endif
-
 	bool bSwitch = width != screen->w || 
 		height != screen->h ||
 		(bFullScreen && !(screen->flags & SDL_FULLSCREEN)) ||
@@ -5325,8 +5329,9 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 		executableName = executableName.substr(0, i);		
 	}	
 
-	executableName = homePath + DIR_SEP + executableName;		
-	
+#ifndef __iPhone__
+	executableName = homePath + DIR_SEP + executableName;
+#endif
 	SDL_RWops* exeFile;
 
 	//Try .dat
@@ -5357,7 +5362,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 		SDL_ClearError();
 	}
 
-	//Try without extension (Linux)
+	//Try without extension (Linux, iPhone, ...)
 	if(!exeFile) 
 	{
 		gameFile = executableName;
@@ -5497,6 +5502,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 
 			//Set SDL to multiple archive file mode
 			SDL_RWSetMultipleArchiveFile(exeFile, audioBase, sdlAudioIndex);
+
 		}	
 
 		if(firstLevel.empty())
@@ -5511,7 +5517,16 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 			return false;
 		}
 	}
+#ifdef __iPhone__
+	else {
+#if DEBUG
+		GLOUTPUT("No gamedata found. Executablename.dat expected\n");
+#endif
+		return false;
+		
+	}
 
+#endif
 	
 
 #endif
@@ -5734,6 +5749,7 @@ void GameControl::SDL_Pause(int bPause)
 
 	PauseNetwork(bPause);
 
+#if __iPhone__
 	if(bPause)
 	{		
 		SDL_PauseOn();
@@ -5742,6 +5758,8 @@ void GameControl::SDL_Pause(int bPause)
 	{
 		SDL_PauseOff();
 	}
+#endif
+
 }
 
 void GameControl::PauseNetwork(int bPause)
@@ -6271,7 +6289,6 @@ void GameControl::ProcessActor(Actor *actor)
 				}
 			}
 		}
-		
 		//Follow mouse
 		if(actor->getRunning() && actor->getFollowMouseAxis() != NONE_AXIS && bCanExecuteLocally)
 		{
@@ -6400,8 +6417,12 @@ bool GameControl::RTreeSearchCallback(int id, void* arg)
 }
 #endif
 
-void GameControl::HandleMouseMotion()
+void GameControl::HandleMouseMotion(int which)
 {
+		Actor	**currentDrag = actorDrag.Find1(which), 
+				**currentActorButtonDown = actorButtonDown.Find1(which),
+				**currentActorPointer = currentActor.Find1(which);
+
 #ifndef STAND_ALONE_GAME
 
 #if !defined(STAND_ALONE_GAME) && defined(__linux__)
@@ -6416,11 +6437,11 @@ void GameControl::HandleMouseMotion()
 	{
 		if(mainActor) 
 		{
-			if(!actorDrag) 
+			if(!actorDrag.size()) 
 				mainActor->OnMouseMove(mouseX, mouseY);	
 
 			//Update actor coordinates
-			((MainPanel *)mainActor)->ShowActorCoordinates(actorDrag);
+			((MainPanel *)mainActor)->ShowActorCoordinates(currentDrag?*currentDrag:NULL);
 		}
 
 		Actor::NotifyMouseCoord(mouseX, mouseY);
@@ -6431,39 +6452,40 @@ void GameControl::HandleMouseMotion()
 #endif //#ifndef STAND_ALONE_GAME
 
 	//Handle drag
-	if(actorDrag)
+	
+	if(currentDrag && *currentDrag)
 	{
-		if(IS_VALID_ACTOR1(actorDrag)) //actorDrag still valid?
+		if(IS_VALID_ACTOR2(currentDrag)) //actorDrag still valid?
 		{
 			//Drag (shakes if the view move, Mouse Enter Leave.ged)
-			if(actorDrag->EditMode() || PathPoint::getNPaths()) GetAxis()->GridSnap(mouseX, mouseY);
-			if(actorDrag->getParent())
+			if((*currentDrag)->EditMode() || PathPoint::getNPaths()) GetAxis()->GridSnap(mouseX, mouseY);
+			if((*currentDrag)->getParent())
 			{
 				KrVector2T< GlFixed > object;
 
-				actorDrag->getParent()->getImage()->ScreenToObject( mouseX, mouseY, &object );
-				actorDrag->SetPos(object.x.ToIntRound() - mouseActorDownX, object.y.ToIntRound() - mouseActorDownY, true);						
+				(*currentDrag)->getParent()->getImage()->ScreenToObject( mouseX, mouseY, &object );
+				(*currentDrag)->SetPos(object.x.ToIntRound() - mouseActorDownX, object.y.ToIntRound() - mouseActorDownY, true);						
 			}
 			else
 			{
-				actorDrag->SetPos(mouseX - mouseActorDownX, mouseY - mouseActorDownY, true);
+				(*currentDrag)->SetPos(mouseX - mouseActorDownX, mouseY - mouseActorDownY, true);
 			}
 
-			actorDrag->OnMouseMove(mouseX, mouseY);
+			(*currentDrag)->OnMouseMove(mouseX, mouseY);
 		}
 
 		if(!bGameMode)
 		{
-			if(GetPathRoot() || ActivationEventsCanvas::HasActivationEventLines(actorDrag->getCloneName())) 
+			if(GetPathRoot() || ActivationEventsCanvas::HasActivationEventLines((*currentDrag)->getCloneName())) 
 			{
 				//Slow redraw
 				GetAxis()->getImage()->Invalidate();
 			}		
 		}
 	}
-	else if(actorButtonDown) //Send mouse move to actor which receive button down
+	else if(currentActorButtonDown && *currentActorButtonDown) //Send mouse move to actor which receive button down
 	{
-		if(IS_VALID_ACTOR1(actorButtonDown)) actorButtonDown->OnMouseMove(mouseX, mouseY);
+		if(IS_VALID_ACTOR2(currentActorButtonDown)) (*currentActorButtonDown)->OnMouseMove(mouseX, mouseY);
 	}
 
 
@@ -6471,8 +6493,8 @@ void GameControl::HandleMouseMotion()
 	//In the Pocket PC only generates mouse enter or leave if the stylus is down
 	bool bHit = false;
 
-#ifdef WIN32_WCE
-	if(bMouseButtonDown)
+#if defined(WIN32_WCE) || defined(__iPhone__)
+	if(nMouseButtonDown.size())
 #endif
 	{
 		GlDynArray<KrImage*> hittest;				
@@ -6488,23 +6510,26 @@ void GameControl::HandleMouseMotion()
 			if(!InModal(actor))
 			{
 				actor = NULL;
-				currentActor = NULL;
+				currentActor.Remove(which);
+				currentActorPointer = NULL;
 			}
 
 			if(actor)
 			{			
-				if(actor != currentActor)
+				if(!currentActorPointer || actor != *currentActorPointer)
 				{
-					if(IS_VALID_ACTOR1(currentActor))
+					if(IS_VALID_ACTOR2(currentActorPointer))
 					{
-						currentActor->OnMouseLeave(mouseX, mouseY);
+						(*currentActorPointer)->OnMouseLeave(mouseX, mouseY);
 					}
 
 					actor->OnMouseEnter(mouseX, mouseY);
-					currentActor = actor;				
+					currentActor.Add(which, actor);				
 				}						
-
-				if(!actorButtonDown) actor->OnMouseMove(mouseX, mouseY);
+				if(!actorButtonDown.size())
+				{ 
+					actor->OnMouseMove(mouseX, mouseY);
+				}
 			}
 
 		}
@@ -6513,14 +6538,31 @@ void GameControl::HandleMouseMotion()
 
 	if(!bHit)
 	{
-		if(IS_VALID_ACTOR1(currentActor))
+		if(IS_VALID_ACTOR2(currentActorPointer))
 		{
-			currentActor->OnMouseLeave(mouseX, mouseY);
+			(*currentActorPointer)->OnMouseLeave(mouseX, mouseY);
 		}						
 
-		currentActor = NULL;
+		currentActor.Remove(which);
 	}
 }
+#if __iPhone__ //AKR
+void GameControl::translate(int *mouseX, int *mouseY) //AKR Simulate Landscape. SDL1.3 Beta doesnt support yet
+{
+		
+	if(resX > resY)
+	{
+		// transform to landscape mode AKR
+		int x;
+		x=*mouseX;
+		*mouseX=*mouseY;
+		*mouseY=resY-x;
+		
+		
+	}
+
+}
+#endif
 
 bool GameControl::GameTick(SDL_Event &event)
 {
@@ -6816,7 +6858,6 @@ bool GameControl::GameTick(SDL_Event &event)
 	if(!bSuspendGame)
 	{
 #endif
-	
 	switch(event.type)
 	{
 	case SDL_VIDEORESIZE:
@@ -7074,13 +7115,21 @@ bool GameControl::GameTick(SDL_Event &event)
 		
 	case SDL_MOUSEBUTTONDOWN: //Works even in pause mode
 		{	
+			int which = 0;
+#if __iPhone__
+			which = event.button.which; //AKR
+			SDL_SelectMouse(which);
+			SDL_GetMouseState(&event.button.x, &event.button.y);
+			translate(&event.button.x, &event.button.y);
+#endif			
 			mouseX = event.button.x; 
 			mouseY = event.button.y;
-			bMouseButtonDown = true;
+			
+			nMouseButtonDown.Add(which, NULL);
 			
 			bool bAddPathPoint = false, bScreenScroll = false, bActorSelected = false;
 			SDLMod keyMod = SDL_GetModState();
-			actorButtonDown = NULL;
+			actorButtonDown.Remove(which);
 			
 			GlDynArray<KrImage*> hittest;
 
@@ -7145,16 +7194,18 @@ bool GameControl::GameTick(SDL_Event &event)
 						
 						KrVector2T< GlFixed > object;
 						actor->getImage()->ScreenToObject( x, y, &object );
-						
+
+					
 						mouseActorDownX = object.x.ToIntRound();
 						mouseActorDownY = object.y.ToIntRound();
-						
-						actorButtonDown = actor;
+
+						actorButtonDown.Add(which, actor);
 						bActorSelected = true;
 						if(actor->OnMouseButtonDown(mouseX, mouseY, event.button.button))
 						{
 							//Drag enable
-							actorDrag = actor;
+							actorDrag.Add(which, actor);
+							actor->setDrag();
 						}
 						
 						if(!getGameMode() && actor->IsLocked())							
@@ -7177,18 +7228,19 @@ bool GameControl::GameTick(SDL_Event &event)
 			if(bScreenScroll && !getGameMode() && !GetModal())
 			{
 				//Enable screen scroll
-				actorDrag = GetAxis();
+				Actor *currentDrag = GetAxis();
+				actorDrag.Add(which, GetAxis());
 				
 				KrVector2T< GlFixed > object;
-				actorDrag->getImage()->ScreenToObject( mouseX, mouseY, &object );
+				currentDrag->getImage()->ScreenToObject( mouseX, mouseY, &object );
 				
-				mouseActorDownX = (object.x * actorDrag->getImage()->XScale()).ToInt();
-				mouseActorDownY = (object.y * actorDrag->getImage()->YScale()).ToInt();					
-
+				mouseActorDownX = (object.x * currentDrag->getImage()->XScale()).ToInt();
+				mouseActorDownY = (object.y * currentDrag->getImage()->YScale()).ToInt();					
+				
 				if(!bActorSelected)
 				{
 					//Notify grid selection
-					actorDrag->OnMouseButtonDown(mouseX, mouseY, event.button.button);
+					currentDrag->OnMouseButtonDown(mouseX, mouseY, event.button.button);
 				}
 
 			}
@@ -7221,13 +7273,20 @@ bool GameControl::GameTick(SDL_Event &event)
 
 			#ifndef STAND_ALONE_GAME
 			//Show actor coordinates
-			if(mainActor) ((MainPanel *)mainActor)->ShowActorCoordinates(actorDrag);
+			if(mainActor) 
+			{
+				Actor	**currentDrag = actorDrag.Find1(which);
+				((MainPanel *)mainActor)->ShowActorCoordinates(currentDrag?*currentDrag:NULL);
+			}
+
 			ReleaseActorTip(false);	
+			Actor **currentActorButtonDown = actorButtonDown.Find1(which);
 			if( !bGameMode && 
-				actorButtonDown && 
-				!actorButtonDown->getPanel() && 
+				currentActorButtonDown && 
+				*currentActorButtonDown && 
+				!(*currentActorButtonDown)->getPanel() && 
 				!Button::getHaveButtonPressed() &&
-				!actorButtonDown->IsLocked()) 
+				!(*currentActorButtonDown)->IsLocked()) 
 			{
 				//Don't push if is a button or panel
 				UndoControl::Get()->PushCurrentState();
@@ -7237,12 +7296,21 @@ bool GameControl::GameTick(SDL_Event &event)
 		break;
 		
 	case SDL_MOUSEBUTTONUP: //Works even in pause mode
-		{
-			mouseX = event.button.x;
-			mouseY = event.button.y;
-			bMouseButtonDown = false;
+		{ 
+			int which = 0;
 
-			//bool bPushUndo = actorButtonDown != NULL;
+#if __iPhone__
+			which = event.button.which; //AKR
+			SDL_SelectMouse(which);
+			SDL_GetMouseState(&event.button.x, &event.button.y);
+			translate(&event.button.x, &event.button.y);
+#endif
+			mouseX = event.button.x; 
+			mouseY = event.button.y;
+
+			Actor **currentDrag = actorDrag.Find1(which), **currentActorButtonDown = actorButtonDown.Find1(which);
+
+			nMouseButtonDown.Remove(which);
 
 			Actor::NotifyMouseButtonUp();
 
@@ -7254,16 +7322,19 @@ bool GameControl::GameTick(SDL_Event &event)
 			} 
 			else
 			#endif
-			if(actorDrag)
+			
+			if(actorDrag.size() && currentDrag && *currentDrag)
 			{
-				if(IS_VALID_ACTOR1(actorDrag)) actorDrag->OnMouseButtonUp(mouseX, mouseY, event.button.button);
-				actorDrag = NULL; //Disable drag
-				actorButtonDown = NULL;
+				if(IS_VALID_ACTOR2(currentDrag)) (*currentDrag)->OnMouseButtonUp(mouseX, mouseY, event.button.button);
+				actorDrag.Remove(which); //Disable drag
+				actorButtonDown.Remove(which);
+				currentDrag = currentActorButtonDown = NULL;
 			}
-			else if(actorButtonDown /*&& bGameMode*/) //Send button up to actor which receive button down (On editor too)
-			{
-				if(IS_VALID_ACTOR1(actorButtonDown)) actorButtonDown->OnMouseButtonUp(mouseX, mouseY, event.button.button);
-				actorButtonDown = NULL; 
+			else if(currentActorButtonDown && *currentActorButtonDown)  /*&& bGameMode*/ //Send button up to actor which receive button down (On editor too)
+			{				
+				if(IS_VALID_ACTOR2(currentActorButtonDown)) (*currentActorButtonDown)->OnMouseButtonUp(mouseX, mouseY, event.button.button);
+				actorButtonDown.Remove(which); 
+				currentActorButtonDown = NULL;
 			}
 			else
 			{
@@ -7297,18 +7368,25 @@ bool GameControl::GameTick(SDL_Event &event)
 
 			#ifndef STAND_ALONE_GAME
 			//Hide actor coordinates
-			if(mainActor) ((MainPanel *)mainActor)->ShowActorCoordinates(actorDrag);
+			if(mainActor) ((MainPanel *)mainActor)->ShowActorCoordinates(currentDrag?*currentDrag:NULL);
 			#endif //#ifndef STAND_ALONE_GAME
 		}
 		break;
 		
-	case SDL_MOUSEMOTION:
+		case SDL_MOUSEMOTION:
 		if(!bPauseGame)
 		{
+			int which = 0;
+#if __iPhone__
+			which = event.motion.which; //AKR
+			SDL_SelectMouse(which);
+			SDL_GetMouseState(&event.button.x, &event.button.y);
+			translate(&event.button.x, &event.button.y);
+#endif			
 			mouseX = event.motion.x; 
 			mouseY = event.motion.y;
 
-			HandleMouseMotion();							
+			HandleMouseMotion(which);							
 		}
 		break;
 #ifndef APPLICATION_THREAD_TIMERS
@@ -7322,8 +7400,10 @@ bool GameControl::GameTick(SDL_Event &event)
 			if(IS_VALID_ACTOR1(actor)) //Valid actor?
 			{
 				stTimer *timer = (stTimer *)event.user.data1;
-				
-				if((*actor->getMapTimer())[timer]) //Valid timer?
+				MapTimer m;
+				m=*actor->getMapTimer();
+//				if((*actor->getMapTimer())[timer]) //AKR
+				if(m[timer]) //Valid timer?
 				{
 					Uint32 newInterval = 0;					
 					newInterval = timer->actor->OnTimer(timer->timerID);					
@@ -7349,7 +7429,9 @@ bool GameControl::GameTick(SDL_Event &event)
 						
 			int mouseX, mouseY;
 			SDL_GetMouseState(&mouseX, &mouseY);
-
+#if __iPhone__
+			translate(&mouseX,&mouseY); //AKR
+#endif			
 			ProcessNetwork(true); //It's not enought call only at frame tick, slow down the receives. But the call here too
 			ProcessMessage();
 			RemoveOldActorsFromCache();
@@ -7513,7 +7595,18 @@ bool GameControl::GameTick(SDL_Event &event)
 				//Handle the situation when the actor moves relative to the mouse (Mouse Enter Leave.ged)
 				if(getGameMode())
 				{
-					HandleMouseMotion();
+					if(nMouseButtonDown.size())
+					{
+						MapIntActorIterator itKeys(nMouseButtonDown);
+						for(itKeys.Begin(); !itKeys.Done(); itKeys.Next())
+						{
+							HandleMouseMotion(*itKeys.Key());
+						}	
+					}
+					else
+					{
+						HandleMouseMotion(0);
+					}
 				}
 								
 				//The correct sequence is: move -> test collisions -> Draw?
@@ -7532,6 +7625,7 @@ bool GameControl::GameTick(SDL_Event &event)
 				if(!bGameMode || getShowMouse())
 				{
 					const stCursor *cursor = NULL;
+					Actor **currentActorPointer = currentActor.Find1(0); //I think this make sense only in the desktop, so, use 0 as default mouse
 
 					#ifndef STAND_ALONE_GAME
 					if(WaitCursor::getWaitCursor())
@@ -7540,12 +7634,12 @@ bool GameControl::GameTick(SDL_Event &event)
 					}
 					else 
 					#endif //#ifndef STAND_ALONE_GAME						
-					if(currentActor && InModal(currentActor))
+					if(currentActorPointer && *currentActorPointer && InModal(*currentActorPointer)) 
 					{
-						cursor = currentActor->OnGetCursor();
+						cursor = (*currentActorPointer)->OnGetCursor();
 
 						//Actor Tip
-						if(!bGameMode && !actorButtonDown) UpdateActorTip(currentActor);						
+						if(!bGameMode && !actorButtonDown.size()) UpdateActorTip(*currentActorPointer);						
 					}
 					
 					DrawCursor(engine, cursor, mouseX, mouseY);
@@ -10252,9 +10346,9 @@ void GameControl::ProcessNetwork(bool bFromFrameTick)
 		}*/
 	}
 }
-
 void GameControl::InitPocketPCKeys()
 {
+#if !defined(__iPhone__)
 	pocketKeys.Clear();
 
 	//Standard keys
@@ -10303,7 +10397,8 @@ void GameControl::InitPocketPCKeys()
 	pocketKeys.Add(SDLK_GP2X_BUTTON_SELECT,		SDLK_UNKNOWN);
 	pocketKeys.Add(SDLK_GP2X_BUTTON_VOLUP,		SDLK_KP_PLUS);
 	pocketKeys.Add(SDLK_GP2X_BUTTON_VOLDOWN,	SDLK_KP_MINUS);
-}
+#endif
+ }
 
 SDLKey GameControl::PocketPCKey(SDLKey from)
 {
@@ -11698,7 +11793,7 @@ void GameControl::PopulatePocketPCKeys(ListPop *list)
 		sprintf(buf, "%s -> %s", SDL_GetKeyName(*it.Key()), (*it.Value() != SDLK_UNKNOWN)?SDL_GetKeyName(*it.Value()):"none");
 		list->AddText(buf);
 	}*/
-
+#if !defined(__iPhone__)
 	//Pocket PC
 	PocketPCKeyDesc(list, SDLK_POCKET_UP);
 	PocketPCKeyDesc(list, SDLK_POCKET_DOWN);
@@ -11744,7 +11839,8 @@ void GameControl::PopulatePocketPCKeys(ListPop *list)
 	PocketPCKeyDesc(list, SDLK_GP2X_BUTTON_SELECT);
 	PocketPCKeyDesc(list, SDLK_GP2X_BUTTON_VOLUP);
 	PocketPCKeyDesc(list, SDLK_GP2X_BUTTON_VOLDOWN);
-}
+#endif
+ }
 
 void GameControl::MapPocketPCKey(SDLKey pocketKey, SDLKey pcKey)
 {

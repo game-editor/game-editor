@@ -119,7 +119,7 @@ int PathPoint::TotalKeys()
 
 void PathPoint::OnMouseMove(int x, int y)
 {
-	if(path && GameControl::Get()->getDragActor() == this)
+	if(path && bDrag)
 	{
 		if(iKey > 0)
 		{

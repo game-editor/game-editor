@@ -22,7 +22,11 @@
 #include "symbol.h"
 #include "parser.h"
 #include "error.h"
+#ifdef __iPhone__
+#include "../../../SDL13/include/SDL_types.h"
+#else
 #include "../../../SDL/SDL/include/SDL_types.h" //maks
+#endif
 
 int doOperation(Sint64 value1, Sint64 value2, Sint64 *result, int op) //maks
 {

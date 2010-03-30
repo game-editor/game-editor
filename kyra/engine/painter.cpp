@@ -68,14 +68,19 @@
 
 #include "SDL.h"
 #ifdef KYRA_SUPPORT_OPENGL
-	#include "SDL_opengl.h"
+#ifdef __iPhone__
+	#include "SDL_opengles.h" // AKR
+	#include "SDL_sysvideo.h"
+#else
+	#include "SDL_opengl.h" // AKR
 #endif
+#endif
+
 #include "painter.h"
 #include "../util/gldebug.h"
 #include "../util/glperformance.h"
 #include "ogltexture.h"
 #include "engine.h" //maks
-
 
 
 #ifdef _MSC_VER
@@ -300,7 +305,7 @@ void KrPainter::SetPixel( int x, int y, const KrRGBA& color )
 			GlES_DoubleToFixed(color.Bluef()), 
 			GlES_Fixed_1);
 		
-		DrawOGLLine(vertices, 2);
+// AKR		DrawOGLLine(vertices, 2);
 #endif
 		
 	}
@@ -1025,7 +1030,7 @@ void KrPaintInfo::Init( SDL_Surface* screen, bool bForceRGBA ) //maks
 
 	surface = screen;
 	needToFreeSurface	= false;
-	openGL				= ( screen->flags & SDL_OPENGL ) != 0;
+	openGL				= ( screen->flags & SDL_OPENGL ); //AKR
 	InitCopies();
 
 #ifndef _WIN32_WCE //maks

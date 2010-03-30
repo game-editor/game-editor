@@ -9,9 +9,15 @@ char *ltoa(long n, char *s, int radix);
 
 char *fftoa(double d, char *str, int p, char type, int trunc);
 
-int charout_(int c, char **buf, char *endBuf); //maks
+#if __iPhone__ //maks
+static int charin_(char **buf);
+static int charback_(int ch, char **buf);
+#else
+int charout_(int c, char **buf, char *endBuf); 
 int charin_(char **buf);
 int charback_(int ch, char **buf);
+#endif
+
 
 int strround(char *s,int len);
 

@@ -84,20 +84,24 @@ extern "C" {
 #  if defined(__WINDOWS__) || defined(_WINDOWS) || defined(_Windows)
 #    define __UCL_WIN
 #  elif defined(__WIN32__) || defined(_WIN32) || defined(WIN32)
-#    define __UCL_WIN
+#    define __UCL_WIN 
 #  elif defined(__NT__) || defined(__NT_DLL__) || defined(__WINDOWS_386__)
-#    define __UCL_WIN
+#    define __UCL_WIN 
 #  elif defined(__DOS__) || defined(__MSDOS__) || defined(MSDOS)
-#    define __UCL_DOS
+#    define __UCL_DOS 
 #  elif defined(__OS2__) || defined(__OS2V2__) || defined(OS2)
-#    define __UCL_OS2
+#    define __UCL_OS2 
 #  elif defined(__palmos__)
-#    define __UCL_PALMOS
+#    define __UCL_PALMOS 
 #  elif defined(__TOS__) || defined(__atarist__)
-#    define __UCL_TOS
+#    define __UCL_TOS 
 #  endif
 #endif
 
+#if __iPhone__ //Just to not break other platforms
+#define __WINDOWS_386__ //AKR
+#endif
+	
 #if (UINT_MAX < UCL_0xffffffffL)
 #  if defined(__UCL_WIN)
 #    define __UCL_WIN16

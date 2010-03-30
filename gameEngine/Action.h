@@ -766,6 +766,9 @@ public:
 	//Immediate attributes
 	Uint8 executionType;
 	Uint8 bLastActionInQueueOnly; //Enable or disable multiple queued actions
+#if __iPhone__
+	char dummy1[4]; //AKR
+#endif
 
 	//Wait for frame
 	char name[NAME_LIMIT]; //animation name, "Activation Event" from actor

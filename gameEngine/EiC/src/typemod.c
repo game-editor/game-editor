@@ -19,8 +19,11 @@
 
 #include "error.h" //maks
 #include <limits.h> //maks
+#ifdef __iPhone__
+#include "../../../SDL13/include/SDL_types.h" 
+#else
 #include "../../../SDL/SDL/include/SDL_types.h" //maks
-
+#endif
 //#define crt_type()  (type_expr *) xcalloc(sizeof(type_expr), 1) //maks
 type_expr *crt_type()
 {

@@ -2,7 +2,12 @@
 #define KR_OPENGL_TEXTURE_INCLUDED
 
 #ifdef KYRA_SUPPORT_OPENGL
-	#include "SDL_opengl.h"
+#ifdef __iPhone__
+	#include "SDL_opengles.h" //AKR
+#else
+	#include "SDL_opengl.h" //AKR
+
+#endif
 	#define KYRA_GLuint GLuint
 #else
 	#define KYRA_GLuint int
@@ -12,7 +17,11 @@
 #include "../util/gldynarray.h"
 #include "../util/glmap.h" //maks
 
-#define OGL_OFFSET 1 //maks: Use a border and OGL_OFFSET to solve artifacts in nvidia cards
+#ifdef __iPhone__
+#define OGL_OFFSET 0 //maks: Use a border and OGL_OFFSET to solve artifacts in nvidia cards
+#else
+#define OGL_OFFSET 0 //maks: Use a border and OGL_OFFSET to solve artifacts in nvidia cards //AKR
+#endif
 
 /*	A wrapper to the actual OpenGL texture.
 */

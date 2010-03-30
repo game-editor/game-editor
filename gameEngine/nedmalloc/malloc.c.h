@@ -566,8 +566,8 @@ MAX_RELEASE_CHECK_RATE   default: 4095 unless not HAVE_MMAP
 #define USE_LOCKS 0
 #endif  /* USE_LOCKS */
 #ifndef USE_SPIN_LOCKS
-#if USE_LOCKS && (defined(__GNUC__) && (defined(__i386__) || defined(__x86_64__))) || (defined(_MSC_VER) && _MSC_VER>=1310)
-#define USE_SPIN_LOCKS 1
+#if USE_LOCKS && (defined(__GNUC__) && (defined(__i386__)|| defined(__x86_64__))) || (defined(_MSC_VER) && _MSC_VER>=1310)
+#define USE_SPIN_LOCKS 1 
 #else
 #define USE_SPIN_LOCKS 0
 #endif /* USE_LOCKS && ... */
@@ -1601,7 +1601,7 @@ static FORCEINLINE int win32munmap(void* ptr, size_t size) {
 #if USE_LOCKS == 1
 
 #if USE_SPIN_LOCKS
-#ifndef WIN32
+#ifndef WIN32 
 /* Custom pthread-style spin locks on x86 and x64 for gcc */
 struct pthread_mlock_t
 {

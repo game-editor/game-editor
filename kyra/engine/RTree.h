@@ -160,7 +160,7 @@ public:
 		/// Find the next data element
 		bool operator++()                             { return FindNextData(); }
 
-#if !defined(linux) && !defined(LLVM)
+#if !defined(linux) && !defined(LLVM) && 0
 	private:
 #endif
 
@@ -232,7 +232,7 @@ public:
 		StackElement m_stack[MAX_STACK];              ///< Stack as we are doing iteration instead of recursion
 		int m_tos;                                    ///< Top Of Stack index
 		
-#if !defined(linux) && !defined(LLVM)
+#if !defined(linux) && !defined(LLVM) && 0
 		friend RTree; // Allow hiding of non-public functions while allowing manipulation by logical owner
 #endif
 	};
@@ -538,7 +538,7 @@ void RTREE_QUAL::Reset()
 	//maks: Give to user the chance of clean
 	if(Releasing)
 	{	
-#if !defined(linux) && !defined(LLVM)
+#if !defined(linux) && !defined(LLVM) & 0
 		RTree<DATATYPE, ELEMTYPE, NUMDIMS, ELEMTYPEREAL, TMAXNODES, TMINNODES>::Iterator it;
 #else
 		Iterator it;
