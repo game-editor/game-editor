@@ -41,9 +41,8 @@
 extern "C" {
 /* *INDENT-ON* */
 #endif
-
-/**
- *  \brief  The structure that defines a display mode
+	/**
+	 *  \brief  The structure that defines a display mode
  *  
  *  \sa SDL_GetNumDisplayModes()
  *  \sa SDL_GetDisplayMode()

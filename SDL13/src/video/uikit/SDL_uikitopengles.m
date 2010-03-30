@@ -109,7 +109,7 @@ SDL_GLContext UIKit_GL_CreateContext(_THIS, SDL_Window * window)
 									depthBits: _this->gl_config.depth_size];
 	
 	data->view = view;
-	
+
 	/* add the view to our window */
 	[data->uiwindow addSubview: view ];
 	

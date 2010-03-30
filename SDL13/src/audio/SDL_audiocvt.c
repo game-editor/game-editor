@@ -25,6 +25,7 @@
 
 #include "SDL_audio.h"
 #include "SDL_audio_c.h"
+#include "SDL_endian.h"
 
 /* #define DEBUG_CONVERT */
 

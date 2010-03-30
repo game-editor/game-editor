@@ -41,6 +41,14 @@ extern "C"
 
 #ifdef __IPHONEOS__
 #include <OpenGLES/ES1/gl.h>    /* Header File For The OpenGL ES Library */
+void DrawOGLTexQuad(GLenum mode, GLshort *vertices, GLfixed *texCoords, int nVerticeCoords); //AKR
+void DrawOGLQuad(GLenum mode, GLshort *vertices, int nVerticeCoords); //AKR
+void DrawOGLLine(GLshort *vertices, int nVerticeCoords); //AKR
+
+void InitNew2DStrip(); //AKR
+void Push2DQuadStrip(GLuint textureId, GLshort *vertices, GLfixed *texCoords); //AKR
+void Draw2DStrip(); //AKR
+
 #endif
 
 #ifndef APIENTRY

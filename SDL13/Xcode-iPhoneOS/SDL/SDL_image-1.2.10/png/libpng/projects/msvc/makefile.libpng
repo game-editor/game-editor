@@ -1,0 +1,79 @@
+# Project: libpng
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../../../../output//png.o ../../../../../../output//pngerror.o ../../../../../../output//pngget.o ../../../../../../output//pngmem.o ../../../../../../output//pngpread.o ../../../../../../output//pngread.o ../../../../../../output//pngrio.o ../../../../../../output//pngrtran.o ../../../../../../output//pngrutil.o ../../../../../../output//pngset.o ../../../../../../output//pngtrans.o ../../../../../../output//pngvcrd.o ../../../../../../output//pngwio.o ../../../../../../output//pngwrite.o ../../../../../../output//pngwtran.o ../../../../../../output//pngwutil.o $(RES)
+INCS =  -I"../.."  -I"../../../zlib" 
+BIN  = ../../../../../../output/libpng.a
+CFLAGS = $(INCS) -D__linux -Dlinux -D__linux__	$(BUILD_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../../../output/libpng.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../../../../../output//png.o: ../../png.c
+	$(CC) -c ../../png.c -o ../../../../../../output//png.o $(CFLAGS)
+
+../../../../../../output//pngerror.o: ../../pngerror.c
+	$(CC) -c ../../pngerror.c -o ../../../../../../output//pngerror.o $(CFLAGS)
+
+../../../../../../output//pngget.o: ../../pngget.c
+	$(CC) -c ../../pngget.c -o ../../../../../../output//pngget.o $(CFLAGS)
+
+../../../../../../output//pngmem.o: ../../pngmem.c
+	$(CC) -c ../../pngmem.c -o ../../../../../../output//pngmem.o $(CFLAGS)
+
+../../../../../../output//pngpread.o: ../../pngpread.c
+	$(CC) -c ../../pngpread.c -o ../../../../../../output//pngpread.o $(CFLAGS)
+
+../../../../../../output//pngread.o: ../../pngread.c
+	$(CC) -c ../../pngread.c -o ../../../../../../output//pngread.o $(CFLAGS)
+
+../../../../../../output//pngrio.o: ../../pngrio.c
+	$(CC) -c ../../pngrio.c -o ../../../../../../output//pngrio.o $(CFLAGS)
+
+../../../../../../output//pngrtran.o: ../../pngrtran.c
+	$(CC) -c ../../pngrtran.c -o ../../../../../../output//pngrtran.o $(CFLAGS)
+
+../../../../../../output//pngrutil.o: ../../pngrutil.c
+	$(CC) -c ../../pngrutil.c -o ../../../../../../output//pngrutil.o $(CFLAGS)
+
+../../../../../../output//pngset.o: ../../pngset.c
+	$(CC) -c ../../pngset.c -o ../../../../../../output//pngset.o $(CFLAGS)
+
+../../../../../../output//pngtrans.o: ../../pngtrans.c
+	$(CC) -c ../../pngtrans.c -o ../../../../../../output//pngtrans.o $(CFLAGS)
+
+../../../../../../output//pngvcrd.o: ../../pngvcrd.c
+	$(CC) -c ../../pngvcrd.c -o ../../../../../../output//pngvcrd.o $(CFLAGS)
+
+../../../../../../output//pngwio.o: ../../pngwio.c
+	$(CC) -c ../../pngwio.c -o ../../../../../../output//pngwio.o $(CFLAGS)
+
+../../../../../../output//pngwrite.o: ../../pngwrite.c
+	$(CC) -c ../../pngwrite.c -o ../../../../../../output//pngwrite.o $(CFLAGS)
+
+../../../../../../output//pngwtran.o: ../../pngwtran.c
+	$(CC) -c ../../pngwtran.c -o ../../../../../../output//pngwtran.o $(CFLAGS)
+
+../../../../../../output//pngwutil.o: ../../pngwutil.c
+	$(CC) -c ../../pngwutil.c -o ../../../../../../output//pngwutil.o $(CFLAGS)
+
+ 

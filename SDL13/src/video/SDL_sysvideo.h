@@ -26,7 +26,11 @@
 
 #include "SDL_mouse.h"
 #include "SDL_keysym.h"
-
+#if __APPLE__
+#include "SDL_opengles.h"
+#else
+#include "SDL_opengl.h"
+#endif
 /* The SDL video driver */
 
 typedef struct SDL_Renderer SDL_Renderer;
@@ -182,7 +186,6 @@ struct SDL_VideoDisplay
     int num_render_drivers;
     SDL_RenderDriver *render_drivers;
 
-    int num_windows;
     SDL_Window *windows;
     SDL_Window *fullscreen_window;
 
@@ -195,9 +198,12 @@ struct SDL_VideoDisplay
 
 /* Define the SDL video driver structure */
 #define _THIS	SDL_VideoDevice *_this
+#define SDL_CurrentVideo	((const SDL_VideoDevice *)current_video)
+extern SDL_VideoDevice *current_video;
 
 struct SDL_VideoDevice
 {
+
     /* * * */
     /* The name of this video driver */
     const char *name;
@@ -313,6 +319,20 @@ struct SDL_VideoDevice
     Uint8 window_magic;
     Uint8 texture_magic;
     Uint32 next_object_id;
+#if 1
+
+#ifndef APIENTRY
+#define APIENTRY
+#endif
+
+#define SDL_PROC(ret,func,params) ret (APIENTRY *func) params; //maks
+#if __APPLE__
+#include "SDL_glesfuncs.h"
+#else
+#include "SDL_glfuncs.h"
+#endif
+#undef SDL_PROC
+#endif
 
     /* * * */
     /* Data used by the GL drivers */

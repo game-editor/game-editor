@@ -24,6 +24,7 @@
 #include "SDL_config.h"
 #include "SDL_audio.h"
 #include "SDL_audio_c.h"
+#include "SDL_endian.h"
 
 #ifndef DEBUG_CONVERT
 #define DEBUG_CONVERT 0
@@ -3748,7 +3749,7 @@ SDL_Upsample_S16LSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Sint16 *target = ((const Sint16 *) cvt->buf) - 1;
     Sint16 sample0 = ((Sint16) SDL_SwapLE16(src[0]));
     Sint16 last_sample0 = sample0;
-    while (dst != target) {
+    while (dst > target) { //AKR BUG BUG if odd!!!!
         dst[0] = ((Sint16) SDL_SwapLE16(sample0));
         dst--;
         eps += srcsize;
