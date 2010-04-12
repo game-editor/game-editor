@@ -1,24 +1,26 @@
 /*
     showimage:  A test application for the SDL image loading library.
-    Copyright (C) 1997-2009 Sam Lantinga
+    Copyright (C) 1999, 2000, 2001  Sam Lantinga
 
     This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
+    modify it under the terms of the GNU Library General Public
     License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
+    version 2 of the License, or (at your option) any later version.
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
+    Library General Public License for more details.
 
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    You should have received a copy of the GNU Library General Public
+    License along with this library; if not, write to the Free
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
     Sam Lantinga
     slouken@libsdl.org
 */
+
+/* $Id: showimage.c,v 1.11 2001/12/14 13:03:49 slouken Exp $ */
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -35,7 +37,7 @@
 #endif
 
 /* Draw a Gimpish background pattern to show transparency in the image */
-static void draw_background(SDL_Surface *screen)
+void draw_background(SDL_Surface *screen)
 {
     Uint8 *dst = screen->pixels;
     int x, y;
@@ -49,21 +51,21 @@ static void draw_background(SDL_Surface *screen)
 	    Uint32 c = col[((x ^ y) >> 3) & 1];
 	    switch(bpp) {
 	    case 1:
-		dst[x] = (Uint8)c;
+		dst[x] = c;
 		break;
 	    case 2:
-		((Uint16 *)dst)[x] = (Uint16)c;
+		((Uint16 *)dst)[x] = c;
 		break;
 	    case 3:
-#if SDL_BYTEORDER == SDL_LIL_ENDIAN
-		dst[x * 3]     = (Uint8)(c);
-		dst[x * 3 + 1] = (Uint8)(c >> 8);
-		dst[x * 3 + 2] = (Uint8)(c >> 16);
-#else
-		dst[x * 3]     = (Uint8)(c >> 16);
-		dst[x * 3 + 1] = (Uint8)(c >> 8);
-		dst[x * 3 + 2] = (Uint8)(c);
-#endif
+		if(SDL_BYTEORDER == SDL_LIL_ENDIAN) {
+		    dst[x * 3] = c;
+		    dst[x * 3 + 1] = c >> 8;
+		    dst[x * 3 + 2] = c >> 16;
+		} else {
+		    dst[x * 3] = c >> 16;
+		    dst[x * 3 + 1] = c >> 8;
+		    dst[x * 3 + 2] = c;
+		}
 		break;
 	    case 4:
 		((Uint32 *)dst)[x] = c;
@@ -80,9 +82,6 @@ int main(int argc, char *argv[])
 	SDL_Surface *screen, *image;
 	int i, depth, done;
 	SDL_Event event;
-#if 0
-	SDL_RWops* rw_ops;
-#endif
 
 	/* Check command line usage */
 	if ( ! argv[1] ) {
@@ -103,18 +102,6 @@ int main(int argc, char *argv[])
 			flags |= SDL_FULLSCREEN;
 			continue;
 		}
-#if 0
-		rw_ops = SDL_RWFromFile(argv[1], "r");
-		
-		fprintf(stderr, "BMP:\t%d\n", IMG_isBMP(rw_ops));
-		fprintf(stderr, "GIF:\t%d\n", IMG_isGIF(rw_ops));
-		fprintf(stderr, "JPG:\t%d\n", IMG_isJPG(rw_ops));
-		fprintf(stderr, "PNG:\t%d\n", IMG_isPNG(rw_ops));
-		fprintf(stderr, "TIF:\t%d\n", IMG_isTIF(rw_ops));
-		/* fprintf(stderr, "TGA:\t%d\n", IMG_isTGA(rw_ops)); */
-		fprintf(stderr, "PCX:\t%d\n", IMG_isPCX(rw_ops));
-#endif
-
 		/* Open the image file */
 #ifdef XPM_INCLUDED
 		image = IMG_ReadXPMFromArray(picture_xpm);

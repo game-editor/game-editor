@@ -14,6 +14,7 @@
 #define PNG_INTERNAL
 #include "png.h"
 
+#include "../../../../gameEngine/dlmalloc.h" //maks
 
 #if defined(_WIN32_WCE)
 /* strtod() function is not supported on WindowsCE */

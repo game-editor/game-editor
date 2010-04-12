@@ -17,6 +17,7 @@
 #define PNG_INTERNAL
 #include "png.h"
 
+#include "../../../../gameEngine/dlmalloc.h" //maks
 
 /* Borland DOS special memory handler */
 #if defined(__TURBOC__) && !defined(_Windows) && !defined(__FLAT__)

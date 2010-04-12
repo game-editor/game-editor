@@ -1,24 +1,26 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2009 Sam Lantinga
+    Copyright (C) 1999, 2000, 2001  Sam Lantinga
 
     This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
+    modify it under the terms of the GNU Library General Public
     License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
+    version 2 of the License, or (at your option) any later version.
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
+    Library General Public License for more details.
 
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    You should have received a copy of the GNU Library General Public
+    License along with this library; if not, write to the Free
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
     Sam Lantinga
     slouken@libsdl.org
 */
+
+/* $Id: IMG_pcx.c,v 1.6 2001/12/14 13:02:16 slouken Exp $ */
 
 /*
  * PCX file reader:
@@ -39,6 +41,8 @@
 #include "SDL_endian.h"
 
 #include "SDL_image.h"
+
+#include "../../gameEngine/dlmalloc.h" //maks
 
 #ifdef LOAD_PCX
 
@@ -62,34 +66,26 @@ struct PCXheader {
 /* See if an image is contained in a data source */
 int IMG_isPCX(SDL_RWops *src)
 {
-	int start;
 	int is_PCX;
 	const int ZSoft_Manufacturer = 10;
 	const int PC_Paintbrush_Version = 5;
-	const int PCX_Uncompressed_Encoding = 0;
 	const int PCX_RunLength_Encoding = 1;
 	struct PCXheader pcxh;
 
-	if ( !src )
-		return 0;
-	start = SDL_RWtell(src);
 	is_PCX = 0;
 	if ( SDL_RWread(src, &pcxh, sizeof(pcxh), 1) == 1 ) {
 		if ( (pcxh.Manufacturer == ZSoft_Manufacturer) &&
 		     (pcxh.Version == PC_Paintbrush_Version) &&
-		     (pcxh.Encoding == PCX_RunLength_Encoding ||
-		      pcxh.Encoding == PCX_Uncompressed_Encoding) ) {
+		     (pcxh.Encoding == PCX_RunLength_Encoding) ) {
 			is_PCX = 1;
 		}
 	}
-	SDL_RWseek(src, start, RW_SEEK_SET);
 	return(is_PCX);
 }
 
 /* Load a PCX type image from an SDL datasource */
 SDL_Surface *IMG_LoadPCX_RW(SDL_RWops *src)
 {
-	int start;
 	struct PCXheader pcxh;
 	Uint32 Rmask;
 	Uint32 Gmask;
@@ -102,11 +98,9 @@ SDL_Surface *IMG_LoadPCX_RW(SDL_RWops *src)
 	char *error = NULL;
 	int bits, src_bits;
 
-	if ( !src ) {
-		/* The error message has been set in SDL_RWFromFile */
-		return NULL;
+	if ( ! src ) {
+		goto done;
 	}
-	start = SDL_RWtell(src);
 
 	if ( ! SDL_RWread(src, &pcxh, sizeof(pcxh), 1) ) {
 		error = "file truncated";
@@ -147,9 +141,6 @@ SDL_Surface *IMG_LoadPCX_RW(SDL_RWops *src)
 		goto done;
 
 	bpl = pcxh.NPlanes * pcxh.BytesPerLine;
-	if (bpl > surface->pitch) {
-		error = "bytes per line is too large (corrupt?)";
-	}
 	buf = malloc(bpl);
 	row = surface->pixels;
 	for ( y=0; y<surface->h; ++y ) {
@@ -157,30 +148,23 @@ SDL_Surface *IMG_LoadPCX_RW(SDL_RWops *src)
 		int i, count = 0;
 		Uint8 ch;
 		Uint8 *dst = (src_bits == 8) ? row : buf;
-		if ( pcxh.Encoding == 0 ) {
-			if(!SDL_RWread(src, dst, bpl, 1)) {
-				error = "file truncated";
-				goto done;
-			}
-		} else {
-			for(i = 0; i < bpl; i++) {
-				if(!count) {
+		for(i = 0; i < bpl; i++) {
+			if(!count) {
+				if(!SDL_RWread(src, &ch, 1, 1)) {
+					error = "file truncated";
+					goto done;
+				}
+				if( (ch & 0xc0) == 0xc0) {
+					count = ch & 0x3f;
 					if(!SDL_RWread(src, &ch, 1, 1)) {
 						error = "file truncated";
 						goto done;
 					}
-					if( (ch & 0xc0) == 0xc0) {
-						count = ch & 0x3f;
-						if(!SDL_RWread(src, &ch, 1, 1)) {
-							error = "file truncated";
-							goto done;
-						}
-					} else
-						count = 1;
-				}
-				dst[i] = ch;
-				count--;
+				} else
+					count = 1;
 			}
+			dst[i] = ch;
+			count--;
 		}
 
 		if(src_bits <= 4) {
@@ -193,9 +177,6 @@ SDL_Surface *IMG_LoadPCX_RW(SDL_RWops *src)
 					Uint8 byte = *src++;
 					for(j = 7; j >= 0; j--) {
 						unsigned bit = (byte >> j) & 1;
-						/* skip padding bits */
-						if (i * 8 + j >= width)
-							continue;
 						row[x++] |= bit << plane;
 					}
 				}
@@ -250,12 +231,9 @@ SDL_Surface *IMG_LoadPCX_RW(SDL_RWops *src)
 done:
 	free(buf);
 	if ( error ) {
-		SDL_RWseek(src, start, RW_SEEK_SET);
-		if ( surface ) {
-			SDL_FreeSurface(surface);
-			surface = NULL;
-		}
+		SDL_FreeSurface(surface);
 		IMG_SetError(error);
+		surface = NULL;
 	}
 	return(surface);
 }

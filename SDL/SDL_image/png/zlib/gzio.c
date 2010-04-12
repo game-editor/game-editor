@@ -11,6 +11,7 @@
 
 #include "zutil.h"
 
+#include "../../../../gameEngine/dlmalloc.h" //maks
 
 struct internal_state {int dummy;}; /* for buggy compilers */
 

@@ -207,10 +207,10 @@
 #endif
 
 #ifndef FAR
-#define FAR
+#   define FAR
 #endif
 
-#if !defined(MACOS) && defined(__APPLE__) 
+#if !defined(MACOS) && !defined(TARGET_OS_MAC)
 typedef unsigned char  Byte;  /* 8 bits */
 #endif
 typedef unsigned int   uInt;  /* 16 bits or more */
@@ -220,7 +220,7 @@ typedef unsigned long  uLong; /* 32 bits or more */
    /* Borland C/C++ and some old MSC versions ignore FAR inside typedef */
 #  define Bytef Byte FAR
 #else
-   typedef Byte   Bytef;
+   typedef Byte  FAR Bytef;
 #endif
 typedef char  FAR charf;
 typedef int   FAR intf;

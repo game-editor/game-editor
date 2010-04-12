@@ -1,0 +1,172 @@
+# Project: jpeg
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../../output/jcapimin.o ../../../../output/jcapistd.o ../../../../output/jccoefct.o ../../../../output/jccolor.o ../../../../output/jcdctmgr.o ../../../../output/jchuff.o ../../../../output/jcinit.o ../../../../output/jcmainct.o ../../../../output/jcmarker.o ../../../../output/jcmaster.o ../../../../output/jcomapi.o ../../../../output/jcparam.o ../../../../output/jcphuff.o ../../../../output/jcprepct.o ../../../../output/jcsample.o ../../../../output/jctrans.o ../../../../output/jdapimin.o ../../../../output/jdapistd.o ../../../../output/jdatadst.o ../../../../output/jdatasrc.o ../../../../output/jdcoefct.o ../../../../output/jdcolor.o ../../../../output/jddctmgr.o ../../../../output/jdhuff.o ../../../../output/jdinput.o ../../../../output/jdmainct.o ../../../../output/jdmarker.o ../../../../output/jdmaster.o ../../../../output/jdmerge.o ../../../../output/jdphuff.o ../../../../output/jdpostct.o ../../../../output/jdsample.o ../../../../output/jdtrans.o ../../../../output/jerror.o ../../../../output/jfdctflt.o ../../../../output/jfdctfst.o ../../../../output/jfdctint.o ../../../../output/jidctflt.o ../../../../output/jidctfst.o ../../../../output/jidctint.o ../../../../output/jidctred.o ../../../../output/jmemmgr.o ../../../../output/jmemnobs.o ../../../../output/jpegtran.o ../../../../output/jquant1.o ../../../../output/jquant2.o ../../../../output/jutils.o $(RES)
+INCS = -I"../"
+BIN  = ../../../../output/jpeg.a
+CFLAGS = $(INCS) $(TARGET) -D_LIB $(BUILD_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../output/jpeg.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+
+../../../../output/jcapimin.o: ../jcapimin.c
+	$(CC) -c ../jcapimin.c -o ../../../../output/jcapimin.o $(CFLAGS)
+
+../../../../output/jcapistd.o: ../jcapistd.c
+	$(CC) -c ../jcapistd.c -o ../../../../output/jcapistd.o $(CFLAGS)
+
+../../../../output/jccoefct.o: ../jccoefct.c
+	$(CC) -c ../jccoefct.c -o ../../../../output/jccoefct.o $(CFLAGS)
+
+../../../../output/jccolor.o: ../jccolor.c
+	$(CC) -c ../jccolor.c -o ../../../../output/jccolor.o $(CFLAGS)
+
+../../../../output/jcdctmgr.o: ../jcdctmgr.c
+	$(CC) -c ../jcdctmgr.c -o ../../../../output/jcdctmgr.o $(CFLAGS)
+
+../../../../output/jchuff.o: ../jchuff.c
+	$(CC) -c ../jchuff.c -o ../../../../output/jchuff.o $(CFLAGS)
+
+../../../../output/jcinit.o: ../jcinit.c
+	$(CC) -c ../jcinit.c -o ../../../../output/jcinit.o $(CFLAGS)
+
+../../../../output/jcmainct.o: ../jcmainct.c
+	$(CC) -c ../jcmainct.c -o ../../../../output/jcmainct.o $(CFLAGS)
+
+../../../../output/jcmarker.o: ../jcmarker.c
+	$(CC) -c ../jcmarker.c -o ../../../../output/jcmarker.o $(CFLAGS)
+
+../../../../output/jcmaster.o: ../jcmaster.c
+	$(CC) -c ../jcmaster.c -o ../../../../output/jcmaster.o $(CFLAGS)
+
+../../../../output/jcomapi.o: ../jcomapi.c
+	$(CC) -c ../jcomapi.c -o ../../../../output/jcomapi.o $(CFLAGS)
+
+../../../../output/jcparam.o: ../jcparam.c
+	$(CC) -c ../jcparam.c -o ../../../../output/jcparam.o $(CFLAGS)
+
+../../../../output/jcphuff.o: ../jcphuff.c
+	$(CC) -c ../jcphuff.c -o ../../../../output/jcphuff.o $(CFLAGS)
+
+../../../../output/jcprepct.o: ../jcprepct.c
+	$(CC) -c ../jcprepct.c -o ../../../../output/jcprepct.o $(CFLAGS)
+
+../../../../output/jcsample.o: ../jcsample.c
+	$(CC) -c ../jcsample.c -o ../../../../output/jcsample.o $(CFLAGS)
+
+../../../../output/jctrans.o: ../jctrans.c
+	$(CC) -c ../jctrans.c -o ../../../../output/jctrans.o $(CFLAGS)
+
+../../../../output/jdapimin.o: ../jdapimin.c
+	$(CC) -c ../jdapimin.c -o ../../../../output/jdapimin.o $(CFLAGS)
+
+../../../../output/jdapistd.o: ../jdapistd.c
+	$(CC) -c ../jdapistd.c -o ../../../../output/jdapistd.o $(CFLAGS)
+
+../../../../output/jdatadst.o: ../jdatadst.c
+	$(CC) -c ../jdatadst.c -o ../../../../output/jdatadst.o $(CFLAGS)
+
+../../../../output/jdatasrc.o: ../jdatasrc.c
+	$(CC) -c ../jdatasrc.c -o ../../../../output/jdatasrc.o $(CFLAGS)
+
+../../../../output/jdcoefct.o: ../jdcoefct.c
+	$(CC) -c ../jdcoefct.c -o ../../../../output/jdcoefct.o $(CFLAGS)
+
+../../../../output/jdcolor.o: ../jdcolor.c
+	$(CC) -c ../jdcolor.c -o ../../../../output/jdcolor.o $(CFLAGS)
+
+../../../../output/jddctmgr.o: ../jddctmgr.c
+	$(CC) -c ../jddctmgr.c -o ../../../../output/jddctmgr.o $(CFLAGS)
+
+../../../../output/jdhuff.o: ../jdhuff.c
+	$(CC) -c ../jdhuff.c -o ../../../../output/jdhuff.o $(CFLAGS)
+
+../../../../output/jdinput.o: ../jdinput.c
+	$(CC) -c ../jdinput.c -o ../../../../output/jdinput.o $(CFLAGS)
+
+../../../../output/jdmainct.o: ../jdmainct.c
+	$(CC) -c ../jdmainct.c -o ../../../../output/jdmainct.o $(CFLAGS)
+
+../../../../output/jdmarker.o: ../jdmarker.c
+	$(CC) -c ../jdmarker.c -o ../../../../output/jdmarker.o $(CFLAGS)
+
+../../../../output/jdmaster.o: ../jdmaster.c
+	$(CC) -c ../jdmaster.c -o ../../../../output/jdmaster.o $(CFLAGS)
+
+../../../../output/jdmerge.o: ../jdmerge.c
+	$(CC) -c ../jdmerge.c -o ../../../../output/jdmerge.o $(CFLAGS)
+
+../../../../output/jdphuff.o: ../jdphuff.c
+	$(CC) -c ../jdphuff.c -o ../../../../output/jdphuff.o $(CFLAGS)
+
+../../../../output/jdpostct.o: ../jdpostct.c
+	$(CC) -c ../jdpostct.c -o ../../../../output/jdpostct.o $(CFLAGS)
+
+../../../../output/jdsample.o: ../jdsample.c
+	$(CC) -c ../jdsample.c -o ../../../../output/jdsample.o $(CFLAGS)
+
+../../../../output/jdtrans.o: ../jdtrans.c
+	$(CC) -c ../jdtrans.c -o ../../../../output/jdtrans.o $(CFLAGS)
+
+../../../../output/jerror.o: ../jerror.c
+	$(CC) -c ../jerror.c -o ../../../../output/jerror.o $(CFLAGS)
+
+../../../../output/jfdctflt.o: ../jfdctflt.c
+	$(CC) -c ../jfdctflt.c -o ../../../../output/jfdctflt.o $(CFLAGS)
+
+../../../../output/jfdctfst.o: ../jfdctfst.c
+	$(CC) -c ../jfdctfst.c -o ../../../../output/jfdctfst.o $(CFLAGS)
+
+../../../../output/jfdctint.o: ../jfdctint.c
+	$(CC) -c ../jfdctint.c -o ../../../../output/jfdctint.o $(CFLAGS)
+
+../../../../output/jidctflt.o: ../jidctflt.c
+	$(CC) -c ../jidctflt.c -o ../../../../output/jidctflt.o $(CFLAGS)
+
+../../../../output/jidctfst.o: ../jidctfst.c
+	$(CC) -c ../jidctfst.c -o ../../../../output/jidctfst.o $(CFLAGS)
+
+../../../../output/jidctint.o: ../jidctint.c
+	$(CC) -c ../jidctint.c -o ../../../../output/jidctint.o $(CFLAGS)
+
+../../../../output/jidctred.o: ../jidctred.c
+	$(CC) -c ../jidctred.c -o ../../../../output/jidctred.o $(CFLAGS)
+
+../../../../output/jmemmgr.o: ../jmemmgr.c
+	$(CC) -c ../jmemmgr.c -o ../../../../output/jmemmgr.o $(CFLAGS)
+
+../../../../output/jmemnobs.o: ../jmemnobs.c
+	$(CC) -c ../jmemnobs.c -o ../../../../output/jmemnobs.o $(CFLAGS)
+
+../../../../output/jpegtran.o: ../jpegtran.c
+	$(CC) -c ../jpegtran.c -o ../../../../output/jpegtran.o $(CFLAGS)
+
+../../../../output/jquant1.o: ../jquant1.c
+	$(CC) -c ../jquant1.c -o ../../../../output/jquant1.o $(CFLAGS)
+
+../../../../output/jquant2.o: ../jquant2.c
+	$(CC) -c ../jquant2.c -o ../../../../output/jquant2.o $(CFLAGS)
+
+../../../../output/jutils.o: ../jutils.c
+	$(CC) -c ../jutils.c -o ../../../../output/jutils.o $(CFLAGS)
