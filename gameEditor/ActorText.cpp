@@ -187,6 +187,15 @@ void CheckSystemFontPath()
 			ged_getcwd(winTTFPath, PATH_LIMIT); //Make the correct slashs for restore
 		}			
 #endif
+#ifdef __MACOSX__ //AKR
+		
+		strcpy(fontTTFPath,"/Library/fonts");
+		ged_getcwd(oldUserPath, PATH_LIMIT);
+
+		chdir(fontTTFPath);
+		ged_getcwd(winTTFPath, PATH_LIMIT); //Make the correct slashs for restore
+
+#endif
 	}
 	else chdir(fontTTFPath);
 }
@@ -1436,7 +1445,7 @@ ActorTextTrueType::~ActorTextTrueType()
 	delete colorSample;
 	delete textBox;
 
-#ifdef WIN32
+#if  defined(WIN32) || defined (__MACOSX__) //AKR
 	//Restore old path
 	char path[PATH_LIMIT];
 	ged_getcwd(path, PATH_LIMIT);

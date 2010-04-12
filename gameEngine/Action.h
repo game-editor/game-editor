@@ -637,7 +637,7 @@ public:
 		struct /*STRUCT_PACK*/
 		{
 			Uint16 dataType;
-			#ifdef linux
+			#if defined linux || defined __APPLE__
 			char dummy[4]; //To correct align of transparency.data
 			#endif
 			union /*STRUCT_PACK*/
@@ -735,7 +735,7 @@ public:
 			char relative[NAME_LIMIT];
 			char obstacle[NAME_LIMIT];
 			int moveType; //STRAIGHT_LINE, FIND_PATH
-			#ifdef linux
+			#if defined linux || defined __APPLE__
 			char dummy[4]; //To correct size of moveto
 			#endif
 		} moveto;
@@ -752,7 +752,7 @@ public:
 
 		Uint32 zdepth;
 
-		#ifdef linux
+		#if defined linux || defined __APPLE__
 	    char dummy[520]; //To correct align stAction.next
 	    #endif
 	} data;
@@ -766,9 +766,6 @@ public:
 	//Immediate attributes
 	Uint8 executionType;
 	Uint8 bLastActionInQueueOnly; //Enable or disable multiple queued actions
-#if __iPhone__
-	char dummy1[4]; //AKR
-#endif
 
 	//Wait for frame
 	char name[NAME_LIMIT]; //animation name, "Activation Event" from actor

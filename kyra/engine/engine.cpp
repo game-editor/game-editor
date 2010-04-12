@@ -70,9 +70,14 @@
 #include "engine.h"
 #include "../util/glperformance.h"
 #ifdef KYRA_SUPPORT_OPENGL
+#ifdef __APPLE__
+#include "SDL_sysvideo.h"
 #ifdef __iPhone__
 	#include "SDL_opengles.h" // AKR
-	#include "SDL_sysvideo.h"
+#endif
+#ifdef __MACOSX__
+#include "SDL_opengl.h" // AKR
+#endif
 #else
 	#include "SDL_opengl.h" // AKR
 #endif
@@ -861,6 +866,10 @@ void KrEngine::QueryRenderDesc( gedString* desc )
 						"Win32"
 					#elif defined ( linux )
 						"Linux"
+					#elif defined ( __iPhone__ )
+						"iPhone"
+					#elif defined ( __MACOSX__ )
+						"Macosx"
 					#else
 						"UnknownPlatform"
 					#endif

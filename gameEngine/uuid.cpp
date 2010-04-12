@@ -111,9 +111,10 @@
 
 #ifndef WIN32
 #include <sys/time.h>
+#ifndef __MACOSX__
 #include <sys/sysinfo.h> 
 #endif
-
+#endif
 //______________________________________________________________________________
 TUUID::TUUID()
 {

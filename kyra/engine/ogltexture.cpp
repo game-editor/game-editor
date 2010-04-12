@@ -73,7 +73,7 @@
 #include "kyrabuild.h"
 #include "canvasresource.h"
 #include "engine.h"
-#ifdef __iPhone__
+#ifdef __APPLE__
 #include "SDL_sysvideo.h"
 #endif
 
@@ -279,7 +279,7 @@ void KrOglTexture::SetTexture(	const KrRGBA* pixels,
 void KrOglTexture::SetScaledTexture( const KrRGBA* pixels, int w, int h )
 {
 #ifndef GL_OES_VERSION_1_1 //maks
-#ifndef __iPhone__
+#ifndef __APPLE__
 	SDL_CurrentVideo->glBindTexture( GL_TEXTURE_2D, textureId );
 	GLint sizeX, sizeY;
 	SDL_CurrentVideo->glGetTexLevelParameteriv( GL_TEXTURE_2D, 0, GL_TEXTURE_WIDTH, &sizeX );

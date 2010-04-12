@@ -90,7 +90,7 @@
 #include "../../gameEngine/compression.h" //maks
 #include "../util/glperformance.h" //maks
 #include "FastSprite.h" //maks
-#ifdef __iPhone__
+#ifdef __APPLE__
 #include "SDL_sysvideo.h"
 #endif
 #include "../../gameEngine/dlmalloc.h" //maks

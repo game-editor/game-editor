@@ -37,6 +37,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "../gameEditor/Tutorial.h"
 
 #ifdef USE_SYSTEM_FILE_DIALOG
+#ifdef __MACOSX__
+extern gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "");
+
+#else
 extern "C" HWND SDL_Window;
 extern "C" void SDL_ResetMouse(void);
 extern "C" int SDL_PrivateMouseButton(Uint8 state, Uint8 button,Sint16 x,Sint16 y);
@@ -213,7 +217,7 @@ gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "
 }
 
 #endif
-
+#endif
 
 bool ListDirectory::bReadDrives = false;
 char ListDirectory::drives[27];
@@ -314,11 +318,13 @@ bool ListDirectory::OnMouseButtonDown(int x, int y, Uint8 button)
 
 			ListPop::OnList(this, -1, fileName, -1);
 		}
+#ifndef __MACOSX__ //AKR
 
 		//Need this to release the mouse capture
 		//Solve the bug "lost cursor when open merge, open file dialog, close, click on grid"
 		//SDL_ResetMouse(); //Don't works
 		::PostMessage(SDL_Window, WM_LBUTTONUP, 0, 0);
+#endif
 		return false;
 	}
 #endif

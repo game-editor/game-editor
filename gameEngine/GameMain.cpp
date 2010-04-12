@@ -759,7 +759,9 @@ SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags)
 		//bOpenGLTested && !bCanUseOpenGL && //opengl:teste: remove comment to enable OpenGL 
 		(flags & SDL_OPENGL)) 
 	{
-		flags &= ~SDL_OPENGL;
+#ifndef __APPLE__
+		flags &= ~SDL_OPENGL; // AKR SDL always on apple for turbo :)
+#endif
 	}
 
 	SDL_Surface *screen = SDL_SetVideoMode(width, height, bpp, flags);
@@ -1005,12 +1007,14 @@ void EngineStart()
 #endif
 	
 	new GameControl();	
-
+#ifdef __APPLE__ // Always cool speed on apple plattforms AKR :)
+	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  SDL_OPENGL );	
+#else
 	/* Create a display for the image */
 	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0, 
 		(VIDEO_FLAGS & SDL_OPENGL)?(VIDEO_FLAGS & ~SDL_OPENGL):VIDEO_FLAGS //Always starts without opengl to avoid startup delays
 		);	
-
+#endif
 	if ( screen == NULL )  
 	{
 		exit(3);
@@ -1153,6 +1157,10 @@ void EngineLoad(const char *gamePath)
 		}
 	}
 #endif
+#ifdef __APPLE__
+	extern SDL_mutex * multipleArchiveMutEx ; //AKR
+	multipleArchiveMutEx=SDL_CreateMutex();
+#endif
 
 	EngineStart();	
 	
@@ -1188,7 +1196,14 @@ void EngineLoad(const char *gamePath)
 	SplitPath(argv[0], file, dir);
 #endif
 
-
+#ifdef __MACOSX__ //AKR: Treat app bundle correctly
+		dir.replace("MacOS","Resources",0);
+		if(chdir(dir.getCharBuf()))
+			printf("Cannot change directory to app bundle/Resources\n");
+#endif
+#ifdef __iPhone__
+	dir=dir.GetFilePath()+"/Documents";
+#endif
 
 	GameControl::Get()->setHomePath(dir);
 
@@ -1472,7 +1487,7 @@ extern "C" int SDL_main( int argc, char *argv[] )
 
 extern "C" int main(int argc, char *argv[])
 {
-#ifndef LLVM
+#if !defined(LLVM) && defined(GP2X)
 	InitGP2X();
 #endif
 

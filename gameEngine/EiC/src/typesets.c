@@ -22,7 +22,7 @@
 #include "symbol.h"
 #include "parser.h"
 #include "error.h"
-#ifdef __iPhone__
+#ifdef __APPLE__
 #include "../../../SDL13/include/SDL_types.h"
 #else
 #include "../../../SDL/SDL/include/SDL_types.h" //maks

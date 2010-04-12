@@ -10,7 +10,8 @@
 #include "strings.h"
 #endif
 
-#if __iPhone__
+
+#if __APPLE__
 #include "SDL_rwops.h"
 #endif
 
@@ -640,10 +641,12 @@ SDL_Surface* ToSurface32(SDL_Surface* surface)
 	format.Gmask = 0x0000ff00;
 	format.Bmask = 0x000000ff;
 	format.Amask = 0xff000000;
-#ifndef __iPhone__
+#ifndef __APPLE__
 	format.alpha = surface->format->alpha;
 #else
+#ifndef __MACOSX__ //AKR
 	SDL_GetSurfaceAlphaMod(surface, &a); 
+#endif
 #endif
 
 	SDL_Surface *surface32 = SDL_ConvertSurface(surface, &format, SDL_SWSURFACE);
@@ -666,7 +669,7 @@ SDL_Surface* ToSupportedSurface(SDL_Surface* surface, bool bRemoveOld)
 		if(surface->flags & SDL_SRCCOLORKEY)
 		{
 			bHasColorKey = true;
-#if __iPhone__
+#if SDL_VERSION_ATLEAST(1, 3, 0) //TODO: remove this when all projects use the SDL13
 			Uint32 k;
 			SDL_GetColorKey(surface, &k);
 			SDL_GetRGB(k, surface->format, &colorkey.r, &colorkey.g, &colorkey.b);			
@@ -1422,7 +1425,7 @@ bool copyfile(const char *oldFrom, const char *oldTo, const char *oldFPath, bool
 
 bool concatenateFile(const char *oldFirst, const char *oldSecond)
 {
-#ifndef __iPhone__
+#ifndef __APPLE__
 	char *first = (char *)dlmalloc(strlen(oldFirst) + 1);
 	correctDirectoryName(oldFirst, first);
 

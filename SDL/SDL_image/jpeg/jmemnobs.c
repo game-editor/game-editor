@@ -19,9 +19,9 @@
 #include "jinclude.h"
 #include "jpeglib.h"
 #include "jmemsys.h"		/* import the system-dependent declarations */
-
+#ifndef __APPLE__
 #include "../../../gameEngine/dlmalloc.h" //maks
-
+#endif
 #ifndef HAVE_STDLIB_H		/* <stdlib.h> should declare malloc(),free() */
 extern void * malloc JPP((size_t size));
 extern void free JPP((void *ptr));

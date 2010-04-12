@@ -37,7 +37,9 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 #endif // _MSC_VER > 1000
 
 #include "BaseAction.h"
+#ifndef __iPhone__
 #include "../SDL/SDL_ttf/SDL_ttf.h"
+#endif
 #include "ColorPicker.h"
 
 gedString AddTrueTypeFont(const char* str_ttf, int i_style, int i_size, Uint8 ui_r, Uint8 ui_g, Uint8 ui_b, bool bAntiAlias);

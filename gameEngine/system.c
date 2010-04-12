@@ -67,8 +67,10 @@ void openUrl(const char * b) { return 0; };
 #  include "system_symbian.c"
 #elif _WIN32_WCE
 # include "system_pocketpc.c"
-#elif __APPLE__
+#elif __iPhone__
 # include "system_iphone.c"
+#elif __MACOSX__
+# include "system_macosx.c"
 #elif WIN32
 # include "system_windows.c" 
 #else

@@ -112,7 +112,7 @@ gedString ANY_ACTOR("Any Actor");
 gedString ALL_ACTORS("All Actors");
 gedString ANY_ANIMATION("Any Animation");
 gedString ANY_PATH("Any Path");
-#if __iPhone__
+#if defined(__iPhone__) && !defined(__APPLE__)
 enum {
 	
 	/* Maks: famous Any Key*/

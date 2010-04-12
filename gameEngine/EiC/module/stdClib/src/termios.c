@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#if __iPhone__ //maks
+#if defined (__iPhone__) || defined (__APPLE__) //maks
 #include <stdarg.h>
 #else
 #include <varargs.h>

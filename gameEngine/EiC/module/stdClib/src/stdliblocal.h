@@ -9,7 +9,7 @@ char *ltoa(long n, char *s, int radix);
 
 char *fftoa(double d, char *str, int p, char type, int trunc);
 
-#if __iPhone__ //maks
+#if defined (__iPhone__) || defined (__APPLE__) //maks
 static int charin_(char **buf);
 static int charback_(int ch, char **buf);
 #else

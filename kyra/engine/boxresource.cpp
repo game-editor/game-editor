@@ -79,7 +79,7 @@
 #include "box.h"
 #include "painter.h"
 #include "imagetree.h"
-#ifdef __iPhone__
+#ifdef __APPLE__
 #include "SDL_sysvideo.h"
 #endif
 

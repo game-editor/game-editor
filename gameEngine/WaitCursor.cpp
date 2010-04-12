@@ -60,7 +60,9 @@ WaitCursor::WaitCursor(bool bLoadCursor)
 					WAIT_CWIDTH, WAIT_CHEIGHT,
 					WAIT_CHOTX, WAIT_CHOTY);
 		}
-
+#ifdef __MACOSX__
+		SDL_ClearError(); //SDL 1.3 beta bug 29.3.2010 AKR
+#endif
 		if(SDL_waitcursor) SDL_SetCursor(SDL_waitcursor);
 	}
 }

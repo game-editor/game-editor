@@ -2323,7 +2323,7 @@ static val_t eic_GetKeyState(void)
 {
     val_t v;
 	v.ival = 0;
-#ifndef __iPhone__
+#ifndef __APPLE__
 	if(GameControl::Get()->getGameMode())
 	{
 		int numkeys = 0;
@@ -3071,7 +3071,7 @@ void Script::Init()
 	sprintf(buf, "KEY_LCTRL=%ld", SDLK_LCTRL); dodefine(buf);
 	sprintf(buf, "KEY_RALT=%ld", SDLK_RALT); dodefine(buf);
 	sprintf(buf, "KEY_LALT=%ld", SDLK_LALT); dodefine(buf);
-#ifndef __iPhone__ //maks:remove this when merge the SDL 1.3 changes to not break game made for multiple platforms
+#ifndef __APPLE__ //maks:remove this when merge the SDL 1.3 changes to not break game made for multiple platforms
 	sprintf(buf, "KEY_RMETA=%ld", SDLK_RMETA); dodefine(buf);
 	sprintf(buf, "KEY_LMETA=%ld", SDLK_LMETA); dodefine(buf);
 	sprintf(buf, "KEY_LWINDOWS=%ld", SDLK_LSUPER); dodefine(buf);
@@ -3085,7 +3085,7 @@ void Script::Init()
 	sprintf(buf, "KEY_MENU=%ld", SDLK_MENU); dodefine(buf);
 	sprintf(buf, "KEY_MAC_POWER=%ld", SDLK_POWER); dodefine(buf);
 	sprintf(buf, "KEY_EURO=%ld", SDLK_EURO); dodefine(buf);
-#ifndef __iPhone__ //maks:remove this when merge the SDL 1.3 changes to not break game made for multiple platforms
+#ifndef __APPLE__ //maks:remove this when merge the SDL 1.3 changes to not break game made for multiple platforms
 
 	sprintf(buf, "KEY_POCKET_UP=%ld", SDLK_POCKET_UP); dodefine(buf);
 	sprintf(buf, "KEY_POCKET_DOWN=%ld", SDLK_POCKET_DOWN); dodefine(buf);

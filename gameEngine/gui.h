@@ -40,7 +40,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "SlowCanvas.h"
 #include "Text.h"
 
-#if __iPhone__
+#if __APPLE__
 #include "SDL_keysym.h"
 #endif
 

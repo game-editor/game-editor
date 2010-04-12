@@ -783,7 +783,7 @@ void *Actor::operator new(size_t size)
 
 	if(oldsize && size != oldsize)
 	{
-#ifndef __iPhone__
+#ifndef __APPLE__
 		DebugBreak();
 #endif
 	}

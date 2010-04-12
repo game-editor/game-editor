@@ -78,7 +78,7 @@
 #include "../../gameEngine/compression.h" //maks
 
 #include "../../gameEngine/dlmalloc.h" //maks
-#ifdef __iPhone__
+#ifdef __APPLE__
 #include "SDL_sysvideo.h"
 #endif
 #ifdef DEBUG

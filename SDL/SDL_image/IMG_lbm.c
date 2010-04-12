@@ -1,32 +1,34 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1999, 2000, 2001  Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Library General Public
+    modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
-    version 2 of the License, or (at your option) any later version.
+    version 2.1 of the License, or (at your option) any later version.
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Library General Public License for more details.
+    Lesser General Public License for more details.
 
-    You should have received a copy of the GNU Library General Public
-    License along with this library; if not, write to the Free
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
     Sam Lantinga
     slouken@libsdl.org
 */
 
-/* $Id: IMG_lbm.c,v 1.6 2003/02/26 16:57:45 slouken Exp $ */
-
 /* This is a ILBM image file loading framework
    Load IFF pictures, PBM & ILBM packing methods, with or without stencil
-   Written by Daniel Morais ( Daniel@Morais.com ) in September 2001.
-   24 bits ILBM files support added by Marc Le Douarain (mavati@club-internet.fr)
+   Written by Daniel Morais ( Daniel AT Morais DOT com ) in September 2001.
+   24 bits ILBM files support added by Marc Le Douarain (http://www.multimania.com/mavati)
    in December 2002.
+   EHB and HAM (specific Amiga graphic chip modes) support added by Marc Le Douarain
+   (http://www.multimania.com/mavati) in December 2003.
+   Stencil and colorkey fixes by David Raulo (david.raulo AT free DOT fr) in February 2004.
+   Buffer overflow fix in RLE decompression by David Raulo in January 2008.
 */
 
 #include <stdio.h>
@@ -35,8 +37,6 @@
 
 #include "SDL_endian.h"
 #include "SDL_image.h"
-
-#include "../../gameEngine/dlmalloc.h" //maks
 
 #ifdef LOAD_LBM
 
@@ -62,11 +62,15 @@ typedef struct
 
 int IMG_isLBM( SDL_RWops *src )
 {
+	int start;
 	int   is_LBM;
 	Uint8 magic[4+4+4];
 
+	if ( !src ) 
+		return 0;
+	start = SDL_RWtell(src);
 	is_LBM = 0;
-	if ( SDL_RWread( src, magic, 4+4+4, 1 ) )
+	if ( SDL_RWread( src, magic, sizeof(magic), 1 ) )
 	{
 		if ( !memcmp( magic, "FORM", 4 ) &&
 			( !memcmp( magic + 8, "PBM ", 4 ) ||
@@ -75,11 +79,13 @@ int IMG_isLBM( SDL_RWops *src )
 			is_LBM = 1;
 		}
 	}
+	SDL_RWseek(src, start, RW_SEEK_SET);
 	return( is_LBM );
 }
 
 SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 {
+	int start;
 	SDL_Surface *Image;
 	Uint8       id[4], pbm, colormap[MAXCOLORS*3], *MiniBuf, *ptr, count, color, msk;
 	Uint32      size, bytesloaded, nbcolors;
@@ -88,14 +94,19 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 	Uint32      width;
 	BMHD	      bmhd;
 	char        *error;
+	Uint8       flagHAM,flagEHB;
 
 	Image   = NULL;
 	error   = NULL;
 	MiniBuf = NULL;
 
-	if ( src == NULL ) goto done;
+	if ( !src ) {
+		/* The error message has been set in SDL_RWFromFile */
+		return NULL;
+	}
+	start = SDL_RWtell(src);
 
-	if ( !SDL_RWread( src, id, 4, 1 ) ) 
+	if ( !SDL_RWread( src, id, 4, 1 ) )
 	{
 		error="error reading IFF chunk";
 		goto done;
@@ -135,6 +146,8 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 	nbcolors = 0;
 
 	memset( &bmhd, 0, sizeof( BMHD ) );
+	flagHAM = 0;
+	flagEHB = 0;
 
 	while ( memcmp( id, "BODY", 4 ) != 0 )
 	{
@@ -185,12 +198,29 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 			nbcolors = size / 3;
 		}
 
+		if ( !memcmp( id, "CAMG", 4 ) ) /* Amiga ViewMode  */
+		{
+			Uint32 viewmodes;
+			if ( !SDL_RWread( src, &viewmodes, sizeof(viewmodes), 1 ) )
+			{
+				error="error reading CAMG chunk";
+				goto done;
+			}
+
+			bytesloaded = size;
+			viewmodes = SDL_SwapBE32( viewmodes );
+			if ( viewmodes & 0x0800 )
+				flagHAM = 1;
+			if ( viewmodes & 0x0080 )
+				flagEHB = 1;
+		}
+
 		if ( memcmp( id, "BODY", 4 ) )
 		{
 			if ( size & 1 )	++size;  	/* padding ! */
 			size -= bytesloaded;
 			/* skip the remaining bytes of this chunk */
-			if ( size )	SDL_RWseek( src, size, SEEK_CUR );
+			if ( size )	SDL_RWseek( src, size, RW_SEEK_CUR );
 		}
 	}
 
@@ -208,7 +238,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 		nbplanes = 1;
 	}
 
-	if ( bmhd.mask ) ++nbplanes;       /* There is a mask ( 'stencil' ) */
+	if ( bmhd.mask & 1 ) ++nbplanes;   /* There is a mask ( 'stencil' ) */
 
 	/* Allocate memory for a temporary buffer ( used for
            decompression/deinterleaving ) */
@@ -219,16 +249,18 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 		goto done;
 	}
 
-	if ( ( Image = SDL_CreateRGBSurface( SDL_SWSURFACE, width, bmhd.h, bmhd.planes==24?24:8, 0, 0, 0, 0 ) ) == NULL )
+	if ( ( Image = SDL_CreateRGBSurface( SDL_SWSURFACE, width, bmhd.h, (bmhd.planes==24 || flagHAM==1)?24:8, 0, 0, 0, 0 ) ) == NULL )
 	   goto done;
+
+	if ( bmhd.mask & 2 )               /* There is a transparent color */
+		SDL_SetColorKey( Image, SDL_SRCCOLORKEY, bmhd.tcolor );
 
 	/* Update palette informations */
 
 	/* There is no palette in 24 bits ILBM file */
-	if ( nbcolors>0 )
+	if ( nbcolors>0 && flagHAM==0 )
 	{
-		Image->format->palette->ncolors = nbcolors;
-
+		int nbrcolorsfinal = 1 << nbplanes;
 		ptr = &colormap[0];
 
 		for ( i=0; i<nbcolors; i++ )
@@ -237,6 +269,37 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 			Image->format->palette->colors[i].g = *ptr++;
 			Image->format->palette->colors[i].b = *ptr++;
 		}
+
+		/* Amiga EHB mode (Extra-Half-Bright) */
+		/* 6 bitplanes mode with a 32 colors palette */
+		/* The 32 last colors are the same but divided by 2 */
+		/* Some Amiga pictures save 64 colors with 32 last wrong colors, */
+		/* they shouldn't !, and here we overwrite these 32 bad colors. */
+		if ( (nbcolors==32 || flagEHB ) && (1<<bmhd.planes)==64 )
+		{
+			nbcolors = 64;
+			ptr = &colormap[0];
+			for ( i=32; i<64; i++ )
+			{
+				Image->format->palette->colors[i].r = (*ptr++)/2;
+				Image->format->palette->colors[i].g = (*ptr++)/2;
+				Image->format->palette->colors[i].b = (*ptr++)/2;
+			}
+		}
+
+		/* If nbcolors < 2^nbplanes, repeat the colormap */
+		/* This happens when pictures have a stencil mask */
+		if ( nbrcolorsfinal > (1<<bmhd.planes) ) {
+			nbrcolorsfinal = (1<<bmhd.planes);
+		}
+		for ( i=nbcolors; i < (Uint32)nbrcolorsfinal; i++ )
+		{
+			Image->format->palette->colors[i].r = Image->format->palette->colors[i%nbcolors].r;
+			Image->format->palette->colors[i].g = Image->format->palette->colors[i%nbcolors].g;
+			Image->format->palette->colors[i].b = Image->format->palette->colors[i%nbcolors].b;
+		}
+		if ( !pbm )
+			Image->format->palette->ncolors = nbrcolorsfinal;
 	}
 
 	/* Get the bitmap */
@@ -266,7 +329,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 						count ^= 0xFF;
 						count += 2; /* now it */
 
-						if ( !SDL_RWread( src, &color, 1, 1 ) )
+						if ( ( count > remainingbytes ) || !SDL_RWread( src, &color, 1, 1 ) )
 						{
 						   error="error reading BODY chunk";
 							goto done;
@@ -277,7 +340,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 					{
 						++count;
 
-						if ( !SDL_RWread( src, ptr, count, 1 ) )
+						if ( ( count > remainingbytes ) || !SDL_RWread( src, ptr, count, 1 ) )
 						{
 						   error="error reading BODY chunk";
 							goto done;
@@ -302,7 +365,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 		/* One line has been read, store it ! */
 
 		ptr = Image->pixels;
-		if ( nbplanes==24 )
+		if ( nbplanes==24 || flagHAM==1 )
 			ptr += h * width * 3;
 		else
 			ptr += h * width;
@@ -313,7 +376,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 		}
 		else		/* We have to un-interlace the bits ! */
 		{
-			if ( nbplanes!=24 )
+			if ( nbplanes!=24 && flagHAM==0 )
 			{
 				size = ( width + 7 ) / 8;
 
@@ -339,34 +402,63 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 			}
 			else
 			{
+				Uint32 finalcolor = 0;
 				size = ( width + 7 ) / 8;
 				/* 24 bitplanes ILBM : R0...R7,G0...G7,B0...B7 */
+				/* or HAM (6 bitplanes) or HAM8 (8 bitplanes) modes */
 				for ( i=0; i<width; i=i+8 )
 				{
 					Uint8 maskBit = 0x80;
 					for ( j=0; j<8; j++ )
 					{
-						Uint32 color24 = 0;
-						Uint32 maskColor24 = 1;
+						Uint32 pixelcolor = 0;
+						Uint32 maskColor = 1;
 						Uint8 dataBody;
 						for ( plane=0; plane < nbplanes; plane++ )
 						{
 							dataBody = MiniBuf[ plane*size+i/8 ];
 							if ( dataBody&maskBit )
-								color24 = color24 | maskColor24;
-							maskColor24 = maskColor24<<1;
+								pixelcolor = pixelcolor | maskColor;
+							maskColor = maskColor<<1;
 						}
-						if ( SDL_BYTEORDER == SDL_LIL_ENDIAN )
+						/* HAM : 12 bits RGB image (4 bits per color component) */
+						/* HAM8 : 18 bits RGB image (6 bits per color component) */
+						if ( flagHAM )
 						{
-							*ptr++ = color24>>16;
-							*ptr++ = color24>>8;
-							*ptr++ = color24;
+							switch( pixelcolor>>(nbplanes-2) )
+							{
+								case 0: /* take direct color from palette */
+									finalcolor = colormap[ pixelcolor*3 ] + (colormap[ pixelcolor*3+1 ]<<8) + (colormap[ pixelcolor*3+2 ]<<16);
+									break;
+								case 1: /* modify only blue component */
+									finalcolor = finalcolor&0x00FFFF;
+									finalcolor = finalcolor | (pixelcolor<<(16+(10-nbplanes)));
+									break;
+								case 2: /* modify only red component */
+									finalcolor = finalcolor&0xFFFF00;
+									finalcolor = finalcolor | pixelcolor<<(10-nbplanes);
+									break;
+								case 3: /* modify only green component */
+									finalcolor = finalcolor&0xFF00FF;
+									finalcolor = finalcolor | (pixelcolor<<(8+(10-nbplanes)));
+									break;
+							}
 						}
 						else
 						{
-							*ptr++ = color24;
-							*ptr++ = color24>>8;
-							*ptr++ = color24>>16;
+							finalcolor = pixelcolor;
+						}
+						if ( SDL_BYTEORDER == SDL_LIL_ENDIAN )
+						{
+							*ptr++ = (Uint8)(finalcolor>>16);
+							*ptr++ = (Uint8)(finalcolor>>8);
+							*ptr++ = (Uint8)(finalcolor);
+						}
+						else
+						{
+							*ptr++ = (Uint8)(finalcolor);
+							*ptr++ = (Uint8)(finalcolor>>8);
+							*ptr++ = (Uint8)(finalcolor>>16);
 						}
 
 						maskBit = maskBit>>1;
@@ -382,9 +474,12 @@ done:
 
 	if ( error )
 	{
+		SDL_RWseek(src, start, RW_SEEK_SET);
+		if ( Image ) {
+			SDL_FreeSurface( Image );
+			Image = NULL;
+		}
 		IMG_SetError( error );
-		SDL_FreeSurface( Image );
-		Image = NULL;
 	}
 
 	return( Image );

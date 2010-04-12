@@ -3,7 +3,7 @@
 
 #pragma push_safeptr
 
-#if !defined(__iPhone__) //maks
+#if !defined (__iPhone__) && !defined (__APPLE__) //maks
 #include "sys/stdtypes.h"
 #include "sys/termdefs.h"
 #endif

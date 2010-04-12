@@ -313,7 +313,7 @@ int fprintf(FILE *fp, const char *fmt, ...)
     va_end(ap);
     return rtn;
 }
-
+#ifndef __MACOSX__
 int sprintf(char *str, const char *fmt, ...)
 {
     int rtn;
@@ -323,14 +323,14 @@ int sprintf(char *str, const char *fmt, ...)
     va_end(ap);
     return rtn;
 }
-
+#endif
 int vfprintf(FILE *fp, const char *fmt,va_list ap)
 {
     int rtn;
     rtn = _Uprintf(fputc,fp,fmt,ap);
     return rtn;
 }
-
+#ifndef __MACOSX__
 
 int vsprintf(char *str, const char *fmt,va_list ap)
 {
@@ -338,10 +338,7 @@ int vsprintf(char *str, const char *fmt,va_list ap)
     rtn = _Uprintf(charout_,&str,fmt,ap);
     return rtn;
 }
-
-
-
-
+#endif
 
 
 

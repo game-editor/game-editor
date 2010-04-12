@@ -15,7 +15,6 @@
 
 #define PNG_INTERNAL
 #include "png.h"
-#include "../../../../gameEngine/dlmalloc.h" //maks
 
 #if defined(PNG_bKGD_SUPPORTED)
 void PNGAPI

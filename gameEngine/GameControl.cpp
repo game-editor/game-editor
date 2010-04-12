@@ -887,7 +887,7 @@ void createCipherText(gedString plainText)
 }
 #endif
 
-#if !defined(STAND_ALONE_GAME) && defined(__linux__)
+#if !defined(STAND_ALONE_GAME) && (defined(__linux__) || defined(__APPLE__))
 static bool	bCanResize = true;
 #endif
 
@@ -1140,6 +1140,10 @@ GameControl::GameControl()
 	//Verify screen supported resolutions
 	resX = 640;
 	resY = 480;
+#ifdef __MACOSX__
+	resX = 1280;
+	resY = 1024;	
+#endif
 
 	
 #ifdef _WIN32_WCE
@@ -1325,7 +1329,9 @@ void GameControl::CreateEngines()
 	comp.DoCompression("gameEditorPocket.exe", "bin\\pocketpc.bin");
 	comp.DoCompression("gameEditorLinux", "bin\\linux.bin");
 	comp.DoCompression("gameEditorPocket.exe.gpe", "bin\\gp2x.bin");
-
+#ifdef __MACOSX__ //TODO: All files must be generated in the same directory
+	comp.DoCompression("/tmp/gameEditorMacosx", "/tmp/macosx.bin");	
+#endif
 #endif
 }
 
@@ -3246,7 +3252,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 #endif		
 	}
 
-	#if !defined(STAND_ALONE_GAME) && defined(__linux__)
+	#if !defined(STAND_ALONE_GAME) && (defined(__linux__) || defined(__APPLE__))
 	SDL_EventState(SDL_VIDEORESIZE, SDL_IGNORE);
 	bCanResize = false;
 	#endif
@@ -4779,7 +4785,7 @@ public:
 SDL_mutex *musicMutEx = SDL_CreateMutex();
 int GameControl::LoadMusicThread( void *pParam )
 {
-#if !defined(linux) && !defined(__iPhone__)
+#if !defined(linux) && !defined(__APPLE__)
 	MuteEx mutex(musicMutEx);
 
 	stMusicInfo *info = (stMusicInfo *)pParam;
@@ -4824,7 +4830,7 @@ int GameControl::PlaySound(bool bMusic, const gedString& path, int volume, int l
 
 	if(bMusic)
 	{
-#ifndef linux
+#if !defined( linux) && !defined( __APPLE__ )
 		if(priority == MEDIUM_PRIORITY_MUSIC || priority == LOW_PRIORITY_MUSIC)
 		{
 			//Load music in other thread
@@ -5025,8 +5031,10 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 
 	if(!bGameMode && (flags & SDL_OPENGL))
 	{
+#ifndef __MACOSX__
 		//Only in game mode
 		flags &= ~SDL_OPENGL;
+#endif
 	}
 
 	if(bGameMode
@@ -5122,6 +5130,16 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 
 	return true;
 }
+#ifdef SDL_VERSION_ATLEAST(1, 3, 0) //TODO: remove this when all projects use the SDL13
+int bSurfaceLost;
+int SDL_SurfaceLost() //maks
+{
+	int lost = bSurfaceLost;
+	bSurfaceLost = 0; //reset flag
+	
+	return lost;
+}
+#endif
 
 
 void GameControl::CheckSurfaceLost()
@@ -5319,7 +5337,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 	static gedString firstLevel;
 	SDL_ClearError();
 
-	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe") executableName = "game1"; //maks
+	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe" || executableName == "gameEditorMacosx") executableName = "game1"; //maks
 
 	int i = 0;
 	gedString ext, gameFile;
@@ -5329,7 +5347,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 		executableName = executableName.substr(0, i);		
 	}	
 
-#ifndef __iPhone__
+#ifndef __APPLE__
 	executableName = homePath + DIR_SEP + executableName;
 #endif
 	SDL_RWops* exeFile;

@@ -98,7 +98,7 @@ extern "C" {
 #  endif
 #endif
 
-#if __iPhone__ //Just to not break other platforms
+#if defined (__iPhone__) || defined (__APPLE__)//Just to not break other platforms
 #define __WINDOWS_386__ //AKR
 #endif
 	

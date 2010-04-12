@@ -400,7 +400,7 @@ SDL_Surface * FastSprite::Convert16(KrRle *rle)
 	
 
 
-#ifdef __iPhone__ //AKR
+#if (SDL_VERSION_ATLEAST(1, 3, 0)) //AKR, TODO:remove this when all projects use the SDL13
 	Uint32 key;
 	SDL_SetColorKey(surface,1,SDL_MapRGB(surface->format, rle->getColorKey().c.red, rle->getColorKey().c.green, rle->getColorKey().c.blue));
 	SDL_GetColorKey(surface, &key);
@@ -456,7 +456,7 @@ void FastSprite::Create(KrRle *rle, int _screenWidth)
 			U16* bits = (U16*)( (U8*) surface->pixels 
 					 + y * surface->pitch
 					 + x * surface->format->BytesPerPixel );
-#ifdef __iPhone__
+#if (SDL_VERSION_ATLEAST(1, 3, 0)) //AKR, TODO:remove this when all projects use the SDL13
 			uint32_t k;
 			SDL_GetColorKey(surface, &k);
 

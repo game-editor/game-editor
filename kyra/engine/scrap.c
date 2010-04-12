@@ -20,6 +20,8 @@
 /* Determine what type of clipboard we are using */
 #if defined(__unix__) && !defined(__QNXNTO__)
     #define X11_SCRAP
+#elif defined(__MACOSX__)
+	#define X11_SCRAP
 #elif defined(WIN32)
     #define WIN_SCRAP
 #elif defined(__QNXNTO__)
@@ -48,6 +50,9 @@ typedef uint32_t scrap_type;
 #if defined(X11_SCRAP)
 /* * */
 static Display *SDL_Display;
+#if __APPLE
+#define SDL_Window SDl_Window //AKR
+#endif
 static Window SDL_Window;
 static void (*Lock_Display)(void);
 static void (*Unlock_Display)(void);
@@ -282,7 +287,11 @@ init_scrap(void)
 
           /* Enable the special window hook events */
           SDL_EventState(SDL_SYSWMEVENT, SDL_ENABLE);
+#if  (SDL_VERSION_ATLEAST(1, 3, 0)) //AKR, TODO: remove this when all projects use the SDL 13
+          SDL_SetEventFilter(clipboard_filter,NULL);
+#else
           SDL_SetEventFilter(clipboard_filter);
+#endif
 
           retval = 0;
         }
@@ -586,7 +595,7 @@ get_scrap(int type, int *dstlen, char **dst)
 PRIVATE int clipboard_filter(const SDL_Event *event)
 {
   /* Post all non-window manager specific events */
-  if ( event->type != SDL_SYSWMEVENT ) {
+  if (event==NULL || event->type != SDL_SYSWMEVENT ) { //AKR sometimes NULL arrives
     return(1);
   }
 

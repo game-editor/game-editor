@@ -6,7 +6,7 @@
 #define _need_size_t
 #define _need_NULL
 
-#if !defined(__iPhone__) //maks
+#if !defined (__iPhone__) && !defined (__APPLE__) //maks
 #include "sys/stdtypes.h"
 #endif
 

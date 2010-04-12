@@ -212,7 +212,7 @@ int chdrive(int);
 int getdrive(void);
 
 #define STRUCT_PACK __attribute__ ((aligned (8))) //use in saved structs
-#elif __APPLE__
+#elif __iPhone__
 	
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -246,6 +246,45 @@ int getdrive(void);
 	
 //------------------------------
 // Linux specific stuff
+#elif __MACOSX__
+	
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/cdefs.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <glob.h>
+	
+#define O_BINARY	0
+	
+#ifndef FILENAME_MAX
+#define FILENAME_MAX  1024
+#endif
+	
+#define SDL_INIT_FLAGS (SDL_INIT_VIDEO|SDL_INIT_NOPARACHUTE|SDL_INIT_AUDIO|SDL_INIT_JOYSTICK)
+	//#define VIDEO_FLAGS (/*SDL_OPENGL |*/SDL_SWSURFACE | SDL_RESIZABLE  |SDL_DOUBLEBUF | SDL_HWSURFACE)
+	//#define VIDEO_FLAGS (SDL_HWSURFACE | SDL_FULLSCREEN | SDL_DOUBLEBUF |SDL_OPENGL) //You can use flip double buffer only if screen have whole update or a shadow surface
+//#define VIDEO_FLAGS (SDL_SWSURFACE | SDL_RESIZABLE | SDL_OPENGL) //You can use flip double buffer only if screen have whole update or a shadow surface
+#define VIDEO_FLAGS ( SDL_RESIZABLE| SDL_OPENGL|SDL_HWSURFACE /*| SDL_DOUBLEBUF | SDL_HWSURFACE/**/)
+	
+#define GED_TRY		
+#define	GED_CATCH	if(0)
+#define GED_THROW
+	
+#define DIR_SEP     '/'
+#define DEVICE_SEP  '\0'
+	
+#define ged_mkdir(pathname)  mkdir(pathname, 0755)  //create dir with default user access
+#if 1
+	char *ged_getcwd( char *buffer, int maxlen ) /* {return getcwd(buffer, maxlen);} */;
+
+#endif
+	int chdrive(int);
+	int getdrive(void);
+#define STRUCT_PACK __attribute__ ((aligned (8))) //use in saved structs
+	
+	//------------------------------
+	// Linux specific stuff
 #else
 
 #include <sys/types.h>

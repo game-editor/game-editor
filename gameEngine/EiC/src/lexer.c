@@ -17,7 +17,7 @@
 #include <limits.h>
 #include <string.h>
 #include <math.h>
-#if __iPhone__
+#if __APPLE__
 #include "../../../SDL13/include/SDL_types.h" 
 #else
 #include "../../../SDL/SDL/include/SDL_types.h" //maks
