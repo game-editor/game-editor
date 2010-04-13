@@ -10366,7 +10366,7 @@ void GameControl::ProcessNetwork(bool bFromFrameTick)
 }
 void GameControl::InitPocketPCKeys()
 {
-#if !defined(__iPhone__)
+#if !defined(__APPLE__)
 	pocketKeys.Clear();
 
 	//Standard keys
@@ -11811,7 +11811,7 @@ void GameControl::PopulatePocketPCKeys(ListPop *list)
 		sprintf(buf, "%s -> %s", SDL_GetKeyName(*it.Key()), (*it.Value() != SDLK_UNKNOWN)?SDL_GetKeyName(*it.Value()):"none");
 		list->AddText(buf);
 	}*/
-#if !defined(__iPhone__)
+#if !defined(__APPLE__)
 	//Pocket PC
 	PocketPCKeyDesc(list, SDLK_POCKET_UP);
 	PocketPCKeyDesc(list, SDLK_POCKET_DOWN);
