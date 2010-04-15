@@ -44,6 +44,9 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "Sequence.h"
 #include <math.h>
 #include "system.h"
+#if __iPhone__
+const char *FtpGet(char *FtpUrl, char *fPath);
+#endif
 #include "PathFinder/GeoPathfinder.h"
 
 #ifndef STAND_ALONE_GAME
@@ -754,7 +757,6 @@ SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags)
 	bpp = 16;
 #endif
 
-
 	if(
 		//bOpenGLTested && !bCanUseOpenGL && //opengl:teste: remove comment to enable OpenGL 
 		(flags & SDL_OPENGL)) 
@@ -763,7 +765,7 @@ SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags)
 		flags &= ~SDL_OPENGL; // AKR SDL always on apple for turbo :)
 #endif
 	}
-
+	
 	SDL_Surface *screen = SDL_SetVideoMode(width, height, bpp, flags);
 
 	if((flags & SDL_OPENGL) && (!screen || !(screen->flags & SDL_OPENGL)))
@@ -1011,7 +1013,7 @@ void EngineStart()
 	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  SDL_OPENGL );	
 #else
 	/* Create a display for the image */
-	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0, 
+	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  
 		(VIDEO_FLAGS & SDL_OPENGL)?(VIDEO_FLAGS & ~SDL_OPENGL):VIDEO_FLAGS //Always starts without opengl to avoid startup delays
 		);	
 #endif
@@ -1161,7 +1163,7 @@ void EngineLoad(const char *gamePath)
 	extern SDL_mutex * multipleArchiveMutEx ; //AKR
 	multipleArchiveMutEx=SDL_CreateMutex();
 #endif
-
+	
 	EngineStart();	
 	
 	
@@ -1202,15 +1204,18 @@ void EngineLoad(const char *gamePath)
 			printf("Cannot change directory to app bundle/Resources\n");
 #endif
 #ifdef __iPhone__
-	dir=dir.GetFilePath()+"/Documents";
+		dir=dir.GetFilePath()+"/Documents";
+
+#ifdef __TestEngine__
+		if(FtpGet("ftp://ftp1062526-ged:fantastic@ftp.visionware.de/gameEditor.dat",(dir+"/gameEditor.dat").getCharBuf())==0)
+		   chdir(dir.getCharBuf());
 #endif
 
-	GameControl::Get()->setHomePath(dir);
-
+#endif
+		GameControl::Get()->setHomePath(dir);
 	if(!GameControl::Get()->CheckStandAloneMode(file)) 
 	{
 		Mix_CloseAudio();
-
 	
 #ifdef GP2X
 		ReturnGP2X();
@@ -1478,7 +1483,7 @@ extern "C" int SDL_main( int argc, char *argv[] )
 }
 
 
-#if defined(GP2X) || defined(LLVM)
+#if defined(GP2X) || defined(LLVM) 
 #include "SDL_main.h"
 #ifdef main
 #undef main
@@ -1487,8 +1492,10 @@ extern "C" int SDL_main( int argc, char *argv[] )
 
 extern "C" int main(int argc, char *argv[])
 {
-#if !defined(LLVM) && defined(GP2X)
+#ifndef LLVM 
+#ifdef GP2X
 	InitGP2X();
+#endif
 #endif
 
 	return(SDL_main(argc, argv));
