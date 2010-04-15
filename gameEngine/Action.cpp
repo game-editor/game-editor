@@ -112,17 +112,7 @@ gedString ANY_ACTOR("Any Actor");
 gedString ALL_ACTORS("All Actors");
 gedString ANY_ANIMATION("Any Animation");
 gedString ANY_PATH("Any Path");
-#if defined(__iPhone__) && !defined(__APPLE__)
-enum {
-	
-	/* Maks: famous Any Key*/
-	SDLK_ANY_KEY						= 416,
-	SDLK_ALL_KEYS_PRESSED				= 417,
-	SDLK_KEYS_PRESSED_IN_ORDER			= 418,
-	SDLK_AT_LEAST_ONE_KEY_IS_PRESSED	= 419,
-	
-};
-#endif
+
 
 GlobalMapActions &Action::getGlobalMapActions()
 {
