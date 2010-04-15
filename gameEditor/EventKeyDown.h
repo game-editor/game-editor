@@ -38,7 +38,7 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 
 #include "Panel.h"
 #include "Action.h"
-
+#define MAX_KEY_SEQUENCE 12 //12*2 = 24 bytes, don't use more sizeof(keyEvent) <= 32 // AKR get strange compile error without this?!?!?
 class Text;
 
 class DlgEventKeyDown : public Panel  
