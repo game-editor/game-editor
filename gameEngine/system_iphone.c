@@ -7,7 +7,7 @@
  *
  */
 
-#include "system_iphone.h"
+//#include "system_iphone.h"
 
 /*******************************************************************************
  system_iphone.c: Implementation of system.c for Apple iPhone
