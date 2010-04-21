@@ -11021,6 +11021,9 @@ bool GameControl::ExportGame(const gedString& exportName, int exportType)
 	case LINUX_EXECUTABLE:
 		sourceName = "bin\\linux.bin";
 		break;
+	case MACOSX_EXECUTABLE:
+			sourceName = "bin\\macosx.bin";
+		break;			
 	case GP2X_EXECUTABLE:
 		{
 			if((i = fileName.find_no_case(".gpe")) != gedString::npos)
