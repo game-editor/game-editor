@@ -5122,7 +5122,7 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 
 	return true;
 }
-#ifdef SDL_VERSION_ATLEAST(1, 3, 0) //TODO: remove this when all projects use the SDL13
+#ifdef __APPLE__ //TODO: remove this when all projects use the SDL13
 int bSurfaceLost;
 int SDL_SurfaceLost() //maks
 {
@@ -10358,7 +10358,7 @@ void GameControl::ProcessNetwork(bool bFromFrameTick)
 }
 void GameControl::InitPocketPCKeys()
 {
-#if !defined(__APPLE__)
+#if !defined(__APPLE__) //TODO: remove this when all projects use the SDL13
 	pocketKeys.Clear();
 
 	//Standard keys
