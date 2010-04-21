@@ -5029,14 +5029,6 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 
 	static bool lastMode = false, lastFlipPocketPCScreen = bFlipPocketPCScreen;
 
-	if(!bGameMode && (flags & SDL_OPENGL))
-	{
-#ifndef __MACOSX__
-		//Only in game mode
-		flags &= ~SDL_OPENGL;
-#endif
-	}
-
 	if(bGameMode
 #ifndef STAND_ALONE_GAME
 		|| !Tutorial::IsOff() //Don't resize window when tutorial is playing

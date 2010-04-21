@@ -858,9 +858,9 @@ void DrawOGLLine(GLshort *vertices, int nVerticeCoords)
 }
 
 
-//Big strips for better performance //opengl:teste
+//Big strips for better performance
 
-#include "../../../../../gameEngine/dlmalloc.h" //maks
+#include "../../../../../gameEngine/dlmalloc.h" 
 #define MAX_SPRITES		1000 //opengl:teste
 #define MAX_TEXTURES	100 //opengl:teste
 #define MAX_VETEX_COUNT (MAX_SPRITES*4)

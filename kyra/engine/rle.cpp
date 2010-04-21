@@ -852,9 +852,6 @@ void KrRle::DrawOpenGL( KrPaintInfo* paintInfo,
 
 	
 
-	//static float rot = 0; SDL_CurrentVideo->glLoadIdentity(); SDL_CurrentVideo->glRotatex(GlES_DoubleToFixed(rot), 0, 0, GlES_Fixed_1); rot += .01; //opengl:teste
-	
-
 #ifndef GL_OES_VERSION_1_1 //maks
 	SDL_CurrentVideo->glBegin( GL_QUADS );
 	{
@@ -889,7 +886,6 @@ void KrRle::DrawOpenGL( KrPaintInfo* paintInfo,
 	};
 	
 	DrawOGLTexQuad(GL_TRIANGLE_STRIP, vertices, texCoords, 3); 
-	//Push2DQuadStrip(texture->Id(), vertices, texCoords); //opengl:teste
 #endif
 
 

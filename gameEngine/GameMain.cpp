@@ -785,7 +785,7 @@ SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags)
 		{
 			//OpenGL requested
 			
-			if(0) //opengl:teste //for force opengl if(screen->flags & SDL_OPENGL)
+			if(0) //for force opengl if(screen->flags & SDL_OPENGL)
 			{
 				//OpenGL loaded
 				//Can use it? (Is hardware or software?)
@@ -1021,13 +1021,6 @@ void EngineStart()
 	{
 		exit(3);
 	}
-
-	/*if((VIDEO_FLAGS & SDL_OPENGL) && !(screen->flags & SDL_OPENGL)) //opengl:teste 
-	{
-#ifdef WIN32
-	MessageBox(GetForegroundWindow(), TEXT("Can't open OpenGL"), TEXT("Error"), MB_OK | MB_ICONERROR); 
-#endif
-	}*/
 
 	//Caption
 	if(!(screen->flags & SDL_OPENGL))
