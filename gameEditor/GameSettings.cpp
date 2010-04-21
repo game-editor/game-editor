@@ -347,6 +347,15 @@ GameSettings::GameSettings()
 		//GP2X
 		listRes->AddText("320 x 240 GP2X");
 		listRes->AddText("640 x 480 GP2X");
+
+		// Apple iPhone // AKR
+		listRes->AddText("320 x 480 iPhone");
+		listRes->AddText("480 x 320 iPhone Rotate left");
+
+		// Apple iPad // AKR
+		listRes->AddText("768 x 1024 iPad");
+		listRes->AddText("1024 x 768 iPad Rotate left");
+
 	}
 	else
 	{
@@ -494,6 +503,18 @@ GameSettings::GameSettings()
 			listRes->SetText("640 x 480");
 		}
 	}
+	else if(res == "320 x 480")
+	{
+			listRes->SetText("320 x 480 iPhone");
+	}
+	else if(res == "480 x 320")
+	{
+		listRes->SetText("480 x 320 Rot.left");
+	}
+	else if(res == "768 x 1024")
+	{
+			listRes->SetText("768x1024 iPad");
+	}
 	else if(res == "800 x 480")
 	{
 		if(bFlipPocketPCScreen)
@@ -598,7 +619,13 @@ bool GameSettings::OnList(ListPop *list, int index, gedString &text, int listId)
 			{
 				bFlipPocketPCScreen = false;
 			}
-
+			if(w == 320 || h == 480)
+			{
+				if(sFlip == "down") list->SetText("320 x 480 Up. down");
+				else if(sFlip == "left") list->SetText("480 x 320 Rot. left");
+				else if(sFlip == "ight") list->SetText("480 x 320 Rot.right");
+			}
+			else 
 			if(w == 240 || h == 240)
 			{
 				if(sFlip == "down") list->SetText("240 x 320 Up. down");
