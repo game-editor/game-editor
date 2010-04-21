@@ -41,6 +41,7 @@ You can export your game in a single executable file with all game data, animati
 Available formats:\n\
 \n\
 Windows Executable: Windows executable file (95, 98, Me, NT, 2000, XP)\n\
+Mac OSX Executable: Mac OSX 10.5 and above\n\
 Pocket PC / Handheld PC Executable: Executable file compatible with Pocket PC and Handheld PC\n\
     Supports:\n\
       - Windows CE OS 3.0 (Pocket PC 2002, Windows Mobile 2003, 2005) and later\n\
@@ -141,6 +142,7 @@ ExportGame::ExportGame()
 	//dir->AddFilter("*"); //Can add an empty filter to linux files?
 
 	listSystem->AddText("Windows Executable");
+	listSystem->AddText("MAC OSX Executable");
 	listSystem->AddText("Pocket PC / Handheld PC Executable");
 	listSystem->AddText("Windows Mobile-based Smartphone Executable");
 	listSystem->AddText("GP2X Executable");
@@ -351,6 +353,7 @@ void ExportGame::OnButton(Button *button, int buttonId)
 				exportType = POCKETPC_DATA;
 			}
 			else if(listSystem->GetText() == "Linux Executable") exportType = LINUX_EXECUTABLE;
+			else if(listSystem->GetText() == "MAC OSX Executable") exportType = MACOSX_EXECUTABLE;
 			else if(listSystem->GetText() == "GP2X Executable") 
 			{
 				if(!(					
