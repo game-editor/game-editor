@@ -1200,7 +1200,7 @@ void EngineLoad(const char *gamePath)
 		dir=dir.GetFilePath()+"/Documents";
 
 #ifdef __TestEngine__
-		if(FtpGet("ftp://ftp1062526-ged:fantastic@ftp.visionware.de/gameEditor.dat",(dir+"/gameEditor.dat").getCharBuf())==0)
+		if(FtpGet("ftp://ftp1062526-ged:fantastic@ftp.visionware.de/gameEditor.dat",(dir+"/ftpged.dat").getCharBuf())==0)
 		   chdir(dir.getCharBuf());
 #endif
 
