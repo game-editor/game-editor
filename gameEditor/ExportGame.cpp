@@ -147,6 +147,7 @@ ExportGame::ExportGame()
 	listSystem->AddText("Windows Mobile-based Smartphone Executable");
 	listSystem->AddText("GP2X Executable");
 	listSystem->AddText("Linux Executable");
+	listSystem->AddText("iPhone Executable");
 	
 
 	listSystem->AddText("Game Data Only");
@@ -354,6 +355,7 @@ void ExportGame::OnButton(Button *button, int buttonId)
 			}
 			else if(listSystem->GetText() == "Linux Executable") exportType = LINUX_EXECUTABLE;
 			else if(listSystem->GetText() == "MAC OSX Executable") exportType = MACOSX_EXECUTABLE;
+			else if(listSystem->GetText() == "iPhone Executable") exportType = IPHONE_EXECUTABLE;
 			else if(listSystem->GetText() == "GP2X Executable") 
 			{
 				if(!(					

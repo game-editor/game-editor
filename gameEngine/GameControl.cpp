@@ -1318,22 +1318,6 @@ void GameControl::WriteEditorResources()
 #endif
 }
 
-void GameControl::CreateEngines()
-{
-#ifdef _DEBUG
-
-	ged_mkdir("bin");
-	Compression comp;
-
-	comp.DoCompression("gameEditorWindows.exe", "bin\\windows.bin");
-	comp.DoCompression("gameEditorPocket.exe", "bin\\pocketpc.bin");
-	comp.DoCompression("gameEditorLinux", "bin\\linux.bin");
-	comp.DoCompression("gameEditorPocket.exe.gpe", "bin\\gp2x.bin");
-#ifdef __MACOSX__ //TODO: All files must be generated in the same directory
-	comp.DoCompression("/tmp/gameEditorMacosx", "/tmp/macosx.bin");	
-#endif
-#endif
-}
 
 bool InModalActor(void *actor)
 {
@@ -5294,7 +5278,6 @@ void GameControl::LoadGameEvent(char *gamePath)
 GameControl::~GameControl()
 {
 	//WriteEditorResources();
-	//CreateEngines();
 
 #ifndef STAND_ALONE_GAME
 	UndoControl::Destroy();
@@ -5329,7 +5312,9 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 	static gedString firstLevel;
 	SDL_ClearError();
 
+
 	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe" || executableName == "gameEditorMacosx") executableName = "game1"; //maks
+
 
 	int i = 0;
 	gedString ext, gameFile;
@@ -10996,7 +10981,7 @@ bool GameControl::ExportGame(const gedString& exportName, int exportType)
 			}
 
 			fileName += ".exe";
-			sourceName = "bin\\windows.bin";
+			sourceName = "bin\\gameEditorWindows";
 		}
 		break;
 	case POCKETPC_EXECUTABLE:
@@ -11007,15 +10992,18 @@ bool GameControl::ExportGame(const gedString& exportName, int exportType)
 			}
 
 			fileName += ".exe";
-			sourceName = "bin\\pocketpc.bin";
+			sourceName = "bin\\gameEditorPocket";
 		}
 		break;
 	case LINUX_EXECUTABLE:
-		sourceName = "bin\\linux.bin";
+		sourceName = "bin\\gameEditorLinux";
 		break;
 	case MACOSX_EXECUTABLE:
-			sourceName = "bin\\macosx.bin";
-		break;			
+			sourceName = "bin\\gameEditorMacOSX";
+		break;
+	case IPHONE_EXECUTABLE:
+		sourceName = "bin\\gameEditorIphone";
+		break;
 	case GP2X_EXECUTABLE:
 		{
 			if((i = fileName.find_no_case(".gpe")) != gedString::npos)
@@ -11024,7 +11012,7 @@ bool GameControl::ExportGame(const gedString& exportName, int exportType)
 			}
 
 			fileName += ".gpe";
-			sourceName = "bin\\gp2x.bin";
+			sourceName = "bin\\gameEditorGP2X";
 		}
 		break;
 	}
@@ -11049,13 +11037,27 @@ bool GameControl::ExportGame(const gedString& exportName, int exportType)
 			return false;
 		}*/
 
-		int len;
-		Compression comp;
+		int len = 0;
 		U8 *buf = NULL;
 
 		{
 			EditorDirectory editDir;
-			buf = comp.Decompression(sourceName.c_str(), len);
+			SDL_RWops *engineFile = ged_SDL_RWFromFile(sourceName.c_str(), "rb");
+			if(engineFile)
+			{
+				//Get the file size
+				SDL_RWseek( engineFile, 0, SEEK_END );
+				len = SDL_RWtell( engineFile );
+				SDL_RWseek( engineFile, 0, SEEK_SET );
+
+				buf = new U8[len];
+				if(buf)
+				{
+					SDL_RWread(engineFile, buf, len, 1);
+				}
+
+				SDL_RWclose(engineFile);
+			}
 		}
 
 		if(!buf)

@@ -113,9 +113,10 @@ In the Visual Studio 2008, choose the version you want to compile:
 
 - To compile the Linux engine set the GAMEEDITOR_TYPE to GAMEEDITOR_PROFESSIONAL_STAND_ALONE in the makefile
 		
-- Use the GameControl::CreateEngines() function to create the bin files from the compiled executables:
+- Copy the executable files to the bin directory without any extensions:
   
-	gameEditorWindows.exe		-> bin\\windows.bin
-	gameEditorPocket.exe		-> bin\\pocketpc.bin
-	gameEditorLinux				-> bin\\linux.bin
-	gameEditorPocket.exe.gpe	-> bin\\gp2x.bin
+	gameEditorWindows.exe		-> bin\\gameEditorWindows
+	gameEditorPocket.exe		-> bin\\gameEditorPocket
+	gameEditorLinux				-> bin\\gameEditorLinux
+	gameEditorPocket.exe.gpe	-> bin\\gameEditorGP2X
+	gameEditorIphone			-> bin\\gameEditorIphone
