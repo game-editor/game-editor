@@ -40,7 +40,6 @@
 - (IBAction)getOrCancelAction:(id)sender;
 - (id)init;
 - (NSURL *)smartURLForString:(NSString *)str;
-- (BOOL)isImageURL:(NSURL *)url;
 - (NSString *)pathForTemporaryFileWithPrefix:(NSString *)prefix;
 @end
 
