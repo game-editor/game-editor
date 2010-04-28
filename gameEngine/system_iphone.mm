@@ -317,26 +317,6 @@
     return result;
 }
 
-- (BOOL)isImageURL:(NSURL *)url
-{
-    BOOL        result;
-    NSString *  path;
-    NSString *  extension;
-    
-    assert(url != nil);
-    
-    path = [url path];
-    result = NO;
-    if (path != nil) {
-        extension = [path pathExtension];
-        if (extension != nil) {
-            result = ([extension caseInsensitiveCompare:@"gif"] == NSOrderedSame)
-			|| ([extension caseInsensitiveCompare:@"png"] == NSOrderedSame)
-			|| ([extension caseInsensitiveCompare:@"jpg"] == NSOrderedSame);
-        }
-    }
-    return result;
-}
 
 #pragma mark * View controller boilerplate
 @end
