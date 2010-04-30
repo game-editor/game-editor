@@ -2309,7 +2309,7 @@ SDL_Upsample_U8_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Uint8 *target = ((const Uint8 *) cvt->buf) - 1;
     Uint8 sample0 = src[0];
     Uint8 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = sample0;
         dst--;
         eps += srcsize;
@@ -2789,7 +2789,7 @@ SDL_Upsample_S8_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Sint8 *target = ((const Sint8 *) cvt->buf) - 1;
     Sint8 sample0 = ((Sint8) src[0]);
     Sint8 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = ((Sint8) sample0);
         dst--;
         eps += srcsize;
@@ -3269,7 +3269,7 @@ SDL_Upsample_U16LSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Uint16 *target = ((const Uint16 *) cvt->buf) - 1;
     Uint16 sample0 = SDL_SwapLE16(src[0]);
     Uint16 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = SDL_SwapLE16(sample0);
         dst--;
         eps += srcsize;
@@ -3749,7 +3749,7 @@ SDL_Upsample_S16LSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Sint16 *target = ((const Sint16 *) cvt->buf) - 1;
     Sint16 sample0 = ((Sint16) SDL_SwapLE16(src[0]));
     Sint16 last_sample0 = sample0;
-    while (dst > target) { //AKR BUG BUG if odd!!!!
+	while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = ((Sint16) SDL_SwapLE16(sample0));
         dst--;
         eps += srcsize;
@@ -4229,7 +4229,7 @@ SDL_Upsample_U16MSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Uint16 *target = ((const Uint16 *) cvt->buf) - 1;
     Uint16 sample0 = SDL_SwapBE16(src[0]);
     Uint16 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = SDL_SwapBE16(sample0);
         dst--;
         eps += srcsize;
@@ -4709,7 +4709,7 @@ SDL_Upsample_S16MSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Sint16 *target = ((const Sint16 *) cvt->buf) - 1;
     Sint16 sample0 = ((Sint16) SDL_SwapBE16(src[0]));
     Sint16 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = ((Sint16) SDL_SwapBE16(sample0));
         dst--;
         eps += srcsize;
@@ -5189,7 +5189,7 @@ SDL_Upsample_S32LSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Sint32 *target = ((const Sint32 *) cvt->buf) - 1;
     Sint32 sample0 = ((Sint32) SDL_SwapLE32(src[0]));
     Sint32 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = ((Sint32) SDL_SwapLE32(sample0));
         dst--;
         eps += srcsize;
@@ -5669,7 +5669,7 @@ SDL_Upsample_S32MSB_1c(SDL_AudioCVT * cvt, SDL_AudioFormat format)
     const Sint32 *target = ((const Sint32 *) cvt->buf) - 1;
     Sint32 sample0 = ((Sint32) SDL_SwapBE32(src[0]));
     Sint32 last_sample0 = sample0;
-    while (dst != target) {
+    while ((dst - target) > 0) { //AKR (dst != target) BUG BUG if odd!!!! maks: dst > target crash the iPhone!
         dst[0] = ((Sint32) SDL_SwapBE32(sample0));
         dst--;
         eps += srcsize;
