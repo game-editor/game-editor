@@ -274,9 +274,9 @@ init_scrap(void)
 
   SDL_VERSION(&info.version);
   if ( SDL_GetWMInfo(&info) )
-    {
+  {
       /* Save the information for later use */
-#if defined(X11_SCRAP)
+#if defined(X11_SCRAP) || defined (__MACOSX__)
 /* * */
       if ( info.subsystem == SDL_SYSWM_X11 )
         {
