@@ -366,21 +366,22 @@ void KrPixelBlock::CalculateBounds( const KrMatrix2& xForm, KrRect* bounds ) con
 	bounds->ymin = xForm.y.ToIntRound();
 	bounds->xmax = ( xForm.xScale * size.x + xForm.x ).ToIntRound() - 1;
 	bounds->ymax = ( xForm.yScale * size.y + xForm.y ).ToIntRound() - 1;
-
-	#ifdef DEBUG
+#if 0  
+	#ifdef DEBUG 
 		if ( xForm.xScale == 1 && xForm.yScale == 1 )
 		{
 			GLASSERT( bounds->Height() == size.y );
 			GLASSERT( bounds->Width()  == size.x );
 		}
 		else
-		{
+		{  //AKR 05/02/10 Crash here when screen zoom on Mac OSX
 			GLASSERT( bounds->Width() <= ( xForm.xScale * size.x ).ToIntRound() );
 			GLASSERT( bounds->Width() >= ( xForm.xScale * size.x ).ToInt() );
 			GLASSERT( bounds->Height()<= ( xForm.yScale * size.y ).ToIntRound() );
 			GLASSERT( bounds->Height()>= ( xForm.yScale * size.y ).ToInt() );
 		}
 	#endif	
+#endif
 }
 
 
