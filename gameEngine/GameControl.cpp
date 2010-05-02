@@ -30,7 +30,6 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #ifdef linux
 #include <stdlib.h>
 #endif
-
 #ifdef USE_RAKNET
 #include "../RakNet/Source/SocketLayer.h"
 #endif
@@ -10343,7 +10342,7 @@ void GameControl::ProcessNetwork(bool bFromFrameTick)
 }
 void GameControl::InitPocketPCKeys()
 {
-#if !defined(__APPLE__) //TODO: remove this when all projects use the SDL13
+#if !defined(__iPhone__) //TODO: remove this when all projects use the SDL13
 	pocketKeys.Clear();
 
 	//Standard keys
@@ -11808,7 +11807,7 @@ void GameControl::PopulatePocketPCKeys(ListPop *list)
 		sprintf(buf, "%s -> %s", SDL_GetKeyName(*it.Key()), (*it.Value() != SDLK_UNKNOWN)?SDL_GetKeyName(*it.Value()):"none");
 		list->AddText(buf);
 	}*/
-#if !defined(__APPLE__)
+#if !defined(__iPhone__)
 	//Pocket PC
 	PocketPCKeyDesc(list, SDLK_POCKET_UP);
 	PocketPCKeyDesc(list, SDLK_POCKET_DOWN);
