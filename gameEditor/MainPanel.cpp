@@ -640,7 +640,7 @@ void MainPanel::HelpSetup()
 {
 	listHelp->RemoveAll();
 
-#if defined(__WIN32__) //No download functions in Linux now
+#if defined(__WIN32__) || defined (__MACOSX__) //No download functions in Linux now
 	listHelp->AddText("Documentation");
 #endif
 	
@@ -648,7 +648,7 @@ void MainPanel::HelpSetup()
 	Tutorial::PopulateList(listHelp);
 	//listHelp->AddText("Create New Tutorial");
 
-#if defined(__WIN32__) && !defined(GAME_EDITOR_HOME_EDITION) //No download functions in Linux now
+#if (defined(__WIN32__)||defined(__MACOSX__)) && !defined(GAME_EDITOR_HOME_EDITION) //No download functions in Linux now
 	listHelp->AddText("Get Newest Tutorials...");
 
 #ifdef GAME_EDITOR_PROFESSIONAL
@@ -1069,7 +1069,13 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 				
 				//Firefox don't open "Docs/index.html" in windows
 				//So, use \ on windows and / on linux
-				openUrl((gedString("Docs") + DIR_SEP + "index.html").c_str());
+			
+				openUrl((
+#if defined(__MACOSX__)
+		gedString("file://")+	GameControl::Get()->getHomePath()+gedString("/")+		 
+#endif
+						 
+						 gedString("Docs") + DIR_SEP + "index.html").c_str());
 			}
 			else if(text == "About...")
 			{
@@ -1078,11 +1084,13 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 			else if(text == "User Forums...")
 			{
 				openUrl("http://game-editor.com/forum");
-			}			
+			}	
+#if !defined(__MACOSX__)
 			else if(text == "Get Newest Tutorials...")
 			{
 				TutorialUpdateDlg::Call();
 			}
+#endif
 			else if(text == "Check for Updates...")
 			{
 				UpdateCheck();
