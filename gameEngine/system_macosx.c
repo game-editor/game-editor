@@ -36,7 +36,7 @@ typedef struct GED_FILEINFO
 // Functions
 char* download(const char *url, long *bytesRead) {};
 char *ged_getcwd( char *buffer, int maxlen ) {return getcwd(buffer, maxlen);}
-void openUrl(const char *url) {}
+
 int isInternetConnected() {return 0;}
 
 int chdrive(int a) { return -1; }
