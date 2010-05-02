@@ -112,6 +112,10 @@
     
 	return aFile;
 }
+- (void) openUrl:(const char*) url;
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithUTF8String:url]]];	
+}
 
 @end
 gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "")
@@ -124,7 +128,19 @@ gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "
 
 	if (file.length() >0)
 		chdir(file.GetFilePath().getCharBuf());
-		
+	[system_mosx release];
 	return file.GetFileName(); 
 
+}
+
+extern "C"
+{
+void openUrl(const char *url)
+{
+	system_macosx *system_mosx=[[system_macosx alloc]init];
+	[system_mosx openUrl:url];
+
+	[system_mosx release];
+
+}
 }
