@@ -2323,7 +2323,7 @@ static val_t eic_GetKeyState(void)
 {
     val_t v;
 	v.ival = 0;
-#ifndef __APPLE__
+#ifndef __iPhone__
 	if(GameControl::Get()->getGameMode())
 	{
 		int numkeys = 0;
