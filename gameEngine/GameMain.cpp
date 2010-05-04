@@ -1192,13 +1192,14 @@ void EngineLoad(const char *gamePath)
 
 #else
 	SplitPath(argv[0], file, dir);
-#endif
 
 #ifdef __MACOSX__ //AKR: Treat app bundle correctly
 		dir=getResourcePath();
 		if(chdir(dir.getCharBuf()))
 			printf("Cannot change directory to app bundle/Resources\n");
 #endif
+#endif
+
 #ifdef __iPhone__
 		dir=dir.GetFilePath()+"/Documents";
 
