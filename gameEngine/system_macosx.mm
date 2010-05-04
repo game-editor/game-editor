@@ -116,6 +116,10 @@
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithUTF8String:url]]];	
 }
+-(const char*) getResourcePath;
+{
+	return [[[NSBundle mainBundle] resourcePath]UTF8String]; 	
+}
 
 @end
 gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "")
@@ -132,6 +136,16 @@ gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "
 	return file.GetFileName(); 
 
 }
+const char* getResourcePath(void)
+{
+	const char* r;
+	
+	system_macosx *system_mosx=[[system_macosx alloc]init];
+	r= [system_mosx getResourcePath];
+	
+	[system_mosx release];
+	return r;
+}
 
 extern "C"
 {
@@ -143,4 +157,6 @@ void openUrl(const char *url)
 	[system_mosx release];
 
 }
+	
+
 }
