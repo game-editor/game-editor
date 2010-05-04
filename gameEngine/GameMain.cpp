@@ -47,6 +47,9 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #if __iPhone__
 const char *FtpGet(char *FtpUrl, char *fPath);
 #endif
+#if __MACOSX__
+const char *getResourcePath(void);
+#endif
 #include "PathFinder/GeoPathfinder.h"
 
 #ifndef STAND_ALONE_GAME
@@ -1192,7 +1195,7 @@ void EngineLoad(const char *gamePath)
 #endif
 
 #ifdef __MACOSX__ //AKR: Treat app bundle correctly
-		dir.replace("MacOS","Resources",0);
+		dir=getResourcePath();
 		if(chdir(dir.getCharBuf()))
 			printf("Cannot change directory to app bundle/Resources\n");
 #endif
