@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>quit</key>
+	<string>doQuit:</string>
+	<key>list</key>
+	<string>doList:</string>
+	<key>nlst</key>
+	<string>doList:</string>
+	<key>stat</key>
+	<string>doStat:</string>
+	<key>feat</key>
+	<string>doFeat:</string>
+	<key>user</key>
+	<string>doUser:</string>
+	<key>pass</key>
+	<string>doPass:</string>
+	<key>ack</key>
+	<string>doAck:</string>
+	<key>pwd</key>
+	<string>doPwd:</string>
+	<key>cwd</key>
+	<string>doCwd:</string>
+	<key>noop</key>
+	<string>doNoop:</string>
+	<key>syst</key>
+	<string>doSyst:</string>
+	<key>pasv</key>
+	<string>doPasv:</string>
+	<key>epsv</key>
+	<string>doEpsv:</string>
+	<key>port</key>
+	<string>doPort:</string>
+	<key>lprt</key>
+	<string>doLprt:</string>
+	<key>eprt</key>
+	<string>doEprt:</string>
+	<key>opts</key>
+	<string>doOpts:</string>
+	<key>type</key>
+	<string>doType:</string>
+	<key>stor</key>
+	<string>doStor:</string>
+	<key>retr</key>
+	<string>doRetr:</string>
+	<key>dele</key>
+	<string>doDele:</string>
+	<key>mlst</key>
+	<string>doMlst:</string>
+	<key>size</key>
+	<string>doSize:</string>
+</dict>
+</plist>
