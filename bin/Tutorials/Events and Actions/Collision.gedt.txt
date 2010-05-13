@@ -1,0 +1,6 @@
+This tutorial show how use the Collision event|to destroy an actor when the player collides|on your top or destroy the player when|collides on side||Images by Ari Feldman (http://arifeldman.com)
+First, add a down path (used in the snake, later)
+When the player collides on top side of snake, change|the snake path to down
+When the player collides with|left or right side|of snake, destroy the player
+Event Actor is the player actor here
+Now, you can destroy the snake when the down path finishes

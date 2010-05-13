@@ -1,0 +1,12 @@
+This tutorial show how works with timers||Images by Ari Feldman (http://arifeldman.com)
+Add a new bomb actor
+To avoid bomb fire at startup,|Use a "Create Actor" event and|change the animation direction
+When the player collide with bomb,|fire the bomb and create a new timer
+There is no timer definitions on the game.|Add a new definition by choosing "New timer"
+The timer event will be send after 2 seconds
+After first timer event, automatically|destroy this timer
+Now, add this action
+When the fire bomb timer happens,|destroy the bomb
+Put a little explosion
+Destroy the explosion actor when|your animation finishes
+And, put the sound

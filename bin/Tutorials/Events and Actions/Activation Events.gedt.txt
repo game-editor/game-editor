@@ -1,0 +1,16 @@
+This tutorial show how use "Activation Events"|to do an action when event happens on others actors||Our player actor must destroy a big wall.|To do this, must pick all three diamonds||Images by Ari Feldman (http://arifeldman.com)
+Add the wall
+The player can't jump over this wall
+Use a "Physical Response" action to stop the player
+This will stop the player
+Send an "Activation Event" from diamond to|wall, when the diamond was destroyed
+Choose the actor, or actors, to send the activation event|when the diamond was destroyed|Press esc when finish
+To
+The green to red gradient line show your activation event
+From
+Add the activation events from other diamonds
+Now, go to the wall actor and|catch the activation events
+The action will be executed when the wall receives|an activation event from any actor
+The wall must be destroyed only if all the three|diamonds was destroyed.||To do this, remove the old activation event from wall|and put a new with "All Actors" option.||So, the action will be executed after "All Actors"|send the activation events
+Now, go to the wall and|catch the activation events
+To destroy the wall after all diamond send the activation|events, choose the "All Actors" option

@@ -1,0 +1,5 @@
+This tutorial show how works with mouse clicks|When the user click on sensor actor execute the "Move To" action|Use the "Move To" action when you want|move an actor to a point of your game
+You will move the player actor|Make some clones
+Now, add a "Filled Region" actor|and use like a sensor to catch mouse clicks
+Now, when the user click on the sensor,|move the player actor to 0,0
+Choose the mouse button by clicking on this panel

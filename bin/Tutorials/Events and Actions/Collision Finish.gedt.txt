@@ -1,0 +1,4 @@
+This tutorial show the Collision Finish event||Images by Ari Feldman (http://arifeldman.com)
+Add a trap actor|When the player collides with the trap, make it a little transparent|When the collision with trap finishes, make the zero transparent
+Now, add the events
+Restore the transparency with a Collision Finish event

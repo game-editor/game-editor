@@ -1,0 +1,684 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- TemplateBeginEditable name="doctitle" --> 
+<title>Main Editor Menu Bar</title>
+<!-- TemplateEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable --> 
+<style type="text/css">
+<!--
+a:hover {
+	color: #FF6600;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000033" link="#000033" vlink="#666666" alink="#000033" onLoad="MM_preloadImages('images/btnhome_small_orange.gif','images/btnprogramoverview_small_orange.gif','images/btngettingstarted_small_orange.gif','images/btntutorials_small_orange.gif','images/btnfaqs_small_orange.gif','images/btnscripting_small_orange.gif')">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="5" rowspan="8" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="3" colspan="9" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td width="1"></td>
+  </tr>
+  <tr> 
+    <td colspan="4" rowspan="3" valign="top" bgcolor="#FF9933"><a name="Top"></a></td>
+    <td width="521" height="7" valign="top" bgcolor="#FF9933"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td colspan="4" rowspan="2" valign="top" bgcolor="#FF9933"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td rowspan="3" valign="top" bgcolor="#000033">
+	<a href="http://game-editor.com"><IMG SRC="images/it.jpg" WIDTH=521 HEIGHT=84 ALT="Game Editor - the easy game design software."></a>	
+	</td>
+    <td height="16"></td>
+  </tr>
+  <tr> 
+    <td colspan="4" rowspan="2" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="5"></td>
+  </tr>
+  <tr> 
+    <td height="63" colspan="4" valign="middle" bgcolor="#000033"> <h3><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+        &nbsp; Main Editor Menu</font></h3></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="129" rowspan="3" valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+        <!--DWLayoutTable-->
+        <tr> 
+          <td width="127" height="60" valign="top" bgcolor="#CCCCCC"><a href="index.html" target="_top" onClick="MM_nbGroup('down','group1','Home','',1)" onMouseOver="MM_nbGroup('over','Home','images/btnhome_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnhome_small_blue.gif" alt="Home" name="Home" width="120" height="60" border="0" onload=""></a></td>
+          <td width="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="program_overview.htm" target="_top" onClick="MM_nbGroup('down','group1','Program_Overview','',1)" onMouseOver="MM_nbGroup('over','Program_Overview','images/btnprogramoverview_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnprogramoverview_small_blue.gif" alt="" name="Program_Overview" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="getting_started.htm" target="_top" onClick="MM_nbGroup('down','group1','Getting_Started','',1)" onMouseOver="MM_nbGroup('over','Getting_Started','images/btngettingstarted_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btngettingstarted_small_blue.gif" alt="Getting Started" name="Getting_Started" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+		<tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="scripting.htm" target="_top" onClick="MM_nbGroup('down','group1','Scripting','',1)" onMouseOver="MM_nbGroup('over','Scripting','images/btnscripting_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnscripting_small_blue.gif" alt="Scripting" name="Scripting" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="tutorials.htm" target="_top" onClick="MM_nbGroup('down','group1','Tutorials','',1)" onMouseOver="MM_nbGroup('over','Tutorials','images/btntutorials_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btntutorials_small_blue.gif" alt="" name="Tutorials" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="faqs.htm" target="_top" onClick="MM_nbGroup('down','group1','FAQs','',1)" onMouseOver="MM_nbGroup('over','FAQs','images/btnfaqs_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnfaqs_small_blue.gif" alt="FAQs" name="FAQs" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        
+      </table></td>
+    <td height="34" colspan="3" valign="top" bgcolor="#CCCCCC"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td align="center" valign="middle" bgcolor="#CCCCCC"> 
+	
+	<h6 align="left"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">
+	
+	    <a href="getting_started.htm">Welcome</a>&nbsp;&nbsp;
+	    <a href="how_game_editor_works.htm">How Game Editor Works</a>&nbsp;&nbsp;
+		<a href="interface.htm">Interface</a>&nbsp;&nbsp;
+		<a href="gettingstarted_maineditormenu.htm">Main Menu</a>&nbsp;&nbsp;
+		<a href="gettingstarted_theactorcontrolpanel.htm">Actor Control</a>&nbsp;&nbsp; 
+		<a href="gettingstarted_actorevents.htm">Events</a>&nbsp;&nbsp; 
+		<a href="gettingstarted_actoractions.htm">Actions</a>
+		
+	 </font></h6>
+		
+		</td>
+    <td colspan="4" valign="top" bgcolor="#CCCCCC"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="5" rowspan="3" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="3" colspan="5" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td colspan="2" rowspan="3" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="60" rowspan="2" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td colspan="3" rowspan="2" valign="top" bgcolor="#FFFFFF"> 
+      <h3><br>
+        <font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> The 
+        Main Editor Menu Bar</font></h3>
+      <h3><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">File</font></strong></h3>
+      <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/mainmenu.gif" width="561" height="24"><br>
+        </font></strong><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/filemenu.gif" width="90" height="116"></font></strong></p>
+      <blockquote> 
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">New 
+          Game:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Clear the current game and begin designing a new game.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#009933">Load: 
+          </font>Clear the current game and load a previously saved game. </font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Merge:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Merge the current game with a newly loaded game. (If the loaded game 
+          has an Actor with the same name as an Actor in the currently loaded 
+          game, the results will be unpredictable.)</font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Save:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Save the changes you've made to the current file.</font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Save 
+          As:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Save the current game with a different location or filename. </font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">When 
+          saving a game, all animations, fonts, and sounds are moved into a folder 
+          that is automatically created named &quot;data&quot;. This folder is 
+          located in the game directory.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#009933">Export:</font> 
+          Create the final executable game and pack the data.<br>
+          </font></strong><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          Game Editor exports a game as a single executable file. <br>
+          This executable file includes all of the game's data (animations, sounds, 
+          ...).</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/exportgame.gif" width="465" height="106"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Available 
+          <em>Export Types</em> are:</font></strong></p>
+        <blockquote> <strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows 
+          Executable: Windows executable file (Compatible with ).<br>
+          <blockquote> 
+            <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows</font></strong> 
+              version supports:<br>
+              - <strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows 
+              95, 98, Me, NT, 2000, 2003, XP</font></strong></p>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif">Minimum System 
+              Requirements</font>:<br>
+              <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>- 
+              Windows 95<br>
+              - 32MB RAM<br>
+              - x86 compatible processor (Pentium, AMD, ...)<br>
+              - 200MHz</strong></font> <br>
+            </p>
+          </blockquote>
+          </font></strong> 
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Pocket 
+            PC / Handheld PC Executable: Executable file compatible with Pocket 
+            PC and Handheld PC.</font></strong></p>
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows 
+            Mobile-based Smartphone Executable: Smartphone executable file.<br>
+            </font></strong></p>
+          <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <blockquote> 
+            <p><strong>Pocket PC, Handheld PC and Smartphone version supports:<br>
+              - Windows CE OS 3.0 (Pocket PC 2002, Windows Mobile 2003, 2005) 
+              and later<br>
+              - ARM processors (ARM, StrongARM, XScale, OMAP, PXA, ...)<br>
+              - Full screen mode only<br>
+              - Ogg Vorbis, wav, mod, s3m, it and xm music files</strong></p>
+            <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font face="Verdana, Arial, Helvetica, sans-serif">Minimum 
+              System Requirements</font>:<br>
+              <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">- 
+              Pocket PC 2002 <br>
+              - Less than 10MB RAM (need to test the game) <br>
+              - ARM processors (ARM, StrongARM, XScale, OMAP, PXA, ...) <br>
+              - 200MHz</font> </font></strong></p>
+            <p><strong>A MMC/SD expansion card is recommended<br>
+              </strong></p>
+          </blockquote>
+          </font> 
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Linux 
+            Executable: Linux executable file</font></strong> </p>
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">GP2X 
+            Executable: GP2X executable file. </font></strong></p>
+          <blockquote>
+            <p><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>GP2X 
+              version supports:<br>
+              - Firmware 2.0.0 and later<br>
+              - Full screen mode only<br>
+              - Ogg Vorbis, wav, mod, s3m, it and xm music files</strong></font></p>
+          </blockquote>
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game 
+            Data Only: Exports only the data file without game engine. This format 
+            is used if your game has been distributed in numerous game files.</font></strong> 
+          </p>
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game 
+            Data Only for Pocket PC, Handheld PC, Smartphone or GP2X: Exports 
+            only the data file with optimizations for Pocket PC, Handheld PC, 
+            Smartphones and GP2X devices.</font></strong></p>
+          <p>&nbsp;</p>
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Custom 
+            extensions:</font></strong></p>
+          <blockquote> 
+            <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">If 
+              you don't want to use the .dat extension, just rename to anything 
+              you want.</font></strong></p>
+          </blockquote>
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">File 
+            Association:</font></strong></p>
+          <blockquote> 
+            <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">If 
+              you distribute several games, you can save space by exporting only 
+              one with the executable engine.<br>
+              Rename the .dat files to .gedx extension and use a installation 
+              tool to associate the .gedx extension with the location of engine.<br>
+              So, the other games will be executed by the system when the user 
+              click in .gedx files.</font></strong><br>
+            </p>
+          </blockquote>
+        </blockquote>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#009933">Exit: 
+          </font>Close the Game Editor program and exit to the system.</font></strong></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Add 
+        Actor</font></strong></p>
+      <p><img src="images/mainmenu_addactor.gif" width="561" height="24"></p>
+      <blockquote> 
+        <blockquote> 
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/addactor.gif" width="220" height="100"></font></strong></p>
+        </blockquote>
+      </blockquote>
+      <blockquote> 
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          <a name="AddActor"></a>I</font></strong><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">n 
+          the Game Editor universe, all game objects are referred to as <em>Actors</em> 
+          (is it a background, rocket, ship...). <em><br>
+          Actors</em> populate the game and can be given behavior scripts&nbsp; 
+          using Game Editor <em>Events</em> and <em>Actions</em>.</font></strong> 
+        </p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#009933">Adding 
+          Actors to the game</font> </font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">For 
+          a step by step walk through of how to create a <em>Normal Actor</em> 
+          see the <a href="step_by_step_tutorials.htm#addactor">Tutorials</a> 
+          section.</font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Name:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Use this box to name an Actor. Actor names must begin with characters 
+          and must be followed with characters, numbers, or '_'. Script functions 
+          and variable (&quot;vars&quot;) names are not allowed.<br>
+          Allowed: MyActor, ball, dog_catcher<br>
+          Not Allowed: /right, CreateActor, fgets <br>
+          <br>
+          <font color="#009933">Type:</font> Choose the type of new Actor to be 
+          created from the drop down box: Normal, Canvas, Wire Frame Region or 
+          Filled Region.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <font color="#009933">Normal:</font> An Actor that can receive animations 
+          (image files that are associated with the Actor). This Actor can be 
+          used to create the widest variety of behaviors in a program.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          <font color="#009933">Canvas:</font> Think of yourself as a budding 
+          Picasso when you use the Canvas Actor. Draw on this Actor using the 
+          <a href="script_reference.htm#draw">Drawing Functions</a>.This Actor 
+          allows for the drawing of lines, circles, etc.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/canvasactor.jpg" width="267" height="146"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          A Canvas Actor is depicted within the Game Editor as a cyan rectangle.The 
+          Canvas Actor can be moved or resized freely. The rectangle is invisible 
+          when the game is running in game mode. For a step by step walk through 
+          of how to create a <em>Canvas Actor</em> see the <a href="step_by_step_tutorials.htm#tutorial3">Tutorials</a> 
+          section.</font></strong></p>
+        <p> </p>
+        <p><font color="#009933"><strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Wire Frame Region:</font></strong></font><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          The Wire Frame Actor is used&nbsp; as a sensor to carry out Actions 
+          like &quot;Open the door&quot; when , for example, a Normal Actor enters 
+          the Wire Frame Region. It can also be used to create a barrier that 
+          repels game objects like balls. As an example, in a pinball game, the 
+          ball might bounce off of a wire frame barrier. The Wire Frame Region 
+          doesn't register mouse clicks.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/regionactor.jpg" width="194" height="114"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          A Wire Frame Region Actor is shown within the Game Editor stage as a 
+          green rectangle. It can be moved or resized freely. The rectangle is 
+          invisible when the game is running in game mode.</font></strong></p>
+        <p> </p>
+        <p><font color="#009933"><strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Filled Region:</font></strong></font><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Unlike the Wire Frame Region, the Filled Region Actor registers mouse 
+          clicks, like normal actors. This allows for the creation of hotspots 
+          or sensors that respond to mouse clicks without use normal actors. </font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/filledregion.jpg" width="226" height="110"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          A Filled Region Actor is shown within the Game Editor stage as a blue 
+          rectangle. It can be moved or resized freely. The rectangle is invisible 
+          when the game is running in game mode.</font></strong></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="path"></a>Path</font></strong></p>
+      <p><strong><img src="images/mainmenu_path.gif" width="561" height="24"></strong></p>
+      <p></p>
+      <blockquote> 
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Add 
+          a new path, or select a existing path to view and edit.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/pathcontrol.gif" width="310" height="85"></font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Add 
+          Path:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          <br>
+          <img src="images/addpath.gif" width="180" height="100"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">- 
+          Enter the path name and the path duration in frames.<br>
+          - Click on the &quot;Draw&quot; button to begin drawing the path.<br>
+          - Click on the &quot;Close&quot; button when the new path is finished.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/path.jpg" width="521" height="531"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Right 
+          click in path point: <br>
+          - Linear: Set the current node to linear.<br>
+          - Curved: Set the current node to curved.<br>
+          - Delete: Delete the current node.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Note: 
+          Dragging the first path point with the mouse will move the entire path.</font></strong></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="Regions"></a></font></font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#009933">Regions</font></strong></p>
+      <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/mainmenu_regions.gif" width="561" height="24"></font></font></strong><br>
+        <strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <img src="images/region.gif" width="137" height="57"></font></font></strong> 
+        <br>
+      </p>
+      <blockquote> <strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Add 
+        Activation Region:</font></strong> 
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Activation 
+          Regions are screen areas that are defined by a bounding box and include 
+          game Actors. <br>
+          A Region, and your actors, is loaded only when the View Actor intersects 
+          it. <br>
+          The Region and all actors within the Region are destroyed when the View 
+          Actor no longer intersects it.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Activation 
+          Regions allow your game to have many levels, each level in a game can 
+          be defined in a different Activation Region. <br>
+          The entire game, along with all of its levels, is saved in an single 
+          game file. <br>
+          Activation Regions make envisioning an entire game easy.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          An Activation Region is shown within the Game Editor as a yellow rectangle. 
+          It can be moved or resized freely. The rectangle is invisible when the 
+          game is running in game mode.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/activationregion.jpg" width="240" height="132"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Right 
+          click on the Activation Region's bounding box edge to initiate a pop-up 
+          selector that will allow the removal of the Activation Region from the 
+          game..</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">If 
+          an Actor moves outside of the Activation Region, it will be destroyed 
+          only when the Activation Region no longer intersects with the &quot;View&quot; 
+          Actor.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">An 
+          Actor will be destroyed by the Activation Region when it and your ascendants 
+          are outside of the &quot;View&quot;.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Numerous Activation Regions with overlapped regions can be defined.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">All 
+          of an Activation Region's Actors load inside of the defined region. 
+          The Actor's parents, and Actor reference through script is also be loaded.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Actors 
+          created with &quot;Create Actor&quot; will be assigned to a visible 
+          Activation Region.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">If 
+          the &quot;View&quot; Actor leaves a region and later it comes back, 
+          all Actors will be reloaded, except those destroyed explicitly with 
+          the &quot;Destroy Actor&quot; Action.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Any 
+          Actor can be loaded with &quot;Create Actor&quot;, even if has been 
+          destroyed explicitly.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">If 
+          no Activation Regions have been defined, all game Actors will be loaded 
+          when the game starts.</font></strong></p>
+        <p>&nbsp;</p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Below, 
+          a multilevel game with 3 Activation Regions:</font></strong></p>
+        <p><img src="images/activationregion_sample.gif" width="494" height="222"></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          </font><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Show/Hide 
+          Regions:</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Show 
+          or hide Activation Regions and Region Actors</font></strong></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="Script" id="Script"></a>Script</font></strong></p>
+      <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/mainmenu_script.gif" width="561" height="24"><br>
+        </font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/mainmenu_globalcode.gif" width="227" height="276">&nbsp;</font></strong></p>
+      <blockquote> 
+        <h2><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">This 
+          menu give quick access to Global code and all actor's scripts (The last 
+          five used scripts will be shown first). <br>
+          Use the <em>Global Code</em> option to freely add any 'C' code (arrays, 
+          structs and functions).</font></strong></h2>
+        <h2><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">'C' 
+          Language Programmers will appreciate being able to harness the full 
+          power of 'C' directly from the <em>Script</em> Menu.<br>
+          </font></strong></h2>
+        <h2><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">More 
+          about script <a href="script_reference.htm">here</a>.</font></strong></h2>
+      </blockquote>
+      <h2><strong>&nbsp;&nbsp; </strong></h2>
+      <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="GameMode"></a>Game 
+        Mode</font></strong></p>
+      <p><strong><img src="images/mainmenu_gamemode.gif" width="561" height="24"></strong></p>
+      <blockquote> 
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Switch 
+          the Game Editor to game mode to run/test a game.<br>
+          Hitting the &lt;ESC&gt; key exits from the &quot;Game Mode&quot; and 
+          returns you to the Editor.</font></strong></p>
+      </blockquote>
+      <p>&nbsp;</p>
+      <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="configuration"></a>Configuration</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <br>
+        <img src="images/mainmenu_config.gif" width="561" height="24"> <br>
+        </font></strong><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <img src="images/mainmenu_gameproperties.gif" width="101" height="57"></font></strong></p>
+      <blockquote> 
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game 
+          Properties:</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/gameproperties.gif" width="380" height="355"></font></strong></p>
+        <p>&nbsp;</p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">-<i> 
+          Game resolution</i>: Select the machine detected resolution or enter 
+          a custom resolution. On Pocket PC you can change the screen orientation.<br>
+          <br>
+          -<i> Safe margin</i>: This margin increases the view region used in 
+          Out of Vision event.<br>
+          <br>
+          - <i>Mode</i>: Specify &quot;Window&quot; or &quot;Full Screen&quot; 
+          mode.<br>
+          <br>
+          - <i>Frame rate</i>: Specify animation velocity (speed).<br>
+          <br>
+          - <i>Show mouse</i>: Specify whether the mouse cursor should be shown.<br>
+          <br>
+          - <i>Suspend game if lost focus</i>: Set <em>&quot;Yes&quot;</em> to 
+          pause the game when the window focus is lost on the desktop or to receive 
+          system messages on Pocket PC, Handheld PC and Smartphones. <br>
+          <br>
+          On the Pocket PC and Smartphone it will show a game screen shot and 
+          a menu to continue or exit the game.<br>
+          On smartphones this option is always active to receive phone calls.<br>
+          <br>
+          - <i>Use ESC key to exit game</i>: Select <em>&quot;Yes&quot;</em> to 
+          exit game when use press the ESC key.<br>
+          <br>
+          If you don't want use ESC key to exit, select <em>&quot;No&quot;</em> 
+          and use the ExitGame() function in any action in your game to exit.<br>
+          This option will works only in your exported game.<br>
+          <br>
+          - <i>Motion Compensation</i>: Select <em>&quot;Yes&quot;</em> to correct 
+          actor velocity if real framerate is slow than game framerate. <br>
+          <br>
+          - <i>Audio format</i>: Set audio frequency, mono or stereo and maximum 
+          simultaneous sounds in game.<br>
+          <br>
+          - <i>Icon file</i>: Specify the icon file to be used when exporting 
+          a game. To show the icon in Windows or Pocket PC files, specify an .ico 
+          icon file.<br>
+          <br>
+          - <i>Game title</i>: Specify the game title to be used when exporting 
+          a game.<br>
+          <br>
+          - <i>Game background color</i>: Specify the game background color<br>
+          <br>
+		  
+		  <!--
+		  
+          - <i>Game ID</i>: The Game ID is used to identify your game over the 
+          network.<br>
+          It should be unique, don't use a generic name that another developer 
+          might also use.<br>
+          A value will be suggested for you for each new game.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="networkport"></a>- 
+          <i>Network Port</i>: </font><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000033">Port 
+          number to communicate with the remote machines</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="gameserver"></a>- 
+          <i>Game Editor Server</i>: The Game Editor Server will tell to the game 
+          where to find other machines running the same game.<br>
+          </font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="autostartnetwork"></a>- 
+          <i>Auto Start Network</i>: Specify whether the network will be started 
+          when game starts. <br>
+          </font><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000033">The 
+          local game will be synchronized with the remote game. </font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          Global pointers and dynamic allocated memory in the scripts aren't synchronized.<br>
+          <br>
+		  
+		  -->
+		  
+          - <i>Pocket PC and GP2X Keys</i>: Use to remap Pocket PC or GP2X keys 
+          to the desktop keys used in a game. The key position can be different 
+          on different machines.<br>
+          <br>
+          </font></strong></p>
+        <p><a name="preferences"></a><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Preferences:</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/mainmenu_preferences.gif" width="300" height="259"></font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><i>- 
+          Show Grid</i>: Show or hide the grid.<br>
+          <i>- Grid Snap</i>: Set grid snap to mode.<br>
+          <i>- Main color</i>: Set the grid line color.<br>
+          <i>- Resolution</i>: Set the color that symbolizes the game resolution 
+          perimeters.<br>
+          <i>- Grid Size</i>: Set the grid size.<br>
+          <i>- Enable tool tips</i>: <em>&quot;Yes&quot;</em> to turn on the tool 
+          tips. <em>&quot;No&quot;</em> to turn off the tool tips.<br>
+          <i>- Persistent undo</i>: If you select "Yes" Game Editor will search 
+          for the corresponding .undo file and recover your game history in next 
+          game load. <br>
+          <i>- Maximum undo levels</i>:</font> <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Number 
+          of undo levels to record. This setting will take place only if the &quot;Persistent 
+          undo&quot; box is set to &quot;Yes&quot;. Reduce the &quot;Maximum undo 
+          levels&quot; setting to decrease the size of the undo file. <br>
+          <i>- Image Editor</i>: Select an image editor to edit your animation 
+          frames. The image editor need to handle transparent PNG image files. 
+          If you don't have an image editor, use a search engine and put the query 
+          "Image Editors with PNG Support" to find a good image editor. </font></strong></p>
+      </blockquote>
+      <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="Help"></a><font color="#009933">Help</font></font></strong></p>
+      <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/mainmenu_help.gif" width="561" height="24"><br>
+        </font></strong><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <img src="images/mainmenu_help_dropdown.gif" width="149" height="212"> 
+        </font></strong></p>
+      <blockquote> 
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Documentation:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          Go to Game Editor's documentation files.</font></strong></p>
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#009933">Tutorials:</font><br>
+          Choose a tutorial topic to see an animated movie of one or more aspects 
+          of Game Editor's Game Design features.</font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Get 
+          New Tutorials:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          Select this option to get the newest multimedia tutorials. You must 
+          have and active internet connection. </font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Check 
+          for Updates:<br>
+          <font color="#000033">Select this option to get the newest latest updates 
+          to Game Editor.</font> </font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game 
+          Demos:<br>
+          <font color="#000033">Download</font> </font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">game 
+          <a href="http://game-editor.com/demos.html">demos</a> from numerous 
+          example files that have been created by the Game Editor user community 
+          and by Game Editor programmers.</font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">User 
+          Forums:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          Go to the Game Editor <a href="http://game-editor.com/forum">forum</a> 
+          and learn more about Game Editor.</font></strong></p>
+        <p><strong><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif">About:</font><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          About Game Editor's development and the programmers behind Game Editor.</font></strong></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="MouseCoords"></a><font color="#009933">Info:</font></font></strong></p>
+      <p><strong><img src="images/mainmenu_mousecoordinates.gif" width="205" height="24"></strong></p>
+      <blockquote> 
+        <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">-Mouse 
+          coordinates are relative to the game center.<br>
+          -Show an Actor's coordinates relative to its Parent by clicking on the 
+          Actor.<br>
+          - Actor snap status.</font></strong></p>
+      </blockquote>
+      <p>&nbsp;</p>
+      <h3 align="right">&nbsp;</h3>
+      <h3 align="right"><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <a href="gettingstarted_theactorcontrolpanel.htm">Actor Control >></a></font></strong></h3>
+    </td>
+    <td width="45" rowspan="2" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="323"></td>
+  </tr>
+  <tr> 
+    <td rowspan="4" valign="top" bgcolor="#FF9933"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="6305"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="5"></td>
+    <td colspan="7" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td width="1"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="26" colspan="6" valign="middle" bgcolor="#CCCCCC"> <blockquote> 
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <h4><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="index.html" title="Home">Home</a> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top</a></font></strong></h4>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote></td>
+    <td></td>
+    <td width="2"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="11"></td>
+    <td></td>
+    <td></td>
+    <td width="96"></td>
+    <td></td>
+    <td width="100%"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="images/spacer.gif" alt="" width="5" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="129" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="5" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="60" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="96" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="521" height="1"></td>
+    <td></td>
+    <td><img src="images/spacer.gif" alt="" width="45" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="2" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="1" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="1" height="1"></td>
+  </tr>
+</table>
+</body>
+</html>

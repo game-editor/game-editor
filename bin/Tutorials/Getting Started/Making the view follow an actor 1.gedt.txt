@@ -1,0 +1,4 @@
+This tutorial demonstrates how to keep|an Actor centered on a moving screen.
+Setup the "player" Actor to move when|the user presses the left or right key.
+To keep the Actor perpetually centered on the screen,|make it the parent of the "view" Actor.
+Now, to keep the "score" Actor on screen at a permanent position,|make the "view" the "score" Actor's parent.

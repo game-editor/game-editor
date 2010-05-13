@@ -1,0 +1,7 @@
+This tutorial show how use the "Physical Response" action|to make the balls bounce
+Put the gravity on|the ball actor
+Add a Physical Response action when|the ball collide with walls
+Change some values
+And put some ball clones
+Now, add a Physical Response action|when a ball collide with another ball
+More bounce

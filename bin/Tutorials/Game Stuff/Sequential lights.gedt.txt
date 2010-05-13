@@ -1,0 +1,13 @@
+This tutorial will demonstate the use of "Activation Events"|and "Timers" to make a sequential light.| Games such as Pinball use sequential lights.
+Change the transparency to get an "off" light.
+When the light receives an "Activation Event" from "Any Actor"|turn the light "on" and create a "timer" to send a new|"Activation Event" to the next light.
+Now, connect the lights.
+Create a "sensor" Actor to fire the first "Activation Event".
+You can turn off the light when|the "timer"  event ocurrs.
+Now, you can turn off the light.
+And put more lights
+And clone a few more lights.
+Go to the "Game Mode" and click on|the "sensor" Actor to see the final result.
+You can turn the light off|using the saved timer.
+And add more lights.
+Go to the "Game Mode" and click|on the "sensor" Actor to see the final result.

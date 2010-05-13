@@ -1,0 +1,2 @@
+Game Editor allows you to create an Actor and|repeat that Actor both horizontally and vertically.||The "Infinite" option is located in the|"Actor Control" Panel and is used to create "Infinite Actors".
+To make an Actor "Infinite", select the|"Infinite" option from this drop down box.

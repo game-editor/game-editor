@@ -1,0 +1,7 @@
+This tutorial demonstrates how to use the|"Canvas" Actor and its 'Drawing Functions'.
+Create a new variable to control the "draw".
+Set your pen properties:|red, green, blue, tranparency and pen size.
+Now, make your mouse draw on the canvas|by using the "Mouse Button Down", "Mouse|Button Up" and "Draw Actor" Events.
+Move the pen to the mouse position.
+Set the "draw" variable to 1 (true).|This value will be used on the "Draw Actor" Event.
+Get the mouse coordinate and transform it to your Actor coordinates.

@@ -1,0 +1,481 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- TemplateBeginEditable name="doctitle" --> 
+<title>Actor Events</title>
+<!-- TemplateEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable --> 
+<style type="text/css">
+<!--
+a:hover {
+	color: #FF6600;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000033" link="#000033" vlink="#666666" alink="#000033" onLoad="MM_preloadImages('images/btnhome_small_orange.gif','images/btnprogramoverview_small_orange.gif','images/btngettingstarted_small_orange.gif','images/btntutorials_small_orange.gif','images/btnfaqs_small_orange.gif','images/btnscripting_small_orange.gif')">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="5" rowspan="8" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="3" colspan="9" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td width="1"></td>
+  </tr>
+  <tr> 
+    <td colspan="4" rowspan="3" valign="top" bgcolor="#FF9933"><a name="Top"></a></td>
+    <td width="521" height="7" valign="top" bgcolor="#FF9933"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td colspan="4" rowspan="2" valign="top" bgcolor="#FF9933"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td rowspan="3" valign="top" bgcolor="#000033">
+	<a href="http://game-editor.com"><IMG SRC="images/it.jpg" WIDTH=521 HEIGHT=84 ALT="Game Editor - the easy game design software."></a>	
+	</td>
+    <td height="16"></td>
+  </tr>
+  <tr> 
+    <td colspan="4" rowspan="2" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="5"></td>
+  </tr>
+  <tr> 
+    <td height="63" colspan="4" valign="middle" bgcolor="#000033"> <h3><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+        &nbsp; Actor Events</font></h3></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="129" rowspan="3" valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+        <!--DWLayoutTable-->
+        <tr> 
+          <td width="127" height="60" valign="top" bgcolor="#CCCCCC"><a href="index.html" target="_top" onClick="MM_nbGroup('down','group1','Home','',1)" onMouseOver="MM_nbGroup('over','Home','images/btnhome_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnhome_small_blue.gif" alt="Home" name="Home" width="120" height="60" border="0" onload=""></a></td>
+          <td width="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="program_overview.htm" target="_top" onClick="MM_nbGroup('down','group1','Program_Overview','',1)" onMouseOver="MM_nbGroup('over','Program_Overview','images/btnprogramoverview_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnprogramoverview_small_blue.gif" alt="" name="Program_Overview" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="getting_started.htm" target="_top" onClick="MM_nbGroup('down','group1','Getting_Started','',1)" onMouseOver="MM_nbGroup('over','Getting_Started','images/btngettingstarted_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btngettingstarted_small_blue.gif" alt="Getting Started" name="Getting_Started" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+		<tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="scripting.htm" target="_top" onClick="MM_nbGroup('down','group1','Scripting','',1)" onMouseOver="MM_nbGroup('over','Scripting','images/btnscripting_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnscripting_small_blue.gif" alt="Scripting" name="Scripting" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="tutorials.htm" target="_top" onClick="MM_nbGroup('down','group1','Tutorials','',1)" onMouseOver="MM_nbGroup('over','Tutorials','images/btntutorials_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btntutorials_small_blue.gif" alt="" name="Tutorials" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="faqs.htm" target="_top" onClick="MM_nbGroup('down','group1','FAQs','',1)" onMouseOver="MM_nbGroup('over','FAQs','images/btnfaqs_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnfaqs_small_blue.gif" alt="FAQs" name="FAQs" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        
+      </table></td>
+    <td height="34" colspan="3" valign="top" bgcolor="#CCCCCC"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td align="center" valign="middle" bgcolor="#CCCCCC">
+	
+	<h6 align="left"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">
+	
+	    <a href="getting_started.htm">Welcome</a>&nbsp;&nbsp;
+	    <a href="how_game_editor_works.htm">How Game Editor Works</a>&nbsp;&nbsp;
+		<a href="interface.htm">Interface</a>&nbsp;&nbsp;
+		<a href="gettingstarted_maineditormenu.htm">Main Menu</a>&nbsp;&nbsp;
+		<a href="gettingstarted_theactorcontrolpanel.htm">Actor Control</a>&nbsp;&nbsp; 
+		<a href="gettingstarted_actorevents.htm">Events</a>&nbsp;&nbsp; 
+		<a href="gettingstarted_actoractions.htm">Actions</a>
+		
+	 </font></h6>
+      
+    </td>
+    <td colspan="4" valign="top" bgcolor="#CCCCCC"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="5" rowspan="3" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="3" colspan="5" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td colspan="2" rowspan="3" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="60" rowspan="2" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td colspan="3" rowspan="2" valign="top" bgcolor="#FFFFFF"> 
+    
+        <h3 align="left"><br><font face="Arial, Helvetica, sans-serif" color="#000000"><b><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">Actor 
+          Events</font></b></font></h3>
+        <p align="left"><b><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Events 
+          give you an opportunity to define occurrences that happen on an Actor. 
+          For example, when a user clicks on an Actor with the mouse or when a 
+          specific key is pressed. Events and Actions go hand in hand. First, 
+          define the Event (Missile collides with Ship)and then add an <a href="gettingstarted_actoractions.htm">Action</a> 
+          (Destroy the Ship). </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Multiple 
+          Actions can be defined for each Event</strong></font>.</b></p>
+        <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Game 
+          Editor supports the following Events:<br>
+          </strong></font></p>
+        
+		<table width="100%" border="0">
+        <tr> 
+          <td><h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#ActivationEvent">Activation 
+              Event</a><br>
+              <a href="#destroyactor">Destroy Actor</a> <br>
+              <a href="#mousebuttonup">Mouse button Up</a><br>
+			  <a href="#pathfinish">Path Finish</a>
+               </font></h6></td>
+          <td valign="top">
+<h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#animationfinish">Animation 
+              Finish<br>
+              </a><a href="#drawactor">Draw Actor</a><a href="#animationfinish"> 
+              </a><br>
+			  
+              <a href="#mouseenter">Mouse Enter</a><br>
+			  <a href="#timer">Timer</a>
+			   </font></h6></td>
+          <td valign="top">
+<h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#collision">Collision</a><br>
+              <a href="#keydown">Key Down</a><br>
+			  <a href="#mouseleave">Mouse Leave</a>
+               </font></h6></td>
+          <td valign="top">
+<h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#collisionfinish">Collision 
+              Finish</a><br>
+              <a href="#keyup">Key Up</a> <br>
+			  <a href="#movefinish">Move Finish</a>
+               </font></h6></td>
+          <td valign="top">
+<h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#createactor">Create 
+              Actor<br>
+              </a><a href="#mousebuttondown">Mouse Button Down</a><a href="#createactor"> 
+              </a><br>
+              <a href="#outofvision">Out of Vision</a> </font></h6></td>
+        </tr>
+      </table>
+
+		
+        <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"></font></p>
+        
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="ActivationEvent"></a>Activation 
+        Event:</b> </font></p>
+      <font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventactivationevent.gif" width="220" height="85" ></b></font><br>
+      <br>
+      <font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+      when an <em>Activation Event</em> is received from an Actor.</strong></font> 
+      <br>
+	  <blockquote><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>
+      Activation Events are Events sent to other Actors when a specified Event 
+      happens (Collision,MouseDown,Key Down, etc.).<br>
+      Visualize a game where some Actors will be move when the main Actor is at 
+      a certain place on the game's screen. Activation Events easily serve this 
+      purpose.<br>
+      <font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><br>
+      <img src="images/activationevents.jpg" width="522" height="368" ></b></font> 
+      <font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><br>
+      <br>
+        &nbsp;</font>
+      <p align="left"><b><font face="Arial, Helvetica, sans-serif" size="2">To 
+        Create an Activation Event:<br>
+        </font></b><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"> 
+        <br>
+        Right click on an Actor to Create an Activation Event. <br>
+        Select &quot;New Activation Event&quot; from the pop-up box, and define 
+        an Event that will generate the Activation Event. Next, choose the Actor(s) 
+        that will receive the Activation Event.<br>
+        A line will be drawn from the Actor that is generating the Event to the 
+        Actor that will receive the Event. The line is a green to red gradient. 
+        Green indicates the generation of the Event and red indicates the reception 
+        of the Event. The Activation Event's flow can easily be visualized via 
+        this line.<br>
+        Press the Esc key to end.</font></p>
+      <p align="left">Purposely, cloned Actors do not share Activation Events. 
+        This is done so that cloned Actors can be accessed individually. <br>
+        <br>
+        Stopping the cursor on top of an activation line, opens a tool tip detailing 
+        the Activation Event. <br>
+        The activation event can be removed by right click in activation line, 
+        and select &quot;Remove&quot; <br>
+        <br>
+        Actors can generate Activation Events from Activation Events. This allows 
+        more complex procedures to be made. <font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><br>
+          Choose the event &quot;Activation Event&quot; in the <a href="gettingstarted_theactorcontrolpanel.htm">Actor 
+          Control</a><font color="#000000"> t</font>o define the Action that will 
+          occur when an Activation Event happens.<br>
+        </font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">An 
+        Action can be defined depending on the Actor that is sending Activation 
+        Event. Thus, different actions can happen for different Actors' &quot;Activation 
+        Events&quot;.<br>
+        <br>
+        Choose &quot;Any Actors&quot; and the Action will happen when the Actor 
+        receives an &quot;Activation Event&quot; of any linked Actor to him. <br>
+        Choose &quot;All Actors&quot; the action will only happen when all of 
+        the linked Actors to him send an &quot;Activation Event&quot;.<br>
+        <br>
+        By utilizing the &quot;From Actor&quot;, special Actors can be made to 
+        do logical operations:<br>
+        <br>
+        Actors &quot;OR&quot; are obtained through &quot;Activation Event (Any 
+        Actor)&quot; <br>
+        Actors &quot;AND&quot; are obtained through &quot;Activation Event (All 
+        Actors)&quot; <br>
+        <br>
+        Activation generated Events don't appear in the Actor Control, because 
+        they are not shared by the clones. <br>
+        <br>
+        </font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><a name="showhide"></a> 
+        When clicked, the &quot;Show&quot; or &quot;Hide&quot; option listed in 
+        the Actor's pop-up box will &quot;Show&quot; or &quot;Hide&quot; the Activation 
+        lines on the Game Editor's screen. The lines are not visible in game mode.</font> 
+      </p>
+      </strong></font></blockquote>
+      <p><font size="2" face="Arial, Helvetica, sans-serif" color="#009933"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="AnimationFinish"></a>Animation 
+        Finish:</font></b> </font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventanimationfinish.gif" width="220" height="85" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"> 
+        <strong>Occurs when the selected animation finishes.</strong></font></p>
+      <p><font size="2" face="Arial, Helvetica, sans-serif" color="#009933"><b><a name="Collision"></a>Collision:</b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventcollision.gif" width="220" height="137" ></b></font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b> 
+        </b></font></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when a collision happens with a selected side (&quot;Any Side&quot;, &quot;Top 
+        Side&quot;, &quot;Bottom Side&quot;, &quot;Left Side&quot;, &quot;Right 
+        Side&quot;, &quot;Top or Bottom Side&quot;, &quot;Left or Right Side&quot;) 
+        of a specified Actor.</strong></font></p>
+      <p align="justify"><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000033">Traditionally 
+        in platform games, when a player collides on the &quot;Top Side&quot; 
+        of a monster, the collision destroys the monster. When a player collides 
+        on the &quot;Left or Right Side&quot; of a monster the collision destroys 
+        the player.</font></strong></p>
+      <p align="justify"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033">Repeat 
+        this event while is colliding: Select <em>&quot;Yes&quot;</em> to send 
+        a collision event while the Actor is colliding. Select <em>&quot;No&quot;</em> 
+        to send a collision event only at the beginning of the collision.</font></strong></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><strong><a name="Collisionfinish"></a>Collision 
+        Finish:</strong></font> </p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventcollisionfinish.gif" width="220" height="82" ></b></font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b> 
+        </b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the collision with a selected Actor finishes.</strong></font></p>
+      <p><font size="2" face="Arial, Helvetica, sans-serif" color="#009933"><b><a name="CreateActor"></a>Create 
+        Actor: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventcreateactor.gif" width="215" height="80" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#003333"><strong>Occurs 
+        when the current Actor is created.</strong></font></p>
+      <p><font size="2" face="Arial, Helvetica, sans-serif" color="#009933"><b><a name="DestroyActor"></a>Destroy 
+        Actor:</b> </font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventdestroyactor.gif" width="215" height="80" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the current Actor is destroyed.</strong></font></p>
+      <p><font size="2" face="Arial, Helvetica, sans-serif" color="#009933"><b><a name="DrawActor"></a>Draw 
+        Actor: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventdrawactor.gif" width="215" height="80" ></b></font></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        at the specified game Frame Rate. The actions in this event will be executed 
+        in every game frame.</strong></font></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="KeyDown"></a>Key 
+        Down: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventkeydown.gif" width="405" height="190" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when a specified key or sequence of keys are down.<br>
+        Up to 12 keys can specified.</strong></font></p>
+      <p><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000033">Clear: 
+        Click to erase all specified keys<br>
+        <br>
+        Execute when: <br>
+        Choose "At least one key is pressed" to execute the actions when at least 
+        one of specified keys is pressed. <br>
+        Choose "All keys are pressed" to execute the actions when all specified 
+        keys are pressed. <br>
+        Choose "Keys are pressed in order" to execute the actions when the specified 
+        keys are pressed in order. You can use this option to make cheat codes 
+        for your games.<br>
+        <br>
+        If only one key is specified, this option don't is used. <br>
+        <br>
+        Repeat: If repeat is enabled, the event will be sent while the key be 
+        pressed.<br>
+        Right click to receive this event for any key press.</font></strong></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="KeyUp"></a>Key 
+        Up: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventkeyup.gif" width="250" height="120" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when specified key is released.<br>
+        Right click to receive this event for any key release.</strong></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="MouseButtonDown"></a>Mouse 
+        Button Down: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventmousebuttondown.gif" width="215" height="100" ></b></font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b> 
+        </b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the specified mouse button is held down. <br>
+        Drag: Select Enable if the Actor will be dragged.</strong></font></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="MouseButtonUp"></a>Mouse 
+        Button Up:</b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventmousebuttonup.gif" width="215" height="100" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the mouse enters over the actor.</strong></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="Mouseenter"></a>Mouse 
+        Enter: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventmouseenter.gif" width="215" height="80" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs when the mouse enter in the actor</strong></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="MouseLeave"></a>Mouse 
+        Leave: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventmouseleave.gif" width="215" height="80" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the mouse leaves the actor.</strong></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="movefinish"></a>Move 
+        Finish: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventmovefinish.gif" width="215" height="80"></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when a move started with </strong></font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><a href="gettingstarted_actoractions.htm#moveto"><strong><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">Move 
+        To</font></strong></a></font><font color="#000033" size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <strong>action reaches the specified position.</strong></font></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="OutofVision"></a>Out 
+        of Vision: </b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventoutofvision.gif" width="215" height="80" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the Actor leaves the field of vision (current view size plus <a href="gettingstarted_maineditormenu.htm#configuration">safe 
+        margin</a>).</strong></font></p>
+      <p>&nbsp;</p> 
+      <p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#009933"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="PathFinish"></a>Path 
+        Finish:</font></b> </font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventpathfinish.gif" width="220" height="85" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the selected path finishes</strong></font></p>
+      <p align="justify"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#009933"><b><a name="Timer"></a>Timer:</b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><img src="images/eventtimer.gif" width="400" height="85" ></b></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Occurs 
+        when the specified timer elapses. A Timer must have been previously <a href="gettingstarted_actoractions.htm#createtimer">created</a> 
+        in some Action.</strong></font></p>
+      
+	  <h3 align="right">&nbsp;</h3>
+      <h3 align="right"><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">
+	  <a href="gettingstarted_actoractions.htm">Actions >></a></font></strong></h3>
+	  
+
+      </td>
+    <td width="45" rowspan="2" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="323"></td>
+  </tr>
+  <tr> 
+    <td rowspan="4" valign="top" bgcolor="#FF9933"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="1143">&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="5"></td>
+    <td colspan="7" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td width="1"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="26" colspan="6" valign="middle" bgcolor="#CCCCCC"> <blockquote> 
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <h4><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="index.html" title="Home">Home</a> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top</a></font></strong></h4>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote></td>
+    <td></td>
+    <td width="2"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="6"></td>
+    <td></td>
+    <td></td>
+    <td width="96"></td>
+    <td></td>
+    <td width="100%"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="0"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="images/spacer.gif" alt="" width="5" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="129" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="5" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="60" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="96" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="521" height="1"></td>
+    <td></td>
+    <td><img src="images/spacer.gif" alt="" width="45" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="2" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="1" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="1" height="1"></td>
+  </tr>
+</table>
+</body>
+</html>

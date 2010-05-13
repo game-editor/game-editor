@@ -1,0 +1,11 @@
+This tutorial will show how works|with Destroy Actor event||Images by Ari Feldman (http://arifeldman.com)
+First, add a new actor: the diamond
+Make some clones
+Now, when the player collide with diamond,|destroy the diamond
+To destroy the current diamond in collision,|choose "Collide Actor".||To destroy all diamonds, choose "diamond"
+To play a sound when player destroy the diamond,|use a "Destroy Actor" event
+Now, add a float score text
+To make the floatScore goes up,|use a little path
+You must create the floatScore only when|the diamond was destroyed||So, set the "Create at startup" option to No
+Create the floatScore, when the diamond|was destroyed
+To avoid the floatScore loop, destroy|when your path finishes

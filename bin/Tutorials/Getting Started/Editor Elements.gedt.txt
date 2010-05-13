@@ -1,0 +1,4 @@
+This tutorial will demonstrate some of the useful|elements included in Game Editor.||First, you can zoom in or zoom out by|pressing any of these keys:||   Zoom out: Press "," OR "+" OR "shift" plus ">"|    Zoom in: Press "." OR "-" OR "shift" plus "<"
+The white retangle represents the "view" Actor (your camera).|Moving the "view" Actor, allows you to display any area in your game.
+The red grid lines are your screen guides.|The grid is drawn to represent your current game resolution.
+The white cross represents the game center at position (0, 0). 

@@ -1,0 +1,13 @@
+This tutorial demonstrates how to use the "Canvas"|Actor to draw animated rectangles.
+A red pen.
+Zero transparency.
+Line size equal to 1.
+Draw a rectangle on  the "Draw Actor" Event.
+Move the pen to (0, 0) coordinate.
+Draw a line to bottom right corner.
+Back to top left corner.
+Draw a line to bottom left corner.
+Draw a line to upper right corner.
+Now, to animate the rectangle,|create two variables:||"w": to control the rectangle width.|"h": to control the rectangle height.
+Erase all canvas with black no transparent color.
+You can change the size and make clones.

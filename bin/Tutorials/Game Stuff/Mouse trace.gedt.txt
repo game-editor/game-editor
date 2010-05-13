@@ -1,0 +1,9 @@
+This tutorial demonstrates how to use timers|and incorporates the idea of a "factory" Actor|to make a mouse trace on the screen.
+First, create the "particle" Actor.|This actor is created on the|current mouse position to make a trace.
+To put the particle on the mouse position,|use a "Create Actor" Event.
+Set the actor's screen coordinate|to the mouse coordinate.
+Now, create the "factory" Actor.|This actor will create one particle per frame.
+Move the "factory" Actor outside of the "view" Actor.
+Now, to make the particles 'die',|create a "time to live" Timer.
+When the particle is created, the "time to live"|Timer will be created.||Now, destroy the "particle" Actor on the "time to live" Timer Event.
+Finally, go to the Game Mode|to see the final result.

@@ -1,0 +1,759 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- TemplateBeginEditable name="doctitle" --> 
+<title>Actor Actions</title>
+<!-- TemplateEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable --> 
+<style type="text/css">
+<!--
+a:hover {
+	color: #FF6600;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000033" link="#000033" vlink="#666666" alink="#000033" onLoad="MM_preloadImages('images/btnhome_small_orange.gif','images/btnprogramoverview_small_orange.gif','images/btngettingstarted_small_orange.gif','images/btntutorials_small_orange.gif','images/btnfaqs_small_orange.gif','images/btnscripting_small_orange.gif')">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="5" rowspan="8" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="3" colspan="9" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td width="1"></td>
+  </tr>
+  <tr> 
+    <td colspan="4" rowspan="3" valign="top" bgcolor="#FF9933"><a name="Top"></a></td>
+    <td width="521" height="7" valign="top" bgcolor="#FF9933"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td colspan="4" rowspan="2" valign="top" bgcolor="#FF9933"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td rowspan="3" valign="top" bgcolor="#000033">
+	<a href="http://game-editor.com"><IMG SRC="images/it.jpg" WIDTH=521 HEIGHT=84 ALT="Game Editor - the easy game design software."></a>	
+	</td>
+    <td height="16"></td>
+  </tr>
+  <tr> 
+    <td colspan="4" rowspan="2" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="5"></td>
+  </tr>
+  <tr> 
+    <td height="63" colspan="4" valign="middle" bgcolor="#000033"> <h3><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">&nbsp; 
+        &nbsp; Actor Actions</font></h3></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="129" rowspan="3" valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+        <!--DWLayoutTable-->
+        <tr> 
+          <td width="127" height="60" valign="top" bgcolor="#CCCCCC"><a href="index.html" target="_top" onClick="MM_nbGroup('down','group1','Home','',1)" onMouseOver="MM_nbGroup('over','Home','images/btnhome_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnhome_small_blue.gif" alt="Home" name="Home" width="120" height="60" border="0" onload=""></a></td>
+          <td width="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="program_overview.htm" target="_top" onClick="MM_nbGroup('down','group1','Program_Overview','',1)" onMouseOver="MM_nbGroup('over','Program_Overview','images/btnprogramoverview_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnprogramoverview_small_blue.gif" alt="" name="Program_Overview" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="getting_started.htm" target="_top" onClick="MM_nbGroup('down','group1','Getting_Started','',1)" onMouseOver="MM_nbGroup('over','Getting_Started','images/btngettingstarted_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btngettingstarted_small_blue.gif" alt="Getting Started" name="Getting_Started" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+		
+		<tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="scripting.htm" target="_top" onClick="MM_nbGroup('down','group1','Scripting','',1)" onMouseOver="MM_nbGroup('over','Scripting','images/btnscripting_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnscripting_small_blue.gif" alt="Scripting" name="Scripting" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+		
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="tutorials.htm" target="_top" onClick="MM_nbGroup('down','group1','Tutorials','',1)" onMouseOver="MM_nbGroup('over','Tutorials','images/btntutorials_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btntutorials_small_blue.gif" alt="" name="Tutorials" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" bgcolor="#CCCCCC"><a href="faqs.htm" target="_top" onClick="MM_nbGroup('down','group1','FAQs','',1)" onMouseOver="MM_nbGroup('over','FAQs','images/btnfaqs_small_orange.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/btnfaqs_small_blue.gif" alt="FAQs" name="FAQs" width="120" height="60" border="0" onLoad=""></a></td>
+          <td>&nbsp;</td>
+        </tr>
+        
+      </table></td>
+    <td height="34" colspan="3" valign="top" bgcolor="#CCCCCC"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td align="left" valign="middle" bgcolor="#CCCCCC"> 
+	
+	<h6 align="left"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">
+	
+	    <a href="getting_started.htm">Welcome</a>&nbsp;&nbsp;
+	    <a href="how_game_editor_works.htm">How Game Editor Works</a>&nbsp;&nbsp;
+		<a href="interface.htm">Interface</a>&nbsp;&nbsp;
+		<a href="gettingstarted_maineditormenu.htm">Main Menu</a>&nbsp;&nbsp;
+		<a href="gettingstarted_theactorcontrolpanel.htm">Actor Control</a>&nbsp;&nbsp; 
+		<a href="gettingstarted_actorevents.htm">Events</a>&nbsp;&nbsp; 
+		<a href="gettingstarted_actoractions.htm">Actions</a>
+		
+	 </font></h6>
+	
+	</td>
+    <td colspan="4" valign="top" bgcolor="#CCCCCC"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="3" colspan="6" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td colspan="2" rowspan="3" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td width="5" rowspan="2" valign="top" bgcolor="#000033"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="60" rowspan="2" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td colspan="3" rowspan="2" valign="top" bgcolor="#FFFFFF"> 
+      <h3 align="justify"><br><font face="Arial, Helvetica, sans-serif" color="#000000"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">Actor 
+        Actions</font></font></h3>
+      <p align="justify"><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Action 
+        is what should happen in response to an event. For example, when an actor 
+        collides with a rocket an explosion should be created. Game Editor has 
+        a set of predefined actions and any events can fire one or more actions. 
+        <br>
+        Actions follow <a href="gettingstarted_actorevents.htm">Events</a>. If 
+        the event defines a <em>Mouse Down</em> click on an Actor, the <em>Action</em> 
+        takes place after the mouse click <em>Event</em> occurs.</font></strong></p>
+      <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>N</b><strong>otes 
+        about Actors:</strong></font></p>
+      <blockquote>
+	  
+	  <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><strong>- 
+        &quot;Event Actor&quot; is the Actor that currently receives the </strong></font> 
+        <strong><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Event.<br>
+        - &quot;Parent Actor&quot; is the current Actor's parent, if exists.<br>
+        - &quot;Creator Actor&quot; is the creator of </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">the 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">current 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Actor, 
+        if the </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Actor 
+        is created in the &quot;Create Actor&quot; </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Action.<br>
+        - If an Actor's name is selected, all of the Actor's clones will receive 
+        the </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Action.<br>
+        - If the &quot;Collision Event&quot; is selected, the &quot;Collide Actor&quot; 
+        is the Actor that currently collides.<br>
+        - An Actor's&nbsp;Action is immediately&nbsp; executed when an Event occurs, 
+        or it can be put in a queue, to be executed when certain&nbsp;frames of 
+        a specified animation are displayed.</font></strong>
+		
+      </blockquote>
+		
+      <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Action 
+        execution</b><strong><font size="2" color="#009933">:</font></strong></font></p>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Clicking 
+        the &quot;Add&quot; button for all Actor Actions, enables you to choose 
+        if an action will execute immediately at an </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Event's 
+        occurrence, or if the </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Action 
+        will be executed at a specific frame: &quot;Wait for Frame&quot;. </font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/waitforframe.gif" width="370" height="185" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"> 
+        <b>Animation: </b> Select an Actor Animation.<b><br>
+        Frames: </b> Enter the frame numbers where the action should happen. (For 
+        Example: 14;2...)<b><br>
+        </b> Specify whether only the last action in the queue must be executed.</font></h3>
+      <p>&nbsp;</p><p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000033"><strong>Game 
+        Editor supports the following Actions:<br>
+        </strong></font></p>
+        
+		<table width="100%" border="0">
+        <tr> 
+          <td>
+<h6><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">
+<a href="#changeanimation">Change 
+              Animation</a><br>
+<a href="#changepath">Change 
+              Path</a><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#conditionalaction">Conditional 
+              Action<br>
+              </a><a href="#destroytimer">Destroy Timer</a><a href="#conditionalaction"> 
+              </a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#moveto">Move 
+              To</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#scripteditor">Script 
+              Editor</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font></h6>
+          </td>
+          <td><h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif">
+              
+			  <a href="#changeanimationdirection">Change 
+              Animation Direction</a><br>
+			  <a href="#changetransparency">Change Transparency</a><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#createactor">Create 
+              Actor</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#eventdisable">Event 
+              Disable</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#physicalresponse">Physical 
+              Response</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#settext">Set 
+              Text</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              </font></h6></td>
+          <td> 
+            <h6><font face="Verdana, Arial, Helvetica, sans-serif"></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#changecursor">Change 
+              Cusor</a><br>
+              <font face="Verdana, Arial, Helvetica, sans-serif"><a href="#changezdepth">Change 
+              Z Depth</a></font><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#createtimer">Create 
+              Timer</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#eventenable">Event 
+              Enable</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#playmusic">Play 
+              Music</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#toanteriorposition">To Anterior Position</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              </font></h6></td>
+          <td valign="top"> 
+            <h6><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><a href="#changeparent">Change 
+              Parent</a><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#collisionstate">Collision 
+              State<br>
+              </a><a href="#destroyactor">Destroy Actor</a><a href="#collisionstate"> 
+              </a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#followmouse">Follow 
+              Mouse</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#playsound">Play 
+              Sound</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#visiblestate">Visibility 
+              State</a></font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              </font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              </font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
+              </font></h6>
+          </td>
+        </tr>
+      </table>
+		
+		
+        
+      <p align="justify"><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><a name="ChangeAnimation"></a>Change 
+        Animation:</b></b></font></p>
+      
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Change 
+        the current Actor's Animation.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/actionchangeanimation.gif" width="220" height="125" ></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b>Actor:</b> 
+        </b>Select the Actor that will have its animation changed.<b><br>
+        <b>Animation:</b> </b>Select the Actor's Animation.<b><br>
+        <b>Direction:</b> </b>Specify whether </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">the 
+        animation starts in normal, reverse or stopped mode.</font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">This 
+        action will change the <a href="script_reference.htm#animindex">animindex</a> 
+        variable.<br>
+        You can't change the animation of a collide actor.</font><br>
+      </h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changeanimation">script 
+        function</a> </b></font></h3>
+      <p align="justify"><font color="#009933" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><a name="changeanimationdirection"></a>Change 
+        Animation Direction:</b></b></font></p>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Change the current Actor's Animation Direction.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/actionchangeanimationdirection.gif" width="220" height="105" ></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b>Actor:</b> 
+        </b>Select the Actor that will have its animation direction changed.<b><br>
+        <b>Direction:</b> </b>Specify whether </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">the 
+        animation starts in normal, reverse or stopped mode.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changeanimationdirection">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="changecursor"></a> 
+        <font color="#009933">Change Cursor: </font></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Change 
+        the current Actor's Mouse Cursor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/actionchangecursor.gif" width="210" height="185" ></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b>Actor: 
+        </b></b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor.<b><br>
+        <b>File: </b></b>Select image file (Load jpeg, gif, png, bmp, pcx, tga, 
+        xpm, xcf, lbm and tif image files<b>).<br>
+        Horizontal Frames: </b>Enter the number of horizontal frames.<b><br>
+        Vertical Frames: </b>Enter the number of vertical frames.<b><br>
+        Hotspot X: </b>X coordinate of the Cursor hot spot<b>.<br>
+        Hotspot Y: </b></font> <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Y<b> 
+        </b>coordinate of the Cursor hot spot.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changecursor">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="changeparent"></a><font color="#009933">Change 
+        Parent:</font></b> </font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Change 
+        the selected Actor's Parent.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionchangeparent.gif" width="220" height="105" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Child: 
+        </b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Child Actor.<b><br>
+        <b>Parent:</b> </b>Select the Parent Actor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changeparent">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="changepath"></a><font color="#009900">Change 
+        Path:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Change 
+        the selected Actor's Path.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionchangepath.gif" width="220" height="125" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor: 
+        </b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor that will have its path changed.<b><br>
+        <b>Path: </b> </b>Select a path (options include: any path that you have 
+        previously created, &quot;no path&quot; and &quot;random path&quot;).<b><br>
+        <b>Axis: </b> </b>Specify whether this path affects x axis, y axis or 
+        both axis.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changepath">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="changetransparency"></a><font color="#009933">Change 
+        Transparency:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Change 
+        the selected Actor's&nbsp; Transparency.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionchangetransparency.gif" width="235" height="105" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor that will have its transparency changed.<b><br>
+        <b>Transparency: </b> </b>Set the amount of transparency using the slider 
+        bar. Slide the bar to the right for greater<b> </b>transparency and to 
+        the left for less transparency.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changetransparency">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="changezdepth"></a><font color="#009933">Change 
+        Z Depth:</font> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Change 
+        the selected Actor Depth.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionchangezdepth.gif" width="235" height="100" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor that will have its position changed relative to the Z axis.<b><br>
+        <b>Z Depth: </b> </b>Set the amount of depth using the slider bar. Slide 
+        the bar right for greater </font> <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">depth 
+        and to the left for less depth.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#changezdepth">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="collisionstate"></a><font color="#009933">Collision 
+        State:</font> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Enable 
+        or Disable&nbsp; collisions on selected Actor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actioncollisionstate.gif" width="270" height="105" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor.<b><br>
+        <b>State:</b> </b>Enable or </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Disable.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#collisionstate">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="conditionalaction"></a><font color="#009900">Conditional 
+        Action: </font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Call 
+        Actions if Expressions match certain Conditions.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionconditionalaction.gif" width="450" height="175" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Expression 
+        1 and Expression 2:</b> </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Expressions 
+        that will be compared.<b><br>
+        <b>Condition:</b> </b>Equal, Greater Than, Less Than, Greater or Equal 
+        To, Less or Equal To.<br>
+        The drop down lists show Actors and variables that can be used in the 
+        comparison.</font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="createactor"></a><font color="#009900">Create 
+        Actor: </font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Put 
+        a new Actor in the game.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actioncreateactor.gif" width="220" height="200" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        an actor to create.<b><br>
+        <b>Animation: </b> </b>Animation name for the selected actor.<b><br>
+        <b>Parent: </b> </b>Select an Actor's parent (options include any previously 
+        created Actor, the &quot;view&quot; Actor, and &quot;no parent&quot;).<b><br>
+        <b>Path:</b> </b>Select&nbsp; a path (options include: any path that you 
+        have previously created, &quot;no path&quot;, and &quot;random path&quot;).<b><br>
+        <b>x,y: </b> </b>Set the coordinates of a New Actor's initial position.<b><br>
+        <b>Relative to creator: </b> </b>True or false.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#createactor">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="createtimer"></a><font color="#009933">Create 
+        Timer:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Create 
+        a Timer for the selected Actor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actioncreatetimer.gif" width="400" height="105" ></font></h3>
+      <h3 align="justify"> </h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b>Actor:</b> 
+        Select the Actor.<b><br>
+        <b>Timer:</b> </b>Select the timer.<br>
+        <br>
+        If you wish to specify a new timer, select &quot;New Timer&quot;.<br>
+        </font></h3>
+		
+		<blockquote>
+        <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/createnewtimer.gif" width="200" height="200" ></b></font></h3>
+      <h3 align="justify"> <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b>Name: 
+        </b> </b>New Timer name.<b><br>
+        <b>Time: </b> </b>Timer interval in milliseconds.<b><br>
+        <b>Type: </b> </b>Periodic or Random timer.<b><br>
+        <b>Min time: </b> </b> For<b> </b>Random timers, specify the minimum timer 
+        interval here and the maximum timer interval in the Time field.<b><br>
+        <b>Repeat: </b> </b> <b>&quot;</b>Forever&quot; or &quot;Specify Quantity&quot;.<b><br>
+        <b>Count: </b> </b>If the timer is not set to &quot;Forever&quot;, set 
+        number of repetitions here.</font></h3>
+		</blockquote>
+		
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#createtimer">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="destroyactor"></a><font color="#009933">Destroy 
+        Actor:</font></b> </font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Destroy 
+        the selected Actor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actiondestroyactor.gif" width="220" height="85" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor: 
+        </b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor to be destroyed.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#destroyactor">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="destroytimer"></a><font color="#009933">Destroy 
+        Timer:</font> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Destroy 
+        the selected Timer.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actiondestroytimer.gif" width="400" height="85" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Timer: 
+        </b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Timer to be destroyed.<br>
+        Destroy Timer action must be called in the actor that have an active timer.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#destroytimer">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="eventdisable"></a><font color="#009933">Event 
+        Disable:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Disable 
+        a specified Event.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actioneventdisable.gif" width="220" height="105" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor: 
+        </b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor.<b><br>
+        <b>Event:</b> </b>Select the Event to be Disabled.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#eventdisable">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="eventenable"></a><font color="#009933">Event 
+        Enable:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Enable 
+        a specified Event.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actioneventenable.gif" width="220" height="105" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor: 
+        </b></font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor.<b><br>
+        <b>Event:</b> </b>Select the Event to Enable.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#eventenable">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="followmouse"></a><font color="#009933">Follow 
+        Mouse:</font></b> </font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Make 
+        the Actor Follow the Mouse.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionfollowmouse.gif" width="220" height="105" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor that will follow the mouse.<br>
+        <b> Axis: </b>Specify if this path affects &quot;x&quot; axis, &quot;y&quot; 
+        axis, &quot;both&quot; axis or &quot;none&quot; axis (end following).</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#followmouse">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="moveto"></a><font color="#009933">Move 
+        To:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Move 
+        the Actor to a specified position, at a specified velocity.<br>
+        Causes the <a href="gettingstarted_actorevents.htm#movefinish">Move Finish</a> event 
+        when the actor reaches the specified position.<br>
+        </font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionmoveto.gif" width="240" height="166" ></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Select 
+        the Actor.<b><br>
+        <b>x, y:</b> </b>position.<b><br>
+        <b>Velocity:</b> </b>movement velocity/speed. Use high numbers to do a 
+        instantaneous move. (Higher number = greater speed)<br>
+        <b><b>Relative to:</b> </b>The </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Actor 
+        can be moved relative to </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">the 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">game 
+        center (absolute coordinate), relative to </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">the 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">mouse 
+        or any actor in </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">the 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">game. 
+        <br>
+        Avoid: Set the actor to avoid collisions while moving.<br>
+        If you select the actor name, not a clone name, all clones will be considered.<br>
+        If you select a actor with tiles, the bound box of each tile will be considered.<br>
+        <br>
+        Only the actor bound box will be considered, not the real shape.<br>
+        <br>
+        The move path is calculated only when the action is executed.<br>
+        So, if you need avoid collision with other moving actors, you need to 
+        call the<br>
+        Move To action again.<br>
+        <br>
+        To make a more natural move, the resulting path is smoothing, so if you 
+        want to move<br>
+        the actor through a maze, sometimes the actor will touch the walls.<br>
+        <br>
+        <br>
+        Examples:</font> <br>
+        <blockquote> 
+          <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"> 
+            1) Move the Event Actor to the right 10 positions<br>
+            Actor:= "Event Actor"<br>
+            x: 10<br>
+            y: 0<br>
+            velocity = 1000 (Use a high velocity to instantaneously move an actor.)<br>
+            Relative to: "Event Actor"<br>
+            Avoid: (none)<br>
+            <br>
+            2) Move the view to the player position.<br>
+            Actor = "view"<br>
+            x: 0<br>
+            y: 0<br>
+            Relative to: "player"<br>
+            Avoid: (none) <br>
+            <br>
+            3) Move the player to the mouse position. <br>
+            Actor:"player"<br>
+            x: 0<br>
+            y: 0<br>
+            Relative to: "Mouse Position" <br>
+            Avoid: (none) </font></p>
+          <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">4) 
+            Move the player to the mouse position, avoiding lakes in a terrain.<br>
+            Actor:"player"<br>
+            x: 0<br>
+            y: 0<br>
+            Relative to: "Mouse Position" <br>
+            Avoid: &quot;lake&quot;</font><br>
+          </p>
+        </blockquote>
+      </h3>
+		
+		
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#moveto">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a name="physicalresponse"></a><font color="#009933">Physical 
+        Response:</font></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Physically 
+        Move an Actor after a Collision Event.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionphysicalresponse.gif" width="200" height="215"></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Move:</b> 
+        After collision, move &quot;Event Actor Only&quot;, &quot;Collide Actor 
+        Only&quot; or &quot;Both Actors&quot;<br>
+        <b>Mass:</b> Select &quot;Use Calculated&quot; to use the internally calculated 
+        mass. Select &quot;Specify&quot; to manually enter an Actor's mass.<br>
+        <b> - Event Actor: </b> Enter the Event Actor's mass in &quot;Specify&quot; 
+        mode or the Event Actor's mass multiplier in the &quot;Use Calculated&quot; 
+        mode.<b><br>
+        - Collide Actor: </b> Enter Collide Actor's mass in &quot;Specify&quot; 
+        mode or the Collide Actor's mass multiplier in the &quot;Use Calculated&quot; 
+        mode.</font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Final 
+        velocity multiplier:<br>
+        - Event Actor: </b>Event Actor's calculated velocity multiplier.<b><br>
+        - Collide Actor: </b>Collide Actor's calculated velocity multiplier. <b> 
+        <br>
+        </b> </font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><a href="script_reference.htm#physicalresponse">script 
+        function</a> </font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a name="playmusic"></a><font color="#009933">Play 
+        Music:</font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Play 
+        selected music upon an Event.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/actionplaymusic.gif" width="235" height="170" ></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b>File: 
+        </b>Select music file (Load Ogg Vorbis, wav, mid, s3m, it, or xm music 
+        files).<b><br>
+        Volume: </b>Set music volume.<b><br>
+        Loop: </b>Set loop count (1 to 65000 or 0 to infinite loop)<b><br>
+        Startup Priority:</b> In slower machines, like PDA devices, the music 
+        may load very slowly. Setting the &quot;Startup Priority&quot; for your 
+        machine will help to address the speed issues.</font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">- 
+        <b>High</b>: The game stops while the music loads, but is the fastest 
+        music mode.<br>
+        - <b>Medium</b>: The game doesn't stop while the music loads, but this 
+        mode can be slow.<br>
+        - <b>Low</b>: The game will play in normal velocity, but the music load 
+        will be slow.</font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Notes: 
+        <br>
+        - Music files are not entirely loaded into memory.<br>
+        - Only one music file will be played at a time.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><br>
+        </b><a href="script_reference.htm#playmusic">script function</a> </font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><b><a name="playsound"></a><font color="#009933">Play 
+        Sound: </font></b></b></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Play 
+        a selected Sound upon an Event.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/actionplaysound.gif" width="235" height="135" ></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><b>File: 
+        </b> </b></b>Select a sound File (wav, voc, iff audio files).<b><br>
+        <b>Volume: </b></b>Set the sound &quot;Volume&quot;.<b><br>
+        <b>Pan: </b></b>Set the sound &quot;Pan&quot;.<b><br>
+        <b>Loop:</b> </b>Set the loop count (1 to 65000 or 0 to infinite loop).<b><br>
+        </b>The maximum simultaneous sound must be adjusted in &quot;Game Properties&quot; 
+        panel.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#playsound">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><b><a name="scripteditor"></a></b></b></b></font><font color="#009933">Script 
+        Editor:</font> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Enter 
+        a C Script to be executed upon an Event.<br>
+        Read more aboud scripts <a href="scripting.htm">here</a>.</font></h3>
+      <blockquote>
+        <div align="justify"> </div>
+        </blockquote> 
+		
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><b><a name="settext"></a><font color="#009933">Set 
+        Text: </font></b></b></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b>Set 
+        or change the Actor text. See <a href="gettingstarted_theactorcontrolpanel.htm#ActorTextPanel">text 
+        actor</a>.</b></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><b><a name="toanteriorposition"></a><font color="#009933">To 
+        Anterior Position:</font></b></b></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Send 
+        the Actor to the Anterior Frame Position.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><img src="images/actiontoanteriorposition.gif" width="220" height="85" ></b></font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><b><b>Actor: 
+        </b> </b></b> Select the Actor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#toanteriorposition">script 
+        function</a> </b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="visiblestate"></a><font color="#009933">Visible 
+        State: </font></b></font></h3>
+      <h3 align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Show 
+        or Hide the selected Actor.</font></h3>
+      <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/actionvisiblestate.gif" width="270" height="105" ></font></h3>
+      <div align="justify"> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Actor:</b> 
+        </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Select 
+        the Actor.<br>
+        <b>State:</b> </b> <b>&quot;Enable&quot; (show the Actor), &quot;Disable&quot; 
+        (hide the Actor) and &quot;Don't draw, but allow events&quot; (use to 
+        speed up collision map Actors).</b></font></div>
+     
+        <h3 align="justify"><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="script_reference.htm#visabilitystate">script 
+        function</a> </b></font></h3>
+      
+	  <h3 align="right">&nbsp;</h3>
+      <h3 align="right"><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">
+	  <a href="scripting.htm">Scripting  >></a></font></strong></h3>
+	  
+	  </td>
+    <td width="45" rowspan="2" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td height="392"></td>
+  </tr>
+  <tr> 
+    <td rowspan="4" valign="top" bgcolor="#FF9933"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td>&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="5"></td>
+    <td colspan="7" valign="top" bgcolor="#000033"><img src="images/spacer.gif" width="1" height="1"></td>
+    <td width="1"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="26" colspan="6" valign="middle" bgcolor="#CCCCCC"> <blockquote> 
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <h4><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="index.html" title="Home">Home</a> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#Top">Top</a></font></strong></h4>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote></td>
+    <td></td>
+    <td width="2"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="6"></td>
+    <td></td>
+    <td></td>
+    <td width="96"></td>
+    <td></td>
+    <td width="100%"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="0"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="images/spacer.gif" alt="" width="5" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="129" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="5" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="60" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="96" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="521" height="1"></td>
+    <td></td>
+    <td><img src="images/spacer.gif" alt="" width="45" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="2" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="1" height="1"></td>
+    <td><img src="images/spacer.gif" alt="" width="1" height="1"></td>
+  </tr>
+</table>
+</body>
+</html>

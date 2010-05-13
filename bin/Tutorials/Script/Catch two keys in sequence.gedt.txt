@@ -1,0 +1,6 @@
+This tutorial demonstrates how to execute|an Action after two keys are|pressed in sequence using scripts
+Add the lastKey variable.
+Put the actions here.
+Store the key for the next "Key Down" Event.
+Get the last pressed key.
+Test the 10 key sequence.

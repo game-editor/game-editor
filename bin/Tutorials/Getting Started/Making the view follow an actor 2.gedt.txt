@@ -1,0 +1,9 @@
+This tutorial demonstrates how make the "view" Actor follow|an Actor with a soft move.
+Move the player on Key Down events
+Create an centerView actor and|make it parent of the view
+To hide de centerActor, change your Visibility State|on Create Actor event
+Now, move the "view" Actor by taking an average of|"centerView" Actor's x coordinate and the "player" Actor's  x coordinate.
+Use the "Draw Actor" Event to update|the "view" Actor's position every frame.
+Use the weight variable to control|the elasticity of the movement.
+Take the average between the "centerView" Actor's x and "player" Actor's  x coordinate.
+

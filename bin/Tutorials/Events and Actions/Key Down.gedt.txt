@@ -1,0 +1,4 @@
+To move your actor in steps,|you can use a little script||In this tutorial, we will move the actor when the user|hit left or right key
+This event will fire a action when the user|press a specified key.||Press a key to catch this event
+Keep the repeat enable to fire the action|while the key was pressed
+To move the actor to right 5 units

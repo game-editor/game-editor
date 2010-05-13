@@ -1,0 +1,4 @@
+This tutorial demonstrates how to  create a game score.||Images by Ari Feldman (http://arifeldman.com)
+Add a "score" Actor and apply the "0000" text.
+Make the "view" Actor the "score" Actor's parent.
+Now, update the score.

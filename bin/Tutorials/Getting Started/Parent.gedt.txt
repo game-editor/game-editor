@@ -1,0 +1,4 @@
+When an Actor has a "Parent", moving the "Parent"|will also move the child Actor.||In this tutorial you will learn how create a parent/child relationship among Actors.
+To define a parent, select the Actor from the "Parent" drop down box.
+Now, you can create more parent levels
+Next, create two paths:||  A big circle|  A small circle| 

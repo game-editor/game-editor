@@ -1,0 +1,8 @@
+This tutorial demonstrates how to create game scores.|To create a score, add an Actor,define the Actor's text,|and use the "textNumber" variable to modify the score.
+Fill the "score" Actor with zeros|by typing them into the "Set Text" Panel.
+The score will be updated|when the user presses the left or right key,|so, we will add a "Key Down" Event.
+Old "score" value.
+Increase "score" Actor value by one unit.
+The "textNumber" variable of the "score" Actor|will update the "score" Actor's text.
+You can use any Event to update your score|(Collisions, Key Down, Mouse Down, etc.).
+

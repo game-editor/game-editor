@@ -1,0 +1,12 @@
+This tutorial demonstrates how to create a|high score for your game.||Images by Ari Feldman (http://arifeldman.com)
+Add the "highScore" Actor.
+Now, update the high score.
+Now, save the high score.
+Create a global variable to save the high score value.
+Specify a save group to save this variable|to when the saveVars function is called.
+File name where your game data will be saved.
+Update the highScoreCount variable.
+Group to save.
+Now, load the high score value.|You can load this value, on the previously created "highScore" Actor.
+Update the actor text.
+Load the "scores" group from "game" file.

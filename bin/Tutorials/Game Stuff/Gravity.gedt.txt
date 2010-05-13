@@ -1,0 +1,8 @@
+This tutorial demonstrates how to create 'gravity' in your game.|It also teaches you how to make your actor stop upon reaching the game 'ground'.||Images by Ari Feldman (http://arifeldman.com)
+The "player" Actor moves in the left and right directions.|To make the "player" Actor jump, add a "Key Down" Event and change|the vertical velocity (yvelocity variable).
+A negative value will change the "player" Actor's movement to "up".
+Now, to make the 'gravity', go to the "Draw Actor" Event|and increase the yvelocity variable.||The "Draw Actor" Event will be executed in every game frame.
+Increase the yvelocity a little to make the gravity.
+Finally, to make the player stop on collision with the platform,|use the "Collision" Event and add a "Physical Response" Action.
+Move the "Event Actor" (the "player" Actor).
+To avoid "player" Actor bounce, place a zero in the calculated velocity.

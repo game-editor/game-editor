@@ -1,0 +1,14 @@
+To add text to your game,|add or select an Actor.|Open the "Actor Control" Panel and|left click on "Text" Button.
+Type your text here.
+Select a previously defined font.
+Define a new font.||You can define an "Image" font or|a "True Type" font.
+Load text from a file|or save the current text.
+Create a font from an image file.|The image file must include all of the font characters.
+Type your initial font character|(blank space in the sample).
+Click and drag to view the characters.
+Type the number of font characters in this field.||If all characters are separated by a transparent column,|this number can be automatically defined.
+You can define a "True Type" font|by selecting a file with a '.ttf 'extension.
+Click to choose the font color.
+Type the font size.
+Select "Yes" if a font will be drawn with|anti alias (soft fonts).
+Select the font style:|"Normal", "Bold", "Italic" or "Underline".

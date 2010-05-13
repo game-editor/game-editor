@@ -1,0 +1,9 @@
+Space Invaders||Images are from the original game.
+Create the "ship_shot" Actor|only when the "ship" Actor shoots.
+Make the shot go up toward the enemy.
+Control the enemies movement.
+Now, set the initial movement.
+To control the movement,|add two sensor actors.
+Now, make the shot destroy the enemies.
+Make the enemies shoot.
+And, make the enemy shot destroy the "ship" Actor.

@@ -1,0 +1,12 @@
+Paths are useful in providing a method to move your Actors.|To add a new path, left click on the "Path" Button.
+Remove the selected path.
+List of paths.
+While the "Path Control" Panel is open,|the selected "Path" is shown in the|drop down box and can be edited.
+Add a new path.
+Give a name to your path and enter the path's duration in the "Frames" field.||If your game runs at 30 fps (frames per second) and your path has 60 frames,|the path's time to completion will be 2 seconds (60/30=2 seconds).
+To edit the path, draw a 'node'.
+This is your starting 'node' (orange).|Moving it causes the entire path to be moved.
+Right click on any 'node 'to set|the 'node' type (Linear or curved)|or to delete the 'node'.
+Now, you can assign the created path|to any Actor in the game.
+Select the desired path from the|"Path" drop down box.
+To view the path move in the editor mode,|just select Move on this list

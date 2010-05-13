@@ -1,0 +1,8 @@
+This tutorial demonstrates how to use Game Editor's "Tile" feature to|draw your game scenario.||Images by Ari Feldman (http://arifeldman.com)
+Left click the "Tile" Button to add tiles|in order to create an extension for the "platform" Actor.
+The tiles use a previously added animation.|The animations  within the frames make up the tiles.
+In tile mode, the cursor shows the current tile.||Use the left or right keys to change the tile's animation.
+Use the right ctrl key to hide the cursor|and to move the grid.
+Use the left shift key to enter 'snap mode'.|This mode allows you to get a more precise tile placement.
+To erase the tiles, press the right shift key|and click to erase.
+Press the Esc key to leave the tile mode.

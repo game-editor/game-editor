@@ -1,0 +1,8 @@
+view.height|(vertical|resolution)
+x (smaller)
+view.width (game horizontal resolution)
+x (bigger)
+y (smaller)
+y (bigger)
+(xscreen, yscreen) = (0, 0)
+game center (x = 0, y = 0)

@@ -1,0 +1,6 @@
+This tutorial demonstrates how to use the "Key Down" Event|to catch any pressed key.
+Now that the Actor has been created,|add the "Key Down" Event.
+Catch "any key" with a right mouse|click on the "Key Down Event" Panel.
+The "getLastKey()" function returns the|last key pressed by the user.
+Use the "getKeyText() function to get the key text.
+The "strcpy()" function copies to the text actor.

@@ -1,0 +1,6 @@
+This tutorial demonstrates how to create a score|to display the number objects (diamonds) in the game.||Images by Ari Feldman (http://arifeldman.com)
+To build the diamond score, create a|"diamondScore" Actor, a "diamondX"|Actor (symbolized by the small "x" displayed on the screen),|and a "diamondCount" Actor (to show the count).
+Now, create a parent for the actors.
+To move the diamondScore|on the screen as the scene changes, select the view as the parent.
+When the "diamond" Actor is destroyed,|increase the "diamondCount" Actor's value.
+The "textNumber" function changes the text actor.

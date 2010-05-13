@@ -1,0 +1,5 @@
+Use this button to add a new "Actor" to your game.|Actors are considered anything in the game:|   characters|   ships|   bullets|   backgrounds
+Enter an Actor "Name" in the first box.|Choose an Actor "Type" from the "Type" drop down box.||For now, choose a "Normal" Actor.
+You've just created your first Actor!|The "PacMan" icon tells you that this Actor has|no animations yet.
+To move an Actor, left click and hold on the Actor while dragging with the mouse.
+Make your actor live!||To control the Actor's behavior, animations, actions, etc.,|click on the "PacMan" icon with right Mouse Button.|Select"Actor Control" from the popup menu.|The "Actor Control" Panel will open up.

@@ -1,0 +1,4 @@
+After adding an Actor to the game,|you can give it some personality by inserting|"Animations" (pictures) on the Actor.||Images by Ari Feldman (http://arifeldman.com)
+To add a new "Animation" to a selected Actor,|click on the "Add Animation" Button.
+Your Actor will now have four animations.|Select the current animation to change it.
+

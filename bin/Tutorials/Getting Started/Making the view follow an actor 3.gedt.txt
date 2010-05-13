@@ -1,0 +1,5 @@
+This tutorial demonstrates how to move the "view" Actor|when an Actor is on the left or the right side of the screen.
+Now, use two "Wire Frame" Regions as 'sensors'.|Place one on the left side and one on the right side of the "view" Actor.||Make the "view" Actor the Parent of the "stop_left"  Actor.
+Move the "player" Actor on the "Key Down" Event.
+Move the "view" Actor when the "player" Actor collides with|the "stop_left" or "stop_right" Actors.
+Change this option to "Yes" to repeat|the action while the "player" Actor|is colliding with the selected Actor.

@@ -1,0 +1,83 @@
+Please, read the most recent version of the license:
+http://game-editor.com/License
+
+________________________________ 
+
+1. GPL GAMES OR DERIVATIVE WORKS 
+
+Game Editor is 100 percent GPL v3, and if your derived work or game is 100 percent GPL v3 too, then you never have to pay us for the licenses. Just get the source code and have fun! 
+
+When your derived work or game is not licensed under the GPL v3, you must first obtain a commercial license (indie or site) to use Game Editor as defined in the sections 2 or 3 below. 
+
+___________________________________ 
+
+2. GAME EDITOR (GE) "INDIE" LICENSE 
+
+The Game Editor Indie License is intended to be used for games that aren't GPL, by very small independent companies or individuals funding their own game development. Any other use is governed by the Game Editor Site Product License. The use of the Game Editor Engine, sources, binaries or IDE, herin after refered to as ("GEC"), is governed by this license agreement ("Agreement"). Please make copies for all those in your organization who need to be familiar with the license terms. 
+
+Visit the online purchase page at http://game-editor.com/Buy 
+
+2.1. LICENSE AGREEMENT 
+
+This sets forth the entire agreement between http://game-editor.com ("Licensor") and the Licensee relating to the use of the GEC shipped on hard media or downloadable from the Licensor website, http://game-editor.com, or affiliates. 
+
+2.2. LICENSE GRANT. 
+
+Licensor grants Licensee a single "seat" to an individual, a limited non-exclusive, non-transferable license to use the GEC for the purposes of making source code and object code for an unlimited number of electronic single or multi-user Games ("Games"). 
+
+(a) Licensee may publicly sell, distribute, release, publish, transmit and/or exploit any Games created hereunder. (b) Licensee may have the Games published in any channel by any publisher with no royalties. Licensee does not have to offer the Games to http://game-editor.com for publication. 
+
+2.3. RESTRICTIONS. 
+
+The following restrictions apply to the use of GEC: 
+
+(a) This license is granted to individuals only, and cannot be owned by corporate or business entities. 
+(b) Licensee may not use the License if the annual revenue of the Company employing, partnering, or affiliated in any way with the Licensee is greater than $100,000 annually. Companies that grow to greater than $100,000 annually must upgrade to the Game Editor Site License for each seat of the GEC product. 
+(c) Licensee may not sell any: (i) derivative works of the Engine or IDE, including translations or localizations, other than the Games; redistribute, encumber, sell, rent, lease, sublicense, or otherwise transfer rights to GEC; or (iv) remove or alter any trademark, logo, copyright or other proprietary notices, legends, symbols or labels in GEC. 
+(d) Licensee may not distribute the binaries, source code or documentation to the engine in any manner, without prior written approval from http://game-editor.com and the recipient also as a license to GEC. 
+(e) Licensee may not release Products intended for operation on Game Console Systems including the Microsoft XBox, Sony Playstation 2, Nintendo GameCube, or their successors without first obtaining a separate GEC Game Engine Console License from http://game-editor.com. 
+(f) Licensee may not be a government contractor, government entity, large corporation, or small company performing subcontract work for any of these entities without obtaining a Game Editor Site License. Small companies cannot take royalty advances or development fees from large companies or corporate entities for Games using the GEC without first obtaining a Game Editor Site License. 
+
+2.4. DERIVATIVE WORKS 
+
+A derivative work is defined as any product that incorporates or uses either whole or in part any part of the Game Editor sources, libraries, binaries, resources, documentation or tutorials and cannot create game applications. Any product created from modified Game Editor sources is still defined as a derivative work. A competing work is defined as any product, web page, application, or system that creates game applications. A game application is any application that is written for the express purpose of entertainment. 
+
+The following restrictions apply to the creation of derivative works of GEC: 
+
+(a) Licensee agrees to include in the "About" box or in the credits screen: (i) a link to http://game-editor.com, and (ii) the wording "Derived from Game Editor." 
+(b) Licensee agrees to include in all product pages of any website thats shows the product: (i) a link to http://game-editor.com, and (ii) the wording "Derived from Game Editor." 
+(c) Licensee can't make a competing work 
+
+2.5. THIRD PARTY SOURCE CODES AND COMPONENTS 
+
+Game Editor uses third party source codes and the modifications in the third party source codes are property of their respective owners. The third party components and codes used in Game Editor are property of their respective owners. 
+
+2.6. TERMINATION. 
+
+Without prejudice to any other rights, Licensor may terminate this Agreement if Licensee breaches any of its terms and conditions. Upon termination, Licensee shall destroy all copies of the Engine. Licensee's access to the Game Editor Private SDK forums and access to source upgrades may be pulled at http://game-editor.com sole discretion that Licensee is not abiding by reasonable rules and etiquette regarding such access. 
+
+2.7. DISCLAIMER OF WARRANTY. 
+
+THE SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTY OR GUARANTEED UPDATES OF ANY KIND, INCLUDING WITHOUT LIMITATION THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS THE RESPONSIBILITY OF LICENSEE. SHOULD THE SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, LICENSEE AND NOT LICENSOR OR ITS SUPPLIERS OR RESELLERS ASSUMES THE ENTIRE COST OF ANY SERVICE AND REPAIR. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS AGREEMENT. NO USE OF THE SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER. 
+
+2.8. LIMITATION OF LIABILITY. 
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR OR ITS SUPPLIERS OR RESELLERS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF ADVISED OF THE POSSIBILITY THEREOF, AND REGARDLESS OF THE LEGAL OR EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH THE CLAIM IS BASED. IN ANY CASE, LICENSOR'S ENTIRE LIABILITY UNDER ANY PROVISION OF THIS AGREEMENT SHALL NOT EXCEED IN THE AGGREGATE THE SUM OF THE FEES LICENSEE PAID FOR THIS LICENSE (IF ANY). SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT BE APPLICABLE. LICENSOR IS NOT RESPONSIBLE FOR ANY LIABILITY ARISING OUT OF CONTENT PROVIDED BY LICENSEE OR A THIRD PARTY THAT IS INCORPORATED WITH THE SOFTWARE AND/OR ANY MATERIAL LINKED THROUGH SUCH CONTENT. 
+
+2.9. LICENSEE'S REPRESENTATIONS, WARRANTIES &amp; INDEMNIFICATION. 
+
+Licensee shall defend, indemnify and hold harmless Licensor, its parent, subsidiaries, affiliated companies and partners and their respective officers, directors, employees and agents from and against any and all liabilities, damages, costs and fees (including reasonable attorney's fees) resulting from or relating to: 
+
+(i) any third party claims or lawsuits related to the Games and assignment of intellectual property ownership hereunder; (ii) any third party claims or lawsuits related to any and all obligations Licensee has undertaken to perform hereunder; or (iii) a breach of any representations and warranties Licensee has made hereunder. Such indemnification obligation of Licensee is conditioned upon Licensor immediately notifying Licensee in a writing that sets forth with specificity the claim or action to which such indemnification obligation applies. Licensee will have the right to control the defense of each such claim and any lawsuit or proceeding arising there from. In no event will Licensee settle any such claim or lawsuit or proceeding arising there from without the prior written approval of Licensor. 
+
+2.10. MISCELLANEOUS. 
+
+This Agreement shall be governed by the laws of the country of Brazil, excluding its conflict of law provisions. Unless otherwise agreed in writing, all disputes relating to this Agreement (excepting any dispute relating to intellectual property rights) shall be subject to final and binding arbitration in Brazil, with the losing party paying all costs of arbitration. This Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods. If any provision in this Agreement should be held illegal or unenforceable by a court having jurisdiction, such provision shall be modified to the extent necessary to render it enforceable without losing its intent, or severed from this Agreement if no such modification is possible, and other provisions of this Agreement shall remain in full force and effect. A waiver by either party of any term or condition of this Agreement or any breach thereof, in any one instance, shall not waive such term or condition or any subsequent breach thereof. The provisions of this Agreement which require or contemplate performance after the expiration or termination of this Agreement shall be enforceable notwithstanding said expiration or termination. Licensee may not assign or otherwise transfer by operation of law or otherwise this Agreement or any rights or obligations herein. This Agreement shall be binding upon and shall inure to the benefit of the parties, their successors and permitted assigns. Neither party shall be in default or be liable for any delay, failure in performance (excepting the obligation to pay) or interruption of service resulting directly or indirectly from any cause beyond its reasonable control. The relationship between Licensor and Licensee is that of independent contractors and neither Licensee nor its agents shall have any authority to bind Licensor in any way. If any dispute arises under this Agreement, the prevailing party shall be reimbursed by the other party for any and all legal fees and costs associated therewith. 
+
+___________________________ 
+
+3. GAME EDITOR SITE LICENSE 
+
+If your game or derivative work is not inside of the sections 1 and 2 above, you must agree with our site license. 
+
+Contact us for more details and price at sales@game-editor.com

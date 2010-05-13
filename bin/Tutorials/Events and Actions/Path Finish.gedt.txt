@@ -1,0 +1,5 @@
+This tutorial show how use the "Path Finish" event||Images by Ari Feldman (http://arifeldman.com)
+Now, add the new actor snake and put|snake left and snake right animations
+Now, add two paths:|  snake right and snake left
+Now, use the path finish event to|put the snake in the correct direction
+Keep the snake on horizontal move

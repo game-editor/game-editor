@@ -1,0 +1,2 @@
+This tutorial show how play an explosion sound|when the explosion actor was created
+Use a "Create Actor" event to play the|explosion sound
