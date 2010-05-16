@@ -93,6 +93,7 @@ Config::Config()
 	bEnableToolTips = true;
 	bShowTutorialReminder = true;
 	bShowActorPropertyReminder = true;
+	bShowIPhoneImageSizeReminder = true;
 	bPersistentUndo = true;
 	maxUndoLevels = 50;
 
@@ -112,6 +113,11 @@ Config::Config()
 	if(iniFile.GetValue("ShowActorPropertyReminder").size())
 	{
 		bShowActorPropertyReminder = iniFile.GetBool("ShowActorPropertyReminder");
+	}
+
+	if(iniFile.GetValue("ShowIPhoneImageSizeReminder").size())
+	{
+		bShowIPhoneImageSizeReminder = iniFile.GetBool("ShowIPhoneImageSizeReminder");
 	}
 
 	if(iniFile.GetValue("EmergencySave").size())
@@ -176,8 +182,9 @@ void Config::Save()
 	CDataFile iniFile(GameControl::getEditorPath() + DIR_SEP + "GameEditor.ini");
 
 	iniFile.SetBool("EnableToolTips", bEnableToolTips);
-	iniFile.SetBool("ShowTutorialReminder", bShowTutorialReminder);
+	iniFile.SetBool("ShowTutorialReminder", bShowTutorialReminder);	
 	iniFile.SetBool("ShowActorPropertyReminder", bShowActorPropertyReminder);
+	iniFile.SetBool("ShowIPhoneImageSizeReminder", bShowIPhoneImageSizeReminder);
 	iniFile.SetValue("EmergencySave", emergencySave);
 	iniFile.SetValue("RecentFileList", recentFileList);
 

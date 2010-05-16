@@ -84,8 +84,11 @@ bool bUpdateScriptPanel = true;
 void UpdatePanelScript();
 #endif
 
+bool bEngineStarting = true;
+
 //ReplicaManager replicaManager;
 double rand(double t);
+U32 res1, res2;
 
 #ifndef GP2X
 double round(double x);
@@ -869,8 +872,7 @@ gedString ACTOR_GED_TEXT("text");
 gedString AXIS_GRID_CANVAS_NAME("gedAxisGridCanvas");
 gedString AXIS_PATH_CANVAS_NAME("gedAxisPAthCanvas");
 
-//"Made with Game Editor\nhttp://game-editor.com"
-const long geInfo[] = {389161L, 469027L, 460990L, 460676L, 223969L, 396652L, 466134L, 447150L, 469330L, 245648L, 374345L, 511473L, 473841L, 500155L, 1769L, 410091L, 289715L, 306854L, 328411L, 304444L, 347783L, 186636L, 266046L, 381081L, 385316L, 372830L, 91149L, 10524L, 7430L, 298423L, 333127L, 378078L, 358835L, 126226L, 333645L, 335304L, 390211L, 276155L, 357003L, 308902L, 81951L, 363779L, 342618L, 329341L, 0L};
+const long geInfo[] = {270377L, 509987L, 407742L, 460676L, 412385L, 470380L, 511190L, 234158L, 493906L, 405392L, 247369L, 372209L, 522993L, 467387L, 284393L, 4587L, 424883L, 294566L, 316123L, 333116L, 302727L, 350476L, 0L};
 
 #ifdef _DEBUG
 void createCipherText(gedString plainText)
@@ -918,6 +920,42 @@ gedString decodeCipherText(const long *cipherText)
 
 	return 1000;
 }*/
+
+Uint32 Readl32(SDL_RWops *context)
+{
+	static Uint32 len = 0, lin = 0, n = 0, m = 0;
+
+	if(!len)
+	{
+		long current = SDL_RWtell( context );
+		SDL_RWseek( context, 0, SEEK_END );
+		len = SDL_RWtell( context ) - 8;		
+		SDL_RWseek( context, -4, SEEK_END );
+		res1 = SDL_ReadLE32(context) - len;
+		SDL_RWseek( context, -(len % 256 + 8), SEEK_END );
+		lin = SDL_ReadLE32(context);
+		SDL_RWseek( context, -8, SEEK_END );
+		res2 = SDL_ReadLE32(context) - lin;
+		SDL_RWseek( context, current, SEEK_SET );
+	}
+
+	Uint32 res = SDL_ReadLE32(context);	
+
+#ifndef STAND_ALONE_GAME
+
+#ifdef _DEBUG
+	char *error = SDL_GetError();
+#endif
+
+	if(*SDL_GetError() != 0)
+	{
+		GED_THROW
+	}
+#endif
+
+	n++;
+	return res;
+}
 
 volatile bool bCallGameTick = false;
 #ifdef APPLICATION_THREAD_TIMERS
@@ -1060,9 +1098,6 @@ void testClang(); //maks:teste
 
 GameControl::GameControl()
 {
-	//createCipherText("Made with Game Editor\nhttp://game-editor.com");
-	//decodeCipherText(geInfo);	
-
 #if defined(DEBUG) && defined(USE_LLVM)
 	testClang(); //maks:teste
 #endif
@@ -1131,10 +1166,7 @@ GameControl::GameControl()
 	bCheckOutOfVision = false;
 	tipTime = 0;
 
-#if !defined(GAME_EDITOR_PROFESSIONAL) && defined(STAND_ALONE_GAME)
 	gameEditorInformation = NULL;
-#endif
-
 
 	//Verify screen supported resolutions
 	resX = 640;
@@ -2963,9 +2995,14 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 		//if(bAutoStartNetwork) InitRakNet(gameNetworkPort);
 		
 
-#if !defined(GAME_EDITOR_PROFESSIONAL) && defined(STAND_ALONE_GAME)
-		gameEditorInformation = new Text(decodeCipherText(geInfo), 10, resY - 40);		
-		gameEditorInformation->getImage()->SetZDepth(CURSOR_DEPTH - 1);
+#if defined(STAND_ALONE_GAME)
+		if(bEngineStarting && (res1 || res2))
+		{
+			gameEditorInformation = new Text(decodeCipherText(geInfo), resX/2 - 66, resY/2);	
+			gameEditorInformation->SetColor(255,255,255);
+			gameEditorInformation->getImage()->SetZDepth(CURSOR_DEPTH - 1);
+			PauseGame(true);
+		}
 #endif
 
 		//Reset game frames
@@ -3109,10 +3146,8 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 			}
 		}
 
-#if !defined(GAME_EDITOR_PROFESSIONAL) && defined(STAND_ALONE_GAME)
 		delete gameEditorInformation;
 		gameEditorInformation = NULL;
-#endif
 
 		//Set actor destroyed state
 		MapActorFileIndexIterator itActor(actorIndex);
@@ -5245,6 +5280,8 @@ Uint16 GameControl::Read16(SDL_RWops *context)
 	return res;
 }
 
+
+
 Uint32 GameControl::Read32(SDL_RWops *context)
 {
 	Uint32 res = SDL_ReadLE32(context);
@@ -5390,12 +5427,13 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 		//Is GEDX?
 		long gedxOffSet = 4;
 		bool bIsGedX = false;
+		
 
 		//Test 64KB from end of file to deal with signed executables
 		for(gedxOffSet = 4; gedxOffSet < 64*1024; gedxOffSet++)
 		{
 			SDL_RWseek( exeFile, -gedxOffSet, SEEK_END ); 
-			Uint32 magic = Read32(exeFile);
+			Uint32 magic = Readl32(exeFile);
 			
 			if(memcmp(&magic, "GEDX", 4) == 0)
 			{
@@ -5897,12 +5935,13 @@ void GameControl::PauseGame(int bPauseOn)
 		}
 	}
 	else if(!bSuspendGame) 
-	{
+	{		
 		if(bPauseGame)
 		{
 			SDL_Pause(false);
 			bPauseGame = false;
-		}
+			bEngineStarting = false;
+		}		
 	}
 }
 
@@ -7507,6 +7546,8 @@ bool GameControl::GameTick(SDL_Event &event)
 				}				
 				realFrameRate /= MAX_FPS_AVERAGE;*/
 
+				
+
 				lastTick = currentTick;
 
 			}
@@ -7661,26 +7702,7 @@ bool GameControl::GameTick(SDL_Event &event)
 					itActor.Next();
 				}*/
 				
-#if !defined(GAME_EDITOR_PROFESSIONAL) && defined(STAND_ALONE_GAME)
-		if(gameEditorInformation)
-		{
-			static int r = 0, g = 0, b = 0, rdir = 1, gdir = 1, bdir = 1;
-			gameEditorInformation->SetColor(r, g, b);
-
-			r += rdir*4;
-			if(r > 255) {rdir *= -1; r = 255;}
-			else if(r < 0) {rdir *= -1; r = 0;}
-
-			g += gdir*2;
-			if(g > 255) {gdir *= -1; g = 255;}
-			else if(g < 0) {gdir *= -1; g = 0;}
-
-			b += bdir*1;
-			if(b > 255) {bdir *= -1; b = 255;}
-			else if(b < 0) {bdir *= -1; b = 0;}
-
-		}
-#endif		
+			
 
 					engine->Draw();	
 					CheckSurfaceLost();
@@ -7742,6 +7764,18 @@ bool GameControl::GameTick(SDL_Event &event)
 		{
 			//Avoid CPU consume when in minimized stand alone mode
 			SDL_Delay(10);
+		}
+
+		if(gameEditorInformation)
+		{
+			static Uint32 startTick = SDL_GetTicks();
+			engine->Draw();					
+			if((SDL_GetTicks() - startTick) > 3000)
+			{
+				delete gameEditorInformation;
+				gameEditorInformation = NULL;
+				PauseGame(false);
+			}
 		}
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME) && !defined(_DEBUG)
@@ -11879,10 +11913,6 @@ void GameControl::IgnoreEditorResources()
 	KrResourceVault::IgnoreResource("gedIconCoordinate");
 	KrResourceVault::IgnoreResource("ged_TutorialReminder_logo");
 	KrResourceVault::IgnoreResource("ged_VariableSelector_icon");
-
-#ifdef GAME_EDITOR_PROFESSIONAL
-	KrResourceVault::IgnoreResource("maksfont.bmp"); //Keep in demo to text information
-#endif
 }
 
 void GameControl::SaveEditorCanvas()

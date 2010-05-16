@@ -258,6 +258,7 @@ AboutDlg::AboutDlg()
 
 	text = AddText("Developed by Makslane Araujo Rodrigues", 10, y);
 	text = AddText("makslane@game-editor.com", text->Left(), text->Down());	
+	text = AddText("Co-developer: Andreas Kindlbacher (akr)", text->Left(), text->Down() + 10);	
 
 
 	text = AddText("Collaboration:", text->Left(), text->Down()+10);
@@ -277,13 +278,15 @@ AboutDlg::AboutDlg()
 #endif
 
 	//Show info
-#ifndef GAME_EDITOR_HOME_EDITION	
+/*#ifndef GAME_EDITOR_HOME_EDITION	
 	text = AddText("Registered to: ", 10, y + 2);
 	text = AddText(userName, text->Right(), text->Top());	
 
 	text = AddText("Remaining update days: ", 10, text->Down() + 2);
 	text = AddText(updateDays, text->Right(), text->Top());
-#endif
+
+	y = DrawHLine(y + 8);
+#endif*/
 
 
 
@@ -291,7 +294,7 @@ AboutDlg::AboutDlg()
 	//Library logos
 	EditorDirectory editDir;
 
-	y = DrawHLine(text->Down() + 8);
+	
 	/*kyraLogo = new Actor("kyraLogo", this);
 	kyraLogo->AddAnimation("makskyra1.jpg", "makskyra1.jpg", 1, 1, 0, 0);
 

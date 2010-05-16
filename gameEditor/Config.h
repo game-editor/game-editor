@@ -77,8 +77,9 @@ public:
 	void Save();
 
 	bool getEnableToolTips() {return bEnableToolTips;}
-	bool getShowTutorialReminder() {return bShowTutorialReminder;}
+	bool getShowTutorialReminder() {return bShowTutorialReminder;}	
 	bool getShowActorPropertyReminder() {return bShowActorPropertyReminder;}
+	bool getShowIPhoneImageSizeReminder() {return bShowIPhoneImageSizeReminder;}
 	gedString getEmergencySave() {return emergencySave;}
 	gedString getRecentFileList() {return recentFileList;}
 
@@ -93,8 +94,9 @@ public:
 	bool getPersistentUndo() {return bPersistentUndo;}
 
 	void setEnableToolTips(bool value) {bEnableToolTips = value;}
-	void setShowTutorialReminder(bool value) {bShowTutorialReminder = value;}
+	void setShowTutorialReminder(bool value) {bShowTutorialReminder = value;}	
 	void setShowActorPropertyReminder(bool value) {bShowActorPropertyReminder = value;}
+	void setShowIPhoneImageSizeReminder(bool value) {bShowIPhoneImageSizeReminder = value;}
 	void setEmergencySave(gedString value) {emergencySave = value;}
 	void setRecentFileList(gedString value) {recentFileList = value;}
 
@@ -117,6 +119,7 @@ private:
 	bool bEnableToolTips;
 	bool bShowTutorialReminder;
 	bool bShowActorPropertyReminder;
+	bool bShowIPhoneImageSizeReminder;
 	gedString emergencySave;
 	gedString recentFileList;
 

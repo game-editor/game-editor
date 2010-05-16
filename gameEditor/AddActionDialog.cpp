@@ -563,6 +563,10 @@ void AddActionDialog::OnButton(Button *button, int buttonId)
 				SDL_RWops *src = ged_SDL_RWFromFile(pathArq.c_str(), "rb");
 				if(src)
 				{
+					int nh = atol(hframes->GetText().c_str());
+					int nv = atol(vframes->GetText().c_str());
+					int fps = atol(editFps->GetText().c_str());
+
 					SDL_RWclose(src);
 
 					SDL_Surface* surface = ged_IMG_Load(pathArq.c_str());
@@ -570,6 +574,19 @@ void AddActionDialog::OnButton(Button *button, int buttonId)
 					{
 						new PanelInfo("This format is not supported or file is corrupted\nPlease, select other file");
 						return;
+					}
+
+					if(((surface->w/nh) > 1019 || (surface->h/nv) > 1019) && Config::Get()->getShowIPhoneImageSizeReminder())
+					{
+						//Remove this when solve the ticket http://game-editor.com/ticket/24
+						
+						PanelQuestion *panel = new PanelQuestion("If you are creting an iPhone game, the max frame size must be (1019x1019). \nShow this message again?", "Warning");
+						if(panel->Wait() == CANCEL_BUTTON)
+						{
+							Config::Get()->setShowIPhoneImageSizeReminder(false);							
+						}
+
+						delete panel;
 					}
 
 					if(surface->w >= 8192 || surface->h >= 8192)
@@ -582,9 +599,7 @@ void AddActionDialog::OnButton(Button *button, int buttonId)
 					//Ok
 					SDL_FreeSurface( surface );
 					
-					int nh = atol(hframes->GetText().c_str());
-					int nv = atol(vframes->GetText().c_str());
-					int fps = atol(editFps->GetText().c_str());
+					
 					
 					if((nh < 1 || nh >= 16000) && (nv < 1 || nv >= 16000) && fileType->GetText() != MULTIPLE_FILE)
 					{

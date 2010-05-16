@@ -379,7 +379,9 @@ If all pixels in the image have the same color (solid image) the\n\
 image will be consider solid\n\
 \n\
 Set your animation frame rate (frames by second)\n\
-If the animation has only one frame, that parameter will be ignored"
+If the animation has only one frame, that parameter will be ignored\n\
+\n\
+If you are creting an iPhone game, the max frame size must be (1019x1019)" ////Remove this when solve the ticket http://game-editor.com/ticket/24
 
 #define TIP_ANIMATION_FILE			"\
 Select the animation file\n\
@@ -1703,9 +1705,7 @@ private:
 
 	static Uint32 lastGameFileVersion;
 
-#if !defined(GAME_EDITOR_PROFESSIONAL) && defined(STAND_ALONE_GAME)
 	Text *gameEditorInformation;
-#endif
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
 	long checkFrame, executeUpToFrame, totalFrames;

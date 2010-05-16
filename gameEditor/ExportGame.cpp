@@ -40,11 +40,12 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 You can export your game in a single executable file with all game data, animations and sounds.\n\
 Available formats:\n\
 \n\
-Windows Executable: Windows executable file (95, 98, Me, NT, 2000, XP)\n\
-Mac OSX Executable: Mac OSX 10.5 and above\n\
+Windows Executable: Windows executable file (95, 98, Me, NT, 2000, XP, Vista, 7)\n\
+Mac OS X Executable: Mac OS X 10.5 and above\n\
+iPhone Executable\n\
 Pocket PC / Handheld PC Executable: Executable file compatible with Pocket PC and Handheld PC\n\
     Supports:\n\
-      - Windows CE OS 3.0 (Pocket PC 2002, Windows Mobile 2003, 2005) and later\n\
+      - Pocket PC / Windows Mobile (2003, 2005, 6, 6.5) Handheld PC\n\
       - ARM processors (ARM, StrongARM, XScale, OMAP, PXA, ...)\n\
       - Full screen mode only\n\
 	  - VGA and QVGA devices\n\
@@ -52,7 +53,7 @@ Pocket PC / Handheld PC Executable: Executable file compatible with Pocket PC an
 \n\
 Windows Mobile-based Smartphone Executable: Smartphone executable file\n\
     Supports:\n\
-      - Windows CE OS 3.0 (Pocket PC 2002, Windows Mobile 2003, 2005) and later\n\
+      - Pocket PC / Windows Mobile (2003, 2005, 6, 6.5) Handheld PC\n\
       - ARM processors (ARM, StrongARM, Scale, OMAP, PXA...)\n\
 	  - MMC/SD expansion card is recommended\n\
       - Full screen mode only\n\
@@ -142,7 +143,7 @@ ExportGame::ExportGame()
 	//dir->AddFilter("*"); //Can add an empty filter to linux files?
 
 	listSystem->AddText("Windows Executable");
-	listSystem->AddText("MAC OSX Executable");
+	listSystem->AddText("Mac OS X Executable");
 	listSystem->AddText("Pocket PC / Handheld PC Executable");
 	listSystem->AddText("Windows Mobile-based Smartphone Executable");
 	listSystem->AddText("GP2X Executable");
@@ -354,7 +355,7 @@ void ExportGame::OnButton(Button *button, int buttonId)
 				exportType = POCKETPC_DATA;
 			}
 			else if(listSystem->GetText() == "Linux Executable") exportType = LINUX_EXECUTABLE;
-			else if(listSystem->GetText() == "MAC OSX Executable") exportType = MACOSX_EXECUTABLE;
+			else if(listSystem->GetText() == "Mac OS X Executable") exportType = MACOSX_EXECUTABLE;
 			else if(listSystem->GetText() == "iPhone Executable") exportType = IPHONE_EXECUTABLE;
 			else if(listSystem->GetText() == "GP2X Executable") 
 			{
