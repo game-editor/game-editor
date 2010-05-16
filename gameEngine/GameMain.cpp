@@ -46,6 +46,8 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "system.h"
 #if __iPhone__
 const char *FtpGet(char *FtpUrl, char *fPath);
+void startFtp(void);
+
 #endif
 #if __MACOSX__
 const char *getResourcePath(void);
@@ -1202,10 +1204,15 @@ void EngineLoad(const char *gamePath)
 
 #ifdef __iPhone__
 		dir=dir.GetFilePath()+"/Documents";
-
+#if defined(iPhone_Player)
+		startFtp();
+		chdir(dir.getCharBuf());
+#endif
+		
 #ifdef __TestEngine__
-		if(FtpGet("ftp://ftp1062526-ged:fantastic@ftp.visionware.de/gameEditor.dat",(dir+"/ftpged.dat").getCharBuf())==0)
-		   chdir(dir.getCharBuf());
+
+		//if(FtpGet("ftp://ftp1062526-ged:fantastic@ftp.visionware.de/gameEditor.dat",(dir+"/ftpged.dat").getCharBuf())==0)
+		//   chdir(dir.getCharBuf());
 #endif
 
 #endif
@@ -1450,7 +1457,10 @@ extern "C" int SDL_main( int argc, char *argv[] )
 #endif
 
 	atexit(ExitError);
+		
+		
 	SDL_main1( argc, argv );
+
 	bShowExitErrorMessage = false;
 
 #if !defined(STAND_ALONE_GAME) && defined(WIN32) && !defined(LLVM)
@@ -1494,8 +1504,9 @@ extern "C" int main(int argc, char *argv[])
 	InitGP2X();
 #endif
 #endif
-
 	return(SDL_main(argc, argv));
 }
 
 #endif
+
+
