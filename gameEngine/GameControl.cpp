@@ -5781,7 +5781,6 @@ void GameControl::SDL_Pause(int bPause)
 
 	PauseNetwork(bPause);
 
-#if __iPhone__
 	if(bPause)
 	{		
 		SDL_PauseOn();
@@ -5790,8 +5789,6 @@ void GameControl::SDL_Pause(int bPause)
 	{
 		SDL_PauseOff();
 	}
-#endif
-
 }
 
 void GameControl::PauseNetwork(int bPause)
@@ -7768,9 +7765,9 @@ bool GameControl::GameTick(SDL_Event &event)
 
 		if(gameEditorInformation)
 		{
-			static Uint32 startTick = SDL_GetTicks();
+			static Uint32 startTick = SDL_GetSystemTicks();
 			engine->Draw();					
-			if((SDL_GetTicks() - startTick) > 3000)
+			if((SDL_GetSystemTicks() - startTick) > 3000)
 			{
 				delete gameEditorInformation;
 				gameEditorInformation = NULL;
