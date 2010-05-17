@@ -172,6 +172,7 @@ void Inf1(gedString &userName, gedString &updateDays)
 #define HEIGHT	345
 
 gedString collaboration("\
+  Carlos Varela (CarlosVarela)\n\
   Andreas Sturmer (StarFishDesign)\n\
   Anthony Artmann (jazz_e_bob)\n\
   Bjorn Halldor Bjornsson (DarkYeti)\n\
