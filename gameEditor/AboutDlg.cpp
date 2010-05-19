@@ -260,6 +260,7 @@ AboutDlg::AboutDlg()
 	text = AddText("Developed by Makslane Araujo Rodrigues", 10, y);
 	text = AddText("makslane@game-editor.com", text->Left(), text->Down());	
 	text = AddText("Co-developer: Andreas Kindlbacher (akr)", text->Left(), text->Down() + 10);	
+	text = AddText("andreas@game-editor.com", text->Left(), text->Down());	
 
 
 	text = AddText("Collaboration:", text->Left(), text->Down()+10);
