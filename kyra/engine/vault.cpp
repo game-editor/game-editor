@@ -145,7 +145,7 @@ bool KrResourceVault::LoadDatFileFromMemory( void* memory, int size )
 		return false;
 	}
 	bool success = LoadDatFile( data );
-	SDL_RWclose( data );
+	if(!indexedData) SDL_RWclose( data );
 	//SDL_FreeRW( data );;
 	return success;
 }

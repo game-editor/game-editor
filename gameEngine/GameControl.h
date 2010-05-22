@@ -1705,7 +1705,7 @@ private:
 
 	static Uint32 lastGameFileVersion;
 
-	Text *gameEditorInformation;
+	Actor *gameEditorInformation;
 
 #if defined(GAME_EDITOR_PROFESSIONAL) && defined(WIN32) && !defined(STAND_ALONE_GAME)
 	long checkFrame, executeUpToFrame, totalFrames;

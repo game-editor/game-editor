@@ -171,11 +171,11 @@ void Inf1(gedString &userName, gedString &updateDays)
 #define WIDTH	300
 #define HEIGHT	345
 
-gedString collaboration("\
-  Carlos Varela (CarlosVarela)\n\
+gedString collaboration("\  
   Andreas Sturmer (StarFishDesign)\n\
   Anthony Artmann (jazz_e_bob)\n\
   Bjorn Halldor Bjornsson (DarkYeti)\n\
+  Carlos Varela (CarlosVarela)\n\
   Christopher Hill (trajecto)\n\
   Ingrid Sanasse (ingsan)\n\
   John Lane (HillBilly)\n\
@@ -296,12 +296,6 @@ AboutDlg::AboutDlg()
 	//Library logos
 	EditorDirectory editDir;
 
-	
-	/*kyraLogo = new Actor("kyraLogo", this);
-	kyraLogo->AddAnimation("makskyra1.jpg", "makskyra1.jpg", 1, 1, 0, 0);
-
-	sdlLogo = new Actor("sdlLogo", this);
-	sdlLogo->AddAnimation("maksSDL_now.gif", "maksSDL_now.gif", 1, 1, 0, 0);*/
 
 	text = AddText("This software uses:", 10, y);
 

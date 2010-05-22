@@ -143,7 +143,7 @@ typedef GlMapIterator< gedString, stAudioIndex, GlStringHash >		MapAudioFileInde
 SDL_Surface* ToSupportedSurface(SDL_Surface* surface, bool bRemoveOld = true);
 SDL_Surface* ToSurface32(SDL_Surface* surface);
 SDL_Surface* LoadSurface(	const char* filename, bool bTryEditor = true/*, KrRGBA &transRgba*/);
-SDL_Surface* LoadSurfaceEditor(const char *fileName);
+SDL_Surface* LoadSurfaceEditor(const char *fileName, KrResourceVault *vault = NULL);
 
 void EnableCursor();
 void DisableCursor();

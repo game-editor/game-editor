@@ -606,13 +606,14 @@ void stCursor::Load(SDL_RWops *src)
 	GameControl::Read(src, &expansion, sizeof(expansion), 1);
 }
 
-SDL_Surface* LoadSurfaceEditor(const char *fileName)
+SDL_Surface* LoadSurfaceEditor(const char *fileName, KrResourceVault *vault)
 {
 	//Load surface from internal editor images
 
 	SDL_Surface* surface = NULL;	
-
-	KrBinaryDataResource* binData = engine->Vault()->GetBinaryDataResource(fileName);
+	SDL_ClearError();
+	if(!vault) vault = engine->Vault();
+	KrBinaryDataResource* binData = vault->GetBinaryDataResource(fileName);
 	if(!binData)
 		return NULL;
 	
@@ -621,9 +622,7 @@ SDL_Surface* LoadSurfaceEditor(const char *fileName)
 	char *ext = (char *)strrchr(fileName, '.');
 	if(ext)	ext++;
 	
-#ifndef STAND_ALONE_GAME
 	surface = IMG_LoadTyped_RW(src, 1, ext);
-#endif //#ifndef STAND_ALONE_GAME
 				
 	return surface;
 }
