@@ -171,7 +171,7 @@ void Inf1(gedString &userName, gedString &updateDays)
 #define WIDTH	300
 #define HEIGHT	345
 
-gedString collaboration("\  
+gedString collaboration("\
   Andreas Sturmer (StarFishDesign)\n\
   Anthony Artmann (jazz_e_bob)\n\
   Bjorn Halldor Bjornsson (DarkYeti)\n\
