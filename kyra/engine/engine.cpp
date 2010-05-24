@@ -346,11 +346,12 @@ void KrEngine::InitOpenGL(int w, int h, float r, float g, float b) //maks
 	SDL_CurrentVideo->glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
 	//SDL_CurrentVideo->glHint(GL_GENERATE_MIPMAP_HINT, GL_DONT_CARE);
 	SDL_CurrentVideo->glDisable(GL_DITHER);
-
+#ifdef DEBUG
 	GLint maxText;
 	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxText);
+
 	GLOUTPUT("OpenGL MaxTextureSize: %d\n",maxText);
-	
+#endif	
 #ifdef GL_OES_VERSION_1_1
 	SDL_CurrentVideo->glDisable(GL_MULTISAMPLE);
 #endif
