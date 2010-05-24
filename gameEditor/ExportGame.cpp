@@ -42,7 +42,6 @@ Available formats:\n\
 \n\
 Windows Executable: Windows executable file (95, 98, Me, NT, 2000, XP, Vista, 7)\n\
 Mac OS X Executable: Mac OS X 10.5 and above\n\
-iPhone Executable\n\
 Pocket PC / Handheld PC Executable: Executable file compatible with Pocket PC and Handheld PC\n\
     Supports:\n\
       - Pocket PC / Windows Mobile (2003, 2005, 6, 6.5) Handheld PC\n\
@@ -148,10 +147,10 @@ ExportGame::ExportGame()
 	listSystem->AddText("Windows Mobile-based Smartphone Executable");
 	listSystem->AddText("GP2X Executable");
 	listSystem->AddText("Linux Executable");
-	listSystem->AddText("iPhone Executable");
+	//listSystem->AddText("iPhone Executable");
 	
 
-	listSystem->AddText("Game Data Only");
+	listSystem->AddText("Game Data Only (Use this for standalone engines like iPhone, iPad..)");
 	listSystem->AddText("Game Data Only for Pocket PC, Handheld PC, Smartphone or GP2X");
 
 	if(!exportName.length() /*|| actualGameName != GameControl::Get()->getGameName()*/)
