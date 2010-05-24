@@ -309,7 +309,7 @@ void KrEngine::InitOpenGL(int w, int h, float r, float g, float b) //maks
 #if __iPhone__	
     if (w  > h) // AKR, switch to landscape
 	{
-		SDL_CurrentVideo->glViewport(0, 0, 320, 480);
+		SDL_CurrentVideo->glViewport(0, 0, h, w);
 		SDL_CurrentVideo->glRotatef(-90, 0, 0, 1);
 	}
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 0); //AKR better performance settings
@@ -347,6 +347,10 @@ void KrEngine::InitOpenGL(int w, int h, float r, float g, float b) //maks
 	//SDL_CurrentVideo->glHint(GL_GENERATE_MIPMAP_HINT, GL_DONT_CARE);
 	SDL_CurrentVideo->glDisable(GL_DITHER);
 
+	GLint maxText;
+	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxText);
+	GLOUTPUT("OpenGL MaxTextureSize: %d\n",maxText);
+	
 #ifdef GL_OES_VERSION_1_1
 	SDL_CurrentVideo->glDisable(GL_MULTISAMPLE);
 #endif
