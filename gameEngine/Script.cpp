@@ -1937,37 +1937,59 @@ static val_t eic_PlayMusic(void)
     return v;
 }
 
-static val_t eic_GetJoystick1Axis(void)
-{	extern SDL_Joystick * joystick;
-    val_t v;
-	v.ival = 0;
+
+static val_t eic_getAccelerometer(void)
+{	
+	extern SDL_Joystick * joystick;
+	val_t v;
+    static Vector vector; /* create some memory */
+
+	vector.x = vector.y = vector.z = 0.0;
 	
+	if(joystick && GameControl::Get()->getGameMode())
+	{
+		//Normalize the value returned by SDL (16bit signed value)
+		vector.x = SDL_JoystickGetAxis(joystick, 0) / 32767.0; 							
+		vector.y = SDL_JoystickGetAxis(joystick, 1) / 32767.0; 							
+		vector.z = SDL_JoystickGetAxis(joystick, 2) / 32767.0; 							
+	}
+
+    /* set safe */
+    v.p.sp = v.p.p = &vector;
+    v.p.ep = (char*)&vector + sizeof(Vector);
+
+    return v;
+}
+
+static val_t eic_GetJoystick1Axis(void)
+{       
+	extern SDL_Joystick * joystick;
+	val_t v;
+	v.ival = 0;
+
 	if(GameControl::Get()->getGameMode())
 	{
+		//Keep not normalized now for the iPhone beta test compatibility
+		//When release this function the return value must be normalized (-1.0 to 1.0)
 		v.ival = SDL_JoystickGetAxis(joystick,arg(0,getargs(),int)); 
-							
 	}
-	
-    return v;
-	
-	
+
+	return v;
 }
 
 static val_t eic_GetJoystick1Button(void)
-{	extern SDL_Joystick * joystick;
-    val_t v;
+{       
+	extern SDL_Joystick * joystick;
+	val_t v;
 	v.ival = 0;
-	
+
 	if(GameControl::Get()->getGameMode())
 	{
 		v.ival = SDL_JoystickGetButton(joystick,arg(0,getargs(),int)); 
-		
 	}
-	
-    return v;
-	
-	
-}
+
+	return v;
+}	
 
 static val_t eic_PlayMusic2(void)
 {
@@ -2478,6 +2500,13 @@ gedString timeStruct = "typedef struct st_Time\
 			unsigned long sec_utc;\
 		} stTime;";
 
+gedString vectorStruct = "typedef struct st_Vector\
+		{\
+			double x;\
+			double y;\
+			double z;\
+		} Vector;";
+
 MapUsedActor Script::mapLocalUserVar;
 
 class SymInfo
@@ -2950,6 +2979,9 @@ void Script::Init()
 	//Time struct
 	EiC_parseString((char *)timeStruct.c_str());
 
+	//Vector struct
+	EiC_parseString((char *)vectorStruct.c_str());
+
 	//Keyboard defination
 	sprintf(buf, "KEY_BACKSPACE=%ld", SDLK_BACKSPACE); dodefine(buf);
 	sprintf(buf, "KEY_TAB=%ld", SDLK_TAB); dodefine(buf);
@@ -3126,11 +3158,21 @@ void Script::Init()
 #endif
 	
 	//Internal functions
+
+	//Get the 3 accelerometer axis info
+	EiC_add_builtinfunc("getAccelerometer", eic_getAccelerometer);
+	EiC_parseString("Vector getAccelerometer();");
+
+	///////////////////////////////////////////////////////
+	//Need to be have an event (like the mouse button down event)
+	//There is no official support for joystick until create the joystick button event 
+	//Keep the functions here now for the iPhone beta test compatibility
 	EiC_add_builtinfunc("GetJoystick1Axis", eic_GetJoystick1Axis);
 	EiC_parseString("int GetJoystick1Axis(int axis);");
 
 	EiC_add_builtinfunc("GetJoystick1Button", eic_GetJoystick1Button);
 	EiC_parseString("int GetJoystick1Button(int num);");
+	///////////////////////////////////////////////////////
 	
 	EiC_add_builtinfunc("GetKeyState", eic_GetKeyState);
 	EiC_parseString("char *GetKeyState(void);");

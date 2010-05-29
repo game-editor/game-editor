@@ -753,6 +753,27 @@ a:hover {
           Editor Syntax:</font><br>
           FollowMouse(&quot;GamePaddle&quot;, X_AXIS);</font></h5>
       </blockquote>
+      
+      
+      <h5><font color="#009933" face="Verdana, Arial, Helvetica, sans-serif"><br>
+        </font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b><a name="getAccelerometer" id="A2"></a></b></font><font color="#009933" face="Verdana, Arial, Helvetica, sans-serif"> 
+        getAccelerometer: </font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Get the value from the accelerometer (on the desktop get the joystick axis values). </font></h5>
+      <h5><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><b>Vector getAccelerometer()</b></font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><br>
+        <b><font face="Verdana, Arial, Helvetica, sans-serif">The Vector is 
+        a struct with the follow members:<br>
+        <br>
+        x: -1.0 to 1.0<br>
+        y: -1.0 to 1.0<br>
+        z: -1.0 to 1.0<br></font></b></h5>
+      <blockquote> 
+        
+        <h5><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><br>
+          </font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033"><font color="#009933">Script 
+          Editor Syntax:</font><br>
+          Vector v = getAccelerometer();<br />
+          x = v.x;</font></h5>
+      </blockquote>
+      
       <h5><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><b><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="MoveTo" id="MoveTo"></a></font></b></font><font color="#009933" face="Verdana, Arial, Helvetica, sans-serif"> 
         MoveTo: </font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#000033">Move 
         an Actor to a specified position at specified velocity (speed).</font></h5>
@@ -970,7 +991,7 @@ a:hover {
       <blockquote> 
         <h5 align="left" class="style1"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"> 
           
-		  actorname: The name of the actor who’s current frame is to be drawn on the canvas actor.<br> 
+		  actorname: The name of the actor who?s current frame is to be drawn on the canvas actor.<br> 
 		  x: The x location to draw the image.<br>
 		  y: The y location to draw the image.<br>
 		  scale: The size to draw the image (greater than 0.0)</font></h5>
@@ -1107,7 +1128,7 @@ a:hover {
       <h5><font color="#009933" face="Verdana, Arial, Helvetica, sans-serif"><a name="setPan"></a>setPan: 
         <font color="#000033">Set the pan of sounds (Doesn't work with music).<br>
         </font><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><b>channel: 
-        use 0 to affect all sound channels</b></font><font color="#000033"> <br>
+        use 0 to affect all sound channels, except the music.<font color="#000033">&nbsp;</font></b></font><font color="#000033"> <br>
         <font size="2">pan: -1.0 (full left) to 1.0 (full right)</font></font> 
         </font></h5>
       <h5><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><b>void 
@@ -1121,8 +1142,7 @@ a:hover {
         <a name="setVolume"></a>setVolume: <font color="#000033">Set the sound 
         or the music volume<br>
         </font><font color="#009933" face="Verdana, Arial, Helvetica, sans-serif"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><b>channel: 
-        use 0 to affect all sound channels</b></font><font color="#000033"> </font></font><font color="#000033"> 
-        <br>
+        use 0 to affect all sound channels, except the music.</b></font><font color="#000033">&nbsp;</font></font><font color="#000033"><br>
         volume: 0.0 to 1.0 </font></font></h5>
       <h5><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><b>void 
         setVolume(int channel, double volume)</b></font></h5>
@@ -1135,7 +1155,8 @@ a:hover {
         <font color="#000033">Stop the sound or music played on the specified 
         channel.<br>
         </font><font color="#009933" face="Verdana, Arial, Helvetica, sans-serif"><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><b>channel: 
-        use 0 to stop all sounds</b></font></font></font></h5>
+        use 0 to stop all sounds, except the music.<font color="#000033">&nbsp;</font><font color="#000033"><br>
+            </font></b></font></font></font></h5>
       <h5><font color="#000033" face="Verdana, Arial, Helvetica, sans-serif"><b>void 
         stopSound(int channel)</b></font></h5>
       <blockquote> 
@@ -1821,7 +1842,7 @@ KEY_GP2X_BUTTON_VOLDOWN<br>
         </font><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif">stTime 
         getTime();</font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></h5>
       <h5><b><font face="Verdana, Arial, Helvetica, sans-serif">The stTime is 
-        a struct with folow members:<br>
+        a struct with follow members:<br>
         <br>
         sec: Seconds after minute (0 - 59)<br>
         min: Minutes after hour (0 - 59)<br>

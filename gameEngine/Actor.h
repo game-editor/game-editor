@@ -422,6 +422,14 @@ public:
 	int x, y;
 };
 
+class Vector
+{
+public:
+	double x;
+	double y;
+	double z;
+};
+
 class Actor
 {
 public:
