@@ -84,14 +84,13 @@ bool bUpdateScriptPanel = true;
 void UpdatePanelScript();
 #endif
 
-bool bEngineStarting = true;
-
 //ReplicaManager replicaManager;
 double rand(double t);
 U32 res1 = 1, res2 = 2;
 
 KrResourceVault *vault2 = NULL;
 KrSprite *kr2 = NULL;
+bool bGEInfo = false;
 
 #ifndef GP2X
 double round(double x);
@@ -172,6 +171,7 @@ NormalPriority::~NormalPriority()
 }
 #endif
 
+U32 b4, b8;
 SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags);
 
 extern gedString sGameEditorCaption;
@@ -10316,23 +10316,17 @@ gedString decodeCipherText(const long *cipherText)
 
 Uint32 Readl32(SDL_RWops *context)
 {
-	static Uint32 len = 0, lin = 0, n = 0, m = 0;
-
-	if(!len)
-	{
-		long current = SDL_RWtell( context );
-		SDL_RWseek( context, 0, SEEK_END );
-		len = SDL_RWtell( context ) - 8;		
-		SDL_RWseek( context, -4, SEEK_END );
-		res1 = SDL_ReadLE32(context) - len;
-		SDL_RWseek( context, -(len % 256 + 8), SEEK_END );
-		lin = SDL_ReadLE32(context);
-		SDL_RWseek( context, -8, SEEK_END );
-		res2 = SDL_ReadLE32(context) - lin;
-		SDL_RWseek( context, current, SEEK_SET );
-	}
-
-	Uint32 res = SDL_ReadLE32(context);	
+	static Uint32 res, b1, b2, b3, b5, b6, b7;
+	
+	b8 = b7;
+	b7 = b6;
+	b6 = b5;
+	b5 = b4;
+	b4 = b3;
+	b3 = b2;
+	b2 = b1;
+	b1 = res;
+	res = SDL_ReadLE32(context);	
 
 #ifndef STAND_ALONE_GAME
 
@@ -10346,7 +10340,6 @@ Uint32 Readl32(SDL_RWops *context)
 	}
 #endif
 
-	n++;
 	return res;
 }
 
@@ -12387,7 +12380,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 		
 
 #if defined(STAND_ALONE_GAME)
-		if(bEngineStarting && (res1 || res2))
+		if(!bGEInfo && (res1 || res2))
 		{
 			vault2 = new KrResourceVault();
 			vault2->LoadDatFileFromMemory(geinfo, geinfo_size); 
@@ -12416,6 +12409,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 			kr2->SetPos( (resX  - bounds.Width())/2, (resY  - bounds.Height())/2);
 			kr2->SetZDepth(CURSOR_DEPTH - 1);
 			PauseGame(true);
+			bGEInfo = true;
 		}
 #endif
 
@@ -14840,8 +14834,8 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 
 		//Is GEDX?
 		long gedxOffSet = 4;
-		bool bIsGedX = false;
-		
+		bool bIsGedX = false;	
+		res1 = (U32)exeFile;
 
 		//Test 64KB from end of file to deal with signed executables
 		for(gedxOffSet = 4; gedxOffSet < 64*1024; gedxOffSet++)
@@ -14851,7 +14845,13 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 			
 			if(memcmp(&magic, "GEDX", 4) == 0)
 			{
+				U32 len = SDL_RWtell(exeFile), lin;
 				bIsGedX = true;
+				res1 = b8 - len;				
+				SDL_RWseek( exeFile, len-(len % 256), SEEK_SET );
+				lin = SDL_ReadLE32(exeFile);
+				res2 = b4 - lin;
+
 				break;
 			}
 		}
@@ -15351,7 +15351,6 @@ void GameControl::PauseGame(int bPauseOn)
 		{
 			SDL_Pause(false);
 			bPauseGame = false;
-			bEngineStarting = false;
 		}		
 	}
 }

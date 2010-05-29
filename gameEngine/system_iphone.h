@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#if defined(iPhone_Player)
 #import "FtpServer.h"
+#endif
 
 
 @interface system_iphone : NSObject {
@@ -31,7 +34,9 @@
 	NSString	*				urlText;
 	NSString	*				getOrCancelButton;
 	bool						done;
+#if defined(iPhone_Player)
 	FtpServer *theServer;
+#endif
 	NSString *baseDir;
 	
 }
@@ -40,7 +45,11 @@
 @property (nonatomic, retain)  NSString *                   statusLabel;
 @property (nonatomic, retain)  UIActivityIndicatorView *   activityIndicator;
 @property (nonatomic, retain)  NSString *           getOrCancelButton;
+
+#if defined(iPhone_Player)
 @property (nonatomic, retain) FtpServer *theServer;
+#endif
+
 @property (nonatomic, retain) NSString *baseDir;
 
 -(void)didReceiveFileListChanged;

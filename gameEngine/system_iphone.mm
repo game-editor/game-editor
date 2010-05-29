@@ -13,7 +13,9 @@
 
 @end
 #include "SDL.h"
+#if defined(iPhone_Player)
 #include "FtpServer.h"
+#endif
 //#import "URLGetController.h"
 
 //#import "AppDelegate.h"
@@ -32,7 +34,11 @@
 @end
 
 @implementation URLGetController
-@synthesize theServer, baseDir;
+@synthesize 
+#if defined(iPhone_Player)
+theServer,
+#endif
+baseDir;
 
 #pragma mark * Status management
 
@@ -318,6 +324,8 @@
     
     return result;
 }
+
+#if defined(iPhone_Player)
 -(void) startFtp;
 {	
 	
@@ -360,12 +368,7 @@
 	
 	
 }
-- (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
-		[alert dismissWithClickedButtonIndex:0 animated:YES];
-		[self stopFtpServer];
-	} 
-}
+
 
 - (void)stopFtpServer {
 	NSLog(@"Stopping the FTP server");
@@ -373,6 +376,16 @@
 	[theServer release];
 	theServer = nil;
 }
+
+#endif
+
+- (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		[alert dismissWithClickedButtonIndex:0 animated:YES];
+		[self stopFtpServer];
+	} 
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations

@@ -44,7 +44,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "Sequence.h"
 #include <math.h>
 #include "system.h"
-#if __iPhone__
+#if defined(iPhone_Player)
 const char *FtpGet(char *FtpUrl, char *fPath);
 void startFtp(void);
 
