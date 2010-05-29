@@ -61,7 +61,7 @@ GP2X Executable\n\
 \n\
 Linux Executable\n\
 Game Data Only:\n\
-    Use this format if your game has been distributed in many game files\n\
+    Use this format if your game has been distributed in many game files or if your game is for iPhone/iPad\n\
     Use the LoadGame function to load the game data\n\
     Save with same name used in LoadGame function and in same directory of your executable game file\
 \n\
@@ -150,7 +150,7 @@ ExportGame::ExportGame()
 	//listSystem->AddText("iPhone Executable");
 	
 
-	listSystem->AddText("Game Data Only (Use this for standalone engines like iPhone, iPad..)");
+	listSystem->AddText("Game Data Only (iPhone, iPad or game level without the executable engine)");
 	listSystem->AddText("Game Data Only for Pocket PC, Handheld PC, Smartphone or GP2X");
 
 	if(!exportName.length() /*|| actualGameName != GameControl::Get()->getGameName()*/)
