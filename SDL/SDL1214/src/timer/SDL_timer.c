@@ -55,7 +55,7 @@ Uint32 SDL_GetTicks(void)
 
 	return SDL_GetSystemTicks() - pauseTotalTime;
 }
-
+#endif
 void SDL_PauseOn(void)
 {
 	if(!pauseMode)
@@ -75,7 +75,6 @@ void SDL_PauseOff(void)
 		SDL_PauseAudio(0);
 	}
 }
-#endif
 int SDL_IsPaused(void)
 {
 	return pauseMode;
