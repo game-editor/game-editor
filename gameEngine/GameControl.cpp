@@ -10559,7 +10559,7 @@ GameControl::GameControl()
 	resY = 480;
 #ifdef __MACOSX__
 	resX = 1280;
-	resY = 1024;	
+	resY = 680;	
 #endif
 
 	
