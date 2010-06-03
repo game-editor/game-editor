@@ -295,14 +295,54 @@ typedef enum {
 	SDLK_EURO		= 321,		/**< Some european keyboards */
 	SDLK_UNDO		= 322,		/**< Atari keyboard has Undo */
         /*@}*/
-	/* Maks: famous Any Key*/
-	SDLK_ANY_KEY                                            = 416,
-	SDLK_ALL_KEYS_PRESSED                           = 417,
-	SDLK_KEYS_PRESSED_IN_ORDER                      = 418,
-	SDLK_AT_LEAST_ONE_KEY_IS_PRESSED        = 419,
-	
 	
 	/* Add any other keys here */
+        SDLK_POCKET_UP          = 400,
+        SDLK_POCKET_DOWN        = 401,
+        SDLK_POCKET_LEFT        = 402,
+        SDLK_POCKET_RIGHT       = 403,
+
+        SDLK_POCKET_A           = 404,
+        SDLK_POCKET_B           = 405,
+        SDLK_POCKET_C           = 406,
+        SDLK_POCKET_START       = 407,
+
+        SDLK_POCKET_AUX1        = 408,
+        SDLK_POCKET_AUX2        = 409,
+        SDLK_POCKET_AUX3        = 410,
+        SDLK_POCKET_AUX4        = 411,
+        SDLK_POCKET_AUX5        = 412,
+        SDLK_POCKET_AUX6        = 413,
+        SDLK_POCKET_AUX7        = 414,
+        SDLK_POCKET_AUX8        = 415,
+
+        /* Maks: famous Any Key*/
+        SDLK_ANY_KEY                                            = 416,
+        SDLK_ALL_KEYS_PRESSED                           = 417,
+        SDLK_KEYS_PRESSED_IN_ORDER                      = 418,
+        SDLK_AT_LEAST_ONE_KEY_IS_PRESSED        = 419,
+
+        /* Maks: special GP2X Keys */
+ 
+        SDLK_GP2X_BUTTON_UP              = 420,
+        SDLK_GP2X_BUTTON_DOWN            = 421,
+        SDLK_GP2X_BUTTON_LEFT            = 422,
+        SDLK_GP2X_BUTTON_RIGHT           = 423,
+        SDLK_GP2X_BUTTON_UPLEFT          = 424,
+        SDLK_GP2X_BUTTON_UPRIGHT         = 425,
+        SDLK_GP2X_BUTTON_DOWNLEFT        = 426,
+        SDLK_GP2X_BUTTON_DOWNRIGHT       = 427,
+        SDLK_GP2X_BUTTON_CLICK           = 428,
+        SDLK_GP2X_BUTTON_A               = 429,
+        SDLK_GP2X_BUTTON_B               = 430,
+        SDLK_GP2X_BUTTON_X               = 431,
+        SDLK_GP2X_BUTTON_Y               = 432,
+        SDLK_GP2X_BUTTON_L               = 433,
+        SDLK_GP2X_BUTTON_R               = 434,
+        SDLK_GP2X_BUTTON_START           = 435,
+        SDLK_GP2X_BUTTON_SELECT          = 436,
+        SDLK_GP2X_BUTTON_VOLUP           = 437,
+        SDLK_GP2X_BUTTON_VOLDOWN         = 438,
 
 	SDLK_LAST
 } SDLKey;
