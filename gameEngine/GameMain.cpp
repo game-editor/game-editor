@@ -1015,7 +1015,7 @@ void EngineStart()
 	
 	new GameControl();	
 #ifdef __APPLE__ // Always cool speed on apple plattforms AKR :)
-	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  SDL_OPENGL );	
+	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  VIDEO_FLAGS );	
 #else
 	/* Create a display for the image */
 	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  
