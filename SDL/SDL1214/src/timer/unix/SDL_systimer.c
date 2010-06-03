@@ -236,5 +236,23 @@ void SDL_SYS_StopTimer(void)
 }
 
 #endif /* USE_ITIMER */
+Uint32 SDL_GetSystemTicks (void) //maks
+{
+#ifdef USE_RDTSC
+        unsigned long long now;
+        if ( ! cpu_mhz1000 ) {
+                return 0; /* Shouldn't happen. BUG!! */
+        }
+        rdtsc(now);
+        return (Uint32)((now-start)/cpu_mhz1000);
+#else
+        struct timeval now;
+        Uint32 ticks;
+
+        gettimeofday(&now, NULL);
+        ticks=(now.tv_sec-start.tv_sec)*1000+(now.tv_usec-start.tv_usec)/1000;
+        return(ticks);
+#endif /* USE_RDTSC */
+}
 
 #endif /* SDL_TIMER_UNIX */
