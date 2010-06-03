@@ -20,7 +20,7 @@
     slouken@libsdl.org
 */
 
-#if !defined(__iPhone__) || defined(SDL_IMAGE_USE_COMMON_BACKEND)
+#if defined(__iPhone__) || defined(SDL_IMAGE_USE_COMMON_BACKEND)
 
 /* This is a BMP image file loading framework */
 /* ICO/CUR file support is here as well since it uses similar internal
