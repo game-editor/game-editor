@@ -526,7 +526,6 @@ void Clear16(SDL_Surface *screen, U16 color )
     while (count--)
         *pixels++ = color32;
 }
-
 void ForceSuspendGame();
 
 bool bFast = false;
@@ -680,6 +679,10 @@ void KrEngine::Draw( bool updateTree, GlDynArray< KrRect >* _rectangles ) //maks
 					backgroundColor/*[j]*/.Bluef(), 
 					1.0 );
 
+				
+				//There is a crash here in some Windows machines. 
+				//Before the execution of the glBegin call there is not wrong with the memory. 
+				//After that, the memory state will be wrong and the engine will crash.
 				SDL_CurrentVideo->glBegin( GL_QUADS );
 				{
 					SDL_CurrentVideo->glVertex3i( screenBounds/*[j]*/.xmin, screenBounds/*[j]*/.ymin, 0 );

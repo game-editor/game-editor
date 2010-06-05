@@ -461,7 +461,6 @@ void UndoControl::Save()
 
 	if(!IsTop())
 	{
-		GLASSERT(0);
 		PushCurrentState();
 	}
 		

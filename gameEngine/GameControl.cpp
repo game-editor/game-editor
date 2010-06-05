@@ -10389,7 +10389,7 @@ int GameControl::TimerCallback( void *pParam )
 		}
 		#endif*/
 		
-		SDL_Delay(GameControl::Get()->getFrameTimeInterval());
+		SDL_Delay(GameControl::Get()->getFrameTimeInterval()); 
 	}	
 	
 	return 0;
@@ -12381,7 +12381,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 
 #if defined(STAND_ALONE_GAME)
 		if(!bGEInfo && (res1 || res2))
-		{
+		{			
 			vault2 = new KrResourceVault();
 			vault2->LoadDatFileFromMemory(geinfo, geinfo_size); 
 			KrSpriteResource *spriteResource = new KrSpriteResource("maksgeinfo");
@@ -14421,7 +14421,8 @@ void GameControl::SetTimer(int Fps)
 	
 
 #ifdef APPLICATION_THREAD_TIMERS
-	SDL_KillThread(timerThread);
+	//SDL_KillThread(timerThread); Dont works in SDL13
+	if(!timerThread) //Use this intead kill the thread
 	timerThread = SDL_CreateThread(TimerCallback, NULL);
 #else
 	if(timerId) SDL_RemoveTimer(timerId);
@@ -16940,7 +16941,7 @@ bool GameControl::GameTick(SDL_Event &event)
 					//Don't set in editor mode (EDITOR_FRAME_RATE may be > fps)
 					realFrameRate = fps;
 				}
-				
+
 				//Last 10 results average
 				/*#define MAX_FPS_AVERAGE 90
 				static int iBuf = 0;
@@ -17181,6 +17182,8 @@ bool GameControl::GameTick(SDL_Event &event)
 			static Uint32 startTick = SDL_GetSystemTicks(), alpha;
 			Uint32 now = SDL_GetSystemTicks();
 			double f = (now - startTick) / 1500;
+			KrRGBA bgColor;
+			bgColor.all = 0;
 
 			KrColorTransform xcolor;
 
@@ -17193,6 +17196,7 @@ bool GameControl::GameTick(SDL_Event &event)
 
 			kr2->SetColor( xcolor );
 
+			engine->FillBackground(&bgColor);
 			engine->Draw();					
 			if((now - startTick) > 3000)
 			{
@@ -17200,6 +17204,7 @@ bool GameControl::GameTick(SDL_Event &event)
 				engine->Tree()->DeleteNode(kr2);
 				delete vault2;
 				vault2 = NULL;
+				setBackGroundColor(backgroundColor);
 			}
 		}
 
@@ -17236,8 +17241,7 @@ bool GameControl::CanDraw()
 {
 	////////////////////////////////////////////
 	//Use this if use the TimerCallBack thread	
-	if(!bCallGameTick) return false; 
-	else return true;
+	return bCallGameTick;
 	////////////////////////////////////////////
 
 	//Use this without TimerCallBack
@@ -17354,7 +17358,7 @@ int GameControl::InitRakNet(int port)
 
 	//Current owner (will be the external address after the first connection)
 	currentOwnerMachine = UNASSIGNED_SYSTEM_ADDRESS;
-	//maks:tesste networkIDManager.SetExternalSystemAddress(currentOwnerMachine);
+	//maks:teste networkIDManager.SetExternalSystemAddress(currentOwnerMachine);
 
 	//Start server
 	//May be, only after check if the game need network
