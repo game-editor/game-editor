@@ -575,8 +575,8 @@ void AddActionDialog::OnButton(Button *button, int buttonId)
 						new PanelInfo("This format is not supported or file is corrupted\nPlease, select other file");
 						return;
 					}
-
-					if(((surface->w/nh) > 1019 || (surface->h/nv) > 1019) && Config::Get()->getShowIPhoneImageSizeReminder())
+					// Division by zero avoided AKR
+					if(nh && nv && ((surface->w/nh) > 1019 || (surface->h/nv) > 1019) && Config::Get()->getShowIPhoneImageSizeReminder())
 					{
 						//Remove this when solve the ticket http://game-editor.com/ticket/24
 						
