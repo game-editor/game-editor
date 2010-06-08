@@ -210,7 +210,7 @@ void Tutorial::Store(SDL_Event &event)
 	{
 		switch(event.key.keysym.sym)
 		{
-		case SDLK_F6:
+		case SDLK_F5:
 			TutorialPaint::Call();
 			return;
 
@@ -227,7 +227,7 @@ void Tutorial::Store(SDL_Event &event)
 			Pause(PAUSED_BY_USER);
 			return;*/
 
-		case SDLK_F9://case SDLK_F10:
+		case SDLK_F6://case SDLK_F10:
 			if(!TutorialPaint::InPaintMode())
 			{
 				TutorialPaint::Call();
