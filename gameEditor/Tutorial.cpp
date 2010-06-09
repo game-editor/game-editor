@@ -205,7 +205,13 @@ void Tutorial::Store(SDL_Event &event)
 	   event.type != SDL_MOUSEBUTTONUP && 
 	   event.type != SDL_MOUSEMOTION &&
 	   event.type != SDL_VIDEORESIZE) return;
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	F4 - Start Recording,
+//	F5 - Tutorialpaint start (was F6 on older builds)
+//	F6 - Tutorialpaint start & TutorialTextEditor start. Put a "newline" after your text to get recognized. (was F9 on older builds)
+//	F7 - Tutorialpaint stop
+//  F8 - Stop Recording and save as "tutorial.gedt"
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	if(event.type == SDL_KEYDOWN)
 	{
 		switch(event.key.keysym.sym)
