@@ -4,7 +4,6 @@
 	Version="9,00"
 	Name="zlib"
 	ProjectGUID="{377B65CF-10C6-481F-93BB-B3C53D0B6932}"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -309,7 +308,7 @@
 			Name="Release|Pocket PC 2003 (ARMV4)"
 			OutputDirectory=".\../../../../../../output/PocketPC"
 			IntermediateDirectory=".\../../../../../../output/PocketPC/zlib"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -330,6 +329,10 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				PreprocessorDefinitions="NO_ERRNO_H;_LIB;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_)"
+				ExceptionHandling="0"
+				StructMemberAlignment="4"
+				BufferSecurityCheck="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -545,6 +548,14 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
 			</File>
@@ -775,6 +786,14 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\zlib\msdos\zlib.rc"
@@ -797,6 +816,14 @@
 						Name="VCResourceCompilerTool"
 						PreprocessorDefinitions=""
 						AdditionalIncludeDirectories="\GAMEDEVELOPMENT\SDL\SDL_image\png\zlib\msdos"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Pocket PC 2003 (ARMV4)"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
 					/>
 				</FileConfiguration>
 			</File>
@@ -880,4 +907,6 @@
 			>
 		</Filter>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

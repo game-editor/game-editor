@@ -1263,7 +1263,7 @@ typedef z_stream FAR *  png_zstreamp;
  */
 
 #ifndef PNG_ABORT
-#  define PNG_ABORT() abort()
+#  define PNG_ABORT()  //maks () abort()
 #endif
 
 #ifdef PNG_SETJMP_SUPPORTED

@@ -311,7 +311,7 @@
 			Name="Release|Pocket PC 2003 (ARMV4)"
 			OutputDirectory=".\../../../output/PocketPC"
 			IntermediateDirectory=".\../../../output/PocketPC/SDL_image"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -337,6 +337,11 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="../../SDL/include,../png/libpng,../png/zlib,../jpeg"
+				PreprocessorDefinitions="LOAD_BMP;LOAD_GIF;LOAD_LBM;LOAD_PCX;LOAD_PNM;LOAD_XPM;LOAD_JPG;LOAD_PNG;LOAD_TGA;_LIB;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_)"
+				ExceptionHandling="0"
+				StructMemberAlignment="4"
+				BufferSecurityCheck="false"
 				CompileForArchitecture="0"
 				InterworkCalls="false"
 			/>
@@ -350,10 +355,7 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"

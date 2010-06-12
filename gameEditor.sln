@@ -1444,6 +1444,7 @@ Global
 		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release Multilib|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release Multilib|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Deploy.0 = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
 		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release|Win32.ActiveCfg = Release|Win32
 		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release|Win32.Build.0 = Release|Win32
 		{1793C6E5-CA7A-44E2-876E-7C52B7FE689D}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
@@ -2222,6 +2223,7 @@ Global
 		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release Multilib|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release Multilib|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Deploy.0 = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
 		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release|Win32.ActiveCfg = Release|Win32
 		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release|Win32.Build.0 = Release|Win32
 		{CC0F4212-F18E-45F3-A28D-C20BBCD60126}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
@@ -2804,6 +2806,7 @@ Global
 		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release Multilib|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release Multilib|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Deploy.0 = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
 		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release|Win32.ActiveCfg = Release|Win32
 		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release|Win32.Build.0 = Release|Win32
 		{377B65CF-10C6-481F-93BB-B3C53D0B6932}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)

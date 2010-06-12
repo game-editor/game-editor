@@ -5,7 +5,6 @@
 	Name="jpeg"
 	ProjectGUID="{D7C4D95F-24F2-4D69-A188-041B9B606192}"
 	RootNamespace="jpeg"
-	
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -312,7 +311,7 @@
 			Name="Release|Pocket PC 2003 (ARMV4)"
 			OutputDirectory=".\../../../../output/PocketPC"
 			IntermediateDirectory=".\../../../../output/PocketPC/jpeg"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -333,6 +332,15 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				WholeProgramOptimization="true"
+				PreprocessorDefinitions="NO_GETENV;_LIB;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_)"
+				ExceptionHandling="0"
+				StructMemberAlignment="4"
+				BufferSecurityCheck="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -344,10 +352,7 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				TargetMachine="0"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1438,4 +1443,6 @@
 			>
 		</File>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>

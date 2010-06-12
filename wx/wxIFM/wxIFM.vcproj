@@ -336,6 +336,11 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				WholeProgramOptimization="true"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
