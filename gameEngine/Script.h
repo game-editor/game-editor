@@ -1,26 +1,26 @@
 /**************************************************************************
-
-Game Editor - The Cross Platform Game Creation Tool
-Copyright (C) 2009  Makslane Araujo Rodrigues, http://game-editor.com
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-If GPL v3 does not work for you, we offer a "non-GPL" license 
-More info at http://game-editor.com/License
-Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_Open_Source
-
-***************************************************************************/
+ 
+ Game Editor - The Cross Platform Game Creation Tool
+ Copyright (C) 2009  Makslane Araujo Rodrigues, http://game-editor.com
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ If GPL v3 does not work for you, we offer a "non-GPL" license 
+ More info at http://game-editor.com/License
+ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_Open_Source
+ 
+ ***************************************************************************/
 
 
 // Script.h: interface for the Script class.
@@ -44,7 +44,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 
 extern "C"
 {
-void EiC_parseString(char * fmt,...);
+	void EiC_parseString(char * fmt,...);
 }
 
 #define VAR_DELIMIT '.'
@@ -70,7 +70,7 @@ void EiC_parseString(char * fmt,...);
 #define S_VAR_TEXT			"text"
 #define S_VAR_WIDTH			"width"
 #define S_VAR_HEIGHT		"height"
-#define S_VAR_ROTATION	"rotation"
+
 
 
 //Global vars
@@ -84,9 +84,8 @@ void EiC_parseString(char * fmt,...);
 #define NEED_ANGLE						(1 << 1)
 #define NEED_DIRECTIONAL_VELOCITY		(1 << 2)
 #define NEED_MOUSE_POSITION				(1 << 3)
-#define NEED_RAND							(1 << 4)
-#define NEED_ROTATION					(1 << 5)
-#define NEED_ALL							0xFFFFFFFF
+#define NEED_RAND						(1 << 4)
+#define NEED_ALL						0xFFFFFFFF
 
 
 class Actor;
@@ -133,13 +132,13 @@ public:
 		mem = malloc(Actor::getStructActorSize());
 		memcpy(mem, actorVars, Actor::getStructActorSize());
 	}
-
+	
 	virtual ~ActorVarsContainer()
 	{
 		if(mem)
 			free(mem);
 	}
-
+	
 	void operator=(const ActorVarsContainer &copy)
 	{
 		if( &copy != this )
@@ -151,16 +150,16 @@ public:
 			memcpy(mem, copy.mem, Actor::getStructActorSize());
 		}
 	}
-
+	
 	stActorVars *get() {return (stActorVars *)mem;}
-
+	
 	void *mem;
 };
 
 /*typedef GlSList<int> StackInt;  //push = PushFront, pop = PopFront, top = Front
-typedef GlSList<double> StackDouble;  //push = PushFront, pop = PopFront, top = Front
-typedef GlSList<ActorVarsContainer> StackActorVars;  //push = PushFront, pop = PopFront, top = Front
-typedef GlSList<stActorVars *> StackActorVarsPtr;  //push = PushFront, pop = PopFront, top = Front*/
+ typedef GlSList<double> StackDouble;  //push = PushFront, pop = PopFront, top = Front
+ typedef GlSList<ActorVarsContainer> StackActorVars;  //push = PushFront, pop = PopFront, top = Front
+ typedef GlSList<stActorVars *> StackActorVarsPtr;  //push = PushFront, pop = PopFront, top = Front*/
 typedef GlSList<ListActors> StackListActors;  //push = PushFront, pop = PopFront, top = Front
 
 
@@ -172,10 +171,10 @@ public:
 	void InvalidateActor(const char *actorName) const;
 	void setAddedWithError(bool value) {bAddedWithError = value;}
 	bool getAddedWithError() {return bAddedWithError;}
-
+	
 	bool getUseRand() {return (updateFlags & NEED_RAND)?true:false;}
 	
-
+	
 #ifndef STAND_ALONE_GAME
 	static void ChangePaths(gedString& code);
 	ListSounds GetSoundList();
@@ -188,17 +187,17 @@ public:
 	static void RemoveLocalVar(const gedString& variable);
 	
 #endif //#ifndef STAND_ALONE_GAME
-
+	
 	static void LoadLocalUserVars(SDL_RWops *src, bool bMergeGames);
-
+	
 #ifndef STAND_ALONE_GAME
 	static void SaveLocalUserVars(SDL_RWops *src);
 	void Save(SDL_RWops *src);
 	static void ReplacePath(gedString& code, gedString function, int nStringArg);
 	static void UpdateMoveTo(gedString& code);
 #endif //#ifndef STAND_ALONE_GAME
-
-
+	
+	
 	static void InitActorFunctions();
 	static void DestroyLocalUserVars();
 	static void InitAuxVars();
@@ -211,7 +210,7 @@ public:
 	void RestoreStaticData();
 	void StoreStaticData();
 	static double PI;
-
+	
 	bool Parser(bool bOnDemandLoad, bool bReportErrors = false);
 	
 	void Load(SDL_RWops *src, int version);
@@ -219,9 +218,9 @@ public:
 	static void Reset();
 	bool Execute(Actor *eventActor, Actor *collideActor
 #ifndef STAND_ALONE_GAME
-		, stAction *_currentAction = NULL
+				 , stAction *_currentAction = NULL
 #endif
-		);
+				 );
 	void SetFunctionName(gedString name);
 	bool Parser(const gedString& str, bool bConditional = false, bool bOnDemandLoad = false, bool bEditScript = false);
 	static const gedString& GetError();
@@ -236,7 +235,7 @@ public:
 	Script();
 	virtual ~Script();
 	static void myDisplay(char *msg);
-
+	
 	const gedString& getCode() {return code;}
 	const gedString& getFunctionName() {return functionName;}
 	static bool getConditionalResult() {return conditionalResult != 0;}
@@ -244,19 +243,19 @@ public:
 	static ListActors *getListCreateActors() {return &listCreateActors;}
 	static stActorVars *getEventActorVars() {return eventActorVars;}
 	static stActorVars *getCollideActorVars() {return collideActorVars;}
-
+	
 	static struct stActorVars *invalidScriptActor; //Don't return null, return &invalidScriptActor
 	static Uint8 keyState[SDLK_LAST + 1];
-
+	
 private:	
 	static void UpdateLocalUserVars();
 	void AddActorVars(Actor *eventActor, Actor *collideActor);
-
+	
 	gedString functionName;
 	gedString code;
-
+	
 	//Don't save
-
+	
 	///////////////////////////////////////////////////////
 	//Static execute control
 	static stActorVars *eventActorVars, *collideActorVars;
@@ -265,28 +264,28 @@ private:
 	static double musicVol;
 	static ListActors listCreateActors;
 	
-
+	
 	//Stack control
 	/*static StackInt				stackInt;
-	static StackDouble			stackDouble;
-	static StackActorVars		stackActorVars;
-	static StackActorVarsPtr	stackActorVarsPtr;*/
+	 static StackDouble			stackDouble;
+	 static StackActorVars		stackActorVars;
+	 static StackActorVarsPtr	stackActorVarsPtr;*/
 	static StackListActors		stackListActors;
 	///////////////////////////////////////////////////////
-
+	
 	gedString GenerateFunctionName();
-
+	
 	
 	double musicVolAnt;
 	static gedString error;
-
+	
 	ListString usedActor;	
 	bool bParserOk;	
 	bool bAddedWithError;
 	U32 updateFlags; //Speed up code SetActualValues
-
+	
 	static struct stActorVars *fakeEditActor; //For parser only
-
+	
 	void *functionAddress;
 	
 	//Local vars
