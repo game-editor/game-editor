@@ -381,6 +381,7 @@ public:
 	double pathxpos;
 	double pathypos;
 	double animpos;
+	double rotation;
 	int animindex;
 	int nframes;
 	double angle; //in degrees
@@ -646,6 +647,8 @@ public:
 	void SetVisible(int state);
 	void SetTransparency(double trans);
 	double GetTransparency();
+	void SetRotation(double rotation);
+	double getRotation() {return scriptVars->rotation;};
 
 	virtual1 void OnCollision(Actor *collideActor);	//Called by system when collisions happen
 	virtual1 void OnCollisionFinish(Actor *collideActor);	//Called by system when collisions is finish
@@ -896,7 +899,7 @@ private:
 	Uint32	lastTimeStamp;
 	stAction *lastQueuedAction;
 	double antAngle;
-	
+	double antRotaton;
 	
 
 
