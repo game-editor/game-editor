@@ -776,7 +776,21 @@ KrImNode* KrImNode::Clone()
 {
 	return new KrImNode();
 }
+void KrImNode::SetRotation( double rotation) //akr
+{
 
+	if ( rotation != xTransform/*[0]*/.rotation )
+	{
+		xTransform/*[0]*/.rotation = rotation;
+		invalid/*[0]*/      = true; //Make true (Invalidate by position: problems with CollisionFree (calls Walk()))
+		
+		::engine->Tree()->InvalidateTree(); //maks: solve Text Region.ged bug
+		
+#ifndef USE_WALK
+		::engine->Tree()->Walk1( this ); //maks
+#endif
+	}
+}
 
 void KrImNode::SetPos( GlFixed x, GlFixed y/*, int win*/ ) //maks
 {
