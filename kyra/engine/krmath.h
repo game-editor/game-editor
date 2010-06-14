@@ -105,9 +105,10 @@ struct KrVector2T
 class KrMatrix2
 {
   public:
-	GlFixed x, y;
+	GlFixed x, y; 
 	GlFixed xScale, yScale;
-
+	double rotation; //akr
+	
 	/// Transform this matrix.
 	void Composite( const KrMatrix2& other )
 	{
@@ -129,19 +130,20 @@ class KrMatrix2
    		}
 	}
 
-	void Set( GlFixed _x = 0, GlFixed _y = 0, GlFixed _xScale = 1, GlFixed _yScale = 1 )
+	void Set( GlFixed _x = 0, GlFixed _y = 0, GlFixed _xScale = 1, GlFixed _yScale = 1, double _rotation = 0)
 	{
 		x.v = _x.v;
 		y.v = _y.v;
 		xScale.v = _xScale.v;
 		yScale.v = _yScale.v;
+		rotation = _rotation;
 	}
 
 	// return true if there is any scaling term:
 	bool IsScaled()	const { return ( xScale.v != GlFixed_1 ) || ( yScale.v != GlFixed_1 ); }
 
-	inline friend bool operator == (const KrMatrix2& a, const KrMatrix2& b)    { return (a.x.v == b.x.v && a.y.v == b.y.v && a.xScale.v == b.xScale.v && a.yScale.v == b.yScale.v ); }
-	inline friend bool operator != (const KrMatrix2& a, const KrMatrix2& b)    { return (a.x.v != b.x.v || a.y.v != b.y.v || a.xScale.v != b.xScale.v || a.yScale.v != b.yScale.v ); }
+	inline friend bool operator == (const KrMatrix2& a, const KrMatrix2& b)    { return (a.x.v == b.x.v && a.y.v == b.y.v && a.xScale.v == b.xScale.v && a.yScale.v == b.yScale.v && a.rotation == b.rotation ); }
+	inline friend bool operator != (const KrMatrix2& a, const KrMatrix2& b)    { return (a.x.v != b.x.v || a.y.v != b.y.v || a.xScale.v != b.xScale.v || a.yScale.v != b.yScale.v || a.rotation == b.rotation ); }
 };
 
 
