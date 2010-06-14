@@ -1,26 +1,26 @@
 /**************************************************************************
-
-Game Editor - The Cross Platform Game Creation Tool
-Copyright (C) 2009  Makslane Araujo Rodrigues, http://game-editor.com
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-If GPL v3 does not work for you, we offer a "non-GPL" license 
-More info at http://game-editor.com/License
-Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_Open_Source
-
-***************************************************************************/
+ 
+ Game Editor - The Cross Platform Game Creation Tool
+ Copyright (C) 2009  Makslane Araujo Rodrigues, http://game-editor.com
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ If GPL v3 does not work for you, we offer a "non-GPL" license 
+ More info at http://game-editor.com/License
+ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_Open_Source
+ 
+ ***************************************************************************/
 
 
 // Actor.h: interface for the Actor class.
@@ -71,14 +71,14 @@ class SystemAddress
 public:
 	SystemAddress() {}
 	SystemAddress(unsigned long addr) {}
-
+	
 	bool operator!=(const SystemAddress addr) const	{return false;}
 	bool operator==(const SystemAddress addr) const	{return false;}
-
+	
 	void SetBinaryAddress(const char *) {}
-
+	
 	const char *ToString(bool) const {return "";}
-
+	
 	unsigned long binaryAddress;
 	unsigned short port;
 };
@@ -92,10 +92,10 @@ public:
 	BitStream() {}
 	BitStream(int maxMessageSize) {}
 	BitStream(void *, int, bool) {}
-
+	
 	void *GetData() {return NULL;};
 	void SetWriteOffset(int) {};
-
+	
 	bool Write(U32) {return false;};
 	bool Write(U16) {return false;};
 	bool Write(U8) {return false;};
@@ -108,7 +108,7 @@ public:
 	bool Write(const char *) {return false;};
 	bool Write(const char*, int) {return false;};
 	bool Write(SystemAddress) {return false;};
-
+	
 	bool Read(U32&) {return false;};
 	bool Read(U16&) {return false;};
 	bool Read(U8&) {return false;};
@@ -149,11 +149,11 @@ public:
 	int NumberOfConnections() {return 0;}
 	void Ping(SystemAddress) {}
 	bool Send(BitStream *out, int, int, int, SystemAddress, bool) {return false;}
-
+	
 	int GetNumberOfAddresses() {return 0;}
 	char *GetLocalIP(int) {return NULL;}
 	SystemAddress GetExternalID(SystemAddress) {SystemAddress addr; return addr;}
-
+	
 	Packet *Receive() {return NULL;}
 	void DeallocatePacket(Packet *) {}
 };
@@ -256,7 +256,7 @@ class stTimer
 public:
 	stTimer();
 	virtual ~stTimer();
-
+	
 	Actor *actor;
 	SDL_TimerID timerID;
 	int interval, minRandomInterval;
@@ -316,7 +316,7 @@ public:
 			listSequence = copy.listSequence;
 		}
 	}
-
+	
 	MapSequence mapSequence;
 	ListSequence listSequence;
 	int nRef;
@@ -381,7 +381,6 @@ public:
 	double pathxpos;
 	double pathypos;
 	double animpos;
-	double rotation;
 	int animindex;
 	int nframes;
 	double angle; //in degrees
@@ -392,7 +391,7 @@ public:
 	int height;
 	double textNumber;
 	char text[MAX_SCRIPTTEXT];	
-
+	
 	char name[ACTOR_NAME]; //actor name
 	char clonename[CLONE_NAME]; //clone name (actorname.0, ...)
 	long cloneindex; //clone index (0, 1, ...)
@@ -413,13 +412,13 @@ public:
 	{
 		x = y = 0;
 		pensize = 0;
-
+		
 		color.Set(0, 0, 0, 0);
 	}
-
+	
 	KrRGBA color;
 	int pensize;
-
+	
 	int x, y;
 };
 
@@ -440,16 +439,16 @@ public:
 	//When destroy, make magic = NULL.
 	//With this technic, don't need to use the globalMapActor check (slow)
 	//Works only if the class has no virtual functions (see virtual1)
-
+	
 #ifndef ACTOR_USES_VIRTUAL_FUNCTIONS
 	Actor *magic;
-
+	
 	void *operator new(size_t size);
 	void operator delete(void * mem);
 #endif
-
 	
-
+	
+	
 	void DrawSetPen(int r, int g, int b, double transp, int pensize);
 	void DrawErase(int r, int g, int b, double transp);
 	void DrawMoveTo(int x, int y);
@@ -457,47 +456,47 @@ public:
 	void DrawPutPixel(int x, int y);
 	void DrawSaveCanvas();
 	void DrawLoadCanvas();
-
+	
 	void FindMaxCloneIndex();
 	static void ResetMaxCloneIndex(char *actorName);
-
+	
 	void RemoveTile();
 	bool IsVisible();
-
+	
 	void InitEdit();
-
+	
 	
 #ifndef STAND_ALONE_GAME
-
+	
 	void RemoveTileAnimation(const gedString& animationName);
-
+	
 	ListString GetDescendantsList();
-
+	
 	KrAction *GetAnimationInfo(const gedString& nameAnimation) {return spriteResource->GetAction(nameAnimation);}
 	void DrawTile(const gedString& animationName, bool bSingle = false, bool bRandom = false);
-
+	
 	ListBox *AddListBox(int x = 0, int y = 0, int width = 100, int height = 50, int listId = -1, gedString fontName = "maksfont.bmp");
 	Slide *AddSlide(int x, int y, int width = 100, int height = 14, int slideId = -1);
 	
 	EditBox *AddEditBox(int x = 0, int y = 0, int width = 100, int height = 0, bool multiLine = false, gedString fontName = "maksfont.bmp");
 	Button *AddButton(gedString text, 
-			   int x = 0, int y = 0,
-			   int width = 0, int height = 0,
-			   int buttonId = -1,
-			   int red = 0, int green = 0, int blue = 0,
-			   const gedString spriteName = "maksbutton.bmp",
-			   gedString fontName = "maksfont.bmp");
-
+					  int x = 0, int y = 0,
+					  int width = 0, int height = 0,
+					  int buttonId = -1,
+					  int red = 0, int green = 0, int blue = 0,
+					  const gedString spriteName = "maksbutton.bmp",
+					  gedString fontName = "maksfont.bmp");
+	
 	ListPop *AddListPop(int x = 0, int y = 0,
-			   int width = 128, int height = 0,
-			   int listpopId = -1,
-			   gedString buttonText = "");
-
+						int width = 128, int height = 0,
+						int listpopId = -1,
+						gedString buttonText = "");
+	
 	ListDirectory *AddListDirectory(int x = 0, int y = 0,
-			   int width = 128, int height = 0,
-			   int listpopId = -1,
-			   gedString buttonText = "");
-
+									int width = 128, int height = 0,
+									int listpopId = -1,
+									gedString buttonText = "");
+	
 	virtual1 void OnButton(Button *button, int buttonId);	//Called by system when button goes up	
 	virtual1 bool OnList(ListPop *list, int index, gedString &text, int listId);
 	virtual1 bool OnListButtonDown(ListPop *list, int listId); //Called by system after list button down
@@ -505,22 +504,22 @@ public:
 	virtual1 void OnEditEnter(EditBox *edit, int line);
 	virtual1 void OnEditSelection(EditBox *edit);
 	virtual1 void OnEditChar(EditBox *edit, SDLKey key, int line);
-
+	
 	void Save(SDL_RWops *src);
 	void SaveAnimationData(SDL_RWops *src);
-
+	
 #endif //#ifndef STAND_ALONE_GAME
-
+	
 	Text *AddText(const gedString& text, int x = 0, int y = 0, int align = 0, int _red = 0, int _green = 0, int _blue = 0, 
 			      const gedString& fontName = "maksfont.bmp", 
 				  int iniASCIIChar = 32, int nChars = 94,
 				  bool _bEditable = false, bool _hasBorder = false, bool _hasBackGround = false, bool _getFocus = false,
 				  KrRGBA _borderColor = 0, KrRGBA _cursorColor = 0, KrRGBA _backGroundColor = 0);
-
+	
 	static void RegionActorToggleVisibility();
 	static void NotifyMouseCoord(int x, int y); //Region
 	static void NotifyMouseButtonUp(); //Region
-
+	
 	void IncreaseActorStruct(int newSize);
 	int GetArea();
 	void decrementConnectedActors() {if(totalConnectedActors > 0) totalConnectedActors--;}
@@ -538,19 +537,19 @@ public:
 	bool UpdateRegionLoad();
 	const KrRect& Bounds();
 	void CenterOnScreen();
-
+	
 	bool getOnCreateCalled() {return flags.IsSet(FLAG_ONCREATECALLED);}
 	void setOnCreateCalled() {flags.Set(FLAG_ONCREATECALLED);}
-
+	
 	bool getNetActor() {return flags.IsSet(FLAG_NETACTOR);}
 	void setNetActor(bool value) {flags.Set(FLAG_NETACTOR, value);}
-
+	
 	bool getNetOptimizedPrecision() {return flags.IsSet(FLAG_NET_OPTIMIZED_PRECISION);}
 	void setNetOptimizedPrecision(bool value) {flags.Set(FLAG_NET_OPTIMIZED_PRECISION, value);}
-
+	
 	bool getUnlinked() {return flags.IsSet(FLAG_NET_UNLINKED);}
 	void setUnlinked(bool value) {flags.Set(FLAG_NET_UNLINKED, value);}
-
+	
 	bool isRegion() {return flags.IsSet(FLAG_REGION);}
 	static Actor *Load(const char *name, bool bExplicitlyCreateActor = false);
 	void SetActorScale(double scale);
@@ -565,7 +564,7 @@ public:
 	double getY() {return scriptVars->y;}
 	static void ResetAnyPositionChanged() {bAnyPositionChanged = false;}
 	static bool AnyPositionChanged() {return bAnyPositionChanged;}
-
+	
 	void ProcessQueueActions();
 	void PushQueueAction(stAction *queueAction);
 	Sequence *GetSequence(const gedString& sequenceName);
@@ -576,7 +575,7 @@ public:
 	void SetActualValues(U32 updateFlags);
 	void SetPosScreen(double x, double y);
 	void SetFrame(int f);
-
+	
 	void SetColor(int r, int g, int b);
 	void SetPos(double x, double y, bool bDrag = false);
 	void SetSize(int width, int height);
@@ -606,20 +605,20 @@ public:
 	const gedString& GetAnimation()
 	{
 		/*if(getSprite())
-		{
-		//gedString name = getSprite()->ActionName();
-		//if(name != "NONE")
-		//	return name;
-			
-			return actualSequence;
-		}
+		 {
+		 //gedString name = getSprite()->ActionName();
+		 //if(name != "NONE")
+		 //	return name;
+		 
+		 return actualSequence;
+		 }
+		 
+		 return "";*/
 		
-		return "";*/
-
 		return actualSequence;
 	}
-
-
+	
+	
 	void SetAnimation(const char* name, bool bKeepActualFrame = false);
 	void SetAnimation(const gedString& name, bool bKeepActualFrame = false);
 	void SetPathIni(int x, int y);
@@ -643,13 +642,11 @@ public:
 	int Right();
 	int Down();
 	int Height();
-
+	
 	void SetVisible(int state);
 	void SetTransparency(double trans);
 	double GetTransparency();
-	void SetRotation(double rotation);
-	double getRotation() {return scriptVars->rotation;};
-
+	
 	virtual1 void OnCollision(Actor *collideActor);	//Called by system when collisions happen
 	virtual1 void OnCollisionFinish(Actor *collideActor);	//Called by system when collisions is finish
 	virtual1 void OnActivationEvent(Actor *fromActor);
@@ -659,42 +656,42 @@ public:
 	virtual1 bool OnMouseButtonDown(int x, int y, Uint8 button);	//return true to enabledrag (released at next miouse button up)
 	virtual1 void OnMouseButtonUp(int x, int y, Uint8 button);
 	virtual1 void OnMessage(Actor *fromActor, Uint32 messageId, Uint32 message);	
-
+	
 	virtual1 void OnAnimation();	//Called before frame change and after path calculation
 	virtual1 void OnAnimationFinish(); //Called when animation reinit
 	virtual1 void OnPathFinish();
 	virtual1 void OnMouseEnter(int x, int y);	
 	virtual1 void OnMouseLeave(int x, int y);
 	virtual1 void OnMouseMove(int x, int y);
-
+	
 	virtual1 void OnMoveFinish();
 	
-
-
+	
+	
 	virtual1 void OnSlowCanvasPaint(KrPaintInfo *paintInfo, SDL_Surface* surface, KrRect &rect, int openGLZ);
 	
 	virtual1 const stCursor *OnGetCursor();
 	virtual1 const gedString *OnActorTip();
 	
 	
-
+	
 	Actor(const gedString& spriteName, Actor *_parent = NULL, ActorType _type = SPRITE, int canvasWidth = 0, int canvasHeight = 0, bool _bPanel = false, Action *copyAction = NULL, bool bIncrementCloneIndex = false, int newCloneIndex = -1); //Actors can be sprite or canvas
 	virtual1 ~Actor();
-
 	
-
+	
+	
 	void PostMessage(gedString actorName, Uint32 messageId, Uint32 message = 0); //Send massage to other actor
 	void PostMessage(Actor *actorTo, Uint32 messageId, Uint32 message = 0);
 	SDL_TimerID SetTimer(Uint32 interval, int count = REPEATE_FOREVER, int _type = PERIODIC_TIMER, Uint32 minRandomInterval = 10);	//interval in ms, return timer ID, count = RANDOM_TIMER, REPEATE_FOREVER_TIMER, > 0 = repeat count
 	bool AddAnimation(const gedString& actionName, const gedString& imgName, int nFramesH, int nFramesV, int hotSpotX = -1, int hotSpotY = -1, int fps = 0, bool bTransparency = true, bool bReplaceFile = false, bool bForceGedIcon = false);
 	void RemoveAnimation(gedString actionName);
-
+	
 	KrSprite *getSprite();
 	KrCanvas *getCanvas();
 	KrImage *getImage();
 	KrCanvasResource *getCanvasResource();
 	KrSpriteResource *getSpriteResource() {return spriteResource;}
-
+	
 	long getFramesToAnim() {return framesToAnim;};
 	void setFramesToAnim(long _framesToAnim) {framesToAnim = _framesToAnim;};
 	bool getEnableCollisionDetection() {return flags.IsSet(FLAG_ENABLECOLLISIONDETECTION);};
@@ -737,57 +734,57 @@ public:
 	void setEditAnim(bool bAnim) {flags.Set(FLAG_EDITANIM, bAnim);}
 	bool getCreateAtStartup() {return flags.IsSet(FLAG_CREATEATSTARTUP);}
 	void setCreateAtStartup(bool bCreate) {flags.Set(FLAG_CREATEATSTARTUP, bCreate);}
-
+	
 	struct stActorVars *getScriptVars() {return scriptVars;};
 	static int getStructActorSize() {return structActorSize;}
-
+	
 	void setRegionColor(int r, int g, int b) {if(type == REGION_ACTOR || type == REGION_ACTOR_FILLED) {red = r; green = g; blue = b;}}
 	ActorType getType() {return type;}
 	bool getMoveTo() {return flags.IsSet(FLAG_MOVETO);}
 	static int getBaseZDpth() {return baseZDepth;}
 	static void setBaseZDpth(int base) {baseZDepth = base;}
-
+	
 	int getFrameAnt() {return frameAnt;}
 	int getFrame() {return sprite?sprite->Frame():0;};
 	bool IsLocked() {return flags.IsSet(FLAG_LOCKACTOR);}
 	void setLocked(bool value) {flags.Set(FLAG_LOCKACTOR, value);}
-
+	
 	void setOutOfVisionOptimization(bool value);
 	bool getOutOfVisionOptimization();
-
+	
 	U32 getLoadedZDepth() {return loadedZDepth;}
 	double getLoadedTransparency() {return loadedTransparency;}
 	KrRGBA getLoadedColor() {return loadedColor;}
-
+	
 	void setLoadedZDepth(U32 value) {loadedZDepth = value;}
 	void setLoadedTransparency(double value) {loadedTransparency = value;}
 	void setLoadedColor(KrRGBA value) {loadedColor = value;}
-
+	
 	bool getSetActualValues() {return flags.IsSet(FLAG_SETACTUALVALUES);}
 	bool getDeleteConfirmation() {return flags.IsSet(FLAG_DELETECONFIRMATION);}
 	void clearDeleteConfirmation() {flags.Clear(FLAG_DELETECONFIRMATION);}
-
+	
 	int getTextZeros() {return nZeros;}
 	void setTextZeros(int n) {nZeros = n;}
-
+	
 	bool HaveQueueAction() {return queueActorAction.Count() > 0;}
-
+	
 	static bool getLoadingActors() {return loadingActors > 0;}
 	static void resetLoadingActors() {loadingActors = 0;}
-
+	
 	void setDrag() {bDrag = true;}
-
+	
 #ifndef STAND_ALONE_GAME
 	bool getHasShadows() {return flags.IsSet(FLAG_HASSHADOWS);}
 	bool ReplaceFrame(const gedString &animationName, int frame, gedString imagePrefix = "");
-
+	
 	gedString getDescription() {return description;}
 	void setDescription(gedString value) {description = value;}
 #endif
-
+	
 	void SetPathFinder(Path *_path);
 	void SetCloneIndex(int newCloneIndex);
-
+	
 	//////////////////////////////////////////////////////////
 	//Raknet
 	void InitNetActor();
@@ -801,7 +798,7 @@ public:
 	void WriteState(BitStream& out);
 	void ReadState(BitStream& in);
 	//////////////////////////////////////////////////////////
-
+	
 	static void setInContructionCallBack(bool value) {bInContructionCallBack = value;}
 	
 protected:
@@ -810,35 +807,35 @@ protected:
 	void GetObstacles(char *obstacleActor);
 	void PathFinderRequisition(char *obstacleActor, double xEnd, double yEnd, double velocity);
 	
-
+	
 	Uint8					pathDirectionX, pathDirectionY;
 	Sint32					pathIniX;
 	Sint32					pathIniY;
 	
 	
-		
 	
 	
-
+	
+	
 	stCursor			cursor;	
 	
-
+	
 	Actor				*parent;
 	Action				*action;
 	Path				*pathX, *pathY;	//Actual actor path
 	Path				*pathFinder; //Current 
-
+	
 	bool				bDrag; //The actor is being dragged
-
+	
 	//Don't use pointer to save the cretor
 	//Need clonename due to avoid pointer reuse issues
 	//(don't need in parent due to Notify childs in destructor)
 	gedString creatorCloneName;
-
-	Tile *tile;
-
 	
-
+	Tile *tile;
+	
+	
+	
 	//Don't save	
 	long				framesToAnim;	//frames to anim until stop		
 	int					followMouseAxis; //Define if this actor follow mouse
@@ -846,10 +843,10 @@ protected:
 	
 	double anteriorXPos, anteriorYPos, anteriorFramePathX, anteriorFramePathY;
 	int frameAnt;
-
-
+	
+	
 	MapTimer   mapTimer;
-
+	
 #ifndef STAND_ALONE_GAME
 	ListObject listButton;
 	ListObject listEditBox;	
@@ -858,91 +855,91 @@ protected:
 	ListObject listListPop;
 	ListObject listListDirectory;	
 #endif
-
-	ListObject listText;
-
 	
-
+	ListObject listText;
+	
+	
+	
 	static MapActorSequence sequence;
-
+	
 	ActorType type;
 	GlFlag<U32>			flags;
-
+	
 private:
 	void UpdateAnimIndex();
 	
-
+	
 	KrSpriteResource	*spriteResource;
 	KrSprite			*sprite;
-
+	
 	KrCanvasResource	*canvasResource;
 	KrCanvas			*canvas;
-
-	SlowCanvas			*slowCanvas;
-
 	
-
+	SlowCanvas			*slowCanvas;
+	
+	
+	
 	
 	Text				*textActor;
-
+	
 	//Event control
 	Uint32	eventControl;
-
+	
 	//Script changes
 	struct stActorVars *scriptVars, *scriptVarsAnt;
-
-
+	
+	
 	gedString actualSequence;
-
+	
 	QueueActorAction queueActorAction;
 	SameTimeStamp	sameTimeStamp;
 	Uint32	lastTimeStamp;
 	stAction *lastQueuedAction;
 	double antAngle;
-	double antRotaton;
 	
-
-
 	
-
+	
+	
+	
+	
 	static bool bAnyPositionChanged; //true if call SetPos in any actor
 	static int loadingActors; //true if in Load funcion
 	MapRegions ownerRegions; //Owner regions
-
+	
 	//MoveTo	
 	double xstop, ystop;
-
 	
-
+	
+	
 	stSequence *mySequence;
-
+	
 	//Activation Event from all actors
 	int totalConnectedActors;
 	MapString mapFromActivationEventActors;
-
 	
-
+	
+	
 	static int baseZDepth;
-
+	
 	//Region Actor
 protected:
 	static bool bShowRegions;
 	static Actor *change;
 	int xClick, yClick, xObjClick, yObjClick, widthClick, heightClick;
 	Corner corner;
-
 	
-
+	
+	
 	int red, green, blue;
-
+	
 	DrawInfo *drawInfo;
 	int nZeros; //To text number fill
-
+	
 	//Solve the bug "don't show myPlane smoke in 1945.ged in stand alone game"
 	U32 loadedZDepth;
 	double loadedTransparency;
 	KrRGBA loadedColor;
-
+	
 	//Raknet		
 	SystemAddress owner;	
 	RakNetTime ownerShipRequestTime;
@@ -951,9 +948,9 @@ protected:
 #ifndef ACTOR_USES_VIRTUAL_FUNCTIONS
 	static GlDynArray<void *> freeList;
 #endif
-
+	
 #ifndef STAND_ALONE_GAME
-
+	
 	gedString description;
 	gedString GetUpdateImageName(const gedString &animationName);
 	
