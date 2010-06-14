@@ -2471,6 +2471,7 @@ gedString baseStructActor = "typedef struct stActorVars\
 							double animpos;\
 							int animindex;\
 							int nframes;\
+							double rotation;\
 							double angle;\
 							double xvelocity;\
 							double yvelocity;\
@@ -3528,7 +3529,7 @@ bool Script::Parser(const gedString& str, bool bConditional, bool bOnDemandLoad,
 		sopen += "double x, y, xprevious, yprevious, xscreen, yscreen; ";
 		sopen += "double r, g, b, transp, pathxpos, pathypos, animpos; ";
 		sopen += "int animindex, nframes; ";
-		sopen += "double angle, xvelocity, yvelocity, directional_velocity;";
+		sopen += "double rotation, angle, xvelocity, yvelocity, directional_velocity;";
 		sopen += "int width, height; ";
 		sopen += "double textNumber; ";
 		sopen += "char *text; ";
@@ -3588,6 +3589,11 @@ bool Script::Parser(const gedString& str, bool bConditional, bool bOnDemandLoad,
 	if(code.find("angle") != gedString::npos)
 	{
 		updateFlags |= NEED_ANGLE;
+	}
+
+	if(code.find("rotation") != gedString::npos)
+	{
+		updateFlags |= NEED_ROTATION;
 	}
 	
 	if(bOnDemandLoad /*&& GameControl::Get()->GetGameFileVersion() <= 12*/)
@@ -4187,6 +4193,7 @@ void Script::StoreStaticData()
 	sVars[spVars++] = *(si->iSym); si++;
 	sVars[spVars++] = *(si->iSym); si++;
 	
+	sVars[spVars++] = *(si->iSym); si++;
 
 	for(int i = MIN_ACTOR_VARS; i < totalVars; i++)
 	{
@@ -4272,6 +4279,7 @@ void Script::RestoreStaticData()
 	*((si--)->iSym) = sVars[--spVars];
 	*((si--)->iSym) = sVars[--spVars];
 
+	*((si--)->iSym) = sVars[--spVars];
 
 
 	musicVol = sDouble[--spDouble];
@@ -4401,6 +4409,7 @@ bool Script::IsActorVariable(const gedString &varName)
 	   varName == "name" ||
 	   varName == "clonename" ||
 	   varName == "cloneindex" ||
+	   varName == "rotation" ||
 
 	   mapLocalUserVar[varName]	     
 	   )
@@ -4539,6 +4548,8 @@ inline void Script::AddActorVars(Actor *eventActor, Actor *collideActor)
 	*(si->iSym) = (symentry_t *)((char *)eventActor->getScriptVars() + si->offset); si++;
 	*(si->iSym) = (symentry_t *)((char *)eventActor->getScriptVars() + si->offset); si++;
 
+	*(si->iSym) = (symentry_t *)((char *)eventActor->getScriptVars() + si->offset); si++;
+	
 	
 	for(int i = MIN_ACTOR_VARS; i < totalVars; i++)
 	{
@@ -4611,6 +4622,7 @@ void Script::InitAuxVars()
 	long offset;
 	EiC_parseString("long _gedActor_offset1 @ %ld;", (long)&offset);
 	EiC_parseString("Actor _ged_Actor;");
+	EiC_parseString("double rotation @ %ld;", (long)&eventActorVars->rotation); storeSymPointer("rotation", i++, (char *)&eventActorVars->rotation - (char *)eventActorVars);
 	char buf[128];
 	
 	//int sizeStruct = sizeof(stActorVars);
@@ -5035,6 +5047,7 @@ void Script::PopulateActorVars(ListPop *list)
 	list->AddText("g");
 	list->AddText("b");
 	list->AddText("transp");
+	list->AddText("rotation");
 
 	//Why use pathxpos and pathypos?
 	if(!Tutorial::IsOff() && !Tutorial::IsCompatible(VERSION_PREFERENCES))
