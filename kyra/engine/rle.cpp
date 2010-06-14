@@ -850,8 +850,12 @@ void KrRle::DrawOpenGL( KrPaintInfo* paintInfo,
 	GLASSERT( openGLZ >= 1 );
 	GLASSERT( openGLZ <= kKrOglDistance );
 
+	SDL_CurrentVideo->glRotatef((GLdouble)xForm.rotation,0,0,1);
 	
-
+#if defined( _DEBUG)
+	GLOUTPUT("%4.2f",xForm.rotation);
+#endif
+	
 #ifndef GL_OES_VERSION_1_1 //maks
 	SDL_CurrentVideo->glBegin( GL_QUADS );
 	{
@@ -868,6 +872,8 @@ void KrRle::DrawOpenGL( KrPaintInfo* paintInfo,
 		SDL_CurrentVideo->glVertex3i( bounds.xmin,				bounds.ymin+bounds.Height(),	openGLZ );
 	}
 	SDL_CurrentVideo->glEnd();
+	SDL_CurrentVideo->glRotatef((GLdouble)-xForm.rotation,0,0,1);
+
 #else
 	GLshort vertices[] = 
 	{
@@ -884,7 +890,7 @@ void KrRle::DrawOpenGL( KrPaintInfo* paintInfo,
 		GlES_DoubleToFixed(texture->Bounds().xmax),	GlES_DoubleToFixed(texture->Bounds().ymax),   
 		GlES_DoubleToFixed(texture->Bounds().xmin),	GlES_DoubleToFixed(texture->Bounds().ymax)
 	};
-	
+
 	DrawOGLTexQuad(GL_TRIANGLE_STRIP, vertices, texCoords, 3); 
 #endif
 
