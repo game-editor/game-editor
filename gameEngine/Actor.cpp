@@ -877,6 +877,7 @@ Actor::Actor(const gedString& spriteName, Actor *_parent, ActorType _type, int c
 	strcpy(scriptVars->name, spriteName.getCharBuf());
 	scriptVars->animindex = -1;
 	scriptVars->angle = INVALID_ANGLE;
+	scriptVars->rotation = 0; //AKR
 	scriptVars->x = scriptVars->y = 2147483647L; //To avoid the (0, 0) position bug (if a  view has a (0, 0) nothing was happen)
 
 	scriptVars->r = scriptVars->g = scriptVars->b = 255.0;
@@ -1057,7 +1058,7 @@ Actor::Actor(const gedString& spriteName, Actor *_parent, ActorType _type, int c
 	anteriorXPos = anteriorYPos = anteriorFramePathX = anteriorFramePathY = 0;
 	frameAnt = 0;
 	antAngle = 0.0;
-	
+	antRotaton = 0.0;
 
 	
 
@@ -1133,6 +1134,7 @@ Actor::Actor(const gedString& spriteName, Actor *_parent, ActorType _type, int c
 	scriptVarsAnt->transp = scriptVars->transp;
 	scriptVarsAnt->textNumber = scriptVars->textNumber;
 	strcpy(scriptVarsAnt->text, scriptVars->text);
+	scriptVarsAnt->rotation = scriptVars->rotation;
 
 	
 	sequence.FindOrCreate(scriptVars->name)->nRef++;	
@@ -2537,7 +2539,13 @@ KrCanvasResource *Actor::getCanvasResource()
 {
 	return canvasResource;
 }
+void Actor::SetRotation(double rotation)
+{  
+	KrImage *pImage = getImage();
+	if(!pImage) return;
+	pImage->SetRotation(rotation);
 
+}
 void Actor::SetTransparency(double trans)
 {
 	KrImage *pImage = getImage();
@@ -3906,7 +3914,7 @@ void Actor::Load(SDL_RWops *src, Uint32 version)
 		scriptVarsAnt->y = scriptVars->y;
 		scriptVarsAnt->xscreen = scriptVars->xscreen;
 		scriptVarsAnt->yscreen = scriptVars->yscreen;
-		scriptVarsAnt->animpos = scriptVars->animpos;
+		scriptVarsAnt->animpos = scriptVars->animpos;		
 		scriptVarsAnt->xvelocity = scriptVars->xvelocity;
 		scriptVarsAnt->yvelocity = scriptVars->yvelocity;
 		scriptVarsAnt->diretional_velocity = scriptVars->diretional_velocity;
@@ -3917,6 +3925,7 @@ void Actor::Load(SDL_RWops *src, Uint32 version)
 		scriptVarsAnt->transp = scriptVars->transp;
 		scriptVarsAnt->textNumber = scriptVars->textNumber;
 		strcpy(scriptVarsAnt->text, scriptVars->text);
+		scriptVarsAnt->rotation = scriptVars->rotation;
 	}
 
 #ifndef STAND_ALONE_GAME
@@ -4559,6 +4568,7 @@ void Actor::SetActualValues(U32 updateFlags)
 	scriptVarsAnt->xvelocity = scriptVars->xvelocity;
 	scriptVarsAnt->yvelocity = scriptVars->yvelocity;
 	scriptVarsAnt->diretional_velocity = scriptVars->diretional_velocity;
+	scriptVarsAnt->rotation = scriptVars->rotation;
 	
 	
 	
@@ -4678,6 +4688,7 @@ void Actor::UpdateScriptChanges(U32 updateFlags, bool bFromNetwork)
 	}
 
 	if(scriptVars->transp != scriptVarsAnt->transp) SetTransparency(scriptVars->transp);
+	if(scriptVars->rotation != scriptVarsAnt->rotation) SetRotation(scriptVars->rotation);
 
 	if(	
 		scriptVars->animpos != scriptVarsAnt->animpos 		
