@@ -13850,7 +13850,6 @@ bool GameControl::CreateUserVar(gedString varName, Uint8 _type, int _arrayLenght
 		varName == S_VAR_FRAMES ||
 		varName == S_VAR_XMOUSE ||
 		varName == S_VAR_YMOUSE ||
-	    varName == S_VAR_ROTATION ||
 		varName == S_VAR_MUSIC_VOLUME)
 	{
 		return false;
