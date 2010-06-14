@@ -277,6 +277,7 @@ class KrImNode
 	*/
 	
 	void SetPos( GlFixed x, GlFixed y/*, int win=KR_ALL_WINDOWS*/ );
+	void SetRotation( double rotation );
 
 	/// Set the scale of this ImNode, which changes all the children as well.
 	void SetScale( GlFixed xScale, GlFixed yScale/*, int window=KR_ALL_WINDOWS*/ );
