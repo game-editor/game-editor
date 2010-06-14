@@ -70,7 +70,7 @@ void EiC_parseString(char * fmt,...);
 #define S_VAR_TEXT			"text"
 #define S_VAR_WIDTH			"width"
 #define S_VAR_HEIGHT		"height"
-
+#define S_VAR_ROTATION	"rotation"
 
 
 //Global vars
@@ -84,8 +84,9 @@ void EiC_parseString(char * fmt,...);
 #define NEED_ANGLE						(1 << 1)
 #define NEED_DIRECTIONAL_VELOCITY		(1 << 2)
 #define NEED_MOUSE_POSITION				(1 << 3)
-#define NEED_RAND						(1 << 4)
-#define NEED_ALL						0xFFFFFFFF
+#define NEED_RAND							(1 << 4)
+#define NEED_ROTATION					(1 << 5)
+#define NEED_ALL							0xFFFFFFFF
 
 
 class Actor;
