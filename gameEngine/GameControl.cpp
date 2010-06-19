@@ -14758,7 +14758,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 	SDL_ClearError();
 
 
-	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe" || executableName == "gameEditorMacosx" || executableName == "gameEditorIphone") executableName = "game1"; //maks
+	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe" || executableName == "gameEditorLinux" || executableName == "gameEditorMacosx" || executableName == "gameEditorIphone") executableName = "game1"; //maks
 
 
 	int i = 0;

@@ -6,7 +6,7 @@ OBJ  = ../output//AboutDlg.o ../output//ActorProperty.o ../output//ActorText.o .
 LIBS = ../output/gameEngine/gameEngine.a ../output/SDL_mixer.a ../output/eic/eiclib.a ../output/engine/engine.a ../output/mikmod.a ../output/native_midi.a ../output/SDL_image.a ../output/jpeg.a ../output/libpng.a ../output/zlib.a ../output/freetype.a ../output/sdl.a
 
 INCS = -I"../SDL/SDL_ttf/VisualC/FreeType/include" -I"../SDL/SDL_mixer" -I"../SDL/SDL/include" -I"../SDL/SDL_image" -I"../gameEngine"  -I"../kyra"  -I"../gameEngine/EiC/src"
-BIN  = "../output/editor/gameEditor"
+BIN  = "../output/gameEditorLinux"
 CFLAGS = $(INCS) $(TARGET) -DNO_STDIO_REDIRECT -DNO_LONG_LONG -DNO_DIRENT -DNO_FCNTL -DNO_STAT -DNO_UNISTD -DNO_TERMIOS -DNO_PIPE -DNO_POSIX -DNO_LONGLONG -DNO_HISTORY $(BUILD_TYPE) $(GAMEEDITOR_TYPE)
 
 ifeq (,$(findstring LLVM,$(TARGET)))

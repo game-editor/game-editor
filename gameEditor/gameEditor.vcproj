@@ -318,7 +318,7 @@
 				Name="arm-linux-link"
 				ExecutionBucket="11"
 				AdditionalOptions="-s"
-				Libraries="../output/GP2X/gameEngine.lib;../output/GP2X/engine.lib;../output/GP2X/eiclib.lib;../output/GP2X/staticSDL_mixer.lib;../output/GP2X/mikmod.lib;../output/GP2X/timidity.lib;../output/GP2X/native_midi.lib;../output/GP2X/staticSDL.lib;$(NOINHERIT)"
+				Libraries="../output/GP2X/gameEngine.lib;../output/GP2X/engine.lib;../output/GP2X/eiclib.lib;../output/GP2X/staticSDL_mixer.lib;../output/GP2X/staticSDL_image.lib;../output/GP2X/mikmod.lib;../output/GP2X/timidity.lib;../output/GP2X/native_midi.lib;../output/GP2X/staticSDL.lib;$(NOINHERIT)"
 				StaticLink="0"
 			/>
 			<Tool

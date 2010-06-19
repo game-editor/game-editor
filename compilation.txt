@@ -115,7 +115,7 @@ In the Visual Studio 2008, choose the version you want to compile:
 		
 - Copy the executable files to the bin directory without any extensions:
   
-	gameEditorWindows.exe		-> bin\\gameEditorWindows
+	gameEditor.exe		-> bin\\gameEditorWindows
 	gameEditorPocket.exe		-> bin\\gameEditorPocket
 	gameEditorLinux				-> bin\\gameEditorLinux
 	gameEditorPocket.exe.gpe	-> bin\\gameEditorGP2X

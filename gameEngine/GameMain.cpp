@@ -125,6 +125,7 @@ void *GetMainWindow() {return SDL_Window;}
 
 Uint32 startKyraSplash;
 bool bShutDown = false;
+bool bCanUseOpenGL = true;
 
 #include "dlmalloc.h"
 #if !defined(DISABLE_DLMALLOC) && defined(USE_MALLOC_LOCK)
@@ -755,15 +756,14 @@ static int BenchMark(SDL_Surface *screen)
 SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags)
 {
 	//If opengl is requested, allow only if pass on benchmark test
-	static bool bOpenGLTested = false;
-	static bool bCanUseOpenGL = true;
+	static bool bOpenGLTested = false;	
 
 #ifdef GP2X
 	bpp = 16;
 #endif
 
 	if(
-		//bOpenGLTested && !bCanUseOpenGL && //opengl:teste: remove comment to enable OpenGL 
+		bOpenGLTested && !bCanUseOpenGL && //opengl:teste: remove comment to enable OpenGL 
 		(flags & SDL_OPENGL)) 
 	{
 #ifndef __APPLE__
@@ -965,7 +965,15 @@ void EngineStart()
 	mallocMutEx = SDL_CreateMutex();
 #endif
 
-
+	//Game Editor will use opengl by default
+	//If this is not possible (the game crash, for example), for some reason, a file named "noopengl" in the game folder will disable the opengl
+	//(Some systems may not allow command line flags, so, use the file)
+	SDL_RWops *openglFileFlag = ged_SDL_RWFromFile("noopengl", "r");
+	if(openglFileFlag)
+	{
+		bCanUseOpenGL = false;
+		SDL_RWclose(openglFileFlag);
+	}
 
 	const SDL_version* sdlVersion = SDL_Linked_Version();
 	if ( sdlVersion->minor < 2 )

@@ -8,12 +8,15 @@
  *
  */
 
+
+
+#ifdef ASMV
+
 #include "deflate.h"
 
 #undef FAR
 //#include <windows.h>
 
-#ifdef ASMV
 #define NIL 0
 
 #define UNALIGNED_OK
