@@ -12381,7 +12381,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 
 #if defined(STAND_ALONE_GAME)
 		if(!bGEInfo && (res1 || res2))
-		{			
+		{
 			vault2 = new KrResourceVault();
 			vault2->LoadDatFileFromMemory(geinfo, geinfo_size); 
 			KrSpriteResource *spriteResource = new KrSpriteResource("maksgeinfo");
@@ -14758,7 +14758,7 @@ bool GameControl::CheckStandAloneMode(gedString executableName)
 	SDL_ClearError();
 
 
-	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe" || executableName == "gameEditorLinux" || executableName == "gameEditorMacosx" || executableName == "gameEditorIphone") executableName = "game1"; //maks
+	if(executableName == "gameEditor.exe" || executableName == "gameEditorPocket.exe" || executableName == "gameEditorWindows.exe" || executableName == "gameEditorLinux" || executableName == "gameEditorMacOSX" || executableName == "gameEditorIphone") executableName = "game1"; //maks
 
 
 	int i = 0;
@@ -17190,21 +17190,27 @@ bool GameControl::GameTick(SDL_Event &event)
 			if((now - startTick) < 1000) 
 			{
 				alpha = 255 * (now - startTick) / 1000;
+				if(alpha > 255) alpha = 255;
 				xcolor.SetAlpha( alpha );
 			}
-			else if((now - startTick) > 2000) xcolor.SetAlpha(alpha--);
+			else if((now - startTick) > 2000 && alpha > 0) alpha--;
 
-			kr2->SetColor( xcolor );
+			xcolor.SetAlpha( alpha );
 
-			engine->FillBackground(&bgColor);
-			engine->Draw();					
-			if((now - startTick) > 3000)
+			if((now - startTick) < 3000)
+			{
+				kr2->SetColor( xcolor );
+
+				engine->FillBackground(&bgColor);
+				engine->Draw();	
+			}
+			else
 			{
 				PauseGame(false);	
 				engine->Tree()->DeleteNode(kr2);
 				delete vault2;
 				vault2 = NULL;
-				setBackGroundColor(backgroundColor);
+				setBackGroundColor(backgroundColor);	
 			}
 		}
 
@@ -20461,7 +20467,7 @@ bool GameControl::ExportGame(const gedString& exportName, int exportType)
 		sourceName = "bin\\gameEditorLinux";
 		break;
 	case MACOSX_EXECUTABLE:
-			sourceName = "bin\\gameEditorMacOSX";
+			sourceName = "bin\\gameEditorMacOSX"; //Like the official name of the system Mac OS X
 		break;
 	case IPHONE_EXECUTABLE:
 		sourceName = "bin\\gameEditorIphone";
