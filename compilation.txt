@@ -101,7 +101,7 @@ In the Visual Studio 2008, choose the version you want to compile:
 - To compile the Pocket PC engine, select the 'Pocket PC 2003 (ARMV4)' configuration (you need to to get the PocketHAL library at http://www.droneship.com)
 
 - To make a Pocket PC compilation works in the Pocket PC 2002, uses: /subsystem:windowsce,3.00 /MACHINE:ARM	
-  In the MSVC 2008, this flag is not working so, the genarated executable have the windowsce 5.00 subsystem.
+  In the MSVC 2008, this flag is not working so, the generated executable have the windowsce 5.00 subsystem.
   To solve this issue, you need a Portable Executable editor (PE Editor) to change the follow configuration in the Optional Header to:
   
 	- OS Major Version: 0004 (Address 0x00000128) in the executable file)
@@ -119,4 +119,4 @@ In the Visual Studio 2008, choose the version you want to compile:
 	gameEditorPocket.exe		-> bin\\gameEditorPocket
 	gameEditorLinux				-> bin\\gameEditorLinux
 	gameEditorPocket.exe.gpe	-> bin\\gameEditorGP2X
-	gameEditorIphone			-> bin\\gameEditorIphone
+	gameEditorMacOSX			-> bin\\gameEditorMacOSX

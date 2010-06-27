@@ -261,6 +261,27 @@ int SDL_VideoInit (const char *driver_name, Uint32 flags)
 	video->gl_config.stereo = 0;
 	video->gl_config.multisamplebuffers = 0;
 	video->gl_config.multisamplesamples = 0;
+
+	///////////////////////////////////////////
+	///maks: From SDL113. Please update the whole SDL when possible!
+	video->gl_config.driver_loaded = 0;
+    video->gl_config.dll_handle = NULL;
+    video->gl_config.red_size = 3;
+    video->gl_config.green_size = 3;
+    video->gl_config.blue_size = 2;
+    video->gl_config.alpha_size = 0;
+    video->gl_config.buffer_size = 0;
+    video->gl_config.depth_size = 16;
+    video->gl_config.stencil_size = 0;
+    video->gl_config.double_buffer = 1;
+    video->gl_config.accum_red_size = 0;
+    video->gl_config.accum_green_size = 0;
+    video->gl_config.accum_blue_size = 0;
+    video->gl_config.accum_alpha_size = 0;
+    video->gl_config.stereo = 0;
+    video->gl_config.multisamplebuffers = 0;
+    video->gl_config.multisamplesamples = 0;
+	///////////////////////////////////////////
 	
 	/* Initialize the video subsystem */
 	memset(&vformat, 0, sizeof(vformat));
