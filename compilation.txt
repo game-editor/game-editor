@@ -85,7 +85,7 @@ Linux: (tested on Kubuntu 9.10 64bits)
 	
 5) Go to the Game Editor directory
 6) type: make
-7) copy the contents of the directory gameEditor/res to output/editor
+7) Copy the contents of the directory gameEditor/res to output (or in the place you have put gameEditorLinux file)
 
 
 /////////////////////////////////////////////////////////////////////////

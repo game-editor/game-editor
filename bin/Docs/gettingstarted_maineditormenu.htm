@@ -181,8 +181,8 @@ a:hover {
         <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#009933">Export:</font> 
           Create the final executable game and pack the data.<br>
           </font></strong><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
-          Game Editor exports a game as a single executable file. <br>
-          This executable file includes all of the game's data (animations, sounds, 
+          Game Editor exports a game as a single executable file or a single data file (iPhone/iPad). <br>
+          This file includes all of the game's data (animations, sounds, 
           ...).</font></strong></p>
         <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="images/exportgame.gif" width="465" height="106"></font></strong></p>
         <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Available 
@@ -193,7 +193,7 @@ a:hover {
             <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows</font></strong> 
               version supports:<br>
               - <strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows 
-              95, 98, Me, NT, 2000, 2003, XP</font></strong></p>
+              95, 98, Me, NT, 2000, 2003, XP, Vista, 7</font></strong></p>
             <p><font face="Verdana, Arial, Helvetica, sans-serif">Minimum System 
               Requirements</font>:<br>
               <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>- 
@@ -206,15 +206,14 @@ a:hover {
           </font></strong> 
           <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Pocket 
             PC / Handheld PC Executable: Executable file compatible with Pocket 
-            PC and Handheld PC.</font></strong></p>
+            PC, Handheld PC, Windows Mobile (2003, 2005, 6, 6.5).</font></strong></p>
           <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Windows 
             Mobile-based Smartphone Executable: Smartphone executable file.<br>
             </font></strong></p>
           <font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
           <blockquote> 
             <p><strong>Pocket PC, Handheld PC and Smartphone version supports:<br>
-              - Windows CE OS 3.0 (Pocket PC 2002, Windows Mobile 2003, 2005) 
-              and later<br>
+              - Windows Mobile (2003, 2005, 6, 6.5) <br>
               - ARM processors (ARM, StrongARM, XScale, OMAP, PXA, ...)<br>
               - Full screen mode only<br>
               - Ogg Vorbis, wav, mod, s3m, it and xm music files</strong></p>
@@ -240,14 +239,24 @@ a:hover {
               - Full screen mode only<br>
               - Ogg Vorbis, wav, mod, s3m, it and xm music files</strong></font></p>
           </blockquote>
-          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game 
-            Data Only: Exports only the data file without game engine. This format 
-            is used if your game has been distributed in numerous game files.</font></strong> 
+          <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game Data Only (iPhone, iPad or game level without the executable engine): Exports only the data file without game engine. This format 
+            is used if your game has been distributed in numerous game files or for make games for iPhone and iPad.
+            
+            <br><br>
+            
+            In order to create games for iPhone or iPad, first you need to export the game (or the game levels) as "Game Data Only".<br>
+The first level must have the same name of the Product Name (your game name).<br>
+For example, if the product name is "TheGame", the first level file must be "TheGame.dat".<br>
+After get the exported .dat files, add the files in the xcode project (as a new resource), update the custom info you want (game icon, your name, game name, ...)
+and build the project.
+
+</font></strong> 
           </p>
           <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Game 
             Data Only for Pocket PC, Handheld PC, Smartphone or GP2X: Exports 
             only the data file with optimizations for Pocket PC, Handheld PC, 
-            Smartphones and GP2X devices.</font></strong></p>
+            Smartphones and GP2X devices.
+            </font></strong></p>
           <p>&nbsp;</p>
           <p><strong><font color="#000033" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Custom 
             extensions:</font></strong></p>
