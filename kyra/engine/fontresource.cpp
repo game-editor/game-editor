@@ -217,11 +217,11 @@ SDL_Surface *KrFontResource::CreateGlyphSurface(U16 glyphCode) //maks
 	//Adjust ttf font
 	gedString fileName(ResourceName());
 
-	if(fileName == "maksfont.bmp")
+	/*if(fileName == "maksfont.bmp")
 	{
 		//Extend editor font
 		fileName = defaultTTFFont;
-	}
+	}*/
 
 	if( fileName.substr(fileName.length() - (16 + 4), 4) == ".ttf" || 
 		fileName.substr(fileName.length() - (16 + 4), 4) == ".TTF")
