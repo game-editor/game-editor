@@ -984,7 +984,7 @@ val_t eic_sprintf(void)
 
 	if(v.ival == 0) //maks
 	{
-		EiC_messageDisplay("EiC sprintf creating an empty string");
+		//EiC_messageDisplay("EiC sprintf creating an empty string"); //maks: this message will break some created games (http://game-editor.com/forum/viewtopic.php?f=2&t=8648&p=60032)
 	}
 
     return v;
