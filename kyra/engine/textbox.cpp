@@ -118,7 +118,7 @@ KrTextBox::KrTextBox(	KrFontResource* _resource,
 						void *parent) //maks
 {
 #ifndef STAND_ALONE_GAME 
-	if(!bSystemClipBoardInited)
+	//if(!bSystemClipBoardInited) //Always update the scrap info (solve the bug when try use function insertion after change the window size on Linux)
 	{
 		if(init_scrap() >= 0)
 		{
