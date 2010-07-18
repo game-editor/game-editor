@@ -82,7 +82,7 @@
 				BrowseInformation="1"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
-				DebugInformationFormat="3"
+				DebugInformationFormat="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -193,7 +193,7 @@
 				StructMemberAlignment="4"
 				BufferSecurityCheck="false"
 				DisableLanguageExtensions="false"
-				DebugInformationFormat="3"
+				DebugInformationFormat="0"
 				CompileForArchitecture="0"
 				InterworkCalls="false"
 				EnableFloatingPointEmulation="true"

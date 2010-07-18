@@ -83,6 +83,8 @@ extern "C" int GetGameMode(); //maks
 extern int HasShadows(void *actor);
 #endif
 
+KrSprite *kr2 = NULL;
+
 KrImageTree::KrImageTree( KrEngine* _engine )
 	: idMap( 64 ), 
 	//nameMap( 64 ),  //maks
@@ -504,7 +506,7 @@ void KrImageTree::DrawWalk( const KrRect& dr, KrImNode* node, KrPaintInfo* info/
 		{
 			GLASSERT( node->ToImage() );
 			KrImage* image = node->ToImage();
-			if ( image )
+			if ( image && (!kr2 || image == kr2))
 			{
 				image->Draw( info, dr/*, win*/ );
 			}

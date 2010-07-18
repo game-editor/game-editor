@@ -89,7 +89,7 @@ double rand(double t);
 U32 res1 = 1, res2 = 2;
 
 KrResourceVault *vault2 = NULL;
-KrSprite *kr2 = NULL;
+extern KrSprite *kr2;
 bool bGEInfo = false;
 
 #ifndef GP2X
@@ -12382,6 +12382,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 #if defined(STAND_ALONE_GAME)
 		if(!bGEInfo && (res1 || res2))
 		{
+			PauseGame(true);
 			vault2 = new KrResourceVault();
 			vault2->LoadDatFileFromMemory(geinfo, geinfo_size); 
 			KrSpriteResource *spriteResource = new KrSpriteResource("maksgeinfo");
@@ -12407,8 +12408,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 			engine->Tree()->AddNode( 0, kr2 );
 
 			kr2->SetPos( (resX  - bounds.Width())/2, (resY  - bounds.Height())/2);
-			kr2->SetZDepth(CURSOR_DEPTH - 1);
-			PauseGame(true);
+			kr2->SetZDepth(CURSOR_DEPTH - 1);			
 			bGEInfo = true;
 		}
 #endif
@@ -14356,7 +14356,7 @@ void GameControl::SetGameProperties(Uint16 resX, Uint16 resY, Uint16 fps, bool  
 
 	if(audioSamplerRate != this->audioSamplerRate || bStereo != this->bStereo || maximumSounds != this->maximumSounds)
 	{
-		if(bAudioOpened) Mix_CloseAudio(); 
+		if(bAudioOpened) Mix_CloseAudio(); //May not returns if use windib (Mix_CloseAudio -> SDL_CloseAudio -> SDL_QuitSubSystem -> SDL_AudioQuit -> SDL_WaitThread -> SDL_SYS_WaitThread) 
 		
 		//maks: pode não responder em stand alone mode 
 		//A lentidão da abertura é observada usando windib. A criação da thread de áudio é lenta
@@ -17210,6 +17210,7 @@ bool GameControl::GameTick(SDL_Event &event)
 				engine->Tree()->DeleteNode(kr2);
 				delete vault2;
 				vault2 = NULL;
+				kr2 = NULL;
 				setBackGroundColor(backgroundColor);	
 			}
 		}

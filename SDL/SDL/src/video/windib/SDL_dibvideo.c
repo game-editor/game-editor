@@ -1036,7 +1036,7 @@ static void DIB_WinPAINT(_THIS, HDC hdc)
 }
 
 /* Stub in case DirectX isn't available */
-#ifndef ENABLE_DIRECTX
+#if !defined(ENABLE_DIRECTX) && !defined(ENABLE_DIRECTX_AUDIO)
 void DX5_SoundFocus(HWND hwnd)
 {
 	return;

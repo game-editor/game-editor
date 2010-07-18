@@ -79,8 +79,6 @@ class wxJigsawEditorConfig;
 #define SYMBOL_WXJIGSAWEDITORMAINFRAME_POSITION wxDefaultPosition
 ////@end control identifiers
 
-#define USE_WXPANEL_FOR_FRAME
-
 #ifdef USE_WXPANEL_FOR_FRAME
 #define wxBehaviorFrame wxPanel
 #else

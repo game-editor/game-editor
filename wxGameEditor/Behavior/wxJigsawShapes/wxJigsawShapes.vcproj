@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)Common;$(SolutionDir)wxXmlSerializer/include"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)Common&quot;;&quot;$(SolutionDir)wxXmlSerializer/include&quot;;&quot;$(SolutionDir)wxJigsawShapes&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;$(NOINHERIT)"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"

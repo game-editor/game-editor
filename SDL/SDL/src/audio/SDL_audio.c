@@ -68,7 +68,7 @@ static AudioBootStrap *bootstrap[] = {
 #ifdef NAS_SUPPORT
 	&NAS_bootstrap,
 #endif
-#ifdef ENABLE_DIRECTX
+#if defined(ENABLE_DIRECTX) || defined(ENABLE_DIRECTX_AUDIO) //maks
 	&DSOUND_bootstrap,
 #endif
 #if defined(ENABLE_WINDIB) || defined(ENABLE_GAPI) //maks

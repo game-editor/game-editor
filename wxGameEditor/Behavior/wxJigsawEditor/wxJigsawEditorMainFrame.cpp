@@ -59,7 +59,11 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include <wxJigsawShape.h>
 #include <wxJigsawShapePropertyIO.h>
 #include <wxJigsawInputParameterPropertyIO.h>
+
+#ifdef USE_WXPANEL_FOR_FRAME 
 #include "wx/ifm/ifmdefs.h"
+#endif
+
 #include "../../wxGed/wxGedControls.h"
 
 ////@begin XPM images
@@ -208,13 +212,12 @@ void wxJigsawEditorMainFrame::CreateControls()
     itemDocParentFrame1->SetStatusBar(itemStatusBar13);
 #endif
 
-    wxPanel* itemPanel14 = new wxPanel( itemDocParentFrame1, ID_PALETTE_CONTAINER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	wxPanel* itemPanel14 = new wxPanel( itemDocParentFrame1, ID_PALETTE_CONTAINER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
     itemDocParentFrame1->GetAuiManager().AddPane(itemPanel14, wxAuiPaneInfo()
         .Name(_T("Palette")).MinSize(wxSize(250, -1)).BestSize(wxSize(220, -1)).CaptionVisible(false).CloseButton(false).DestroyOnClose(false).Resizable(true).Floatable(false));
 
     wxBoxSizer* itemBoxSizer15 = new wxBoxSizer(wxVERTICAL);
-    itemPanel14->SetSizer(itemBoxSizer15);
-	itemPanel14->SetBackgroundColour(wxBackground_Pen);
+    itemPanel14->SetSizer(itemBoxSizer15);	
 
 	//Zoom is not working very well. So, doesn't use it now.
 	m_ScaleSlider = NULL;
@@ -244,10 +247,15 @@ void wxJigsawEditorMainFrame::CreateControls()
 
 
     m_CategoryList = new CategoryList( itemSplitterWindow22, ID_CATEGORY_LIST, wxDefaultPosition, wxSize(100, 10), wxSUNKEN_BORDER );
-	m_CategoryList->SetBackgroundColour(wxBackground_Pen);
+	
 
     m_Palette = new wxJigsawShapeListBox( itemSplitterWindow22, ID_PALETTE, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER|wxTAB_TRAVERSAL );
+
+#ifdef USE_WXPANEL_FOR_FRAME
+	itemPanel14->SetBackgroundColour(wxBackground_Pen);
+	m_CategoryList->SetBackgroundColour(wxBackground_Pen);
 	m_Palette->SetBackgroundColour(wxBackground_Pen);
+#endif
 
 	itemSplitterWindow22->SplitHorizontally(m_CategoryList, m_Palette, 10);
     
