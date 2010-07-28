@@ -16,7 +16,6 @@
 #if defined(iPhone_Player)
 #include "FtpServer.h"
 #endif
-//#import "URLGetController.h"
 
 //#import "AppDelegate.h"
 
@@ -326,22 +325,48 @@ baseDir;
 }
 
 #if defined(iPhone_Player)
+#include <ifaddrs.h>
+#include <arpa/inet.h>
+- (NSString *)getIPAddress
+{
+	NSString *address = @"error";
+	struct ifaddrs *interfaces = NULL;
+	struct ifaddrs *temp_addr = NULL;
+	int success = 0;
+	
+	// retrieve the current interfaces - returns 0 on success
+	success = getifaddrs(&interfaces);
+	if (success == 0)
+	{
+		// Loop through linked list of interfaces
+		temp_addr = interfaces;
+		while(temp_addr != NULL)
+		{
+			if(temp_addr->ifa_addr->sa_family == AF_INET)
+			{
+				// Check if interface is en0 which is the wifi connection on the iPhone
+				if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"])
+				{
+					// Get NSString from C String
+					address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+				}
+			}
+			
+			temp_addr = temp_addr->ifa_next;
+		}
+	}
+	
+	// Free memory
+	freeifaddrs(interfaces);
+	
+	return address;
+}	
+
 -(void) startFtp;
 {	
 	
-	char iphone_ip[255];
 	
-	strcpy(iphone_ip,"127.0.0.1"); 
-	NSHost *myhost =[NSHost currentHost];
-	if (myhost)
-	{
-		NSString *ad = [myhost address];
-		if (ad)
-			strcpy(iphone_ip,[ad cStringUsingEncoding:4]);
-	}
-	
-//	NSString *alertTitle = [NSString stringWithFormat:@"%@ %s %@", @"Connect to", iphone_ip, @"port 20000"];	
-	NSString *alertTitle = [NSString stringWithFormat:@"%@ %@ %s %@",@"Welcome to Game-Editor", @"Connect to", iphone_ip, @"port 20000"];	
+	NSString *alertTitle = [NSString stringWithFormat:@"%@ %@ %s %@",@"Welcome to Game-Editor", @"Connect to", [[self getIPAddress]UTF8String], @"port 20000"];	
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle 
 													message:@"The FTP Server has been enabled, please use FTP client software to transfer your datafile (geplayer.dat) to this device.  Press the \"Stop FTP Server\" button once all data transfers have been completed."
