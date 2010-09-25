@@ -122,7 +122,9 @@ KrTextBox::KrTextBox(	KrFontResource* _resource,
 	{
 		if(init_scrap() >= 0)
 		{
+#ifndef linux
 			bHasSystemClipBoard = true;
+#endif
 		}
 
 		bSystemClipBoardInited = true;
