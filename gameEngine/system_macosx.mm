@@ -120,6 +120,10 @@
 {
 	return [[[NSBundle mainBundle] resourcePath]UTF8String]; 	
 }
+-(const char*) getBundlePath;
+{
+	return [[[NSBundle mainBundle] bundlePath]UTF8String]; 	
+}
 
 @end
 gedString FileDialog(ListString& multiFilter, bool bOpen, gedString saveName = "")
@@ -142,6 +146,16 @@ const char* getResourcePath(void)
 	
 	system_macosx *system_mosx=[[system_macosx alloc]init];
 	r= [system_mosx getResourcePath];
+	
+	[system_mosx release];
+	return r;
+}
+const char* getBundlePath(void)
+{
+	const char* r;
+	
+	system_macosx *system_mosx=[[system_macosx alloc]init];
+	r= [system_mosx getBundlePath];
 	
 	[system_mosx release];
 	return r;
