@@ -17,6 +17,7 @@
 - (NSString *)openDoc :(ListString&) Filter CanOpen:(bool) bOpen SaveName:(gedString) sName;
 - (void) openUrl:(const char*) url;
 - (const char*) getResourcePath;
+- (const char*) getBundlePath;
 - (void) startFtp;
 @end
 
