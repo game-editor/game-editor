@@ -51,6 +51,7 @@ void startFtp(void);
 #endif
 #if __MACOSX__
 const char *getResourcePath(void);
+const char *getBundlePath(void);
 #endif
 #include "PathFinder/GeoPathfinder.h"
 
@@ -1199,7 +1200,12 @@ void EngineLoad(const char *gamePath)
 		dir = ged_getcwd(buf, PATH_LIMIT);
 	}
 #endif
-
+#ifdef __MACOSX__ //AKR: Treat app bundle correctly
+		dir=getBundlePath();
+		dir=dir+"/Contents/MacOS";
+		chdir(dir.getCharBuf());
+#endif
+		
 #else
 	SplitPath(argv[0], file, dir);
 
