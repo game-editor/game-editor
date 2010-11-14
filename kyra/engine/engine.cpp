@@ -347,6 +347,7 @@ void KrEngine::InitOpenGL(int w, int h, float r, float g, float b) //maks
 	//SDL_CurrentVideo->glHint(GL_GENERATE_MIPMAP_HINT, GL_DONT_CARE);
 	SDL_CurrentVideo->glDisable(GL_DITHER);
 #if defined(DEBUG) && defined(__APPLE__)
+	SDL_CurrentVideo->glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	GLint maxText;
 	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxText);
 
