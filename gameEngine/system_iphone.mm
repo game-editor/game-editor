@@ -430,7 +430,13 @@ baseDir;
 
 #pragma mark * View controller boilerplate
 @end
-
+extern "C" {
+void openUrl(const char * b) 
+{
+	NSURL *appUrl = [NSURL URLWithString:[NSString  stringWithUTF8String:b]];
+	[[UIApplication sharedApplication] openURL:appUrl]; 	
+}
+}
 void startFtp(void)
 {
 	
