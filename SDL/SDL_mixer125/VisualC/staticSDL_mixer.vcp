@@ -1,0 +1,2368 @@
+# Microsoft eMbedded Visual Tools Project File - Name="staticSDL_mixer" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE x86) Static Library" 0x8304
+# TARGTYPE "Win32 (WCE ARM) Static Library" 0x8504
+
+CFG=staticSDL_mixer - Win32 (WCE ARM) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "staticSDL_mixer.vcn".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "staticSDL_mixer.vcn" CFG="staticSDL_mixer - Win32 (WCE ARM) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "staticSDL_mixer - Win32 (WCE ARM) Release" (based on "Win32 (WCE ARM) Static Library")
+!MESSAGE "staticSDL_mixer - Win32 (WCE ARM) Debug" (based on "Win32 (WCE ARM) Static Library")
+!MESSAGE "staticSDL_mixer - Win32 (WCE x86) Release" (based on "Win32 (WCE x86) Static Library")
+!MESSAGE "staticSDL_mixer - Win32 (WCE x86) Debug" (based on "Win32 (WCE x86) Static Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""$/GameDevelopment/SDL/SDL_mixer/VisualC", RHJAAAAA"
+# PROP Scc_LocalPath "."
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "ARMRel"
+# PROP BASE Intermediate_Dir "ARMRel"
+# PROP BASE CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "../../../output/PocketPC/"
+# PROP Intermediate_Dir "../../../output/PocketPC/SDL_mixer"
+# PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "NDEBUG" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /YX /Oxs /M$(CECrtMT) /c
+# ADD CPP /nologo /W3 /Zi /O2 /Ob0 /I "../../SDL/include/" /I "..\SDL_mad" /I "..\mikmod" /I "..\timidity" /I "..\native_midi" /I "tremor" /D "OGG_MUSIC" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "NDEBUG" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "WAV_MUSIC" /D "MOD_MUSIC" /D "USE_RWOPS" /D "FPM_DEFAULT" /D "OPT_SPEED" /D "ASO_INTERLEAVE1" /D inline=__inline /U "USE_NATIVE_MIDI" /U "USE_TIMIDITY_MIDI" /U "MID_MUSIC" /YX /Oxs /M$(CECrtMT) /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"../../../output/PocketPC/SDL_mixer.lib"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMDbg"
+# PROP BASE Intermediate_Dir "ARMDbg"
+# PROP BASE CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../output/PocketPC/"
+# PROP Intermediate_Dir "../../../output/PocketPC/SDL_mixer"
+# PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /YX /M$(CECrtMTDebug) /c
+# ADD CPP /nologo /W3 /Zi /Od /I "../../SDL/include/" /I "..\SDL_mad" /I "..\mikmod" /I "..\timidity" /I "..\native_midi" /I "tremor" /D "OGG_MUSIC" /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "WAV_MUSIC" /D "MOD_MUSIC" /D "USE_RWOPS" /D "FPM_DEFAULT" /D "OPT_SPEED" /D "ASO_INTERLEAVE1" /D inline=__inline /U "USE_NATIVE_MIDI" /U "USE_TIMIDITY_MIDI" /U "MID_MUSIC" /YX /M$(CECrtMTDebug) /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"../../../output/PocketPC/SDL_mixer.lib"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "X86Rel"
+# PROP BASE Intermediate_Dir "X86Rel"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "../../../output/"
+# PROP Intermediate_Dir "../../../output/SDL_mixer"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "_LIB" /YX /Gs8192 /GF /Oxs /c
+# ADD CPP /nologo /W3 /I "../../SDL/include/" /I "..\smpeg" /I "..\mikmod" /I "..\timidity" /I "..\native_midi" /I "..\OggVorbis\include" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "_LIB" /D "WAV_MUSIC" /D "MOD_MUSIC" /D "MID_MUSIC" /D "USE_TIMIDITY_MIDI" /D "OGG_MUSIC" /D "MP3_MUSIC" /D "USE_RWOPS" /D "USE_NATIVE_MIDI" /YX /Gs8192 /GF /Oxs /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"../../../output/SDL_mixer.lib"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "X86Dbg"
+# PROP BASE Intermediate_Dir "X86Dbg"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../output/"
+# PROP Intermediate_Dir "../../../output/SDL_mixer"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "_LIB" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /I "../../SDL/include/" /I "..\smpeg" /I "..\mikmod" /I "..\timidity" /I "..\native_midi" /I "..\OggVorbis\include" /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "_LIB" /D "WAV_MUSIC" /D "MOD_MUSIC" /D "MID_MUSIC" /D "USE_TIMIDITY_MIDI" /D "OGG_MUSIC" /D "MP3_MUSIC" /D "USE_RWOPS" /D "USE_NATIVE_MIDI" /YX /Gs8192 /GF /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"../../../output/SDL_mixer.lib"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ENDIF 
+
+# Begin Target
+
+# Name "staticSDL_mixer - Win32 (WCE ARM) Release"
+# Name "staticSDL_mixer - Win32 (WCE ARM) Debug"
+# Name "staticSDL_mixer - Win32 (WCE x86) Release"
+# Name "staticSDL_mixer - Win32 (WCE x86) Debug"
+# Begin Group "tremor"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=..\tremor\asm_arm.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\backends.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\bitwise.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_BITWI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_BITWI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_BITWI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_BITWI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\block.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_BLOCK=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_BLOCK=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_BLOCK=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_BLOCK=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\codebook.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_CODEB=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_CODEB=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_CODEB=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_CODEB=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\codebook.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\codec_internal.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\config_types.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\floor0.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_FLOOR=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\lsp_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_FLOOR=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\lsp_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_FLOOR=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\lsp_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_FLOOR=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\lsp_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\floor1.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_FLOOR1=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_FLOOR1=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_FLOOR1=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_FLOOR1=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\framing.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_FRAMI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_FRAMI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_FRAMI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_FRAMI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\info.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_INFO_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_INFO_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_INFO_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_INFO_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\ivorbiscodec.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\ivorbisfile.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\lsp_lookup.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\mapping0.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_MAPPI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MAPPI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_MAPPI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_MAPPI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	"..\tremor\window.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\mdct.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_MDCT_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\mdct_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MDCT_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\mdct_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_MDCT_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\mdct_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_MDCT_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\mdct.h"\
+	"..\tremor\mdct_lookup.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\mdct.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\mdct_lookup.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\misc.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\ogg.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\os.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\os_types.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\registry.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_REGIS=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_REGIS=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_REGIS=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_REGIS=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\registry.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\res012.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_RES01=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_RES01=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_RES01=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_RES01=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\sharedbook.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_SHARE=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SHARE=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_SHARE=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_SHARE=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\synthesis.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_SYNTH=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SYNTH=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_SYNTH=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_SYNTH=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\backends.h"\
+	"..\tremor\codebook.h"\
+	"..\tremor\codec_internal.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\registry.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\vorbisfile.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_VORBI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_VORBI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_VORBI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_VORBI=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\window.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_WINDO=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\window.h"\
+	"..\tremor\window_lookup.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_WINDO=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\window.h"\
+	"..\tremor\window_lookup.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_WINDO=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\window.h"\
+	"..\tremor\window_lookup.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_WINDO=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\tremor\asm_arm.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\misc.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os.h"\
+	"..\tremor\os_types.h"\
+	"..\tremor\window.h"\
+	"..\tremor\window_lookup.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\window.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\tremor\window_lookup.h
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=..\effect_position.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_EFFEC=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_EFFEC=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_EFFEC=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_EFFEC=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\effect_stereoreverse.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_EFFECT=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_EFFECT=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_EFFECT=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_EFFECT=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\effects_internal.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\effects_internal.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_EFFECTS=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_EFFECTS=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_EFFECTS=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_EFFECTS=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\effects_internal.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\load_aiff.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\load_aiff.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\load_ogg.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_O=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_ogg.h"\
+	"..\SDL_mixer.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_O=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_ogg.h"\
+	"..\SDL_mixer.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_O=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_ogg.h"\
+	"..\SDL_mixer.h"\
+	
+NODEP_CPP_LOAD_O=\
+	"..\OggVorbis\include\ogg\ogg.h"\
+	"..\OggVorbis\include\ogg\os_types.h"\
+	"..\OggVorbis\include\vorbis\codec.h"\
+	"..\OggVorbis\include\vorbis\vorbisfile.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_O=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_ogg.h"\
+	"..\SDL_mixer.h"\
+	
+NODEP_CPP_LOAD_O=\
+	"..\OggVorbis\include\ogg\ogg.h"\
+	"..\OggVorbis\include\ogg\os_types.h"\
+	"..\OggVorbis\include\vorbis\codec.h"\
+	"..\OggVorbis\include\vorbis\vorbisfile.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\load_ogg.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\load_voc.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_V=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_V=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_V=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_V=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\load_voc.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\mixer.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_MIXER=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\load_ogg.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MIXER=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\load_ogg.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_MIXER=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\load_ogg.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_MIXER=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\load_aiff.h"\
+	"..\load_ogg.h"\
+	"..\load_voc.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\music.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_MUSIC=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\mikmod\mikmod.h"\
+	"..\music_cmd.h"\
+	"..\music_ogg.h"\
+	"..\native_midi\native_midi.h"\
+	"..\SDL_mad\libmad\mad.h"\
+	"..\SDL_mad\mad_decode.h"\
+	"..\SDL_mad\mad_internal.h"\
+	"..\SDL_mixer.h"\
+	"..\timidity\timidity.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\wavestream.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MUSIC=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\mikmod\mikmod.h"\
+	"..\music_cmd.h"\
+	"..\music_ogg.h"\
+	"..\native_midi\native_midi.h"\
+	"..\SDL_mad\libmad\mad.h"\
+	"..\SDL_mad\mad_decode.h"\
+	"..\SDL_mad\mad_internal.h"\
+	"..\SDL_mixer.h"\
+	"..\timidity\timidity.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	"..\wavestream.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_MUSIC=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\mikmod\mikmod.h"\
+	"..\music_cmd.h"\
+	"..\music_ogg.h"\
+	"..\native_midi\native_midi.h"\
+	"..\SDL_mixer.h"\
+	"..\timidity\timidity.h"\
+	"..\wavestream.h"\
+	
+NODEP_CPP_MUSIC=\
+	"..\OggVorbis\include\ogg\ogg.h"\
+	"..\OggVorbis\include\ogg\os_types.h"\
+	"..\OggVorbis\include\vorbis\codec.h"\
+	"..\OggVorbis\include\vorbis\vorbisfile.h"\
+	"..\smpeg\MPEGfilter.h"\
+	"..\smpeg\smpeg.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_MUSIC=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL.h"\
+	"..\..\SDL\include\SDL_active.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_cdrom.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_events.h"\
+	"..\..\SDL\include\SDL_getenv.h"\
+	"..\..\SDL\include\SDL_joystick.h"\
+	"..\..\SDL\include\SDL_keyboard.h"\
+	"..\..\SDL\include\SDL_keysym.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mouse.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_quit.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_timer.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\..\SDL\include\SDL_video.h"\
+	"..\mikmod\mikmod.h"\
+	"..\music_cmd.h"\
+	"..\music_ogg.h"\
+	"..\native_midi\native_midi.h"\
+	"..\SDL_mixer.h"\
+	"..\timidity\timidity.h"\
+	"..\wavestream.h"\
+	
+NODEP_CPP_MUSIC=\
+	"..\OggVorbis\include\ogg\ogg.h"\
+	"..\OggVorbis\include\ogg\os_types.h"\
+	"..\OggVorbis\include\vorbis\codec.h"\
+	"..\OggVorbis\include\vorbis\vorbisfile.h"\
+	"..\smpeg\MPEGfilter.h"\
+	"..\smpeg\smpeg.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\music_cmd.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_MUSIC_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_cmd.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MUSIC_=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_cmd.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_MUSIC_=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_cmd.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_MUSIC_=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_cmd.h"\
+	"..\SDL_mixer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\music_cmd.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\music_ogg.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_MUSIC_O=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_ogg.h"\
+	"..\SDL_mixer.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MUSIC_O=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_ogg.h"\
+	"..\SDL_mixer.h"\
+	"..\tremor\config_types.h"\
+	"..\tremor\ivorbiscodec.h"\
+	"..\tremor\ivorbisfile.h"\
+	"..\tremor\ogg.h"\
+	"..\tremor\os_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_MUSIC_O=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_ogg.h"\
+	"..\SDL_mixer.h"\
+	
+NODEP_CPP_MUSIC_O=\
+	"..\OggVorbis\include\ogg\ogg.h"\
+	"..\OggVorbis\include\ogg\os_types.h"\
+	"..\OggVorbis\include\vorbis\codec.h"\
+	"..\OggVorbis\include\vorbis\vorbisfile.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_MUSIC_O=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\music_ogg.h"\
+	"..\SDL_mixer.h"\
+	
+NODEP_CPP_MUSIC_O=\
+	"..\OggVorbis\include\ogg\ogg.h"\
+	"..\OggVorbis\include\ogg\os_types.h"\
+	"..\OggVorbis\include\vorbis\codec.h"\
+	"..\OggVorbis\include\vorbis\vorbisfile.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\music_ogg.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\SDL_mixer.h
+# End Source File
+# Begin Source File
+
+SOURCE=Version.rc
+# End Source File
+# Begin Source File
+
+SOURCE=..\wavestream.c
+
+!IF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Release"
+
+DEP_CPP_WAVES=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	"..\wavestream.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE ARM) Debug"
+
+DEP_CPP_WAVES=\
+	"..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	"..\wavestream.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Release"
+
+DEP_CPP_WAVES=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	"..\wavestream.h"\
+	
+
+!ELSEIF  "$(CFG)" == "staticSDL_mixer - Win32 (WCE x86) Debug"
+
+DEP_CPP_WAVES=\
+	"..\..\SDL\include\begin_code.h"\
+	"..\..\SDL\include\close_code.h"\
+	"..\..\SDL\include\SDL_audio.h"\
+	"..\..\SDL\include\SDL_byteorder.h"\
+	"..\..\SDL\include\SDL_endian.h"\
+	"..\..\SDL\include\SDL_error.h"\
+	"..\..\SDL\include\SDL_main.h"\
+	"..\..\SDL\include\SDL_mutex.h"\
+	"..\..\SDL\include\SDL_rwops.h"\
+	"..\..\SDL\include\SDL_types.h"\
+	"..\..\SDL\include\SDL_version.h"\
+	"..\SDL_mixer.h"\
+	"..\wavestream.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\wavestream.h
+# End Source File
+# End Target
+# End Project

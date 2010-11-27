@@ -1,0 +1,1633 @@
+# Microsoft eMbedded Visual Tools Project File - Name="mikmod" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE x86) Static Library" 0x8304
+# TARGTYPE "Win32 (WCE ARM) Static Library" 0x8504
+
+CFG=mikmod - Win32 (WCE ARM) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "mikmod.vcn".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "mikmod.vcn" CFG="mikmod - Win32 (WCE ARM) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "mikmod - Win32 (WCE ARM) Release" (based on "Win32 (WCE ARM) Static Library")
+!MESSAGE "mikmod - Win32 (WCE ARM) Debug" (based on "Win32 (WCE ARM) Static Library")
+!MESSAGE "mikmod - Win32 (WCE x86) Release" (based on "Win32 (WCE x86) Static Library")
+!MESSAGE "mikmod - Win32 (WCE x86) Debug" (based on "Win32 (WCE x86) Static Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""$/GameDevelopment/SDL/SDL_mixer/VisualC/mikmod", SHJAAAAA"
+# PROP Scc_LocalPath "."
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "ARMRel"
+# PROP BASE Intermediate_Dir "ARMRel"
+# PROP BASE CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "../../../../output/PocketPC/"
+# PROP Intermediate_Dir "../../../../output/PocketPC/mikmod"
+# PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "NDEBUG" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /YX /Oxs /M$(CECrtMT) /c
+# ADD CPP /nologo /W3 /Zi /O2 /Ob0 /I "..\..\mikmod" /I "../../../SDL/include" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "NDEBUG" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "WIN32" /D "USE_RWOPS" /YX /Oxs /M$(CECrtMT) /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMDbg"
+# PROP BASE Intermediate_Dir "ARMDbg"
+# PROP BASE CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../../output/PocketPC/"
+# PROP Intermediate_Dir "../../../../output/PocketPC/mikmod"
+# PROP CPU_ID "{D6518FFC-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /YX /M$(CECrtMTDebug) /c
+# ADD CPP /nologo /W3 /Zi /Od /I "..\..\mikmod" /I "../../../SDL/include" /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "WIN32" /D "USE_RWOPS" /YX /M$(CECrtMTDebug) /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "X86Rel"
+# PROP BASE Intermediate_Dir "X86Rel"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "../../../../output/"
+# PROP Intermediate_Dir "../../../../output/mikmod"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "_LIB" /YX /Gs8192 /GF /Oxs /c
+# ADD CPP /nologo /W3 /I "..\..\mikmod" /I "../../../SDL/include" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "_LIB" /D "WIN32" /D "USE_RWOPS" /YX /Gs8192 /GF /Oxs /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "X86Dbg"
+# PROP BASE Intermediate_Dir "X86Dbg"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "../../../../output/"
+# PROP Intermediate_Dir "../../../../output/mikmod"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "_LIB" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /I "..\..\mikmod" /I "../../../SDL/include" /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "_LIB" /D "WIN32" /D "USE_RWOPS" /YX /Gs8192 /GF /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ENDIF 
+
+# Begin Target
+
+# Name "mikmod - Win32 (WCE ARM) Release"
+# Name "mikmod - Win32 (WCE ARM) Debug"
+# Name "mikmod - Win32 (WCE x86) Release"
+# Name "mikmod - Win32 (WCE x86) Debug"
+# Begin Source File
+
+SOURCE=..\..\mikmod\drv_nos.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_DRV_N=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_DRV_N=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_DRV_N=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_DRV_N=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_DRV_N=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_DRV_N=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_DRV_N=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_DRV_N=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\drv_sdl.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_DRV_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_DRV_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_DRV_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_DRV_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\load_it.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\load_mod.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_M=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_M=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_M=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_M=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_M=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_M=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_M=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_M=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\load_s3m.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_S=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_S=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_S=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_S=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_S=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_S=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\load_xm.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_LOAD_X=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_X=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_LOAD_X=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_X=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_LOAD_X=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_X=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_LOAD_X=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_LOAD_X=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mdreg.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MDREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MDREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MDREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MDREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mdriver.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MDRIV=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDRIV=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MDRIV=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDRIV=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MDRIV=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDRIV=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MDRIV=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MDRIV=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mikmod.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mikmod_build.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mikmod_internals.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mloader.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MLOAD=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MLOAD=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MLOAD=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MLOAD=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mlreg.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MLREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MLREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MLREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MLREG=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLREG=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mlutil.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MLUTI=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLUTI=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MLUTI=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLUTI=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MLUTI=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLUTI=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MLUTI=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MLUTI=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mmalloc.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MMALL=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMALL=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MMALL=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMALL=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MMALL=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMALL=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MMALL=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMALL=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mmerror.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MMERR=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMERR=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MMERR=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMERR=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MMERR=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMERR=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MMERR=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMERR=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mmio.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MMIO_=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMIO_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MMIO_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMIO_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MMIO_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMIO_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MMIO_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MMIO_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mplayer.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MPLAY=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MPLAY=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MPLAY=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MPLAY=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MPLAY=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MPLAY=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MPLAY=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MPLAY=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\munitrk.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MUNIT=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MUNIT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MUNIT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MUNIT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MUNIT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MUNIT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MUNIT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MUNIT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\mwav.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_MWAV_=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MWAV_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_MWAV_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MWAV_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_MWAV_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MWAV_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_MWAV_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_MWAV_=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\npertab.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_NPERT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_NPERT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_NPERT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_NPERT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_NPERT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_NPERT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_NPERT=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_NPERT=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\sloader.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_SLOAD=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_SLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_SLOAD=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_SLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_SLOAD=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_SLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_SLOAD=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+NODEP_CPP_SLOAD=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\virtch.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_VIRTC=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTC=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_VIRTC=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTC=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_VIRTC=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTC=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_VIRTC=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTC=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\virtch2.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_VIRTCH=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTCH=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_VIRTCH=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTCH=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_VIRTCH=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTCH=\
+	"..\..\mikmod\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_VIRTCH=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	"..\..\mikmod\virtch_common.c"\
+	
+NODEP_CPP_VIRTCH=\
+	"..\..\mikmod\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\mikmod\virtch_common.c
+
+!IF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Release"
+
+DEP_CPP_VIRTCH_=\
+	"..\..\..\..\gameEngine\dlmalloc.h"\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE ARM) Debug"
+
+DEP_CPP_VIRTCH_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Release"
+
+DEP_CPP_VIRTCH_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mikmod - Win32 (WCE x86) Debug"
+
+DEP_CPP_VIRTCH_=\
+	"..\..\..\SDL\include\begin_code.h"\
+	"..\..\..\SDL\include\close_code.h"\
+	"..\..\..\SDL\include\SDL_rwops.h"\
+	"..\..\..\SDL\include\SDL_types.h"\
+	"..\..\mikmod\mikmod.h"\
+	"..\..\mikmod\mikmod_build.h"\
+	"..\..\mikmod\mikmod_internals.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Target
+# End Project
