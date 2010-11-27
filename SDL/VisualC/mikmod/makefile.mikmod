@@ -1,0 +1,37 @@
+# Project: mikmod
+
+RES  = 
+SOURCES = \
+        ../../MIKMOD/drivers/*.c \
+        ../../MIKMOD/loaders/*.c \
+        ../../MIKMOD/playercode/*.c \
+        ../../MIKMOD/mmio/*.c \
+
+
+OBJ = $(shell echo $(SOURCES) | sed -e 's,\.c,\.o,g')
+INCS = -I"../../MIKMOD/include"  -I"../../../SDL13/include" 
+CFLAGS = -DUSE_RWOPS $(BUILD_TYPE) $(INCS)
+
+BIN  = ../../../../output/mikmod.a
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+       CAR=arm-eabi-ar r
+       CRANL=arm-eabi-ranlib $(BIN)
+
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+
+all: $(BIN)
+
+$(BIN): $(OBJ)
+	$(CAR) $@ $^
+	$(CRANL) $@
+
+clean:
+	rm -f $(BIN) $(OBJ)
+

@@ -1,0 +1,65 @@
+# Project: SDL_mad
+
+CC   = gcc
+RES  = 
+OBJ  = ../../../output//bit.o ../../../output//buffer.o ../../../output//decoder.o ../../../output//fixed.o ../../../output//frame.o ../../../output//huffman.o ../../../output//layer12.o ../../../output//layer12.o ../../../output//layer3.o ../../../output//mad_convert.o ../../../output//mad_decode.o ../../../output//mad_frame.o ../../../output//mad_stream.o ../../../output//stream.o ../../../output//synth.o ../../../output//timer.o $(RES)
+INCS = -I"../"  -I"../../SDL/include/" 
+BIN  = ../../../output/sdlmad.a
+CFLAGS = $(INCS) -D__linux -Dlinux -D__linux__ -DFPM_DEFAULT -DOPT_SPEED -DASO_INTERLEAVE1 -DASO_ZEROCHECK -Dinline=__inline -D_LIB $(BUILD_TYPE)
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../output/sdlmad.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	ar r $(BIN) $(OBJ)
+	ranlib $(BIN)
+
+../../../output//bit.o: ../SDL_mad/libmad/bit.c
+	$(CC) -c ../SDL_mad/libmad/bit.c -o ../../../output//bit.o $(CFLAGS)
+
+../../../output//buffer.o: ../SDL_mad/buffer.c
+	$(CC) -c ../SDL_mad/buffer.c -o ../../../output//buffer.o $(CFLAGS)
+
+../../../output//decoder.o: ../SDL_mad/libmad/decoder.c
+	$(CC) -c ../SDL_mad/libmad/decoder.c -o ../../../output//decoder.o $(CFLAGS)
+
+../../../output//fixed.o: ../SDL_mad/libmad/fixed.c
+	$(CC) -c ../SDL_mad/libmad/fixed.c -o ../../../output//fixed.o $(CFLAGS)
+
+../../../output//frame.o: ../SDL_mad/libmad/frame.c
+	$(CC) -c ../SDL_mad/libmad/frame.c -o ../../../output//frame.o $(CFLAGS)
+
+../../../output//huffman.o: ../SDL_mad/libmad/huffman.c
+	$(CC) -c ../SDL_mad/libmad/huffman.c -o ../../../output//huffman.o $(CFLAGS)
+
+../../../output//layer12.o: ../SDL_mad/libmad/layer12.c
+	$(CC) -c ../SDL_mad/libmad/layer12.c -o ../../../output//layer12.o $(CFLAGS)
+
+../../../output//layer3.o: ../SDL_mad/libmad/layer3.c
+	$(CC) -c ../SDL_mad/libmad/layer3.c -o ../../../output//layer3.o $(CFLAGS)
+
+../../../output//mad_convert.o: ../SDL_mad/mad_convert.c
+	$(CC) -c ../SDL_mad/mad_convert.c -o ../../../output//mad_convert.o $(CFLAGS)
+
+../../../output//mad_decode.o: ../SDL_mad/mad_decode.c
+	$(CC) -c ../SDL_mad/mad_decode.c -o ../../../output//mad_decode.o $(CFLAGS)
+
+../../../output//mad_frame.o: ../SDL_mad/mad_frame.c
+	$(CC) -c ../SDL_mad/mad_frame.c -o ../../../output//mad_frame.o $(CFLAGS)
+
+../../../output//mad_stream.o: ../SDL_mad/mad_stream.c
+	$(CC) -c ../SDL_mad/mad_stream.c -o ../../../output//mad_stream.o $(CFLAGS)
+
+../../../output//stream.o: ../SDL_mad/libmad/stream.c
+	$(CC) -c ../SDL_mad/libmad/stream.c -o ../../../output//stream.o $(CFLAGS)
+
+../../../output//synth.o: ../SDL_mad/libmad/synth.c
+	$(CC) -c ../SDL_mad/libmad/synth.c -o ../../../output//synth.o $(CFLAGS)
+
+../../../output//timer.o: ../SDL_mad/libmad/timer.c
+	$(CC) -c ../SDL_mad/libmad/timer.c -o ../../../output//timer.o $(CFLAGS)
