@@ -1,0 +1,46 @@
+# Project: native_midi
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../../output/emumidi.o ../../../../output/native_midi_gpl.o ../../../../output/patchload.o ../../../../output/playevents.o ../../../../output/readmidi.o $(RES)
+INCS = -I"../../../SDL/include/"  -I"../.."  -I"../../native_midi" -I"../../native_midi_gpl" 
+BIN  = ../../../../output/native_midi.a
+CFLAGS = $(INCS) $(TARGET) $(BUILD_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../output/native_midi.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../../../output/emumidi.o: ../../native_midi_gpl/emumidi.c
+	$(CC) -c ../../native_midi_gpl/emumidi.c -o ../../../../output/emumidi.o $(CFLAGS)
+
+../../../../output/native_midi_gpl.o: ../../native_midi_gpl/native_midi_gpl.c
+	$(CC) -c ../../native_midi_gpl/native_midi_gpl.c -o ../../../../output/native_midi_gpl.o $(CFLAGS)
+
+../../../../output/patchload.o: ../../native_midi_gpl/patchload.c
+	$(CC) -c ../../native_midi_gpl/patchload.c -o ../../../../output/patchload.o $(CFLAGS)
+
+../../../../output/playevents.o: ../../native_midi_gpl/playevents.c
+	$(CC) -c ../../native_midi_gpl/playevents.c -o ../../../../output/playevents.o $(CFLAGS)
+
+../../../../output/readmidi.o: ../../native_midi_gpl/readmidi.c
+	$(CC) -c ../../native_midi_gpl/readmidi.c -o ../../../../output/readmidi.o $(CFLAGS)
+
+

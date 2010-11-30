@@ -1,0 +1,108 @@
+# Project: staticSDL_mixer
+# Makefile created by Dev-C++ 4.9.5.0
+
+RES  = 
+OBJ  = ../../../output//bitwise.o ../../../output//block.o ../../../output//codebook.o ../../../output//floor0.o ../../../output//floor1.o ../../../output//framing.o ../../../output//info.o ../../../output//mapping0.o ../../../output//mdct.o ../../../output//registry.o ../../../output//res012.o ../../../output//sharedbook.o ../../../output//synthesis.o ../../../output//vorbisfile.o ../../../output//window.o ../../../output//effect_position.o ../../../output//effect_stereoreverse.o ../../../output//effects_internal.o ../../../output//load_aiff.o ../../../output//load_ogg.o ../../../output//load_voc.o ../../../output//mixer.o ../../../output//music.o ../../../output//music_cmd.o ../../../output//music_ogg.o ../../../output//wavestream.o $(RES)
+INCS = -I"../../SDL/include"  -I"../SDL_mad"  -I"../MIKMOD"  -I"../timidity"  -I"../native_midi"  -I"tremor" 
+BIN  = ../../../output/SDL_mixer.a
+CFLAGS = $(INCS) $(TARGET) -DWAV_MUSIC -DMOD_MUSIC -DMID_MUSIC -DUSE_NATIVE_MIDI -DOGG_MUSIC -DUSE_RWOPS -D_LIB $(BUILD_TYPE)
+
+ifeq (,$(findstring LLVM,$(TARGET)))
+        CAR=ar r
+        CRANL=ranlib $(BIN)
+else
+		CAR=llvm-link -f -o 
+        CRANL=      	
+endif
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../output/SDL_mixer.a all-after
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+
+$(BIN): $(OBJ)
+	$(CAR) $(BIN) $(OBJ)
+	$(CRANL)
+
+../../../output//bitwise.o: ../tremor/bitwise.c
+	$(CC) -c ../tremor/bitwise.c -o ../../../output//bitwise.o $(CFLAGS)
+
+../../../output//block.o: ../tremor/block.c
+	$(CC) -c ../tremor/block.c -o ../../../output//block.o $(CFLAGS)
+
+../../../output//codebook.o: ../tremor/codebook.c
+	$(CC) -c ../tremor/codebook.c -o ../../../output//codebook.o $(CFLAGS)
+
+../../../output//floor0.o: ../tremor/floor0.c
+	$(CC) -c ../tremor/floor0.c -o ../../../output//floor0.o $(CFLAGS)
+
+../../../output//floor1.o: ../tremor/floor1.c
+	$(CC) -c ../tremor/floor1.c -o ../../../output//floor1.o $(CFLAGS)
+
+../../../output//framing.o: ../tremor/framing.c
+	$(CC) -c ../tremor/framing.c -o ../../../output//framing.o $(CFLAGS)
+
+../../../output//info.o: ../tremor/info.c
+	$(CC) -c ../tremor/info.c -o ../../../output//info.o $(CFLAGS)
+
+../../../output//mapping0.o: ../tremor/mapping0.c
+	$(CC) -c ../tremor/mapping0.c -o ../../../output//mapping0.o $(CFLAGS)
+
+../../../output//mdct.o: ../tremor/mdct.c
+	$(CC) -c ../tremor/mdct.c -o ../../../output//mdct.o $(CFLAGS)
+
+../../../output//registry.o: ../tremor/registry.c
+	$(CC) -c ../tremor/registry.c -o ../../../output//registry.o $(CFLAGS)
+
+../../../output//res012.o: ../tremor/res012.c
+	$(CC) -c ../tremor/res012.c -o ../../../output//res012.o $(CFLAGS)
+
+../../../output//sharedbook.o: ../tremor/sharedbook.c
+	$(CC) -c ../tremor/sharedbook.c -o ../../../output//sharedbook.o $(CFLAGS)
+
+../../../output//synthesis.o: ../tremor/synthesis.c
+	$(CC) -c ../tremor/synthesis.c -o ../../../output//synthesis.o $(CFLAGS)
+
+../../../output//vorbisfile.o: ../tremor/vorbisfile.c
+	$(CC) -c ../tremor/vorbisfile.c -o ../../../output//vorbisfile.o $(CFLAGS)
+
+../../../output//window.o: ../tremor/window.c
+	$(CC) -c ../tremor/window.c -o ../../../output//window.o $(CFLAGS)
+
+../../../output//effect_position.o: ../effect_position.c
+	$(CC) -c ../effect_position.c -o ../../../output//effect_position.o $(CFLAGS)
+
+../../../output//effect_stereoreverse.o: ../effect_stereoreverse.c
+	$(CC) -c ../effect_stereoreverse.c -o ../../../output//effect_stereoreverse.o $(CFLAGS)
+
+../../../output//effects_internal.o: ../effects_internal.c
+	$(CC) -c ../effects_internal.c -o ../../../output//effects_internal.o $(CFLAGS)
+
+../../../output//load_aiff.o: ../load_aiff.c
+	$(CC) -c ../load_aiff.c -o ../../../output//load_aiff.o $(CFLAGS)
+
+../../../output//load_ogg.o: ../load_ogg.c
+	$(CC) -c ../load_ogg.c -o ../../../output//load_ogg.o $(CFLAGS)
+
+../../../output//load_voc.o: ../load_voc.c
+	$(CC) -c ../load_voc.c -o ../../../output//load_voc.o $(CFLAGS)
+
+../../../output//mixer.o: ../mixer.c
+	$(CC) -c ../mixer.c -o ../../../output//mixer.o $(CFLAGS)
+
+../../../output//music.o: ../music.c
+	$(CC) -c ../music.c -o ../../../output//music.o $(CFLAGS)
+
+../../../output//music_cmd.o: ../music_cmd.c
+	$(CC) -c ../music_cmd.c -o ../../../output//music_cmd.o $(CFLAGS)
+
+../../../output//music_ogg.o: ../music_ogg.c
+	$(CC) -c ../music_ogg.c -o ../../../output//music_ogg.o $(CFLAGS)
+
+../../../output//wavestream.o: ../wavestream.c
+	$(CC) -c ../wavestream.c -o ../../../output//wavestream.o $(CFLAGS)
+
+
