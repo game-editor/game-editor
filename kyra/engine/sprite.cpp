@@ -146,11 +146,13 @@ void KrSprite::SetAction( U32 id )
 }
 
 bool IsTileActor(KrImNode *node); //maks
+bool IsTextActor(KrImNode *node); //maks
+
 void KrSprite::Draw(	KrPaintInfo* paintInfo, 
 						const KrRect& clip/*,
 						int win*/ )
 {	
-	if(IsTileActor(this) && !IsVisible(/*win,*/ true)) return; //maks: solve the bug "Visible state "Don't draw, but allow events" don't works with tiles" (test only with tiles to avoid bugs in other games (alpha14.ged))
+	if((IsTileActor(this) || IsTextActor(this)) && !IsVisible(/*win,*/ true)) return; //maks: solve the bug "Visible state "Don't draw, but allow events" don't works with tiles" (test only with tiles to avoid bugs in other games (alpha14.ged and text visibility.ged))
 	GLASSERT( action );
 	// This happens if an empty action (often "NONE" gets exported.)
 	if ( visible/*[win]*/ != ENABLE || action->NumFrames() == 0 ) return; //maks

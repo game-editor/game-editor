@@ -807,6 +807,16 @@ bool IsTileActor(KrImNode *node)
 	return false;
 }
 
+bool IsTextActor(KrImNode *node)
+{
+	if(node && node->getParentActor())
+	{
+		return ((Actor *)node->getParentActor())->getTextActor() != NULL;
+	}
+
+	return false;
+}
+
 unsigned char geinfo[75066] = {
 	/*      0 */  0x47,0x45,0x44,0x49,0x32,0x2e,0x31,0x2e, 
 	/*      8 */  0x35,0x00,0x13,0x56,0x00,0x00,0xec,0x03, 
