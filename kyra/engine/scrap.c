@@ -323,7 +323,11 @@ lost_scrap(void)
 #if defined(X11_SCRAP)
 /* * */
   Lock_Display();
-  retval = ( XGetSelectionOwner(SDL_Display, XA_PRIMARY) != SDL_Window );
+#ifdef __MACOSX__ // AKR, because of APPSTORE doesnt support X11	
+	return 0; //AKR - appstore
+#elif
+	retval = ( XGetSelectionOwner(SDL_Display, XA_PRIMARY) != SDL_Window );
+#endif	
   Unlock_Display();
 
 #elif defined(WIN_SCRAP)
@@ -352,6 +356,7 @@ put_scrap(int type, int srclen, const char *src) //maks
 #if defined(X11_SCRAP)
 /* * */
   dst = (char *)malloc(dstlen);
+#ifndef __MACOSX__ // AKR, because of APPSTORE doesnt support X11	
   if ( dst != NULL )
     {
       Lock_Display();
@@ -363,7 +368,7 @@ put_scrap(int type, int srclen, const char *src) //maks
         XSetSelectionOwner(SDL_Display, XA_PRIMARY, SDL_Window, CurrentTime);
       Unlock_Display();
     }
-
+#endif
 #elif defined(WIN_SCRAP)
 /* * */
   if ( OpenClipboard(SDL_Window) )
@@ -459,7 +464,11 @@ get_scrap(int type, int *dstlen, char **dst)
     char *src;
 
     Lock_Display();
-    owner = XGetSelectionOwner(SDL_Display, XA_PRIMARY);
+#ifdef __MACOSX__ // AKR, because of APPSTORE doesnt support X11	  
+	  owner=NULL;
+#elif
+	  owner = XGetSelectionOwner(SDL_Display, XA_PRIMARY);
+#endif	  
     Unlock_Display();
     if ( (owner == None) || (owner == SDL_Window) )
       {
@@ -474,9 +483,11 @@ get_scrap(int type, int *dstlen, char **dst)
         owner = SDL_Window;
         Lock_Display();
         selection = XInternAtom(SDL_Display, "SDL_SELECTION", False);
-        XConvertSelection(SDL_Display, XA_PRIMARY, format,
+#ifndef __MACOSX__ // AKR, because of APPSTORE doesnt support X11
+		XConvertSelection(SDL_Display, XA_PRIMARY, format,
                                         selection, owner, CurrentTime);
-        Unlock_Display();
+#endif
+		Unlock_Display();
         while ( ! selection_response )
           {
             SDL_WaitEvent(&event);
@@ -490,7 +501,9 @@ get_scrap(int type, int *dstlen, char **dst)
               }
           }
       }
-    Lock_Display();
+#ifndef __MACOSX__ // AKR, because of APPSTORE doesnt support X11 
+
+	Lock_Display();
     if ( XGetWindowProperty(SDL_Display, owner, selection, 0, INT_MAX/4,
                             False, format, &seln_type, &seln_format,
                        &nbytes, &overflow, (unsigned char **)&src) == Success )
@@ -506,9 +519,11 @@ get_scrap(int type, int *dstlen, char **dst)
           }
         XFree(src);
       }
-    }
-    Unlock_Display();
+#endif
 
+  }
+	
+    Unlock_Display();
 #elif defined(WIN_SCRAP)
 /* * */
   if ( IsClipboardFormatAvailable(format) && OpenClipboard(SDL_Window) )
@@ -618,6 +633,7 @@ PRIVATE int clipboard_filter(const SDL_Event *event)
       sevent.xselection.property = None;
       sevent.xselection.requestor = req->requestor;
       sevent.xselection.time = req->time;
+#ifndef __MACOSX__ // AKR, because of APPSTORE doesnt support X11		
       if ( XGetWindowProperty(SDL_Display, DefaultRootWindow(SDL_Display),
                               XA_CUT_BUFFER0, 0, INT_MAX/4, False, req->target,
                               &sevent.xselection.target, &seln_format,
@@ -639,6 +655,7 @@ PRIVATE int clipboard_filter(const SDL_Event *event)
         }
       XSendEvent(SDL_Display,req->requestor,False,0,&sevent);
       XSync(SDL_Display, False);
+#endif		
     }
     break;
   }
