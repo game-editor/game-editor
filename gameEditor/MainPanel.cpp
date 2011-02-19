@@ -652,9 +652,10 @@ void MainPanel::HelpSetup()
 	listHelp->AddText("Get Newest Tutorials...");
 
 #ifdef GAME_EDITOR_PROFESSIONAL
+#ifndef __MACOSX__ // AKR dont check for updates outside MACOSX appstore due to appstore guidelines	
 	listHelp->AddText("Check for Updates...");
 #endif
-
+#endif
 	listHelp->AddText("Game Demos...");
 	listHelp->AddText("User Forums...");
 #endif
