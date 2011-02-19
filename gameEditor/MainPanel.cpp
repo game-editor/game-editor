@@ -1090,11 +1090,11 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 			{
 				TutorialUpdateDlg::Call();
 			}
-#endif
 			else if(text == "Check for Updates...")
 			{
 				UpdateCheck();
 			}
+#endif // No check for updates outside MACOSX appstore due to apple guidelines
 			else if(text == "Game Demos...")
 			{
 				openUrl("http://game-editor.com/demos.html");				
