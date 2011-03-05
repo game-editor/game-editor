@@ -846,7 +846,7 @@ SDL_Surface *SetVideoMode(int width, int height, int bpp, Uint32 flags)
 	return screen;
 }
 
-bool EngineTick()
+extern "C" bool EngineTick()
 {
 	SDL_Event event;
 	static int mouseX1 = -1, mouseY1 = -1;
@@ -900,7 +900,7 @@ bool EngineTick()
 	return false;
 }
 
-void EngineShutDown()
+extern "C" void EngineShutDown()
 {
 	bShutDown = true;
 
@@ -965,7 +965,9 @@ void EngineStart()
 #if !defined(DISABLE_DLMALLOC) && defined(USE_MALLOC_LOCK)
 	mallocMutEx = SDL_CreateMutex();
 #endif
-
+	
+	
+	
 	//Game Editor will use opengl by default
 	//If this is not possible (the game crash, for example), for some reason, a file named "noopengl" in the game folder will disable the opengl
 	//(Some systems may not allow command line flags, so, use the file)
@@ -995,6 +997,9 @@ void EngineStart()
 		printf( "Couldn't initialize SDL: %s\n",SDL_GetError());
 		exit(255);
 	}
+
+	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE,4);
+
 	if((initFlags & SDL_INIT_JOYSTICK) && SDL_NumJoysticks() > 0)
 	{
 		joystick = SDL_JoystickOpen(0);
@@ -1298,7 +1303,6 @@ void EngineLoad(const char *gamePath)
 		ShowWindow((HWND)GetMainWindow(), SW_MAXIMIZE);
 	}
 #endif
-
 
 	//Main loop (See Panel::Wait() too)
 	while(EngineTick());	
