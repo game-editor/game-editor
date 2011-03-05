@@ -16242,7 +16242,16 @@ bool GameControl::GameTick(SDL_Event &event)
 			{
 				if(event.active.gain)
 				{
-
+#if __iPhone__
+					
+					bSuspendGameIfLostFocus=1;
+					if(event.active.state & SDL_APPACTIVE)
+						
+#else
+						if(event.active.state & SDL_APPINPUTFOCUS)
+							
+#endif
+							
 
 #ifndef _WIN32_WCE
 					//Exit suspend on desktop if loose the focus
