@@ -12688,7 +12688,7 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 #endif		
 	}
 
-	#if !defined(STAND_ALONE_GAME) && (defined(__linux__) || defined(__APPLE__))
+	#if !defined(STAND_ALONE_GAME) && (defined(__linux__) )
 	SDL_EventState(SDL_VIDEORESIZE, SDL_IGNORE);
 	bCanResize = false;
 	#endif
@@ -16445,7 +16445,14 @@ bool GameControl::GameTick(SDL_Event &event)
 				//Maximum MAX_KEY_SEQUENCE more keys
 				lastKeys.PopBack();
 			}
-
+			if((event.key.keysym.mod & KMOD_LMETA) && event.key.keysym.sym == SDLK_q)
+			{   
+				SDL_Event event;
+				memset(&event, 0, sizeof(SDL_Event));
+				event.quit.type = SDL_QUIT;
+				SDL_PushEvent(&event);					
+			}
+			
 			if(bGameMode)
 			{
 				#ifdef STAND_ALONE_GAME
