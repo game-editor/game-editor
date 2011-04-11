@@ -1205,7 +1205,7 @@ void EngineLoad(const char *gamePath)
 		dir = ged_getcwd(buf, PATH_LIMIT);
 	}
 #endif
-#ifdef __MACOSX__ //AKR: Treat app bundle correctly!
+#ifdef __MACOSX__ //AKR: Treat app bundle correctly
 		dir=getBundlePath();
 		dir2=dir+"/Contents/MacOS";
 		if(!chdir(dir2.getCharBuf()))
