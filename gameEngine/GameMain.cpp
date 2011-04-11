@@ -1182,7 +1182,7 @@ void EngineLoad(const char *gamePath)
 
 	//Load stand alone game
 	{
-	gedString file, dir;
+	gedString file, dir,dir2;
 
 #ifdef STAND_ALONE_GAME 
 	if(argc == 2)
@@ -1205,10 +1205,11 @@ void EngineLoad(const char *gamePath)
 		dir = ged_getcwd(buf, PATH_LIMIT);
 	}
 #endif
-#ifdef __MACOSX__ //AKR: Treat app bundle correctly
+#ifdef __MACOSX__ //AKR: Treat app bundle correctly!
 		dir=getBundlePath();
-		dir=dir+"/Contents/MacOS";
-		chdir(dir.getCharBuf());
+		dir2=dir+"/Contents/MacOS";
+		if(!chdir(dir2.getCharBuf()))
+			dir=dir2;
 #endif
 		
 #else
