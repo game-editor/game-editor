@@ -17,8 +17,6 @@ ___________________________________
 If you will not charge for your game, you can just download Game Editor binary files at http://game-editor.com/Download and use it.
 You can't sell any games by using this license and must show the Game Editor splash screen.
 
-This licence does not include the costs of the SDL library used in the Game Editor.
-You must contact the Galaxy Game Works at http://www.galaxygameworks.com for more info.
 
 ___________________________________ 
 
@@ -31,15 +29,13 @@ Licensor grants Licensee a single "seat" to an individual or company.
 
 For price info, visit the online purchase page at http://game-editor.com/Buy 
 
-This licence does not include the costs of the SDL library used in the Game Editor.
-You must contact the Galaxy Game Works at http://www.galaxygameworks.com for more info.
 
 ___________________________________ 
 
 5. GAME EDITOR PROFESSIONAL COMMERCIAL LICENSE 
 
 
-The Game Editor Professional License is intended to be used for games that aren't free or GPL and don't will show any Game Editor splash screen.
+The Game Editor Professional License is intended to be used for games that aren't free or GPL and won't  show any Game Editor splash screen.
 You may publicly sell, distribute, release, publish, transmit and/or exploit any Games created by using this license and have the Games published in any channel by any publisher with no royalties. 
 You must use the Game Editor available at http://game-editor.com/Download  to develop the game.
 In order to get the game without the splash screen, you must send the levels of the game to us to the address submit@game-editor.com. You must use the same email address used to buy the license and send the name of the game being will be published.
@@ -47,8 +43,6 @@ Licensor grants Licensee a single "seat" to an individual or company.
 
 For price info, visit the online purchase page at http://game-editor.com/Buy 
 
-This licence does not include the costs of the SDL library used in the Game Editor.
-You must contact the Galaxy Game Works at http://www.galaxygameworks.com for more info.
 
 ___________________________ 
 6. REFUND POLICY
