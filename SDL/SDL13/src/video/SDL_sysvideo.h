@@ -25,7 +25,12 @@
 #define _SDL_sysvideo_h
 
 #include "SDL_mouse.h"
+#ifdef __iPhone___
+#include "SDL_keycode.h"
+
+#else
 #include "SDL_keysym.h"
+#endif
 #ifdef __iPhone__
 #include "SDL_opengles.h"
 #else

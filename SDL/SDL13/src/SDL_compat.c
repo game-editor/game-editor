@@ -30,7 +30,8 @@
 #include "video/SDL_pixels_c.h"
 #include "video/SDL_yuv_sw_c.h"
 
-static SDL_Window *SDL_VideoWindow = NULL;
+
+SDL_Window *SDL_VideoWindow = NULL;
 static SDL_RendererInfo SDL_VideoRendererInfo;
 static SDL_Texture *SDL_VideoTexture = NULL;
 static SDL_Surface *SDL_VideoSurface = NULL;

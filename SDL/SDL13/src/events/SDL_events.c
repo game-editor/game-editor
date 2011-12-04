@@ -218,8 +218,9 @@ SDL_StartEventLoop(Uint32 flags)
     /* Clean out the event queue */
     SDL_EventThread = NULL;
     SDL_EventQ.lock = NULL;
-    SDL_StopEventLoop();
-
+#ifndef __iPhone__	
+    SDL_StopEventLoop(); //AKR: Cant do that because awakefromnib() has initialized mice
+#endif
     /* No filter to start with, process most event types */
     SDL_EventOK = NULL;
     SDL_memset(SDL_ProcessEvents, SDL_ENABLE, sizeof(SDL_ProcessEvents));

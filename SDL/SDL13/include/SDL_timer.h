@@ -45,7 +45,7 @@ extern "C" {
 #define SDL_TIMESLICE		1 //maks
 
 /* This is the maximum resolution of the SDL timer on all platforms */
-#define TIMER_RESOLUTION	1	/* = 10: Experimentally determined */ //maks
+#define TIMER_RESOLUTION	10	/* = 10: Experimentally determined */ //maks
 
 /* Get the number of milliseconds since the SDL library initialization.
  * Note that this value wraps if the program runs for more than ~49 days.
