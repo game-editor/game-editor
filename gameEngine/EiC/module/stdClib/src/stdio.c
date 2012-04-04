@@ -58,6 +58,9 @@ int checkEp(ptr_t P, int s); //maks
 void outbyte(int ch);
 #endif
 
+#ifdef WIN32
+#include "xalloc.h"
+#endif
 
 /* The following code provides for an open FILE cleanup
 mechanism.  EiC will call _ffexit, cleaning up all open
@@ -85,6 +88,9 @@ typedef struct stFileInfo
 {
 	FILE *fp;
 	char name[256];
+#ifdef WIN32
+	void *buffer; //maks: solve http://code.game-editor.com/ticket/92
+#endif
 } FILE_INFO;
 
 static size_t book1[FOPEN_MAX]; //maks = {1,2,3};
@@ -773,7 +779,7 @@ int _eicUscanf(int (*input)(), int (*uget)(),
 	    if(endptr == field) /* failed */
 		return v;
 	    while(--p >= endptr)
-		(*uget)(*p,arg);
+			(*uget)(*p,arg);
 	}
 	    break;
 	}
@@ -1076,6 +1082,20 @@ val_t eic_fopen(void) //maks
 			book1[i] = NextFopenEntry++;
 			book2[i].fp = (FILE *)(v.p.p);
 			strcpy(book2[i].name, name);
+			book2[i].buffer = NULL;
+
+#ifdef WIN32
+	{
+	//maks: set the buffer size
+	//solve http://code.game-editor.com/ticket/92
+	long len;
+	fseek(v.p.p, 0, SEEK_END);
+	len = ftell(v.p.p);
+	fseek(v.p.p, 0, SEEK_SET);
+	book2[i].buffer = malloc(len);
+	setvbuf(v.p.p, book2[i].buffer, _IOFBF, len);
+	}
+#endif
 		}
 		else
 		{
@@ -1085,6 +1105,8 @@ val_t eic_fopen(void) //maks
 			return v;
 		}
     }
+
+
 
     setEp( v.p, sizeof(FILE) );
     return v;
@@ -1131,6 +1153,7 @@ val_t eic_fclose(void)
   {
     book1[i] = 0;
     book2[i].fp = NULL;
+	if(book2[i].buffer) free(book2[i].buffer);
   }
   else
   {
@@ -1265,6 +1288,8 @@ val_t eic_fscanf(void) //maks
     v.ival = _eicUscanf(fgetc,ungetc,
 		     fp,
 		     arg(1,ap,ptr_t).p,ap-2);
+
+
     return v;
 }
 
