@@ -90,7 +90,7 @@ U32 res1 = 1, res2 = 2;
 
 KrResourceVault *vault2 = NULL;
 extern KrSprite *kr2;
-bool bGEInfo = false;
+bool bGEInfo = true;
 
 #ifndef GP2X
 double round(double x);
