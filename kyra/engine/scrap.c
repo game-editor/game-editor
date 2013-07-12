@@ -325,7 +325,7 @@ lost_scrap(void)
   Lock_Display();
 #ifdef __MACOSX__ // AKR, because of APPSTORE doesnt support X11	
 	return 0; //AKR - appstore
-#elif
+#else
 	retval = ( XGetSelectionOwner(SDL_Display, XA_PRIMARY) != SDL_Window );
 #endif	
   Unlock_Display();
@@ -466,7 +466,7 @@ get_scrap(int type, int *dstlen, char **dst)
     Lock_Display();
 #ifdef __MACOSX__ // AKR, because of APPSTORE doesnt support X11	  
 	  owner=NULL;
-#elif
+#else
 	  owner = XGetSelectionOwner(SDL_Display, XA_PRIMARY);
 #endif	  
     Unlock_Display();

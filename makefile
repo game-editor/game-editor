@@ -15,12 +15,13 @@ GAMEEDITOR_DEMO_STAND_ALONE=-DSTAND_ALONE_GAME
 TARGET_MACHINE=linux
 
 ## Release Definitions
-GE_DEBUG=-DDEBUG -D_DEBUG -g3
+GE_DEBUG=-DDEBUG -D_DEBUG -g
 
 ifeq ($(TARGET_MACHINE),LLVM)
         GE_RELEASE=#
 else
-		GE_RELEASE=-s -Os #-O3 #Os for size, O3 for speed	
+		GE_RELEASE=#
+		#GE_RELEASE=-s -Os #-O3 #Os for size, O3 for speed	
 endif
 
 
@@ -50,10 +51,9 @@ MAKE = make
 ifeq ($(TARGET_MACHINE),LLVM)
         CC = llvm-gcc -emit-llvm -c			
 else
-		CC = gcc -m32		
+		CC = gcc -m32 -lm		
 endif
 
- 
 
 
 all:
@@ -76,7 +76,7 @@ all:
 	$(MAKE) -f makefile.gengine -C gameEngine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.editor -C gameEditor/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 
-	
+
 clean:
 	$(MAKE) -f makefile.zlib -C SDL/SDL_image/png/libpng/projects/msvc clean
 	$(MAKE) -f makefile.libpng -C SDL/SDL_image/png/libpng/projects/msvc clean
