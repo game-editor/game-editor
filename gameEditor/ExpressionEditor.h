@@ -59,6 +59,7 @@ public:
 	ExpressionEditor(Actor *actor, bool bOnCollision);
 	virtual ~ExpressionEditor();
 	void UpdateEdition();
+	void NotifyDeletedScript(Script *p);
 
 	gedString GetText();
 	gedString GetTextUntilCursor();

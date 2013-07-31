@@ -48,6 +48,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 
 #ifndef STAND_ALONE_GAME
 #include "../gameEditor/Tutorial.h"
+#include "../gameEditor/ExpressionEditor.h"
 #endif
 
 #include "eic.h"
@@ -2545,6 +2546,12 @@ Script::~Script()
 		}
 	}
 
+#ifndef STAND_ALONE_GAME
+	if(ExpressionEditor::getExpressionEditor())
+	{
+	  ExpressionEditor::getExpressionEditor()->NotifyDeletedScript(this);
+	}
+#endif
 	RemoveSymbol(functionName.c_str());		
 }
 

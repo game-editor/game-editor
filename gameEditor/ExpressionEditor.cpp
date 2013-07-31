@@ -235,6 +235,16 @@ ExpressionEditor::ExpressionEditor(Actor *actor, bool bOnCollision)
 	if(!pScript) pScript = new Script();
 }
 
+void ExpressionEditor::NotifyDeletedScript(Script *p)
+{
+  // Called when a script is removed to let the Script Editor update the pScript object
+  if(p && pScript && pScript==p)
+  {
+    // the current pScript is invalid, create a new one
+    pScript = new Script();
+  }
+}
+
 void ExpressionEditor::UpdateEdition()
 {
 	editAction = Action::getEditAction();
