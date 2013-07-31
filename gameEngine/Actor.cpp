@@ -2915,7 +2915,7 @@ void Actor::RemoveParent()
 		KrImage *pImage = getImage(), *pAxisImage = GameControl::Get()->GetAxis()->getImage();
 
 
-		if(GameControl::Get()->getGameMode() && pImage && pAxisImage)
+		if(pImage && pAxisImage)
 		{
 			//Adjust position relative to new parent
 			//Don't use ToInt (solve the shift bug in pareng.ged)
