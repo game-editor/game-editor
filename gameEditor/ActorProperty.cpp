@@ -503,6 +503,17 @@ void ActorProperty::SetActor(Actor *actor)
 		listInfinite->SetItem("Normal");
 	}
 
+	// create at startup
+	if(actor->getType() == VIEW_ACTOR)
+	{
+	  listCreate->Disable();
+	}
+	else
+	{
+	  listCreate->Enable();
+	}
+
+
 	//Out of Vision Optimization
 	if(listOutOfVisionOptimization)
 	{
