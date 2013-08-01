@@ -374,9 +374,9 @@ void PlaySong::OnButton(Button *button, int buttonId)
 			}
 
 			int loopCount = atol(loop->GetText().c_str());
-			if(!ExpressionEditor::getExpressionEditor() && (loopCount < 1 || loopCount > 65000))
+			if(!ExpressionEditor::getExpressionEditor() && (loopCount < 0 || loopCount > 65000))
 			{
-				new PanelInfo("Invalide loop count");
+				new PanelInfo("Invalid loop count");
 				return;
 			}
 
