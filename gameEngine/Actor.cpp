@@ -4501,8 +4501,8 @@ void Actor::SetActualValues(U32 updateFlags)
 	scriptVars->xprevious = anteriorXPos;
 	scriptVars->yprevious = anteriorYPos;
 
-	//Calculate move angle
-	if(updateFlags & NEED_DIRECTIONAL_VELOCITY || updateFlags & NEED_ANGLE)
+	//Calculate move angle (must always be calculated)
+	//if(updateFlags & NEED_DIRECTIONAL_VELOCITY || updateFlags & NEED_ANGLE)
 	{
 		if(pathX && pathY)
 		{
@@ -4613,7 +4613,8 @@ void Actor::UpdateScriptChanges(U32 updateFlags, bool bFromNetwork)
 		}
 
 
-		if(updateFlags & NEED_DIRECTIONAL_VELOCITY || updateFlags & NEED_ANGLE)
+		// directional_velocity must always be updated
+		//if(updateFlags & NEED_DIRECTIONAL_VELOCITY || updateFlags & NEED_ANGLE)
 		{
 			if(scriptVars->diretional_velocity != scriptVarsAnt->diretional_velocity || scriptVars->angle != scriptVarsAnt->angle)
 			{
