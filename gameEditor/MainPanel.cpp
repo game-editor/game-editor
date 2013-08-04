@@ -1268,8 +1268,118 @@ void MainPanel::OnKeyDown(SDLKey key, int repeatLoopCount)
 				new PanelInfo("No next operation to redo");
 			}
 			break;
+
+		  case SDLK_s: // save/save as
+		    if((keyMod & KMOD_LSHIFT) || (keyMod & KMOD_RSHIFT)) // save as
+		    {
+		      new LoadSaveGame(SAVE_GAME);
+		    }
+		    else // save
+		    {
+		      gedString gamePath(GameControl::Get()->getGamePath());
+		      if(!gamePath.empty())
+		      {
+			LoadSaveGame::Save(gamePath + DIR_SEP + GameControl::Get()->getGameName());
+		      }
+		      else
+		      {
+			new LoadSaveGame(SAVE_GAME);
+		      }
+		    } 
+		    break;
+
+		  case SDLK_l: // load
+		    new LoadSaveGame(LOAD_GAME);
+		    break;
+
+		  case SDLK_e: // export
+		    new ExportGame();
+		    break;
+
+		  case SDLK_a: // create actor
+		    new AddActor();
+		    break;
+
+		  case SDLK_g: // game mode
+		    if(GenericScript::ParserAll())
+		    {		       
+		      UndoControl::Get()->PushCurrentState();
+		      RegionLoad::UpdateRegions();
+		      GameControl::Get()->StoreScreenSize();
+		      GameControl::Get()->SetGameMode(true);
+		    }
+		    else
+		    {
+		      new PanelInfo(GenericScript::GetError(), "Error", ALIGN_LEFT);
+		    }
+		    break;
+
+		  case SDLK_q: // quit
+		    SDL_Event event;
+		    memset(&event, 0, sizeof(SDL_Event));
+		    event.quit.type = SDL_QUIT;
+		    SDL_PushEvent(&event);
+		    break;
+
+		  case SDLK_p: // actor property
+		  case SDLK_RETURN:
+		    ActorProperty::Call(GameControl::Get()->GetActor("view"));
+		    break;
+
+		  case SDLK_o:
+		    new ScriptGlobals();
+		    break;
+
+		    // nudge actor
+		  case SDLK_LEFT: // nudge left
+		  {
+		    int offset = ((keyMod & KMOD_LSHIFT) || (keyMod & KMOD_RSHIFT)) ? 5 : 1;
+		    Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
+		    eventActor->SetPos(eventActor->getX()-offset, eventActor->getY());
+		  }
+		  break;
+
+		  case SDLK_RIGHT: // nudge right
+		  {
+		    int offset = ((keyMod & KMOD_LSHIFT) || (keyMod & KMOD_RSHIFT)) ? 5 : 1;
+		    Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
+		    eventActor->SetPos(eventActor->getX()+offset, eventActor->getY());
+		  }
+		  break;
+
+		  case SDLK_UP: // nudge up
+		  {
+		    int offset = ((keyMod & KMOD_LSHIFT) || (keyMod & KMOD_RSHIFT)) ? 5 : 1;
+		    Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
+		    eventActor->SetPos(eventActor->getX(), eventActor->getY()-offset);
+		  }
+		  break;
+
+		  case SDLK_DOWN: // nudge down
+		  {
+		    int offset = ((keyMod & KMOD_LSHIFT) || (keyMod & KMOD_RSHIFT)) ? 5 : 1;
+		    Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
+		    eventActor->SetPos(eventActor->getX(), eventActor->getY()+offset);
+		  }
+		  break;
+
+		  case SDLK_BACKSPACE:
+		    Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
+		    eventActor->PostMessage(eventActor, DELETE_ME, DELETE_ME);
+		    break;
 		}
 	}
+	else
+	{
+	  switch(key)
+	  {
+	    case SDLK_l: // lock
+	      Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
+	      eventActor->setLocked(!eventActor->IsLocked());
+	      break;
+	  }
+	}
+
 }
 
 void MainPanel::OnKeyUp(SDLKey key)
