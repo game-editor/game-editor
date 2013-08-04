@@ -93,6 +93,9 @@ public:
 	int getMaxUndoLevels() {return maxUndoLevels;}
 	bool getPersistentUndo() {return bPersistentUndo;}
 
+	int getEditorSizeX() {return editorSizeX;}
+	int getEditorSizeY() {return editorSizeY;}
+
 	void setEnableToolTips(bool value) {bEnableToolTips = value;}
 	void setShowTutorialReminder(bool value) {bShowTutorialReminder = value;}	
 	void setShowActorPropertyReminder(bool value) {bShowActorPropertyReminder = value;}
@@ -110,6 +113,8 @@ public:
 	void setMaxUndoLevels(int value) {maxUndoLevels = value;}
 	void setPersistentUndo(bool value) {bPersistentUndo = value;}
 	
+	void setEditorSizeX(int value) {editorSizeX = value;}
+	void setEditorSizeY(int value) {editorSizeY = value;}
 
 private:
 	void UpdateUninstallData();
@@ -134,6 +139,9 @@ private:
 
 	int maxUndoLevels;
 	bool bPersistentUndo;
+
+	int editorSizeX;
+	int editorSizeY;
 };
 
 #endif // !defined(AFX_CONFIG_H__E3E3A957_67AC_4152_8C11_9949BF7D2EE5__INCLUDED_)

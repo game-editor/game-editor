@@ -37,7 +37,7 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 #include "Tutorial.h"
 #include "MainPanel.h"
 #include "FunctionPanel.h"
-
+#include "Config.h"
 
 //////////////////////////////////////////////////////////////////////////////
 //Tool tip strings
@@ -73,8 +73,8 @@ enum
 	BT_WEB
 };
 
-#define WIDTH	640
-#define HEIGHT	480
+#define WIDTH	Config::Get()->getEditorSizeX()
+#define HEIGHT	Config::Get()->getEditorSizeY()
 
 bool IsEditingScript()
 {

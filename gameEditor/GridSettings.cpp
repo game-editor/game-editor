@@ -47,7 +47,7 @@ enum
 };
 
 #define WIDTH_GRID	300
-#define HEIGHT_GRID	224
+#define HEIGHT_GRID	284
 
 static int getHeight()
 {
@@ -105,6 +105,14 @@ Preferences::Preferences()
 
 	text = AddText("Maximum undo levels:", 10, text->Down() + 10);
 	editMaxUndoLevels = AddEditBox(text->Right() + 6, text->Top(), 30); editMaxUndoLevels->SetNumeric(3, 10000, 1);
+
+	y = DrawHLine(text->Down() + 10);
+
+	text = AddText("Editor Size X:", 10, y + 10);
+	editEditorSizeX = AddEditBox(text->Right() + 6, text->Top(), 30); editEditorSizeX->SetNumeric(640, 10000, 1);
+
+	text = AddText("Editor Size Y:", 10, text->Down() + 10);
+	editEditorSizeY = AddEditBox(text->Right() + 6, text->Top(), 30); editEditorSizeY->SetNumeric(480, 10000, 1);
 
 
 #ifdef WIN32
@@ -185,6 +193,9 @@ Preferences::Preferences()
 
 	editMaxUndoLevels->SetText(Config::Get()->getMaxUndoLevels());
 
+	editEditorSizeX->SetText(Config::Get()->getEditorSizeX());
+	editEditorSizeY->SetText(Config::Get()->getEditorSizeY());
+
 	mainColor->setColor(GameControl::Get()->GetAxis()->getMainColor());
 	resolutionColor->setColor(GameControl::Get()->GetAxis()->getResolutionColor());
 }
@@ -228,6 +239,8 @@ void Preferences::OnButton(Button *button, int buttonId)
 			int x = atol(editX->GetText().c_str());
 			int y = atol(editY->GetText().c_str());
 			int maxUndoLevels = atol(editMaxUndoLevels->GetText().c_str());
+			int editorSizeX = atol(editEditorSizeX->GetText().c_str());
+			int editorSizeY = atol(editEditorSizeY->GetText().c_str());
 
 			if(x < 2 || x > 200 || y < 2 || y > 200)
 			{
@@ -240,6 +253,12 @@ void Preferences::OnButton(Button *button, int buttonId)
 				new PanelInfo("Invalid maximum undo levels");
 				return;
 			}
+
+			if(editorSizeX<640 || editorSizeY<480)
+			{
+			  new PanelInfo("Invalid editor dimensions (minimum 640x480)");
+			}
+
 
 			if(listShow->GetText() == "Yes") GameControl::Get()->GetAxis()->setGridShow(true);
 			else GameControl::Get()->GetAxis()->setGridShow(false);
@@ -257,6 +276,9 @@ void Preferences::OnButton(Button *button, int buttonId)
 			GameControl::Get()->GetAxis()->setGridY(y);
 
 			Config::Get()->setMaxUndoLevels(maxUndoLevels);
+
+			Config::Get()->setEditorSizeX(editorSizeX);
+			Config::Get()->setEditorSizeY(editorSizeY);
 
 			GameControl::Get()->GetAxis()->setMainColor(mainColor->getColor());
 			GameControl::Get()->GetAxis()->setResolutionColor(resolutionColor->getColor());

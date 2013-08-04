@@ -50,7 +50,7 @@ public:
 	virtual ~Preferences();
 
 private:
-	EditBox *editX, *editY, *editMaxUndoLevels;
+	EditBox *editX, *editY, *editMaxUndoLevels, *editEditorSizeX, *editEditorSizeY;
 	ListPop *listShow, *listSnap, *listToolTip, *listPersistentUndo;
 
 	ColorSample *mainColor, *resolutionColor;

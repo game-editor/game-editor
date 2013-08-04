@@ -37,7 +37,7 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 #include "VariableEditor.h"
 #include "ActorProperty.h"
 #include "FunctionPanel.h"
-
+#include "Config.h"
 
 //////////////////////////////////////////////////////////////////////////////
 //Tool tip strings
@@ -82,8 +82,8 @@ enum
 	BT_CREATEVAR
 };
 
-#define WIDTH	640
-#define HEIGHT	520
+#define WIDTH	Config::Get()->getEditorSizeX()
+#define HEIGHT	Config::Get()->getEditorSizeY()
 
 ScriptGlobals *ScriptGlobals::scriptGlobals = NULL;
 

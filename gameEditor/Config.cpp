@@ -96,6 +96,8 @@ Config::Config()
 	bShowIPhoneImageSizeReminder = true;
 	bPersistentUndo = true;
 	maxUndoLevels = 50;
+	editorSizeX = 640;
+	editorSizeY = 480;
 
 	//Load
 	CDataFile iniFile(GameControl::getEditorPath() + DIR_SEP +  "GameEditor.ini");
@@ -170,6 +172,17 @@ Config::Config()
 		bPersistentUndo = iniFile.GetBool("PersistentUndo");
 	}
 
+	if(iniFile.GetValue("Editor Size X").size())
+	{
+		editorSizeX = iniFile.GetInt("Editor Size X");
+	}
+
+	if(iniFile.GetValue("Editor Size Y").size())
+	{
+		editorSizeY = iniFile.GetInt("Editor Size Y");
+	}
+
+
 	//For uninstall survey
 	if(iniFile.GetValue("Data", "Misc").size())
 	{
@@ -197,6 +210,9 @@ void Config::Save()
 
 	iniFile.SetInt("MaxUndoLevels", maxUndoLevels);
 	iniFile.SetBool("PersistentUndo", bPersistentUndo);
+
+	iniFile.SetInt("Editor Size X", editorSizeX);
+	iniFile.SetInt("Editor Size Y", editorSizeY);
 
 	//For uninstall survey
 	UpdateUninstallData();
