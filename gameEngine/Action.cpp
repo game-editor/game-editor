@@ -4322,6 +4322,146 @@ int execDestroyTimer(char *timerName)
 	return 1;
 }
 
+int execDestroyTimer2(char* actorName, char *timerName)
+{
+  /*
+    Destroy actorName's timer
+    Return 1 if success, 0 on error
+
+    actorName: actor that owns timer
+    timerName: timer name
+  */
+
+  if(!actorName || !timerName) return 0; 
+
+  char buf[256];
+  int res = 0;
+
+  Actor *eventActor = Action::getActualEventActor();
+  Actor *collideActor = Action::getActualCollideActor();
+  Actor *actionActor = NULL;
+
+  if(strcmp(actorName, S_EVENT_ACTOR) == 0)
+    {
+      actionActor = eventActor;
+    }
+  else if(strcmp(actorName, S_PARENT_ACTOR) == 0)
+    {
+      if(eventActor->getParent() != GameControl::Get()->GetAxis()) actionActor = eventActor->getParent();
+    }
+  else if(strcmp(actorName, S_CREATOR_ACTOR) == 0)
+    {
+      actionActor = eventActor->getCreator();
+    }
+  else if(strcmp(actorName, S_COLLIDE_ACTOR) == 0)
+    {
+      if(!collideActor) return 0;
+      actionActor = collideActor;
+    }
+
+  Action *actualAction = NULL;
+
+  if(IS_VALID_ACTOR(actionActor))
+    {
+      actualAction = actionActor->getAction(); //solve the createTimerInOtherActor.ged bug		
+      if(actualAction)
+	{
+	  sprintf(buf, "%s%012X\0", timerName, actionActor);
+	  SDL_TimerID *timerId = actualAction->mapTimerNameId.FindString(buf);
+	  if(timerId)
+	    {		
+#ifdef DEBUG
+	      GLOUTPUT("Destroy Timer %s\n",buf);
+#endif
+	      SDL_TimerID id = *timerId;
+	      actionActor->RemoveTimer((stTimer *)id->param); //Solve the bug: Bug "Gravity Wars only shot one time / ship" (não acontece na 1.3.4, na 1.3.5 debug)
+		  
+		  
+	      SDL_RemoveTimer(id);
+	      actualAction->mapTimerNameId.Remove(buf);
+	      actualAction->mapTimerIdName.Remove(id);
+		  
+
+#ifndef STAND_ALONE_GAME
+	      AddToGameGraph(actionActor, SET_DESTROY_TIMER);
+#endif
+	      res = 1;
+	    }
+	}
+    }
+  else
+    {
+      ListActor *listActor = mapActors.FindString(actorName);
+      if(listActor)
+	{
+	  for(int il = 0; il < listActor->Count(); il++)
+	    {
+	      actionActor = (*listActor)[il];
+	      if(actionActor->getRunning())
+		{
+		  actualAction = actionActor->getAction(); //solve the createTimerInOtherActor.ged bug		
+		  if(actualAction)
+		    {
+		      sprintf(buf, "%s%012X\0", timerName, actionActor);
+		      SDL_TimerID *timerId = actualAction->mapTimerNameId.FindString(buf);
+		      if(timerId)
+			{		
+#ifdef DEBUG
+			  GLOUTPUT("Destroy Timer %s\n",buf);
+#endif
+			  SDL_TimerID id = *timerId;
+			  actionActor->RemoveTimer((stTimer *)id->param); //Solve the bug: Bug "Gravity Wars only shot one time / ship" (não acontece na 1.3.4, na 1.3.5 debug)
+            
+			
+			  SDL_RemoveTimer(id);
+			  actualAction->mapTimerNameId.Remove(buf);
+			  actualAction->mapTimerIdName.Remove(id);
+	      
+
+#ifndef STAND_ALONE_GAME
+			  AddToGameGraph(actionActor, SET_DESTROY_TIMER);
+#endif
+			  res = 1;
+			}
+		    }
+		}
+	    }
+	}
+      else if(strchr(actorName, '.'))
+	{ // clone specified
+	  actionActor = GameControl::Get()->GetActor(actorName, true, false, false);
+	  if(actionActor)
+	    {
+	      actualAction = actionActor->getAction(); //solve the createTimerInOtherActor.ged bug	  
+	      if(actualAction)
+		{
+		  sprintf(buf, "%s%012X\0", timerName, actionActor);
+		  SDL_TimerID *timerId = actualAction->mapTimerNameId.FindString(buf);
+		  if(timerId)
+		    {		
+#ifdef DEBUG
+		      GLOUTPUT("Destroy Timer %s\n",buf);
+#endif
+		      SDL_TimerID id = *timerId;
+		      actionActor->RemoveTimer((stTimer *)id->param); //Solve the bug: Bug "Gravity Wars only shot one time / ship" (não acontece na 1.3.4, na 1.3.5 debug)
+            
+		      SDL_RemoveTimer(id);
+		      actualAction->mapTimerNameId.Remove(buf);
+		      actualAction->mapTimerIdName.Remove(id);
+	      
+#ifndef STAND_ALONE_GAME
+		      AddToGameGraph(actionActor, SET_DESTROY_TIMER);
+#endif
+		      res = 1;
+		    }
+		}
+		  
+	    }
+	}
+    }
+  return res;
+}
+
 int execChangeZDepth(char *actorName, double zdepth)
 {
 	/*

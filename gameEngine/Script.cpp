@@ -1181,6 +1181,33 @@ static val_t eic_getAnimIndex(void)
     return v;
 }
 
+static val_t eic_getAnimIndex2(void)
+{
+  /*
+    int getAnimIndex2(char* actorName, char *animName);
+    actorName: a valid actor
+    animName: a valid animation name for the actor
+
+    Get the index of an animation in animName
+    Return animation index if success, -1 on error
+
+    note: may want to support especial actor types
+  */
+
+  val_t v;
+  v.ival = -1;
+
+  if(GameControl::Get()->getGameMode())
+  {
+    char* actorName = (char*)arg(0,getargs(),ptr_t).p;
+    Actor *actor = GameControl::Get()->GetActor(actorName, true, false, false);
+
+    v.ival = actor->GetAnimationIndex((char *)arg(1,getargs(),ptr_t).p);
+  }
+	
+  return v;
+}
+
 static val_t eic_getAnimName(void)
 {
 	/*
@@ -1218,6 +1245,47 @@ static val_t eic_getAnimName(void)
     return v;
 }
 
+static val_t eic_getAnimName2(void)
+{
+  /*
+    char *getAnimName2(char* actorName, int animIndex);
+    actorName: a valid actor
+    animIndex: a animaiton index in actorName
+
+    Get the name of an animation in actorName
+    Return animation name if success, "" on error
+
+    note: may want to support especial actor types
+  */
+
+  val_t v;
+  v.p.sp = v.p.p = NULL;
+
+  static char animName[NAME_LIMIT + 1];
+
+  if(GameControl::Get()->getGameMode())
+  {
+    char* actorName = (char *)arg(0,getargs(),ptr_t).p;
+    Actor *actor = GameControl::Get()->GetActor(actorName, true, false, false);
+    int index = arg(1,getargs(), int);
+
+    if(index < 0)
+    {
+      strcpy(animName, "");
+    }
+    else
+    {
+      gedString name(actor->AnimationName(index + 2));
+      strcpy(animName, name.getCharBuf());
+    }
+	  
+    v.p.sp = v.p.p = animName;		
+    setEp( v.p, strlen(animName) + 1);
+  }
+	
+  return v;
+}
+
 static val_t eic_getclone(void)
 {
 	/*
@@ -1252,6 +1320,49 @@ static val_t eic_getclone(void)
 	
 	setEp( v.p, Actor::getStructActorSize() );
     return v;
+}
+
+static val_t eic_getclone2(void)
+{
+  /*
+    Actor *getclone2(const char *actorName, int cloneindex);
+    actorName: name of actor to be retrieved
+    cloneindex: index of actorName (Ex.: ship.1, ship.2, ...)
+    Get actor with name cloneName
+    Return actor if success, invalid actor (with cloneindex = -1 and name = "invalid actor") on error
+  */
+
+  val_t v;
+  v.p.sp = v.p.p = NULL;
+
+  
+
+  if(GameControl::Get()->getGameMode())
+  {
+    char *actorName = (char *)arg(0,getargs(),ptr_t).p;
+    int cloneIndex = arg(1,getargs(),int);
+    char cloneName[NAME_LIMIT +1];
+
+    sprintf(cloneName, "%s.%d", actorName, cloneIndex);
+    Actor *actor = GameControl::Get()->GetActor(cloneName, true, false, false);
+
+    if(actor && actor > COLLIDE_ACTOR)
+    {
+      Script::getListCreateActors()->PushBack(actor);
+
+      //Don't set twice (Solve the issue 92)
+      if(!actor->getSetActualValues()) actor->SetActualValues(NEED_ALL);
+
+      v.p.sp = v.p.p = actor->getScriptVars();
+    }
+    else
+    {
+      v.p.sp = v.p.p = Script::invalidScriptActor;
+    }
+  }
+	
+  setEp( v.p, Actor::getStructActorSize() );
+  return v;
 }
 
 Actor *getactor(int x, int y)
@@ -1872,6 +1983,20 @@ static val_t eic_DestroyTimer(void)
 	{
 		v.ival = execDestroyTimer((char *)arg(0,getargs(),ptr_t).p);
 	}
+	
+    return v;
+}
+
+static val_t eic_DestroyTimer2(void)
+{
+    val_t v;
+    v.ival = 0;
+
+    if(GameControl::Get()->getGameMode())
+      {
+	v.ival = execDestroyTimer2((char *)arg(0,getargs(),ptr_t).p,
+				   (char *)arg(1,getargs(),ptr_t).p);
+      }
 	
     return v;
 }
@@ -3196,8 +3321,14 @@ void Script::Init()
 	EiC_add_builtinfunc("getAnimIndex", eic_getAnimIndex);
 	EiC_parseString("int getAnimIndex(const char *animName);");
 
+	EiC_add_builtinfunc("getAnimIndex2", eic_getAnimIndex2);
+	EiC_parseString("int getAnimIndex2(const char *actorName, const char *animName);");
+
 	EiC_add_builtinfunc("getAnimName", eic_getAnimName);
 	EiC_parseString("char *getAnimName(int animIndex);");
+
+	EiC_add_builtinfunc("getAnimName2", eic_getAnimName2);
+	EiC_parseString("char *getAnimName2(const char *actorName, int animIndex);");
 
 	EiC_add_builtinfunc("ChangeAnimation", eic_ChangeAnimation);
 	EiC_parseString("int ChangeAnimation(const char *actorName, const char *animationName, int state);");
@@ -3254,6 +3385,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("DestroyTimer", eic_DestroyTimer);
 	EiC_parseString("int DestroyTimer(const char *timerName);");
+
+	EiC_add_builtinfunc("DestroyTimer2", eic_DestroyTimer2);
+	EiC_parseString("int DestroyTimer2(const char *actorName, const char *timerName);");
 
 	EiC_add_builtinfunc("ChangeZDepth", eic_ChangeZDepth);
 	EiC_parseString("int ChangeZDepth(const char *actorName, double zdepth);");
@@ -4703,6 +4837,10 @@ void Script::InitActorFunctions()
 	RemoveSymbol("getclone");
 	EiC_add_builtinfunc("getclone",eic_getclone);
 	EiC_parseString("Actor *getclone(const char *cloneName);");
+
+	RemoveSymbol("getclone2");
+	EiC_add_builtinfunc("getclone2",eic_getclone2);
+	EiC_parseString("Actor *getclone2(const char *actorName, int cloneIndex);");
 
 	RemoveSymbol("getactor");
 	EiC_add_builtinfunc("getactor",eic_getactor);
