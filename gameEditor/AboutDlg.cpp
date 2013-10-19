@@ -169,7 +169,7 @@ void Inf1(gedString &userName, gedString &updateDays)
 #endif
 
 #define WIDTH	300
-#define HEIGHT	345
+#define HEIGHT	365
 
 gedString collaboration("\
   Andreas Sturmer (StarFishDesign)\n\
@@ -239,7 +239,11 @@ AboutDlg::AboutDlg()
 #if defined(GAME_EDITOR_HOME_EDITION)
 	type = " Home Edition";
 #elif defined(GAME_EDITOR_PROFESSIONAL)
+#if defined(GAME_EDITOR_BETA)
+	type = " Beta";
+#else
 	type = " Professional";
+#endif
 #endif
 
 
@@ -261,6 +265,8 @@ AboutDlg::AboutDlg()
 	text = AddText("makslane@game-editor.com", text->Left(), text->Down());	
 	text = AddText("Co-developer: Andreas Kindlbacher (akr)", text->Left(), text->Down() + 10);	
 	text = AddText("andreas@game-editor.com", text->Left(), text->Down());	
+	text = AddText("Co-developer: Leland Dawson (skydereign)", text->Left(), text->Down() + 10);	
+	text = AddText("leland@game-editor.com", text->Left(), text->Down());	
 
 
 	text = AddText("Collaboration:", text->Left(), text->Down()+10);
