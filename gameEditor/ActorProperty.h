@@ -57,6 +57,7 @@ public:
 	static void SetEditEvents();
 	static void Update();
 	static void Destroy();
+	void RemoveActor(Actor* act);
 	void SetParent();
 	static void SetPaths();
 	void AddAction(const gedString &action);

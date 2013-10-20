@@ -100,72 +100,107 @@ ActorEdit::~ActorEdit()
 
 bool ActorEdit::OnMouseButtonDown(int x, int y, Uint8 button)
 {
-	if(GameControl::Get()->getGameMode())
-	{
-		return Actor::OnMouseButtonDown(x, y, button);
-	}
+  if(GameControl::Get()->getGameMode())
+  {
+    return Actor::OnMouseButtonDown(x, y, button);
+  }
 
 #ifndef STAND_ALONE_GAME
 
-	GameControl::Get()->setModified();
+  GameControl::Get()->setModified();
 
-	if(bActivationEventMode)
+  if(bActivationEventMode)
+  {
+    if(button == SDL_BUTTON_LEFT && activationEventActor != this)
+    {
+      //Receive activation event from activationEventActor
+      gedString actorsName(activationEventActor->getCloneName());
+      actorsName += getCloneName();
+
+      if(!mapActivationEventActors[actorsName]) //No duplicates
+      {
+	if(!ActivationEventsCanvas::DoLoop(activationEventActor->getCloneName(), getCloneName())) //No loops
 	{
-		if(button == SDL_BUTTON_LEFT && activationEventActor != this)
-		{
-			//Receive activation event from activationEventActor
-			gedString actorsName(activationEventActor->getCloneName());
-			actorsName += getCloneName();
-
-			if(!mapActivationEventActors[actorsName]) //No duplicates
-			{
-				if(!ActivationEventsCanvas::DoLoop(activationEventActor->getCloneName(), getCloneName())) //No loops
-				{
-					mapActivationEventActors.Add(actorsName, 1);
-					ActivationEventsCanvas::AddLine(Action::Call(activationEventActor)->SetActivationEvent(activationEventActor->getCloneName(), getCloneName()));
-					GameControl::Get()->GetAxis()->getImage()->Invalidate();
-				}
-				else
-				{
-					new PanelInfo("Closed loop detected.\nPlease, choose another actor.");
-				}
-			}
-			return false;
-		}
+	  mapActivationEventActors.Add(actorsName, 1);
+	  ActivationEventsCanvas::AddLine(Action::Call(activationEventActor)->SetActivationEvent(activationEventActor->getCloneName(), getCloneName()));
+	  GameControl::Get()->GetAxis()->getImage()->Invalidate();
 	}
 	else
 	{
-		if(button == SDL_BUTTON_RIGHT)
-		{
-			ListMenu(x, y, button);	
-			return false;
-		}
-		else
-		{
-			ActorProperty::Call(this, false);
-
-			if(!flags.IsSet(FLAG_LOCKACTOR))
-			{
-				if(type == REGION_ACTOR || type == REGION_ACTOR_FILLED || type == CANVAS) 
-					return Actor::OnMouseButtonDown(x, y, button);
-			}
-
-			Tile *actualTile = GameControl::Get()->GetTile();
-			if(tile && tile == actualTile)
-			{
-				if(tile->AddTile())
-				{
-					tile->setAdd(true);
-					return false;
-				}
-			}
-		}
+	  new PanelInfo("Closed loop detected.\nPlease, choose another actor.");
 	}
+      }
+      return false;
+    }
+  }
+  else
+  {
+    SDLMod keyMod = SDL_GetModState();
+    Uint8 *keystate = SDL_GetKeyState(NULL);	
 
-	return !flags.IsSet(FLAG_LOCKACTOR);
+    // check to delete
+    if(button == SDL_BUTTON_LEFT && (keyMod & KMOD_LCTRL) && (keystate[SDLK_d]))
+    {
+			ActorProperty::getActorProperty()->RemoveActor(this);
+			return false;
+    }
+    else if(button == SDL_BUTTON_RIGHT)
+    {
+      ListMenu(x, y, button);	
+      return false;
+    }
+    else
+    {
+      ActorProperty::Call(this, false);
+
+      if(!flags.IsSet(FLAG_LOCKACTOR))
+      {
+	if(type == REGION_ACTOR || type == REGION_ACTOR_FILLED || type == CANVAS) 
+	  return Actor::OnMouseButtonDown(x, y, button);
+      }
+
+      Tile *actualTile = GameControl::Get()->GetTile();
+      if(tile && tile == actualTile)
+      {
+	if(tile->AddTile())
+	{
+	  tile->setAdd(true);
+	  return false;
+	}
+      }
+    }
+	  
+    if(button == SDL_BUTTON_RIGHT)
+    {
+      ListMenu(x, y, button);	
+      return false;
+    }
+    else
+    {
+      ActorProperty::Call(this, false);
+
+      if(!flags.IsSet(FLAG_LOCKACTOR))
+      {
+	if(type == REGION_ACTOR || type == REGION_ACTOR_FILLED || type == CANVAS) 
+	  return Actor::OnMouseButtonDown(x, y, button);
+      }
+
+      Tile *actualTile = GameControl::Get()->GetTile();
+      if(tile && tile == actualTile)
+      {
+	if(tile->AddTile())
+	{
+	  tile->setAdd(true);
+	  return false;
+	}
+      }
+    }
+  }
+
+  return !flags.IsSet(FLAG_LOCKACTOR);
 
 #else	
-	return true;
+  return true;
 #endif //#ifndef STAND_ALONE_GAME
 }
 
@@ -341,6 +376,7 @@ void ActorEdit::ListMenu(int x, int y, Uint8 button)
 		
 		if(flags.IsSet(FLAG_LOCKACTOR)) listMenu->AddText("Unlock Actor");
 		else  listMenu->AddText("Lock Actor");
+		listMenu->AddText("Delete Actor");
 
 #if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
 		listMenu->AddText(BUY_NOW); //Must be the last item to avoid turorial bugs
@@ -372,10 +408,10 @@ bool ActorEdit::OnList(ListPop *list, int index, gedString &text, int listId)
 	{
 		switch(index)
 		{
-		case 0:
-			ActorProperty::Call(this);
-			break;
-		case 1:
+			case 0:
+				ActorProperty::Call(this);
+				break;
+			case 1:
 			{
 				if(!listActivationEvents)
 				{
@@ -391,25 +427,25 @@ bool ActorEdit::OnList(ListPop *list, int index, gedString &text, int listId)
 				listActivationEvents->OnMouseButtonDown(GameControl::Get()->getMouseX(), GameControl::Get()->getMouseY(), 0);
 			}
 			break;
-		case 2:
-			ActivationEventsCanvas::ToggleVisibility();
-			break;
-		case 3:
-			flags.Set(FLAG_LOCKACTOR, !flags.IsSet(FLAG_LOCKACTOR));
-			break;
 
-#if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
-		case 4:
-			openBuySite();
-			break;
-#endif
+			case 2:
+				ActivationEventsCanvas::ToggleVisibility();
+				break;
+
+			case 3:
+				flags.Set(FLAG_LOCKACTOR, !flags.IsSet(FLAG_LOCKACTOR));
+				break;
+
+		  case 4: // remove actor
+				ActorProperty::getActorProperty()->RemoveActor(this);
+				break;
 		}
 	}
 	else if(listId == LS_ACTOR_ACTIVATION_EVENTS)
 	{
 		Action::DoEvent(this, text, true);
 	}
-
+	
 	return true;
 }
 

@@ -1339,6 +1339,75 @@ void ActorProperty::Destroy()
 #endif
 }
 
+void ActorProperty::RemoveActor(Actor* act)
+{
+	actor = act;
+	if(!actor->isView())
+	{
+		//Remove
+		bool bHaveHeirs = false;
+		gedString actorName(actor->getActorName());
+		ActivationEventsCanvas::ActorRemoved(actor->getCloneName());
+		GameControl::Get()->RemoveActor(actor, true);
+		delete actor;
+
+		if(bHaveHeirs)
+		{
+			Action::RemoveInheritedEvents(actorName);
+		}
+					
+		//Adjust dialog
+		if(GameControl::Get()->NumActors())
+		{
+			//First actor
+			//SetActor(NULL);					
+
+			//Next selection
+			gedString text(actorName);
+			Actor *nexActor = NULL;
+
+			//Try some clone first
+			if(!GameControl::Get()->GetActor(text))
+			{
+				//No clones, try the next
+				int next = (listActor->GetSelectedIndex() + 1) % listActor->Count();
+				text = listActor->GetText(next);
+							
+				if(text == "view" && GameControl::Get()->NumActors() > 1)
+				{
+					//Only select the view if the only actor
+					next = (next + 1) % listActor->Count();
+					text = listActor->GetText(next);
+				}
+							
+							
+				text = listActor->GetText(next);
+				if(text[0] == '+')
+				{
+					text = text.substr(2);
+				}
+			}
+
+			nexActor = GameControl::Get()->GetActor(text);
+			if(!nexActor)
+			{
+				nexActor = GameControl::Get()->GetActor("view");
+			}
+
+			Update(nexActor);						
+		}
+		else
+		{
+			Destroy();
+		}
+	}
+	else
+	{
+		new PanelInfo("Invalid option for this actor");
+		return;
+	}
+}
+
 void ActorProperty::SetEditEvents()
 {
 	if(actorProperty)

@@ -3104,7 +3104,7 @@ void Script::Init()
 	sprintf(buf, "MAX_SCRIPTTEXT=%ld", MAX_SCRIPTTEXT); dodefine(buf);
 	sprintf(buf, "ACTOR_NAME=%ld", ACTOR_NAME); dodefine(buf);
 	sprintf(buf, "CLONE_NAME=%ld", CLONE_NAME); dodefine(buf);	
-	
+	sprintf(buf, "NAME_LIMIT=%ld", NAME_LIMIT); dodefine(buf);
 	//Actor struct
 	EiC_parseString((char *)(baseStructActor + endStructActor).c_str());
 
