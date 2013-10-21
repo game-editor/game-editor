@@ -377,10 +377,6 @@ void ActorEdit::ListMenu(int x, int y, Uint8 button)
 		if(flags.IsSet(FLAG_LOCKACTOR)) listMenu->AddText("Unlock Actor");
 		else  listMenu->AddText("Lock Actor");
 		listMenu->AddText("Delete Actor");
-
-#if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
-		listMenu->AddText(BUY_NOW); //Must be the last item to avoid turorial bugs
-#endif
 	}	
 
 	listMenu->SetParent(this);

@@ -630,10 +630,6 @@ void MainPanel::FileSetup()
 	}
 
 	listFile->AddText("Exit");
-
-#if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
-	listFile->AddText(BUY_NOW); //Must be the last item to avoid turorial bugs
-#endif
 }
 
 void MainPanel::HelpSetup()
@@ -661,10 +657,6 @@ void MainPanel::HelpSetup()
 #endif
 
 	listHelp->AddText("About...");
-
-#if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
-	listHelp->AddText(BUY_NOW); //Must be the last item to avoid turorial bugs
-#endif
 }
 
 MainPanel::~MainPanel()
@@ -984,12 +976,6 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 				event.quit.type = SDL_QUIT;
 				SDL_PushEvent(&event);
 			}
-#if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
-			else if(text == BUY_NOW)
-			{
-				openBuySite();
-			}
-#endif
 			else
 			{
 				//Recent file list
@@ -1100,12 +1086,6 @@ bool MainPanel::OnList(ListPop *list, int index, gedString &text, int listId)
 			{
 				openUrl("http://game-editor.com/demos.html");				
 			}
-			#if defined(WIN32) && !defined(GAME_EDITOR_PROFESSIONAL) && !defined(STAND_ALONE_GAME) && !defined(GAME_EDITOR_HOME_EDITION)
-			else if(text == BUY_NOW)
-			{
-				openBuySite();
-			}
-			#endif
 			else
 			{
 				//Tutorials
@@ -1365,7 +1345,7 @@ void MainPanel::OnKeyDown(SDLKey key, int repeatLoopCount)
 
 		  case SDLK_BACKSPACE:
 		    Actor* eventActor = ActorProperty::getActorProperty()->GetCurrentEventActor();
-		    eventActor->PostMessage(eventActor, DELETE_ME, DELETE_ME);
+			ActorProperty::getActorProperty()->RemoveActor(eventActor);
 		    break;
 		}
 	}

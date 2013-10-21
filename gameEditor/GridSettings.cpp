@@ -52,7 +52,7 @@ enum
 static int getHeight()
 {
 #ifdef WIN32
-	return HEIGHT_GRID + 35;
+	return HEIGHT_GRID + 40;
 #endif
 
 	return HEIGHT_GRID;
@@ -116,7 +116,7 @@ Preferences::Preferences()
 
 
 #ifdef WIN32
-	y = DrawHLine(editMaxUndoLevels->Down() + 10);
+	y = DrawHLine(editEditorSizeY->Down() + 10);
 
 	text = AddText("Image Editor: ", 10, y + 2);
 	imageEditorPath = AddListDirectory(text->Right(), text->Top() - 2, 200); imageEditorPath->SetToolTip(TIP_PREFERENCES_IMAGE_EDITOR);	

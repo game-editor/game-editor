@@ -18,6 +18,14 @@
 		Value="GAME_EDITOR_PROFESSIONAL"
 	/>
 	<UserMacro
+		Name="Beta"
+		Value="GAME_EDITOR_BETA;GAME_EDITOR_PROFESSIONAL"
+	/>
+	<UserMacro
+		Name="Beta_Standalone"
+		Value="GAME_EDITOR_BETA_STAND_ALONE;GAME_EDITOR_PROFESSIONAL"
+	/>
+	<UserMacro
 		Name="Demo"
 		Value=""
 	/>
@@ -31,6 +39,6 @@
 	/>
 	<UserMacro
 		Name="VersionType"
-		Value="$(Professional)"
+		Value="$(Beta)"
 	/>
 </VisualStudioPropertySheet>

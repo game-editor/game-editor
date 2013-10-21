@@ -1082,11 +1082,10 @@ val_t eic_fopen(void) //maks
 			book1[i] = NextFopenEntry++;
 			book2[i].fp = (FILE *)(v.p.p);
 			strcpy(book2[i].name, name);
+			book2[i].buffer = NULL;
 
 #ifdef WIN32
 	{
-	  book2[i].buffer = NULL;
-
 	//maks: set the buffer size
 	//solve http://code.game-editor.com/ticket/92
 	long len;
@@ -1154,9 +1153,7 @@ val_t eic_fclose(void)
   {
     book1[i] = 0;
     book2[i].fp = NULL;
-#ifdef WIN32
 	if(book2[i].buffer) free(book2[i].buffer);
-#endif
   }
   else
   {

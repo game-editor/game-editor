@@ -722,7 +722,7 @@ void openBuySite();
 
 #define GAME_NET_VERSION	1
 #define GAME_FILE_VERSION	55
-#define GAME_EDITOR_VERSION	0x01040000 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
+#define GAME_EDITOR_VERSION	0x01040100 //1 byte: Major version, 1 byte: Minor version, 1 byte: Patch level, 1 byte: build
 
 extern gedString EDITOR_DAT;
 
