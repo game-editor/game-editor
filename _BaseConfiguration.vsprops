@@ -23,7 +23,7 @@
 	/>
 	<UserMacro
 		Name="Beta_Standalone"
-		Value="GAME_EDITOR_BETA_STAND_ALONE;GAME_EDITOR_PROFESSIONAL"
+		Value="GAME_EDITOR_BETA;STAND_ALONE_GAME;GAME_EDITOR_PROFESSIONAL"
 	/>
 	<UserMacro
 		Name="Demo"
@@ -39,6 +39,6 @@
 	/>
 	<UserMacro
 		Name="VersionType"
-		Value="$(Beta)"
+		Value="$(Beta_Standalone)"
 	/>
 </VisualStudioPropertySheet>
