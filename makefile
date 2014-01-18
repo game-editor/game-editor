@@ -60,6 +60,7 @@ endif
 
 
 all:
+	mkdir -p output output/eic output/gameEngine output/engine
 	$(MAKE) -f makefile.zlib -C SDL/SDL_image/png/libpng/projects/msvc 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.libpng -C SDL/SDL_image/png/libpng/projects/msvc 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.jpegm -C SDL/SDL_image/jpeg/VisualC 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
@@ -78,7 +79,7 @@ all:
 	$(MAKE) -f makefile.kyra -C kyra/engine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.gengine -C gameEngine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.editor -C gameEditor/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
-
+	cp -R bin/editor.dat bin/Tutorials bin/Docs output/
 
 clean:
 	$(MAKE) -f makefile.zlib -C SDL/SDL_image/png/libpng/projects/msvc clean
@@ -100,3 +101,4 @@ clean:
 	$(MAKE) -f makefile.gengine -C gameEngine/ clean
 	$(MAKE) -f makefile.editor -C gameEditor/ clean
 
+	rm -rf output/eic output/gameEngine output/engine output/editor.dat output/Tutorials output/Docs output/GameEditor.ini
