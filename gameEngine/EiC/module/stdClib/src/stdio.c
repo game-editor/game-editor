@@ -1092,7 +1092,7 @@ val_t eic_fopen(void) //maks
 	len = ftell(v.p.p);
 	fseek(v.p.p, 0, SEEK_SET);
 	book2[i].buffer = malloc(len);
-	setvbuf(v.p.p, book2[i].buffer, _IOFBF, len);
+	//setvbuf(v.p.p, book2[i].buffer, _IOFBF, len);
 	}
 #endif
 		}
