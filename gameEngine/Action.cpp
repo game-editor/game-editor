@@ -3703,38 +3703,90 @@ int execChangeCursor(char *actorName, char *imgName, int nFramesH, int nFramesV,
 	return res;
 }
 
-int execActivationEvent(char *cloneName)
+int execActivationEvent(char *actorName)
 {
-	/*
-	Send a Actication Event to actor cloneName
-	cloneName: valid clone name
-	
-	Return 1 if success, 0 on error
-	*/
+  /*
+    Send a Actication Event to actor cloneName
+    cloneName: valid clone name
+    
+    Return 1 if success, 0 on error
+  */
+  int res = 0;
+  
+  Actor *eventActor = Action::getActualEventActor();
+  Actor *collideActor = Action::getActualCollideActor();
+  Actor *actionActor = NULL;
 
-	Actor *fromActor = Action::getActualEventActor();
-	Actor *toActor = GameControl::Get()->GetActor(cloneName, true, false, false);
+
+  if(strcmp(actorName, S_EVENT_ACTOR) == 0)
+  {
+    actionActor = eventActor;
+  }
+  else if(strcmp(actorName, S_COLLIDE_ACTOR) == 0)
+  {
+    if(!collideActor) return 0;
+    actionActor = collideActor;		
+  }
+  else if(strcmp(actorName, S_PARENT_ACTOR) == 0)
+  {
+    if(eventActor->getParent() != GameControl::Get()->GetAxis())
+    {
+      actionActor = eventActor->getParent();
+    }
+  }
+  else if(strcmp(actorName, S_CREATOR_ACTOR) == 0)
+  {
+    actionActor = eventActor->getCreator();
+  }
 
 
-	if(toActor)
-	{
+  if(IS_VALID_ACTOR(actionActor))
+  {
+    if(actionActor->getRunning())
+    {
 #ifndef STAND_ALONE_GAME
-		AddToGameGraph(toActor, SET_ACTIVATION_EVENT);
+      AddToGameGraph(actionActor, SET_ACTIVATION_EVENT);
 #endif
-		toActor->OnActivationEvent(fromActor);
-	}
-	else 
-	{
+      actionActor->OnActivationEvent(eventActor);
+      res = 1;
+    }
+  }
+  else
+  {
+    //Multiple actors
+    ListActor *listActor = mapActors.FindString(actorName);
+    if(listActor)
+    {
+      for(int il = 0; il < listActor->Count(); il++)
+      {
+				actionActor = (*listActor)[il];
+				if(actionActor->getRunning())
+				{
 #ifndef STAND_ALONE_GAME
-		/*char error[1024];
-		sprintf(error, "SendActivationEvent(\"%s\") call is invalid", cloneName);
-		Script::myDisplay(error);*/
+					AddToGameGraph(actionActor, SET_ACTIVATION_EVENT);
 #endif
+					actionActor->OnActivationEvent(eventActor);
+					res = 1;
+				}			
+      }
+    }
+    else if(strchr(actorName, '.'))
+    {
+      //Clone specified
+      actionActor = GameControl::Get()->GetActor(actorName, true, false, false);
+      if(actionActor && actionActor->getRunning()) 
+      {
+#ifndef STAND_ALONE_GAME
+				AddToGameGraph(actionActor, SET_ACTIVATION_EVENT);
+#endif
+				actionActor->OnActivationEvent(eventActor);
+				res = 1;
+      }
+    }
+  }
 
-		return 0;
-	}
 
-	return 1;
+  return res;
 }
 
 Actor* execCreateActor(char *_creatorName, char *_animationName, char *_parentName, char *_pathName, int xpos, int ypos, int absolutePosition)
