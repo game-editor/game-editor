@@ -72,6 +72,8 @@ extern gedString ANY_PATH;
 #define S_CREATOR				"creator"
 #define CREATOR_ACTOR			((Actor *)3)
 
+#define S_ALL_ACTORS                      "All Actors"
+
 #define S_NONE					"Game Center"
 #define S_MOUSE					"Mouse Position"
 #define S_SCREEN				"screen"

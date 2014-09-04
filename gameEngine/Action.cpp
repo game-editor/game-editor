@@ -3326,7 +3326,6 @@ int execFollowMouse(char *actorName, int axis)
 
 				res = 1;
 			}
-			
 		}
 		
 	}	
@@ -3783,8 +3782,31 @@ int execActivationEvent(char *actorName)
 				res = 1;
       }
     }
-  }
+		else if(strcmp(actorName, S_ALL_ACTORS) == 0)
+		{
+			// All Actors
+			ListActor** lists = mapActors.GetValueArray();
+			for(int i=0; i<mapActors.size(); i++)
+			{
+				ListActor *listActor = lists[i];
 
+				for(int il = 0; il < listActor->Count(); il++)
+				{
+					actionActor = (*listActor)[il];
+					if(actionActor->getRunning())
+					{
+#ifndef STAND_ALONE_GAME
+						AddToGameGraph(actionActor, SET_ACTIVATION_EVENT);
+#endif
+						actionActor->OnActivationEvent(eventActor);
+						res = 1;
+					}			
+				}
+			}
+		}
+		
+	}
+	
 
   return res;
 }
