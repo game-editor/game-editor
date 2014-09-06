@@ -2361,6 +2361,28 @@ static val_t eic_PauseGameOff(void)
     return v;
 }
 
+static val_t eic_ChangeResolution(void)
+{
+  val_t v;
+  v.ival = 0;
+
+  int xRes = arg(0, getargs(), int);
+  int yRes = arg(1, getargs(), int);
+  int fullscreen =  arg(2, getargs(), int);
+  GameControl::Get()->SwitchResolution(engine->Surface(),xRes, yRes, fullscreen);
+
+  // need to adjust view size
+  Actor *view = GameControl::Get()->GetViewActor();
+  if(view) 
+  {
+    view->AdjustView(xRes, yRes, fullscreen);
+  }
+  return v;
+
+}
+
+
+
 static val_t eic_ActorCount(void)
 {
     val_t v;
@@ -3436,6 +3458,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("PauseGameOff", eic_PauseGameOff);
 	EiC_parseString("void PauseGameOff(void);");
+
+	EiC_add_builtinfunc("ChangeResolution", eic_ChangeResolution);
+	EiC_parseString("void ChangeResolution(int xRes, int yRes, int fullscreen);");
 
 	EiC_add_builtinfunc("ActorCount", eic_ActorCount);
 	EiC_parseString("int ActorCount(const char *actorName);");
