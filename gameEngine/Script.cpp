@@ -2381,7 +2381,30 @@ static val_t eic_ChangeResolution(void)
 
 }
 
+static val_t eic_Zoom(void)
+{
+  val_t v;
+  v.ival = 0;
 
+  Axis* axis = GameControl::Get()->GetAxis();
+  double fromZoom = axis->getScale();
+  double toZoom = arg(0, getargs(), double); 
+  if(toZoom <= 0) return v;
+
+
+  axis->SetScale(toZoom);
+
+  // need to adjust view size
+  Actor *view = GameControl::Get()->GetViewActor();
+  if(view) 
+  {
+    double scale = fromZoom/toZoom;
+    GLOUTPUT("\n\nstarting width = %d\n", GameControl::Get()->getGameWidth());
+    view->AdjustView(view->Width() * scale, view->Height() * scale, GameControl::Get()->getFullScreen());
+    GLOUTPUT("ending width = %d\n\n\n", GameControl::Get()->Width());
+  }
+  return v;
+}
 
 static val_t eic_ActorCount(void)
 {
@@ -3461,6 +3484,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("ChangeResolution", eic_ChangeResolution);
 	EiC_parseString("void ChangeResolution(int xRes, int yRes, int fullscreen);");
+
+	EiC_add_builtinfunc("Zoom", eic_Zoom);
+	EiC_parseString("int Zoom(double zoom);");
 
 	EiC_add_builtinfunc("ActorCount", eic_ActorCount);
 	EiC_parseString("int ActorCount(const char *actorName);");
