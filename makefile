@@ -6,7 +6,7 @@
 
 GAMEEDITOR_PROFESSIONAL=-DGAME_EDITOR_PROFESSIONAL
 GAMEEDITOR_PROFESSIONAL_STAND_ALONE=-DSTAND_ALONE_GAME -DGAME_EDITOR_PROFESSIONAL
-GAMEEDITOR_BETA=-DGAME_EDITOR_PROFESSIONAL -DGAME_EDITOR_BETA
+GAMEEDITOR_BETA=-DGAME_EDITOR_PROFESSIONAL -DGAME_EDITOR_BETA -DDEBUG
 GAMEEDITOR_BETA_STAND_ALONE=-DSTAND_ALONE_GAME -DGAME_EDITOR_PROFESSIONAL -DGAME_EDITOR_BETA
 
 
@@ -79,7 +79,7 @@ all:
 	$(MAKE) -f makefile.kyra -C kyra/engine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.gengine -C gameEngine/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
 	$(MAKE) -f makefile.editor -C gameEditor/ 'GAMEEDITOR_TYPE=$(GAMEEDITOR_TYPE)' 'BUILD_TYPE=$(BUILD_TYPE)' 'CC=$(CC)' 'TARGET=$(TARGET)'
-	cp -R bin/editor.dat bin/Tutorials bin/Docs output/
+	cp -R bin/editor.dat bin/Tutorials bin/Docs gameEditor/res/b_xy.png gameEditor/res/functions.xml output/
 
 clean:
 	$(MAKE) -f makefile.zlib -C SDL/SDL_image/png/libpng/projects/msvc clean
@@ -101,4 +101,4 @@ clean:
 	$(MAKE) -f makefile.gengine -C gameEngine/ clean
 	$(MAKE) -f makefile.editor -C gameEditor/ clean
 
-	rm -rf output/eic output/gameEngine output/engine output/editor.dat output/Tutorials output/Docs output/GameEditor.ini
+	rm -rf output/eic output/gameEngine output/engine output/editor.dat output/Tutorials output/Docs output/GameEditor.ini output/b_xy.png output/functions.xml

@@ -271,6 +271,15 @@ Returns an empty string on error." return_type="char *">
 			<input type="edit" size="128" variable_list="true"/>
 		</argument>
 	</function>
+	<function name="getAnimName2" title="Get Animation Name 2" tip="Returns the name of an animation in a specified actor.
+Returns an empty string on error." return_type="char *">
+		<argument title="Actor" tip="Select the actor" errorMsg="Please, select an actor" c_type="char *">
+			<input type="list" size="128" populate="PopulateActors, true"/>
+		</argument>
+		<argument title="Animation index" errorMsg="Please, enter the animation index" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
+		</argument>
+	</function>
 	<function name="getKeyText" title="Get Key Description" tip="Returns the key description for a given key code" return_type="char *">
 		<argument title="Key code" errorMsg="Please, enter a value" c_type="int">
 			<input type="edit" size="128" variable_list="true"/>
@@ -290,6 +299,15 @@ invalid Actor (with cloneindex = -1 and name = invalid Actor) on error." return_
 (with cloneindex = -1 and name = invalid Actor) on error" return_type="Actor *">
 		<argument title="Actor" tip="Select the actor to be counted" errorMsg="Please, select an actor" c_type="char *">
 			<input type="list" size="128" populate="PopulateActors, true"/>
+		</argument>
+	</function>
+	<function name="getclone2" title="Get Clone Actor 2" tip="Returns the Actor with given name and clone index or invalid Actor 
+(with cloneindex = -1 and name = invalid Actor) on error" return_type="Actor *">
+		<argument title="Actor" tip="Select the actor to be counted" errorMsg="Please, select an actor" c_type="char *">
+			<input type="list" size="128" populate="PopulateActors, true"/>
+		</argument>
+		<argument title="Clone index" errorMsg="Please, enter the clone index" c_type="int">
+			<input type="edit" size="128" variable_list="true"/>
 		</argument>
 	</function>
 	<function name="lineto" title="Draw Line To" tip="Draw a line on current Event Actor from last point

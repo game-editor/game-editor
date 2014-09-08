@@ -172,6 +172,7 @@ void Inf1(gedString &userName, gedString &updateDays)
 #define HEIGHT	365
 
 gedString collaboration("\
+  Lassi Lehtinen (lcl)\n\
   Andreas Sturmer (StarFishDesign)\n\
   Anthony Artmann (jazz_e_bob)\n\
   Bjorn Halldor Bjornsson (DarkYeti)\n\
