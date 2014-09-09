@@ -47,6 +47,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "../gameEditor/EventKeyDown.h"
 #include "../gameEditor/ChangePath.h"
 #include "../gameEditor/ChangeParent.h"
+#include "../gameEditor/ChangeResolution.h"
 #include "../gameEditor/ChangeCursor.h"
 #include "../gameEditor/CreateActor.h"
 #include "../gameEditor/DestroyActor.h"
@@ -7020,6 +7021,7 @@ gedString Action::MapScriptFunctionToAction(const gedString& scriptFunction)
 	else if(scriptFunction == "CollisionState") return COLLISION_STATE;
 	else if(scriptFunction == "VisibilityState") return VISIBILITY_STATE;
 	else if(scriptFunction == "ChangePath") return CHANGE_PATH;
+	else if(scriptFunction == "ChangeResolution") return CHANGE_RESOLUTION;
 	else if(scriptFunction == "FollowMouse") return FOLLOW_MOUSE;
 	else if(scriptFunction == "ChangeParent") return CHANGE_PARENT;
 	else if(scriptFunction == "ChangeCursor") return CURSOR_POINTER;
@@ -7067,6 +7069,10 @@ void Action::DoAction(Actor *actor, const gedString& actionName, bool bOnCollisi
 	else if(actionName == CHANGE_PARENT)
 	{
 		new ChangeParent(actor, bOnCollision);	
+	}
+	else if(actionName == CHANGE_RESOLUTION)
+	{
+	  new ChangeResolution(actor, bOnCollision);
 	}
 	else if(actionName == CURSOR_POINTER)
 	{

@@ -103,6 +103,7 @@ extern gedString ANY_PATH;
 #define CHANGE_ANIMATION	"Change Animation"
 #define CHANGE_ANIMATION_DIRECTION	"Change Animation Direction"
 #define CHANGE_PATH			"Change Path"
+#define CHANGE_RESOLUTION			"Change Resolution"
 #define FOLLOW_MOUSE		"Follow Mouse"
 #define CHANGE_COLOR		"Change Color"
 #define CHANGE_TRANSPARENCY	"Change Transparency"
