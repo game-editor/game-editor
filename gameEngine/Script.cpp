@@ -402,6 +402,13 @@ val_t eic_getTime(void)
     return v;
 }
 
+val_t eic_getZoom()
+{
+  val_t v;
+  v.dval = GameControl::Get()->GetAxis()->getScale();
+  return v;
+}
+
 char *getOwner()
 {	
 	static char owner[128];
@@ -3511,6 +3518,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("getTime", eic_getTime);
 	EiC_parseString("stTime getTime(void);");
+
+	EiC_add_builtinfunc("getZoom", eic_getZoom);
+	EiC_parseString("double getZoom(void);");
 
 	EiC_add_builtinfunc("getOwner", eic_getOwner);
 	EiC_parseString("char *getOwner(void);");
