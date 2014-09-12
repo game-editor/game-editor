@@ -402,6 +402,29 @@ val_t eic_getTime(void)
     return v;
 }
 
+val_t eic_getZDepth()
+{
+  val_t v;
+  v.dval = -1;
+
+  if(GameControl::Get()->getGameMode())
+  {
+    char* cloneName = (char *)arg(0,getargs(),ptr_t).p;
+    Actor* clone = NULL;
+
+    if(!cloneName) return v;
+    
+
+    clone = GameControl::Get()->GetActor(cloneName, true, false, false);
+    if(clone)
+    {
+      v.dval = clone->getImage()->ZDepth()/MAX_ACTOR_DEPTH;
+    }
+  }
+
+  return v;
+}
+
 val_t eic_getZoom()
 {
   val_t v;
@@ -3518,6 +3541,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("getTime", eic_getTime);
 	EiC_parseString("stTime getTime(void);");
+
+	EiC_add_builtinfunc("getZDepth", eic_getZDepth);
+	EiC_parseString("double getZDepth(const char* cloneName);");
 
 	EiC_add_builtinfunc("getZoom", eic_getZoom);
 	EiC_parseString("double getZoom(void);");
