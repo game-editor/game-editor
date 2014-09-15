@@ -176,7 +176,8 @@ void AddActor::OnButton(Button *button, int buttonId)
 			bool bVerifyInternalNames = true; //Solve the Parent tutorial bug
 			if( name->GetText() == "parent" ||
 				name->GetText() == "creator" ||
-				name->GetText() == "collide" )
+				name->GetText() == "collide" ||
+				name->GetText() == "Axis" )
 			{
 				if(Tutorial::IsCompatible(VERSION_ESC_TO_EXIT))
 				{
@@ -189,6 +190,10 @@ void AddActor::OnButton(Button *button, int buttonId)
 				}
 			}
 
+			if( name->GetText() == "Axis")
+			{
+
+			}
 			int res;
 			if((res = isValidVarName(name->GetText().c_str())) != VAR_NAME_OK && bVerifyInternalNames)
 			{
