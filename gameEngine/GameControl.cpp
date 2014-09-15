@@ -15148,7 +15148,7 @@ void GameControl::MoveView()
 		y = object.y.ToIntRound();
 	}	
 	
-	GetAxis()->SetPos(-x.ToDouble(), -y.ToDouble());
+	GetAxis()->SetPos(-x.ToDouble()*GetAxis()->getScale(), -y.ToDouble()*GetAxis()->getScale());
 		
 	///////////////////////////////////////////////////
 	//Some times BattlestarFGC_130.dat shake yet

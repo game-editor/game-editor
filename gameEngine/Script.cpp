@@ -2417,21 +2417,23 @@ static val_t eic_Zoom(void)
   v.ival = 0;
 
   Axis* axis = GameControl::Get()->GetAxis();
+  Actor *view = GameControl::Get()->GetViewActor();
   double fromZoom = axis->getScale();
   double toZoom = arg(0, getargs(), double); 
-  if(toZoom <= 0) return v;
 
+  // can't set zoom to 0 or negative
+  if(toZoom <= 0) return v;
 
   axis->SetScale(toZoom);
 
-  // need to adjust view size
-  Actor *view = GameControl::Get()->GetViewActor();
   if(view) 
   {
-    double scale = fromZoom/toZoom;
-    GLOUTPUT("\n\nstarting width = %d\n", GameControl::Get()->getGameWidth());
-    view->AdjustView(view->Width() * scale, view->Height() * scale, GameControl::Get()->getFullScreen());
-    GLOUTPUT("ending width = %d\n\n\n", GameControl::Get()->Width());
+    // this might not adjust for ChangeResolution
+    int width = GameControl::Get()->Width();
+    int height = GameControl::Get()->Height();
+    double scale = 1.0/toZoom;
+
+    view->AdjustView(width*scale, height*scale, GameControl::Get()->getFullScreen());
   }
   return v;
 }
