@@ -880,7 +880,7 @@ Actor::Actor(const gedString& spriteName, Actor *_parent, ActorType _type, int c
 	scriptVars->x = scriptVars->y = 2147483647L; //To avoid the (0, 0) position bug (if a  view has a (0, 0) nothing was happen)
 
 	scriptVars->r = scriptVars->g = scriptVars->b = 255.0;
-	
+
 	//Solve the bug "when set textNumber to zero don't changes default text" (Issue 78, Test057.ged)
 	scriptVars->textNumber = TEXT_NUMBER_INIT; 
 
@@ -1133,6 +1133,8 @@ Actor::Actor(const gedString& spriteName, Actor *_parent, ActorType _type, int c
 	scriptVarsAnt->transp = scriptVars->transp;
 	scriptVarsAnt->textNumber = scriptVars->textNumber;
 	strcpy(scriptVarsAnt->text, scriptVars->text);
+	scriptVars->width = 62;
+	scriptVars->height = 65;
 
 	
 	sequence.FindOrCreate(scriptVars->name)->nRef++;	
