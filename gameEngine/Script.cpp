@@ -2396,6 +2396,7 @@ static val_t eic_ChangeResolution(void)
   val_t v;
   v.ival = 0;
 
+  Axis *axis = GameControl::Get()->GetAxis();
   int xRes = arg(0, getargs(), int);
   int yRes = arg(1, getargs(), int);
   int fullscreen =  arg(2, getargs(), int);
@@ -2405,7 +2406,7 @@ static val_t eic_ChangeResolution(void)
   Actor *view = GameControl::Get()->GetViewActor();
   if(view) 
   {
-    view->AdjustView(xRes, yRes, fullscreen);
+    view->AdjustView(xRes/axis->getScale(), yRes/axis->getScale(), fullscreen);
   }
   return v;
 
