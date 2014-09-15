@@ -195,6 +195,8 @@ bool DlgMouseButton::OnMouseButtonDown(int x, int y, Uint8 button)
 	if(this->button == SDL_BUTTON_RIGHT) textButton->SetText("Right");
 	else if(this->button == SDL_BUTTON_LEFT) textButton->SetText("Left");
 	else if(this->button == SDL_BUTTON_MIDDLE) textButton->SetText("Middle");
+	else if(this->button == SDL_BUTTON_WHEELUP) textButton->SetText("Scroll Up");
+	else if(this->button == SDL_BUTTON_WHEELDOWN) textButton->SetText("Scroll Down");
 	
 	return true;
 }
