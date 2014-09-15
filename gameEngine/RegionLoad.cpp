@@ -181,6 +181,14 @@ void RegionLoad::DefineActors()
 					rectActor = actor->Bounds();
 				}
 
+				if(actor->getTile() && !rectActor.IsValid())
+				{
+					//Solve the bug "Text actors aren't load after use the LoadGame function without Activation Regions"
+					engine->Tree()->Walk(actor->getImage(), true, true);
+					rectActor = actor->Bounds();
+				}
+
+
 				rectActor.Translate(-rectActor.xmin, -rectActor.ymin);
 
 				
