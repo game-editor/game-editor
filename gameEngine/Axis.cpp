@@ -103,9 +103,24 @@ const stCursor *Axis::OnGetCursor()
 bool Axis::OnMouseButtonDown(int x, int y, Uint8 button)
 {
 #ifndef STAND_ALONE_GAME
-	GridSelected(this);
+  GridSelected(this);
+
+  switch(button)
+  {
+    case SDL_BUTTON_WHEELDOWN:
+      scale /= 2.0;
+      if(scale < 1/32.0) scale = 1/32.0;
+      SetScale(scale);
+      break;
+
+    case SDL_BUTTON_WHEELUP:
+      scale *= 2.0;
+      if(scale > 32.0) scale = 32.0;
+      SetScale(scale);
+      break;
+  }
 #endif
-	return false;
+  return false;
 }
 
 
