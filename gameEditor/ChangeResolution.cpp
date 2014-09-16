@@ -59,7 +59,6 @@ ChangeResolution::ChangeResolution(Actor *actor, bool bOnCollision)
 	       (GameControl::Get()->Height() - HEIGHT)/2,
 	       WIDTH, HEIGHT)
 {
-  GLOUTPUT("----- so far so good\n");
   SetModal();
   SetToolTip(TIP_CHANGERESOLUTION);
   this->eventActor = actionActor = actor;
