@@ -1301,6 +1301,7 @@ public:
 	void RemoveActorFromHandledCollisionMap(Actor *actor);
 	void CheckCollisions();
 	void AddActorsInCollisionInActualFrame(stActorsInCollision2 &actorsInCollision);
+	void RewalkCollisions();
 	bool IsActorsInCollisionInActualFrame(stActorsInCollision2 &actorsInCollision);
 
 	void SetAnteriorPositions();

@@ -11478,7 +11478,11 @@ void GameControl::CheckCollisions()
 
 	*/
 
-	if(!bGameMode || !axis || axis->getScale() != 1.0) return;
+	if(!bGameMode) return;
+
+	// handle collisions at normal scale
+	double scale = axis->getScale();
+	axis->SetScale(1);
 
 	mapActorsInCollisionInActualFrame.Clear(false); //Don't release memory to avoid memory allocations
 
@@ -11490,6 +11494,21 @@ void GameControl::CheckCollisions()
 	{
 		(**actor)->getAction()->CheckCollisions(**actor);		
 	}	
+	axis->SetScale(scale);
+}
+
+void GameControl::RewalkCollisions()
+{
+  // walks the tree at a rescale of 1
+  double scale = axis->getScale();
+  axis->SetScale(1);
+  
+  mapActorsInCollisionInActualFrame.Clear(false); //Don't release memory to avoid memory allocations
+  
+#ifdef USE_WALK
+  engine->Tree()->Walk(); //Don't need with Walk1() optimization
+#endif
+  axis->SetScale(scale);
 }
 
 void GameControl::AddActorsInCollisionInActualFrame(stActorsInCollision2 &actorsInCollision)

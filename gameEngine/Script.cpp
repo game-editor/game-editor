@@ -1044,6 +1044,12 @@ static stActorVars *getAllActorsInCollision(Actor *actorTest, int &nActors)
 	GlDynArray<KrImage*> hittest;
 	nActors = 0;
 
+	// need to do this to allow the collisions to be computed at 1 scale
+	if(GameControl::Get()->GetAxis()->getScale() != 1)
+	{
+	  GameControl::Get()->RewalkCollisions();
+	}
+
 	engine->Tree()->CheckAllCollision(actorTest->getImage(), &hittest);
 	
 	//Count
