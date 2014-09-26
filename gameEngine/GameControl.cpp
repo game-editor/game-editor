@@ -11318,7 +11318,7 @@ void GameControl::ProcessMessage()
 			
 			if(IS_VALID_ACTOR1(actor) && actor->getDeleteConfirmation())
 			{
-				delete actor;
+			  delete actor;
 			}			
 		}
 #ifndef STAND_ALONE_GAME
@@ -12661,6 +12661,9 @@ bool GameControl::SetGameMode(bool _bGameMode, bool bSwitchResolution)
 
 		axis->SetPos(xAxisAnt, yAxisAnt);
 		axis->SetScale(scaleAnt);				
+
+		//reset game fps
+		fps = originalFps;
 #endif //#ifndef STAND_ALONE_GAME
 
 
@@ -14440,14 +14443,21 @@ void GameControl::SetViewActor(Actor *view)
 
 void GameControl::SetTimer(int Fps)
 {
-	if(!Fps) Fps = fps;
+	if(!Fps)
+	{
+	  originalFps = fps;
+	  Fps = fps;
+	}
 
+	if(bGameMode)
+	{
+	  fps = Fps;
+	}
 	//Fps *= 1.1; //Adjust factor (need this?)
 
 	frameTimeInterval = 1000 / Fps;
 	if(frameTimeInterval < 2) frameTimeInterval = 2; //max 500 fps
 
-	
 
 #ifdef APPLICATION_THREAD_TIMERS
 	//SDL_KillThread(timerThread); Dont works in SDL13

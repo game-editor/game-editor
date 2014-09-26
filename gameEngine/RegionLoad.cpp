@@ -413,9 +413,10 @@ void RegionLoad::UpdateView()
 			//To axis coordinate
 			pRegion->getImage()->ObjectToScreen(0, 0, &screen);
 			pAxis->getImage()->ScreenToObject( screen.x.ToInt(), screen.y.ToInt(), &axis );
-			rectRegion.Translate(axis.x.ToInt(), axis.y.ToInt());
+			rectRegion.Translate(axis.x.ToInt()*pAxis->getScale(), axis.y.ToInt()*pAxis->getScale());
 
 			//View and region in axis coordinates
+
 			if(rectView.Intersect(rectRegion))
 			{
 				if(!pRegion->bRegionInView)

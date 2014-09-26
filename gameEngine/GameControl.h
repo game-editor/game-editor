@@ -1609,6 +1609,7 @@ private:
 	//Game properties
 	Uint16 resX, resY;
 	bool  bFullScreen;
+	Uint16	originalFps;
 	Uint16	fps;
 	Uint16  audioSamplerRate;
 	bool bStereo;

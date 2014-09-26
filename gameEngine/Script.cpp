@@ -2402,20 +2402,39 @@ static val_t eic_ChangeResolution(void)
   val_t v;
   v.ival = 0;
 
-  Axis *axis = GameControl::Get()->GetAxis();
-  int xRes = arg(0, getargs(), int);
-  int yRes = arg(1, getargs(), int);
-  int fullscreen =  arg(2, getargs(), int);
-  GameControl::Get()->SwitchResolution(engine->Surface(),xRes, yRes, fullscreen);
-
-  // need to adjust view size
-  Actor *view = GameControl::Get()->GetViewActor();
-  if(view) 
+  if(GameControl::Get()->getGameMode())
   {
-    view->AdjustView(xRes/axis->getScale(), yRes/axis->getScale(), fullscreen);
+    Axis *axis = GameControl::Get()->GetAxis();
+    int xRes = arg(0, getargs(), int);
+    int yRes = arg(1, getargs(), int);
+    int fullscreen =  arg(2, getargs(), int);
+    GameControl::Get()->SwitchResolution(engine->Surface(),xRes, yRes, fullscreen);
+    
+    // need to adjust view size
+    Actor *view = GameControl::Get()->GetViewActor();
+    if(view) 
+    {
+      view->AdjustView(xRes/axis->getScale(), yRes/axis->getScale(), fullscreen);
+    }
+    return v;
   }
-  return v;
+}
 
+static val_t eic_ChangeFPS(void)
+{
+  val_t v;
+  
+  if(GameControl::Get()->getGameMode())
+  {
+    int fps = arg(0, getargs(), int);
+
+    if(fps > 0)
+    {
+      GameControl::Get()->SetTimer(fps);
+    }
+  }
+
+  return v;
 }
 
 static val_t eic_Zoom(void)
@@ -2423,25 +2442,29 @@ static val_t eic_Zoom(void)
   val_t v;
   v.ival = 0;
 
-  Axis* axis = GameControl::Get()->GetAxis();
-  Actor *view = GameControl::Get()->GetViewActor();
-  double fromZoom = axis->getScale();
-  double toZoom = arg(0, getargs(), double); 
-
-  // can't set zoom to 0 or negative
-  if(toZoom <= 0) return v;
-
-  axis->SetScale(toZoom);
-
-  if(view) 
+  if(GameControl::Get()->getGameMode())
   {
-    // this might not adjust for ChangeResolution
-    int width = GameControl::Get()->Width();
-    int height = GameControl::Get()->Height();
-    double scale = 1.0/toZoom;
+    Axis* axis = GameControl::Get()->GetAxis();
+    Actor *view = GameControl::Get()->GetViewActor();
+    double fromZoom = axis->getScale();
+    double toZoom = arg(0, getargs(), double); 
 
-    view->AdjustView(width*scale, height*scale, GameControl::Get()->getFullScreen());
+    // can't set zoom to 0 or negative
+    if(toZoom <= 0) return v;
+
+    axis->SetScale(toZoom);
+
+    if(view) 
+    {
+      // this might not adjust for ChangeResolution
+      int width = GameControl::Get()->Width();
+      int height = GameControl::Get()->Height();
+      double scale = 1.0/toZoom;
+
+      view->AdjustView(width*scale, height*scale, GameControl::Get()->getFullScreen());
+    }
   }
+
   return v;
 }
 
@@ -3523,6 +3546,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("ChangeResolution", eic_ChangeResolution);
 	EiC_parseString("void ChangeResolution(int xRes, int yRes, int fullscreen);");
+
+	EiC_add_builtinfunc("ChangeFPS", eic_ChangeFPS);
+	EiC_parseString("void ChangeFPS(int fps);");
 
 	EiC_add_builtinfunc("Zoom", eic_Zoom);
 	EiC_parseString("int Zoom(double zoom);");
