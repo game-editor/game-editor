@@ -74,24 +74,27 @@
 #include "../engine/box.h"
 #include "eventmanager.h"
 
+extern "C" {
+#include "colorscheme.h"
+}
 
 KrScheme::KrScheme( KrFontResource* _font )
 {
-	primary.Set( 170, 170, 170 );
-	cursor.Set( 255, 255, 255 );
+  ColorScheme* cs = get_color_scheme();
+  primary.Set( cs->primary_r, cs->primary_g, cs->primary_b );
+  cursor.Set( cs->cursor_r, cs->cursor_g, cs->cursor_b );
 
-	/*secondary.Set(	200, 0, 
-					255, 0, 
-					200, 0, 
-					255 );*/
+  /*secondary.Set(200, 0, 255, 0, 200, 0, 255 );*/
 
-	secondary.Set(	255, 0, //maks: no edit highlights 
-					255, 0, 
-					255, 0, 
-					255 );
-	font = _font;
-//	bright = 60;
-//	dark   = 60;
+
+  // r, 0, g, 0, b, 0, alpha
+  secondary.Set(	cs->secondary_r, 0, //maks: no edit highlights 
+		        cs->secondary_g, 0, 
+			cs->secondary_b, 0, 
+			255 );
+  font = _font;
+  //	bright = 60;
+  //	dark   = 60;
 }
 
 

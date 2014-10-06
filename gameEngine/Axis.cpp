@@ -32,6 +32,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "PathPoint.h"
 #include "Path.h"
 
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
+
 #ifndef STAND_ALONE_GAME
 #include "../gameEditor/PathDialog.h"
 #endif //#ifndef STAND_ALONE_GAME
@@ -47,6 +51,7 @@ Axis *Axis::axis = NULL;
 Axis::Axis()
 	: Actor(AXIS_NAME, NULL, SLOW_CANVAS, DIM, DIM)
 {	
+	ColorScheme* cs = get_color_scheme();
 	axis = this;
 	getImage()->SetDimensions(GameControl::Get()->Width()/2, 
 			      GameControl::Get()->Height()/2,
@@ -63,13 +68,12 @@ Axis::Axis()
 	gameWidth = GameControl::Get()->getGameWidth();
 	gameHeight = GameControl::Get()->getGameHeight();
 
+	axisColor.Set(cs->default_axis_r, cs->default_axis_g, cs->default_axis_b);
+	pathColor.Set(cs->path_r, cs->path_g, cs->path_b);
 	
-	axisColor.Set(200, 200, 200);
-	pathColor.Set(255, 255, 255);
 	
-	
-	mainColor.Set(100, 100, 100);
-	resolutionColor.Set(150, 150, 150);
+	mainColor.Set(cs->default_grid_r, cs->default_grid_g, cs->default_grid_b);
+	resolutionColor.Set(cs->default_res_r, cs->default_res_g, cs->default_res_b);
 
 	bGridSnap = false;
 	bGridShow = true;

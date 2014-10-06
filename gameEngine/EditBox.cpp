@@ -36,6 +36,9 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "../gameEditor/MainPanel.h"
 #include "Slide.h"
 
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
 
 NumericSlide::NumericSlide(Actor *parent, EditBox *_edit, double _min, double _max, double _step)
 : Actor("NumericSlide", parent, CANVAS, 11, _edit->Height()) 
@@ -73,7 +76,8 @@ NumericSlide::NumericSlide(Actor *parent, EditBox *_edit, double _min, double _m
 		}
 	}
 
-	KrRGBA colorBorder(104, 104, 104);	
+	ColorScheme* cs = get_color_scheme();
+	KrRGBA colorBorder(cs->edit_border_r, cs->edit_border_g, cs->edit_border_b);	
 
 		//Horizontal lines
 		for(i = 0; i < width; i++)

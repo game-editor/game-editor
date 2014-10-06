@@ -34,6 +34,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "Panel.h"
 #include "GameControl.h"
 
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
+
 #if !defined(STAND_ALONE_GAME)
 #	include "../gameEditor/Tutorial.h"
 #endif
@@ -55,10 +59,10 @@ KrRGBA Panel::colorHighLight(255, 174, 52, 255);/**/
 
 //Silver
 
-KrRGBA Panel::colorUp		(255, 247, 220, 255);
-KrRGBA Panel::colorDown		(132, 124, 110, 255);
-KrRGBA Panel::colorHighLight(239, 166,  61, 200);
-KrRGBA Panel::colorBack		(Panel::colorUp);/**/
+KrRGBA Panel::colorUp        (255, 255, 255, 255); // top gradient
+KrRGBA Panel::colorDown	     (255, 255, 255, 255); // bottom gradient
+KrRGBA Panel::colorHighLight (255, 0, 0, 200); // base highlight color
+KrRGBA Panel::colorBack      (255, 0, 0, 255); // scroll bar
 
 
 
@@ -75,6 +79,12 @@ Panel::Panel(const gedString spriteName, int x, int y, int width, int height, Ac
 
 	getImage()->SetPos(x,y);
 	getImage()->SetZDepth(++depth);
+
+	ColorScheme* cs = get_color_scheme();
+	colorUp = KrRGBA(cs->editor_top_r, cs->editor_top_g, cs->editor_top_b, cs->editor_top_a);
+	colorDown = KrRGBA(cs->editor_bot_r, cs->editor_bot_g, cs->editor_bot_b, cs->editor_bot_a);
+	colorHighLight = KrRGBA(cs->editor_highlight_r, cs->editor_highlight_g, cs->editor_highlight_b, cs->editor_highlight_a);
+	colorBack = KrRGBA(cs->editor_scroll_r, cs->editor_scroll_g, cs->editor_scroll_b, cs->editor_scroll_a);
 
 
 
@@ -98,6 +108,7 @@ void Panel::Draw()
 {
 	//Draw panel
 	KrRGBA *pixels = getCanvasResource()->Pixels();
+	ColorScheme* cs = get_color_scheme();
 	int width = Width(), height = Height();
 
 	if(flags.IsSet(FLAG_HASSHADOWS))
@@ -131,18 +142,18 @@ void Panel::Draw()
 	//Glass effect
 	if(height < 55)
 	{
-		KrRGBA white(255, 255, 255);
+		KrRGBA glass(cs->editor_glass_r, cs->editor_glass_g, cs->editor_glass_b);
 		int hm = height/2;
 		for(j = 0; j < hm; j++)
 		{
 			for(i = 0; i < width; i++)
 			{
-				pixels[ j*Width() + i ] = SlowCanvas::MixColors(pixels[ j*Width() + i ], white, .8*j/(double)hm);
+				pixels[ j*Width() + i ] = SlowCanvas::MixColors(pixels[ j*Width() + i ], glass, .8*j/(double)hm);
 			}
 		}
 	}
 
-	KrRGBA colorBorder(104, 104, 104);	
+	KrRGBA colorBorder(cs->editor_border_r, cs->editor_border_g, cs->editor_border_b);	
 
 		//Horizontal lines
 		for(i = 0; i < width; i++)
@@ -202,11 +213,10 @@ void Panel::Draw()
 	{
 		KrRGBA colorShadow;	
 		double shadowFactor;
-						
-		//Orange
-		colorShadow.c.red	= 0;
-		colorShadow.c.green	= 0;
-		colorShadow.c.blue	= 0;
+			
+		colorShadow.c.red	= cs->editor_shadow_r;
+		colorShadow.c.green	= cs->editor_shadow_g;
+		colorShadow.c.blue	= cs->editor_shadow_b;
 		colorShadow.c.alpha	= SHADOW_MAX;
 
 		//Corner

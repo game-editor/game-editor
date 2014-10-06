@@ -44,6 +44,12 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "Sequence.h"
 #include <math.h>
 #include "system.h"
+
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
+
+
 #if defined(iPhone_Player)
 const char *FtpGet(char *FtpUrl, char *fPath);
 void startFtp(void);
@@ -1028,6 +1034,13 @@ void EngineStart()
 #endif
 	
 	new GameControl();	
+
+	// must set color scheme before launching other threads
+	read_color_scheme((GameControl::getEditorPath() + DIR_SEP +  "GameEditor.color").getCharBuf());
+	ColorScheme* cs = get_color_scheme();
+	GameControl::Get()->setBackGroundColor(KrRGBA(cs->default_bg_r, cs->default_bg_g, cs->default_bg_b));
+
+
 #ifdef __APPLE__ // Always cool speed on apple plattforms AKR :)
 	screen = SetVideoMode(GameControl::Get()->getGameWidth(), GameControl::Get()->getGameHeight(), 0,  VIDEO_FLAGS );	
 #else
@@ -1081,6 +1094,7 @@ void EngineLoad(const char *gamePath)
 		EditorDirectory editor;
 		GameControl::Get()->ReadEditorResources();
 		}
+
 		
 		//Window dressing crap
 		SetCaption((sGameEditorCaption + "Untitled").c_str(), NULL);

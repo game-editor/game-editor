@@ -32,6 +32,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 
 #include "dlmalloc.h"
 
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
+
 extern bool InGameMode(); //maks
 extern bool InStandAloneMode(); //maks
 
@@ -163,7 +167,9 @@ Text::Text(const gedString& text, int x, int y, int align,
 
 				
 		KrColorTransform color;
-		color.Set(red, 0, green, 0, blue, 0, 255);
+		// sky change color of text
+		ColorScheme *cs = get_color_scheme();
+		color.Set(cs->editor_text_r, 0, cs->editor_text_g, 0, cs->editor_text_b, 0, 255);
 		textBox->SetColor(color);
 
 		if(x == CENTER_TEXT)

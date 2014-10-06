@@ -33,6 +33,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "GameControl.h"
 #include <math.h>
 
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
+
 bool Button::bHaveButtonPressed = false;
 
 static void GetButtonDimensions(gedString text, int &width, int &height, gedString& fontName)
@@ -126,7 +130,9 @@ Button::Button(gedString text,
 		
 		textBox->SetText(text, 0);
 		KrColorTransform color;
-		color.Set(0, red, 0, green, 0, blue, 255);
+		ColorScheme* cs = get_color_scheme();
+		// sky change color of font
+		color.Set(0, cs->button_text_r, 0, cs->button_text_g, 0, cs->button_text_b, 255); // red 255 should be red
 		textBox->SetColor(color);
 
 		//Round to avoid text cut (don't works for "Game Mode" text)
@@ -186,6 +192,7 @@ void Button::Draw(bool bHighLight)
 	//Draw panel
 	KrRGBA *pixels = getCanvasResource()->Pixels(), colorUp, colorDown, colorArrow;
 	KrRGBA transp(0, 0, 0, 0);
+	ColorScheme * cs = get_color_scheme();
 	int width = Width(), height = Height();
 
 	if(width <= 4 && height <= 4) return;
@@ -285,7 +292,8 @@ void Button::Draw(bool bHighLight)
 
 	if(width > 4 && height > 4)
 	{
-		KrRGBA colorBorder(104, 104, 104);	
+	  //sky border colors
+		KrRGBA colorBorder(cs->button_border_r, cs->button_border_g, cs->button_border_b);	
 		
 		//Horizontal lines
 		for(i = 0; i < width; i++)

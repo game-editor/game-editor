@@ -33,6 +33,10 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "GameControl.h"
 #include "ActivationEventsCanvas.h"
 
+extern "C" {
+#include "../kyra/gui/colorscheme.h"
+}
+
 ActorTip *ActorTip::actorTip = NULL;
 Actor *ActorTip::lastActor = NULL;
 
@@ -57,10 +61,10 @@ ActorTip::ActorTip(const gedString *tip)
 	
 	//Draw
 	KrRGBA *pixels = getCanvasResource()->Pixels(), colorBack, colorBlack;
-
-	colorBack.c.red		= 255;
-	colorBack.c.green	= 255;
-	colorBack.c.blue	= 225;
+	ColorScheme * cs = get_color_scheme();
+	colorBack.c.red		= cs->editor_hint_r;
+	colorBack.c.green	= cs->editor_hint_g;
+	colorBack.c.blue	= cs->editor_hint_b;
 	colorBack.c.alpha	= 255;
 
 	colorBlack.Set(0, 0, 0);

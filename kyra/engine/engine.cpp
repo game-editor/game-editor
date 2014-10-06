@@ -89,6 +89,9 @@
 #include "canvas.h"
 #include "../../gameEngine/MuteEx.h" //maks
 
+extern "C" {
+#include "../gui/colorscheme.h"
+}
 extern "C" int GetGameMode();
 
 gedString sNONE("NONE"); //maks: avoid mallocs
@@ -171,7 +174,8 @@ void KrEngine::Init(	SDL_Surface* _screen,
 	splash = splashText = 0;
 
 	windowBounds.Set( 0, 0, screen->w-1, screen->h-1 );
-	extraBackground.Set( 0, 0, 0, 255 );
+
+	extraBackground.Set(0, 0, 0, 255);
 
 	// If this assert is thrown, increase KR_MAX_WINDOWS to an
 	// appropriate value and re-compile.
@@ -196,7 +200,9 @@ void KrEngine::Init(	SDL_Surface* _screen,
 	{
 		// Default to filling the background to black.
 		fillBackground/*[i]*/ = true;
-		backgroundColor/*[i]*/.Set( 0, 0, 0, 255 );
+		ColorScheme* cs = get_color_scheme();
+		backgroundColor.Set(cs->default_bg_r, cs->default_bg_g, cs->default_bg_b, 255);
+
 
 		// Set the screenbounds to a window.
 		screenBounds/*[i]*/ = *bounds/*[i]*/;

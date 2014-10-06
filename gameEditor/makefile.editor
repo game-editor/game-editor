@@ -78,6 +78,9 @@ $(BIN): $(OBJ)
 ../output//ColorPicker.o: ColorPicker.cpp
 	$(CC) -c ColorPicker.cpp -o ../output//ColorPicker.o $(CFLAGS)
 
+../output//ColorScheme.o: ColorScheme.cpp
+	$(CC) -c ColorScheme.cpp -o ../output//ColorScheme.o $(CFLAGS)
+
 ../output//ConditionalAction.o: ConditionalAction.cpp
 	$(CC) -c ConditionalAction.cpp -o ../output//ConditionalAction.o $(CFLAGS)
 
@@ -227,3 +230,4 @@ $(BIN): $(OBJ)
 
 ../output//WaitForFrame.o: WaitForFrame.cpp
 	$(CC) -c WaitForFrame.cpp -o ../output//WaitForFrame.o $(CFLAGS)
+

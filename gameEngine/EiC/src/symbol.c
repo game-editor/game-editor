@@ -20,6 +20,7 @@
 #include "parser.h"
 
 #include "../../dlmalloc.h" //maks
+#include "../../../kyra/gui/colorscheme.h"
 
 extern keyword_t cwords[]; //maks
 extern keyword_t pwords[]; //maks
@@ -39,75 +40,96 @@ int EiC_isReservedWord(const char *id) //maks
 
 void getTokenColor(const char *str, int lastToken, int *currentToken, int *r, int *g, int *b)
 {
-	if(lastToken == '.' && *currentToken == FUNCTION)
-	{
-		//Solve the color error in 'min' member of Time struct
-		*currentToken = ID;
-	}
+  ColorScheme* color_scheme = get_color_scheme();
 
-	if(*currentToken >= autosym && *currentToken <= whilesym)
+  if(lastToken == '.' && *currentToken == FUNCTION)
+  {
+    //Solve the color error in 'min' member of Time struct
+    *currentToken = ID;
+  }
+
+  if(*currentToken >= autosym && *currentToken <= whilesym)
+  {
+    //Keyword
+    *r = color_scheme->keyword_r;
+    *g = color_scheme->keyword_g;
+    *b = color_scheme->keyword_b;
+  }
+  else if((*currentToken >= INC && *currentToken <= RSHT) ||
+	  (*currentToken >= RELOP && *currentToken <= XOREQ) ||
+	  *currentToken == '+' ||
+	  *currentToken == '-' ||
+	  *currentToken == '*' ||
+	  *currentToken == '/' ||
+	  *currentToken == '%')
+  {
+    //Operators
+    *r = color_scheme->operator_r;
+    *g = color_scheme->operator_g;
+    *b = color_scheme->operator_b;
+  }
+  else
+  {
+    switch(*currentToken)
+    {
+      case ID:
+      {
+	if(EiC_isReservedWord(str))
 	{
-		//Keyword
-		*r = 64; *g = 76; *b = 108;			
-	}
-	else if((*currentToken >= INC && *currentToken <= RSHT) ||
-		(*currentToken >= RELOP && *currentToken <= XOREQ) ||
-		*currentToken == '+' ||
-		*currentToken == '-' ||
-		*currentToken == '*' ||
-		*currentToken == '/' ||
-		*currentToken == '%')
-	{
-		//Operators
-		*r = 0; *g = 90; *b = 12;			
+	  //Is a preprocessor keyword
+	  *r = color_scheme->preprocess_r;
+	  *g = color_scheme->preprocess_g;
+	  *b = color_scheme->preprocess_b;
 	}
 	else
 	{
-		switch(*currentToken)
-		{
-		case ID:
-			{
-				if(EiC_isReservedWord(str))
-				{
-					//Is a preprocessor keyword
-					*r = 64; *g = 76; *b = 108;
-				}
-				else
-				{
-					*r = 255; *g = 255; *b = 255;
-				}					
-			}
-			break;
+	  // normal letters
+	  *r = color_scheme->normal_r;
+	  *g = color_scheme->normal_g;
+	  *b = color_scheme->normal_b;
+	}					
+      }
+      break;
 
-		case TYPENAME:
-			*r = 0; *g = 255; *b = 100;
-			break;
+      case TYPENAME:
+	*r = color_scheme->type_r;
+	*g = color_scheme->type_g;
+	*b = color_scheme->type_b;
+	break;
 
-		case FUNCTION:
-			*r = 255; *g = 255; *b = 0;				
-			break;
+      case FUNCTION:
+	*r = color_scheme->function_r;
+	*g = color_scheme->function_g;
+	*b = color_scheme->function_b;
+	break;
 
-		case TOKEN_COMMENT:
-			*r = 166; *g = 255; *b = 211;				
-			break;
+      case TOKEN_COMMENT:
+	*r = color_scheme->comment_r;
+	*g = color_scheme->comment_g;
+	*b = color_scheme->comment_b;
+	break;
 
 
-		case STR:
-		case TOKEN_INT:
-		case TOKEN_UINT:
-		case TOKEN_LONG:
-		case TOKEN_ULONG:
-		case TOKEN_FLOAT:
-		case TOKEN_DOUBLE:
-			//Literal
-			*r = 168; *g = 0; *b = 0;				
-			break;
+      case STR:
+      case TOKEN_INT:
+      case TOKEN_UINT:
+      case TOKEN_LONG:
+      case TOKEN_ULONG:
+      case TOKEN_FLOAT:
+      case TOKEN_DOUBLE:
+	//Literal
+	*r = color_scheme->literal_r;
+	*g = color_scheme->literal_g;
+	*b = color_scheme->literal_b;				
+	break;
 
-		default:
-			*r = 0; *g = 255; *b = 255;				
-			break;
-		}
-	}
+      default:
+	*r = color_scheme->default_r;
+	*g = color_scheme->default_g;
+	*b = color_scheme->default_b;				
+	break;
+    }
+  }
 }
 
 int EiC_iskeyword(keyword_t *keywords, const char *id,int n) //maks

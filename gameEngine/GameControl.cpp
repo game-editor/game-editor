@@ -65,6 +65,7 @@ extern "C"
 {
 #include "global.h"
 #include "symbol.h"
+#include "../kyra/gui/colorscheme.h"
 
 #ifdef LLVM
 int _ZTVN10__cxxabiv117__class_type_infoE = 0; 
@@ -17266,6 +17267,7 @@ bool GameControl::GameTick(SDL_Event &event)
 				delete vault2;
 				vault2 = NULL;
 				kr2 = NULL;
+
 				setBackGroundColor(backgroundColor);	
 			}
 		}

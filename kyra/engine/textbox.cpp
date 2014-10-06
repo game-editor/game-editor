@@ -912,8 +912,8 @@ KrImage *KrTextBox::CreateSelecionMark(KrImage *parent) //maks
 	
 	KrColorTransform color(parent->CTransform());
 
-	if(bSyntaxColorize) color.Set(0, color.b.c.red, 0, color.b.c.green, 0, color.b.c.blue, 255);
-	else color.Set(0, 0, 0, 0, 0, 0, 255);
+	if(bSyntaxColorize) color.Set(0, color.b.c.red, 0, color.b.c.green, 0, color.b.c.blue, 255); // would be normal highlight 
+	else color.Set(255, 0, 255, 0, 0, 0, 255); // non-script highlighted color 
 
 	parent->SetColor(color);
 
