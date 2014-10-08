@@ -1421,6 +1421,70 @@ Actor *getactor(int x, int y)
 	return actor;
 }
 
+//---------------
+static stActorVars *actorGetArray = NULL;
+static stActorVars *getactors(int x, int y, int &nActors)
+{
+  if(actorGetArray) dlfree(actorGetArray);
+  actorGetArray = NULL;
+
+
+
+
+  Actor *actor = NULL;
+  
+  KrVector2T< GlFixed > screen;
+  GameControl::Get()->GetAxis()->getImage()->ObjectToScreen( x, y, &screen );
+  
+  GlDynArray<KrImage*> hittest;
+  engine->Tree()->HitTest(screen.x.ToInt(), screen.y.ToInt(), 100, &hittest); 
+  
+  // do I need to do this kind of thing with getactor?
+  //// need to do this to allow the collisions to be computed at 1 scale
+  //if(GameControl::Get()->GetAxis()->getScale() != 1)
+  //{
+  //  GameControl::Get()->RewalkCollisions();
+  //}
+
+  // how it is retrieved
+  //if(hittest.Count() > 0)
+  //{
+  //  //Get actor			
+  //  KrImage *p = hittest.Item(0);
+  //  actor = (Actor *)p->getParentActor();
+  //}
+
+  nActors = hittest.Count();
+  int n = hittest.Count();
+
+  //Alloc
+  actorGetArray = (stActorVars *)dlmalloc(Actor::getStructActorSize()*nActors);
+  if(!actorGetArray) return NULL;
+
+
+  //Assign
+  int i;
+  char *pActorGetArray = (char *)actorGetArray; //To correct pointer operation
+  nActors = 0;
+
+  for(i = 0; i < n; i++)
+  {						
+    KrImage *p = hittest.Item(i);
+    Actor *actorHit = (Actor *)p->getParentActor();
+		
+    if(actorHit && actorHit->getRunning())
+    {
+      memcpy(pActorGetArray, actorHit->getScriptVars(), Actor::getStructActorSize());
+      pActorGetArray += Actor::getStructActorSize();
+      nActors++;
+    }
+  }
+
+  return actorGetArray;
+}
+
+//---------------
+
 static val_t eic_getactor(void)
 {
 	/*
@@ -1453,6 +1517,55 @@ static val_t eic_getactor(void)
     return v;
 }
 
+static val_t eic_print(void)
+{
+  val_t v;
+  char* string = (char*)arg(0, getargs(), char*);
+  GLOUTPUT("%s", string);
+  return v;
+}
+
+static val_t eic_getactors(void)
+{
+  /*
+    Actor *getactors(int x, int y, int *nActors);
+    x, y: game coordinates
+    
+    Return actors array with all actors at point if success or NULL if no actors are there
+    Actor count will be returned in nActors
+    
+    The returned array will be valid until the next call to getactors
+    The returned array is read only.
+  */
+  val_t v;
+  v.p.sp = v.p.p = NULL;
+  
+  if(GameControl::Get()->getGameMode())
+  {
+    int x = (int)arg(0, getargs(), int);
+    int y = (int)arg(1, getargs(), int);
+    int *nActors = (int*)arg(2,getargs(),ptr_t).p;
+
+    *nActors = 0;
+
+    stActorVars *actor = NULL;
+		
+    actor = getactors(x, y, *nActors);
+
+    if(actor && *nActors > 0)
+    {
+      v.p.sp = v.p.p = actor;
+      setEp( v.p, Actor::getStructActorSize()*(*nActors) );
+    }
+    else
+    {
+      v.p.sp = v.p.p = NULL;
+      return v;
+    }
+  }
+  
+  return v;
+}
 
 
 
@@ -3413,8 +3526,14 @@ void Script::Init()
 	EiC_parseString("int GetJoystick1Button(int num);");
 	///////////////////////////////////////////////////////
 	
+	EiC_add_builtinfunc("print", eic_print);
+	EiC_parseString("void print(char* string);");
+
 	EiC_add_builtinfunc("GetKeyState", eic_GetKeyState);
 	EiC_parseString("char *GetKeyState(void);");
+
+	EiC_add_builtinfunc("getactors",eic_getactors);
+	EiC_parseString("Actor *getactors(int x, int y, int *nActors);");
 
 	EiC_add_builtinfunc("getLastKey", eic_getLastKey);
 	EiC_parseString("int getLastKey(void);");
@@ -3436,6 +3555,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("getAnimName2", eic_getAnimName2);
 	EiC_parseString("char *getAnimName2(const char *actorName, int animIndex);");
+
+	EiC_add_builtinfunc("getclone2",eic_getclone2);
+	EiC_parseString("Actor *getclone2(const char *actorName, int cloneIndex);");
 
 	EiC_add_builtinfunc("ChangeAnimation", eic_ChangeAnimation);
 	EiC_parseString("int ChangeAnimation(const char *actorName, const char *animationName, int state);");
@@ -4959,10 +5081,6 @@ void Script::InitActorFunctions()
 	RemoveSymbol("getclone");
 	EiC_add_builtinfunc("getclone",eic_getclone);
 	EiC_parseString("Actor *getclone(const char *cloneName);");
-
-	RemoveSymbol("getclone2");
-	EiC_add_builtinfunc("getclone2",eic_getclone2);
-	EiC_parseString("Actor *getclone2(const char *actorName, int cloneIndex);");
 
 	RemoveSymbol("getactor");
 	EiC_add_builtinfunc("getactor",eic_getactor);
