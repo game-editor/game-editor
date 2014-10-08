@@ -42,6 +42,7 @@ class AddActor : public Panel
 {
 public:
 	void OnButton(Button *button, int buttonId);
+	void OnKeyDown(SDLKey key, int repeatLoopCount);
 	bool OnList(ListPop *list, int index, gedString &text, int listId);
 
 	AddActor(bool _bCallAddAnimation = false);
@@ -51,6 +52,7 @@ private:
 	EditBox *name;
 	ActorType type;
 	bool bCallAddAnimation;
+	ListPop* actorTypeList;
 };
 
 #endif // !defined(AFX_ADDACTOR_H__ED9C630B_CC5B_4634_BB19_4ADFF0AC3091__INCLUDED_)

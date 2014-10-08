@@ -124,6 +124,7 @@ AddActor::AddActor(bool _bCallAddAnimation)
 
 	list->SetItem("Normal");
 	type = SPRITE;
+	actorTypeList = list;
 	
 
 	
@@ -229,5 +230,18 @@ void AddActor::OnButton(Button *button, int buttonId)
 	}
 }
 
+void AddActor::OnKeyDown(SDLKey key, int repeatLoopCount)
+{
+	Panel::OnKeyDown(key, repeatLoopCount);
+	if(GameControl::Get()->InModal(this) && !repeatLoopCount)
+	{
+		if(key == SDLK_UP || key == SDLK_DOWN)
+		{
+			int index = (actorTypeList->GetSelectedIndex() + (key == SDLK_DOWN) - (key == SDLK_UP));
+			index = (index + actorTypeList->Count()) % actorTypeList->Count();
+			actorTypeList->SetItem(index);
+		}
+	}
+}
 
 #endif //STAND_ALONE_GAME
