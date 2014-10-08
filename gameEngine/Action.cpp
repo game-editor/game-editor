@@ -6869,6 +6869,8 @@ gedString Action::GetDescription(stAction *action, bool bActionDescriptionBefore
 			if(action->eventData.data.mouse.button == SDL_BUTTON_RIGHT) sbutton = "Right";
 			else if(action->eventData.data.mouse.button == SDL_BUTTON_LEFT) sbutton = "Left";
 			else if(action->eventData.data.mouse.button == SDL_BUTTON_MIDDLE) sbutton = "Middle";
+			else if(action->eventData.data.mouse.button == SDL_BUTTON_WHEELUP) sbutton = "Scroll Up";
+			else if(action->eventData.data.mouse.button == SDL_BUTTON_WHEELDOWN) sbutton = "Scroll Down";
 
 #ifndef STAND_ALONE_GAME
 			if(Tutorial::IsCompatible(VERSION_OUT_OF_VISION_OPTIMIZATION))
@@ -6896,6 +6898,8 @@ gedString Action::GetDescription(stAction *action, bool bActionDescriptionBefore
 			if(action->eventData.data.mouse.button == SDL_BUTTON_RIGHT) sbutton = "Right";
 			else if(action->eventData.data.mouse.button == SDL_BUTTON_LEFT) sbutton = "Left";
 			else if(action->eventData.data.mouse.button == SDL_BUTTON_MIDDLE) sbutton = "Middle";
+			else if(action->eventData.data.mouse.button == SDL_BUTTON_WHEELUP) sbutton = "Scroll Up";
+			else if(action->eventData.data.mouse.button == SDL_BUTTON_WHEELDOWN) sbutton = "Scroll Down";
 
 			sprintf(str, "%s (%s)", desc.c_str(), sbutton.c_str());		
 		}
