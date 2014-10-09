@@ -4294,8 +4294,7 @@ void Actor::SetPosScreen(double x, double y)
 		if(pImage)
 		{
 			KrVector2T< GlFixed > object;
-			
-			pImage->ScreenToObject( GlFixed(x), GlFixed(y), &object );
+			pImage->ScreenToObject( GlFixed(x * GameControl::Get()->GetZoom()), GlFixed(y * GameControl::Get()->GetZoom()), &object );
 			SetPos(object.x.ToDouble(), object.y.ToDouble());
 		}
 	}
@@ -4496,8 +4495,9 @@ void Actor::SetActualValues(U32 updateFlags)
 	KrImage *pImage = getImage();
 	if(pImage)
 	{
-		scriptVars->xscreen = pImage->CompositeXForm().x.ToIntRound();
-		scriptVars->yscreen = pImage->CompositeXForm().y.ToIntRound();
+		float zoom = GameControl::Get()->GetZoom();
+		scriptVars->xscreen = pImage->CompositeXForm().x.ToIntRound()/zoom;
+		scriptVars->yscreen = pImage->CompositeXForm().y.ToIntRound()/zoom;
 	}
 
 	scriptVars->xprevious = anteriorXPos;
@@ -4652,8 +4652,8 @@ void Actor::UpdateScriptChanges(U32 updateFlags, bool bFromNetwork)
 		else if(!bFromNetwork)
 		{
 			//Only update screen coordinates if not is a network update
-			if( scriptVars->xscreen != scriptVarsAnt->xscreen ||
-				scriptVars->yscreen != scriptVarsAnt->yscreen) 
+			if( round(scriptVars->xscreen) != round(scriptVarsAnt->xscreen) ||
+				round(scriptVars->yscreen) != round(scriptVarsAnt->yscreen)) 
 			{
 				if(this != GameControl::Get()->GetViewActor())
 				{

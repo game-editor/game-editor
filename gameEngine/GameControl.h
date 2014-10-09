@@ -1262,6 +1262,7 @@ public:
 	bool UpdateLoadedActors(SDL_RWops *src, bool bClose);
 	
 	Axis *GetAxis() {return axis;}
+	float GetZoom() {return axis->getScale();}
 	void CreateAxis();
 	bool getGameMode() {return bGameMode;};
 	bool SetGameMode(bool bGameMode, bool bSwitchResolution = true);

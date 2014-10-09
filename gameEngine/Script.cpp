@@ -4182,8 +4182,8 @@ bool Script::Execute(Actor *eventActor, Actor *collideActor
 		else
 		{
 			//Get local values to be executed in a Global Code
-			mousex = GameControl::Get()->getMouseX();
-			mousey = GameControl::Get()->getMouseY();
+			mousex = GameControl::Get()->getMouseX()/GameControl::Get()->GetZoom();
+			mousey = GameControl::Get()->getMouseY()/GameControl::Get()->GetZoom();
 		}
 
 		//Add event and collide
