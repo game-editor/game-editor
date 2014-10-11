@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{73BEA137-37A5-4183-A743-70A75DCD38FD}</ProjectGuid>
+    <RootNamespace>engine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\arm-linux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../output/Windows/Debug\</OutDir>
+    <IntDir>.\../../output/Windows/engine/Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../../output/Windows/Release\</OutDir>
+    <IntDir>.\../../output/Windows/engine/Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../SDL/SDL/include;../../SDL/SDL_image;../../OpenGL ES1/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KYRA_SUPPORT_OPENGL;_DEBUG;_LIB;DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>.\../../output/Windows/engine/Debug/engine.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../output/Windows/engine/Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\../../output/Windows/engine/Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../output/Windows/engine/Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>.\../../output/Windows/Debug\engine.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../output/Windows/Debug/engine.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../../SDL/SDL/include;../../SDL/SDL_image;../../OpenGL ES1/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KYRA_SUPPORT_OPENGL;NDEBUG;_LIB;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\../../output/Windows/engine/Release/engine.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../output/Windows/engine/Release/</AssemblerListingLocation>
+      <ObjectFileName>.\../../output/Windows/engine/Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../output/Windows/engine/Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>.\../../output/Windows/Release\engine.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../output/Windows/Release/engine.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\guiExtended\KrImageListBox.cpp" />
+    <ClCompile Include="..\guiExtended\progress.cpp" />
+    <ClCompile Include="..\gui\button.cpp" />
+    <ClCompile Include="..\gui\colorscheme.c" />
+    <ClCompile Include="..\gui\console.cpp" />
+    <ClCompile Include="..\gui\eventmanager.cpp" />
+    <ClCompile Include="..\gui\listbox.cpp" />
+    <ClCompile Include="..\gui\textwidget.cpp" />
+    <ClCompile Include="..\gui\UndoFrame.cpp" />
+    <ClCompile Include="..\gui\widget.cpp" />
+    <ClCompile Include="..\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\util\glbitstream.cpp" />
+    <ClCompile Include="..\util\gldebug.cpp" />
+    <ClCompile Include="..\util\glgraph.cpp" />
+    <ClCompile Include="..\util\glisomath.cpp" />
+    <ClCompile Include="..\util\glmap.cpp" />
+    <ClCompile Include="..\util\glmemorypool.cpp" />
+    <ClCompile Include="..\util\glperformance.cpp" />
+    <ClCompile Include="..\util\glprime.cpp" />
+    <ClCompile Include="..\util\glrandom.cpp" />
+    <ClCompile Include="..\util\glstring.cpp" />
+    <ClCompile Include="action.cpp" />
+    <ClCompile Include="box.cpp" />
+    <ClCompile Include="boxresource.cpp" />
+    <ClCompile Include="canvas.cpp" />
+    <ClCompile Include="canvasresource.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="dataresource.cpp" />
+    <ClCompile Include="dirtyrectangle.cpp" />
+    <ClCompile Include="encoder.cpp" />
+    <ClCompile Include="engine.cpp" />
+    <ClCompile Include="FastSprite.cpp" />
+    <ClCompile Include="fontresource.cpp" />
+    <ClCompile Include="image.cpp" />
+    <ClCompile Include="imagetree.cpp" />
+    <ClCompile Include="imnode.cpp" />
+    <ClCompile Include="krmath.cpp" />
+    <ClCompile Include="kyraresource.cpp" />
+    <ClCompile Include="namefield.cpp" />
+    <ClCompile Include="ogltexture.cpp" />
+    <ClCompile Include="painter.cpp" />
+    <ClCompile Include="parser.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="pixelblock.cpp" />
+    <ClCompile Include="rle.cpp" />
+    <ClCompile Include="scrap.c" />
+    <ClCompile Include="sdlutil.cpp" />
+    <ClCompile Include="splash.cpp" />
+    <ClCompile Include="sprite.cpp" />
+    <ClCompile Include="spriteresource.cpp" />
+    <ClCompile Include="textbox.cpp" />
+    <ClCompile Include="tile.cpp" />
+    <ClCompile Include="tileresource.cpp" />
+    <ClCompile Include="vault.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\guiExtended\KrImageListBox.h" />
+    <ClInclude Include="..\guiExtended\progress.h" />
+    <ClInclude Include="..\gui\button.h" />
+    <ClInclude Include="..\gui\colorscheme.h" />
+    <ClInclude Include="..\gui\console.h" />
+    <ClInclude Include="..\gui\eventmanager.h" />
+    <ClInclude Include="..\gui\listbox.h" />
+    <ClInclude Include="..\gui\textwidget.h" />
+    <ClInclude Include="..\gui\UndoFrame.h" />
+    <ClInclude Include="..\gui\widget.h" />
+    <ClInclude Include="..\kyra.h" />
+    <CustomBuild Include="..\tinyXml\tinyxml.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClInclude Include="..\util\glbitstream.h" />
+    <ClInclude Include="..\Util\glcirclelist.h" />
+    <ClInclude Include="..\Util\gldebug.h" />
+    <ClInclude Include="..\Util\gldynarray.h" />
+    <ClInclude Include="..\util\glfixed.h" />
+    <ClInclude Include="..\util\glgraph.h" />
+    <ClInclude Include="..\Util\glinsidelist.h" />
+    <ClInclude Include="..\Util\glisomath.h" />
+    <ClInclude Include="..\Util\gllist.h" />
+    <ClInclude Include="..\util\glmap.h" />
+    <ClInclude Include="..\Util\glmemorypool.h" />
+    <ClInclude Include="..\Util\glperformance.h" />
+    <ClInclude Include="..\util\glprime.h" />
+    <ClInclude Include="..\Util\glrandom.h" />
+    <ClInclude Include="..\Util\glstack.h" />
+    <ClInclude Include="..\util\glstring.h" />
+    <ClInclude Include="..\Util\gltypes.h" />
+    <ClInclude Include="..\Util\glutil.h" />
+    <ClInclude Include="action.h" />
+    <ClInclude Include="box.h" />
+    <ClInclude Include="boxresource.h" />
+    <ClInclude Include="canvas.h" />
+    <ClInclude Include="canvasresource.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="dataresource.h" />
+    <ClInclude Include="dirtyrectangle.h" />
+    <ClInclude Include="encoder.h" />
+    <ClInclude Include="engine.h" />
+    <CustomBuild Include="FastSprite.h" />
+    <ClInclude Include="fontresource.h" />
+    <ClInclude Include="image.h" />
+    <ClInclude Include="imagetree.h" />
+    <ClInclude Include="imnode.h" />
+    <ClInclude Include="krmath.h" />
+    <ClInclude Include="kyra.h" />
+    <ClInclude Include="kyrabuild.h" />
+    <ClInclude Include="kyraresource.h" />
+    <ClInclude Include="ogltexture.h" />
+    <ClInclude Include="painter.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="pixelblock.h" />
+    <ClInclude Include="rle.h" />
+    <ClInclude Include="scrap.h" />
+    <ClInclude Include="sdlutil.h" />
+    <ClInclude Include="splash.h" />
+    <ClInclude Include="sprite.h" />
+    <ClInclude Include="spriteresource.h" />
+    <ClInclude Include="textbox.h" />
+    <ClInclude Include="tile.h" />
+    <ClInclude Include="tileresource.h" />
+    <ClInclude Include="vault.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_ar Include="..\..\arm-linux.ar">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_ar>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SDL\SDL\VisualC\SDLmain\SDLmain.vcxproj">
+      <Project>{b67733fd-cdc1-4b1d-9104-5aee6b72332b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDL\SDL\VisualC\SDL\staticSDL.vcxproj">
+      <Project>{841a6311-093c-47b5-8b21-d9597c0e8c46}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDL\SDL_image\VisualC\staticSDL_image.vcxproj">
+      <Project>{cc0f4212-f18e-45f3-a28d-c20bbcd60126}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDL\SDL_mixer\VisualC\staticSDL_mixer.vcxproj">
+      <Project>{4bd34352-9190-4a32-a1dc-360cc19eb427}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\arm-linux.targets" />
+  </ImportGroup>
+</Project>

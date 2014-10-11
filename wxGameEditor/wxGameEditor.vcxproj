@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F0C4525B-34AD-4F69-BD8C-F653F95726EE}</ProjectGuid>
+    <RootNamespace>wxGameEditor</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../output/Windows/wxGameEditor/DebugMSW\</OutDir>
+    <IntDir>.\../output/Windows/wxGameEditor/DebugMSW\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <EmbedManifest>true</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../output/Windows/wxGameEditor/ReleaseMSW\</OutDir>
+    <IntDir>.\../output/Windows/wxGameEditor/ReleaseMSW\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <EmbedManifest>true</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NOPCH;WIN32;__WXMSW__;_WINDOWS;__WXDEBUG__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../output/wxGameEditor/DebugMSW/wxGameEditor.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/EHsc  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../llvm/include;../../llvm/tools/clang/include;../../llvm/win32;../Graphviz/lib/gd;../Graphviz/lib/fdpgen;../Graphviz/lib/cdt;../Graphviz/lib/graph;../Graphviz/lib/pathplan;../Graphviz/lib/common;../Graphviz/lib/gvc;../Graphviz;../SDL/SDL_ttf/VisualC/FreeType/include;../SDL/SDL_mixer;../gameEngine;../SDL/SDL/include;../SDL/SDL_image;../kyra;../gameEngine/Eic/src;../wx/include;../wx/wxstedit/include;Behavior/wxJigsawShapes;Behavior/Common;Behavior/wxXmlSerializer/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;USE_WXPANEL_FOR_FRAME;_DEBUG;_WINDOWS;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;NOPCH;__WXMSW__;__WXDEBUG__;wxUSE_GUI;HAVE_CONFIG_H;MSWIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../output/wxGameEditor/DebugMSW/wxGameEditor.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../output/wxGameEditor/DebugMSW/</AssemblerListingLocation>
+      <ObjectFileName>.\../output/wxGameEditor/DebugMSW/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../output/wxGameEditor/DebugMSW/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefinePreprocessorDefinitions>STAND_ALONE_GAME;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>wxUSE_NO_MANIFEST;NOPCH;WIN32;__WXMSW__;_WINDOWS;__WXDEBUG__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>E:\wxWidgets/include;E:\wxWidgets/contrib/include;E:\wxWidgets/lib/vc_lib/mswd;E:\Microsoft Visual Studio\vc98\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FIXED:NO /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>wxbase28d.lib;wxbase28d_xml.lib;wxmsw28d_core.lib;wxmsw28d_adv.lib;wxmsw28d_aui.lib;wxpngd.lib;wxzlibd.lib;wxjpegd.lib;wxexpatd.lib;../output/Windows/Debug/wxIFM.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../output/wxGameEditor.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../output/wxGameEditor/DebugMSW/wxGameEditor.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../output/wxGameEditor/DebugMSW/wxGameEditor.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy res ..\output /Y /E
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NOPCH;WIN32;__WXMSW__;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../output/wxGameEditor/ReleaseMSW/wxGameEditor.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/EHsc  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../../llvm/include;../../llvm/tools/clang/include;../../llvm/win32;../Graphviz/lib/gd;../Graphviz/lib/fdpgen;../Graphviz/lib/cdt;../Graphviz/lib/graph;../Graphviz/lib/pathplan;../Graphviz/lib/common;../Graphviz/lib/gvc;../Graphviz;../SDL/SDL_ttf/VisualC/FreeType/include;../SDL/SDL_mixer;../gameEngine;../SDL/SDL/include;../SDL/SDL_image;../kyra;../gameEngine/Eic/src;../wx/include;../wx/wxstedit/include;Behavior/wxJigsawShapes;Behavior/Common;Behavior/wxXmlSerializer/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;USE_WXPANEL_FOR_FRAME;NDEBUG;_WINDOWS;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;NOPCH;__WXMSW__;wxUSE_GUI;HAVE_CONFIG_H;MSWIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../output/wxGameEditor/ReleaseMSW/wxGameEditor.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../output/wxGameEditor/ReleaseMSW/</AssemblerListingLocation>
+      <ObjectFileName>.\../output/wxGameEditor/ReleaseMSW/</ObjectFileName>
+      <ProgramDataBaseFileName>ReleaseMSW\wxGameEditor.pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefinePreprocessorDefinitions>STAND_ALONE_GAME;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>wxUSE_NO_MANIFEST;NOPCH;WIN32;__WXMSW__;_WINDOWS;NDEBUG;USE_ACTIVATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>E:\wxWidgets/include;E:\wxWidgets/contrib/include;E:\wxWidgets/lib/vc_lib/msw;E:\Microsoft Visual Studio\vc98\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FIXED:NO /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>../output/Windows/Debug/wxIFM.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../output/wxGameEditor.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../output/wxGameEditor/ReleaseMSW/wxGameEditor.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../output/wxGameEditor/ReleaseMSW/wxGameEditor.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy res ..\output /Y /E
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gameEditor\AboutDlg.cpp" />
+    <ClCompile Include="..\gameEditor\ActorProperty.cpp" />
+    <ClCompile Include="..\gameEditor\ActorText.cpp" />
+    <ClCompile Include="..\gameEditor\AddActionDialog.cpp" />
+    <ClCompile Include="..\gameEditor\AddActor.cpp" />
+    <ClCompile Include="..\gameEditor\AddPathDialog.cpp" />
+    <ClCompile Include="..\gameEditor\AddSequenceDialog.cpp" />
+    <ClCompile Include="..\gameEditor\AdsControl.cpp" />
+    <ClCompile Include="..\gameEditor\AdsShow.cpp" />
+    <ClCompile Include="..\gameEditor\BaseAction.cpp" />
+    <ClCompile Include="..\gameEditor\CDataFile.cpp" />
+    <ClCompile Include="..\gameEditor\ChangeAnimation.cpp" />
+    <ClCompile Include="..\gameEditor\ChangeAnimationDirection.cpp" />
+    <ClCompile Include="..\gameEditor\ChangeCursor.cpp" />
+    <ClCompile Include="..\gameEditor\ChangeParent.cpp" />
+    <ClCompile Include="..\gameEditor\ChangePath.cpp" />
+    <ClCompile Include="..\gameEditor\ColorPicker.cpp" />
+    <ClCompile Include="..\gameEditor\ConditionalAction.cpp" />
+    <ClCompile Include="..\gameEditor\Config.cpp" />
+    <ClCompile Include="..\gameEditor\CreateActor.cpp" />
+    <ClCompile Include="..\gameEditor\CreateTimer.cpp" />
+    <ClCompile Include="..\gameEditor\CreateVar.cpp" />
+    <ClCompile Include="..\gameEditor\DestroyActor.cpp" />
+    <ClCompile Include="..\gameEditor\DestroyTimer.cpp" />
+    <ClCompile Include="..\gameEditor\DlgActivationEvent.cpp" />
+    <ClCompile Include="..\gameEditor\DlgAnimationFinish.cpp" />
+    <ClCompile Include="..\gameEditor\DlgCollision.cpp" />
+    <ClCompile Include="..\gameEditor\DlgGeneralEvent.cpp" />
+    <ClCompile Include="..\gameEditor\DlgMouseButton.cpp" />
+    <ClCompile Include="..\gameEditor\DlgPocketPCKey.cpp" />
+    <ClCompile Include="..\gameEditor\DlgTimer.cpp" />
+    <ClCompile Include="..\gameEditor\EditSequenceDialog.cpp" />
+    <ClCompile Include="..\gameEditor\EnableDisable.cpp" />
+    <ClCompile Include="..\gameEditor\EventControl.cpp" />
+    <ClCompile Include="..\gameEditor\EventKeyDown.cpp" />
+    <ClCompile Include="..\gameEditor\ExportGame.cpp" />
+    <ClCompile Include="..\gameEditor\ExpressionEditor.cpp" />
+    <ClCompile Include="..\gameEditor\FunctionPanel.cpp" />
+    <ClCompile Include="..\gameEditor\GameSettings.cpp" />
+    <ClCompile Include="..\gameEditor\GridSettings.cpp" />
+    <ClCompile Include="..\gameEditor\jdiff.cpp" />
+    <ClCompile Include="..\gameEditor\LoadSave.cpp" />
+    <ClCompile Include="..\gameEditor\LoadSaveGame.cpp" />
+    <ClCompile Include="..\gameEditor\LoadSaveScript.cpp" />
+    <ClCompile Include="..\gameEditor\main.cpp" />
+    <ClCompile Include="..\gameEditor\MainPanel.cpp" />
+    <ClCompile Include="..\gameEditor\MoveTo.cpp" />
+    <ClCompile Include="..\gameEditor\NewTimer.cpp" />
+    <ClCompile Include="..\gameEditor\PathDialog.cpp" />
+    <ClCompile Include="..\gameEditor\PhysicalBounce.cpp" />
+    <ClCompile Include="..\gameEditor\PlaySong.cpp" />
+    <ClCompile Include="..\gameEditor\ResourceEditor\ResourceEditor.cpp" />
+    <ClCompile Include="..\gameEditor\ResourceEditor\ResourceVersionInfo.cpp" />
+    <ClCompile Include="..\gameEditor\ResourceEditor\util.cpp" />
+    <ClCompile Include="..\gameEditor\ScriptGlobals.cpp" />
+    <ClCompile Include="..\gameEditor\SetTile.cpp" />
+    <ClCompile Include="..\gameEditor\SetTileSingle.cpp" />
+    <ClCompile Include="..\gameEditor\SetZDepth.cpp" />
+    <ClCompile Include="..\gameEditor\ToAnteriorPosition.cpp" />
+    <ClCompile Include="..\gameEditor\ToMousePosition.cpp" />
+    <ClCompile Include="..\gameEditor\Transparency.cpp" />
+    <ClCompile Include="..\gameEditor\Tutorial.cpp" />
+    <ClCompile Include="..\gameEditor\TutorialControlPanel.cpp" />
+    <ClCompile Include="..\gameEditor\TutorialPaint.cpp" />
+    <ClCompile Include="..\gameEditor\TutorialTextEditor.cpp" />
+    <ClCompile Include="..\gameEditor\TutorialTextPanel.cpp" />
+    <ClCompile Include="..\gameEditor\UndoControl.cpp" />
+    <ClCompile Include="..\gameEditor\VariableEditor.cpp" />
+    <ClCompile Include="..\gameEditor\WaitForFrame.cpp" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtclose.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtdisc.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtextract.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtflatten.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dthash.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtlist.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtmethod.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtopen.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtrenew.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtrestore.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtsize.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtstat.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtstrhash.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dttree.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtview.c" />
+    <ClCompile Include="..\Graphviz\lib\cdt\dtwalk.c" />
+    <ClCompile Include="..\Graphviz\lib\common\args.c" />
+    <ClCompile Include="..\Graphviz\lib\common\arrows.c" />
+    <ClCompile Include="..\Graphviz\lib\common\colxlate.c" />
+    <ClCompile Include="..\Graphviz\lib\common\emit.c" />
+    <ClCompile Include="..\Graphviz\lib\common\fontmetrics.c" />
+    <ClCompile Include="..\Graphviz\lib\common\gdtextsize.c" />
+    <ClCompile Include="..\Graphviz\lib\common\geom.c" />
+    <ClCompile Include="..\Graphviz\lib\common\globals.c" />
+    <ClCompile Include="..\Graphviz\lib\common\input.c" />
+    <ClCompile Include="..\Graphviz\lib\common\labels.c" />
+    <ClCompile Include="..\Graphviz\lib\common\memory.c" />
+    <ClCompile Include="..\Graphviz\lib\common\ns.c" />
+    <ClCompile Include="..\Graphviz\lib\common\output.c" />
+    <ClCompile Include="..\Graphviz\lib\common\pointset.c" />
+    <ClCompile Include="..\Graphviz\lib\common\postproc.c" />
+    <ClCompile Include="..\Graphviz\lib\common\psusershape.c" />
+    <ClCompile Include="..\Graphviz\lib\common\routespl.c" />
+    <ClCompile Include="..\Graphviz\lib\common\shapes.c" />
+    <ClCompile Include="..\Graphviz\lib\common\splines.c" />
+    <ClCompile Include="..\Graphviz\lib\common\strcasecmp.c" />
+    <ClCompile Include="..\Graphviz\lib\common\strncasecmp.c" />
+    <ClCompile Include="..\Graphviz\lib\common\timing.c" />
+    <ClCompile Include="..\Graphviz\lib\common\utils.c" />
+    <ClCompile Include="..\Graphviz\lib\common\xdgen.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\acyclic.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\class1.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\class2.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\cluster.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\compound.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\conc.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\decomp.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\dotinit.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\dotsplines.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\fastgr.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\flat.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\mincross.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\position.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\rank.c" />
+    <ClCompile Include="..\Graphviz\lib\dotgen\sameport.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\agxbuf.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\attribs.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\edge.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\graph.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\graphio.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\lexer.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\node.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\parser.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\refstr.c" />
+    <ClCompile Include="..\Graphviz\lib\graph\trie.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\dot_builtins.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvc.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvconfig.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvcontext.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvdevice.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvevent.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvjobs.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvlayout.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvplugin.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvrender.c" />
+    <ClCompile Include="..\Graphviz\lib\gvc\gvtextlayout.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\cvt.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\inpoly.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\route.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\shortest.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\shortestpth.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\solvers.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\triang.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\util1.c" />
+    <ClCompile Include="..\Graphviz\lib\pathplan\visibility.c" />
+    <ClCompile Include="..\Graphviz\lib\plugin\gvlayout_dot_layout.c" />
+    <ClCompile Include="..\Graphviz\lib\plugin\gvplugin_dot_layout.c" />
+    <ClCompile Include="..\SDL\SDL_ttf\SDL_ttf.c" />
+    <ClCompile Include="..\wx\propgrid\src\propgrid\advprops.cpp" />
+    <ClCompile Include="..\wx\propgrid\src\propgrid\manager.cpp" />
+    <ClCompile Include="..\wx\propgrid\src\propgrid\odcombo.cpp" />
+    <ClCompile Include="..\wx\propgrid\src\propgrid\propgrid.cpp" />
+    <ClCompile Include="..\wx\propgrid\src\propgrid\props.cpp" />
+    <ClCompile Include="Behavior\CodeEmitter.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\CategoryButton.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\CategoryList.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\DnDJigsawShapeDataobject.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxGradientButton.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorCanvas.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorConfig.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorDocument.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorMainFrame.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorView.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawShapeCategory.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawShapeListBox.cpp" />
+    <ClCompile Include="Behavior\wxJigsawEditor\xsColourDataPropIO.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawDiagram.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawHotSpot.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawInputParameter.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawInputParameterPropertyIO.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawPalette.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShape.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShapeGroup.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShapeGroupPropertyIO.cpp" />
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.cpp" />
+    <ClCompile Include="Behavior\wxXmlSerializer\src\PropertyIO.cpp" />
+    <ClCompile Include="Behavior\wxXmlSerializer\src\XmlSerializer.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="DlgSaveLayout.cpp" />
+    <ClCompile Include="GameGraph.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="PanelActors.cpp" />
+    <ClCompile Include="PanelGenericProperty.cpp" />
+    <ClCompile Include="PanelProperty.cpp" />
+    <ClCompile Include="PanelScript.cpp" />
+    <ClCompile Include="wxgameeditor.cpp" />
+    <ClCompile Include="wxGed\spinrealm.cpp" />
+    <ClCompile Include="wxGed\wxGedControls.cpp" />
+    <ClCompile Include="wxGed\wxGedStatusBar.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="wxGameEditor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\gameEditor\AboutDlg.h" />
+    <ClInclude Include="..\gameEditor\ActorProperty.h" />
+    <ClInclude Include="..\gameEditor\ActorText.h" />
+    <ClInclude Include="..\gameEditor\AddActionDialog.h" />
+    <ClInclude Include="..\gameEditor\AddActor.h" />
+    <ClInclude Include="..\gameEditor\AddPathDialog.h" />
+    <ClInclude Include="..\gameEditor\AddSequenceDialog.h" />
+    <ClInclude Include="..\gameEditor\AdsControl.h" />
+    <ClInclude Include="..\gameEditor\AdsShow.h" />
+    <ClInclude Include="..\gameEditor\BaseAction.h" />
+    <ClInclude Include="..\gameEditor\CDataFile.h" />
+    <ClInclude Include="..\gameEditor\ChangeAnimation.h" />
+    <ClInclude Include="..\gameEditor\ChangeAnimationDirection.h" />
+    <ClInclude Include="..\gameEditor\ChangeCursor.h" />
+    <ClInclude Include="..\gameEditor\ChangeParent.h" />
+    <ClInclude Include="..\gameEditor\ChangePath.h" />
+    <ClInclude Include="..\gameEditor\ColorPicker.h" />
+    <ClInclude Include="..\gameEditor\ConditionalAction.h" />
+    <ClInclude Include="..\gameEditor\Config.h" />
+    <ClInclude Include="..\gameEditor\CreateActor.h" />
+    <ClInclude Include="..\gameEditor\CreateTimer.h" />
+    <ClInclude Include="..\gameEditor\CreateVar.h" />
+    <ClInclude Include="..\gameEditor\DestroyActor.h" />
+    <ClInclude Include="..\gameEditor\DestroyTimer.h" />
+    <ClInclude Include="..\gameEditor\DlgActivationEvent.h" />
+    <ClInclude Include="..\gameEditor\DlgAnimationFinish.h" />
+    <ClInclude Include="..\gameEditor\DlgCollision.h" />
+    <ClInclude Include="..\gameEditor\DlgGeneralEvent.h" />
+    <ClInclude Include="..\gameEditor\DlgMouseButton.h" />
+    <ClInclude Include="..\gameEditor\DlgPocketPCKey.h" />
+    <ClInclude Include="..\gameEditor\DlgTimer.h" />
+    <ClInclude Include="..\gameEditor\EditSequenceDialog.h" />
+    <ClInclude Include="..\gameEditor\EnableDisable.h" />
+    <ClInclude Include="..\gameEditor\EventControl.h" />
+    <ClInclude Include="..\gameEditor\EventKeyDown.h" />
+    <ClInclude Include="..\gameEditor\ExportGame.h" />
+    <ClInclude Include="..\gameEditor\ExpressionEditor.h" />
+    <ClInclude Include="..\gameEditor\FunctionPanel.h" />
+    <ClInclude Include="..\gameEditor\GameSettings.h" />
+    <ClInclude Include="..\gameEditor\GridSettings.h" />
+    <ClInclude Include="..\gameEditor\jdiff.h" />
+    <ClInclude Include="..\gameEditor\LoadSave.h" />
+    <ClInclude Include="..\gameEditor\LoadSaveGame.h" />
+    <ClInclude Include="..\gameEditor\LoadSaveScript.h" />
+    <ClInclude Include="..\gameEditor\MainPanel.h" />
+    <ClInclude Include="..\gameEditor\MoveTo.h" />
+    <ClInclude Include="..\gameEditor\NewTimer.h" />
+    <ClInclude Include="..\gameEditor\PathDialog.h" />
+    <ClInclude Include="..\gameEditor\PhysicalBounce.h" />
+    <ClInclude Include="..\gameEditor\PlaySong.h" />
+    <ClInclude Include="..\gameEditor\pocketpc_resource.h" />
+    <ClInclude Include="..\gameEditor\ScriptGlobals.h" />
+    <ClInclude Include="..\gameEditor\SetTile.h" />
+    <ClInclude Include="..\gameEditor\SetTileSingle.h" />
+    <ClInclude Include="..\gameEditor\SetZDepth.h" />
+    <ClInclude Include="..\gameEditor\ToAnteriorPosition.h" />
+    <ClInclude Include="..\gameEditor\ToMousePosition.h" />
+    <ClInclude Include="..\gameEditor\Transparency.h" />
+    <ClInclude Include="..\gameEditor\Tutorial.h" />
+    <ClInclude Include="..\gameEditor\TutorialControlPanel.h" />
+    <ClInclude Include="..\gameEditor\TutorialPaint.h" />
+    <ClInclude Include="..\gameEditor\TutorialTextEditor.h" />
+    <ClInclude Include="..\gameEditor\TutorialTextPanel.h" />
+    <ClInclude Include="..\gameEditor\UndoControl.h" />
+    <ClInclude Include="..\gameEditor\VariableEditor.h" />
+    <ClInclude Include="..\gameEditor\WaitForFrame.h" />
+    <ClInclude Include="..\Graphviz\config.h" />
+    <ClInclude Include="..\Graphviz\lib\cdt\ast_common.h" />
+    <ClInclude Include="..\Graphviz\lib\cdt\cdt.h" />
+    <ClInclude Include="..\Graphviz\lib\cdt\dthdr.h" />
+    <ClInclude Include="..\Graphviz\lib\common\arith.h" />
+    <ClInclude Include="..\Graphviz\lib\common\color.h" />
+    <ClInclude Include="..\Graphviz\lib\common\colorprocs.h" />
+    <ClInclude Include="..\Graphviz\lib\common\colortbl.h" />
+    <ClInclude Include="..\Graphviz\lib\common\const.h" />
+    <ClInclude Include="..\Graphviz\lib\common\geom.h" />
+    <ClInclude Include="..\Graphviz\lib\common\geomprocs.h" />
+    <ClInclude Include="..\Graphviz\lib\common\globals.h" />
+    <ClInclude Include="..\Graphviz\lib\common\logic.h" />
+    <ClInclude Include="..\Graphviz\lib\common\macros.h" />
+    <ClInclude Include="..\Graphviz\lib\common\memory.h" />
+    <ClInclude Include="..\Graphviz\lib\common\pointset.h" />
+    <ClInclude Include="..\Graphviz\lib\common\render.h" />
+    <ClInclude Include="..\Graphviz\lib\common\types.h" />
+    <ClInclude Include="..\Graphviz\lib\common\utils.h" />
+    <ClInclude Include="..\Graphviz\lib\dotgen\dot.h" />
+    <ClInclude Include="..\Graphviz\lib\dotgen\dotprocs.h" />
+    <ClInclude Include="..\Graphviz\lib\graph\agxbuf.h" />
+    <ClInclude Include="..\Graphviz\lib\graph\graph.h" />
+    <ClInclude Include="..\Graphviz\lib\graph\libgraph.h" />
+    <ClInclude Include="..\Graphviz\lib\graph\parser.h" />
+    <ClInclude Include="..\Graphviz\lib\graph\triefa.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvc.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcext.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcint.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcjob.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcproc.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_device.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_layout.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_render.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_textlayout.h" />
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_usershape.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\pathgeom.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\pathplan.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\pathutil.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\solvers.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\tri.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\vis.h" />
+    <ClInclude Include="..\Graphviz\lib\pathplan\vispath.h" />
+    <ClInclude Include="..\wx\include\wx\propgrid\advprops.h" />
+    <ClInclude Include="..\wx\include\wx\propgrid\manager.h" />
+    <ClInclude Include="..\wx\include\wx\propgrid\odcombo.h" />
+    <ClInclude Include="..\wx\include\wx\propgrid\pg_dox_mainpage.h" />
+    <ClInclude Include="..\wx\include\wx\propgrid\propdev.h" />
+    <ClInclude Include="..\wx\include\wx\propgrid\propgrid.h" />
+    <ClInclude Include="Behavior\CodeEmitter.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\CategoryButton.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\CategoryList.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\DnDJigsawShapeDataObject.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxGradientButton.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorCanvas.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorConfig.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorDocument.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorMainFrame.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorView.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawShapeCategory.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawShapeListBox.h" />
+    <ClInclude Include="Behavior\wxJigsawEditor\xsColourDataPropIO.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawDiagram.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawHotSpot.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawInputParameter.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawInputParameterPropertyIO.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawPalette.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShape.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShapeGroup.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShapeGroupPropertyIO.h" />
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.h" />
+    <ClInclude Include="Behavior\wxXmlSerializer\include\wx\wxxmlserializer\Defs.h" />
+    <ClInclude Include="Behavior\wxXmlSerializer\include\wx\wxxmlserializer\PropertyIO.h" />
+    <ClInclude Include="Behavior\wxXmlSerializer\include\wx\wxxmlserializer\XmlSerializer.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="DlgSaveLayout.h" />
+    <ClInclude Include="GameGraph.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="PanelActors.h" />
+    <ClInclude Include="PanelEvents.h" />
+    <ClInclude Include="PanelGenericProperty.h" />
+    <ClInclude Include="PanelProperty.h" />
+    <ClInclude Include="PanelScript.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="wxgameeditor.h" />
+    <ClInclude Include="wxGed\spinreal.h" />
+    <ClInclude Include="wxGed\spinrealm.h" />
+    <ClInclude Include="wxGed\wxGedControls.h" />
+    <ClInclude Include="wxGed\wxGedStatusBar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\resources.xrc" />
+    <None Include="wxGameEditor.pjd" />
+    <None Include="wx\msw\blank.cur" />
+    <None Include="wx\msw\bullseye.cur" />
+    <None Include="wx\msw\cross.cur" />
+    <None Include="wx\msw\hand.cur" />
+    <None Include="wx\msw\magnif1.cur" />
+    <None Include="wx\msw\pbrush.cur" />
+    <None Include="wx\msw\pencil.cur" />
+    <None Include="wx\msw\pntleft.cur" />
+    <None Include="wx\msw\pntright.cur" />
+    <None Include="wx\msw\rightarr.cur" />
+    <None Include="wx\msw\roller.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="wx\msw\cdrom.ico" />
+    <Image Include="wx\msw\colours.bmp" />
+    <Image Include="wx\msw\computer.ico" />
+    <Image Include="wx\msw\csquery.bmp" />
+    <Image Include="wx\msw\drive.ico" />
+    <Image Include="wx\msw\file1.ico" />
+    <Image Include="wx\msw\floppy.ico" />
+    <Image Include="wx\msw\folder1.ico" />
+    <Image Include="wx\msw\folder2.ico" />
+    <Image Include="wx\msw\removble.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gameEngine\gameEngine.vcxproj">
+      <Project>{d17d48ec-cef0-493e-aa24-440e606ccc91}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\wx\wxIFM\wxIFM.vcxproj">
+      <Project>{fb56f435-e584-4649-afc5-e5fe8738ac78}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\wx\wxstedit\build\wxstedit_stedit.vcxproj">
+      <Project>{dcd7ea4c-44e4-40c3-b367-b2608578a7ed}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

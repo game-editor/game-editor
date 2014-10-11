@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{71a70ba9-43d9-4c4f-af75-ffe56188e825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3d13527f-a505-4b26-8106-de2e0b3c5d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEditor">
+      <UniqueIdentifier>{21528eff-ac22-42eb-86e4-a7cfc7270097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEditor\ResourceEditor">
+      <UniqueIdentifier>{bfe3d29c-bac9-497e-82ff-318c97b25d21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxPropertyGrid">
+      <UniqueIdentifier>{85444e40-5c4e-4ecf-802c-201edfbf8508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz">
+      <UniqueIdentifier>{0277406b-31fa-41ab-8a06-53eacb4f193c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\gvc">
+      <UniqueIdentifier>{3952d51a-04df-4db5-84d2-3fe351bd7796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\common">
+      <UniqueIdentifier>{04c8bc80-9f7b-4d4f-b05b-ccaa8704ac62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\graph">
+      <UniqueIdentifier>{4a5e67d1-1c56-4964-93f0-ddee910b9192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\cdt">
+      <UniqueIdentifier>{34658a85-582b-4679-818d-41cb17060d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\pathplan">
+      <UniqueIdentifier>{93e13a57-27cc-41d9-adad-37ed286c7712}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\plugin">
+      <UniqueIdentifier>{ae87b310-a64a-4ce4-85f5-74c2cdd75453}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz\dotgen">
+      <UniqueIdentifier>{107f595d-7dd1-43e5-bdbd-a3d7b412e01c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Behavior">
+      <UniqueIdentifier>{e4a78a69-e9d8-4648-b7d0-373cf3cc248e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSaveLayout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelActors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelGenericProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxGed\spinrealm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxgameeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxGed\wxGedControls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxGed\wxGedStatusBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AboutDlg.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ActorProperty.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ActorText.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AddActionDialog.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AddActor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AddPathDialog.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AddSequenceDialog.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AdsControl.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\AdsShow.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\BaseAction.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\CDataFile.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ChangeAnimation.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ChangeAnimationDirection.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ChangeCursor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ChangeParent.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ChangePath.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ColorPicker.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ConditionalAction.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\Config.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\CreateActor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\CreateTimer.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\CreateVar.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DestroyActor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DestroyTimer.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgActivationEvent.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgAnimationFinish.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgCollision.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgGeneralEvent.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgMouseButton.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgPocketPCKey.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\DlgTimer.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\EditSequenceDialog.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\EnableDisable.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\EventControl.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\EventKeyDown.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ExportGame.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ExpressionEditor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\FunctionPanel.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\GameSettings.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\GridSettings.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\jdiff.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\LoadSave.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\LoadSaveGame.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\LoadSaveScript.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\main.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\MainPanel.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\MoveTo.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\NewTimer.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\PathDialog.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\PhysicalBounce.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\PlaySong.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ScriptGlobals.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SDL\SDL_ttf\SDL_ttf.c">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\SetTile.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\SetTileSingle.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\SetZDepth.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ToAnteriorPosition.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ToMousePosition.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\Transparency.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\Tutorial.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\TutorialControlPanel.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\TutorialPaint.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\TutorialTextEditor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\TutorialTextPanel.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\UndoControl.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\VariableEditor.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\WaitForFrame.cpp">
+      <Filter>GameEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ResourceEditor\ResourceEditor.cpp">
+      <Filter>GameEditor\ResourceEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ResourceEditor\ResourceVersionInfo.cpp">
+      <Filter>GameEditor\ResourceEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameEditor\ResourceEditor\util.cpp">
+      <Filter>GameEditor\ResourceEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wx\propgrid\src\propgrid\advprops.cpp">
+      <Filter>wxPropertyGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wx\propgrid\src\propgrid\manager.cpp">
+      <Filter>wxPropertyGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wx\propgrid\src\propgrid\odcombo.cpp">
+      <Filter>wxPropertyGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wx\propgrid\src\propgrid\propgrid.cpp">
+      <Filter>wxPropertyGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wx\propgrid\src\propgrid\props.cpp">
+      <Filter>wxPropertyGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\dot_builtins.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvc.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvconfig.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvcontext.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvdevice.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvevent.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvjobs.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvlayout.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvplugin.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvrender.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\gvc\gvtextlayout.c">
+      <Filter>Graphviz\gvc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\args.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\arrows.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\colxlate.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\emit.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\fontmetrics.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\gdtextsize.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\geom.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\globals.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\input.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\labels.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\memory.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\ns.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\output.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\pointset.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\postproc.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\psusershape.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\routespl.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\shapes.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\splines.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\strcasecmp.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\strncasecmp.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\timing.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\utils.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\common\xdgen.c">
+      <Filter>Graphviz\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\agxbuf.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\attribs.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\edge.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\graph.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\graphio.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\lexer.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\node.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\parser.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\refstr.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\graph\trie.c">
+      <Filter>Graphviz\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtclose.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtdisc.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtextract.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtflatten.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dthash.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtlist.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtmethod.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtopen.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtrenew.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtrestore.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtsize.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtstat.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtstrhash.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dttree.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtview.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\cdt\dtwalk.c">
+      <Filter>Graphviz\cdt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\cvt.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\inpoly.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\route.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\shortest.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\shortestpth.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\solvers.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\triang.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\util1.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\pathplan\visibility.c">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\plugin\gvlayout_dot_layout.c">
+      <Filter>Graphviz\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\plugin\gvplugin_dot_layout.c">
+      <Filter>Graphviz\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\acyclic.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\class1.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\class2.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\cluster.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\compound.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\conc.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\decomp.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\dotinit.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\dotsplines.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\fastgr.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\flat.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\mincross.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\position.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\rank.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graphviz\lib\dotgen\sameport.c">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\CategoryButton.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\CategoryList.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\CodeEmitter.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\DnDJigsawShapeDataobject.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxXmlSerializer\src\PropertyIO.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxGradientButton.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawDiagram.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorCanvas.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorConfig.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorDocument.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorMainFrame.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawEditorView.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawHotSpot.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawInputParameter.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawInputParameterPropertyIO.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawPalette.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShape.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawShapeCategory.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShapeGroup.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShapeGroupPropertyIO.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\wxJigsawShapeListBox.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxXmlSerializer\src\XmlSerializer.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior\wxJigsawEditor\xsColourDataPropIO.cpp">
+      <Filter>Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="GameGraph.cpp" />
+    <ClCompile Include="PanelScript.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="wxGameEditor.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSaveLayout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelActors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelEvents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelGenericProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxGed\spinreal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxGed\spinrealm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxgameeditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxGed\wxGedControls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxGed\wxGedStatusBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AboutDlg.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ActorProperty.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ActorText.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AddActionDialog.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AddActor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AddPathDialog.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AddSequenceDialog.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AdsControl.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\AdsShow.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\BaseAction.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\CDataFile.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ChangeAnimation.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ChangeAnimationDirection.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ChangeCursor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ChangeParent.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ChangePath.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ColorPicker.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ConditionalAction.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\Config.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\CreateActor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\CreateTimer.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\CreateVar.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DestroyActor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DestroyTimer.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgActivationEvent.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgAnimationFinish.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgCollision.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgGeneralEvent.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgMouseButton.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgPocketPCKey.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\DlgTimer.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\EditSequenceDialog.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\EnableDisable.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\EventControl.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\EventKeyDown.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ExportGame.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ExpressionEditor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\FunctionPanel.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\GameSettings.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\GridSettings.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\jdiff.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\LoadSave.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\LoadSaveGame.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\LoadSaveScript.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\MainPanel.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\MoveTo.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\NewTimer.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\PathDialog.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\PhysicalBounce.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\PlaySong.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\pocketpc_resource.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ScriptGlobals.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\SetTile.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\SetTileSingle.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\SetZDepth.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ToAnteriorPosition.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\ToMousePosition.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\Transparency.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\Tutorial.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\TutorialControlPanel.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\TutorialPaint.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\TutorialTextEditor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\TutorialTextPanel.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\UndoControl.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\VariableEditor.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameEditor\WaitForFrame.h">
+      <Filter>GameEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wx\include\wx\propgrid\advprops.h">
+      <Filter>wxPropertyGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wx\include\wx\propgrid\manager.h">
+      <Filter>wxPropertyGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wx\include\wx\propgrid\odcombo.h">
+      <Filter>wxPropertyGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wx\include\wx\propgrid\pg_dox_mainpage.h">
+      <Filter>wxPropertyGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wx\include\wx\propgrid\propdev.h">
+      <Filter>wxPropertyGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wx\include\wx\propgrid\propgrid.h">
+      <Filter>wxPropertyGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\config.h">
+      <Filter>Graphviz</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvc.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcext.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcint.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcjob.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvcproc.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_device.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_layout.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_render.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_textlayout.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\gvc\gvplugin_usershape.h">
+      <Filter>Graphviz\gvc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\arith.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\color.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\colorprocs.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\colortbl.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\const.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\geom.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\geomprocs.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\globals.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\logic.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\macros.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\memory.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\pointset.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\render.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\types.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\common\utils.h">
+      <Filter>Graphviz\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\graph\agxbuf.h">
+      <Filter>Graphviz\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\graph\graph.h">
+      <Filter>Graphviz\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\graph\libgraph.h">
+      <Filter>Graphviz\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\graph\parser.h">
+      <Filter>Graphviz\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\graph\triefa.h">
+      <Filter>Graphviz\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\cdt\ast_common.h">
+      <Filter>Graphviz\cdt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\cdt\cdt.h">
+      <Filter>Graphviz\cdt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\cdt\dthdr.h">
+      <Filter>Graphviz\cdt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\pathgeom.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\pathplan.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\pathutil.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\solvers.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\tri.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\vis.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\pathplan\vispath.h">
+      <Filter>Graphviz\pathplan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\dotgen\dot.h">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graphviz\lib\dotgen\dotprocs.h">
+      <Filter>Graphviz\dotgen</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\CategoryButton.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\CategoryList.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\CodeEmitter.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxXmlSerializer\include\wx\wxxmlserializer\Defs.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\DnDJigsawShapeDataObject.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\DnDJigsawShapeDropTarget.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxXmlSerializer\include\wx\wxxmlserializer\PropertyIO.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxGradientButton.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawDiagram.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorCanvas.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorConfig.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorDocument.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorMainFrame.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawEditorView.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawHotSpot.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawInputParameter.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawInputParameterPropertyIO.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawPalette.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShape.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawShapeCategory.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShapeGroup.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShapeGroupPropertyIO.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\wxJigsawShapeListBox.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawShapes\wxJigsawShapePropertyIO.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxXmlSerializer\include\wx\wxxmlserializer\XmlSerializer.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior\wxJigsawEditor\xsColourDataPropIO.h">
+      <Filter>Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="GameGraph.h" />
+    <ClInclude Include="PanelScript.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wx\msw\blank.cur" />
+    <None Include="wx\msw\bullseye.cur" />
+    <None Include="wx\msw\cross.cur" />
+    <None Include="wx\msw\hand.cur" />
+    <None Include="wx\msw\magnif1.cur" />
+    <None Include="wx\msw\pbrush.cur" />
+    <None Include="wx\msw\pencil.cur" />
+    <None Include="wx\msw\pntleft.cur" />
+    <None Include="wx\msw\pntright.cur" />
+    <None Include="res\resources.xrc" />
+    <None Include="wx\msw\rightarr.cur" />
+    <None Include="wx\msw\roller.cur" />
+    <None Include="wxGameEditor.pjd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="wx\msw\cdrom.ico" />
+    <Image Include="wx\msw\colours.bmp" />
+    <Image Include="wx\msw\computer.ico" />
+    <Image Include="wx\msw\csquery.bmp" />
+    <Image Include="wx\msw\drive.ico" />
+    <Image Include="wx\msw\file1.ico" />
+    <Image Include="wx\msw\floppy.ico" />
+    <Image Include="wx\msw\folder1.ico" />
+    <Image Include="wx\msw\folder2.ico" />
+    <Image Include="wx\msw\removble.ico" />
+  </ItemGroup>
+</Project>

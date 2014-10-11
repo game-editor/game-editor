@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tremor">
+      <UniqueIdentifier>{13def74f-9f96-4dac-b5cf-3d3f495eda8b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\tremor\asm_arm.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\backends.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\codebook.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\codec_internal.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\config_types.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\ivorbiscodec.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\ivorbisfile.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\lsp_lookup.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\mdct.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\mdct_lookup.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\misc.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\ogg.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\os.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\os_types.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\registry.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\window.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tremor\window_lookup.h">
+      <Filter>tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\effects_internal.h" />
+    <ClInclude Include="..\load_aiff.h" />
+    <ClInclude Include="..\load_ogg.h" />
+    <ClInclude Include="..\load_voc.h" />
+    <ClInclude Include="..\music_cmd.h" />
+    <ClInclude Include="..\music_ogg.h" />
+    <ClInclude Include="..\SDL_mixer.h" />
+    <ClInclude Include="..\wavestream.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\tremor\bitwise.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\block.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\codebook.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\floor0.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\floor1.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\framing.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\info.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\mapping0.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\mdct.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\registry.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\res012.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\sharedbook.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\synthesis.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\vorbisfile.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tremor\window.c">
+      <Filter>tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\effect_position.c" />
+    <ClCompile Include="..\effect_stereoreverse.c" />
+    <ClCompile Include="..\effects_internal.c" />
+    <ClCompile Include="..\load_aiff.c" />
+    <ClCompile Include="..\load_ogg.c" />
+    <ClCompile Include="..\load_voc.c" />
+    <ClCompile Include="..\mixer.c" />
+    <ClCompile Include="..\music.c" />
+    <ClCompile Include="..\music_cmd.c" />
+    <ClCompile Include="..\music_ogg.c" />
+    <ClCompile Include="..\wavestream.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_ar Include="..\..\..\arm-linux.ar" />
+  </ItemGroup>
+</Project>

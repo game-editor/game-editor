@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema
+      Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName
+      Include="arm_linux_gcc">
+      <Targets>_arm_linux_gcc</Targets>
+    </AvailableItemName>
+    <AvailableItemName
+      Include="arm_linux_link">
+      <Targets>_arm_linux_link</Targets>
+    </AvailableItemName>
+    <AvailableItemName
+      Include="arm_linux_ar">
+      <Targets>_arm_linux_ar</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="arm_linux_gcc"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <UsingTask
+    TaskName="arm_linux_link"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <UsingTask
+    TaskName="arm_linux_ar"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <Target
+    Name="_arm_linux_gcc"
+    BeforeTargets="$(arm_linux_gccBeforeTargets)"
+    AfterTargets="$(arm_linux_gccAfterTargets)"
+    Condition="'@(arm_linux_gcc)' != ''"
+    DependsOnTargets="$(arm_linux_gccDependsOn);Computearm_linux_gccOutput"
+    Outputs="%(arm_linux_gcc.Outputs)"
+    Inputs="%(arm_linux_gcc.Identity);%(arm_linux_gcc.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <arm_linux_gcc
+        Remove="@(arm_linux_gcc)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <arm_linux_gcc_tlog
+        Include="%(arm_linux_gcc.Outputs)"
+        Condition="'%(arm_linux_gcc.Outputs)' != '' and '%(arm_linux_gcc.ExcludedFromBuild)' != 'true'">
+        <Source>@(arm_linux_gcc, '|')</Source>
+      </arm_linux_gcc_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(arm_linux_gcc.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(arm_linux_gcc_tlog)' != '' and '%(arm_linux_gcc_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)$(ProjectName).write.1u.tlog"
+      Lines="^%(arm_linux_gcc_tlog.Source);@(arm_linux_gcc_tlog-&gt;'%(Fullpath)')"
+      Encoding="Unicode" />
+    <arm_linux_gcc
+      Condition="'@(arm_linux_gcc)' != '' and '%(arm_linux_gcc.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(arm_linux_gcc.CommandLineTemplate)"
+      WarningsAsErrors="%(arm_linux_gcc.WarningsAsErrors)"
+      IncludePaths="%(arm_linux_gcc.IncludePaths)"
+      PreprocessorDefines="%(arm_linux_gcc.PreprocessorDefines)"
+      PreprocessorUndefines="%(arm_linux_gcc.PreprocessorUndefines)"
+      OptimizationLevel="%(arm_linux_gcc.OptimizationLevel)"
+      WarningLevel="%(arm_linux_gcc.WarningLevel)"
+      AdditionalOptions="%(arm_linux_gcc.AdditionalOptions)"
+      Inputs="%(arm_linux_gcc.Identity)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            Computearm_linux_gccOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            Computearm_linux_gccOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="Computearm_linux_gccOutput"
+    Condition="'@(arm_linux_gcc)' != ''">
+    <ItemGroup>
+      <arm_linux_gccDirsToMake
+        Condition="'@(arm_linux_gcc)' != '' and '%(arm_linux_gcc.ExcludedFromBuild)' != 'true'"
+        Include="%(arm_linux_gcc.Outputs)" />
+      <Link
+        Include="%(arm_linux_gccDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(arm_linux_gccDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(arm_linux_gccDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(arm_linux_gccDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_arm_linux_link"
+    BeforeTargets="$(arm_linux_linkBeforeTargets)"
+    AfterTargets="$(arm_linux_linkAfterTargets)"
+    Condition="'@(arm_linux_link)' != ''"
+    DependsOnTargets="$(arm_linux_linkDependsOn);Computearm_linux_linkOutput"
+    Outputs="@(arm_linux_link-&gt;Metadata('Outputs')-&gt;Distinct())"
+    Inputs="@(arm_linux_link);%(arm_linux_link.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <arm_linux_link
+        Remove="@(arm_linux_link)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <arm_linux_link_tlog
+        Include="%(arm_linux_link.Outputs)"
+        Condition="'%(arm_linux_link.Outputs)' != '' and '%(arm_linux_link.ExcludedFromBuild)' != 'true'">
+        <Source>@(arm_linux_link, '|')</Source>
+      </arm_linux_link_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(arm_linux_link.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(arm_linux_link_tlog)' != '' and '%(arm_linux_link_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)$(ProjectName).write.1u.tlog"
+      Lines="^%(arm_linux_link_tlog.Source);@(arm_linux_link_tlog-&gt;'%(Fullpath)')"
+      Encoding="Unicode" />
+    <arm_linux_link
+      Condition="'@(arm_linux_link)' != '' and '%(arm_linux_link.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(arm_linux_link.CommandLineTemplate)"
+      LibPaths="%(arm_linux_link.LibPaths)"
+      Libraries="%(arm_linux_link.Libraries)"
+      StaticLink="%(arm_linux_link.StaticLink)"
+      AdditionalOptions="%(arm_linux_link.AdditionalOptions)"
+      Inputs="@(arm_linux_link)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            Computearm_linux_linkOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            Computearm_linux_linkOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="Computearm_linux_linkOutput"
+    Condition="'@(arm_linux_link)' != ''">
+    <ItemGroup>
+      <arm_linux_linkDirsToMake
+        Condition="'@(arm_linux_link)' != '' and '%(arm_linux_link.ExcludedFromBuild)' != 'true'"
+        Include="%(arm_linux_link.Outputs)" />
+      <Link
+        Include="%(arm_linux_linkDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(arm_linux_linkDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(arm_linux_linkDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(arm_linux_linkDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_arm_linux_ar"
+    BeforeTargets="$(arm_linux_arBeforeTargets)"
+    AfterTargets="$(arm_linux_arAfterTargets)"
+    Condition="'@(arm_linux_ar)' != ''"
+    DependsOnTargets="$(arm_linux_arDependsOn);Computearm_linux_arOutput"
+    Outputs="@(arm_linux_ar-&gt;Metadata('Outputs')-&gt;Distinct())"
+    Inputs="@(arm_linux_ar);%(arm_linux_ar.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <arm_linux_ar
+        Remove="@(arm_linux_ar)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <arm_linux_ar_tlog
+        Include="%(arm_linux_ar.Outputs)"
+        Condition="'%(arm_linux_ar.Outputs)' != '' and '%(arm_linux_ar.ExcludedFromBuild)' != 'true'">
+        <Source>@(arm_linux_ar, '|')</Source>
+      </arm_linux_ar_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(arm_linux_ar.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(arm_linux_ar_tlog)' != '' and '%(arm_linux_ar_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)$(ProjectName).write.1u.tlog"
+      Lines="^%(arm_linux_ar_tlog.Source);@(arm_linux_ar_tlog-&gt;'%(Fullpath)')"
+      Encoding="Unicode" />
+    <arm_linux_ar
+      Condition="'@(arm_linux_ar)' != '' and '%(arm_linux_ar.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(arm_linux_ar.CommandLineTemplate)"
+      AdditionalOptions="%(arm_linux_ar.AdditionalOptions)"
+      Inputs="@(arm_linux_ar)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            Computearm_linux_arOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            Computearm_linux_arOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="Computearm_linux_arOutput"
+    Condition="'@(arm_linux_ar)' != ''">
+    <ItemGroup>
+      <arm_linux_arDirsToMake
+        Condition="'@(arm_linux_ar)' != '' and '%(arm_linux_ar.ExcludedFromBuild)' != 'true'"
+        Include="%(arm_linux_ar.Outputs)" />
+      <Link
+        Include="%(arm_linux_arDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(arm_linux_arDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(arm_linux_arDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(arm_linux_arDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+</Project>

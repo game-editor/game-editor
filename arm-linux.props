@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup
+    Condition="'$(arm_linux_gccBeforeTargets)' == '' and '$(arm_linux_gccAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <arm_linux_gccBeforeTargets>Midl</arm_linux_gccBeforeTargets>
+    <arm_linux_gccAfterTargets>CustomBuild</arm_linux_gccAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <arm_linux_gccDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(arm_linux_gccDependsOn)</arm_linux_gccDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <arm_linux_gcc>
+      <WarningsAsErrors>False</WarningsAsErrors>
+      <OptimizationLevel>0</OptimizationLevel>
+      <WarningLevel>0</WarningLevel>
+      <CommandLineTemplate>arm-linux-gcc.exe -c [AllOptions] [AdditionalOptions]  -mlittle-endian -msoft-float -mstructure-size-boundary=32 -fsigned-char -o "$(IntDir)%(Filename).o" [inputs] 2&gt;&amp;1 | sed -e s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/</CommandLineTemplate>
+      <Outputs>$(IntDir)%(Filename).o</Outputs>
+      <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
+    </arm_linux_gcc>
+  </ItemDefinitionGroup>
+  <PropertyGroup
+    Condition="'$(arm_linux_linkBeforeTargets)' == '' and '$(arm_linux_linkAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <arm_linux_linkBeforeTargets>Midl</arm_linux_linkBeforeTargets>
+    <arm_linux_linkAfterTargets>CustomBuild</arm_linux_linkAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <arm_linux_linkDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(arm_linux_linkDependsOn)</arm_linux_linkDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <arm_linux_link>
+      <Libraries>pthread</Libraries>
+      <StaticLink>0</StaticLink>
+      <CommandLineTemplate>arm-linux-gcc.exe "$(IntDir)"\*.o -Xlinker -Map -Xlinker "$(TargetPath).map" -o "$(TargetPath).gpe" [AllOptions] "E:\usr\local\devkitpro\devkitGP2X\sysroot\usr\lib\libm.a" "E:\usr\local\devkitpro\devkitGP2X\sysroot\usr\lib\libpthread.a" "E:\usr\local\devkitpro\devkitGP2X\sysroot\usr\lib\libc.a" "E:\usr\local\devkitpro\devkitGP2X\arm-linux\lib\libstdc++.a" [AdditionalOptions] 2&gt;&amp;1 | sed -e s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/</CommandLineTemplate>
+      <Outputs>never-exists</Outputs>
+      <ExecutionDescription>Linking $(TargetFileName)...</ExecutionDescription>
+    </arm_linux_link>
+  </ItemDefinitionGroup>
+  <PropertyGroup
+    Condition="'$(arm_linux_arBeforeTargets)' == '' and '$(arm_linux_arAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <arm_linux_arBeforeTargets>Midl</arm_linux_arBeforeTargets>
+    <arm_linux_arAfterTargets>CustomBuild</arm_linux_arAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <arm_linux_arDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(arm_linux_arDependsOn)</arm_linux_arDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <arm_linux_ar>
+      <CommandLineTemplate>arm-linux-ar rcs [AdditionalOptions] "$(TargetPath)" $(IntDir)*.o</CommandLineTemplate>
+      <Outputs>never-exists</Outputs>
+      <ExecutionDescription>Creating library $(TargetFileName)...</ExecutionDescription>
+    </arm_linux_ar>
+  </ItemDefinitionGroup>
+</Project>

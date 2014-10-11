@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2BB6FC70-BB46-41E0-A9AF-499CC2F23062}</ProjectGuid>
+    <RootNamespace>eiclib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\arm-linux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../output/Windows/Debug\</OutDir>
+    <IntDir>.\../../../output/Windows/eic/Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../../../output/Windows/Release\</OutDir>
+    <IntDir>.\../../../output/Windows/eic/Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;NO_ERRNO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>.\../../../output/Windows/eic/Debug/eiclib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../output/Windows/eic/Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../output/Windows/eic/Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../output/Windows/eic/Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0416</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>.\../../../output/Windows/Debug\eiclib.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../output/Windows/Debug/eiclib.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;NO_ERRNO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\../../../output/Windows/eic/Release/eiclib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../output/Windows/eic/Release/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../output/Windows/eic/Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../output/Windows/eic/Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0416</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>.\../../../output/Windows/Release\eiclib.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../output/Windows/Release/eiclib.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\module\stdClib\src\assert.c" />
+    <ClCompile Include="..\module\stdClib\src\ctype.c" />
+    <ClCompile Include="..\module\stdClib\src\dirent.c" />
+    <ClCompile Include="..\module\stdClib\src\eicfftoa.c" />
+    <ClCompile Include="..\module\stdClib\src\errno.c" />
+    <ClCompile Include="..\module\stdClib\src\fcntl.c" />
+    <ClCompile Include="..\module\stdClib\src\itoa.c" />
+    <ClCompile Include="..\module\stdClib\src\math.c" />
+    <ClCompile Include="..\module\stdClib\src\signal.c" />
+    <ClCompile Include="..\module\stdClib\src\stat.c" />
+    <ClCompile Include="..\module\stdClib\src\stdarg.c" />
+    <ClCompile Include="..\module\stdClib\src\stdClib.c" />
+    <ClCompile Include="..\module\stdClib\src\stdio.c" />
+    <ClCompile Include="..\module\stdClib\src\stdlib.c" />
+    <ClCompile Include="..\module\stdClib\src\string.c" />
+    <ClCompile Include="..\module\stdClib\src\strrev.c" />
+    <ClCompile Include="..\module\stdClib\src\strround.c" />
+    <ClCompile Include="..\module\stdClib\src\time.c" />
+    <ClCompile Include="..\module\stdClib\src\unistd.c" />
+    <ClCompile Include="..\src\callback.c" />
+    <ClCompile Include="..\src\cdecl.c" />
+    <ClCompile Include="..\src\eicmod.c" />
+    <ClCompile Include="..\src\emitter.c" />
+    <ClCompile Include="..\src\error.c" />
+    <ClCompile Include="..\src\func.c" />
+    <ClCompile Include="..\src\interpre.c" />
+    <ClCompile Include="..\src\lexer.c" />
+    <ClCompile Include="..\src\optomizer.c" />
+    <ClCompile Include="..\src\parser.c" />
+    <ClCompile Include="..\src\preexpr.c" />
+    <ClCompile Include="..\src\preproc.c" />
+    <ClCompile Include="..\src\readline.c" />
+    <ClCompile Include="..\src\reset.c" />
+    <ClCompile Include="..\src\stab.c" />
+    <ClCompile Include="..\src\starteic.c" />
+    <ClCompile Include="..\src\symbol.c" />
+    <ClCompile Include="..\src\typemod.c" />
+    <ClCompile Include="..\src\typesets.c" />
+    <ClCompile Include="..\src\ymem.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\module\stdClib\src\assert.h" />
+    <ClInclude Include="..\module\stdClib\src\ctype.h" />
+    <ClInclude Include="..\module\stdClib\src\dirent.h" />
+    <ClInclude Include="..\module\stdClib\src\errno.h" />
+    <ClInclude Include="..\module\stdClib\src\fcntl.h" />
+    <ClInclude Include="..\module\stdClib\src\float.h" />
+    <ClInclude Include="..\module\stdClib\src\iso646.h" />
+    <ClInclude Include="..\module\stdClib\src\limits.h" />
+    <ClInclude Include="..\module\stdClib\src\math.h" />
+    <ClInclude Include="..\module\stdClib\src\setjmp.h" />
+    <ClInclude Include="..\module\stdClib\src\signal.h" />
+    <ClInclude Include="..\module\stdClib\src\stdarg.h" />
+    <ClInclude Include="..\module\stdClib\src\stdClib2eic.h" />
+    <ClInclude Include="..\module\stdClib\src\stddef.h" />
+    <ClInclude Include="..\module\stdClib\src\stdio.h" />
+    <ClInclude Include="..\module\stdClib\src\stdlib.h" />
+    <ClInclude Include="..\module\stdClib\src\stdliblocal.h" />
+    <ClInclude Include="..\module\stdClib\src\string.h" />
+    <ClInclude Include="..\module\stdClib\src\termio.h" />
+    <ClInclude Include="..\module\stdClib\src\termios.h" />
+    <ClInclude Include="..\module\stdClib\src\time.h" />
+    <ClInclude Include="..\module\stdClib\src\unistd.h" />
+    <ClInclude Include="..\src\assertp.h" />
+    <ClInclude Include="..\src\cdecl.h" />
+    <ClInclude Include="..\src\datastruct.h" />
+    <ClInclude Include="..\src\eic.h" />
+    <ClInclude Include="..\src\eicval.h" />
+    <ClInclude Include="..\src\emitter.h" />
+    <ClInclude Include="..\src\error.h" />
+    <ClInclude Include="..\src\func.h" />
+    <ClInclude Include="..\src\global.h" />
+    <ClInclude Include="..\src\lexer.h" />
+    <ClInclude Include="..\src\MachSet.h" />
+    <ClInclude Include="..\src\metric.h" />
+    <ClInclude Include="..\src\modules.h" />
+    <ClInclude Include="..\src\parser.h" />
+    <ClInclude Include="..\src\preproc.h" />
+    <ClInclude Include="..\src\reset.h" />
+    <ClInclude Include="..\src\stab.h" />
+    <ClInclude Include="..\src\symbol.h" />
+    <ClInclude Include="..\src\symentry.h" />
+    <ClInclude Include="..\src\typemod.h" />
+    <ClInclude Include="..\src\typesets.h" />
+    <ClInclude Include="..\src\xalloc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_ar Include="..\..\..\arm-linux.ar">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_ar>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\arm-linux.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{0d62aac0-00b0-404a-9513-5841a7a9c5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{d99df8a0-fa8d-445c-8be9-3a1b42ea3730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{39de0185-b074-4a20-984b-26da29f76082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyXml">
+      <UniqueIdentifier>{90032ba1-f7e1-4fe5-af1a-9aecb35e860d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GuiExtended">
+      <UniqueIdentifier>{8bb5b366-2ab3-4214-b29b-e623ec83141a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="action.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="box.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="boxresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="canvasresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="dataresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="dirtyrectangle.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="fontresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="image.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="imagetree.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="imnode.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="krmath.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="kyraresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="namefield.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ogltexture.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="painter.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="parser.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="pixelblock.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="rle.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="scrap.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="sdlutil.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="splash.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="textbox.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="tile.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="tileresource.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="vault.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\button.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\console.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\eventmanager.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\listbox.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\textwidget.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\UndoFrame.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gui\widget.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glbitstream.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\gldebug.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glgraph.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glisomath.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glmap.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glmemorypool.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glperformance.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glprime.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glrandom.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\glstring.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tinyxml\tinyxml.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tinyxml\tinyxmlerror.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tinyxml\tinyxmlparser.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\guiExtended\KrImageListBox.cpp">
+      <Filter>GuiExtended</Filter>
+    </ClCompile>
+    <ClCompile Include="..\guiExtended\progress.cpp">
+      <Filter>GuiExtended</Filter>
+    </ClCompile>
+    <ClCompile Include="FastSprite.cpp" />
+    <ClCompile Include="..\gui\colorscheme.c">
+      <Filter>GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="action.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="box.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="boxresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="canvas.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="canvasresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="dataresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="dirtyrectangle.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="fontresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="imagetree.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="imnode.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="krmath.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="kyra.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="kyrabuild.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="kyraresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ogltexture.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="painter.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="parser.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="pixelblock.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="rle.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="scrap.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="sdlutil.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="splash.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="textbox.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="tileresource.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="vault.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\button.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\console.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\eventmanager.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\listbox.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\textwidget.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\UndoFrame.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gui\widget.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\glbitstream.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glcirclelist.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\gldebug.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\gldynarray.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\glfixed.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\glgraph.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glinsidelist.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glisomath.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\gllist.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\glmap.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glmemorypool.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glperformance.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\glprime.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glrandom.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glstack.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\glstring.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\gltypes.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Util\glutil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\guiExtended\KrImageListBox.h">
+      <Filter>GuiExtended</Filter>
+    </ClInclude>
+    <ClInclude Include="..\guiExtended\progress.h">
+      <Filter>GuiExtended</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kyra.h" />
+    <ClInclude Include="..\gui\colorscheme.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_ar Include="..\..\arm-linux.ar" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\tinyXml\tinyxml.h">
+      <Filter>TinyXml</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FastSprite.h" />
+  </ItemGroup>
+</Project>

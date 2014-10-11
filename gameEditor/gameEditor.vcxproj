@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{84BF8073-AE61-4E6A-A217-8BE0EDC810D4}</ProjectGuid>
+    <RootNamespace>gameEditor</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\arm-linux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../output/Windows/Release\</OutDir>
+    <IntDir>.\../output/Windows/editor/Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../output/Windows/Debug\</OutDir>
+    <IntDir>.\../output/Windows/editor/Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../output/Windows/Release/gameEditor.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../SDL/SDL_ttf/VisualC/FreeType/include;../SDL/SDL_mixer;../gameEngine;../SDL/SDL/include;../SDL/SDL_image;../kyra;../gameEngine/Eic/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\../output/Windows/editor/Release/gameEditor.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../output/Windows/editor/Release/</AssemblerListingLocation>
+      <ObjectFileName>.\../output/Windows/editor/Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../output/Windows/editor/Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0416</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FIXED:NO /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>winmm.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../output/gameEditor.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../output/gameEditor.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\../output/gameEditor.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <StackReserveSize>65536</StackReserveSize>
+      <StackCommitSize>65536</StackCommitSize>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../output/gameEditor.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy res ..\output /Y /E
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../output/Windows/Debug/gameEditor.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../SDL/SDL_ttf/VisualC/FreeType/include;../SDL/SDL_mixer;../gameEngine;../SDL/SDL/include;../SDL/SDL_image;../kyra;../gameEngine/Eic/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_LONG_LONG;NO_DIRENT;NO_FCNTL;NO_STAT;NO_UNISTD;NO_TERMIOS;__WIN32__;NO_PIPE;NO_POSIX;NO_LONGLONG;NO_HISTORY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>.\../output/Windows/editor/Debug/gameEditor.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../output/Windows/editor/Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\../output/Windows/editor/Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../output/Windows/editor/Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0416</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FIXED:NO  /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>winmm.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../output/gameEditor.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>msvcrtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../output/Windows/Debug/gameEditor.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\../output/Windows/editor/Debug/gameEditor.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <StackReserveSize>65536</StackReserveSize>
+      <StackCommitSize>65536</StackCommitSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>true</Profile>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../output/Windows/Debug/gameEditor.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Message>copy</Message>
+      <Command>xcopy res ..\output /Y /E
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SDL\SDL_ttf\SDL_ttf.c" />
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="ActorProperty.cpp" />
+    <ClCompile Include="ActorText.cpp" />
+    <ClCompile Include="AddActionDialog.cpp" />
+    <ClCompile Include="AddActor.cpp" />
+    <ClCompile Include="AddPathDialog.cpp" />
+    <ClCompile Include="AddSequenceDialog.cpp" />
+    <ClCompile Include="AdsControl.cpp" />
+    <ClCompile Include="AdsShow.cpp" />
+    <ClCompile Include="BaseAction.cpp" />
+    <ClCompile Include="CDataFile.cpp" />
+    <ClCompile Include="ChangeAnimation.cpp" />
+    <ClCompile Include="ChangeAnimationDirection.cpp" />
+    <ClCompile Include="ChangeCursor.cpp" />
+    <ClCompile Include="ChangeParent.cpp" />
+    <ClCompile Include="ChangePath.cpp" />
+    <ClCompile Include="ChangeResolution.cpp" />
+    <ClCompile Include="ColorPicker.cpp" />
+    <ClCompile Include="ConditionalAction.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="CreateActor.cpp" />
+    <ClCompile Include="CreateTimer.cpp" />
+    <ClCompile Include="CreateVar.cpp" />
+    <ClCompile Include="DestroyActor.cpp" />
+    <ClCompile Include="DestroyTimer.cpp" />
+    <ClCompile Include="DlgActivationEvent.cpp" />
+    <ClCompile Include="DlgAnimationFinish.cpp" />
+    <ClCompile Include="DlgCollision.cpp" />
+    <ClCompile Include="DlgGeneralEvent.cpp" />
+    <ClCompile Include="DlgMouseButton.cpp" />
+    <ClCompile Include="DlgPocketPCKey.cpp" />
+    <ClCompile Include="DlgTimer.cpp" />
+    <ClCompile Include="EditSequenceDialog.cpp" />
+    <ClCompile Include="EnableDisable.cpp" />
+    <ClCompile Include="EventControl.cpp" />
+    <ClCompile Include="EventKeyDown.cpp" />
+    <ClCompile Include="ExportGame.cpp" />
+    <ClCompile Include="ExpressionEditor.cpp" />
+    <ClCompile Include="FunctionPanel.cpp" />
+    <ClCompile Include="GameSettings.cpp" />
+    <ClCompile Include="GridSettings.cpp" />
+    <ClCompile Include="jdiff.cpp" />
+    <ClCompile Include="LoadSave.cpp" />
+    <ClCompile Include="LoadSaveGame.cpp" />
+    <ClCompile Include="LoadSaveScript.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainPanel.cpp" />
+    <ClCompile Include="MoveTo.cpp" />
+    <ClCompile Include="NewTimer.cpp" />
+    <ClCompile Include="PathDialog.cpp" />
+    <ClCompile Include="PhysicalBounce.cpp" />
+    <ClCompile Include="PlaySong.cpp" />
+    <ClCompile Include="ResourceEditor\ResourceEditor.cpp" />
+    <ClCompile Include="ResourceEditor\ResourceVersionInfo.cpp" />
+    <ClCompile Include="ResourceEditor\util.cpp" />
+    <ClCompile Include="ScriptGlobals.cpp" />
+    <ClCompile Include="SetTile.cpp" />
+    <ClCompile Include="SetTileSingle.cpp" />
+    <ClCompile Include="SetZDepth.cpp" />
+    <ClCompile Include="ToAnteriorPosition.cpp" />
+    <ClCompile Include="ToMousePosition.cpp" />
+    <ClCompile Include="Transparency.cpp" />
+    <ClCompile Include="Tutorial.cpp" />
+    <ClCompile Include="TutorialControlPanel.cpp" />
+    <ClCompile Include="TutorialPaint.cpp" />
+    <ClCompile Include="TutorialTextEditor.cpp" />
+    <ClCompile Include="TutorialTextPanel.cpp" />
+    <ClCompile Include="UndoControl.cpp" />
+    <ClCompile Include="VariableEditor.cpp" />
+    <ClCompile Include="WaitForFrame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SDL\SDL_ttf\SDL_ttf.h" />
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="ActorProperty.h" />
+    <ClInclude Include="ActorText.h" />
+    <ClInclude Include="AddActionDialog.h" />
+    <ClInclude Include="AddActor.h" />
+    <ClInclude Include="AddPathDialog.h" />
+    <ClInclude Include="AddSequenceDialog.h" />
+    <ClInclude Include="AdsControl.h" />
+    <ClInclude Include="AdsShow.h" />
+    <ClInclude Include="BaseAction.h" />
+    <ClInclude Include="CDataFile.h" />
+    <ClInclude Include="ChangeAnimation.h" />
+    <ClInclude Include="ChangeAnimationDirection.h" />
+    <ClInclude Include="ChangeCursor.h" />
+    <ClInclude Include="ChangeParent.h" />
+    <ClInclude Include="ChangePath.h" />
+    <ClInclude Include="ColorPicker.h" />
+    <ClInclude Include="ConditionalAction.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="CreateActor.h" />
+    <ClInclude Include="CreateTimer.h" />
+    <ClInclude Include="CreateVar.h" />
+    <ClInclude Include="DestroyActor.h" />
+    <ClInclude Include="DestroyTimer.h" />
+    <ClInclude Include="DlgActivationEvent.h" />
+    <ClInclude Include="DlgAnimationFinish.h" />
+    <ClInclude Include="DlgCollision.h" />
+    <ClInclude Include="DlgGeneralEvent.h" />
+    <ClInclude Include="DlgMouseButton.h" />
+    <ClInclude Include="DlgPocketPCKey.h" />
+    <ClInclude Include="DlgTimer.h" />
+    <ClInclude Include="EditSequenceDialog.h" />
+    <ClInclude Include="EnableDisable.h" />
+    <ClInclude Include="EventControl.h" />
+    <ClInclude Include="EventKeyDown.h" />
+    <ClInclude Include="ExportGame.h" />
+    <ClInclude Include="ExpressionEditor.h" />
+    <ClInclude Include="FunctionPanel.h" />
+    <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="GridSettings.h" />
+    <ClInclude Include="jdiff.h" />
+    <ClInclude Include="LoadSave.h" />
+    <ClInclude Include="LoadSaveGame.h" />
+    <ClInclude Include="LoadSaveScript.h" />
+    <ClInclude Include="MainPanel.h" />
+    <ClInclude Include="MoveTo.h" />
+    <ClInclude Include="NewTimer.h" />
+    <ClInclude Include="PathDialog.h" />
+    <ClInclude Include="PhysicalBounce.h" />
+    <ClInclude Include="PlaySong.h" />
+    <ClInclude Include="pocketpc_resource.h" />
+    <ClInclude Include="ResourceEditor\ResourceEditor.h" />
+    <ClInclude Include="ResourceEditor\ResourceVersionInfo.h" />
+    <ClInclude Include="ScriptGlobals.h" />
+    <ClInclude Include="SetTile.h" />
+    <ClInclude Include="SetTileSingle.h" />
+    <ClInclude Include="SetZDepth.h" />
+    <ClInclude Include="ToAnteriorPosition.h" />
+    <ClInclude Include="ToMousePosition.h" />
+    <ClInclude Include="Transparency.h" />
+    <ClInclude Include="Tutorial.h" />
+    <ClInclude Include="TutorialControlPanel.h" />
+    <ClInclude Include="TutorialPaint.h" />
+    <ClInclude Include="TutorialTextEditor.h" />
+    <ClInclude Include="TutorialTextPanel.h" />
+    <ClInclude Include="UndoControl.h" />
+    <ClInclude Include="VariableEditor.h" />
+    <ClInclude Include="WaitForFrame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pocketpc.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_link Include="..\arm-linux.link">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_link>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\compilation.txt" />
+    <Text Include="..\license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="res\functions.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gameEngine\gameEngine.vcxproj">
+      <Project>{d17d48ec-cef0-493e-aa24-440e606ccc91}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\arm-linux.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{841A6311-093C-47B5-8B21-D9597C0E8C46}</ProjectGuid>
+    <RootNamespace>staticSDL</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\arm-linux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\_BaseConfiguration.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../../output/Windows/Debug\</OutDir>
+    <IntDir>.\../../../../output/Windows/staticSDL/Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../../../../output/Windows/Release\</OutDir>
+    <IntDir>.\../../../../output/Windows/staticSDL/Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../OpenGL ES1/include/;..\..\src;..\..\src\audio;..\..\src\video;..\..\src\video\wincommon;..\..\src\video\windx5;..\..\src\events;..\..\src\joystick;..\..\src\cdrom;..\..\src\thread;..\..\src\thread\win32;..\..\src\timer;..\..\include;..\..\include\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENABLE_DIRECTX_AUDIO;HAVE_OPENGL;USE_ASM_MIXER_VC;_DEBUG;WIN32;_WINDOWS;ENABLE_WINDIB;_WIN32_WINNT=0x0400;_LIB;DISABLE_CDROM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>.\../../../../output/Windows/staticSDL/Debug/staticSDL.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../output/Windows/staticSDL/Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../output/Windows/staticSDL/Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../output/Windows/staticSDL/Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefinePreprocessorDefinitions>USE_PRIMARY_BUFFER;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0416</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>.\../../../../output/Windows/Debug\staticSDL.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../output/Windows/Debug/staticSDL.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../../../../OpenGL ES1/include/;..\..\src;..\..\src\audio;..\..\src\video;..\..\src\video\wincommon;..\..\src\video\windx5;..\..\src\events;..\..\src\joystick;..\..\src\cdrom;..\..\src\thread;..\..\src\thread\win32;..\..\src\timer;..\..\include;..\..\include\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENABLE_DIRECTX_AUDIO;HAVE_OPENGL;USE_ASM_MIXER_VC;NDEBUG;WIN32;_WINDOWS;ENABLE_WINDIB;_WIN32_WINNT=0x0400;_LIB;DISABLE_CDROM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\../../../../output/Windows/staticSDL/Release/staticSDL.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../output/Windows/staticSDL/Release/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../output/Windows/staticSDL/Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../output/Windows/staticSDL/Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0416</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>.\../../../../output/Windows/Release\staticSDL.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../output/Windows/Release/staticSDL.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <arm_linux_ar Include="..\..\..\..\arm-linux.ar">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_ar>
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_gcc Include="..\..\src\audio\dma\SDL_dmaaudio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <arm_linux_gcc Include="..\..\src\audio\dsp\SDL_dspaudio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <ClCompile Include="..\..\src\audio\SDL_audio.c" />
+    <ClCompile Include="..\..\src\audio\SDL_audiocvt.c" />
+    <arm_linux_gcc Include="..\..\src\audio\SDL_audiodev.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <ClCompile Include="..\..\src\audio\SDL_audiomem.c" />
+    <ClCompile Include="..\..\src\audio\SDL_mixer.c" />
+    <ClCompile Include="..\..\src\audio\SDL_mixer_MMX_VC.c" />
+    <ClCompile Include="..\..\src\audio\SDL_wave.c" />
+    <ClCompile Include="..\..\src\audio\windib\SDL_dibaudio.c" />
+    <ClCompile Include="..\..\src\audio\windx5\SDL_dx5audio.c" />
+    <ClCompile Include="..\..\src\cdrom\dummy\SDL_syscdrom.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cdrom\SDL_cdrom.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpuinfo\SDL_cpuinfo.c" />
+    <ClCompile Include="..\..\src\endian\SDL_endian.c" />
+    <ClCompile Include="..\..\src\events\SDL_active.c" />
+    <ClCompile Include="..\..\src\events\SDL_events.c" />
+    <ClCompile Include="..\..\src\events\SDL_expose.c" />
+    <ClCompile Include="..\..\src\events\SDL_keyboard.c" />
+    <ClCompile Include="..\..\src\events\SDL_mouse.c" />
+    <ClCompile Include="..\..\src\events\SDL_quit.c" />
+    <ClCompile Include="..\..\src\events\SDL_resize.c" />
+    <ClCompile Include="..\..\src\file\SDL_rwops.c" />
+    <ClCompile Include="..\..\src\joystick\dummy\SDL_sysjoystick.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\joystick\SDL_joystick.c" />
+    <ClCompile Include="..\..\src\joystick\win32\SDL_mmjoystick.c" />
+    <ClCompile Include="..\..\src\SDL.c" />
+    <ClCompile Include="..\..\src\SDL_error.c" />
+    <ClCompile Include="..\..\src\SDL_fatal.c" />
+    <ClCompile Include="..\..\src\SDL_getenv.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <arm_linux_gcc Include="..\..\src\thread\linux\SDL_sysmutex.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <arm_linux_gcc Include="..\..\src\thread\linux\SDL_syssem.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <arm_linux_gcc Include="..\..\src\thread\linux\SDL_systhread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <ClCompile Include="..\..\src\thread\SDL_thread.c" />
+    <ClCompile Include="..\..\src\thread\win32\SDL_sysmutex.c" />
+    <ClCompile Include="..\..\src\thread\win32\SDL_syssem.c" />
+    <ClCompile Include="..\..\src\thread\win32\SDL_systhread.c" />
+    <arm_linux_gcc Include="..\..\src\timer\linux\SDL_systimer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <ClCompile Include="..\..\src\timer\SDL_timer.c" />
+    <ClCompile Include="..\..\src\timer\win32\SDL_systimer.c" />
+    <ClCompile Include="..\..\src\video\gapi\PocketHAL.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\video\gapi\SDL_gapievents.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\video\gapi\SDL_gapivideo.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <arm_linux_gcc Include="..\..\src\video\gp2x\SDL_gp2xevents.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <arm_linux_gcc Include="..\..\src\video\gp2x\SDL_gp2xmouse.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <arm_linux_gcc Include="..\..\src\video\gp2x\SDL_gp2xvideo.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </arm_linux_gcc>
+    <ClCompile Include="..\..\src\video\SDL_blit.c" />
+    <ClCompile Include="..\..\src\video\SDL_blit_0.c" />
+    <ClCompile Include="..\..\src\video\SDL_blit_1.c" />
+    <ClCompile Include="..\..\src\video\SDL_blit_A.c" />
+    <ClCompile Include="..\..\src\video\SDL_blit_N.c" />
+    <ClCompile Include="..\..\src\video\SDL_bmp.c" />
+    <ClCompile Include="..\..\src\video\SDL_cursor.c" />
+    <ClCompile Include="..\..\src\video\SDL_pixels.c" />
+    <ClCompile Include="..\..\src\video\SDL_RLEaccel.c" />
+    <ClCompile Include="..\..\src\video\SDL_stretch.c" />
+    <ClCompile Include="..\..\src\video\SDL_surface.c" />
+    <ClCompile Include="..\..\src\video\SDL_video.c" />
+    <ClCompile Include="..\..\src\video\SDL_yuv.c" />
+    <ClCompile Include="..\..\src\video\SDL_yuv_sw.c" />
+    <ClCompile Include="..\..\src\video\wincommon\SDL_sysevents.c" />
+    <ClCompile Include="..\..\src\video\wincommon\SDL_sysmouse.c" />
+    <ClCompile Include="..\..\src\video\wincommon\SDL_syswm.c" />
+    <ClCompile Include="..\..\src\video\wincommon\SDL_wingl.c" />
+    <ClCompile Include="..\..\src\video\windib\SDL_dibevents.c" />
+    <ClCompile Include="..\..\src\video\windib\SDL_dibvideo.c" />
+    <ClCompile Include="..\..\src\video\windx5\SDL_dx5events.c" />
+    <ClCompile Include="..\..\src\video\windx5\SDL_dx5video.c" />
+    <ClCompile Include="..\..\src\video\windx5\SDL_dx5yuv.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\arm-linux.targets" />
+  </ImportGroup>
+</Project>

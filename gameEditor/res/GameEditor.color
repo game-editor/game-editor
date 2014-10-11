@@ -1,0 +1,149 @@
+Editor Panels, top gradient
+255
+247
+220
+255
+
+Editor Panels, bottom gradient
+132
+124
+110
+225
+
+Editor Panels, highlight
+239
+166
+61
+200
+
+Editor Scroll Bar
+255
+247
+229
+255
+
+Editor Panels, glass effect
+255
+255
+255
+
+Editor Text
+0
+0
+0
+
+Editor Border
+104
+104
+104
+
+Editor Hint bg
+255
+255
+225
+
+Shadow
+0
+0
+0
+
+Button text
+0
+0
+0
+
+Button border
+104
+104
+104
+
+Edit Button Border
+104
+104
+104
+
+Editor Panels
+170
+170
+170
+
+Editor Panels, hover
+255
+255
+255
+
+Script cursor
+255
+255
+255
+
+Script operator
+0
+90
+12
+
+Script keyword
+64
+76
+108
+
+Script preprocess
+64
+76
+108
+
+Script normal
+255
+255
+255
+
+Script type
+0
+255
+100
+
+Script function
+255
+255
+0
+
+Script comment
+166
+255
+211
+
+Script literal
+168
+0
+0
+
+Script default
+0
+255
+255
+
+Default Axis
+200
+200
+200
+
+Default Res
+150
+150
+150
+
+Default Grid
+100
+100
+100
+
+Default BG
+0
+0
+0
+
+Path
+255
+255
+255
+

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <Beta>GAME_EDITOR_BETA;GAME_EDITOR_PROFESSIONAL</Beta>
+    <Professional>GAME_EDITOR_PROFESSIONAL</Professional>
+    <Beta_Standalone>GAME_EDITOR_BETA;STAND_ALONE_GAME;GAME_EDITOR_PROFESSIONAL</Beta_Standalone>
+    <Demo />
+    <Standalone_Pro>STAND_ALONE_GAME;GAME_EDITOR_PROFESSIONAL</Standalone_Pro>
+    <Standalone_Demo>STAND_ALONE_GAME</Standalone_Demo>
+    <VersionType>$(Beta)</VersionType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>oi_GL_OES_VERSION_1_1;$(VersionType);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UndefinePreprocessorDefinitions>GAME_EDITOR_HOME_EDITION;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>$(VersionType);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="Beta">
+      <Value>$(Beta)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Professional">
+      <Value>$(Professional)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Beta_Standalone">
+      <Value>$(Beta_Standalone)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Demo">
+      <Value>$(Demo)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Standalone_Pro">
+      <Value>$(Standalone_Pro)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Standalone_Demo">
+      <Value>$(Standalone_Demo)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VersionType">
+      <Value>$(VersionType)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

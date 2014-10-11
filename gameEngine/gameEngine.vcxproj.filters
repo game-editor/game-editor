@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87f3e447-1c18-4351-8437-82a89a133a9a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b947122f-9463-4130-87ad-b838b5bc4b3d}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Ucl">
+      <UniqueIdentifier>{b4fa6669-eec2-48b5-96f2-d3fdee8b5d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PathFinder">
+      <UniqueIdentifier>{db84a7ce-ba7b-4643-ba80-1661ca424996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PathFinder\2dmath">
+      <UniqueIdentifier>{c1d00180-ab36-4f27-801a-35ae59a472a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Action.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivationEventsCanvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorTip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Axis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bit_byte.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bit_bytx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libce\src\ce_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="compression.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dlmalloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="download.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorDirectory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Envelope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gedString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListDirectory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListPop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListPopSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loadGifMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maksKyra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minilzo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MuteEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelQuestion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PathPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegionLoad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SDL\SDL\src\main\win32\SDL_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Slide.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SlowCanvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="system.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitCursor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\alloc.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\n2b_99.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\n2b_d.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\n2b_ds.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\n2d_99.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\n2d_d.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\n2d_ds.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\ucl_init.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\ucl_ptr.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\ucl_str.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="Compact\ucl_util.c">
+      <Filter>Ucl</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFinder\GeoPathfinder.cpp">
+      <Filter>PathFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFinder\2dmath\BoxLineIntersection2D.cpp">
+      <Filter>PathFinder\2dmath</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivationEventsCanvas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorTip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Axis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bit_byte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bit_bytx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="compression.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dlmalloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorDirectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Envelope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gedString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericScript.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListDirectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListPop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListPopSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lzoconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maksKyra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="minilzo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuteEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelQuestion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PathPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegionLoad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Slide.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowCanvas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitCursor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Compact\getbit.h">
+      <Filter>Ucl</Filter>
+    </ClInclude>
+    <ClInclude Include="Compact\ucl.h">
+      <Filter>Ucl</Filter>
+    </ClInclude>
+    <ClInclude Include="Compact\ucl_conf.h">
+      <Filter>Ucl</Filter>
+    </ClInclude>
+    <ClInclude Include="Compact\ucl_ptr.h">
+      <Filter>Ucl</Filter>
+    </ClInclude>
+    <ClInclude Include="Compact\ucl_util.h">
+      <Filter>Ucl</Filter>
+    </ClInclude>
+    <ClInclude Include="Compact\uclconf.h">
+      <Filter>Ucl</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder\GeoPathfinder.h">
+      <Filter>PathFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder\2dmath\Box2D.h">
+      <Filter>PathFinder\2dmath</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder\2dmath\Line2D.h">
+      <Filter>PathFinder\2dmath</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder\2dmath\vector2d.h">
+      <Filter>PathFinder\2dmath</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <arm_linux_ar Include="..\arm-linux.ar" />
+  </ItemGroup>
+</Project>
