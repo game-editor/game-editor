@@ -14490,7 +14490,7 @@ bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, b
 	char *sDevice = "machine";
 #endif
 
-#if !defined(_DEBUG) || defined(_WIN32_WCE) || defined(__iPhone__) 
+#if defined(_WIN32_WCE) || defined(__iPhone__) 
 	if(bFullScreen) flags |= SDL_FULLSCREEN;
 #endif
 

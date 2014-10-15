@@ -145,6 +145,7 @@ get_color_scheme ()
 void
 read_color_scheme (char* filename)
 {
+#ifndef STAND_ALONE_GAME
   FILE* file = fopen(filename, "r");
   char line[256];
   int size = 256;
@@ -301,4 +302,5 @@ read_color_scheme (char* filename)
   fscanf(file, "%d\n", &(cs->path_b));
 
   fclose(file);
+#endif // STAND_ALONE_GAME
 }
