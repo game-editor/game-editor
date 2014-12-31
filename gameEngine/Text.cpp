@@ -169,7 +169,14 @@ Text::Text(const gedString& text, int x, int y, int align,
 		KrColorTransform color;
 		// sky change color of text
 		ColorScheme *cs = get_color_scheme();
-		color.Set(cs->editor_text_r, 0, cs->editor_text_g, 0, cs->editor_text_b, 0, 255);
+		if(GameControl::Get()->getGameMode() || parent != NULL)
+		{
+		  color.Set(red, 0, green, 0, blue, 0, 255);
+		}
+		else
+		{
+		  color.Set(cs->editor_text_r, 0, cs->editor_text_g, 0, cs->editor_text_b, 0, 255);
+		}
 		textBox->SetColor(color);
 
 		if(x == CENTER_TEXT)
