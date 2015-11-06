@@ -70,7 +70,8 @@ enum
 	BT_ADD,
 	LS_FILE,
 	BT_GLOBALS,
-	BT_WEB
+	BT_WEB,
+	BT_IMMEDIATE
 };
 
 #define WIDTH	Config::Get()->getEditorSizeX()
@@ -212,7 +213,8 @@ ExpressionEditor::ExpressionEditor(Actor *actor, bool bOnCollision)
 	
 	//Close
 	y = DrawHLine(listAutoComplete->Down() + 2);
-	button = AddButton(Action::getEditAction()?"Ok":"Add", WIDTH/2 - 65, y, 0, 0, BT_ADD); button->SetToolTip(TIP_ACTION_ADD);
+	button = AddButton(Action::getEditAction()?"Ok":"Add", WIDTH/2 - 95, y, 0, 0, BT_ADD); button->SetToolTip(TIP_ACTION_ADD);
+	button = AddButton("Immediate", button->Right()+8, y, 0, 0, BT_IMMEDIATE); button->SetToolTip(TIP_ACTION_IMMEDIATE);	
 	button = AddButton("Cancel", button->Right()+8, y, 0, 0, BT_CLOSE); button->SetToolTip(TIP_ACTION_CANCEL); //Don't exit on ESC (crash the editor)
 
 
@@ -443,6 +445,78 @@ void ExpressionEditor::OnButton(Button *button, int buttonId)
 			}
 		}
 		break;
+	  case BT_IMMEDIATE:
+	  {
+	    gedString code(editExp->GetText(ALL_LINES));
+	    if(code.empty())
+	    {
+	      new PanelInfo("Can't add an empty script\nPlease, enter your script or close", "Error");
+	      return;
+	    }
+
+	    if(pScript)
+	    {
+	      if(!pScript->Parser(code, false, false, true) || pScript->GetError().length())
+	      {
+		//Error or only warnings?
+					
+		if(pScript->GetError().find("Error") == gedString::npos)
+		{
+		  //Warnings
+						
+		  PanelQuestion *panel = new PanelQuestion(pScript->GetError() + "\n\nThere is some errors but are not fatal.\nProceed anyway?", "Confirm", "Yes", "No", ALIGN_LEFT);
+						
+		  if(panel->Wait() != OK_BUTTON)
+		  {
+		    delete panel;						
+		    return;
+		  }
+						
+		  delete panel;
+		}
+		else
+		{
+		  //Errors
+		  PanelQuestion *panel = new PanelQuestion(pScript->GetError() + "\n\nThere are script code errors that need to be corrected before your program will execute.\nProceed anyway?", "Error", "Yes", "No", ALIGN_LEFT);
+		  if(panel->Wait() != OK_BUTTON)
+		  {
+		    delete panel;						
+		    return;
+		  }
+						
+		  //Add with errors and check again in game mode
+		  pScript->setAddedWithError(true);
+		  delete panel;
+		}				
+	      }
+	      else
+	      {
+		pScript->setAddedWithError(false);
+	      }
+	    }
+			
+			
+	    if(Tutorial::IsCompatible(VERSION_OUT_OF_VISION_OPTIMIZATION))
+	    {
+	      SetActionTypeImmediate(eventActor, Action::Call(eventActor)->SetExpression(pScript));
+	      delete this;
+	    }
+	    else
+	    {
+	      //Old code
+	      //Don't allow edit action type
+	      if(!editAction)
+	      {
+		//Add
+		SelectActionType(eventActor, Action::Call(eventActor)->SetExpression(pScript));
+	      }
+	      else
+	      {
+		delete this;
+	      }
+	    }
+	  }
+	break;
 	case BT_CREATEVAR:
 		{
 			new VariableEditor(this);

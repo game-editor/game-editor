@@ -43,7 +43,8 @@ Be a Game Editor developer: Be a Game Editor developer: <http://game-editor.com/
 class BaseAction : public Panel  
 {
 public:
-	void SelectActionType(Actor *eventActor, stAction *action);
+	void SetActionTypeImmediate(Actor *eventActor, stAction *action);
+	void SelectActionType(Actor *eventActor, stAction *action);	
 	bool OnList(ListPop *list, int index, gedString &text, int listId);
 	void OnMessage(Actor *fromActor, Uint32 messageId, Uint32 message);
 

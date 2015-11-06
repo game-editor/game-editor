@@ -118,6 +118,12 @@ Click here to \"Add\" the action\n\
 Wait for frame action: The Action will be put into a queue, it will be executed when\n\
                        certain frames of a specified animation are displayed."
 
+#define TIP_ACTION_IMMEDIATE			"\
+Click here to \"Add\" the action\n\
+\n\
+     When the Event occurs, the Action will be executed immediately.\n"
+
+
 #define TIP_ACTION_ACTOR			"\
 \n\
 The \"Event Actor\" is the Actor that currently receives the Event.\n\

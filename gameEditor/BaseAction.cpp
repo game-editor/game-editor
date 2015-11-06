@@ -87,6 +87,13 @@ bool BaseAction::OnList(ListPop *list, int index, gedString &text, int listId)
 	return false;
 }
 
+void BaseAction::SetActionTypeImmediate(Actor *eventActor, stAction *action)
+{
+  this->eventActor = eventActor;
+  this->action = action;
+  this->action->executionType = IMMEDIATE_EXECUTION;
+}
+
 void BaseAction::SelectActionType(Actor *eventActor, stAction *action)
 {
 	if(ConditionalAction::HasConditionalDialog())
