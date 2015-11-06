@@ -741,6 +741,7 @@ public:
 	void setRegionColor(int r, int g, int b) {if(type == REGION_ACTOR || type == REGION_ACTOR_FILLED) {red = r; green = g; blue = b;}}
 	ActorType getType() {return type;}
 	bool getMoveTo() {return flags.IsSet(FLAG_MOVETO);}
+	bool isRegionActor() { return (type == REGION_ACTOR || type == REGION_ACTOR_FILLED || type == CANVAS); }
 	static int getBaseZDpth() {return baseZDepth;}
 	static void setBaseZDpth(int base) {baseZDepth = base;}
 	

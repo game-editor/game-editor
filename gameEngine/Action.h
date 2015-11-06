@@ -1402,6 +1402,7 @@ int execCreateTimer(char *actorName, char *timerName, int milliseconds);
 int execDestroyTimer(char *timerName);
 int execDestroyTimer2(char *actorName, char *timerName);
 int execChangeZDepth(char *actorName, double zdepth);
+int execChangeRegionSize(char *actorName, double width, double height);
 int execPlaySound(char *soundPath, double volume, int loop, Sint16 pan);
 int execPlayMusic(char *soundPath, double volume, int loop, int priority);
 int execToAnteriorPosition(char *actorName);

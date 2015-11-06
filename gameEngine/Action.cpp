@@ -4574,6 +4574,8 @@ int execChangeZDepth(char *actorName, double zdepth)
 	{
 		actionActor = eventActor->getCreator();
 	}
+
+	actionActor->SetSize(100, 10);
 	
 	if(IS_VALID_ACTOR(actionActor))
 	{
@@ -4622,6 +4624,94 @@ int execChangeZDepth(char *actorName, double zdepth)
 	return 1;
 }
 
+int execChangeRegionSize(char *actorName, double width, double height)
+{
+  /*
+    Change Region's Dimensions
+    width: minimum 0
+    height: minimum 0
+    Return 1 if success, 0 on error
+
+    Actor name: 
+    - "Event Actor":	actor that is receiving the current event
+    - "Collide Actor": actor that collided with the event actor
+    - Any actor in game
+  */
+
+  if(!actorName) return 0; 
+  if(width<0 || height<0) return 0;
+	
+  Actor *eventActor = Action::getActualEventActor();
+  Actor *collideActor = Action::getActualCollideActor();
+  Actor *actionActor = NULL;
+	
+  if(strcmp(actorName, S_EVENT_ACTOR) == 0)
+  {
+    actionActor = eventActor;		
+  }
+  else if(strcmp(actorName, S_COLLIDE_ACTOR) == 0)
+  {
+    if(!collideActor) return 0;
+    actionActor = collideActor;		
+  }
+  else if(strcmp(actorName, S_PARENT_ACTOR) == 0)
+  {
+    if(eventActor->getParent() != GameControl::Get()->GetAxis()) actionActor = eventActor->getParent();
+  }
+  else if(strcmp(actorName, S_CREATOR_ACTOR) == 0)
+  {
+    actionActor = eventActor->getCreator();
+  }
+
+  if(!actionActor->isRegionActor()) return 0; // actor is not a region
+
+  
+  if(IS_VALID_ACTOR(actionActor))
+  {
+    actionActor->SetSize(width, height);
+		
+#ifndef STAND_ALONE_GAME
+    //AddToGameGraph(actionActor, SET_ZDEPTH); // TODO: add changeregionsize to gamegraph
+#endif
+  }
+  else
+  {
+    //Multiple actors
+    ListActor *listActor = mapActors.FindString(actorName);
+    if(listActor)
+    {
+      for(int il = 0; il < listActor->Count(); il++)
+      {
+	actionActor = (*listActor)[il];
+	if(actionActor->getRunning() && actionActor->isRegionActor())
+	{
+	  actionActor->SetSize(width, height);
+					
+#ifndef STAND_ALONE_GAME
+	  AddToGameGraph(actionActor, SET_ZDEPTH);
+#endif
+	}			
+      }
+    }
+    else if(strchr(actorName, '.'))
+    {
+      //Clone specified
+      actionActor = GameControl::Get()->GetActor(actorName, true, false, false);
+      if(actionActor && actionActor->isRegionActor())
+      {
+	actionActor->SetSize(width, height);	
+
+#ifndef STAND_ALONE_GAME
+	//AddToGameGraph(actionActor, SET_ZDEPTH);
+#endif
+      }
+      else return 0;
+    }
+    else return 0;
+  }
+
+  return 1;
+}
 
 int execPlaySound(char *soundPath, double volume, int loop, Sint16 pan)
 {

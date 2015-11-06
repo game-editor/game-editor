@@ -2179,6 +2179,20 @@ static val_t eic_ChangeZDepth(void)
     return v;
 }
 
+static val_t eic_ChangeRegionSize(void)
+{
+  val_t v;
+  v.ival = 0;
+
+  if(GameControl::Get()->getGameMode())
+  {
+    v.ival = execChangeRegionSize((char *)arg(0,getargs(),ptr_t).p, arg(1,getargs(),double), arg(2,getargs(),double));
+  }
+	
+  return v;
+}
+
+
 static val_t eic_PlaySound(void)
 {
     val_t v;
@@ -3649,6 +3663,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("ChangeZDepth", eic_ChangeZDepth);
 	EiC_parseString("int ChangeZDepth(const char *actorName, double zdepth);");
+
+	EiC_add_builtinfunc("ChangeRegionSize", eic_ChangeRegionSize);
+	EiC_parseString("int ChangeRegionSize(const char *actorName, double width, double height);");	
 
 	EiC_add_builtinfunc("PlaySound", eic_PlaySound);
 	EiC_parseString("int PlaySound(const char *soundPath, double volume, int loop);");
