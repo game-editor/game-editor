@@ -619,6 +619,11 @@ double rand(double t)
 	return t*randomMT()/4294967296.0;
 }
 
+double clamp(double value, double min, double max)
+{
+  return (value < min) ? min : ((value > max) ? max : value);
+}
+
 double sign(double x)
 {
 	if(x == 0.0) return 0.0;
@@ -643,6 +648,13 @@ static val_t eic_rand(void)
     val_t v;
     v.dval = rand(arg(0,getargs(),double));
     return v;
+}
+
+static val_t eic_clamp(void)
+{
+  val_t v;
+  v.dval = clamp(arg(0, getargs(),double), arg(1, getargs(),double), arg(2, getargs(),double));
+  return v;
 }
 
 static val_t eic_sign(void)
@@ -1521,7 +1533,7 @@ static val_t eic_print(void)
 {
   val_t v;
   char* string = (char*)arg(0, getargs(), char*);
-  GLOUTPUT("%s", string);
+  //GLOUTPUT("%s", string);
   return v;
 }
 
@@ -1641,7 +1653,10 @@ void includeCLibs()
 	EiC_parseString("double sign(double a);");
 
 	EiC_add_builtinfunc("rand",eic_rand);
-	EiC_parseString("double rand(double a);");	
+	EiC_parseString("double rand(double a);");
+
+	EiC_add_builtinfunc("clamp",eic_clamp);
+	EiC_parseString("double clamp(double value, double min, double max);");	
 
 dodefine("HUGE_VAL=1.0e38");
 
