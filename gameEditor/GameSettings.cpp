@@ -784,8 +784,8 @@ void GameSettings::OnButton(Button *button, int buttonId)
 				
 				delete panel;
 			}
-
-			GameControl::Get()->SetGameProperties(w, h, fps, bFull, atol(hz.substr(0, hz.find(" ")).c_str()), bStereo, smax, bShowMouse, icon, gameTitle->GetText(), false, backgroundColor->getColor(), bSuspendGameIfLostFocus, viewSafeArea, bUseESCKeyToExit);
+			// skydereign: add draw regions to game settings
+			GameControl::Get()->SetGameProperties(w, h, fps, bFull, false, atol(hz.substr(0, hz.find(" ")).c_str()), bStereo, smax, bShowMouse, icon, gameTitle->GetText(), false, backgroundColor->getColor(), bSuspendGameIfLostFocus, viewSafeArea, bUseESCKeyToExit);
 			GameControl::Get()->setFlipPocketPCScreen(bFlipPocketPCScreen);
 			GameControl::Get()->setUseMotionCorrection(bUseMotionCorrection);
 			GameControl::Get()->setUseGameEditorServer(bUseGameEditorServer);

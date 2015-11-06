@@ -10622,7 +10622,7 @@ GameControl::GameControl()
 
 	backgroundColor.all = 0;
 
-	SetGameProperties(resX, resY, 30, false, 44100, true, 8, true, "", "", true, backgroundColor, true, 20, true); //fps = 30: default frame rate
+	SetGameProperties(resX, resY, 30, false, false, 44100, true, 8, true, "", "", true, backgroundColor, true, 20, true); //fps = 30: default frame rate
 	//SetTimer(EDITOR_FRAME_RATE); //Set editor frame rate
 
 	//Set editor directory
@@ -13061,8 +13061,9 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 	_resY = GameControl::Read16(src);
 //#endif
 
-	bool _bStereo, _bFullScreen, _bShowMouse;
+	bool _bStereo, _bFullScreen, _bDrawRegionsInGame, _bShowMouse;
 	GameControl::Read(src, &_bFullScreen, sizeof(Uint8), 1);
+	// GameControl::Read(src, &_bDrawRegionsInGame, sizeof(Uint8), 1); // skydereign: add drawregions to save configs
 	Uint16 _fps = GameControl::Read16(src);
 	Uint16 _audioSamplerRate = GameControl::Read16(src);
 	GameControl::Read(src, &_bStereo, sizeof(Uint8), 1);
@@ -13227,7 +13228,7 @@ bool GameControl::Load(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uint3
 	}
 	if(!bMergeGames)
 	{
-		SetGameProperties(_resX, _resY, _fps, _bFullScreen, _audioSamplerRate, _bStereo, _maximumSounds, _bShowMouse, _iconPath, _gameTitle, false, _backgroundColor, _bSuspendGameIfLostFocus, _viewSafeMargin, _bUseESCKeyToExit);
+	  SetGameProperties(_resX, _resY, _fps, _bFullScreen, _bDrawRegionsInGame, _audioSamplerRate, _bStereo, _maximumSounds, _bShowMouse, _iconPath, _gameTitle, false, _backgroundColor, _bSuspendGameIfLostFocus, _viewSafeMargin, _bUseESCKeyToExit);
 	}
 
 	} 
@@ -13360,10 +13361,11 @@ bool GameControl::LoadV8(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uin
 	}
 
 	//Load game properties
-	bool _bStereo, _bFullScreen, _bShowMouse; 
+	bool _bStereo, _bFullScreen, _bDrawRegionsInGame, _bShowMouse; 
 	U16 _resX = GameControl::Read16(src);
 	U16 _resY = GameControl::Read16(src);
 	GameControl::Read(src, &_bFullScreen, sizeof(Uint8), 1);
+	// skydereign: add draw regions in game to save
 	U16 _fps = GameControl::Read16(src);
 	U16 _audioSamplerRate = GameControl::Read16(src);
 	GameControl::Read(src, &_bStereo, sizeof(Uint8), 1);
@@ -13412,7 +13414,7 @@ bool GameControl::LoadV8(SDL_RWops *src, bool bLoadCursor, bool bMergeGames, Uin
 	if(!bMergeGames)
 	{
 		backgroundColor.all = 0;
-		SetGameProperties(_resX, _resY, _fps, _bFullScreen, _audioSamplerRate, _bStereo, _maximumSounds, _bShowMouse, _iconPath, _gameTitle, false, backgroundColor, true, 0, true);
+		SetGameProperties(_resX, _resY, _fps, _bFullScreen, _bDrawRegionsInGame, _audioSamplerRate, _bStereo, _maximumSounds, _bShowMouse, _iconPath, _gameTitle, false, backgroundColor, true, 0, true);
 	}
 
 	} 
@@ -14369,7 +14371,7 @@ void GameControl::setBackGroundColor(KrRGBA _backgroundColor)
 	if(engine) engine->FillBackground(&backgroundColor);
 }
 
-void GameControl::SetGameProperties(Uint16 resX, Uint16 resY, Uint16 fps, bool  bFullScreen,
+void GameControl::SetGameProperties(Uint16 resX, Uint16 resY, Uint16 fps, bool  bFullScreen, bool bDrawRegionsInGame,
 		Uint16  audioSamplerRate, bool bStereo, Uint16  maximumSounds, bool bShowMouse, 
 		gedString iconPath, gedString gameTitle, bool bSetViewPos, KrRGBA _backgroundColor,
 		bool _bSuspendGameIfLostFocus, U32 _viewSafeMargin, bool _bUseESCKeyToExit)
@@ -14409,6 +14411,7 @@ void GameControl::SetGameProperties(Uint16 resX, Uint16 resY, Uint16 fps, bool  
 	this->resY = resY;
 	this->fps  = fps;
 	this->bFullScreen = bFullScreen;
+	this->bDrawRegionsInGame = bDrawRegionsInGame;
 	this->audioSamplerRate = audioSamplerRate;
 	this->bStereo = bStereo;
 	this->maximumSounds = maximumSounds;
@@ -14468,6 +14471,12 @@ void GameControl::SetTimer(int Fps)
 	if(timerId) SDL_RemoveTimer(timerId);
 	timerId = SDL_AddTimer(frameTimeInterval, TimerCallback, NULL);
 #endif
+}
+
+void GameControl::SetDrawRegionsInGame(bool bDrawRegionsInGame)
+{
+  engine->InvalidateScreen();
+  this->bDrawRegionsInGame = bDrawRegionsInGame;
 }
 
 bool GameControl::SwitchResolution(SDL_Surface* screen, int width, int height, bool bFullScreen)
@@ -20915,6 +20924,7 @@ bool GameControl::Save(const gedString& gameName, SDL_RWops *srcFile)
 	SDL_WriteLE16(src, resX);
 	SDL_WriteLE16(src, resY);
 	SDL_RWwrite(src, &bFullScreen, sizeof(Uint8), 1);
+	// skydereign: insert bDrawRegionsInGame to save file
 	SDL_WriteLE16(src, fps);
 	SDL_WriteLE16(src, audioSamplerRate);
 	SDL_RWwrite(src, &bStereo, sizeof(Uint8), 1);

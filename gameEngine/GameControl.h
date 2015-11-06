@@ -1251,6 +1251,7 @@ public:
 	char * GetErrorMsg();
 	bool SwitchResolution(SDL_Surface* screen, int width, int height, bool bFullScreen = false);
 	void SetTimer(int fps = 0);
+	void SetDrawRegionsInGame(bool bDrawRegionsInGame);
 	
 	void Delete();
 	int PlaySound(bool bMusic, const gedString& path, int volume, int loop, int priority, Sint16 pan);
@@ -1365,6 +1366,7 @@ public:
 #endif
 
 	bool getFullScreen() {return bFullScreen;}
+	bool getDrawRegionsInGame() {return bDrawRegionsInGame;}
 	Uint32 getFrameTimeInterval() {return frameTimeInterval;};
 	Uint16 getFrameRate() {return fps;}
 	int getRealFrameRate() {return realFrameRate;}
@@ -1406,7 +1408,7 @@ public:
 	U32 getViewSafeMargin() { return viewSafeMargin;} 
 
 
-	void SetGameProperties(Uint16 resX, Uint16 resY, Uint16 fps, bool  bFullScreen,
+	void SetGameProperties(Uint16 resX, Uint16 resY, Uint16 fps, bool  bFullScreen, bool bDrawRegionsInGame,
 		Uint16  audioSamplerRate, bool bStereo, Uint16  maximumSounds, bool bShowMouse,
 		gedString iconPath, gedString gameTitle, bool bSetViewPos, KrRGBA _backgroundColor,
 		bool _bSuspendGameIfLostFocus, U32 _viewSafeMargin, bool _bUseESCKeyToExit);
@@ -1616,6 +1618,7 @@ private:
 	//Game properties
 	Uint16 resX, resY;
 	bool  bFullScreen;
+	bool  bDrawRegionsInGame;	
 	Uint16	originalFps;
 	Uint16	fps;
 	Uint16  audioSamplerRate;

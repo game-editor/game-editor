@@ -2947,7 +2947,7 @@ void OnSlowCanvasPaint(void *actor, KrPaintInfo *paintInfo, SDL_Surface* surface
 void Actor::OnSlowCanvasPaint(KrPaintInfo *paintInfo, SDL_Surface* surface, KrRect &rect, int openGLZ)
 {
 #ifndef STAND_ALONE_GAME
-	if(!GameControl::Get()->getGameMode() && (flags.IsSet(FLAG_VIEW) || type == REGION_ACTOR || type == REGION_ACTOR_FILLED || (type == CANVAS && flags.IsSet(FLAG_EDIT))))
+  if((!GameControl::Get()->getGameMode() || GameControl::Get()->getDrawRegionsInGame()) && (flags.IsSet(FLAG_VIEW) || type == REGION_ACTOR || type == REGION_ACTOR_FILLED || (type == CANVAS && flags.IsSet(FLAG_EDIT))))
 	{
 		KrPainter painter(paintInfo);
 

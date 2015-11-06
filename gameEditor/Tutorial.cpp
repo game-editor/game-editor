@@ -98,7 +98,7 @@ void Tutorial::Reset()
 	GameControl::Get()->GetAxis()->setGridSnap(false);
 	GameControl::Get()->GetAxis()->setGridX(20);
 	GameControl::Get()->GetAxis()->setGridY(20);
-	GameControl::Get()->SetGameProperties(640, 480, 30, false, 44100, true, 8, true, "", "", true, backgroundColor, true, (Tutorial::IsCompatible(VERSION_OUT_OF_VISION_OPTIMIZATION)?20:0), true);
+	GameControl::Get()->SetGameProperties(640, 480, 30, false, false, 44100, true, 8, true, "", "", true, backgroundColor, true, (Tutorial::IsCompatible(VERSION_OUT_OF_VISION_OPTIMIZATION)?20:0), true);
 	GameControl::Get()->SwitchResolution(engine->Surface(), 640, 480);
 	GameControl::Get()->GetAxis()->SetScale(1.0);
 	GameControl::Get()->GetAxis()->SetPos(GameControl::Get()->Width()/2, GameControl::Get()->Height()/2);

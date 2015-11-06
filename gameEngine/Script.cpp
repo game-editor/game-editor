@@ -2565,6 +2565,20 @@ static val_t eic_ChangeFPS(void)
   return v;
 }
 
+static val_t eic_DrawRegionsInGame(void)
+{
+  val_t v;
+  
+  if(GameControl::Get()->getGameMode())
+  {
+    int drawRegions = arg(0, getargs(), int);
+    GameControl::Get()->SetDrawRegionsInGame(drawRegions != 0);
+  }
+
+  return v;
+}
+
+
 static val_t eic_Zoom(void)
 {
   val_t v;
@@ -3686,6 +3700,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("ChangeFPS", eic_ChangeFPS);
 	EiC_parseString("void ChangeFPS(int fps);");
+
+	EiC_add_builtinfunc("DrawRegionsInGame", eic_DrawRegionsInGame);
+	EiC_parseString("void DrawRegionsInGame(int drawRegions);");
 
 	EiC_add_builtinfunc("Zoom", eic_Zoom);
 	EiC_parseString("int Zoom(double zoom);");
