@@ -30,8 +30,8 @@ endif
 
 ## Build Configuration
 
-GAMEEDITOR_TYPE=$(GAMEEDITOR_BETA)
-BUILD_TYPE=$(GE_RELEASE)
+GAMEEDITOR_TYPE=$(GAMEEDITOR_PROFESSIONAL)
+BUILD_TYPE=$(GE_DEBUG)
 
 ## Defines
 # linux -> -D__linux -Dlinux -D__linux__ -DLINUX_I386
@@ -54,7 +54,7 @@ MAKE = make
 ifeq ($(TARGET_MACHINE),LLVM)
         CC = llvm-gcc -emit-llvm -c			
 else
-		CC = gcc -m32 -lm		
+		CC = gcc -m32 -lm -lcurl
 endif
 
 

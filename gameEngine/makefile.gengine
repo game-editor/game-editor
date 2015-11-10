@@ -126,7 +126,7 @@ $(BIN): $(OBJ)
 	$(CC) -c RegionLoad.cpp -o ../output/RegionLoad.o $(CFLAGS)
 
 ../output/Script.o: Script.cpp
-	$(CC) -c Script.cpp -o ../output/Script.o $(CFLAGS)
+	$(CC) -c Script.cpp -o ../output/Script.o $(CFLAGS) -lcurl
 
 ../output/Sequence.o: Sequence.cpp
 	$(CC) -c Sequence.cpp -o ../output/Sequence.o $(CFLAGS)

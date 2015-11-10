@@ -30,6 +30,7 @@ Be a Game Editor developer: http://game-editor.com/Sharing_Software_Revenues_in_
 #include "Script.h"
 #include "GameControl.h"
 #include "GenericScript.h"
+#include <curl/curl.h>
 #include <math.h>
 
 #ifdef USE_RAKNET
@@ -1331,6 +1332,36 @@ static val_t eic_getAnimName2(void)
     setEp( v.p, strlen(animName) + 1);
   }
 	
+  return v;
+}
+
+void get_page(const char* url, const char* filename)
+{
+  CURL* easyhandle = curl_easy_init();
+
+  curl_easy_setopt(easyhandle, CURLOPT_URL, url);
+
+  FILE* file = fopen(filename, "w");
+
+  curl_easy_setopt(easyhandle, CURLOPT_WRITEDATA, file);
+  curl_easy_perform(easyhandle);
+  curl_easy_cleanup(easyhandle);
+
+  fclose(file);
+}
+
+
+static val_t eic_getURL(void)
+{
+  val_t v;
+
+  if(GameControl::Get()->getGameMode())
+  {
+    char* url = (char*)arg(0, getargs(),ptr_t).p;
+    char* filename = (char*)arg(1, getargs(),ptr_t).p;
+    get_page(url, filename);
+  }
+  
   return v;
 }
 
@@ -3598,6 +3629,9 @@ void Script::Init()
 
 	EiC_add_builtinfunc("getAnimName2", eic_getAnimName2);
 	EiC_parseString("char *getAnimName2(const char *actorName, int animIndex);");
+
+	EiC_add_builtinfunc("getURL", eic_getURL);
+	EiC_parseString("void getURL(const char *url, const char *filename);");
 
 	EiC_add_builtinfunc("getclone2",eic_getclone2);
 	EiC_parseString("Actor *getclone2(const char *actorName, int cloneIndex);");
