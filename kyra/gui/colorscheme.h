@@ -1,5 +1,3 @@
-#ifndef STAND_ALONE_GAME
-
 #ifndef __COLORSCHEME_H__
 #define __COLORSCHEME_H__
 
@@ -55,6 +53,3 @@ typedef struct
 void read_color_scheme (char* filename);
 ColorScheme* get_color_scheme ();
 #endif // __COLORSCHEME_H__
-
-
-#endif // STAND_ALONE_GAME
