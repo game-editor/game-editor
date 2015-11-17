@@ -1408,13 +1408,15 @@ int execPlayMusic(char *soundPath, double volume, int loop, int priority);
 int execToAnteriorPosition(char *actorName);
 int execEventEnable(char *actorName, unsigned long event);
 int execEventDisable(char *actorName, unsigned long event);
+int execSetTextEditable(char *actorName, int editable);
+int execSetTextFocus(char *actorName, int focus);
 int execExitGame();
 int execLoadGame(char *gamePath);
 int execActorCount(char *actorName);
 int execCollisionFree(char *actorName, int x, int y);
 int execMoveTo(char *actorName, double x, double y, double velocity, char *relativeActor, char *obstacleActor, int moveType);
 int execPhysicalBounce(int moveType, int massType, double massEventActor, double massCollideActor, double eventVelocityMultiplier, double collideVelocityMultiplier);
-
+  
 void exec_setpen(int r, int g, int b, double transp, int pensize);
 void exec_moveto(int x, int y);
 void exec_lineto(int x, int y);

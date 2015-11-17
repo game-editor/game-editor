@@ -236,6 +236,19 @@ void Text::SetColor(int r, int g, int b)
 }
 
 
+void Text::SetEditable(bool editable)
+{
+  GLOUTPUT("set editable\n");
+  bEditable = editable;
+  textBox->ChangeEditable(editable);
+}
+
+
+void Text::SetFocus(bool focus)
+{
+  textBox->Select(focus);
+}
+
 
 int Text::Width()
 {

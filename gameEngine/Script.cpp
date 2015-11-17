@@ -1952,6 +1952,32 @@ static val_t eic_SendActivationEvent(void)
     return v;
 }
 
+static val_t eic_SetTextEditable(void)
+{
+  val_t v;
+  v.ival = 0;
+  
+  if(GameControl::Get()->getGameMode())
+  {
+    v.ival = execSetTextEditable((char *)arg(0,getargs(),ptr_t).p, arg(1, getargs(), int));
+  }
+  
+  return v;
+}
+
+static val_t eic_SetTextFocus(void)
+{
+  val_t v;
+  v.ival = 0;
+  
+  if(GameControl::Get()->getGameMode())
+  {
+    v.ival = execSetTextFocus((char *)arg(0,getargs(),ptr_t).p, arg(1, getargs(), int));
+  }
+  
+  return v;
+}
+
 static val_t eic_RequestActorOwnership(void)
 {
     val_t v;
@@ -3662,6 +3688,12 @@ void Script::Init()
 
 	EiC_add_builtinfunc("SendActivationEvent", eic_SendActivationEvent);
 	EiC_parseString("int SendActivationEvent(const char *cloneName);");
+	
+	EiC_add_builtinfunc("SetTextEditable", eic_SetTextEditable);
+	EiC_parseString("int SetTextEditable(const char *cloneName, int editable);");
+	
+	EiC_add_builtinfunc("SetTextFocus", eic_SetTextFocus);
+	EiC_parseString("int SetTextFocus(const char *cloneName, int focus);");
 
 #if GAME_EDITOR_VERSION >= VERSION_NETWORK
 	EiC_add_builtinfunc("ReleaseActorOwnership", eic_ReleaseActorOwnership);

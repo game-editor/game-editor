@@ -199,6 +199,7 @@ KrTextWidget::KrTextWidget(	KrFontResource* _resource,
 	}
 }
 
+
 KrTextWidget::~KrTextWidget()
 {
 	// Children are deleted first, else this explodes.
@@ -1542,6 +1543,25 @@ gedString KrTextWidget::GetTextUntilCursor() //maks
 	}
 
 	return buffer;
+}
+
+void KrTextWidget::Select(bool select) //sky
+{
+  GLOUTPUT(select ? "SELECT TRUE\n" : "SELECT FALSE\n");
+  if(select)
+  {
+    KrEventManager::Instance()->GrabKeyFocus( this );
+  }
+  else
+  {
+    KrEventManager::Instance()->ChangeKeyFocus( -1 );
+  }
+}
+
+void KrTextWidget::ChangeEditable(bool _editable) //sky
+{
+  // TODO: toggle editabilty of text
+  // need to add/remove listeners and more
 }
 
 #endif //#ifndef STAND_ALONE_GAME //maks

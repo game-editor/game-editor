@@ -103,6 +103,8 @@ class KrTextWidget : public KrWidget
 	int ScrollUp(); //maks
 	int ScrollPageUp(); //maks
 	int ScrollPageDown(); //maks
+	void Select(bool select);
+	void ChangeEditable(bool select);	
 
 #ifndef STAND_ALONE_GAME //maks
 	virtual void Accelerate( bool down, int keymod, int keysym ); //maks

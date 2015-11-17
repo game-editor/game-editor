@@ -462,6 +462,7 @@ public:
 	
 	void RemoveTile();
 	bool IsVisible();
+	bool IsTextActor();
 	
 	void InitEdit();
 	

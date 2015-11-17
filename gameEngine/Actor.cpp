@@ -4746,6 +4746,11 @@ bool Actor::IsVisible()
 	return true;
 }
 
+bool Actor::IsTextActor()
+{
+  return textActor != NULL;
+}
+
 void Actor::RestartFrameSequences()
 {
 	MapActorSequenceIterator it(sequence);

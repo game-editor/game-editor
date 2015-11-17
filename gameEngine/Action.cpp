@@ -4575,8 +4575,6 @@ int execChangeZDepth(char *actorName, double zdepth)
 		actionActor = eventActor->getCreator();
 	}
 
-	actionActor->SetSize(100, 10);
-	
 	if(IS_VALID_ACTOR(actionActor))
 	{
 		actionActor->getImage()->SetZDepth((int)(zdepth*MAX_ACTOR_DEPTH));
@@ -5081,6 +5079,188 @@ int execEventDisable(char *actorName, unsigned long event)
 	}	
 
 	return 1;
+}
+
+int execSetTextEditable(char *actorName, int editable)
+{
+  int res = 0;
+  if(!actorName) return 0; 
+
+	
+  Actor *eventActor = Action::getActualEventActor();
+  Actor *collideActor = Action::getActualCollideActor();
+  Actor *actionActor = NULL;
+
+  if(strcmp(actorName, S_EVENT_ACTOR) == 0)
+  {
+    actionActor = eventActor;
+  }
+  else if(strcmp(actorName, S_COLLIDE_ACTOR) == 0)
+  {
+    if(!collideActor) return 0;
+    actionActor = collideActor;
+  }
+  else if(strcmp(actorName, S_PARENT_ACTOR) == 0)
+  {
+    if(eventActor->getParent() != GameControl::Get()->GetAxis()) actionActor = eventActor->getParent();
+  }
+  else if(strcmp(actorName, S_CREATOR_ACTOR) == 0)
+  {
+    actionActor = eventActor->getCreator();
+  }
+
+  if(IS_VALID_ACTOR(actionActor))
+  {
+    // if this is a text actor
+    if(actionActor->IsTextActor())
+    {
+      actionActor->getTextActor()->SetEditable(editable);
+      
+#ifndef STAND_ALONE_GAME
+      //AddToGameGraph
+#endif
+      
+      res = 1;
+    }
+  }
+  else
+  {
+    //Multiple actors
+    ListActor *listActor = mapActors.FindString(actorName);
+    if(listActor)
+    {
+      for(int il = 0; il < listActor->Count(); il++)
+      {
+	actionActor = (*listActor)[il];			
+	if(actionActor->getRunning())
+	{
+	  if(actionActor->IsTextActor())
+	  {
+	    actionActor->getTextActor()->SetEditable(editable);
+
+#ifndef STAND_ALONE_GAME
+	    //AddToGameGraph
+#endif
+
+	    res = 1;
+	  }
+	}			
+      }
+    }
+    else if(strchr(actorName, '.'))
+    {
+      //Clone specified
+      actionActor = GameControl::Get()->GetActor(actorName, true, false, false);
+      if(actionActor)
+      {
+	// if this is a text actor
+	if(actionActor->IsTextActor())
+	{
+	  actionActor->getTextActor()->SetEditable(editable);
+	  
+#ifndef STAND_ALONE_GAME
+	  //AddToGameGraph
+#endif
+	  
+	  res = 1;
+	}
+      }
+    }
+		
+  }	
+
+  return res;
+}
+
+int execSetTextFocus(char *actorName, int focus)
+{
+  int res = 0;
+  if(!actorName) return 0; 
+
+	
+  Actor *eventActor = Action::getActualEventActor();
+  Actor *collideActor = Action::getActualCollideActor();
+  Actor *actionActor = NULL;
+
+  if(strcmp(actorName, S_EVENT_ACTOR) == 0)
+  {
+    actionActor = eventActor;
+  }
+  else if(strcmp(actorName, S_COLLIDE_ACTOR) == 0)
+  {
+    if(!collideActor) return 0;
+    actionActor = collideActor;
+  }
+  else if(strcmp(actorName, S_PARENT_ACTOR) == 0)
+  {
+    if(eventActor->getParent() != GameControl::Get()->GetAxis()) actionActor = eventActor->getParent();
+  }
+  else if(strcmp(actorName, S_CREATOR_ACTOR) == 0)
+  {
+    actionActor = eventActor->getCreator();
+  }
+
+  if(IS_VALID_ACTOR(actionActor))
+  {
+    // if this is a text actor
+    if(actionActor->IsTextActor())
+    {
+      actionActor->getTextActor()->SetFocus(focus);
+      
+#ifndef STAND_ALONE_GAME
+      //AddToGameGraph
+#endif
+      
+      res = 1;
+    }
+  }
+  else
+  {
+    //Multiple actors
+    ListActor *listActor = mapActors.FindString(actorName);
+    if(listActor)
+    {
+      for(int il = 0; il < listActor->Count(); il++)
+      {
+	actionActor = (*listActor)[il];			
+	if(actionActor->getRunning())
+	{
+	  if(actionActor->IsTextActor())
+	  {
+	    actionActor->getTextActor()->SetFocus(focus);
+
+#ifndef STAND_ALONE_GAME
+	    //AddToGameGraph
+#endif
+
+	    res = 1;
+	  }
+	}			
+      }
+    }
+    else if(strchr(actorName, '.'))
+    {
+      //Clone specified
+      actionActor = GameControl::Get()->GetActor(actorName, true, false, false);
+      if(actionActor)
+      {
+	// if this is a text actor
+	if(actionActor->IsTextActor())
+	{
+	  actionActor->getTextActor()->SetFocus(focus);
+	  
+#ifndef STAND_ALONE_GAME
+	  //AddToGameGraph
+#endif
+	  
+	  res = 1;
+	}
+      }
+    }
+		
+  }	
+
+  return res;
 }
 
 int execExitGame()

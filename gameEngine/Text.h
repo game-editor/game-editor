@@ -77,7 +77,8 @@ public:
 
 	void SetText(gedString text);
 	void SetColor(int r, int g, int b);
-
+	void SetEditable(bool editable);
+	void SetFocus(bool focus);
 
 	bool IsEditable() {return bEditable;}
 	bool HasBorder() {return bDrawBorder;}
