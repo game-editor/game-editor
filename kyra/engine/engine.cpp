@@ -416,7 +416,7 @@ void KrEngine::FillBackgroundWindow( /*int i,*/ const KrRGBA* fillColor )
 
 
 #if defined(WIN32) && !defined(_WIN32_WCE)
-extern "C"int DX5_WaitForVerticalBlank();
+extern "C" int DX5_WaitForVerticalBlank();
 extern SDL_mutex *renderMutEx;
 #endif
 

@@ -80,8 +80,8 @@ public:
 	{
 		Vector2D <RealType> diff = box.getOrigin() - origin;
 		Vector2D <RealType> dimshalf = (box.getDimensions () + dimensions)/2;
-		if (abs (diff.x) > dimshalf.x) return false;
-		if (abs (diff.y) > dimshalf.y) return false;
+		if (fabs (diff.x) > dimshalf.x) return false;
+		if (fabs (diff.y) > dimshalf.y) return false;
 
 		return true;
 	} 
@@ -91,8 +91,8 @@ public:
 		RealType dMax, dMin, left, top;
 		Vector2D <RealType> delta = box.origin - origin;
 
-		delta.x = abs(delta.x);
-		delta.y = abs(delta.y);
+		delta.x = fabs(delta.x);
+		delta.y = fabs(delta.y);
 
 		if(box.origin.x < origin.x) left = box.Left();
 		else left = Left();

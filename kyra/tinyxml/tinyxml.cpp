@@ -564,7 +564,7 @@ bool TiXmlDocument::LoadFromBuffer( char *buf, int size ) //maks
 	if(buf)
 	{
 		char* p = buf;
-		while( gets( p ) )
+		while( gets_s( p, size ) )
 		{
 			p = strchr( p, 0 );
 		}
